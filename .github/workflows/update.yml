@@ -1,0 +1,73 @@
+name: update
+# 株価の取得 → バックテスト → 集計結果を reports ブランチへ
+# 株価データ本体は暗号化して Actions キャッシュにだけ置く（リポジトリには置かない）
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/**', '.github/workflows/update.yml']
+  schedule:
+    - cron: '10 10 * * 1-5' # 平日 19:10 JST
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+
+      - name: restore data cache
+        uses: actions/cache/restore@v4
+        with:
+          path: data.tar.enc
+          key: prices-v1-${{ github.run_id }}
+          restore-keys: prices-v1-
+
+      - name: decrypt data
+        run: |
+          if [ -f data.tar.enc ] && [ -n "$JQUANTS_API_KEY" ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -pass env:JQUANTS_API_KEY -in data.tar.enc | tar xzf - && echo "restored $(ls data/prices | wc -l) days"
+          else
+            echo "no cache"
+          fi
+
+      - name: fetch prices
+        run: node scripts/fetch.mjs --data data --out reports-out --max-minutes 300
+
+      - name: encrypt data
+        if: always()
+        run: |
+          if [ -d data/prices ] && [ -n "$JQUANTS_API_KEY" ]; then
+            tar czf - data | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:JQUANTS_API_KEY -out data.tar.enc
+          fi
+
+      - name: save data cache
+        if: always() && hashFiles('data.tar.enc') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: data.tar.enc
+          key: prices-v1-${{ github.run_id }}
+
+      - name: backtest
+        run: node scripts/backtest.mjs --data data --out reports-out
+
+      - name: publish reports
+        if: always()
+        run: |
+          git fetch origin reports:reports 2>/dev/null && git worktree add rep reports || git worktree add --orphan -b reports rep
+          mkdir -p rep/reports
+          cp reports-out/*.json rep/reports/ 2>/dev/null || true
+          cd rep
+          git config user.name "kabunavi-bot"
+          git config user.email "kabunavi-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "reports $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
+          for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
