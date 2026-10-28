@@ -190,7 +190,9 @@ function portfolio(signalsByDay, ex, fromD, toD) {
   let cash = 1_000_000;
   const pos = []; // {i, entryD, exitD, ret, size}
   let peak = cash, maxDD = 0, trades = 0;
-  const equityAt = () => cash + pos.reduce((a, p) => a + p.size, 0); // 保有中は簿価で近似
+  // 時価評価：保有中は当日終値で評価（決済日の最終損益は ret で確定）
+  const mark = (d) => cash + pos.reduce((a, p) => { const c = at(C, p.i, d); return a + (Number.isNaN(c) ? p.size : p.size * (c * (1 - SLIP)) / p.entryPx); }, 0);
+  const equityAt = () => cash + pos.reduce((a, p) => a + p.size, 0);
   for (let d = fromD; d <= toD; d++) {
     for (let k = pos.length - 1; k >= 0; k--) {
       if (pos[k].exitD <= d) {
@@ -208,9 +210,12 @@ function portfolio(signalsByDay, ex, fromD, toD) {
       const size = Math.min(cash, eq * 0.1);
       if (size < eq * 0.05) break;
       cash -= size;
-      pos.push({ i: s.i, exitD: d - 1 + 1 + s.days, ret: s.ret, size });
+      pos.push({ i: s.i, exitD: d - 1 + 1 + s.days, ret: s.ret, size, entryPx: at(O, s.i, d) * (1 + SLIP) });
       trades++;
     }
+    const m = mark(d);
+    peak = Math.max(peak, m);
+    maxDD = Math.max(maxDD, 1 - m / peak);
   }
   for (const p of pos) cash += p.size * (1 + p.ret);
   return { final: Math.round(cash), returnPct: Math.round((cash / 1_000_000 - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades };
@@ -248,7 +253,7 @@ for (const [sk, st] of Object.entries(STRATEGIES)) {
       name: ex.name,
       train: summarize(per.train),
       test: summarize(per.test),
-      portfolioTest: sk === 'all' ? null : portfolio(byDay, ex, split, D - 1),
+      portfolioTest: portfolio(byDay, ex, split, D - 1),
     };
   }
 }
