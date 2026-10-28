@@ -1,20 +1,17 @@
 {
-  "startedAt": "2026-10-28T13:24:17.016Z",
+  "startedAt": "2026-10-28T19:21:48.899Z",
   "keyPresent": true,
-  "fetchedDays": 487,
-  "rowsFetched": 2151747,
+  "fetchedDays": 1,
+  "rowsFetched": 4445,
   "skippedUnavailable": 0,
-  "errors": {
-    "400": 1
-  },
+  "errors": {},
   "stoppedBy": "done",
-  "masterRows": 4446,
-  "planRange": "2024-08-05~2026-08-05",
+  "masterRows": 4445,
+  "planRange": "2024-08-06~2026-08-06",
   "calendarTradingDays": 488,
-  "lastErrorMessage": "Your subscription covers the following dates: 2024-08-06 ~ 2026-08-06. If you want more data, please check other plans:https://jpx-jquants.com/#dataset",
-  "requestCount": 566,
-  "finishedAt": "2026-10-28T17:53:35.089Z",
-  "storedDays": 487,
+  "requestCount": 4,
+  "finishedAt": "2026-10-28T19:22:31.482Z",
+  "storedDays": 488,
   "storedFrom": "2024-08-06",
-  "storedTo": "2026-08-05"
+  "storedTo": "2026-08-06"
 }
