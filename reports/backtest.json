@@ -1,4 +1,382 @@
 {
-  "ok": false,
-  "reason": "データ不足（0日分）"
+  "ok": true,
+  "generatedAt": "2026-10-28T17:53:48.804Z",
+  "days": 487,
+  "universe": 3721,
+  "periods": {
+    "train": {
+      "name": "学習期間",
+      "from": "2024-08-06",
+      "to": "2025-10-16"
+    },
+    "test": {
+      "name": "テスト期間",
+      "from": "2025-10-17",
+      "to": "2026-08-05"
+    }
+  },
+  "rules": {
+    "slippagePerSide": 0.001,
+    "commission": 0,
+    "minTurnover20d": 100000000,
+    "minPrice": 100,
+    "entry": "翌営業日始値"
+  },
+  "results": {
+    "vol_ma25": {
+      "name": "出来高急増＋25日線上抜け",
+      "exits": {
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 2275,
+            "winRate": 0.4519,
+            "avgRet": -0.0013,
+            "medRet": -0.0044,
+            "profitFactor": 0.95
+          },
+          "test": {
+            "n": 1586,
+            "winRate": 0.4628,
+            "avgRet": -0.0026,
+            "medRet": -0.0044,
+            "profitFactor": 0.92
+          },
+          "portfolioTest": {
+            "final": 883917,
+            "returnPct": -11.6,
+            "maxDDPct": 26.4,
+            "trades": 378
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 2275,
+            "winRate": 0.469,
+            "avgRet": 0.0017,
+            "medRet": -0.0048,
+            "profitFactor": 1.05
+          },
+          "test": {
+            "n": 1555,
+            "winRate": 0.4804,
+            "avgRet": 0.0008,
+            "medRet": -0.0024,
+            "profitFactor": 1.02
+          },
+          "portfolioTest": {
+            "final": 770131,
+            "returnPct": -23,
+            "maxDDPct": 28,
+            "trades": 190
+          }
+        },
+        "stop": {
+          "name": "損切り-8%／利確+15%／最大10日",
+          "train": {
+            "n": 2275,
+            "winRate": 0.4523,
+            "avgRet": -0.0003,
+            "medRet": -0.0083,
+            "profitFactor": 0.99
+          },
+          "test": {
+            "n": 1555,
+            "winRate": 0.4752,
+            "avgRet": 0.0039,
+            "medRet": -0.0043,
+            "profitFactor": 1.13
+          },
+          "portfolioTest": {
+            "final": 1054948,
+            "returnPct": 5.5,
+            "maxDDPct": 13.2,
+            "trades": 291
+          }
+        }
+      }
+    },
+    "breakout20": {
+      "name": "20日高値ブレイク＋出来高増",
+      "exits": {
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 10887,
+            "winRate": 0.4541,
+            "avgRet": -0.0031,
+            "medRet": -0.005,
+            "profitFactor": 0.89
+          },
+          "test": {
+            "n": 8713,
+            "winRate": 0.4624,
+            "avgRet": -0.0011,
+            "medRet": -0.0054,
+            "profitFactor": 0.97
+          },
+          "portfolioTest": {
+            "final": 784965,
+            "returnPct": -21.5,
+            "maxDDPct": 28.7,
+            "trades": 390
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 10887,
+            "winRate": 0.4764,
+            "avgRet": -0.0002,
+            "medRet": -0.0035,
+            "profitFactor": 0.99
+          },
+          "test": {
+            "n": 8307,
+            "winRate": 0.4924,
+            "avgRet": 0.0066,
+            "medRet": -0.0011,
+            "profitFactor": 1.17
+          },
+          "portfolioTest": {
+            "final": 826348,
+            "returnPct": -17.4,
+            "maxDDPct": 22,
+            "trades": 190
+          }
+        },
+        "stop": {
+          "name": "損切り-8%／利確+15%／最大10日",
+          "train": {
+            "n": 10887,
+            "winRate": 0.4626,
+            "avgRet": 0.0008,
+            "medRet": -0.0066,
+            "profitFactor": 1.03
+          },
+          "test": {
+            "n": 8307,
+            "winRate": 0.4691,
+            "avgRet": 0.0057,
+            "medRet": -0.006,
+            "profitFactor": 1.18
+          },
+          "portfolioTest": {
+            "final": 888519,
+            "returnPct": -11.1,
+            "maxDDPct": 22.7,
+            "trades": 433
+          }
+        }
+      }
+    },
+    "pullback": {
+      "name": "上昇トレンド中の押し目",
+      "exits": {
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 26662,
+            "winRate": 0.5082,
+            "avgRet": 0,
+            "medRet": 0.0008,
+            "profitFactor": 1
+          },
+          "test": {
+            "n": 20416,
+            "winRate": 0.4913,
+            "avgRet": 0.0023,
+            "medRet": -0.0009,
+            "profitFactor": 1.1
+          },
+          "portfolioTest": {
+            "final": 1163819,
+            "returnPct": 16.4,
+            "maxDDPct": 12.2,
+            "trades": 390
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 26662,
+            "winRate": 0.5184,
+            "avgRet": 0.0039,
+            "medRet": 0.0023,
+            "profitFactor": 1.15
+          },
+          "test": {
+            "n": 19983,
+            "winRate": 0.5112,
+            "avgRet": 0.0087,
+            "medRet": 0.0018,
+            "profitFactor": 1.28
+          },
+          "portfolioTest": {
+            "final": 1257479,
+            "returnPct": 25.7,
+            "maxDDPct": 10.8,
+            "trades": 190
+          }
+        },
+        "stop": {
+          "name": "損切り-8%／利確+15%／最大10日",
+          "train": {
+            "n": 26662,
+            "winRate": 0.5043,
+            "avgRet": 0.0029,
+            "medRet": 0.0006,
+            "profitFactor": 1.12
+          },
+          "test": {
+            "n": 19983,
+            "winRate": 0.4844,
+            "avgRet": 0.0033,
+            "medRet": -0.0025,
+            "profitFactor": 1.11
+          },
+          "portfolioTest": {
+            "final": 1245924,
+            "returnPct": 24.6,
+            "maxDDPct": 11.5,
+            "trades": 246
+          }
+        }
+      }
+    },
+    "reversal": {
+      "name": "5日で10%以上下落の反発狙い",
+      "exits": {
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 12062,
+            "winRate": 0.5264,
+            "avgRet": 0.0114,
+            "medRet": 0.005,
+            "profitFactor": 1.41
+          },
+          "test": {
+            "n": 12263,
+            "winRate": 0.4633,
+            "avgRet": 0.0023,
+            "medRet": -0.0059,
+            "profitFactor": 1.07
+          },
+          "portfolioTest": {
+            "final": 669899,
+            "returnPct": -33,
+            "maxDDPct": 46,
+            "trades": 385
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 12062,
+            "winRate": 0.5493,
+            "avgRet": 0.0221,
+            "medRet": 0.011,
+            "profitFactor": 1.65
+          },
+          "test": {
+            "n": 11817,
+            "winRate": 0.4097,
+            "avgRet": -0.0053,
+            "medRet": -0.0196,
+            "profitFactor": 0.89
+          },
+          "portfolioTest": {
+            "final": 822428,
+            "returnPct": -17.8,
+            "maxDDPct": 34.4,
+            "trades": 190
+          }
+        },
+        "stop": {
+          "name": "損切り-8%／利確+15%／最大10日",
+          "train": {
+            "n": 12062,
+            "winRate": 0.4993,
+            "avgRet": 0.0131,
+            "medRet": -0.0001,
+            "profitFactor": 1.38
+          },
+          "test": {
+            "n": 11817,
+            "winRate": 0.3705,
+            "avgRet": -0.0067,
+            "medRet": -0.0458,
+            "profitFactor": 0.85
+          },
+          "portfolioTest": {
+            "final": 806141,
+            "returnPct": -19.4,
+            "maxDDPct": 38,
+            "trades": 431
+          }
+        }
+      }
+    },
+    "all": {
+      "name": "比較用：条件なし（全銘柄平均）",
+      "exits": {
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 78562,
+            "winRate": 0.5047,
+            "avgRet": 0.0031,
+            "medRet": 0.0004,
+            "profitFactor": 1.19
+          },
+          "test": {
+            "n": 63900,
+            "winRate": 0.4633,
+            "avgRet": -0.002,
+            "medRet": -0.0034,
+            "profitFactor": 0.91
+          },
+          "portfolioTest": null
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 78561,
+            "winRate": 0.516,
+            "avgRet": 0.0061,
+            "medRet": 0.0019,
+            "profitFactor": 1.27
+          },
+          "test": {
+            "n": 62341,
+            "winRate": 0.4871,
+            "avgRet": 0.0023,
+            "medRet": -0.002,
+            "profitFactor": 1.08
+          },
+          "portfolioTest": null
+        },
+        "stop": {
+          "name": "損切り-8%／利確+15%／最大10日",
+          "train": {
+            "n": 78561,
+            "winRate": 0.5075,
+            "avgRet": 0.0054,
+            "medRet": 0.001,
+            "profitFactor": 1.25
+          },
+          "test": {
+            "n": 62341,
+            "winRate": 0.47,
+            "avgRet": 0.0004,
+            "medRet": -0.0045,
+            "profitFactor": 1.01
+          },
+          "portfolioTest": null
+        }
+      }
+    }
+  }
 }
