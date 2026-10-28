@@ -58,7 +58,16 @@ try {
   status.masterRows = master.length;
 
   // 取引カレンダー
-  const cal = await getAll('/markets/calendar', { from: ymd(fromDefault), to: ymd(today) });
+  // プランの取得可能期間外を指定すると400で「covers the following dates: A ~ B」と返るので、その範囲に合わせる
+  let cal;
+  try {
+    cal = await getAll('/markets/calendar', { from: ymd(fromDefault), to: ymd(today) });
+  } catch (e) {
+    const m = e instanceof ApiError && e.status === 400 && e.message.match(/(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})/);
+    if (!m) throw e;
+    status.planRange = `${m[1]}~${m[2]}`;
+    cal = await getAll('/markets/calendar', { from: m[1], to: m[2] });
+  }
   // HolDiv: 0=非営業日, 1=営業日, 2=半日立会, 3=非営業日（祝日取引あり）
   const days = cal.filter((r) => r.HolDiv === '1' || r.HolDiv === '2').map((r) => r.Date);
   status.calendarTradingDays = days.length;
