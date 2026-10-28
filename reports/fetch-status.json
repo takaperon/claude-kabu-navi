@@ -1,0 +1,16 @@
+{
+  "startedAt": "2026-10-28T13:23:21.480Z",
+  "keyPresent": true,
+  "fetchedDays": 0,
+  "rowsFetched": 0,
+  "skippedUnavailable": 0,
+  "errors": {},
+  "stoppedBy": "error",
+  "masterRows": 4446,
+  "fatal": "400 Your subscription covers the following dates: 2024-08-05 ~ 2026-08-05. If you want more data, please check other plans:https://jpx-jquants.com/#dataset",
+  "requestCount": 2,
+  "finishedAt": "2026-10-28T13:23:35.115Z",
+  "storedDays": 0,
+  "storedFrom": null,
+  "storedTo": null
+}
