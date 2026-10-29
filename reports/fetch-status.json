@@ -1,17 +1,20 @@
 {
-  "startedAt": "2026-10-28T19:21:48.899Z",
+  "startedAt": "2026-10-29T04:40:57.824Z",
   "keyPresent": true,
-  "fetchedDays": 1,
-  "rowsFetched": 4445,
+  "fetchedDays": 0,
+  "rowsFetched": 0,
   "skippedUnavailable": 0,
   "errors": {},
   "stoppedBy": "done",
   "masterRows": 4445,
   "planRange": "2024-08-06~2026-08-06",
   "calendarTradingDays": 488,
-  "requestCount": 4,
-  "finishedAt": "2026-10-28T19:22:31.482Z",
+  "finsFetchedDays": 731,
+  "finsRows": 38050,
+  "requestCount": 734,
+  "finishedAt": "2026-10-29T04:54:48.232Z",
   "storedDays": 488,
   "storedFrom": "2024-08-06",
-  "storedTo": "2026-08-06"
+  "storedTo": "2026-08-06",
+  "finsStoredDays": 731
 }
