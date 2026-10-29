@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-10-29T04:55:00.686Z",
+  "generatedAt": "2026-10-29T05:07:25.932Z",
   "days": 488,
   "universe": 3720,
   "fins": {
@@ -53,6 +53,12 @@
             "medRet": -0.0042,
             "profitFactor": 0.93
           },
+          "portfolioTrain": {
+            "final": 1166751,
+            "returnPct": 16.7,
+            "maxDDPct": 23.3,
+            "trades": 530
+          },
           "portfolioTest": {
             "final": 895603,
             "returnPct": -10.4,
@@ -76,6 +82,12 @@
             "medRet": -0.0024,
             "profitFactor": 1.02
           },
+          "portfolioTrain": {
+            "final": 1039766,
+            "returnPct": 4,
+            "maxDDPct": 19.7,
+            "trades": 270
+          },
           "portfolioTest": {
             "final": 770131,
             "returnPct": -23,
@@ -98,6 +110,12 @@
             "avgRet": 0.0039,
             "medRet": -0.0043,
             "profitFactor": 1.13
+          },
+          "portfolioTrain": {
+            "final": 910714,
+            "returnPct": -8.9,
+            "maxDDPct": 27.5,
+            "trades": 382
           },
           "portfolioTest": {
             "final": 1051315,
@@ -127,6 +145,12 @@
             "medRet": -0.0053,
             "profitFactor": 0.97
           },
+          "portfolioTrain": {
+            "final": 554506,
+            "returnPct": -44.5,
+            "maxDDPct": 52.3,
+            "trades": 530
+          },
           "portfolioTest": {
             "final": 788869,
             "returnPct": -21.1,
@@ -150,6 +174,12 @@
             "medRet": -0.0012,
             "profitFactor": 1.17
           },
+          "portfolioTrain": {
+            "final": 824672,
+            "returnPct": -17.5,
+            "maxDDPct": 32,
+            "trades": 270
+          },
           "portfolioTest": {
             "final": 836095,
             "returnPct": -16.4,
@@ -172,6 +202,12 @@
             "avgRet": 0.0056,
             "medRet": -0.0061,
             "profitFactor": 1.17
+          },
+          "portfolioTrain": {
+            "final": 697879,
+            "returnPct": -30.2,
+            "maxDDPct": 40.6,
+            "trades": 517
           },
           "portfolioTest": {
             "final": 831069,
@@ -201,6 +237,12 @@
             "medRet": -0.0007,
             "profitFactor": 1.11
           },
+          "portfolioTrain": {
+            "final": 1132441,
+            "returnPct": 13.2,
+            "maxDDPct": 13.3,
+            "trades": 420
+          },
           "portfolioTest": {
             "final": 1163819,
             "returnPct": 16.4,
@@ -224,6 +266,12 @@
             "medRet": 0.0021,
             "profitFactor": 1.29
           },
+          "portfolioTrain": {
+            "final": 969824,
+            "returnPct": -3,
+            "maxDDPct": 20.2,
+            "trades": 219
+          },
           "portfolioTest": {
             "final": 1257479,
             "returnPct": 25.7,
@@ -246,6 +294,12 @@
             "avgRet": 0.0036,
             "medRet": -0.002,
             "profitFactor": 1.12
+          },
+          "portfolioTrain": {
+            "final": 1113787,
+            "returnPct": 11.4,
+            "maxDDPct": 13.7,
+            "trades": 255
           },
           "portfolioTest": {
             "final": 1245924,
@@ -275,6 +329,12 @@
             "medRet": -0.0048,
             "profitFactor": 1.11
           },
+          "portfolioTrain": {
+            "final": 604300,
+            "returnPct": -39.6,
+            "maxDDPct": 51.8,
+            "trades": 530
+          },
           "portfolioTest": {
             "final": 695113,
             "returnPct": -30.5,
@@ -298,6 +358,12 @@
             "medRet": -0.0194,
             "profitFactor": 0.9
           },
+          "portfolioTrain": {
+            "final": 755711,
+            "returnPct": -24.4,
+            "maxDDPct": 48.8,
+            "trades": 270
+          },
           "portfolioTest": {
             "final": 822428,
             "returnPct": -17.8,
@@ -320,6 +386,12 @@
             "avgRet": -0.0069,
             "medRet": -0.0464,
             "profitFactor": 0.84
+          },
+          "portfolioTrain": {
+            "final": 960904,
+            "returnPct": -3.9,
+            "maxDDPct": 24.8,
+            "trades": 529
           },
           "portfolioTest": {
             "final": 786744,
@@ -349,10 +421,16 @@
             "medRet": -0.0034,
             "profitFactor": 0.91
           },
+          "portfolioTrain": {
+            "final": 1022971,
+            "returnPct": 2.3,
+            "maxDDPct": 21.1,
+            "trades": 530
+          },
           "portfolioTest": {
-            "final": 926927,
-            "returnPct": -7.3,
-            "maxDDPct": 30.2,
+            "final": 801271,
+            "returnPct": -19.9,
+            "maxDDPct": 25.4,
             "trades": 380
           }
         },
@@ -372,10 +450,16 @@
             "medRet": -0.002,
             "profitFactor": 1.08
           },
+          "portfolioTrain": {
+            "final": 1069829,
+            "returnPct": 7,
+            "maxDDPct": 14.9,
+            "trades": 270
+          },
           "portfolioTest": {
-            "final": 880072,
-            "returnPct": -12,
-            "maxDDPct": 31.9,
+            "final": 1054833,
+            "returnPct": 5.5,
+            "maxDDPct": 14.7,
             "trades": 190
           }
         },
@@ -395,11 +479,17 @@
             "medRet": -0.0045,
             "profitFactor": 1.01
           },
+          "portfolioTrain": {
+            "final": 1180954,
+            "returnPct": 18.1,
+            "maxDDPct": 9.7,
+            "trades": 284
+          },
           "portfolioTest": {
-            "final": 840349,
-            "returnPct": -16,
-            "maxDDPct": 24.1,
-            "trades": 202
+            "final": 935097,
+            "returnPct": -6.5,
+            "maxDDPct": 17.6,
+            "trades": 204
           }
         }
       }
@@ -423,10 +513,16 @@
             "medRet": -0.001,
             "profitFactor": 0.95
           },
+          "portfolioTrain": {
+            "final": 788828,
+            "returnPct": -21.1,
+            "maxDDPct": 28.2,
+            "trades": 464
+          },
           "portfolioTest": {
-            "final": 964785,
-            "returnPct": -3.5,
-            "maxDDPct": 18.5,
+            "final": 1002908,
+            "returnPct": 0.3,
+            "maxDDPct": 18.6,
             "trades": 345
           }
         },
@@ -446,10 +542,16 @@
             "medRet": 0.0086,
             "profitFactor": 1.39
           },
+          "portfolioTrain": {
+            "final": 1064678,
+            "returnPct": 6.5,
+            "maxDDPct": 15.6,
+            "trades": 258
+          },
           "portfolioTest": {
-            "final": 982546,
-            "returnPct": -1.7,
-            "maxDDPct": 17.1,
+            "final": 978383,
+            "returnPct": -2.2,
+            "maxDDPct": 19.9,
             "trades": 184
           }
         },
@@ -469,11 +571,17 @@
             "medRet": 0.0044,
             "profitFactor": 1.27
           },
+          "portfolioTrain": {
+            "final": 961813,
+            "returnPct": -3.8,
+            "maxDDPct": 22.8,
+            "trades": 314
+          },
           "portfolioTest": {
-            "final": 1004027,
-            "returnPct": 0.4,
-            "maxDDPct": 15.8,
-            "trades": 229
+            "final": 928699,
+            "returnPct": -7.1,
+            "maxDDPct": 19.8,
+            "trades": 219
           }
         }
       }
@@ -496,6 +604,12 @@
             "avgRet": 0.0037,
             "medRet": 0.0007,
             "profitFactor": 1.11
+          },
+          "portfolioTrain": {
+            "final": 1355674,
+            "returnPct": 35.6,
+            "maxDDPct": 9.7,
+            "trades": 224
           },
           "portfolioTest": {
             "final": 1032470,
@@ -520,6 +634,12 @@
             "medRet": 0.0154,
             "profitFactor": 1.47
           },
+          "portfolioTrain": {
+            "final": 1332150,
+            "returnPct": 33.2,
+            "maxDDPct": 20.8,
+            "trades": 166
+          },
           "portfolioTest": {
             "final": 897131,
             "returnPct": -10.3,
@@ -542,6 +662,12 @@
             "avgRet": 0.0152,
             "medRet": 0.0106,
             "profitFactor": 1.5
+          },
+          "portfolioTrain": {
+            "final": 1287392,
+            "returnPct": 28.7,
+            "maxDDPct": 9.8,
+            "trades": 188
           },
           "portfolioTest": {
             "final": 1069709,
@@ -571,6 +697,12 @@
             "medRet": 0.0039,
             "profitFactor": 1.33
           },
+          "portfolioTrain": {
+            "final": 1371820,
+            "returnPct": 37.2,
+            "maxDDPct": 5.1,
+            "trades": 171
+          },
           "portfolioTest": {
             "final": 1148908,
             "returnPct": 14.9,
@@ -594,6 +726,12 @@
             "medRet": 0.0265,
             "profitFactor": 1.86
           },
+          "portfolioTrain": {
+            "final": 1372549,
+            "returnPct": 37.3,
+            "maxDDPct": 14.2,
+            "trades": 133
+          },
           "portfolioTest": {
             "final": 1112815,
             "returnPct": 11.3,
@@ -616,6 +754,12 @@
             "avgRet": 0.0222,
             "medRet": 0.0183,
             "profitFactor": 1.81
+          },
+          "portfolioTrain": {
+            "final": 1208681,
+            "returnPct": 20.9,
+            "maxDDPct": 8.6,
+            "trades": 147
           },
           "portfolioTest": {
             "final": 1112338,
@@ -645,6 +789,12 @@
             "medRet": -0.0078,
             "profitFactor": 0.69
           },
+          "portfolioTrain": {
+            "final": 951774,
+            "returnPct": -4.8,
+            "maxDDPct": 10.7,
+            "trades": 143
+          },
           "portfolioTest": {
             "final": 903129,
             "returnPct": -9.7,
@@ -668,6 +818,12 @@
             "medRet": -0.0053,
             "profitFactor": 1.24
           },
+          "portfolioTrain": {
+            "final": 1059423,
+            "returnPct": 5.9,
+            "maxDDPct": 11.5,
+            "trades": 121
+          },
           "portfolioTest": {
             "final": 1055892,
             "returnPct": 5.6,
@@ -690,6 +846,12 @@
             "avgRet": -0.0015,
             "medRet": -0.0144,
             "profitFactor": 0.96
+          },
+          "portfolioTrain": {
+            "final": 1057884,
+            "returnPct": 5.8,
+            "maxDDPct": 9.2,
+            "trades": 135
           },
           "portfolioTest": {
             "final": 965123,
@@ -719,6 +881,12 @@
             "medRet": 0.0053,
             "profitFactor": 1.21
           },
+          "portfolioTrain": {
+            "final": 1425520,
+            "returnPct": 42.6,
+            "maxDDPct": 12.8,
+            "trades": 302
+          },
           "portfolioTest": {
             "final": 1193429,
             "returnPct": 19.3,
@@ -742,6 +910,12 @@
             "medRet": 0.0147,
             "profitFactor": 1.75
           },
+          "portfolioTrain": {
+            "final": 1289313,
+            "returnPct": 28.9,
+            "maxDDPct": 10.5,
+            "trades": 209
+          },
           "portfolioTest": {
             "final": 1178882,
             "returnPct": 17.9,
@@ -764,6 +938,12 @@
             "avgRet": 0.0122,
             "medRet": 0.01,
             "profitFactor": 1.47
+          },
+          "portfolioTrain": {
+            "final": 1296832,
+            "returnPct": 29.7,
+            "maxDDPct": 8.7,
+            "trades": 238
           },
           "portfolioTest": {
             "final": 1188515,
@@ -793,6 +973,12 @@
             "medRet": -0.0054,
             "profitFactor": 0.6
           },
+          "portfolioTrain": {
+            "final": 993744,
+            "returnPct": -0.6,
+            "maxDDPct": 9.9,
+            "trades": 147
+          },
           "portfolioTest": {
             "final": 726568,
             "returnPct": -27.3,
@@ -815,6 +1001,12 @@
             "avgRet": -0.0028,
             "medRet": 0.004,
             "profitFactor": 0.92
+          },
+          "portfolioTrain": {
+            "final": 933809,
+            "returnPct": -6.6,
+            "maxDDPct": 13.4,
+            "trades": 114
           },
           "portfolioTest": {
             "final": 921995,
@@ -839,6 +1031,12 @@
             "medRet": 0.0007,
             "profitFactor": 1.04
           },
+          "portfolioTrain": {
+            "final": 1014733,
+            "returnPct": 1.5,
+            "maxDDPct": 9.8,
+            "trades": 120
+          },
           "portfolioTest": {
             "final": 901247,
             "returnPct": -9.9,
@@ -847,6 +1045,85 @@
           }
         }
       }
+    }
+  },
+  "combos": {
+    "combo_a": {
+      "name": "組み合わせA：上方修正＋上向き(10日) → 増配(5日)",
+      "portfolioTrain": {
+        "final": 1245221,
+        "returnPct": 24.5,
+        "maxDDPct": 14.4,
+        "trades": 269
+      },
+      "portfolioTest": {
+        "final": 1041980,
+        "returnPct": 4.2,
+        "maxDDPct": 16.3,
+        "trades": 226
+      }
+    },
+    "combo_b": {
+      "name": "組み合わせB：上方修正＋上向き(10日) → 増配(5日) → 押し目(10日、最大5銘柄)",
+      "portfolioTrain": {
+        "final": 1285776,
+        "returnPct": 28.6,
+        "maxDDPct": 19.3,
+        "trades": 285
+      },
+      "portfolioTest": {
+        "final": 1086161,
+        "returnPct": 8.6,
+        "maxDDPct": 16.7,
+        "trades": 228
+      }
+    },
+    "combo_c": {
+      "name": "組み合わせC：上方修正＋上向き(10日) → 押し目(10日、最大5銘柄)",
+      "portfolioTrain": {
+        "final": 1304142,
+        "returnPct": 30.4,
+        "maxDDPct": 15.5,
+        "trades": 201
+      },
+      "portfolioTest": {
+        "final": 893725,
+        "returnPct": -10.6,
+        "maxDDPct": 22.4,
+        "trades": 166
+      }
+    },
+    "combo_d": {
+      "name": "組み合わせD：上方修正＋上向き(10日) → 増配(5日、最大5銘柄)",
+      "portfolioTrain": {
+        "final": 1271953,
+        "returnPct": 27.2,
+        "maxDDPct": 15.9,
+        "trades": 250
+      },
+      "portfolioTest": {
+        "final": 1070848,
+        "returnPct": 7.1,
+        "maxDDPct": 17.2,
+        "trades": 204
+      }
+    }
+  },
+  "baseline": {
+    "name": "無作為に10日保有×200回",
+    "train": {
+      "runs": 200,
+      "avgReturnPct": 18.7,
+      "p10": 1.4,
+      "p90": 37.6,
+      "avgMaxDDPct": 17.1
+    },
+    "test": {
+      "runs": 200,
+      "avgReturnPct": 2.1,
+      "p10": -13.9,
+      "p90": 21.8,
+      "avgMaxDDPct": 19.9
     }
   }
 }
