@@ -9,6 +9,9 @@ const args = Object.fromEntries(
 const DATA = args.data ?? 'data';
 const OUT = args.out ?? 'reports-out';
 const SLIP = 0.001;
+// 再現性のための乱数（毎回同じ結果になる）
+let seed = 12345;
+const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 const MIN_TURNOVER = 1e8; // 20日平均売買代金 1億円以上
 const MIN_PRICE = 100;
 fs.mkdirSync(OUT, { recursive: true });
@@ -129,7 +132,7 @@ const STRATEGIES = {
   all: {
     name: '比較用：条件なし（全銘柄平均）',
     signal(i, d) {
-      return d % 5 === 0 ? Math.random() : null; // 5日おきに全銘柄を抽出
+      return d % 5 === 0 ? rand() : null; // 5日おきに全銘柄を抽出
     },
   },
 };
@@ -191,7 +194,7 @@ if (fs.existsSync(finsDir)) {
     if (ok && isResults && r.pt === 'FY' && r.div > 0 && r.nfdiv != null && r.nfdiv / r.div - 1 >= 0.05) {
       EVENTS.div_up.push({ i, d, score: r.nfdiv / r.div - 1 });
     }
-    if (ok && isResults) EVENTS.results.push({ i, d, score: Math.random() });
+    if (ok && isResults) EVENTS.results.push({ i, d, score: rand() });
   }
 }
 const aboveMA25 = (i, d) => at(C, i, d) > sma(C, i, d, 25);
@@ -256,7 +259,7 @@ function summarize(rets) {
 }
 
 // 資金シミュレーション：100万円、最大10銘柄、1銘柄あたり資産の10%、端株可（プチ株前提）
-function portfolio(signalsByDay, ex, fromD, toD) {
+function portfolio(signalsByDay, ex, fromD, toD, caps = null) {
   let cash = 1_000_000;
   const pos = []; // {i, entryD, exitD, ret, size}
   let peak = cash, maxDD = 0, trades = 0;
@@ -277,10 +280,11 @@ function portfolio(signalsByDay, ex, fromD, toD) {
     for (const s of cands) {
       if (pos.length >= 10) break;
       if (pos.some((p) => p.i === s.i)) continue;
+      if (caps && s.tier != null && pos.filter((p) => p.tier === s.tier).length >= caps[s.tier]) continue;
       const size = Math.min(cash, eq * 0.1);
       if (size < eq * 0.05) break;
       cash -= size;
-      pos.push({ i: s.i, exitD: d - 1 + 1 + s.days, ret: s.ret, size, entryPx: at(O, s.i, d) * (1 + SLIP) });
+      pos.push({ i: s.i, exitD: d - 1 + 1 + s.days, ret: s.ret, size, tier: s.tier, entryPx: at(O, s.i, d) * (1 + SLIP) });
       trades++;
     }
     const m = mark(d);
@@ -296,6 +300,7 @@ const elig = new Uint8Array(N * D);
 for (let i = 0; i < N; i++) for (let d = 20; d < D; d++) elig[i * D + d] = eligible(i, d) ? 1 : 0;
 
 const results = {};
+const BYDAY = {};
 for (const [sk, st] of Object.entries({ ...STRATEGIES, ...EVENT_STRATEGIES })) {
   // シグナルは戦略ごとに一度だけ判定
   let sigs = [];
@@ -329,14 +334,59 @@ for (const [sk, st] of Object.entries({ ...STRATEGIES, ...EVENT_STRATEGIES })) {
       byDay.get(s.d).push({ i: s.i, score: s.score, ...t });
     }
     for (const arr of byDay.values()) arr.sort((a, b) => b.score - a.score);
+    BYDAY[sk + '|' + ek] = byDay;
     results[sk].exits[ek] = {
       name: ex.name,
       train: summarize(per.train),
       test: summarize(per.test),
+      portfolioTrain: portfolio(byDay, ex, 26, split - 1),
       portfolioTest: portfolio(byDay, ex, split, D - 1),
     };
   }
 }
+
+
+// ---------- 組み合わせ（優先順位つき） ----------
+// 同じ日に候補が複数あれば、上の段の戦略から順に買う
+function mergeTiers(keys) {
+  const m = new Map();
+  keys.forEach((k, t) => {
+    for (const [d, arr] of BYDAY[k]) {
+      if (!m.has(d)) m.set(d, []);
+      for (const s of arr) m.get(d).push({ ...s, tier: t, score: (keys.length - t) * 1e6 + s.score });
+    }
+  });
+  for (const arr of m.values()) arr.sort((a, b) => b.score - a.score);
+  return m;
+}
+const COMBOS = {
+  combo_a: { name: '組み合わせA：上方修正＋上向き(10日) → 増配(5日)', keys: ['ev_earn_up_trend|hold10', 'ev_div_up|hold5'] },
+  combo_b: { name: '組み合わせB：上方修正＋上向き(10日) → 増配(5日) → 押し目(10日、最大5銘柄)', keys: ['ev_earn_up_trend|hold10', 'ev_div_up|hold5', 'pullback|hold10'], caps: [10, 10, 5] },
+  combo_c: { name: '組み合わせC：上方修正＋上向き(10日) → 押し目(10日、最大5銘柄)', keys: ['ev_earn_up_trend|hold10', 'pullback|hold10'], caps: [10, 5] },
+  combo_d: { name: '組み合わせD：上方修正＋上向き(10日) → 増配(5日、最大5銘柄)', keys: ['ev_earn_up_trend|hold10', 'ev_div_up|hold5'], caps: [10, 5] },
+};
+const combos = {};
+for (const [k, c] of Object.entries(COMBOS)) {
+  const m = mergeTiers(c.keys);
+  combos[k] = { name: c.name, portfolioTrain: portfolio(m, null, 26, split - 1, c.caps), portfolioTest: portfolio(m, null, split, D - 1, c.caps) };
+}
+
+// ---------- 比較用の物差し：無作為に選ぶのを200回やった平均 ----------
+function randomBaseline(fromD, toD, runs) {
+  const base = BYDAY['all|hold10'];
+  const rets = [], dds = [];
+  for (let r = 0; r < runs; r++) {
+    const m = new Map();
+    for (const [d, arr] of base) m.set(d, arr.map((x) => ({ ...x, score: rand() })).sort((a, b) => b.score - a.score));
+    const p = portfolio(m, null, fromD, toD);
+    rets.push(p.returnPct);
+    dds.push(p.maxDDPct);
+  }
+  rets.sort((a, b) => a - b);
+  const avg = (a) => Math.round((a.reduce((x, y) => x + y, 0) / a.length) * 10) / 10;
+  return { runs, avgReturnPct: avg(rets), p10: rets[Math.floor(runs * 0.1)], p90: rets[Math.floor(runs * 0.9)], avgMaxDDPct: avg(dds) };
+}
+const baseline = { name: '無作為に10日保有×200回', train: randomBaseline(26, split - 1, 200), test: randomBaseline(split, D - 1, 200) };
 
 const out = {
   ok: true,
@@ -347,6 +397,8 @@ const out = {
   periods,
   rules: { slippagePerSide: SLIP, commission: 0, minTurnover20d: MIN_TURNOVER, minPrice: MIN_PRICE, entry: '翌営業日始値' },
   results,
+  combos,
+  baseline,
 };
 fs.writeFileSync(path.join(OUT, 'backtest.json'), JSON.stringify(out, null, 2));
 console.log(`backtest ok: days=${D} universe=${N}`);
