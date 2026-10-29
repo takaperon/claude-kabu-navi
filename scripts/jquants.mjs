@@ -1,7 +1,9 @@
 // J-Quants API V2 の最小クライアント（Freeプラン：1分5リクエスト）
 const BASE = 'https://api.jquants.com/v2';
 const MIN_INTERVAL_MS = 13000; // 1分5回 → 12秒間隔＋余裕
-let lastAt = 0;
+// 財務情報（/fins/summary）はプランに関係なく1分60回の別枠
+const intervalFor = (path) => (path.startsWith('/fins/') ? 1100 : MIN_INTERVAL_MS);
+const lastAtBy = {};
 let requestCount = 0;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -16,9 +18,10 @@ export class ApiError extends Error {
 async function getOnce(path, params) {
   const key = process.env.JQUANTS_API_KEY;
   if (!key) throw new ApiError(0, 'JQUANTS_API_KEY がありません');
-  const wait = lastAt + MIN_INTERVAL_MS - Date.now();
+  const bucket = path.startsWith('/fins/') ? 'fins' : 'main';
+  const wait = (lastAtBy[bucket] ?? 0) + intervalFor(path) - Date.now();
   if (wait > 0) await sleep(wait);
-  lastAt = Date.now();
+  lastAtBy[bucket] = Date.now();
   requestCount++;
   const url = new URL(BASE + path);
   for (const [k, v] of Object.entries(params)) if (v != null && v !== '') url.searchParams.set(k, v);

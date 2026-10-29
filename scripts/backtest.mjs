@@ -134,6 +134,76 @@ const STRATEGIES = {
   },
 };
 
+
+// ---------- 開示イベント（決算・業績修正・配当） ----------
+// 開示日の翌営業日の始値で買う（場中の開示でも当日は買わない＝未来の情報を使わない）
+const di = new Map(dates.map((x, k) => [x, k]));
+function signalDayFor(discDate) {
+  // 開示日より後の最初の営業日 e を探し、その前日 e-1 をシグナル日とする
+  let lo = 0, hi = D;
+  while (lo < hi) { const m = (lo + hi) >> 1; if (dates[m] > discDate) hi = m; else lo = m + 1; }
+  return lo < D ? lo - 1 : null;
+}
+const EVENTS = { earn_up: [], earn_down: [], guidance: [], div_up: [], results: [] };
+const finsDir = path.join(DATA, 'fins');
+let finsDays = 0, finsRows = 0;
+if (fs.existsSync(finsDir)) {
+  const rows = [];
+  for (const f of fs.readdirSync(finsDir).sort()) {
+    finsDays++;
+    for (const r of JSON.parse(fs.readFileSync(path.join(finsDir, f), 'utf8'))) rows.push(r);
+  }
+  finsRows = rows.length;
+  rows.sort((a, b) => (a.dd + (a.dt ?? '')).localeCompare(b.dd + (b.dt ?? '')));
+  const lastFop = new Map(), lastDiv = new Map();
+  for (const r of rows) {
+    const i = ci.get(r.c);
+    const d = signalDayFor(r.dd);
+    const ok = i !== undefined && d != null && d >= 26 && d < D - 1;
+    const isResults = /FinancialStatements/.test(r.ty ?? '');
+    // 会社の業績予想（営業利益）：同じ事業年度の前回予想と比べる
+    const upd = (fy, v, kind) => {
+      if (!fy || v == null) return;
+      const k = r.c + '|' + fy;
+      const prev = lastFop.get(k);
+      lastFop.set(k, v);
+      if (!ok || prev == null || !(prev > 0)) return;
+      const ch = v / prev - 1;
+      if (ch >= 0.1) EVENTS.earn_up.push({ i, d, score: ch });
+      if (ch <= -0.1) EVENTS.earn_down.push({ i, d, score: -ch });
+    };
+    upd(r.fy, r.fop);
+    upd(r.nfy, r.nfop);
+    // 本決算で「来期予想」が今期実績より大きく伸びる（強気の見通し）
+    if (ok && isResults && r.pt === 'FY' && r.op > 0 && r.nfop != null && r.nfop / r.op - 1 >= 0.2) {
+      EVENTS.guidance.push({ i, d, score: r.nfop / r.op - 1 });
+    }
+    // 配当予想の引き上げ（同じ事業年度の前回予想比）、本決算で来期配当予想が今期実績を上回る
+    const updDiv = (fy, v) => {
+      if (!fy || v == null) return;
+      const k = r.c + '|' + fy;
+      const prev = lastDiv.get(k);
+      lastDiv.set(k, v);
+      if (ok && prev > 0 && v / prev - 1 >= 0.05) EVENTS.div_up.push({ i, d, score: v / prev - 1 });
+    };
+    updDiv(r.fy, r.fdiv);
+    updDiv(r.nfy, r.nfdiv);
+    if (ok && isResults && r.pt === 'FY' && r.div > 0 && r.nfdiv != null && r.nfdiv / r.div - 1 >= 0.05) {
+      EVENTS.div_up.push({ i, d, score: r.nfdiv / r.div - 1 });
+    }
+    if (ok && isResults) EVENTS.results.push({ i, d, score: Math.random() });
+  }
+}
+const aboveMA25 = (i, d) => at(C, i, d) > sma(C, i, d, 25);
+const EVENT_STRATEGIES = {
+  ev_results: { name: '比較用：決算発表のあった銘柄すべて', events: () => EVENTS.results },
+  ev_earn_up: { name: '業績予想の上方修正（営業利益+10%以上）', events: () => EVENTS.earn_up },
+  ev_earn_up_trend: { name: '上方修正＋株価が25日線より上', events: () => EVENTS.earn_up.filter((e) => aboveMA25(e.i, e.d)) },
+  ev_guidance: { name: '本決算で来期予想が今期比+20%以上', events: () => EVENTS.guidance },
+  ev_div_up: { name: '配当予想の引き上げ（+5%以上）', events: () => EVENTS.div_up },
+  ev_earn_down: { name: '参考：業績予想の下方修正（買わない側の確認用）', events: () => EVENTS.earn_down },
+};
+
 // ---------- 出口ルール ----------
 const EXITS = {
   hold5: { name: '5日保有', hold: 5 },
@@ -226,15 +296,25 @@ const elig = new Uint8Array(N * D);
 for (let i = 0; i < N; i++) for (let d = 20; d < D; d++) elig[i * D + d] = eligible(i, d) ? 1 : 0;
 
 const results = {};
-for (const [sk, st] of Object.entries(STRATEGIES)) {
+for (const [sk, st] of Object.entries({ ...STRATEGIES, ...EVENT_STRATEGIES })) {
   // シグナルは戦略ごとに一度だけ判定
-  const sigs = [];
-  for (let d = 26; d < D - 1; d++) {
-    for (let i = 0; i < N; i++) {
-      if (!elig[i * D + d]) continue;
-      const score = st.signal(i, d);
-      if (score == null || !Number.isFinite(score)) continue;
-      sigs.push({ i, d, score });
+  let sigs = [];
+  if (st.events) {
+    const seen = new Set();
+    for (const e of st.events()) {
+      const k = e.i * D + e.d;
+      if (!elig[k] || seen.has(k)) continue;
+      seen.add(k);
+      sigs.push(e);
+    }
+  } else {
+    for (let d = 26; d < D - 1; d++) {
+      for (let i = 0; i < N; i++) {
+        if (!elig[i * D + d]) continue;
+        const score = st.signal(i, d);
+        if (score == null || !Number.isFinite(score)) continue;
+        sigs.push({ i, d, score });
+      }
     }
   }
   results[sk] = { name: st.name, exits: {} };
@@ -263,6 +343,7 @@ const out = {
   generatedAt: new Date().toISOString(),
   days: D,
   universe: N,
+  fins: { days: finsDays, rows: finsRows, events: Object.fromEntries(Object.entries(EVENTS).map(([k, v]) => [k, v.length])) },
   periods,
   rules: { slippagePerSide: SLIP, commission: 0, minTurnover20d: MIN_TURNOVER, minPrice: MIN_PRICE, entry: '翌営業日始値' },
   results,

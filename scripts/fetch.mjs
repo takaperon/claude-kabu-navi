@@ -13,6 +13,7 @@ const MAX_MIN = Number(args['max-minutes'] ?? 300);
 const started = Date.now();
 
 fs.mkdirSync(path.join(DATA, 'prices'), { recursive: true });
+fs.mkdirSync(path.join(DATA, 'fins'), { recursive: true });
 fs.mkdirSync(OUT, { recursive: true });
 
 const status = {
@@ -30,6 +31,7 @@ const writeStatus = () => {
   status.storedDays = have.length;
   status.storedFrom = have[0]?.slice(0, 10) ?? null;
   status.storedTo = have.at(-1)?.slice(0, 10) ?? null;
+  status.finsStoredDays = fs.readdirSync(path.join(DATA, 'fins')).length;
   fs.writeFileSync(path.join(OUT, 'fetch-status.json'), JSON.stringify(status, null, 2));
   console.log(JSON.stringify(status));
 };
@@ -102,6 +104,40 @@ try {
         unavailable[d] = `http${e.status}`;
         status.errors[e.status] = (status.errors[e.status] ?? 0) + 1;
         status.lastErrorMessage = e.message;
+        continue;
+      }
+      throw e;
+    }
+  }
+
+  // 決算・業績修正・配当修正などの開示（財務情報）。開示日ごとに取得。空の日も記録して取り直さない
+  const num = (v) => (v === '' || v == null ? null : Number(v));
+  status.finsFetchedDays = 0;
+  status.finsRows = 0;
+  for (const r of cal.slice().reverse()) {
+    const d = r.Date;
+    if (d > ymd(today)) continue;
+    const file = path.join(DATA, 'fins', `${d}.json`);
+    if (fs.existsSync(file)) continue;
+    if (status.planRange && (d < status.planRange.slice(0, 10) || d > status.planRange.slice(11))) continue;
+    if ((Date.now() - started) / 60000 > MAX_MIN) {
+      status.stoppedBy = 'time';
+      break;
+    }
+    try {
+      const rows = await getAll('/fins/summary', { date: d.replaceAll('-', '') });
+      const compact = rows.map((x) => ({
+        dd: x.DiscDate, dt: x.DiscTime, c: x.Code, ty: x.DocType, pt: x.CurPerType, fy: x.CurFYEn, nfy: x.NxtFYEn,
+        s: num(x.Sales), op: num(x.OP), np: num(x.NP), fs: num(x.FSales), fop: num(x.FOP), nfop: num(x.NxFOP),
+        div: num(x.DivAnn), fdiv: num(x.FDivAnn), nfdiv: num(x.NxFDivAnn),
+      }));
+      fs.writeFileSync(file, JSON.stringify(compact));
+      status.finsFetchedDays++;
+      status.finsRows += compact.length;
+    } catch (e) {
+      if (e instanceof ApiError && (e.status === 400 || e.status === 403)) {
+        status.finsErrors = (status.finsErrors ?? 0) + 1;
+        status.finsLastError = e.message;
         continue;
       }
       throw e;
