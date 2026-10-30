@@ -1,29 +1,29 @@
 {
   "ok": true,
-  "generatedAt": "2026-10-29T10:51:51.225Z",
-  "days": 488,
+  "generatedAt": "2026-10-30T10:51:44.882Z",
+  "days": 489,
   "universe": 3720,
   "fins": {
-    "days": 731,
-    "rows": 38050,
+    "days": 732,
+    "rows": 38805,
     "events": {
-      "earn_up": 2119,
-      "earn_down": 1459,
-      "guidance": 1686,
-      "div_up": 4072,
-      "results": 28145
+      "earn_up": 2150,
+      "earn_down": 1463,
+      "guidance": 1688,
+      "div_up": 4092,
+      "results": 28485
     }
   },
   "periods": {
     "train": {
       "name": "学習期間",
       "from": "2024-08-06",
-      "to": "2025-10-16"
+      "to": "2025-10-17"
     },
     "test": {
       "name": "テスト期間",
-      "from": "2025-10-17",
-      "to": "2026-08-06"
+      "from": "2025-10-20",
+      "to": "2026-08-07"
     }
   },
   "rules": {
@@ -40,28 +40,28 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 2274,
-            "winRate": 0.4521,
-            "avgRet": -0.0013,
-            "medRet": -0.0044,
+            "n": 2278,
+            "winRate": 0.4513,
+            "avgRet": -0.0014,
+            "medRet": -0.0045,
             "profitFactor": 0.95
           },
           "test": {
-            "n": 1596,
-            "winRate": 0.4655,
-            "avgRet": -0.002,
-            "medRet": -0.0042,
-            "profitFactor": 0.93
+            "n": 1612,
+            "winRate": 0.4721,
+            "avgRet": -0.0011,
+            "medRet": -0.0034,
+            "profitFactor": 0.96
           },
           "portfolioTrain": {
-            "final": 1166751,
-            "returnPct": 16.7,
+            "final": 1164158,
+            "returnPct": 16.4,
             "maxDDPct": 23.3,
-            "trades": 530
+            "trades": 531
           },
           "portfolioTest": {
-            "final": 895603,
-            "returnPct": -10.4,
+            "final": 877285,
+            "returnPct": -12.3,
             "maxDDPct": 27.3,
             "trades": 380
           }
@@ -69,18 +69,18 @@
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 2274,
-            "winRate": 0.4692,
-            "avgRet": 0.0017,
+            "n": 2278,
+            "winRate": 0.4684,
+            "avgRet": 0.0015,
             "medRet": -0.0048,
             "profitFactor": 1.05
           },
           "test": {
             "n": 1557,
-            "winRate": 0.4811,
-            "avgRet": 0.0009,
-            "medRet": -0.0024,
-            "profitFactor": 1.02
+            "winRate": 0.4823,
+            "avgRet": 0.001,
+            "medRet": -0.002,
+            "profitFactor": 1.03
           },
           "portfolioTrain": {
             "final": 1039766,
@@ -89,39 +89,39 @@
             "trades": 270
           },
           "portfolioTest": {
-            "final": 770131,
-            "returnPct": -23,
-            "maxDDPct": 30.7,
+            "final": 848773,
+            "returnPct": -15.1,
+            "maxDDPct": 31.6,
             "trades": 190
           }
         },
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 2274,
-            "winRate": 0.4525,
+            "n": 2278,
+            "winRate": 0.4522,
             "avgRet": -0.0002,
             "medRet": -0.0083,
             "profitFactor": 0.99
           },
           "test": {
             "n": 1557,
-            "winRate": 0.4753,
-            "avgRet": 0.0039,
-            "medRet": -0.0043,
-            "profitFactor": 1.13
+            "winRate": 0.4759,
+            "avgRet": 0.0038,
+            "medRet": -0.0041,
+            "profitFactor": 1.12
           },
           "portfolioTrain": {
-            "final": 910714,
-            "returnPct": -8.9,
+            "final": 903616,
+            "returnPct": -9.6,
             "maxDDPct": 27.5,
-            "trades": 382
+            "trades": 383
           },
           "portfolioTest": {
-            "final": 1051315,
-            "returnPct": 5.1,
-            "maxDDPct": 14.8,
-            "trades": 293
+            "final": 1100297,
+            "returnPct": 10,
+            "maxDDPct": 14.3,
+            "trades": 288
           }
         }
       }
@@ -132,46 +132,46 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 10885,
-            "winRate": 0.4541,
+            "n": 10892,
+            "winRate": 0.4542,
             "avgRet": -0.0031,
             "medRet": -0.005,
             "profitFactor": 0.89
           },
           "test": {
-            "n": 8762,
-            "winRate": 0.4628,
-            "avgRet": -0.001,
-            "medRet": -0.0053,
+            "n": 8806,
+            "winRate": 0.4641,
+            "avgRet": -0.0009,
+            "medRet": -0.0051,
             "profitFactor": 0.97
           },
           "portfolioTrain": {
-            "final": 554506,
-            "returnPct": -44.5,
+            "final": 553201,
+            "returnPct": -44.7,
             "maxDDPct": 52.3,
-            "trades": 530
+            "trades": 531
           },
           "portfolioTest": {
-            "final": 788869,
-            "returnPct": -21.1,
-            "maxDDPct": 29.8,
-            "trades": 390
+            "final": 805427,
+            "returnPct": -19.5,
+            "maxDDPct": 29.3,
+            "trades": 389
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 10885,
-            "winRate": 0.4764,
+            "n": 10892,
+            "winRate": 0.4765,
             "avgRet": -0.0002,
             "medRet": -0.0035,
-            "profitFactor": 0.99
+            "profitFactor": 1
           },
           "test": {
-            "n": 8300,
-            "winRate": 0.4923,
+            "n": 8310,
+            "winRate": 0.4927,
             "avgRet": 0.0066,
-            "medRet": -0.0012,
+            "medRet": -0.0011,
             "profitFactor": 1.17
           },
           "portfolioTrain": {
@@ -181,39 +181,39 @@
             "trades": 270
           },
           "portfolioTest": {
-            "final": 836095,
-            "returnPct": -16.4,
-            "maxDDPct": 28.7,
-            "trades": 190
+            "final": 858110,
+            "returnPct": -14.2,
+            "maxDDPct": 33.3,
+            "trades": 189
           }
         },
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 10885,
+            "n": 10892,
             "winRate": 0.4626,
             "avgRet": 0.0008,
-            "medRet": -0.0066,
+            "medRet": -0.0065,
             "profitFactor": 1.03
           },
           "test": {
-            "n": 8300,
-            "winRate": 0.469,
+            "n": 8310,
+            "winRate": 0.4692,
             "avgRet": 0.0056,
-            "medRet": -0.0061,
+            "medRet": -0.006,
             "profitFactor": 1.17
           },
           "portfolioTrain": {
-            "final": 697879,
-            "returnPct": -30.2,
-            "maxDDPct": 40.6,
-            "trades": 517
+            "final": 695313,
+            "returnPct": -30.5,
+            "maxDDPct": 40.7,
+            "trades": 520
           },
           "portfolioTest": {
-            "final": 831069,
-            "returnPct": -16.9,
-            "maxDDPct": 26.5,
-            "trades": 432
+            "final": 918857,
+            "returnPct": -8.1,
+            "maxDDPct": 24.4,
+            "trades": 429
           }
         }
       }
@@ -224,88 +224,88 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 26656,
-            "winRate": 0.5081,
+            "n": 26677,
+            "winRate": 0.508,
             "avgRet": 0,
             "medRet": 0.0008,
             "profitFactor": 1
           },
           "test": {
-            "n": 20543,
-            "winRate": 0.4934,
-            "avgRet": 0.0025,
-            "medRet": -0.0007,
-            "profitFactor": 1.11
+            "n": 20582,
+            "winRate": 0.4942,
+            "avgRet": 0.0026,
+            "medRet": -0.0006,
+            "profitFactor": 1.12
           },
           "portfolioTrain": {
-            "final": 1132441,
-            "returnPct": 13.2,
+            "final": 1129045,
+            "returnPct": 12.9,
             "maxDDPct": 13.3,
-            "trades": 420
+            "trades": 422
           },
           "portfolioTest": {
-            "final": 1163819,
-            "returnPct": 16.4,
-            "maxDDPct": 14.1,
+            "final": 1242642,
+            "returnPct": 24.3,
+            "maxDDPct": 18,
             "trades": 390
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 26656,
+            "n": 26677,
             "winRate": 0.5183,
             "avgRet": 0.0039,
             "medRet": 0.0022,
             "profitFactor": 1.15
           },
           "test": {
-            "n": 20129,
-            "winRate": 0.5129,
-            "avgRet": 0.0088,
-            "medRet": 0.0021,
-            "profitFactor": 1.29
+            "n": 20284,
+            "winRate": 0.514,
+            "avgRet": 0.0089,
+            "medRet": 0.0023,
+            "profitFactor": 1.3
           },
           "portfolioTrain": {
-            "final": 969824,
-            "returnPct": -3,
+            "final": 968237,
+            "returnPct": -3.2,
             "maxDDPct": 20.2,
-            "trades": 219
+            "trades": 220
           },
           "portfolioTest": {
-            "final": 1257479,
-            "returnPct": 25.7,
-            "maxDDPct": 13.7,
+            "final": 1349205,
+            "returnPct": 34.9,
+            "maxDDPct": 16,
             "trades": 190
           }
         },
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 26656,
-            "winRate": 0.5042,
+            "n": 26677,
+            "winRate": 0.5041,
             "avgRet": 0.0029,
             "medRet": 0.0006,
             "profitFactor": 1.12
           },
           "test": {
-            "n": 20129,
-            "winRate": 0.4862,
-            "avgRet": 0.0036,
+            "n": 20284,
+            "winRate": 0.4871,
+            "avgRet": 0.0037,
             "medRet": -0.002,
             "profitFactor": 1.12
           },
           "portfolioTrain": {
-            "final": 1113787,
-            "returnPct": 11.4,
+            "final": 1128457,
+            "returnPct": 12.8,
             "maxDDPct": 13.7,
-            "trades": 255
+            "trades": 257
           },
           "portfolioTest": {
-            "final": 1245924,
-            "returnPct": 24.6,
+            "final": 1279980,
+            "returnPct": 28,
             "maxDDPct": 12.5,
-            "trades": 246
+            "trades": 244
           }
         }
       }
@@ -316,17 +316,17 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 12061,
-            "winRate": 0.5263,
-            "avgRet": 0.0114,
+            "n": 12138,
+            "winRate": 0.5269,
+            "avgRet": 0.0115,
             "medRet": 0.005,
             "profitFactor": 1.41
           },
           "test": {
-            "n": 12473,
-            "winRate": 0.4702,
-            "avgRet": 0.0036,
-            "medRet": -0.0048,
+            "n": 12458,
+            "winRate": 0.4711,
+            "avgRet": 0.0037,
+            "medRet": -0.0045,
             "profitFactor": 1.11
           },
           "portfolioTrain": {
@@ -336,27 +336,27 @@
             "trades": 530
           },
           "portfolioTest": {
-            "final": 695113,
-            "returnPct": -30.5,
-            "maxDDPct": 46.9,
-            "trades": 390
+            "final": 741820,
+            "returnPct": -25.8,
+            "maxDDPct": 42.3,
+            "trades": 389
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 12061,
-            "winRate": 0.5493,
-            "avgRet": 0.0221,
-            "medRet": 0.011,
+            "n": 12138,
+            "winRate": 0.5485,
+            "avgRet": 0.0219,
+            "medRet": 0.0107,
             "profitFactor": 1.65
           },
           "test": {
-            "n": 11885,
-            "winRate": 0.4104,
-            "avgRet": -0.0052,
-            "medRet": -0.0194,
-            "profitFactor": 0.9
+            "n": 11865,
+            "winRate": 0.411,
+            "avgRet": -0.0053,
+            "medRet": -0.0192,
+            "profitFactor": 0.89
           },
           "portfolioTrain": {
             "final": 755711,
@@ -365,39 +365,39 @@
             "trades": 270
           },
           "portfolioTest": {
-            "final": 822428,
-            "returnPct": -17.8,
-            "maxDDPct": 35.1,
+            "final": 904988,
+            "returnPct": -9.5,
+            "maxDDPct": 24.7,
             "trades": 190
           }
         },
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 12061,
-            "winRate": 0.4992,
-            "avgRet": 0.0131,
+            "n": 12138,
+            "winRate": 0.4988,
+            "avgRet": 0.013,
             "medRet": -0.0002,
             "profitFactor": 1.38
           },
           "test": {
-            "n": 11885,
-            "winRate": 0.3698,
-            "avgRet": -0.0069,
-            "medRet": -0.0464,
+            "n": 11865,
+            "winRate": 0.3688,
+            "avgRet": -0.0071,
+            "medRet": -0.0471,
             "profitFactor": 0.84
           },
           "portfolioTrain": {
-            "final": 960904,
-            "returnPct": -3.9,
-            "maxDDPct": 24.8,
-            "trades": 529
+            "final": 967152,
+            "returnPct": -3.3,
+            "maxDDPct": 25.3,
+            "trades": 531
           },
           "portfolioTest": {
-            "final": 786744,
-            "returnPct": -21.3,
-            "maxDDPct": 38.5,
-            "trades": 434
+            "final": 775907,
+            "returnPct": -22.4,
+            "maxDDPct": 39.4,
+            "trades": 435
           }
         }
       }
@@ -422,15 +422,15 @@
             "profitFactor": 0.91
           },
           "portfolioTrain": {
-            "final": 1022971,
-            "returnPct": 2.3,
-            "maxDDPct": 21.1,
+            "final": 1050612,
+            "returnPct": 5.1,
+            "maxDDPct": 24.1,
             "trades": 530
           },
           "portfolioTest": {
-            "final": 801271,
-            "returnPct": -19.9,
-            "maxDDPct": 25.4,
+            "final": 931356,
+            "returnPct": -6.9,
+            "maxDDPct": 22.1,
             "trades": 380
           }
         },
@@ -451,15 +451,15 @@
             "profitFactor": 1.08
           },
           "portfolioTrain": {
-            "final": 1069829,
-            "returnPct": 7,
-            "maxDDPct": 14.9,
+            "final": 1172141,
+            "returnPct": 17.2,
+            "maxDDPct": 20.4,
             "trades": 270
           },
           "portfolioTest": {
-            "final": 1054833,
-            "returnPct": 5.5,
-            "maxDDPct": 14.7,
+            "final": 934203,
+            "returnPct": -6.6,
+            "maxDDPct": 19.7,
             "trades": 190
           }
         },
@@ -480,16 +480,16 @@
             "profitFactor": 1.01
           },
           "portfolioTrain": {
-            "final": 1180954,
-            "returnPct": 18.1,
-            "maxDDPct": 9.7,
+            "final": 1260868,
+            "returnPct": 26.1,
+            "maxDDPct": 9.8,
             "trades": 284
           },
           "portfolioTest": {
-            "final": 935097,
-            "returnPct": -6.5,
-            "maxDDPct": 17.6,
-            "trades": 204
+            "final": 999532,
+            "returnPct": 0,
+            "maxDDPct": 14.9,
+            "trades": 201
           }
         }
       }
@@ -500,18 +500,18 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 6031,
-            "winRate": 0.488,
+            "n": 6033,
+            "winRate": 0.4881,
             "avgRet": 0.0033,
-            "medRet": -0.0012,
+            "medRet": -0.0011,
             "profitFactor": 1.15
           },
           "test": {
-            "n": 5269,
-            "winRate": 0.4912,
-            "avgRet": -0.0013,
-            "medRet": -0.001,
-            "profitFactor": 0.95
+            "n": 5439,
+            "winRate": 0.4988,
+            "avgRet": -0.0004,
+            "medRet": -0.0002,
+            "profitFactor": 0.99
           },
           "portfolioTrain": {
             "final": 788828,
@@ -520,24 +520,24 @@
             "trades": 464
           },
           "portfolioTest": {
-            "final": 1002908,
-            "returnPct": 0.3,
+            "final": 1010338,
+            "returnPct": 1,
             "maxDDPct": 18.6,
-            "trades": 345
+            "trades": 347
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 6031,
-            "winRate": 0.5039,
+            "n": 6033,
+            "winRate": 0.5037,
             "avgRet": 0.0061,
             "medRet": 0.0005,
             "profitFactor": 1.24
           },
           "test": {
-            "n": 5090,
-            "winRate": 0.5523,
+            "n": 5099,
+            "winRate": 0.5525,
             "avgRet": 0.011,
             "medRet": 0.0086,
             "profitFactor": 1.39
@@ -558,16 +558,16 @@
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 6031,
-            "winRate": 0.4968,
-            "avgRet": 0.0058,
+            "n": 6033,
+            "winRate": 0.4966,
+            "avgRet": 0.0057,
             "medRet": -0.0007,
             "profitFactor": 1.24
           },
           "test": {
-            "n": 5090,
+            "n": 5099,
             "winRate": 0.5242,
-            "avgRet": 0.0073,
+            "avgRet": 0.0072,
             "medRet": 0.0044,
             "profitFactor": 1.27
           },
@@ -578,10 +578,10 @@
             "trades": 314
           },
           "portfolioTest": {
-            "final": 928699,
-            "returnPct": -7.1,
+            "final": 921558,
+            "returnPct": -7.8,
             "maxDDPct": 19.8,
-            "trades": 219
+            "trades": 220
           }
         }
       }
@@ -592,23 +592,23 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 409,
-            "winRate": 0.5159,
-            "avgRet": 0.0116,
+            "n": 410,
+            "winRate": 0.5146,
+            "avgRet": 0.0115,
             "medRet": 0.003,
-            "profitFactor": 1.51
+            "profitFactor": 1.5
           },
           "test": {
-            "n": 538,
-            "winRate": 0.5112,
-            "avgRet": 0.0037,
-            "medRet": 0.0007,
-            "profitFactor": 1.11
+            "n": 554,
+            "winRate": 0.5199,
+            "avgRet": 0.005,
+            "medRet": 0.0023,
+            "profitFactor": 1.16
           },
           "portfolioTrain": {
             "final": 1355674,
             "returnPct": 35.6,
-            "maxDDPct": 9.7,
+            "maxDDPct": 10,
             "trades": 224
           },
           "portfolioTest": {
@@ -621,18 +621,18 @@
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 409,
-            "winRate": 0.5183,
-            "avgRet": 0.0139,
+            "n": 410,
+            "winRate": 0.5171,
+            "avgRet": 0.0137,
             "medRet": 0.0016,
-            "profitFactor": 1.46
+            "profitFactor": 1.45
           },
           "test": {
-            "n": 520,
-            "winRate": 0.5865,
-            "avgRet": 0.0171,
+            "n": 519,
+            "winRate": 0.5877,
+            "avgRet": 0.0173,
             "medRet": 0.0154,
-            "profitFactor": 1.47
+            "profitFactor": 1.48
           },
           "portfolioTrain": {
             "final": 1332150,
@@ -650,18 +650,18 @@
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 409,
-            "winRate": 0.5061,
-            "avgRet": 0.0085,
+            "n": 410,
+            "winRate": 0.5049,
+            "avgRet": 0.0082,
             "medRet": 0.0009,
-            "profitFactor": 1.3
+            "profitFactor": 1.29
           },
           "test": {
-            "n": 520,
-            "winRate": 0.55,
-            "avgRet": 0.0152,
+            "n": 519,
+            "winRate": 0.5511,
+            "avgRet": 0.0154,
             "medRet": 0.0106,
-            "profitFactor": 1.5
+            "profitFactor": 1.51
           },
           "portfolioTrain": {
             "final": 1287392,
@@ -684,18 +684,18 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 291,
-            "winRate": 0.5395,
-            "avgRet": 0.0144,
+            "n": 292,
+            "winRate": 0.5377,
+            "avgRet": 0.0142,
             "medRet": 0.0065,
-            "profitFactor": 1.66
+            "profitFactor": 1.65
           },
           "test": {
-            "n": 389,
-            "winRate": 0.5321,
-            "avgRet": 0.0094,
-            "medRet": 0.0039,
-            "profitFactor": 1.33
+            "n": 396,
+            "winRate": 0.5404,
+            "avgRet": 0.0105,
+            "medRet": 0.0059,
+            "profitFactor": 1.38
           },
           "portfolioTrain": {
             "final": 1371820,
@@ -704,27 +704,27 @@
             "trades": 171
           },
           "portfolioTest": {
-            "final": 1148908,
-            "returnPct": 14.9,
+            "final": 1161238,
+            "returnPct": 16.1,
             "maxDDPct": 15.5,
-            "trades": 167
+            "trades": 168
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 291,
-            "winRate": 0.543,
-            "avgRet": 0.0163,
+            "n": 292,
+            "winRate": 0.5411,
+            "avgRet": 0.016,
             "medRet": 0.0067,
-            "profitFactor": 1.56
+            "profitFactor": 1.55
           },
           "test": {
-            "n": 380,
-            "winRate": 0.6368,
-            "avgRet": 0.0271,
+            "n": 379,
+            "winRate": 0.6385,
+            "avgRet": 0.0273,
             "medRet": 0.0265,
-            "profitFactor": 1.86
+            "profitFactor": 1.87
           },
           "portfolioTrain": {
             "final": 1372549,
@@ -742,18 +742,18 @@
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 291,
-            "winRate": 0.5326,
-            "avgRet": 0.0104,
+            "n": 292,
+            "winRate": 0.5308,
+            "avgRet": 0.0101,
             "medRet": 0.0046,
-            "profitFactor": 1.41
+            "profitFactor": 1.39
           },
           "test": {
-            "n": 380,
-            "winRate": 0.5974,
-            "avgRet": 0.0222,
+            "n": 379,
+            "winRate": 0.5989,
+            "avgRet": 0.0225,
             "medRet": 0.0183,
-            "profitFactor": 1.81
+            "profitFactor": 1.83
           },
           "portfolioTrain": {
             "final": 1208681,
@@ -783,23 +783,23 @@
             "profitFactor": 0.86
           },
           "test": {
-            "n": 309,
-            "winRate": 0.4369,
-            "avgRet": -0.0121,
-            "medRet": -0.0078,
+            "n": 310,
+            "winRate": 0.4387,
+            "avgRet": -0.0118,
+            "medRet": -0.0075,
             "profitFactor": 0.69
           },
           "portfolioTrain": {
             "final": 951774,
             "returnPct": -4.8,
-            "maxDDPct": 10.7,
+            "maxDDPct": 13.9,
             "trades": 143
           },
           "portfolioTest": {
-            "final": 903129,
-            "returnPct": -9.7,
+            "final": 909182,
+            "returnPct": -9.1,
             "maxDDPct": 14.6,
-            "trades": 122
+            "trades": 123
           }
         },
         "hold10": {
@@ -868,18 +868,18 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 926,
-            "winRate": 0.4924,
-            "avgRet": 0.0056,
+            "n": 927,
+            "winRate": 0.493,
+            "avgRet": 0.0057,
             "medRet": -0.0006,
             "profitFactor": 1.3
           },
           "test": {
-            "n": 1149,
-            "winRate": 0.55,
-            "avgRet": 0.0049,
-            "medRet": 0.0053,
-            "profitFactor": 1.21
+            "n": 1167,
+            "winRate": 0.5553,
+            "avgRet": 0.0055,
+            "medRet": 0.0056,
+            "profitFactor": 1.24
           },
           "portfolioTrain": {
             "final": 1425520,
@@ -888,26 +888,26 @@
             "trades": 302
           },
           "portfolioTest": {
-            "final": 1193429,
-            "returnPct": 19.3,
+            "final": 1221368,
+            "returnPct": 22.1,
             "maxDDPct": 12.1,
-            "trades": 266
+            "trades": 268
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 926,
-            "winRate": 0.5065,
+            "n": 927,
+            "winRate": 0.507,
             "avgRet": 0.0053,
             "medRet": 0.0008,
             "profitFactor": 1.21
           },
           "test": {
-            "n": 1132,
-            "winRate": 0.5742,
+            "n": 1133,
+            "winRate": 0.5746,
             "avgRet": 0.0183,
-            "medRet": 0.0147,
+            "medRet": 0.0143,
             "profitFactor": 1.75
           },
           "portfolioTrain": {
@@ -917,39 +917,39 @@
             "trades": 209
           },
           "portfolioTest": {
-            "final": 1178882,
-            "returnPct": 17.9,
+            "final": 1179852,
+            "returnPct": 18,
             "maxDDPct": 8.6,
-            "trades": 163
+            "trades": 164
           }
         },
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 926,
-            "winRate": 0.4946,
+            "n": 927,
+            "winRate": 0.4951,
             "avgRet": 0.0051,
             "medRet": -0.0014,
-            "profitFactor": 1.21
+            "profitFactor": 1.22
           },
           "test": {
-            "n": 1132,
-            "winRate": 0.5406,
-            "avgRet": 0.0122,
-            "medRet": 0.01,
-            "profitFactor": 1.47
+            "n": 1133,
+            "winRate": 0.5402,
+            "avgRet": 0.0121,
+            "medRet": 0.0095,
+            "profitFactor": 1.46
           },
           "portfolioTrain": {
             "final": 1296832,
             "returnPct": 29.7,
-            "maxDDPct": 8.7,
+            "maxDDPct": 9,
             "trades": 238
           },
           "portfolioTest": {
-            "final": 1188515,
-            "returnPct": 18.9,
+            "final": 1185212,
+            "returnPct": 18.5,
             "maxDDPct": 11.5,
-            "trades": 201
+            "trades": 203
           }
         }
       }
@@ -960,88 +960,88 @@
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 241,
-            "winRate": 0.4813,
-            "avgRet": -0.0008,
-            "medRet": -0.0017,
+            "n": 243,
+            "winRate": 0.4856,
+            "avgRet": -0.0007,
+            "medRet": -0.0016,
             "profitFactor": 0.97
           },
           "test": {
-            "n": 228,
-            "winRate": 0.4298,
-            "avgRet": -0.0142,
+            "n": 230,
+            "winRate": 0.4304,
+            "avgRet": -0.0135,
             "medRet": -0.0054,
-            "profitFactor": 0.6
+            "profitFactor": 0.62
           },
           "portfolioTrain": {
-            "final": 993744,
-            "returnPct": -0.6,
+            "final": 993310,
+            "returnPct": -0.7,
             "maxDDPct": 9.9,
-            "trades": 147
+            "trades": 148
           },
           "portfolioTest": {
-            "final": 726568,
-            "returnPct": -27.3,
-            "maxDDPct": 28.5,
-            "trades": 141
+            "final": 738344,
+            "returnPct": -26.2,
+            "maxDDPct": 28.7,
+            "trades": 144
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 241,
-            "winRate": 0.5104,
-            "avgRet": -0.0012,
-            "medRet": 0.0016,
-            "profitFactor": 0.96
+            "n": 243,
+            "winRate": 0.5062,
+            "avgRet": -0.0015,
+            "medRet": 0.0015,
+            "profitFactor": 0.95
           },
           "test": {
-            "n": 227,
-            "winRate": 0.5198,
-            "avgRet": -0.0028,
+            "n": 225,
+            "winRate": 0.5244,
+            "avgRet": -0.0024,
             "medRet": 0.004,
-            "profitFactor": 0.92
+            "profitFactor": 0.93
           },
           "portfolioTrain": {
-            "final": 933809,
-            "returnPct": -6.6,
+            "final": 932209,
+            "returnPct": -6.8,
             "maxDDPct": 13.4,
-            "trades": 114
+            "trades": 115
           },
           "portfolioTest": {
-            "final": 921995,
-            "returnPct": -7.8,
+            "final": 923685,
+            "returnPct": -7.6,
             "maxDDPct": 16.5,
-            "trades": 109
+            "trades": 108
           }
         },
         "stop": {
           "name": "損切り-8%／利確+15%／最大10日",
           "train": {
-            "n": 241,
-            "winRate": 0.4813,
-            "avgRet": -0.0025,
+            "n": 243,
+            "winRate": 0.4774,
+            "avgRet": -0.0028,
             "medRet": -0.0025,
-            "profitFactor": 0.92
+            "profitFactor": 0.9
           },
           "test": {
-            "n": 227,
-            "winRate": 0.5022,
-            "avgRet": 0.0011,
-            "medRet": 0.0007,
-            "profitFactor": 1.04
+            "n": 225,
+            "winRate": 0.5067,
+            "avgRet": 0.0015,
+            "medRet": 0.0035,
+            "profitFactor": 1.05
           },
           "portfolioTrain": {
-            "final": 1014733,
-            "returnPct": 1.5,
+            "final": 1012970,
+            "returnPct": 1.3,
             "maxDDPct": 9.8,
-            "trades": 120
+            "trades": 121
           },
           "portfolioTest": {
-            "final": 901247,
-            "returnPct": -9.9,
+            "final": 902834,
+            "returnPct": -9.7,
             "maxDDPct": 10.5,
-            "trades": 118
+            "trades": 117
           }
         }
       }
@@ -1072,25 +1072,25 @@
         "trades": 285
       },
       "portfolioTest": {
-        "final": 1086161,
-        "returnPct": 8.6,
-        "maxDDPct": 16.7,
-        "trades": 228
+        "final": 1134854,
+        "returnPct": 13.5,
+        "maxDDPct": 17.1,
+        "trades": 230
       }
     },
     "combo_c": {
       "name": "組み合わせC：上方修正＋上向き(10日) → 押し目(10日、最大5銘柄)",
       "portfolioTrain": {
-        "final": 1304142,
-        "returnPct": 30.4,
+        "final": 1302012,
+        "returnPct": 30.2,
         "maxDDPct": 15.5,
-        "trades": 201
+        "trades": 202
       },
       "portfolioTest": {
-        "final": 893725,
-        "returnPct": -10.6,
-        "maxDDPct": 22.4,
-        "trades": 166
+        "final": 1017481,
+        "returnPct": 1.7,
+        "maxDDPct": 21.2,
+        "trades": 162
       }
     },
     "combo_d": {
@@ -1113,17 +1113,17 @@
     "name": "無作為に10日保有×200回",
     "train": {
       "runs": 200,
-      "avgReturnPct": 18.7,
-      "p10": 1.4,
-      "p90": 37.6,
-      "avgMaxDDPct": 17.1
+      "avgReturnPct": 19.5,
+      "p10": 2,
+      "p90": 42.5,
+      "avgMaxDDPct": 17
     },
     "test": {
       "runs": 200,
-      "avgReturnPct": 2.1,
-      "p10": -13.9,
-      "p90": 21.8,
-      "avgMaxDDPct": 19.9
+      "avgReturnPct": 1.7,
+      "p10": -13.1,
+      "p90": 20.6,
+      "avgMaxDDPct": 19.8
     }
   }
 }
