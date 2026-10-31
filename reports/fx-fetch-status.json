@@ -1,0 +1,62 @@
+{
+  "startedAt": "2026-10-31T03:54:00.844Z",
+  "pairs": {
+    "usdjpy": {
+      "source": "fred-close-only",
+      "rows": 13989,
+      "from": "1971-01-04",
+      "to": "2026-10-23"
+    },
+    "eurjpy": {
+      "source": "fred-close-only",
+      "rows": 6974,
+      "from": "1999-01-04",
+      "to": "2026-10-23"
+    },
+    "gbpjpy": {
+      "source": "fred-close-only",
+      "rows": 13989,
+      "from": "1971-01-04",
+      "to": "2026-10-23"
+    },
+    "audjpy": {
+      "source": "fred-close-only",
+      "rows": 13982,
+      "from": "1971-01-04",
+      "to": "2026-10-23"
+    }
+  },
+  "rates": {
+    "usd": {
+      "series": "DFF",
+      "rows": 26419,
+      "from": "1954-07-01",
+      "to": "2026-10-29"
+    },
+    "jpy": {
+      "series": "IRSTCI01JPM156N",
+      "rows": 495,
+      "from": "1985-07-01",
+      "to": "2026-09-01"
+    },
+    "eur": {
+      "series": "ECBDFR",
+      "rows": 10165,
+      "from": "1999-01-01",
+      "to": "2026-10-30"
+    },
+    "gbp": {
+      "series": "IUDSOIA",
+      "rows": 7536,
+      "from": "1997-01-02",
+      "to": "2026-10-28"
+    },
+    "aud": {
+      "series": "IRSTCI01AUM156N",
+      "rows": 434,
+      "from": "1990-08-01",
+      "to": "2026-09-01"
+    }
+  },
+  "finishedAt": "2026-10-31T03:54:11.397Z"
+}
