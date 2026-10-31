@@ -1,0 +1,39 @@
+name: fx
+# FX：為替の日足と政策金利を取得 → バックテスト → 集計結果を reports ブランチへ
+# 為替データ本体はリポジトリに置かない（集計値のみ公開）
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/fx/**', '.github/workflows/fx.yml']
+  schedule:
+    - cron: '30 22 * * 1-5' # 平日 07:30 JST（NY市場の引け後）
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: fx
+  cancel-in-progress: false
+jobs:
+  fx:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: fetch
+        run: node scripts/fx/fetch.mjs --data data-fx --out reports-out
+      - name: backtest
+        run: node scripts/fx/backtest.mjs --data data-fx --out reports-out
+      - name: publish reports
+        if: always()
+        run: |
+          git fetch origin reports:reports 2>/dev/null && git worktree add rep reports || git worktree add --orphan -b reports rep
+          mkdir -p rep/reports
+          cp reports-out/*.json rep/reports/ 2>/dev/null || true
+          cd rep
+          git config user.name "kabunavi-bot"
+          git config user.email "kabunavi-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "fx reports $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
+          for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
