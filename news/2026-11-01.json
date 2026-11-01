@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-01",
+  "status": "未検証",
+  "period": "2026-10-25〜2026-10-31",
+  "note": "週次ニュース調査（自動実行）。材料の効き目を後で検証するための記録で、売買の推奨ではない。株探の週間一覧ページは取得できず、企業発表は主に10/30引け後の分。FOMCの詳細（金利の水準など）は記事本文を読めず、見出しレベルの情報のみ。",
+  "items": [
+    {
+      "headline": "東京エレクトロン、今期の利益予想を初めて出し最高益見通し・大幅増配・自社株買い",
+      "summary": "これまで出していなかった今期の経常利益予想を公表し、前期比9割近い増益で最高益の見通しとした。配当も大きく増やし、発行済株式の約1%（上限1,500億円）の自社株買いも決めた。",
+      "sources": ["https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2", "https://tomokutchi.hatenablog.com/entry/kessan-20261030"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["電気機器"],
+      "stocks": [{"code": "8035", "name": "東京エレクトロン", "direction": "+", "reason": "最高益予想・増配・自社株買いの3点がそろった"}],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "パナソニックHD、今期最終利益を2割上方修正し増配",
+      "summary": "今期の最終利益予想を約20%引き上げ、最高益の見通しをさらに上乗せした。年間配当も16円増やす。修正理由は確認できた記事には書かれていない。",
+      "sources": ["https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["電気機器"],
+      "stocks": [{"code": "6752", "name": "パナソニック ホールディングス", "direction": "+", "reason": "通期最終の上方修正と増配"}],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "TDK、今期最終利益を24%上方修正し増配",
+      "summary": "今期の最終利益予想を約24%引き上げ、最高益見通しを上乗せした。配当も10円増やす。電子部品の大手で、同日の好決算組の一つ。",
+      "sources": ["https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["電気機器"],
+      "stocks": [{"code": "6762", "name": "TDK", "direction": "+", "reason": "通期最終の上方修正と増配"}],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "日本ガイシと日本特殊陶業が上方修正・増配",
+      "summary": "日本ガイシ（NGK）は今期経常利益予想を約20%引き上げ配当を20円増額。日本特殊陶業は今期最終を一転増益・最高益に修正し、配当も増やす。",
+      "sources": ["https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2", "https://tomokutchi.hatenablog.com/entry/kessan-20261030"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["ガラス・土石製品"],
+      "stocks": [
+        {"code": "5333", "name": "日本ガイシ", "direction": "+", "reason": "通期経常の上方修正と増配"},
+        {"code": "5334", "name": "日本特殊陶業", "direction": "+", "reason": "通期最終を一転増益に修正、増配"}
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "電気工事の四電工・中電工がそろって最高益予想に上方修正・増配",
+      "summary": "四電工は今期経常を16%、中電工も16%上方修正し、どちらも最高益の見通しで配当を増やす。地方の電気設備工事会社の業績が好調。需要の中身（データセンター等か）は今回確認していない。",
+      "sources": ["https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2", "https://kabutan.jp/news/?b=k202610300122"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["建設業"],
+      "stocks": [
+        {"code": "1939", "name": "四電工", "direction": "+", "reason": "通期経常の上方修正と増配"},
+        {"code": "1941", "name": "中電工", "direction": "+", "reason": "通期経常の上方修正（33期ぶり最高益）と増配"}
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "住友ファーマ、上方修正と4期ぶりの復配",
+      "summary": "今期の最終利益予想を約22%引き上げ、未定だった配当を15円で再開すると発表した。業績不振から無配が続いていた会社の復配で、立て直しが進んでいるかの目安になる。",
+      "sources": ["https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["医薬品"],
+      "stocks": [{"code": "4506", "name": "住友ファーマ", "direction": "+", "reason": "上方修正と4期ぶり復配"}],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "JR東日本、今期経常を7%上方修正し増配",
+      "summary": "今期の経常利益予想を約7%引き上げ、配当を4円増やす。修正幅は小さめで、ディフェンシブな大型株の材料としてどの程度効くかを見る対象。",
+      "sources": ["https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["陸運業"],
+      "stocks": [{"code": "9020", "name": "東日本旅客鉄道", "direction": "+", "reason": "通期経常の上方修正と増配"}],
+      "horizon": "数週間",
+      "confidence": "低"
+    },
+    {
+      "headline": "マキタとストライクが大きめの自社株買いを発表",
+      "summary": "マキタは上期24%増益で着地し、発行済株式の約3.9%（上限400億円）の自社株買いを決めた。M&A仲介のストライクは本決算で最高益見通し・増配と、約5.2%（上限40億円）の自社株買いを発表した。",
+      "sources": ["https://tomokutchi.hatenablog.com/entry/kessan-20261030", "https://finance.yahoo.co.jp/news/detail/091d29d93ceaee3634cb4f07dd39e58be000b8f2"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["機械", "サービス業"],
+      "stocks": [
+        {"code": "6586", "name": "マキタ", "direction": "+", "reason": "増益着地と発行済株式約3.9%の自社株買い"},
+        {"code": "6196", "name": "ストライク", "direction": "+", "reason": "最高益見通し・増配・約5.2%の自社株買い"}
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "キオクシア、上期の最終利益が前年の37倍に（ただし当日は半導体株安）",
+      "summary": "メモリー大手のキオクシアは上期の最終利益が大幅増益で着地した。一方、10/30の東京市場では米ハイテク株安を受けて同社を含む半導体株が大きく売られたと報じられており、好決算と相場全体の逆風が重なっている。",
+      "sources": ["https://tomokutchi.hatenablog.com/entry/kessan-20261030", "https://tradingeconomics.com/japan/stock-market/news/596637"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["電気機器"],
+      "stocks": [{"code": "285A", "name": "キオクシアホールディングス", "direction": "+", "reason": "上期の大幅増益（相場の半導体安と方向が逆な点に注意）"}],
+      "horizon": "数週間",
+      "confidence": "低"
+    },
+    {
+      "headline": "富士通・栗田工業・レーザーテック・DMG森精機などに悪材料",
+      "summary": "富士通は7〜9月期が市場の想定を大きく下回り、10/30に大きく下げたと報じられた。栗田工業は追加費用で通期予想を下方修正。レーザーテックは7〜9月期が46%減益、DMG森精機は1〜9月期が59%減益で着地した。",
+      "sources": ["https://tomokutchi.hatenablog.com/entry/kessan-20261030", "https://tradingeconomics.com/japan/stock-market/news/596626"],
+      "eventDate": "2026-10-30",
+      "type": "企業発表",
+      "sectors": ["電気機器", "機械"],
+      "stocks": [
+        {"code": "6702", "name": "富士通", "direction": "-", "reason": "7〜9月期が市場想定を大きく下回った"},
+        {"code": "6370", "name": "栗田工業", "direction": "-", "reason": "追加費用による通期下方修正"},
+        {"code": "6920", "name": "レーザーテック", "direction": "-", "reason": "7〜9月期の大幅減益"},
+        {"code": "6141", "name": "DMG森精機", "direction": "-", "reason": "1〜9月期の大幅減益"}
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "日銀は金利1.25%で据え置き、基調物価は2%と「おおむね整合的」と初めて判断",
+      "summary": "日銀は10/30に政策金利を据え置いた（8対1、反対の高田委員は1.5%への利上げを提案）。展望レポートで基調的な物価が2%目標とおおむね整合的になったと初めて判断し、保有ETFの売却ペースも2027年1月から引き上げる。市場の関心は12月の利上げの有無に移っている。",
+      "sources": ["https://www.gaitame.com/media/entry/2026/10/30/165152"],
+      "eventDate": "2026-10-30",
+      "type": "マクロ",
+      "sectors": ["銀行業", "保険業", "不動産業"],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "米FOMCは金利据え置き、ただし2人が利上げを主張して反対",
+      "summary": "10/28の米連邦公開市場委員会（ウォーシュ議長）は政策金利を据え置いたが、2人のメンバーが利上げを求めて反対したと報じられた。市場では12月の利上げを織り込む動きもあり、米金利・ドル円を通じて日本株にも影響しうる。金利水準などの詳細は記事本文を読めておらず未確認。",
+      "sources": ["https://www.cnn.com/2026/10/28/business/live-news/federal-reserve-interest-rate-october", "https://admiralmarkets.com/analytics/traders-blog/fomc-october-2026-fed-holds-rates"],
+      "eventDate": "2026-10-28",
+      "type": "マクロ",
+      "sectors": [],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "低"
+    },
+    {
+      "headline": "米大手IT決算：AI投資はさらに拡大、ただし回収への不安で株価は分かれる",
+      "summary": "マイクロソフトはクラウド（Azure）が48%増と好調。アルファベットはGoogle Cloudが倍増した一方、四半期の設備投資が前年の2倍超に膨らみフリーキャッシュフローがマイナスとなり、株価は翌日12%超下落した。アマゾンも設備投資の急増を示して時間外で下落したと報じられた。",
+      "sources": ["https://www.fool.com/investing/2026/10/28/microsoft-and-alphabet-just-reported-earnings-putting-the-ai-boom-to-the-test/", "https://www.datastudios.org/post/alphabet-q3-2026-results-google-cloud-doubles-30-7-billion-capex-51-billion", "https://tradingeconomics.com/japan/stock-market/news/593689"],
+      "eventDate": "2026-10-29",
+      "type": "テーマ",
+      "sectors": ["電気機器", "機械", "情報・通信業"],
+      "stocks": [],
+      "horizon": "数か月",
+      "confidence": "中"
+    },
+    {
+      "headline": "10/30の東京市場は半導体・AI関連が急落、日経平均は2%超安",
+      "summary": "前日の米ハイテク株安（インテルの急落など）を受け、10/30は半導体・AI関連が大きく売られ、日経平均は一時1,900円超下げた。韓国株も大きく下げており、アジア全体の半導体株安だった。好決算銘柄でも地合いに押される可能性がある。",
+      "sources": ["https://www.gaitame.com/media/entry/2026/10/30/165152", "https://tradingeconomics.com/japan/stock-market/news/596637", "https://tradingeconomics.com/stocks/news/596501"],
+      "eventDate": "2026-10-30",
+      "type": "マクロ",
+      "sectors": ["電気機器", "機械", "情報・通信業"],
+      "stocks": [],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "ドル円は157円台で推移、日銀据え置き後も円安基調は変わらず",
+      "summary": "日銀会合の結果発表直後に157円台前半まで円高に振れたが、引けにかけて157円台半ばに戻った。輸出企業の採算には追い風だが、輸入コストや当局の為替介入への警戒も残る。",
+      "sources": ["https://www.gaitame.com/media/entry/2026/10/30/165152"],
+      "eventDate": "2026-10-30",
+      "type": "マクロ",
+      "sectors": ["輸送用機器", "電気機器"],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "低"
+    }
+  ]
+}
