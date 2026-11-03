@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-02T23:09:56.607Z",
+  "generatedAt": "2026-11-03T23:14:11.022Z",
   "rules": {
     "spread": {
       "usdjpy": 0.008,
@@ -4757,7 +4757,7 @@
                 "avgTradePct": 0.35
               },
               "gbpjpy": {
-                "finalYen": 1532273,
+                "finalYen": 1532272,
                 "totalPct": 53.2,
                 "cagrPct": 5,
                 "maxDDPct": 63.6,
