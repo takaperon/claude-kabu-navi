@@ -173,6 +173,9 @@ const EVENT_STRATEGIES = {
   ev_guidance: { name: '本決算で来期予想が今期比+20%以上', events: () => EVENTS.guidance },
   ev_div_up: { name: '配当予想の引き上げ（+5%以上）', events: () => EVENTS.div_up },
   ev_earn_down: { name: '参考：業績予想の下方修正（買わない側の確認用）', events: () => EVENTS.earn_down },
+  // 夜の反応で選別：翌朝の寄り付きが前日終値より上の時だけ買う（寄り前の気配で判断できる前提）
+  ev_div_up_gap: { name: '増配＋寄り付きが前日終値より上', events: () => EVENTS.div_up.filter((e) => at(O, e.i, e.d + 1) > at(C, e.i, e.d)) },
+  ev_earn_up_trend_gap: { name: '上方修正＋上向き＋寄り付きが前日終値より上', events: () => EVENTS.earn_up.filter((e) => aboveMA25(e.i, e.d) && at(O, e.i, e.d + 1) > at(C, e.i, e.d)) },
 };
 
 // ---------- 出口ルール ----------
@@ -493,7 +496,7 @@ function byDayFor(sk, ek) {
   return m;
 }
 const robustness = {};
-for (const [sk, ek] of [['ev_div_up', 'hold5'], ['ev_earn_up_trend', 'hold5'], ['ev_earn_up', 'stop']]) {
+for (const [sk, ek] of [['ev_div_up', 'hold5'], ['ev_earn_up_trend', 'hold5'], ['ev_earn_up', 'stop'], ['ev_div_up_gap', 'hold5'], ['ev_earn_up_trend_gap', 'hold5']]) {
   const key = sk + '|' + ek;
   const r = { name: results[sk].name + ' / ' + EXITS[ek].name };
   r.fullPeriod = portfolio(BYDAY[key], EXITS[ek], 26, D - 1);
