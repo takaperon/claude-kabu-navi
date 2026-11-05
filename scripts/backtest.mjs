@@ -8,7 +8,7 @@ const args = Object.fromEntries(
 );
 const DATA = args.data ?? 'data';
 const OUT = args.out ?? 'reports-out';
-const SLIP = 0.001;
+let SLIP = 0.001;
 // 再現性のための乱数（毎回同じ結果になる）
 let seed = 12345;
 const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
@@ -266,6 +266,7 @@ function portfolio(signalsByDay, ex, fromD, toD, caps = null) {
   // 時価評価：保有中は当日終値で評価（決済日の最終損益は ret で確定）
   const mark = (d) => cash + pos.reduce((a, p) => { const c = at(C, p.i, d); return a + (Number.isNaN(c) ? p.size : p.size * (c * (1 - SLIP)) / p.entryPx); }, 0);
   const equityAt = () => cash + pos.reduce((a, p) => a + p.size, 0);
+  const yearly = {}; let yStart = null, yName = null;
   for (let d = fromD; d <= toD; d++) {
     for (let k = pos.length - 1; k >= 0; k--) {
       if (pos[k].exitD <= d) {
@@ -288,11 +289,15 @@ function portfolio(signalsByDay, ex, fromD, toD, caps = null) {
       trades++;
     }
     const m = mark(d);
+    const yn = dates[d].slice(0, 4);
+    if (yn !== yName) { if (yName) yearly[yName] = Math.round((prevM / yStart - 1) * 1000) / 10; yName = yn; yStart = d === fromD ? 1_000_000 : prevM; }
+    var prevM = m;
     peak = Math.max(peak, m);
     maxDD = Math.max(maxDD, 1 - m / peak);
   }
   for (const p of pos) cash += p.size * (1 + p.ret);
-  return { final: Math.round(cash), returnPct: Math.round((cash / 1_000_000 - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades };
+  if (yName) yearly[yName] = Math.round((cash / yStart - 1) * 1000) / 10;
+  return { final: Math.round(cash), returnPct: Math.round((cash / 1_000_000 - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades, yearly };
 }
 
 // 流動性条件は一度だけ計算
@@ -388,6 +393,51 @@ function randomBaseline(fromD, toD, runs) {
 }
 const baseline = { name: '無作為に10日保有×200回', train: randomBaseline(26, split - 1, 200), test: randomBaseline(split, D - 1, 200) };
 
+// ---------- 頑健性チェック：全期間の年ごとの成績、売買コストを厳しくした場合 ----------
+function byDayFor(sk, ek) {
+  const st = { ...STRATEGIES, ...EVENT_STRATEGIES }[sk];
+  const ex = EXITS[ek];
+  const m = new Map();
+  const src = st.events ? st.events() : [];
+  const seen = new Set();
+  for (const e of src) {
+    const k = e.i * D + e.d;
+    if (!elig[k] || seen.has(k)) continue;
+    seen.add(k);
+    const t = simulate(e.i, e.d, ex);
+    if (!t) continue;
+    if (!m.has(e.d)) m.set(e.d, []);
+    m.get(e.d).push({ i: e.i, score: e.score, ...t });
+  }
+  for (const arr of m.values()) arr.sort((a, b) => b.score - a.score);
+  return m;
+}
+const robustness = {};
+for (const [sk, ek] of [['ev_div_up', 'hold5'], ['ev_earn_up_trend', 'hold5'], ['ev_earn_up', 'stop']]) {
+  const key = sk + '|' + ek;
+  const r = { name: results[sk].name + ' / ' + EXITS[ek].name };
+  r.fullPeriod = portfolio(BYDAY[key], EXITS[ek], 26, D - 1);
+  for (const slip of [0.002, 0.003]) {
+    const keep = SLIP;
+    SLIP = slip;
+    const m = byDayFor(sk, ek);
+    r['slip' + slip * 1000] = { train: portfolio(m, EXITS[ek], 26, split - 1), test: portfolio(m, EXITS[ek], split, D - 1) };
+    SLIP = keep;
+  }
+  robustness[key] = r;
+}
+const randomYearly = (() => {
+  const base = BYDAY['all|hold10'];
+  const acc = {};
+  for (let r = 0; r < 100; r++) {
+    const m = new Map();
+    for (const [d, arr] of base) m.set(d, arr.map((x) => ({ ...x, score: rand() })).sort((a, b) => b.score - a.score));
+    const p = portfolio(m, null, 26, D - 1);
+    for (const [y, v] of Object.entries(p.yearly)) (acc[y] ??= []).push(v);
+  }
+  return Object.fromEntries(Object.entries(acc).map(([y, a]) => { a.sort((x, z) => x - z); return [y, { avg: Math.round((a.reduce((x, z) => x + z, 0) / a.length) * 10) / 10, p90: a[90] }]; }));
+})();
+
 const out = {
   ok: true,
   generatedAt: new Date().toISOString(),
@@ -399,6 +449,8 @@ const out = {
   results,
   combos,
   baseline,
+  robustness,
+  randomYearly,
 };
 fs.writeFileSync(path.join(OUT, 'backtest.json'), JSON.stringify(out, null, 2));
 console.log(`backtest ok: days=${D} universe=${N}`);
