@@ -19,6 +19,8 @@ jobs:
     timeout-minutes: 350
     env:
       JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
+      JQUANTS_RPM: '60'   # ライトプラン
+      JQUANTS_YEARS: '5'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

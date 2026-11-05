@@ -45,13 +45,13 @@ if (!status.keyPresent) {
 const ymd = (d) => d.toISOString().slice(0, 10);
 const today = new Date();
 const fromDefault = new Date(today);
-fromDefault.setFullYear(today.getFullYear() - 2);
+fromDefault.setFullYear(today.getFullYear() - Number(process.env.JQUANTS_YEARS ?? 5));
 fromDefault.setDate(fromDefault.getDate() - 7);
 
 const unavailPath = path.join(DATA, 'unavailable.json');
 const unavailable = fs.existsSync(unavailPath) ? JSON.parse(fs.readFileSync(unavailPath, 'utf8')) : {};
 const recentLimit = new Date(today);
-recentLimit.setDate(recentLimit.getDate() - 130); // 12週間遅延の境目付近は毎回取り直す
+recentLimit.setDate(recentLimit.getDate() - 10); // 直近は毎回取り直す
 
 try {
   // 銘柄一覧（毎回更新、1リクエスト）
@@ -79,7 +79,7 @@ try {
     if (d > ymd(today)) continue;
     const file = path.join(DATA, 'prices', `${d}.json`);
     if (fs.existsSync(file)) continue;
-    if (unavailable[d] && d < ymd(recentLimit)) {
+    if (unavailable[d] === 'empty' && d < ymd(recentLimit)) {
       status.skippedUnavailable++;
       continue;
     }

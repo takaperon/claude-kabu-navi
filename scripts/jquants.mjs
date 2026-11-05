@@ -1,6 +1,8 @@
 // J-Quants API V2 の最小クライアント（Freeプラン：1分5リクエスト）
 const BASE = 'https://api.jquants.com/v2';
-const MIN_INTERVAL_MS = 13000; // 1分5回 → 12秒間隔＋余裕
+// プランの上限（1分あたり）：Free 5 / Light 60。少し余裕を持たせる
+const RPM = Number(process.env.JQUANTS_RPM ?? 60);
+const MIN_INTERVAL_MS = Math.ceil(60000 / RPM) + 150;
 // 財務情報（/fins/summary）はプランに関係なく1分60回の別枠
 const intervalFor = (path) => (path.startsWith('/fins/') ? 1100 : MIN_INTERVAL_MS);
 const lastAtBy = {};
