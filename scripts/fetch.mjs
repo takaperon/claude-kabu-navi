@@ -119,7 +119,10 @@ try {
     const d = r.Date;
     if (d > ymd(today)) continue;
     const file = path.join(DATA, 'fins', `${d}.json`);
-    if (fs.existsSync(file)) continue;
+    // 直近4日は夕方以降の開示が後から増えるので毎回取り直す
+    const recentFins = new Date(today);
+    recentFins.setDate(recentFins.getDate() - 4);
+    if (fs.existsSync(file) && d < ymd(recentFins)) continue;
     if (status.planRange && (d < status.planRange.slice(0, 10) || d > status.planRange.slice(11))) continue;
     if ((Date.now() - started) / 60000 > MAX_MIN) {
       status.stoppedBy = 'time';
@@ -128,7 +131,7 @@ try {
     try {
       const rows = await getAll('/fins/summary', { date: d.replaceAll('-', '') });
       const compact = rows.map((x) => ({
-        dd: x.DiscDate, dt: x.DiscTime, c: x.Code, ty: x.DocType, pt: x.CurPerType, fy: x.CurFYEn, nfy: x.NxtFYEn,
+        dd: x.DiscDate, dt: x.DiscTime, no: x.DiscNo, c: x.Code, ty: x.DocType, pt: x.CurPerType, fy: x.CurFYEn, nfy: x.NxtFYEn,
         s: num(x.Sales), op: num(x.OP), np: num(x.NP), fs: num(x.FSales), fop: num(x.FOP), nfop: num(x.NxFOP),
         div: num(x.DivAnn), fdiv: num(x.FDivAnn), nfdiv: num(x.NxFDivAnn),
       }));

@@ -2,6 +2,7 @@
 // ルール：シグナルは当日終値まで、エントリーは翌営業日の始値。滑り0.1%/片道、手数料0円。
 import fs from 'node:fs';
 import path from 'node:path';
+import { detectEvents } from './lib/events.mjs';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), [])
@@ -157,44 +158,11 @@ if (fs.existsSync(finsDir)) {
     for (const r of JSON.parse(fs.readFileSync(path.join(finsDir, f), 'utf8'))) rows.push(r);
   }
   finsRows = rows.length;
-  rows.sort((a, b) => (a.dd + (a.dt ?? '')).localeCompare(b.dd + (b.dt ?? '')));
-  const lastFop = new Map(), lastDiv = new Map();
-  for (const r of rows) {
-    const i = ci.get(r.c);
-    const d = signalDayFor(r.dd);
-    const ok = i !== undefined && d != null && d >= 26 && d < D - 1;
-    const isResults = /FinancialStatements/.test(r.ty ?? '');
-    // 会社の業績予想（営業利益）：同じ事業年度の前回予想と比べる
-    const upd = (fy, v, kind) => {
-      if (!fy || v == null) return;
-      const k = r.c + '|' + fy;
-      const prev = lastFop.get(k);
-      lastFop.set(k, v);
-      if (!ok || prev == null || !(prev > 0)) return;
-      const ch = v / prev - 1;
-      if (ch >= 0.1) EVENTS.earn_up.push({ i, d, score: ch });
-      if (ch <= -0.1) EVENTS.earn_down.push({ i, d, score: -ch });
-    };
-    upd(r.fy, r.fop);
-    upd(r.nfy, r.nfop);
-    // 本決算で「来期予想」が今期実績より大きく伸びる（強気の見通し）
-    if (ok && isResults && r.pt === 'FY' && r.op > 0 && r.nfop != null && r.nfop / r.op - 1 >= 0.2) {
-      EVENTS.guidance.push({ i, d, score: r.nfop / r.op - 1 });
-    }
-    // 配当予想の引き上げ（同じ事業年度の前回予想比）、本決算で来期配当予想が今期実績を上回る
-    const updDiv = (fy, v) => {
-      if (!fy || v == null) return;
-      const k = r.c + '|' + fy;
-      const prev = lastDiv.get(k);
-      lastDiv.set(k, v);
-      if (ok && prev > 0 && v / prev - 1 >= 0.05) EVENTS.div_up.push({ i, d, score: v / prev - 1 });
-    };
-    updDiv(r.fy, r.fdiv);
-    updDiv(r.nfy, r.nfdiv);
-    if (ok && isResults && r.pt === 'FY' && r.div > 0 && r.nfdiv != null && r.nfdiv / r.div - 1 >= 0.05) {
-      EVENTS.div_up.push({ i, d, score: r.nfdiv / r.div - 1 });
-    }
-    if (ok && isResults) EVENTS.results.push({ i, d, score: rand() });
+  for (const ev of detectEvents(rows)) {
+    const i = ci.get(ev.c);
+    const d = signalDayFor(ev.dd);
+    if (i === undefined || d == null || d < 26 || d >= D - 1) continue;
+    EVENTS[ev.kind].push({ i, d, score: ev.kind === 'results' ? rand() : ev.score });
   }
 }
 const aboveMA25 = (i, d) => at(C, i, d) > sma(C, i, d, 25);
@@ -393,6 +361,118 @@ function randomBaseline(fromD, toD, runs) {
 }
 const baseline = { name: '無作為に10日保有×200回', train: randomBaseline(26, split - 1, 200), test: randomBaseline(split, D - 1, 200) };
 
+// ---------- デイトレ検証：シグナルの翌営業日に「寄り付きで買って引けで売る」 ----------
+// 日足（始値・高値・安値・終値）だけで計算できる範囲。分足が必要な戦略はここでは扱わない
+function dayRet(i, d, side, stop) {
+  const e = d + 1;
+  const o = at(O, i, e), h = at(H, i, e), l = at(L, i, e), c = at(C, i, e), pc = at(C, i, d);
+  if (!(o > 0) || Number.isNaN(c)) return null;
+  const gap = o / pc - 1;
+  if (side === 1) {
+    const entry = o * (1 + SLIP);
+    if (stop && l <= o * (1 - stop)) return { ret: (o * (1 - stop) * (1 - SLIP)) / entry - 1, gap };
+    return { ret: (c * (1 - SLIP)) / entry - 1, gap };
+  }
+  // 空売り（参考）：寄りで売って引けで買い戻す
+  const entry = o * (1 - SLIP);
+  if (stop && h >= o * (1 + stop)) return { ret: entry / (o * (1 + stop) * (1 + SLIP)) - 1, gap };
+  return { ret: entry / (c * (1 + SLIP)) - 1, gap };
+}
+const DT_SIGNALS = {
+  div_up: { name: '配当予想の引き上げ', events: () => EVENTS.div_up },
+  earn_up: { name: '上方修正', events: () => EVENTS.earn_up },
+  earn_up_trend: { name: '上方修正＋上向き', events: () => EVENTS.earn_up.filter((e) => aboveMA25(e.i, e.d)) },
+  results: { name: '比較用：決算発表すべて', events: () => EVENTS.results },
+  earn_down_short: { name: '参考：下方修正を空売り', events: () => EVENTS.earn_down, side: -1 },
+  surge10: {
+    name: '前日+10%以上上がった銘柄',
+    events: () => { const o = []; for (let d = 26; d < D - 1; d++) for (let i = 0; i < N; i++) { const r = at(C, i, d) / at(C, i, d - 1) - 1; if (r >= 0.1) o.push({ i, d, score: r }); } return o; },
+  },
+  drop10: {
+    name: '前日-10%以上下がった銘柄（反発狙い）',
+    events: () => { const o = []; for (let d = 26; d < D - 1; d++) for (let i = 0; i < N; i++) { const r = at(C, i, d) / at(C, i, d - 1) - 1; if (r <= -0.1) o.push({ i, d, score: -r }); } return o; },
+  },
+};
+const DT_FILTERS = {
+  all: { name: '条件なし', ok: () => true },
+  gapUp: { name: '寄り付きが前日終値より上', ok: (g) => g > 0 },
+  gapDown: { name: '寄り付きが前日終値以下', ok: (g) => g <= 0 },
+  bigGap: { name: '寄り付きで+3%以上', ok: (g) => g >= 0.03 },
+};
+// 1日最大10銘柄、各10%。その日のうちに全部決済するので毎日リセット
+function dtPortfolio(byDay, fromD, toD) {
+  let eq = 1_000_000, peak = eq, maxDD = 0, trades = 0;
+  const yearly = {};
+  let yName = null, yStart = eq;
+  for (let d = fromD; d <= toD; d++) {
+    const yn = dates[d].slice(0, 4);
+    if (yn !== yName) { if (yName) yearly[yName] = Math.round((eq / yStart - 1) * 1000) / 10; yName = yn; yStart = eq; }
+    const arr = byDay.get(d - 1);
+    if (!arr) continue;
+    let ch = 0;
+    for (const s of arr.slice(0, 10)) { ch += 0.1 * s.ret; trades++; }
+    eq *= 1 + ch;
+    peak = Math.max(peak, eq);
+    maxDD = Math.max(maxDD, 1 - eq / peak);
+  }
+  if (yName) yearly[yName] = Math.round((eq / yStart - 1) * 1000) / 10;
+  return { returnPct: Math.round((eq / 1_000_000 - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades, yearly };
+}
+const daytrade = {};
+for (const [sk, sg] of Object.entries(DT_SIGNALS)) {
+  const evs = sg.events();
+  for (const stop of [0, 0.02]) {
+    for (const [fk, f] of Object.entries(DT_FILTERS)) {
+      const per = { train: [], test: [] };
+      const byDay = new Map();
+      const seen = new Set();
+      for (const e of evs) {
+        const k = e.i * D + e.d;
+        if (!elig[k] || seen.has(k)) continue;
+        seen.add(k);
+        const t = dayRet(e.i, e.d, sg.side ?? 1, stop);
+        if (!t || !f.ok(t.gap)) continue;
+        per[e.d < split ? 'train' : 'test'].push(t.ret);
+        if (!byDay.has(e.d)) byDay.set(e.d, []);
+        byDay.get(e.d).push({ i: e.i, score: e.score, ret: t.ret });
+      }
+      for (const a of byDay.values()) a.sort((x, y) => y.score - x.score);
+      daytrade[`${sk}|${stop ? 'stop2' : 'nostop'}|${fk}`] = {
+        name: `${sg.name} / ${stop ? '損切り-2%' : '損切りなし'} / ${f.name}`,
+        train: summarize(per.train),
+        test: summarize(per.test),
+        portfolioTrain: dtPortfolio(byDay, 27, split - 1),
+        portfolioTest: dtPortfolio(byDay, split, D - 1),
+      };
+    }
+  }
+}
+// 比較用：毎日、流動性条件を満たす銘柄から無作為に10銘柄を寄り買い・引け売り ×200回
+const dtBaseline = (() => {
+  const daily = new Map();
+  for (let d = 26; d < D - 1; d++) {
+    const a = [];
+    for (let i = 0; i < N; i++) { if (!elig[i * D + d]) continue; const t = dayRet(i, d, 1, 0); if (t) a.push(t.ret); }
+    daily.set(d, a);
+  }
+  const res = { train: [], test: [] };
+  for (let r = 0; r < 200; r++) {
+    for (const [pk, [a, b]] of [['train', [27, split - 1]], ['test', [split, D - 1]]]) {
+      let eq = 1;
+      for (let d = a; d <= b; d++) {
+        const arr = daily.get(d - 1);
+        if (!arr || !arr.length) continue;
+        let ch = 0;
+        for (let k = 0; k < 10; k++) ch += 0.1 * arr[Math.floor(rand() * arr.length)];
+        eq *= 1 + ch;
+      }
+      res[pk].push(Math.round((eq - 1) * 1000) / 10);
+    }
+  }
+  const sum = (x) => { x.sort((p, q) => p - q); return { avg: Math.round((x.reduce((p, q) => p + q, 0) / x.length) * 10) / 10, p90: x[180] }; };
+  return { name: '無作為に10銘柄を寄り買い引け売り×200回', train: sum(res.train), test: sum(res.test) };
+})();
+
 // ---------- 頑健性チェック：全期間の年ごとの成績、売買コストを厳しくした場合 ----------
 function byDayFor(sk, ek) {
   const st = { ...STRATEGIES, ...EVENT_STRATEGIES }[sk];
@@ -451,6 +531,8 @@ const out = {
   baseline,
   robustness,
   randomYearly,
+  daytrade,
+  dtBaseline,
 };
 fs.writeFileSync(path.join(OUT, 'backtest.json'), JSON.stringify(out, null, 2));
 console.log(`backtest ok: days=${D} universe=${N}`);

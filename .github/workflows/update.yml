@@ -4,7 +4,7 @@ name: update
 on:
   push:
     branches: [main]
-    paths: ['scripts/**', '.github/workflows/update.yml']
+    paths: ['scripts/*.mjs', 'scripts/lib/**', '.github/workflows/update.yml']
   schedule:
     - cron: '10 10 * * 1-5' # 平日 19:10 JST
   workflow_dispatch:
@@ -43,6 +43,9 @@ jobs:
 
       - name: fetch prices
         run: node scripts/fetch.mjs --data data --out reports-out --max-minutes 300
+
+      - name: paper trading
+        run: node scripts/paper.mjs --data data --out reports-out
 
       - name: encrypt data
         if: always()
