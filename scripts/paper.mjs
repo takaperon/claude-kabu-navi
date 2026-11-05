@@ -26,6 +26,9 @@ const STRATS = {
   swing_div: { name: '配当予想の引き上げ（5日保有）', kinds: ['div_up'], hold: 5 },
   swing_earn: { name: '上方修正＋株価が上向き（5日保有）', kinds: ['earn_up'], hold: 5, trend: true },
   dt_div: { name: 'デイトレ：配当予想の引き上げ（寄りで買って引けで売る）', kinds: ['div_up'], hold: 1 },
+  // 夜の反応で選別：寄り付きが前日終値より上の時だけ買う
+  swing_earn_gap: { name: '上方修正＋上向き＋朝高く始まった時だけ（5日保有）', kinds: ['earn_up'], hold: 5, trend: true, gap: true, base: 'swing_earn' },
+  swing_div_gap: { name: '配当予想の引き上げ＋朝高く始まった時だけ（5日保有）', kinds: ['div_up'], hold: 5, gap: true, base: 'swing_div' },
 };
 
 // ---------- データ ----------
@@ -85,8 +88,12 @@ if (!state) {
   state = { startDate: latest, lastDate: latest, seen: {}, strategies: {} };
   for (const e of events) if (e.dd < latest) state.seen[evKey(e)] = 1;
 }
-for (const [k, s] of Object.entries(STRATS)) {
-  state.strategies[k] ??= { cash: START, positions: [], pending: [], closed: [], equity: [{ date: state.lastDate, value: START }] };
+for (const [k, cfg] of Object.entries(STRATS)) {
+  if (!state.strategies[k]) {
+    state.strategies[k] = { cash: START, positions: [], pending: [], closed: [], equity: [{ date: state.lastDate, value: START }] };
+    // 途中から追加した戦略は、同じシグナルを使う元の戦略の買い候補を引き継ぐ
+    if (cfg.base && state.strategies[cfg.base]) state.strategies[k].pending = JSON.parse(JSON.stringify(state.strategies[cfg.base].pending));
+  }
 }
 
 // ---------- 1) 2) 新しい営業日を順に処理 ----------
@@ -102,6 +109,11 @@ for (const T of newDates) {
       if (st.positions.some((p) => p.code === pd.code)) continue;
       const p = px.get(pd.code);
       if (!p || !(p.o > 0)) continue;
+      if (cfg.gap) {
+        const prevK = idxOf.get(T) - 1;
+        const prev = prevK >= 0 ? pricesOn(dates[prevK]).get(pd.code) : null;
+        if (!prev || !(p.o > prev.c)) continue; // 朝安く始まったら見送り
+      }
       const eq = basis();
       const size = Math.min(st.cash, eq * 0.1);
       if (size < eq * 0.05) break;
