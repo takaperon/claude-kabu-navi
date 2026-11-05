@@ -46,7 +46,7 @@ const ymd = (d) => d.toISOString().slice(0, 10);
 const today = new Date();
 const fromDefault = new Date(today);
 fromDefault.setFullYear(today.getFullYear() - Number(process.env.JQUANTS_YEARS ?? 5));
-fromDefault.setDate(fromDefault.getDate() - 7);
+fromDefault.setDate(fromDefault.getDate() + 1); // プラン期間の端ちょうどを避ける
 
 const unavailPath = path.join(DATA, 'unavailable.json');
 const unavailable = fs.existsSync(unavailPath) ? JSON.parse(fs.readFileSync(unavailPath, 'utf8')) : {};
@@ -65,10 +65,11 @@ try {
   try {
     cal = await getAll('/markets/calendar', { from: ymd(fromDefault), to: ymd(today) });
   } catch (e) {
-    const m = e instanceof ApiError && e.status === 400 && e.message.match(/(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})/);
+    const m = e instanceof ApiError && e.status === 400 && e.message.match(/(\d{4}-\d{2}-\d{2})\s*~\s*(\d{4}-\d{2}-\d{2})?/);
     if (!m) throw e;
-    status.planRange = `${m[1]}~${m[2]}`;
-    cal = await getAll('/markets/calendar', { from: m[1], to: m[2] });
+    const to = m[2] ?? ymd(today);
+    status.planRange = `${m[1]}~${to}`;
+    cal = await getAll('/markets/calendar', { from: m[1], to });
   }
   // HolDiv: 0=非営業日, 1=営業日, 2=半日立会, 3=非営業日（祝日取引あり）
   const days = cal.filter((r) => r.HolDiv === '1' || r.HolDiv === '2').map((r) => r.Date);
