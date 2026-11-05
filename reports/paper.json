@@ -1,0 +1,205 @@
+{
+  "updatedAt": "2026-11-05T12:40:20.405Z",
+  "startDate": "2026-11-05",
+  "lastDate": "2026-11-05",
+  "strategies": {
+    "swing_div": {
+      "name": "配当予想の引き上げ（5日保有）",
+      "equityYen": 1000000,
+      "returnPct": 0,
+      "trades": 0,
+      "winRatePct": null,
+      "avgRetPct": null,
+      "holdings": [],
+      "nextBuys": [
+        {
+          "code": "91010",
+          "name": "日本郵船",
+          "reason": "配当予想を+37.5%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "77600",
+          "name": "ＩＭＶ",
+          "reason": "配当予想を+33.3%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "31100",
+          "name": "日東紡績",
+          "reason": "配当予想を+32.1%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "27300",
+          "name": "エディオン",
+          "reason": "配当予想を+30%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "81500",
+          "name": "三信電気",
+          "reason": "配当予想を+21.4%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "69410",
+          "name": "山一電機",
+          "reason": "配当予想を+20.8%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "30340",
+          "name": "クオールホールディングス",
+          "reason": "配当予想を+18.5%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "91190",
+          "name": "飯野海運",
+          "reason": "配当予想を+13.2%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "77110",
+          "name": "助川電気工業",
+          "reason": "配当予想を来期+11.1%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "79170",
+          "name": "ＺＡＣＲＯＳ",
+          "reason": "配当予想を+11.1%引き上げ（2026-11-05発表）",
+          "late": false
+        }
+      ],
+      "recentClosed": [],
+      "equityHistory": [
+        {
+          "date": "2026-11-05",
+          "value": 1000000
+        }
+      ]
+    },
+    "swing_earn": {
+      "name": "上方修正＋株価が上向き（5日保有）",
+      "equityYen": 1000000,
+      "returnPct": 0,
+      "trades": 0,
+      "winRatePct": null,
+      "avgRetPct": null,
+      "holdings": [],
+      "nextBuys": [
+        {
+          "code": "27300",
+          "name": "エディオン",
+          "reason": "営業利益予想を+33.3%上方修正（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "42020",
+          "name": "ダイセル",
+          "reason": "営業利益予想を+18.8%上方修正（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "72030",
+          "name": "トヨタ自動車",
+          "reason": "営業利益予想を+14.7%上方修正（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "90210",
+          "name": "西日本旅客鉄道",
+          "reason": "営業利益予想を+12.1%上方修正（2026-11-05発表）",
+          "late": false
+        }
+      ],
+      "recentClosed": [],
+      "equityHistory": [
+        {
+          "date": "2026-11-05",
+          "value": 1000000
+        }
+      ]
+    },
+    "dt_div": {
+      "name": "デイトレ：配当予想の引き上げ（寄りで買って引けで売る）",
+      "equityYen": 1000000,
+      "returnPct": 0,
+      "trades": 0,
+      "winRatePct": null,
+      "avgRetPct": null,
+      "holdings": [],
+      "nextBuys": [
+        {
+          "code": "91010",
+          "name": "日本郵船",
+          "reason": "配当予想を+37.5%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "77600",
+          "name": "ＩＭＶ",
+          "reason": "配当予想を+33.3%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "31100",
+          "name": "日東紡績",
+          "reason": "配当予想を+32.1%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "27300",
+          "name": "エディオン",
+          "reason": "配当予想を+30%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "81500",
+          "name": "三信電気",
+          "reason": "配当予想を+21.4%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "69410",
+          "name": "山一電機",
+          "reason": "配当予想を+20.8%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "30340",
+          "name": "クオールホールディングス",
+          "reason": "配当予想を+18.5%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "91190",
+          "name": "飯野海運",
+          "reason": "配当予想を+13.2%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "77110",
+          "name": "助川電気工業",
+          "reason": "配当予想を来期+11.1%引き上げ（2026-11-05発表）",
+          "late": false
+        },
+        {
+          "code": "79170",
+          "name": "ＺＡＣＲＯＳ",
+          "reason": "配当予想を+11.1%引き上げ（2026-11-05発表）",
+          "late": false
+        }
+      ],
+      "recentClosed": [],
+      "equityHistory": [
+        {
+          "date": "2026-11-05",
+          "value": 1000000
+        }
+      ]
+    }
+  }
+}
