@@ -476,6 +476,32 @@ const dtBaseline = (() => {
   return { name: '無作為に10銘柄を寄り買い引け売り×200回', train: sum(res.train), test: sum(res.test) };
 })();
 
+// ---------- 発表当日にすでにどれだけ上がっていたか別の成績（場中の発表で当日に跳ねたケースの確認） ----------
+const dayMoveBuckets = (() => {
+  const B = [['下落', -1, 0], ['0〜5%', 0, 0.05], ['5〜10%', 0.05, 0.1], ['10%以上', 0.1, 9]];
+  const out = {};
+  for (const [sk, evf] of [['div_up', () => EVENTS.div_up], ['earn_up_trend', () => EVENTS.earn_up.filter((e) => aboveMA25(e.i, e.d))]]) {
+    for (const [hk, ex] of [['dt', null], ['hold5', EXITS.hold5]]) {
+      const acc = {};
+      const seen = new Set();
+      for (const e of evf()) {
+        const k = e.i * D + e.d;
+        if (!elig[k] || seen.has(k)) continue;
+        seen.add(k);
+        const mv = at(C, e.i, e.d) / at(C, e.i, e.d - 1) - 1;
+        const b = B.find(([, lo, hi]) => mv >= lo && mv < hi);
+        if (!b) continue;
+        const t = ex ? simulate(e.i, e.d, ex) : dayRet(e.i, e.d, 1, 0);
+        if (!t) continue;
+        const per = e.d < split ? 'train' : 'test';
+        ((acc[b[0]] ??= { train: [], test: [] })[per]).push(t.ret);
+      }
+      out[`${sk}|${hk}`] = Object.fromEntries(Object.entries(acc).map(([b, v]) => [b, { train: summarize(v.train), test: summarize(v.test) }]));
+    }
+  }
+  return out;
+})();
+
 // ---------- 頑健性チェック：全期間の年ごとの成績、売買コストを厳しくした場合 ----------
 function byDayFor(sk, ek) {
   const st = { ...STRATEGIES, ...EVENT_STRATEGIES }[sk];
@@ -536,6 +562,7 @@ const out = {
   randomYearly,
   daytrade,
   dtBaseline,
+  dayMoveBuckets,
 };
 fs.writeFileSync(path.join(OUT, 'backtest.json'), JSON.stringify(out, null, 2));
 console.log(`backtest ok: days=${D} universe=${N}`);
