@@ -1,10 +1,10 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-05T13:20:55.718Z",
+  "generatedAt": "2026-11-06T03:39:43.570Z",
   "days": 1220,
-  "universe": 3702,
+  "universe": 3703,
   "fins": {
-    "days": 1826,
+    "days": 1827,
     "rows": 94256,
     "events": {
       "earn_up": 5699,
@@ -4285,6 +4285,272 @@
     "test": {
       "avg": -69.6,
       "p90": -62.8
+    }
+  },
+  "dayMoveBuckets": {
+    "div_up|dt": {
+      "下落": {
+        "train": {
+          "n": 1001,
+          "winRate": 0.4885,
+          "avgRet": 0.0023,
+          "medRet": -0.0007,
+          "profitFactor": 1.17
+        },
+        "test": {
+          "n": 978,
+          "winRate": 0.5061,
+          "avgRet": 0.0015,
+          "medRet": 0.0011,
+          "profitFactor": 1.11
+        }
+      },
+      "0〜5%": {
+        "train": {
+          "n": 1198,
+          "winRate": 0.5117,
+          "avgRet": 0.0027,
+          "medRet": 0.001,
+          "profitFactor": 1.22
+        },
+        "test": {
+          "n": 1013,
+          "winRate": 0.5222,
+          "avgRet": 0.0025,
+          "medRet": 0.002,
+          "profitFactor": 1.21
+        }
+      },
+      "10%以上": {
+        "train": {
+          "n": 53,
+          "winRate": 0.6226,
+          "avgRet": 0.0131,
+          "medRet": 0.014,
+          "profitFactor": 2.04
+        },
+        "test": {
+          "n": 112,
+          "winRate": 0.5357,
+          "avgRet": 0.0076,
+          "medRet": 0.0062,
+          "profitFactor": 1.58
+        }
+      },
+      "5〜10%": {
+        "train": {
+          "n": 140,
+          "winRate": 0.55,
+          "avgRet": 0.0037,
+          "medRet": 0.0048,
+          "profitFactor": 1.29
+        },
+        "test": {
+          "n": 217,
+          "winRate": 0.5438,
+          "avgRet": 0.0031,
+          "medRet": 0.003,
+          "profitFactor": 1.25
+        }
+      }
+    },
+    "div_up|hold5": {
+      "下落": {
+        "train": {
+          "n": 1001,
+          "winRate": 0.5584,
+          "avgRet": 0.0107,
+          "medRet": 0.008,
+          "profitFactor": 1.57
+        },
+        "test": {
+          "n": 944,
+          "winRate": 0.5244,
+          "avgRet": 0.0065,
+          "medRet": 0.0036,
+          "profitFactor": 1.3
+        }
+      },
+      "0〜5%": {
+        "train": {
+          "n": 1198,
+          "winRate": 0.5551,
+          "avgRet": 0.0124,
+          "medRet": 0.0072,
+          "profitFactor": 1.75
+        },
+        "test": {
+          "n": 997,
+          "winRate": 0.5346,
+          "avgRet": 0.0043,
+          "medRet": 0.0039,
+          "profitFactor": 1.22
+        }
+      },
+      "10%以上": {
+        "train": {
+          "n": 53,
+          "winRate": 0.6038,
+          "avgRet": 0.0103,
+          "medRet": 0.018,
+          "profitFactor": 1.4
+        },
+        "test": {
+          "n": 110,
+          "winRate": 0.6,
+          "avgRet": 0.0119,
+          "medRet": 0.0116,
+          "profitFactor": 1.5
+        }
+      },
+      "5〜10%": {
+        "train": {
+          "n": 140,
+          "winRate": 0.5286,
+          "avgRet": 0.0083,
+          "medRet": 0.0032,
+          "profitFactor": 1.39
+        },
+        "test": {
+          "n": 215,
+          "winRate": 0.5535,
+          "avgRet": 0.0124,
+          "medRet": 0.009,
+          "profitFactor": 1.59
+        }
+      }
+    },
+    "earn_up_trend|dt": {
+      "5〜10%": {
+        "train": {
+          "n": 89,
+          "winRate": 0.5506,
+          "avgRet": 0.0042,
+          "medRet": 0.0063,
+          "profitFactor": 1.29
+        },
+        "test": {
+          "n": 128,
+          "winRate": 0.5078,
+          "avgRet": 0.0044,
+          "medRet": 0.0004,
+          "profitFactor": 1.37
+        }
+      },
+      "0〜5%": {
+        "train": {
+          "n": 497,
+          "winRate": 0.4708,
+          "avgRet": 0.0009,
+          "medRet": -0.002,
+          "profitFactor": 1.06
+        },
+        "test": {
+          "n": 394,
+          "winRate": 0.5127,
+          "avgRet": 0.0034,
+          "medRet": 0.0019,
+          "profitFactor": 1.28
+        }
+      },
+      "下落": {
+        "train": {
+          "n": 255,
+          "winRate": 0.4863,
+          "avgRet": 0.0067,
+          "medRet": -0.002,
+          "profitFactor": 1.47
+        },
+        "test": {
+          "n": 212,
+          "winRate": 0.4575,
+          "avgRet": 0.0003,
+          "medRet": -0.002,
+          "profitFactor": 1.02
+        }
+      },
+      "10%以上": {
+        "train": {
+          "n": 26,
+          "winRate": 0.5385,
+          "avgRet": 0.0056,
+          "medRet": 0.0039,
+          "profitFactor": 1.5
+        },
+        "test": {
+          "n": 90,
+          "winRate": 0.4333,
+          "avgRet": -0.0029,
+          "medRet": -0.002,
+          "profitFactor": 0.84
+        }
+      }
+    },
+    "earn_up_trend|hold5": {
+      "5〜10%": {
+        "train": {
+          "n": 89,
+          "winRate": 0.5506,
+          "avgRet": 0.0096,
+          "medRet": 0.006,
+          "profitFactor": 1.42
+        },
+        "test": {
+          "n": 126,
+          "winRate": 0.619,
+          "avgRet": 0.0237,
+          "medRet": 0.0203,
+          "profitFactor": 1.99
+        }
+      },
+      "0〜5%": {
+        "train": {
+          "n": 497,
+          "winRate": 0.5131,
+          "avgRet": 0.0093,
+          "medRet": 0.0018,
+          "profitFactor": 1.42
+        },
+        "test": {
+          "n": 387,
+          "winRate": 0.5607,
+          "avgRet": 0.0117,
+          "medRet": 0.008,
+          "profitFactor": 1.58
+        }
+      },
+      "下落": {
+        "train": {
+          "n": 255,
+          "winRate": 0.5608,
+          "avgRet": 0.0152,
+          "medRet": 0.0092,
+          "profitFactor": 1.71
+        },
+        "test": {
+          "n": 209,
+          "winRate": 0.5024,
+          "avgRet": 0.0017,
+          "medRet": 0.0001,
+          "profitFactor": 1.05
+        }
+      },
+      "10%以上": {
+        "train": {
+          "n": 26,
+          "winRate": 0.5385,
+          "avgRet": 0.0087,
+          "medRet": 0.0064,
+          "profitFactor": 1.37
+        },
+        "test": {
+          "n": 89,
+          "winRate": 0.5843,
+          "avgRet": 0.0404,
+          "medRet": 0.0146,
+          "profitFactor": 2.24
+        }
+      }
     }
   }
 }
