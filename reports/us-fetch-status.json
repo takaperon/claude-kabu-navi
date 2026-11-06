@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-06T10:42:37.489Z",
+  "startedAt": "2026-11-06T18:37:02.634Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
@@ -18,7 +18,7 @@
     "lastError": "403 CIK0001555280.json"
   },
   "stoppedBy": "tiingo-limit",
-  "finishedAt": "2026-11-06T14:53:14.780Z",
-  "pricesStored": 250,
+  "finishedAt": "2026-11-06T22:47:43.407Z",
+  "pricesStored": 500,
   "secStored": 0
 }
