@@ -175,6 +175,9 @@ for (const [k, cfg] of Object.entries(STRATS)) {
   const rets = st.closed.map((c) => c.retPct);
   out.strategies[k] = {
     name: cfg.name,
+    hold: cfg.hold,
+    gap: !!cfg.gap,
+    kinds: cfg.kinds,
     equityYen: eqNow,
     returnPct: pct(eqNow / START - 1),
     trades: st.closed.length,

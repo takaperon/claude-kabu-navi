@@ -37,6 +37,11 @@
 - 「朝高く始まった時だけ買う」版（*_gap）も並走。寄り前の気配で判断できる前提（厳密には寄り付き値を見てから買う形なので少し甘い）
 - デイトレは日足で測れる「寄りで買って引けで売る」だけ。分足はJ-Quantsのアドオン（月5,500円）が必要で、オーナー未承認
 
+## アプリ画面（2026-11-06〜）
+- app/ の1ファイルPWA（index.html）。GitHub Pages で公開（.github/workflows/pages.yml）
+- データは raw.githubusercontent.com の reports ブランチ（paper.json / backtest.json / news/）を直接読む
+- デザイン：株券モチーフ（藍・金の地紋）。初心者向けに用語は点線下線でタップ解説。銘柄コードは4桁表示
+
 ## 開発環境メモ
 - 開発用の作業環境からは J-Quants に直接つながらず、Actions API も使えない
 - main への push で Actions が動き、結果を `reports` ブランチに書き戻す。それを git fetch して読む
