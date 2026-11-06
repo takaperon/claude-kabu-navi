@@ -1,0 +1,24 @@
+{
+  "startedAt": "2026-11-06T10:42:37.489Z",
+  "keyPresent": true,
+  "universe": 502,
+  "tiingo": {
+    "requests": 255,
+    "updated": 250,
+    "failed": 0,
+    "limitHits": 5,
+    "lastError": "429 {\"detail\":\"Error: You have run over your hourly request allocation. Please upgrade at https://api.tiingo.com/pricing to have your limits increased.\"}",
+    "needed": 503
+  },
+  "sec": {
+    "requests": 502,
+    "submissions": 0,
+    "facts": 0,
+    "failed": 502,
+    "lastError": "403 CIK0001555280.json"
+  },
+  "stoppedBy": "tiingo-limit",
+  "finishedAt": "2026-11-06T14:53:14.780Z",
+  "pricesStored": 250,
+  "secStored": 0
+}
