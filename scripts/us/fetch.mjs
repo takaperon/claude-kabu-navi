@@ -15,7 +15,7 @@ for (const d of ['prices', 'sec']) fs.mkdirSync(path.join(DATA, d), { recursive:
 fs.mkdirSync(OUT, { recursive: true });
 
 const KEY = process.env.TIINGO_API_KEY;
-const SEC_UA = 'ClaudeKabuNavi personal-research (+https://github.com/takaperon/claude-kabu-navi)';
+const SEC_UA = 'ClaudeKabuNavi takaperon@users.noreply.github.com'; // SECは「名前 連絡先メール」の形式を求める
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const today = new Date().toISOString().slice(0, 10);
 const minutes = () => (Date.now() - started) / 60000;
