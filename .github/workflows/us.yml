@@ -1,0 +1,66 @@
+name: us
+# 米国株：S&P500銘柄の日足（Tiingo）と決算発表（SEC）を取得 → 検証 → 集計結果を reports ブランチへ
+# 生データは暗号化して Actions キャッシュにだけ置く
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/us/**', '.github/workflows/us.yml']
+  schedule:
+    - cron: '20 22 * * 1-5' # 平日 07:20 JST（米国市場の引け後）
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: us
+  cancel-in-progress: false
+jobs:
+  us:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: restore data cache
+        uses: actions/cache/restore@v4
+        with:
+          path: data-us.tar.enc
+          key: us-v1-${{ github.run_id }}
+          restore-keys: us-v1-
+      - name: decrypt data
+        run: |
+          if [ -f data-us.tar.enc ] && [ -n "$TIINGO_API_KEY" ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TIINGO_API_KEY -in data-us.tar.enc | tar xzf - && echo "restored $(ls data-us/prices | wc -l) tickers"
+          else
+            echo "no cache"
+          fi
+      - name: fetch
+        run: node scripts/us/fetch.mjs --data data-us --out reports-out --max-minutes 300
+      - name: encrypt data
+        if: always()
+        run: |
+          if [ -d data-us ] && [ -n "$TIINGO_API_KEY" ]; then
+            tar czf - data-us | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:TIINGO_API_KEY -out data-us.tar.enc
+          fi
+      - name: save data cache
+        if: always() && hashFiles('data-us.tar.enc') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: data-us.tar.enc
+          key: us-v1-${{ github.run_id }}
+      - name: backtest
+        run: node scripts/us/backtest.mjs --data data-us --out reports-out
+      - name: publish reports
+        if: always()
+        run: |
+          git fetch origin reports:reports 2>/dev/null && git worktree add rep reports || git worktree add --orphan -b reports rep
+          mkdir -p rep/reports
+          cp reports-out/*.json rep/reports/ 2>/dev/null || true
+          cd rep
+          git config user.name "kabunavi-bot"
+          git config user.email "kabunavi-bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "us reports $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
+          for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
