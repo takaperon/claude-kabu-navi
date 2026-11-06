@@ -1,0 +1,1068 @@
+{
+  "ok": true,
+  "generatedAt": "2026-11-06T14:53:17.904Z",
+  "universe": 247,
+  "days": 1468,
+  "periods": {
+    "train": [
+      "2021-02-17",
+      "2024-07-03"
+    ],
+    "test": [
+      "2024-07-05",
+      "2026-11-05"
+    ]
+  },
+  "events": {
+    "eps_up": 0,
+    "eps_up_rev": 0,
+    "eps_down": 0,
+    "earn_all": 0,
+    "div_up": 634
+  },
+  "secCoverage": {
+    "withEarnings": 0,
+    "withEps": 0
+  },
+  "spy": {
+    "trainPct": 47.9,
+    "testPct": 35.6
+  },
+  "randomBase": {
+    "name": "無作為に10銘柄を10日ごとに入れ替え×100回",
+    "train": {
+      "avg": 13.7,
+      "p90": 40.3
+    },
+    "test": {
+      "avg": 28.1,
+      "p90": 50.5
+    }
+  },
+  "results": {
+    "earn_all": {
+      "name": "比較用：決算発表すべて",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        }
+      }
+    },
+    "eps_up": {
+      "name": "EPSが前年同期比+20%以上",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        }
+      }
+    },
+    "eps_up_trend": {
+      "name": "EPS+20%以上＋株価が50日線より上",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        }
+      }
+    },
+    "eps_up_rev": {
+      "name": "EPS+20%以上＋売上+10%以上",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        }
+      }
+    },
+    "eps_up_rev_gap": {
+      "name": "EPS+20%・売上+10%＋朝高く始まった時だけ",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        }
+      }
+    },
+    "eps_up_gap": {
+      "name": "EPS+20%以上＋朝高く始まった時だけ",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        }
+      }
+    },
+    "eps_down": {
+      "name": "参考：EPSが前年同期比-20%以下",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 0
+          },
+          "test": {
+            "n": 0
+          },
+          "portfolioTrain": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2021": 0,
+              "2022": 0,
+              "2023": 0,
+              "2024": 0
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 0,
+            "maxDDPct": 0,
+            "trades": 0,
+            "yearly": {
+              "2024": 0,
+              "2025": 0,
+              "2026": 0
+            }
+          }
+        }
+      }
+    },
+    "div_up": {
+      "name": "増配（権利落ち日に確認）",
+      "exits": {
+        "dt": {
+          "name": "デイトレ（寄りで買って引けで売る）",
+          "train": {
+            "n": 397,
+            "winRate": 0.4433,
+            "avgRet": -0.0018,
+            "profitFactor": 0.76
+          },
+          "test": {
+            "n": 237,
+            "winRate": 0.4219,
+            "avgRet": -0.002,
+            "profitFactor": 0.75
+          },
+          "portfolioTrain": {
+            "returnPct": -7.1,
+            "maxDDPct": 7.2,
+            "trades": 397,
+            "yearly": {
+              "2021": -2.1,
+              "2022": -0.6,
+              "2023": -2.7,
+              "2024": -1.9
+            }
+          },
+          "portfolioTest": {
+            "returnPct": -4.6,
+            "maxDDPct": 5.3,
+            "trades": 237,
+            "yearly": {
+              "2024": -2.3,
+              "2025": -2.3,
+              "2026": -0.1
+            }
+          }
+        },
+        "hold5": {
+          "name": "5日保有",
+          "train": {
+            "n": 397,
+            "winRate": 0.5139,
+            "avgRet": -0.0005,
+            "profitFactor": 0.97
+          },
+          "test": {
+            "n": 234,
+            "winRate": 0.4701,
+            "avgRet": -0.0012,
+            "profitFactor": 0.92
+          },
+          "portfolioTrain": {
+            "returnPct": -3.2,
+            "maxDDPct": 8.8,
+            "trades": 394,
+            "yearly": {
+              "2021": -2.7,
+              "2022": 4.2,
+              "2023": -2.8,
+              "2024": -1.7
+            }
+          },
+          "portfolioTest": {
+            "returnPct": -2.7,
+            "maxDDPct": 8.6,
+            "trades": 225,
+            "yearly": {
+              "2024": -1,
+              "2025": 4,
+              "2026": -5.5
+            }
+          }
+        },
+        "hold10": {
+          "name": "10日保有",
+          "train": {
+            "n": 397,
+            "winRate": 0.5491,
+            "avgRet": 0.0053,
+            "profitFactor": 1.3
+          },
+          "test": {
+            "n": 233,
+            "winRate": 0.5365,
+            "avgRet": 0.0007,
+            "profitFactor": 1.03
+          },
+          "portfolioTrain": {
+            "returnPct": 22.2,
+            "maxDDPct": 12.1,
+            "trades": 368,
+            "yearly": {
+              "2021": 6.5,
+              "2022": 2.3,
+              "2023": 11.8,
+              "2024": 0.3
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 1.4,
+            "maxDDPct": 7.2,
+            "trades": 210,
+            "yearly": {
+              "2024": -2.3,
+              "2025": 6.3,
+              "2026": -2.4
+            }
+          }
+        },
+        "hold20": {
+          "name": "20日保有",
+          "train": {
+            "n": 397,
+            "winRate": 0.5617,
+            "avgRet": 0.0116,
+            "profitFactor": 1.5
+          },
+          "test": {
+            "n": 233,
+            "winRate": 0.5021,
+            "avgRet": 0.0044,
+            "profitFactor": 1.16
+          },
+          "portfolioTrain": {
+            "returnPct": 38.5,
+            "maxDDPct": 15.5,
+            "trades": 291,
+            "yearly": {
+              "2021": 16.6,
+              "2022": 5.5,
+              "2023": 12.3,
+              "2024": 0.3
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 22.2,
+            "maxDDPct": 11.1,
+            "trades": 183,
+            "yearly": {
+              "2024": -3.6,
+              "2025": 16.3,
+              "2026": 9
+            }
+          }
+        }
+      }
+    }
+  }
+}
