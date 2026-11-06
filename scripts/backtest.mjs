@@ -174,6 +174,10 @@ const EVENT_STRATEGIES = {
   ev_div_up: { name: '配当予想の引き上げ（+5%以上）', events: () => EVENTS.div_up },
   ev_earn_down: { name: '参考：業績予想の下方修正（買わない側の確認用）', events: () => EVENTS.earn_down },
   // 夜の反応で選別：翌朝の寄り付きが前日終値より上の時だけ買う（寄り前の気配で判断できる前提）
+  ev_earn_up_trend_mkt: { name: '上方修正＋上向き＋市場全体が25日線より上', events: () => EVENTS.earn_up.filter((e) => aboveMA25(e.i, e.d) && MKTI[e.d] > mktMA(e.d, 25)) },
+  ev_earn_up_trend_nodrop: { name: '上方修正＋上向き＋前日に市場が-1.5%以上下げていない', events: () => EVENTS.earn_up.filter((e) => aboveMA25(e.i, e.d) && MKT[e.d] > -0.015) },
+  ev_div_up_mkt: { name: '増配＋市場全体が25日線より上', events: () => EVENTS.div_up.filter((e) => MKTI[e.d] > mktMA(e.d, 25)) },
+  ev_div_up_nodrop: { name: '増配＋前日に市場が-1.5%以上下げていない', events: () => EVENTS.div_up.filter((e) => MKT[e.d] > -0.015) },
   ev_div_up_gap: { name: '増配＋寄り付きが前日終値より上', events: () => EVENTS.div_up.filter((e) => at(O, e.i, e.d + 1) > at(C, e.i, e.d)) },
   ev_earn_up_trend_gap: { name: '上方修正＋上向き＋寄り付きが前日終値より上', events: () => EVENTS.earn_up.filter((e) => aboveMA25(e.i, e.d) && at(O, e.i, e.d + 1) > at(C, e.i, e.d)) },
 };
@@ -274,6 +278,38 @@ function portfolio(signalsByDay, ex, fromD, toD, caps = null) {
 // 流動性条件は一度だけ計算
 const elig = new Uint8Array(N * D);
 for (let i = 0; i < N; i++) for (let d = 20; d < D; d++) elig[i * D + d] = eligible(i, d) ? 1 : 0;
+
+// ---------- 市場全体（流動性条件を満たす銘柄の等金額平均）----------
+const MKT = new Float64Array(D).fill(0); // 日次リターン
+const MKTI = new Float64Array(D).fill(1); // 指数（初日=1）
+for (let d = 1; d < D; d++) {
+  let s = 0, n = 0;
+  for (let i = 0; i < N; i++) {
+    if (!elig[i * D + d - 1]) continue;
+    const r = at(C, i, d) / at(C, i, d - 1) - 1;
+    if (Number.isFinite(r) && Math.abs(r) < 0.5) { s += r; n++; }
+  }
+  MKT[d] = n ? s / n : 0;
+  MKTI[d] = MKTI[d - 1] * (1 + MKT[d]);
+}
+const mktMA = (d, n) => { if (d < n - 1) return NaN; let s = 0; for (let k = d - n + 1; k <= d; k++) s += MKTI[k]; return s / n; };
+// 大きく下げた日のあと、市場全体はどうなったか（翌日・5日後・20日後）
+const afterDrops = (() => {
+  const out = {};
+  for (const [name, lo, hi] of [['-1〜-2%', -0.02, -0.01], ['-2〜-3%', -0.03, -0.02], ['-3%以上', -1, -0.03], ['比較：全営業日', -1, 1]]) {
+    const acc = { 1: [], 5: [], 20: [] };
+    let cnt = 0;
+    for (let d = 1; d < D; d++) {
+      if (!(MKT[d] >= lo && MKT[d] < hi)) continue;
+      cnt++;
+      for (const h of [1, 5, 20]) if (d + h < D) acc[h].push(MKTI[d + h] / MKTI[d] - 1);
+    }
+    const st = (a) => a.length ? { avgPct: Math.round((a.reduce((x, y) => x + y, 0) / a.length) * 10000) / 100, upRatePct: Math.round((a.filter((x) => x > 0).length / a.length) * 1000) / 10, worstPct: Math.round(Math.min(...a) * 1000) / 10 } : null;
+    out[name] = { days: cnt, next1: st(acc[1]), next5: st(acc[5]), next20: st(acc[20]) };
+  }
+  return out;
+})();
+
 
 const results = {};
 const BYDAY = {};
@@ -563,6 +599,7 @@ const out = {
   daytrade,
   dtBaseline,
   dayMoveBuckets,
+  afterDrops,
 };
 fs.writeFileSync(path.join(OUT, 'backtest.json'), JSON.stringify(out, null, 2));
 console.log(`backtest ok: days=${D} universe=${N}`);
