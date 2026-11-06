@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-06T03:37:33.530Z",
+  "startedAt": "2026-11-06T06:11:22.333Z",
   "keyPresent": true,
   "fetchedDays": 0,
   "rowsFetched": 0,
@@ -11,7 +11,7 @@
   "finsFetchedDays": 5,
   "finsRows": 347,
   "requestCount": 8,
-  "finishedAt": "2026-11-06T03:37:41.900Z",
+  "finishedAt": "2026-11-06T06:11:30.333Z",
   "storedDays": 1220,
   "storedFrom": "2021-11-08",
   "storedTo": "2026-11-05",
