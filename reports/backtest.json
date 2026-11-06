@@ -1,17 +1,17 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-06T06:13:25.769Z",
-  "days": 1220,
+  "generatedAt": "2026-11-06T09:53:16.317Z",
+  "days": 1221,
   "universe": 3703,
   "fins": {
     "days": 1827,
-    "rows": 94256,
+    "rows": 94546,
     "events": {
-      "earn_up": 5699,
-      "earn_down": 4065,
-      "guidance": 4147,
-      "div_up": 9474,
-      "results": 70052
+      "earn_up": 5723,
+      "earn_down": 4072,
+      "guidance": 4149,
+      "div_up": 9495,
+      "results": 70208
     }
   },
   "periods": {
@@ -23,7 +23,7 @@
     "test": {
       "name": "テスト期間",
       "from": "2024-11-01",
-      "to": "2026-11-05"
+      "to": "2026-11-06"
     }
   },
   "rules": {
@@ -47,11 +47,11 @@
             "profitFactor": 0.89
           },
           "test": {
-            "n": 3881,
-            "winRate": 0.4501,
-            "avgRet": -0.0026,
-            "medRet": -0.005,
-            "profitFactor": 0.91
+            "n": 3925,
+            "winRate": 0.4487,
+            "avgRet": -0.003,
+            "medRet": -0.0052,
+            "profitFactor": 0.9
           },
           "portfolioTrain": {
             "final": 336863,
@@ -66,14 +66,14 @@
             }
           },
           "portfolioTest": {
-            "final": 611026,
-            "returnPct": -38.9,
-            "maxDDPct": 44.2,
-            "trades": 954,
+            "final": 617911,
+            "returnPct": -38.2,
+            "maxDDPct": 44,
+            "trades": 956,
             "yearly": {
               "2024": 7.1,
               "2025": -29.3,
-              "2026": -19.3
+              "2026": -18.4
             }
           }
         },
@@ -87,10 +87,10 @@
             "profitFactor": 1.07
           },
           "test": {
-            "n": 3858,
-            "winRate": 0.4762,
-            "avgRet": 0.001,
-            "medRet": -0.0038,
+            "n": 3865,
+            "winRate": 0.4758,
+            "avgRet": 0.0009,
+            "medRet": -0.0039,
             "profitFactor": 1.03
           },
           "portfolioTrain": {
@@ -127,10 +127,10 @@
             "profitFactor": 1.05
           },
           "test": {
-            "n": 3858,
-            "winRate": 0.4629,
+            "n": 3865,
+            "winRate": 0.4626,
             "avgRet": 0.0013,
-            "medRet": -0.0071,
+            "medRet": -0.0072,
             "profitFactor": 1.04
           },
           "portfolioTrain": {
@@ -146,14 +146,14 @@
             }
           },
           "portfolioTest": {
-            "final": 871632,
-            "returnPct": -12.8,
+            "final": 851841,
+            "returnPct": -14.8,
             "maxDDPct": 23.2,
-            "trades": 705,
+            "trades": 708,
             "yearly": {
               "2024": 6.3,
               "2025": -7.8,
-              "2026": -11.1
+              "2026": -13.1
             }
           }
         }
@@ -172,8 +172,8 @@
             "profitFactor": 0.75
           },
           "test": {
-            "n": 20745,
-            "winRate": 0.4528,
+            "n": 20763,
+            "winRate": 0.4527,
             "avgRet": -0.0025,
             "medRet": -0.0057,
             "profitFactor": 0.92
@@ -212,11 +212,11 @@
             "profitFactor": 0.83
           },
           "test": {
-            "n": 20649,
-            "winRate": 0.4728,
-            "avgRet": 0.001,
-            "medRet": -0.0046,
-            "profitFactor": 1.03
+            "n": 20676,
+            "winRate": 0.4723,
+            "avgRet": 0.0009,
+            "medRet": -0.0047,
+            "profitFactor": 1.02
           },
           "portfolioTrain": {
             "final": 237759,
@@ -252,10 +252,10 @@
             "profitFactor": 0.86
           },
           "test": {
-            "n": 20649,
-            "winRate": 0.4543,
-            "avgRet": 0.0013,
-            "medRet": -0.0086,
+            "n": 20676,
+            "winRate": 0.4538,
+            "avgRet": 0.0012,
+            "medRet": -0.0087,
             "profitFactor": 1.04
           },
           "portfolioTrain": {
@@ -297,11 +297,11 @@
             "profitFactor": 1.02
           },
           "test": {
-            "n": 56054,
-            "winRate": 0.5006,
-            "avgRet": 0.0009,
+            "n": 56214,
+            "winRate": 0.5001,
+            "avgRet": 0.0008,
             "medRet": 0,
-            "profitFactor": 1.05
+            "profitFactor": 1.04
           },
           "portfolioTrain": {
             "final": 1168594,
@@ -316,14 +316,14 @@
             }
           },
           "portfolioTest": {
-            "final": 831636,
-            "returnPct": -16.8,
-            "maxDDPct": 24.8,
-            "trades": 964,
+            "final": 820242,
+            "returnPct": -18,
+            "maxDDPct": 24.9,
+            "trades": 966,
             "yearly": {
               "2024": -3.1,
               "2025": -7.3,
-              "2026": -7.3
+              "2026": -8.6
             }
           }
         },
@@ -337,11 +337,11 @@
             "profitFactor": 1
           },
           "test": {
-            "n": 55569,
-            "winRate": 0.5183,
-            "avgRet": 0.0056,
-            "medRet": 0.0025,
-            "profitFactor": 1.21
+            "n": 55676,
+            "winRate": 0.5177,
+            "avgRet": 0.0055,
+            "medRet": 0.0024,
+            "profitFactor": 1.2
           },
           "portfolioTrain": {
             "final": 1397036,
@@ -377,10 +377,10 @@
             "profitFactor": 1.01
           },
           "test": {
-            "n": 55569,
-            "winRate": 0.5004,
-            "avgRet": 0.0035,
-            "medRet": 0.0001,
+            "n": 55676,
+            "winRate": 0.4998,
+            "avgRet": 0.0034,
+            "medRet": 0,
             "profitFactor": 1.13
           },
           "portfolioTrain": {
@@ -396,14 +396,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1095231,
-            "returnPct": 9.5,
+            "final": 1078274,
+            "returnPct": 7.8,
             "maxDDPct": 24.2,
-            "trades": 594,
+            "trades": 597,
             "yearly": {
               "2024": -3.1,
               "2025": 10.4,
-              "2026": 2.4
+              "2026": 0.8
             }
           }
         }
@@ -422,11 +422,11 @@
             "profitFactor": 1.36
           },
           "test": {
-            "n": 26717,
-            "winRate": 0.4913,
-            "avgRet": 0.0058,
+            "n": 26768,
+            "winRate": 0.4905,
+            "avgRet": 0.0056,
             "medRet": -0.002,
-            "profitFactor": 1.19
+            "profitFactor": 1.18
           },
           "portfolioTrain": {
             "final": 213683,
@@ -462,11 +462,11 @@
             "profitFactor": 1.39
           },
           "test": {
-            "n": 26254,
-            "winRate": 0.4833,
-            "avgRet": 0.0093,
-            "medRet": -0.0039,
-            "profitFactor": 1.22
+            "n": 26334,
+            "winRate": 0.482,
+            "avgRet": 0.0088,
+            "medRet": -0.0042,
+            "profitFactor": 1.21
           },
           "portfolioTrain": {
             "final": 269441,
@@ -502,11 +502,11 @@
             "profitFactor": 1.33
           },
           "test": {
-            "n": 26254,
-            "winRate": 0.4356,
-            "avgRet": 0.0031,
-            "medRet": -0.0216,
-            "profitFactor": 1.08
+            "n": 26334,
+            "winRate": 0.4348,
+            "avgRet": 0.003,
+            "medRet": -0.0218,
+            "profitFactor": 1.07
           },
           "portfolioTrain": {
             "final": 404469,
@@ -521,14 +521,14 @@
             }
           },
           "portfolioTest": {
-            "final": 851398,
-            "returnPct": -14.9,
+            "final": 806819,
+            "returnPct": -19.3,
             "maxDDPct": 41.3,
-            "trades": 1008,
+            "trades": 1015,
             "yearly": {
               "2024": 5.8,
               "2025": -3.6,
-              "2026": -16.5
+              "2026": -20.9
             }
           }
         }
@@ -547,33 +547,33 @@
             "profitFactor": 0.97
           },
           "test": {
-            "n": 151357,
-            "winRate": 0.486,
-            "avgRet": 0.0001,
-            "medRet": -0.0012,
-            "profitFactor": 1.01
+            "n": 153031,
+            "winRate": 0.4829,
+            "avgRet": -0.0006,
+            "medRet": -0.0016,
+            "profitFactor": 0.97
           },
           "portfolioTrain": {
-            "final": 729593,
-            "returnPct": -27,
-            "maxDDPct": 42.8,
+            "final": 681371,
+            "returnPct": -31.9,
+            "maxDDPct": 44.8,
             "trades": 1410,
             "yearly": {
-              "2021": 1.7,
-              "2022": -19.4,
-              "2023": 8.5,
-              "2024": -18
+              "2021": 3,
+              "2022": -18,
+              "2023": -16.6,
+              "2024": -3.3
             }
           },
           "portfolioTest": {
-            "final": 981429,
-            "returnPct": -1.9,
-            "maxDDPct": 28.4,
-            "trades": 960,
+            "final": 1003060,
+            "returnPct": 0.3,
+            "maxDDPct": 19.5,
+            "trades": 970,
             "yearly": {
-              "2024": -4.9,
-              "2025": 34.5,
-              "2026": -23.3
+              "2024": -10.2,
+              "2025": 22,
+              "2026": -8.4
             }
           }
         },
@@ -587,33 +587,33 @@
             "profitFactor": 1.03
           },
           "test": {
-            "n": 149708,
-            "winRate": 0.5053,
-            "avgRet": 0.0039,
-            "medRet": 0.0007,
-            "profitFactor": 1.15
+            "n": 151357,
+            "winRate": 0.5013,
+            "avgRet": 0.0031,
+            "medRet": 0.0002,
+            "profitFactor": 1.12
           },
           "portfolioTrain": {
-            "final": 988238,
-            "returnPct": -1.2,
-            "maxDDPct": 36.5,
+            "final": 1202812,
+            "returnPct": 20.3,
+            "maxDDPct": 21.7,
             "trades": 710,
             "yearly": {
-              "2021": 1.1,
-              "2022": 3.8,
-              "2023": -1.9,
-              "2024": -4.1
+              "2021": 4.8,
+              "2022": 11.8,
+              "2023": -2.8,
+              "2024": 5.5
             }
           },
           "portfolioTest": {
-            "final": 993170,
-            "returnPct": -0.7,
-            "maxDDPct": 24.4,
+            "final": 1097591,
+            "returnPct": 9.8,
+            "maxDDPct": 25.3,
             "trades": 480,
             "yearly": {
-              "2024": -2.2,
-              "2025": 9.2,
-              "2026": -7
+              "2024": -12.2,
+              "2025": 20.9,
+              "2026": 3.3
             }
           }
         },
@@ -627,33 +627,33 @@
             "profitFactor": 1
           },
           "test": {
-            "n": 149708,
-            "winRate": 0.4932,
-            "avgRet": 0.0031,
-            "medRet": -0.0009,
-            "profitFactor": 1.12
+            "n": 151357,
+            "winRate": 0.4898,
+            "avgRet": 0.0026,
+            "medRet": -0.0015,
+            "profitFactor": 1.1
           },
           "portfolioTrain": {
-            "final": 847157,
-            "returnPct": -15.3,
-            "maxDDPct": 31.4,
-            "trades": 751,
+            "final": 1262683,
+            "returnPct": 26.3,
+            "maxDDPct": 18.8,
+            "trades": 748,
             "yearly": {
-              "2021": 1.1,
-              "2022": -17.1,
-              "2023": 20.5,
-              "2024": -16.1
+              "2021": 3.4,
+              "2022": 2.8,
+              "2023": -0.2,
+              "2024": 19
             }
           },
           "portfolioTest": {
-            "final": 1150732,
-            "returnPct": 15.1,
-            "maxDDPct": 13.6,
-            "trades": 515,
+            "final": 1113006,
+            "returnPct": 11.3,
+            "maxDDPct": 20.5,
+            "trades": 514,
             "yearly": {
-              "2024": -0.7,
-              "2025": 17.9,
-              "2026": -1.6
+              "2024": -9.6,
+              "2025": 40.6,
+              "2026": -12.4
             }
           }
         }
@@ -672,11 +672,11 @@
             "profitFactor": 1.18
           },
           "test": {
-            "n": 12298,
-            "winRate": 0.5054,
-            "avgRet": 0.0025,
-            "medRet": 0.0007,
-            "profitFactor": 1.11
+            "n": 12386,
+            "winRate": 0.5032,
+            "avgRet": 0.0021,
+            "medRet": 0.0004,
+            "profitFactor": 1.09
           },
           "portfolioTrain": {
             "final": 1131563,
@@ -691,14 +691,14 @@
             }
           },
           "portfolioTest": {
-            "final": 560890,
-            "returnPct": -43.9,
-            "maxDDPct": 51.3,
-            "trades": 845,
+            "final": 546930,
+            "returnPct": -45.3,
+            "maxDDPct": 52.6,
+            "trades": 848,
             "yearly": {
               "2024": 9.1,
               "2025": -30.9,
-              "2026": -25.6
+              "2026": -27.4
             }
           }
         },
@@ -712,11 +712,11 @@
             "profitFactor": 1.36
           },
           "test": {
-            "n": 12232,
-            "winRate": 0.5397,
-            "avgRet": 0.0099,
+            "n": 12235,
+            "winRate": 0.5396,
+            "avgRet": 0.0098,
             "medRet": 0.0059,
-            "profitFactor": 1.39
+            "profitFactor": 1.38
           },
           "portfolioTrain": {
             "final": 778707,
@@ -731,14 +731,14 @@
             }
           },
           "portfolioTest": {
-            "final": 843993,
-            "returnPct": -15.6,
+            "final": 827421,
+            "returnPct": -17.3,
             "maxDDPct": 24.8,
-            "trades": 462,
+            "trades": 464,
             "yearly": {
               "2024": -3.6,
               "2025": -6.7,
-              "2026": -6.1
+              "2026": -8
             }
           }
         },
@@ -752,10 +752,10 @@
             "profitFactor": 1.27
           },
           "test": {
-            "n": 12232,
-            "winRate": 0.5232,
-            "avgRet": 0.008,
-            "medRet": 0.0039,
+            "n": 12235,
+            "winRate": 0.5231,
+            "avgRet": 0.0079,
+            "medRet": 0.0038,
             "profitFactor": 1.33
           },
           "portfolioTrain": {
@@ -771,14 +771,14 @@
             }
           },
           "portfolioTest": {
-            "final": 747465,
-            "returnPct": -25.3,
+            "final": 732828,
+            "returnPct": -26.7,
             "maxDDPct": 34.6,
-            "trades": 569,
+            "trades": 572,
             "yearly": {
               "2024": 4.7,
               "2025": -11.2,
-              "2026": -19.6
+              "2026": -21.2
             }
           }
         }
@@ -797,11 +797,11 @@
             "profitFactor": 1.43
           },
           "test": {
-            "n": 1142,
-            "winRate": 0.5333,
-            "avgRet": 0.0091,
-            "medRet": 0.0049,
-            "profitFactor": 1.33
+            "n": 1157,
+            "winRate": 0.5307,
+            "avgRet": 0.008,
+            "medRet": 0.0043,
+            "profitFactor": 1.28
           },
           "portfolioTrain": {
             "final": 1340350,
@@ -816,14 +816,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1382956,
-            "returnPct": 38.3,
+            "final": 1364691,
+            "returnPct": 36.5,
             "maxDDPct": 25.5,
-            "trades": 492,
+            "trades": 494,
             "yearly": {
               "2024": 9.2,
               "2025": 17.3,
-              "2026": 8
+              "2026": 6.6
             }
           }
         },
@@ -837,11 +837,11 @@
             "profitFactor": 1.54
           },
           "test": {
-            "n": 1123,
-            "winRate": 0.5539,
-            "avgRet": 0.0167,
-            "medRet": 0.0108,
-            "profitFactor": 1.5
+            "n": 1125,
+            "winRate": 0.5529,
+            "avgRet": 0.0164,
+            "medRet": 0.0107,
+            "profitFactor": 1.49
           },
           "portfolioTrain": {
             "final": 1051647,
@@ -877,11 +877,11 @@
             "profitFactor": 1.39
           },
           "test": {
-            "n": 1123,
-            "winRate": 0.5325,
-            "avgRet": 0.0135,
-            "medRet": 0.0079,
-            "profitFactor": 1.46
+            "n": 1125,
+            "winRate": 0.5316,
+            "avgRet": 0.0133,
+            "medRet": 0.0074,
+            "profitFactor": 1.45
           },
           "portfolioTrain": {
             "final": 1137362,
@@ -896,14 +896,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1646633,
-            "returnPct": 64.7,
+            "final": 1618808,
+            "returnPct": 61.9,
             "maxDDPct": 10.6,
-            "trades": 405,
+            "trades": 407,
             "yearly": {
               "2024": 10.1,
               "2025": 25.8,
-              "2026": 18.8
+              "2026": 16.8
             }
           }
         }
@@ -922,11 +922,11 @@
             "profitFactor": 1.5
           },
           "test": {
-            "n": 811,
-            "winRate": 0.5573,
-            "avgRet": 0.0141,
+            "n": 816,
+            "winRate": 0.5588,
+            "avgRet": 0.0142,
             "medRet": 0.0084,
-            "profitFactor": 1.56
+            "profitFactor": 1.57
           },
           "portfolioTrain": {
             "final": 1476515,
@@ -941,14 +941,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1543947,
-            "returnPct": 54.4,
+            "final": 1560462,
+            "returnPct": 56,
             "maxDDPct": 15.5,
-            "trades": 386,
+            "trades": 390,
             "yearly": {
               "2024": 10.3,
               "2025": 16,
-              "2026": 20.7
+              "2026": 22
             }
           }
         },
@@ -1087,10 +1087,10 @@
             "profitFactor": 1.05
           },
           "test": {
-            "n": 600,
-            "winRate": 0.4533,
-            "avgRet": 0.0019,
-            "medRet": -0.0077,
+            "n": 601,
+            "winRate": 0.4526,
+            "avgRet": 0.0017,
+            "medRet": -0.0082,
             "profitFactor": 1.05
           },
           "portfolioTrain": {
@@ -1106,14 +1106,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1163647,
-            "returnPct": 16.4,
+            "final": 1153836,
+            "returnPct": 15.4,
             "maxDDPct": 15.3,
-            "trades": 237,
+            "trades": 238,
             "yearly": {
               "2024": 4.8,
               "2025": 2.8,
-              "2026": 8
+              "2026": 7.1
             }
           }
         },
@@ -1127,11 +1127,11 @@
             "profitFactor": 1.16
           },
           "test": {
-            "n": 600,
-            "winRate": 0.4067,
-            "avgRet": -0.0033,
-            "medRet": -0.0148,
-            "profitFactor": 0.91
+            "n": 601,
+            "winRate": 0.406,
+            "avgRet": -0.0035,
+            "medRet": -0.0158,
+            "profitFactor": 0.9
           },
           "portfolioTrain": {
             "final": 1154424,
@@ -1146,14 +1146,14 @@
             }
           },
           "portfolioTest": {
-            "final": 998751,
-            "returnPct": -0.1,
+            "final": 990670,
+            "returnPct": -0.9,
             "maxDDPct": 14,
-            "trades": 260,
+            "trades": 261,
             "yearly": {
               "2024": -1.2,
               "2025": 4.8,
-              "2026": -3.6
+              "2026": -4.4
             }
           }
         }
@@ -1172,11 +1172,11 @@
             "profitFactor": 1.63
           },
           "test": {
-            "n": 2266,
-            "winRate": 0.5353,
-            "avgRet": 0.0064,
-            "medRet": 0.004,
-            "profitFactor": 1.3
+            "n": 2279,
+            "winRate": 0.534,
+            "avgRet": 0.0058,
+            "medRet": 0.0039,
+            "profitFactor": 1.27
           },
           "portfolioTrain": {
             "final": 2078832,
@@ -1191,14 +1191,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1712689,
-            "returnPct": 71.3,
+            "final": 1690997,
+            "returnPct": 69.1,
             "maxDDPct": 12.2,
-            "trades": 616,
+            "trades": 618,
             "yearly": {
               "2024": 16.2,
               "2025": 9.2,
-              "2026": 35
+              "2026": 33.3
             }
           }
         },
@@ -1212,11 +1212,11 @@
             "profitFactor": 1.66
           },
           "test": {
-            "n": 2243,
-            "winRate": 0.5484,
-            "avgRet": 0.0126,
-            "medRet": 0.0083,
-            "profitFactor": 1.51
+            "n": 2245,
+            "winRate": 0.5479,
+            "avgRet": 0.0125,
+            "medRet": 0.0082,
+            "profitFactor": 1.5
           },
           "portfolioTrain": {
             "final": 2256179,
@@ -1231,14 +1231,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1422584,
-            "returnPct": 42.3,
+            "final": 1388112,
+            "returnPct": 38.8,
             "maxDDPct": 13.3,
-            "trades": 391,
+            "trades": 393,
             "yearly": {
               "2024": 11.6,
               "2025": 3.1,
-              "2026": 23.7
+              "2026": 20.7
             }
           }
         },
@@ -1252,10 +1252,10 @@
             "profitFactor": 1.54
           },
           "test": {
-            "n": 2243,
-            "winRate": 0.5256,
-            "avgRet": 0.01,
-            "medRet": 0.0052,
+            "n": 2245,
+            "winRate": 0.5252,
+            "avgRet": 0.0099,
+            "medRet": 0.0049,
             "profitFactor": 1.4
           },
           "portfolioTrain": {
@@ -1271,14 +1271,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1659967,
-            "returnPct": 66,
+            "final": 1632195,
+            "returnPct": 63.2,
             "maxDDPct": 11.5,
-            "trades": 478,
+            "trades": 480,
             "yearly": {
               "2024": 10.2,
               "2025": 15.1,
-              "2026": 31
+              "2026": 28.8
             }
           }
         }
@@ -1297,11 +1297,11 @@
             "profitFactor": 1.33
           },
           "test": {
-            "n": 514,
-            "winRate": 0.4669,
-            "avgRet": -0.0046,
-            "medRet": -0.0033,
-            "profitFactor": 0.83
+            "n": 517,
+            "winRate": 0.4642,
+            "avgRet": -0.0049,
+            "medRet": -0.0034,
+            "profitFactor": 0.82
           },
           "portfolioTrain": {
             "final": 1457374,
@@ -1316,14 +1316,14 @@
             }
           },
           "portfolioTest": {
-            "final": 806869,
-            "returnPct": -19.3,
+            "final": 793351,
+            "returnPct": -20.7,
             "maxDDPct": 27.6,
-            "trades": 321,
+            "trades": 324,
             "yearly": {
               "2024": 2.4,
               "2025": -10,
-              "2026": -12.4
+              "2026": -13.9
             }
           }
         },
@@ -1547,10 +1547,10 @@
             "profitFactor": 1.52
           },
           "test": {
-            "n": 775,
-            "winRate": 0.5561,
+            "n": 780,
+            "winRate": 0.5577,
             "avgRet": 0.0136,
-            "medRet": 0.008,
+            "medRet": 0.0083,
             "profitFactor": 1.54
           },
           "portfolioTrain": {
@@ -1566,14 +1566,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1461126,
-            "returnPct": 46.1,
+            "final": 1476755,
+            "returnPct": 47.7,
             "maxDDPct": 15.5,
-            "trades": 376,
+            "trades": 380,
             "yearly": {
               "2024": 10.3,
               "2025": 12.1,
-              "2026": 18.2
+              "2026": 19.5
             }
           }
         },
@@ -1797,11 +1797,11 @@
             "profitFactor": 1.59
           },
           "test": {
-            "n": 2122,
-            "winRate": 0.5349,
-            "avgRet": 0.0061,
+            "n": 2135,
+            "winRate": 0.5335,
+            "avgRet": 0.0055,
             "medRet": 0.0039,
-            "profitFactor": 1.28
+            "profitFactor": 1.25
           },
           "portfolioTrain": {
             "final": 1789036,
@@ -1816,14 +1816,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1543758,
-            "returnPct": 54.4,
+            "final": 1524016,
+            "returnPct": 52.4,
             "maxDDPct": 15.1,
-            "trades": 597,
+            "trades": 599,
             "yearly": {
               "2024": 16.2,
               "2025": 5,
-              "2026": 26.4
+              "2026": 24.8
             }
           }
         },
@@ -1837,11 +1837,11 @@
             "profitFactor": 1.6
           },
           "test": {
-            "n": 2099,
-            "winRate": 0.5441,
-            "avgRet": 0.0114,
+            "n": 2101,
+            "winRate": 0.5436,
+            "avgRet": 0.0113,
             "medRet": 0.0072,
-            "profitFactor": 1.45
+            "profitFactor": 1.44
           },
           "portfolioTrain": {
             "final": 1929141,
@@ -1856,14 +1856,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1299816,
-            "returnPct": 30,
+            "final": 1268554,
+            "returnPct": 26.9,
             "maxDDPct": 14.7,
-            "trades": 378,
+            "trades": 380,
             "yearly": {
               "2024": 11.6,
               "2025": -0.3,
-              "2026": 16.9
+              "2026": 14.1
             }
           }
         },
@@ -1877,9 +1877,9 @@
             "profitFactor": 1.5
           },
           "test": {
-            "n": 2099,
-            "winRate": 0.5231,
-            "avgRet": 0.0094,
+            "n": 2101,
+            "winRate": 0.5226,
+            "avgRet": 0.0093,
             "medRet": 0.0046,
             "profitFactor": 1.37
           },
@@ -1896,14 +1896,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1560780,
-            "returnPct": 56.1,
+            "final": 1534610,
+            "returnPct": 53.5,
             "maxDDPct": 11.2,
-            "trades": 457,
+            "trades": 459,
             "yearly": {
               "2024": 10.2,
               "2025": 15.9,
-              "2026": 22.2
+              "2026": 20.2
             }
           }
         }
@@ -1922,11 +1922,11 @@
             "profitFactor": 1.87
           },
           "test": {
-            "n": 1469,
-            "winRate": 0.5432,
-            "avgRet": 0.0088,
+            "n": 1476,
+            "winRate": 0.5427,
+            "avgRet": 0.0086,
             "medRet": 0.005,
-            "profitFactor": 1.43
+            "profitFactor": 1.42
           },
           "portfolioTrain": {
             "final": 2383849,
@@ -1941,14 +1941,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1558116,
-            "returnPct": 55.8,
+            "final": 1571459,
+            "returnPct": 57.1,
             "maxDDPct": 13.3,
-            "trades": 524,
+            "trades": 525,
             "yearly": {
               "2024": 14.7,
               "2025": 20.3,
-              "2026": 12.9
+              "2026": 13.8
             }
           }
         },
@@ -1962,9 +1962,9 @@
             "profitFactor": 1.85
           },
           "test": {
-            "n": 1454,
-            "winRate": 0.5523,
-            "avgRet": 0.0146,
+            "n": 1455,
+            "winRate": 0.5519,
+            "avgRet": 0.0145,
             "medRet": 0.0112,
             "profitFactor": 1.57
           },
@@ -2002,11 +2002,11 @@
             "profitFactor": 1.72
           },
           "test": {
-            "n": 1454,
-            "winRate": 0.5344,
-            "avgRet": 0.012,
+            "n": 1455,
+            "winRate": 0.534,
+            "avgRet": 0.0119,
             "medRet": 0.0082,
-            "profitFactor": 1.49
+            "profitFactor": 1.48
           },
           "portfolioTrain": {
             "final": 2461657,
@@ -2021,14 +2021,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1613998,
-            "returnPct": 61.4,
+            "final": 1599862,
+            "returnPct": 60,
             "maxDDPct": 12.2,
-            "trades": 418,
+            "trades": 419,
             "yearly": {
               "2024": 10.7,
               "2025": 27.7,
-              "2026": 14.2
+              "2026": 13.2
             }
           }
         }
@@ -2047,11 +2047,11 @@
             "profitFactor": 1.76
           },
           "test": {
-            "n": 582,
-            "winRate": 0.5636,
+            "n": 587,
+            "winRate": 0.5656,
             "avgRet": 0.0175,
             "medRet": 0.0085,
-            "profitFactor": 1.7
+            "profitFactor": 1.71
           },
           "portfolioTrain": {
             "final": 1763681,
@@ -2066,14 +2066,14 @@
             }
           },
           "portfolioTest": {
-            "final": 1841470,
-            "returnPct": 84.1,
+            "final": 1862419,
+            "returnPct": 86.2,
             "maxDDPct": 13.7,
-            "trades": 308,
+            "trades": 313,
             "yearly": {
               "2024": 20.9,
               "2025": 12.2,
-              "2026": 35.8
+              "2026": 37.4
             }
           }
         },
@@ -2176,14 +2176,14 @@
         }
       },
       "portfolioTest": {
-        "final": 1261846,
-        "returnPct": 26.2,
+        "final": 1245961,
+        "returnPct": 24.6,
         "maxDDPct": 17.5,
-        "trades": 528,
+        "trades": 530,
         "yearly": {
           "2024": 12.6,
           "2025": 0.3,
-          "2026": 11.7
+          "2026": 10.3
         }
       }
     },
@@ -2202,14 +2202,14 @@
         }
       },
       "portfolioTest": {
-        "final": 1275970,
-        "returnPct": 27.6,
+        "final": 1225848,
+        "returnPct": 22.6,
         "maxDDPct": 21.2,
-        "trades": 557,
+        "trades": 559,
         "yearly": {
           "2024": 11.3,
           "2025": 6.3,
-          "2026": 7.8
+          "2026": 3.6
         }
       }
     },
@@ -2228,14 +2228,14 @@
         }
       },
       "portfolioTest": {
-        "final": 1452586,
-        "returnPct": 45.3,
+        "final": 1451658,
+        "returnPct": 45.2,
         "maxDDPct": 20.2,
-        "trades": 419,
+        "trades": 420,
         "yearly": {
           "2024": 8.8,
           "2025": 17.3,
-          "2026": 13.8
+          "2026": 13.7
         }
       }
     },
@@ -2254,14 +2254,14 @@
         }
       },
       "portfolioTest": {
-        "final": 1316519,
-        "returnPct": 31.7,
+        "final": 1299762,
+        "returnPct": 30,
         "maxDDPct": 18.4,
-        "trades": 489,
+        "trades": 491,
         "yearly": {
           "2024": 12.6,
           "2025": -2.9,
-          "2026": 20.4
+          "2026": 18.9
         }
       }
     }
@@ -2270,34 +2270,34 @@
     "name": "無作為に10日保有×200回",
     "train": {
       "runs": 200,
-      "avgReturnPct": 4.9,
-      "p10": -17.1,
-      "p90": 31.7,
-      "avgMaxDDPct": 27.4
+      "avgReturnPct": 6.5,
+      "p10": -20.4,
+      "p90": 40.4,
+      "avgMaxDDPct": 27
     },
     "test": {
       "runs": 200,
-      "avgReturnPct": 13.9,
-      "p10": -10.8,
-      "p90": 40.2,
-      "avgMaxDDPct": 22.4
+      "avgReturnPct": 15.8,
+      "p10": -10,
+      "p90": 47.7,
+      "avgMaxDDPct": 22.5
     }
   },
   "robustness": {
     "ev_div_up|hold5": {
       "name": "配当予想の引き上げ（+5%以上） / 5日保有",
       "fullPeriod": {
-        "final": 3573623,
-        "returnPct": 257.4,
+        "final": 3528362,
+        "returnPct": 252.8,
         "maxDDPct": 25.4,
-        "trades": 1426,
+        "trades": 1428,
         "yearly": {
           "2021": -1.3,
           "2022": 52.2,
           "2023": 34,
           "2024": 20.6,
           "2025": 9.2,
-          "2026": 35
+          "2026": 33.3
         }
       },
       "slip2": {
@@ -2314,14 +2314,14 @@
           }
         },
         "test": {
-          "final": 1514747,
-          "returnPct": 51.5,
+          "final": 1494958,
+          "returnPct": 49.5,
           "maxDDPct": 14.1,
-          "trades": 616,
+          "trades": 618,
           "yearly": {
             "2024": 15.3,
             "2025": 2.9,
-            "2026": 27.6
+            "2026": 26
           }
         }
       },
@@ -2339,14 +2339,14 @@
           }
         },
         "test": {
-          "final": 1339725,
-          "returnPct": 34,
+          "final": 1321688,
+          "returnPct": 32.2,
           "maxDDPct": 18.4,
-          "trades": 616,
+          "trades": 618,
           "yearly": {
             "2024": 14.3,
             "2025": -2.9,
-            "2026": 20.7
+            "2026": 19.1
           }
         }
       }
@@ -2354,17 +2354,17 @@
     "ev_earn_up_trend|hold5": {
       "name": "上方修正＋株価が25日線より上 / 5日保有",
       "fullPeriod": {
-        "final": 2374184,
-        "returnPct": 137.4,
+        "final": 2399580,
+        "returnPct": 140,
         "maxDDPct": 18,
-        "trades": 868,
+        "trades": 872,
         "yearly": {
           "2021": -1.8,
           "2022": 22.6,
           "2023": 21.7,
           "2024": 15.7,
           "2025": 16,
-          "2026": 20.7
+          "2026": 22
         }
       },
       "slip2": {
@@ -2381,14 +2381,14 @@
           }
         },
         "test": {
-          "final": 1429765,
-          "returnPct": 43,
+          "final": 1443866,
+          "returnPct": 44.4,
           "maxDDPct": 15.9,
-          "trades": 386,
+          "trades": 390,
           "yearly": {
             "2024": 9.6,
             "2025": 11.9,
-            "2026": 16.6
+            "2026": 17.8
           }
         }
       },
@@ -2406,14 +2406,14 @@
           }
         },
         "test": {
-          "final": 1324030,
-          "returnPct": 32.4,
+          "final": 1335983,
+          "returnPct": 33.6,
           "maxDDPct": 17.1,
-          "trades": 386,
+          "trades": 390,
           "yearly": {
             "2024": 8.9,
             "2025": 8,
-            "2026": 12.7
+            "2026": 13.7
           }
         }
       }
@@ -2421,17 +2421,17 @@
     "ev_earn_up|stop": {
       "name": "業績予想の上方修正（営業利益+10%以上） / 損切り-8%／利確+15%／最大10日",
       "fullPeriod": {
-        "final": 1767823,
-        "returnPct": 76.8,
+        "final": 1737951,
+        "returnPct": 73.8,
         "maxDDPct": 33.7,
-        "trades": 965,
+        "trades": 967,
         "yearly": {
           "2021": -1.2,
           "2022": 7.6,
           "2023": 28.7,
           "2024": -13.6,
           "2025": 25.8,
-          "2026": 18.8
+          "2026": 16.8
         }
       },
       "slip2": {
@@ -2448,14 +2448,14 @@
           }
         },
         "test": {
-          "final": 1520840,
-          "returnPct": 52.1,
+          "final": 1494690,
+          "returnPct": 49.5,
           "maxDDPct": 10.8,
-          "trades": 405,
+          "trades": 407,
           "yearly": {
             "2024": 9.3,
             "2025": 19.2,
-            "2026": 16.7
+            "2026": 14.7
           }
         }
       },
@@ -2473,14 +2473,14 @@
           }
         },
         "test": {
-          "final": 1363786,
-          "returnPct": 36.4,
+          "final": 1340252,
+          "returnPct": 34,
           "maxDDPct": 12.7,
-          "trades": 405,
+          "trades": 407,
           "yearly": {
             "2024": 8.7,
             "2025": 14.4,
-            "2026": 9.6
+            "2026": 7.7
           }
         }
       }
@@ -2488,17 +2488,17 @@
     "ev_div_up_gap|hold5": {
       "name": "増配＋寄り付きが前日終値より上 / 5日保有",
       "fullPeriod": {
-        "final": 3782944,
-        "returnPct": 278.3,
+        "final": 3815338,
+        "returnPct": 281.5,
         "maxDDPct": 17.8,
-        "trades": 1200,
+        "trades": 1201,
         "yearly": {
           "2021": -1.6,
           "2022": 54,
           "2023": 48.6,
           "2024": 23.7,
           "2025": 20.3,
-          "2026": 12.9
+          "2026": 13.8
         }
       },
       "slip2": {
@@ -2515,14 +2515,14 @@
           }
         },
         "test": {
-          "final": 1403276,
-          "returnPct": 40.3,
+          "final": 1415000,
+          "returnPct": 41.5,
           "maxDDPct": 14.5,
-          "trades": 524,
+          "trades": 525,
           "yearly": {
             "2024": 13.9,
             "2025": 14.7,
-            "2026": 7.4
+            "2026": 8.3
           }
         }
       },
@@ -2540,14 +2540,14 @@
           }
         },
         "test": {
-          "final": 1263772,
-          "returnPct": 26.4,
+          "final": 1274068,
+          "returnPct": 27.4,
           "maxDDPct": 15.8,
-          "trades": 524,
+          "trades": 525,
           "yearly": {
             "2024": 13.1,
             "2025": 9.3,
-            "2026": 2.2
+            "2026": 3
           }
         }
       }
@@ -2555,17 +2555,17 @@
     "ev_earn_up_trend_gap|hold5": {
       "name": "上方修正＋上向き＋寄り付きが前日終値より上 / 5日保有",
       "fullPeriod": {
-        "final": 3169140,
-        "returnPct": 216.9,
+        "final": 3205193,
+        "returnPct": 220.5,
         "maxDDPct": 13.7,
-        "trades": 702,
+        "trades": 707,
         "yearly": {
           "2021": -1.8,
           "2022": 38.9,
           "2023": 21.5,
           "2024": 25.5,
           "2025": 12.2,
-          "2026": 35.8
+          "2026": 37.4
         }
       },
       "slip2": {
@@ -2582,14 +2582,14 @@
           }
         },
         "test": {
-          "final": 1731780,
-          "returnPct": 73.2,
+          "final": 1749683,
+          "returnPct": 75,
           "maxDDPct": 13.9,
-          "trades": 308,
+          "trades": 313,
           "yearly": {
             "2024": 20.2,
             "2025": 9.1,
-            "2026": 32.1
+            "2026": 33.5
           }
         }
       },
@@ -2607,14 +2607,14 @@
           }
         },
         "test": {
-          "final": 1628638,
-          "returnPct": 62.9,
+          "final": 1643784,
+          "returnPct": 64.4,
           "maxDDPct": 14.2,
-          "trades": 308,
+          "trades": 313,
           "yearly": {
             "2024": 19.5,
             "2025": 6.1,
-            "2026": 28.5
+            "2026": 29.7
           }
         }
       }
@@ -2622,28 +2622,28 @@
   },
   "randomYearly": {
     "2021": {
-      "avg": 2.1,
-      "p90": 4.4
+      "avg": 1.3,
+      "p90": 3.2
     },
     "2022": {
-      "avg": -7.3,
-      "p90": 8.1
+      "avg": -7,
+      "p90": 10.6
     },
     "2023": {
-      "avg": 12,
-      "p90": 31.2
+      "avg": 11.5,
+      "p90": 29.4
     },
     "2024": {
-      "avg": 3.1,
-      "p90": 24
+      "avg": 3.5,
+      "p90": 19.3
     },
     "2025": {
-      "avg": 9.1,
-      "p90": 24.5
+      "avg": 10.5,
+      "p90": 26.5
     },
     "2026": {
-      "avg": 8.9,
-      "p90": 25.3
+      "avg": 0,
+      "p90": 16.7
     }
   },
   "daytrade": {
@@ -2657,11 +2657,11 @@
         "profitFactor": 1.22
       },
       "test": {
-        "n": 2320,
-        "winRate": 0.5181,
-        "avgRet": 0.0024,
+        "n": 2338,
+        "winRate": 0.5197,
+        "avgRet": 0.0026,
         "medRet": 0.0018,
-        "profitFactor": 1.19
+        "profitFactor": 1.21
       },
       "portfolioTrain": {
         "returnPct": 84.5,
@@ -2675,13 +2675,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 56.3,
+        "returnPct": 65.8,
         "maxDDPct": 9.6,
-        "trades": 1402,
+        "trades": 1412,
         "yearly": {
           "2024": 9.6,
           "2025": 33,
-          "2026": 7.2
+          "2026": 13.7
         }
       }
     },
@@ -2695,11 +2695,11 @@
         "profitFactor": 1.27
       },
       "test": {
-        "n": 1504,
-        "winRate": 0.5346,
-        "avgRet": 0.0034,
+        "n": 1506,
+        "winRate": 0.5345,
+        "avgRet": 0.0035,
         "medRet": 0.0032,
-        "profitFactor": 1.28
+        "profitFactor": 1.29
       },
       "portfolioTrain": {
         "returnPct": 45.5,
@@ -2713,13 +2713,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 55.7,
+        "returnPct": 57.4,
         "maxDDPct": 8.5,
-        "trades": 1092,
+        "trades": 1094,
         "yearly": {
           "2024": 10.4,
           "2025": 25.3,
-          "2026": 12.6
+          "2026": 13.8
         }
       }
     },
@@ -2733,11 +2733,11 @@
         "profitFactor": 1.14
       },
       "test": {
-        "n": 816,
-        "winRate": 0.4877,
-        "avgRet": 0.0004,
-        "medRet": -0.0008,
-        "profitFactor": 1.03
+        "n": 832,
+        "winRate": 0.4928,
+        "avgRet": 0.0012,
+        "medRet": -0.0007,
+        "profitFactor": 1.09
       },
       "portfolioTrain": {
         "returnPct": 17,
@@ -2751,13 +2751,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 10.4,
+        "returnPct": 17.1,
         "maxDDPct": 9.6,
-        "trades": 665,
+        "trades": 675,
         "yearly": {
           "2024": 0.5,
           "2025": 11,
-          "2026": -1.1
+          "2026": 4.9
         }
       }
     },
@@ -2771,11 +2771,11 @@
         "profitFactor": 1.35
       },
       "test": {
-        "n": 701,
-        "winRate": 0.5136,
-        "avgRet": 0.0033,
-        "medRet": 0.0018,
-        "profitFactor": 1.25
+        "n": 702,
+        "winRate": 0.5142,
+        "avgRet": 0.0035,
+        "medRet": 0.0019,
+        "profitFactor": 1.27
       },
       "portfolioTrain": {
         "returnPct": 38.1,
@@ -2789,13 +2789,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 23,
+        "returnPct": 24.6,
         "maxDDPct": 10.3,
-        "trades": 634,
+        "trades": 635,
         "yearly": {
           "2024": 5.1,
           "2025": 15.9,
-          "2026": 1
+          "2026": 2.3
         }
       }
     },
@@ -2809,11 +2809,11 @@
         "profitFactor": 1.15
       },
       "test": {
-        "n": 2320,
-        "winRate": 0.4022,
-        "avgRet": 0.001,
+        "n": 2338,
+        "winRate": 0.4033,
+        "avgRet": 0.0012,
         "medRet": -0.0107,
-        "profitFactor": 1.09
+        "profitFactor": 1.11
       },
       "portfolioTrain": {
         "returnPct": 41.8,
@@ -2827,13 +2827,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 18.2,
+        "returnPct": 24,
         "maxDDPct": 10.8,
-        "trades": 1402,
+        "trades": 1412,
         "yearly": {
           "2024": 5.4,
           "2025": 4.9,
-          "2026": 6.9
+          "2026": 12.2
         }
       }
     },
@@ -2847,9 +2847,9 @@
         "profitFactor": 1.18
       },
       "test": {
-        "n": 1504,
-        "winRate": 0.4162,
-        "avgRet": 0.0016,
+        "n": 1506,
+        "winRate": 0.4163,
+        "avgRet": 0.0017,
         "medRet": -0.007,
         "profitFactor": 1.15
       },
@@ -2865,13 +2865,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 18.7,
+        "returnPct": 20,
         "maxDDPct": 8.4,
-        "trades": 1092,
+        "trades": 1094,
         "yearly": {
           "2024": 4.8,
           "2025": 1.2,
-          "2026": 12
+          "2026": 13.2
         }
       }
     },
@@ -2885,11 +2885,11 @@
         "profitFactor": 1.09
       },
       "test": {
-        "n": 816,
-        "winRate": 0.3762,
-        "avgRet": -0.0002,
-        "medRet": -0.0147,
-        "profitFactor": 0.99
+        "n": 832,
+        "winRate": 0.3798,
+        "avgRet": 0.0005,
+        "medRet": -0.0144,
+        "profitFactor": 1.04
       },
       "portfolioTrain": {
         "returnPct": 11.1,
@@ -2903,13 +2903,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 5.6,
+        "returnPct": 10.8,
         "maxDDPct": 8.4,
-        "trades": 665,
+        "trades": 675,
         "yearly": {
           "2024": 0.2,
           "2025": 6.2,
-          "2026": -0.8
+          "2026": 4.1
         }
       }
     },
@@ -2923,11 +2923,11 @@
         "profitFactor": 1.2
       },
       "test": {
-        "n": 701,
-        "winRate": 0.3524,
-        "avgRet": 0.0002,
+        "n": 702,
+        "winRate": 0.3533,
+        "avgRet": 0.0003,
         "medRet": -0.022,
-        "profitFactor": 1.01
+        "profitFactor": 1.03
       },
       "portfolioTrain": {
         "returnPct": 17.1,
@@ -2941,13 +2941,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 0.1,
+        "returnPct": 1.4,
         "maxDDPct": 11.4,
-        "trades": 634,
+        "trades": 635,
         "yearly": {
           "2024": 2.3,
           "2025": -4.3,
-          "2026": 2.3
+          "2026": 3.6
         }
       }
     },
@@ -2961,11 +2961,11 @@
         "profitFactor": 1.07
       },
       "test": {
-        "n": 1204,
-        "winRate": 0.4568,
-        "avgRet": -0.0006,
+        "n": 1221,
+        "winRate": 0.4603,
+        "avgRet": -0.0002,
         "medRet": -0.002,
-        "profitFactor": 0.96
+        "profitFactor": 0.99
       },
       "portfolioTrain": {
         "returnPct": 8,
@@ -2979,13 +2979,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -0.3,
+        "returnPct": 1.5,
         "maxDDPct": 9.3,
-        "trades": 989,
+        "trades": 999,
         "yearly": {
           "2024": 1.7,
           "2025": 2.2,
-          "2026": -4.1
+          "2026": -2.3
         }
       }
     },
@@ -2999,8 +2999,8 @@
         "profitFactor": 1.13
       },
       "test": {
-        "n": 870,
-        "winRate": 0.4471,
+        "n": 871,
+        "winRate": 0.4466,
         "avgRet": -0.0007,
         "medRet": -0.002,
         "profitFactor": 0.95
@@ -3017,13 +3017,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -4.3,
+        "returnPct": -4.5,
         "maxDDPct": 11.1,
-        "trades": 783,
+        "trades": 784,
         "yearly": {
           "2024": -0.4,
           "2025": 4.6,
-          "2026": -8.2
+          "2026": -8.4
         }
       }
     },
@@ -3037,11 +3037,11 @@
         "profitFactor": 0.91
       },
       "test": {
-        "n": 334,
-        "winRate": 0.482,
-        "avgRet": -0.0006,
-        "medRet": -0.0009,
-        "profitFactor": 0.97
+        "n": 350,
+        "winRate": 0.4943,
+        "avgRet": 0.001,
+        "medRet": -0.0003,
+        "profitFactor": 1.06
       },
       "portfolioTrain": {
         "returnPct": -5.9,
@@ -3055,13 +3055,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -0.8,
+        "returnPct": 1.3,
         "maxDDPct": 8.7,
-        "trades": 338,
+        "trades": 348,
         "yearly": {
           "2024": 2.9,
           "2025": -2.4,
-          "2026": -1.2
+          "2026": 0.9
         }
       }
     },
@@ -3075,9 +3075,9 @@
         "profitFactor": 1.07
       },
       "test": {
-        "n": 480,
-        "winRate": 0.3938,
-        "avgRet": -0.0029,
+        "n": 481,
+        "winRate": 0.3929,
+        "avgRet": -0.003,
         "medRet": -0.002,
         "profitFactor": 0.82
       },
@@ -3093,13 +3093,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -12.7,
+        "returnPct": -12.9,
         "maxDDPct": 16.2,
-        "trades": 480,
+        "trades": 481,
         "yearly": {
           "2024": -1.2,
           "2025": 0.1,
-          "2026": -11.7
+          "2026": -11.9
         }
       }
     },
@@ -3113,11 +3113,11 @@
         "profitFactor": 1.03
       },
       "test": {
-        "n": 1204,
-        "winRate": 0.3488,
-        "avgRet": -0.0006,
+        "n": 1221,
+        "winRate": 0.3522,
+        "avgRet": -0.0002,
         "medRet": -0.022,
-        "profitFactor": 0.95
+        "profitFactor": 0.98
       },
       "portfolioTrain": {
         "returnPct": -0.6,
@@ -3131,13 +3131,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -1.2,
+        "returnPct": 0.6,
         "maxDDPct": 9.5,
-        "trades": 989,
+        "trades": 999,
         "yearly": {
           "2024": 0.8,
           "2025": -2.5,
-          "2026": 0.6
+          "2026": 2.4
         }
       }
     },
@@ -3151,9 +3151,9 @@
         "profitFactor": 1.1
       },
       "test": {
-        "n": 870,
-        "winRate": 0.3322,
-        "avgRet": -0.0014,
+        "n": 871,
+        "winRate": 0.3318,
+        "avgRet": -0.0015,
         "medRet": -0.022,
         "profitFactor": 0.88
       },
@@ -3169,13 +3169,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -7.7,
+        "returnPct": -7.9,
         "maxDDPct": 11.2,
-        "trades": 783,
+        "trades": 784,
         "yearly": {
           "2024": -1.3,
           "2025": -1.1,
-          "2026": -5.5
+          "2026": -5.7
         }
       }
     },
@@ -3189,11 +3189,11 @@
         "profitFactor": 0.83
       },
       "test": {
-        "n": 334,
-        "winRate": 0.3922,
-        "avgRet": 0.0017,
+        "n": 350,
+        "winRate": 0.4029,
+        "avgRet": 0.003,
         "medRet": -0.022,
-        "profitFactor": 1.14
+        "profitFactor": 1.25
       },
       "portfolioTrain": {
         "returnPct": -7.9,
@@ -3207,13 +3207,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 6.4,
+        "returnPct": 8.7,
         "maxDDPct": 4.1,
-        "trades": 338,
+        "trades": 348,
         "yearly": {
           "2024": 2.4,
           "2025": -1.8,
-          "2026": 5.8
+          "2026": 8
         }
       }
     },
@@ -3227,9 +3227,9 @@
         "profitFactor": 1.04
       },
       "test": {
-        "n": 480,
-        "winRate": 0.2708,
-        "avgRet": -0.0034,
+        "n": 481,
+        "winRate": 0.2703,
+        "avgRet": -0.0035,
         "medRet": -0.022,
         "profitFactor": 0.74
       },
@@ -3245,13 +3245,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -14.8,
+        "returnPct": -15,
         "maxDDPct": 16.7,
-        "trades": 480,
+        "trades": 481,
         "yearly": {
           "2024": -0.1,
           "2025": -4.5,
-          "2026": -10.7
+          "2026": -10.9
         }
       }
     },
@@ -3265,9 +3265,9 @@
         "profitFactor": 1.22
       },
       "test": {
-        "n": 824,
+        "n": 828,
         "winRate": 0.4891,
-        "avgRet": 0.0021,
+        "avgRet": 0.002,
         "medRet": -0.0006,
         "profitFactor": 1.15
       },
@@ -3283,13 +3283,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 20.8,
+        "returnPct": 20.2,
         "maxDDPct": 6.4,
-        "trades": 727,
+        "trades": 731,
         "yearly": {
           "2024": 3.7,
           "2025": 6.1,
-          "2026": 9.8
+          "2026": 9.2
         }
       }
     },
@@ -3341,11 +3341,11 @@
         "profitFactor": 0.83
       },
       "test": {
-        "n": 231,
-        "winRate": 0.5022,
-        "avgRet": 0.0024,
+        "n": 235,
+        "winRate": 0.5021,
+        "avgRet": 0.0022,
         "medRet": 0.0003,
-        "profitFactor": 1.16
+        "profitFactor": 1.15
       },
       "portfolioTrain": {
         "returnPct": -7.1,
@@ -3359,13 +3359,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 6.3,
+        "returnPct": 5.7,
         "maxDDPct": 6,
-        "trades": 237,
+        "trades": 241,
         "yearly": {
           "2024": 3,
           "2025": 0.5,
-          "2026": 2.7
+          "2026": 2.2
         }
       }
     },
@@ -3417,10 +3417,10 @@
         "profitFactor": 1.15
       },
       "test": {
-        "n": 824,
-        "winRate": 0.3847,
+        "n": 828,
+        "winRate": 0.3841,
         "avgRet": 0.0018,
-        "medRet": -0.0106,
+        "medRet": -0.0109,
         "profitFactor": 1.16
       },
       "portfolioTrain": {
@@ -3435,13 +3435,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 15,
+        "returnPct": 14.4,
         "maxDDPct": 5.4,
-        "trades": 727,
+        "trades": 731,
         "yearly": {
           "2024": 1.6,
           "2025": 1.2,
-          "2026": 11.9
+          "2026": 11.2
         }
       }
     },
@@ -3493,11 +3493,11 @@
         "profitFactor": 0.87
       },
       "test": {
-        "n": 231,
-        "winRate": 0.4286,
-        "avgRet": 0.0044,
-        "medRet": -0.0106,
-        "profitFactor": 1.39
+        "n": 235,
+        "winRate": 0.4255,
+        "avgRet": 0.0041,
+        "medRet": -0.0115,
+        "profitFactor": 1.36
       },
       "portfolioTrain": {
         "returnPct": -4.2,
@@ -3511,13 +3511,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 10.9,
+        "returnPct": 10.3,
         "maxDDPct": 2.8,
-        "trades": 237,
+        "trades": 241,
         "yearly": {
           "2024": 2.1,
           "2025": 1.5,
-          "2026": 7.1
+          "2026": 6.5
         }
       }
     },
@@ -3569,10 +3569,10 @@
         "profitFactor": 0.97
       },
       "test": {
-        "n": 12617,
-        "winRate": 0.4486,
-        "avgRet": -0.0023,
-        "medRet": -0.0022,
+        "n": 12717,
+        "winRate": 0.4488,
+        "avgRet": -0.0022,
+        "medRet": -0.0021,
         "profitFactor": 0.85
       },
       "portfolioTrain": {
@@ -3587,13 +3587,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -57.5,
+        "returnPct": -56.6,
         "maxDDPct": 61.7,
-        "trades": 2548,
+        "trades": 2558,
         "yearly": {
           "2024": -1.8,
           "2025": -44.6,
-          "2026": -21.9
+          "2026": -20.3
         }
       }
     },
@@ -3607,8 +3607,8 @@
         "profitFactor": 1.02
       },
       "test": {
-        "n": 6141,
-        "winRate": 0.4579,
+        "n": 6154,
+        "winRate": 0.4576,
         "avgRet": -0.0019,
         "medRet": -0.002,
         "profitFactor": 0.87
@@ -3625,13 +3625,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -53.9,
+        "returnPct": -54.5,
         "maxDDPct": 55.2,
-        "trades": 1927,
+        "trades": 1937,
         "yearly": {
           "2024": -6.1,
           "2025": -32.6,
-          "2026": -27.1
+          "2026": -28.1
         }
       }
     },
@@ -3645,11 +3645,11 @@
         "profitFactor": 0.93
       },
       "test": {
-        "n": 6476,
-        "winRate": 0.4398,
-        "avgRet": -0.0027,
-        "medRet": -0.0034,
-        "profitFactor": 0.82
+        "n": 6563,
+        "winRate": 0.4405,
+        "avgRet": -0.0026,
+        "medRet": -0.0033,
+        "profitFactor": 0.83
       },
       "portfolioTrain": {
         "returnPct": -26.3,
@@ -3663,13 +3663,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -50,
+        "returnPct": -48.2,
         "maxDDPct": 57,
-        "trades": 2029,
+        "trades": 2039,
         "yearly": {
           "2024": -4.1,
           "2025": -33.1,
-          "2026": -22
+          "2026": -19.3
         }
       }
     },
@@ -3683,8 +3683,8 @@
         "profitFactor": 1.06
       },
       "test": {
-        "n": 2467,
-        "winRate": 0.4564,
+        "n": 2472,
+        "winRate": 0.4559,
         "avgRet": -0.0016,
         "medRet": -0.002,
         "profitFactor": 0.91
@@ -3701,13 +3701,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -35.6,
+        "returnPct": -35.7,
         "maxDDPct": 38.8,
-        "trades": 1407,
+        "trades": 1412,
         "yearly": {
           "2024": -4.5,
           "2025": -24.2,
-          "2026": -11
+          "2026": -11.1
         }
       }
     },
@@ -3721,11 +3721,11 @@
         "profitFactor": 0.99
       },
       "test": {
-        "n": 12617,
-        "winRate": 0.3544,
+        "n": 12717,
+        "winRate": 0.3546,
         "avgRet": -0.0019,
         "medRet": -0.0189,
-        "profitFactor": 0.84
+        "profitFactor": 0.85
       },
       "portfolioTrain": {
         "returnPct": -4.8,
@@ -3739,13 +3739,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -43.3,
+        "returnPct": -41.7,
         "maxDDPct": 47.3,
-        "trades": 2548,
+        "trades": 2558,
         "yearly": {
           "2024": 0.8,
           "2025": -36.1,
-          "2026": -12
+          "2026": -9.5
         }
       }
     },
@@ -3759,10 +3759,10 @@
         "profitFactor": 1.07
       },
       "test": {
-        "n": 6141,
-        "winRate": 0.362,
+        "n": 6154,
+        "winRate": 0.3619,
         "avgRet": -0.0014,
-        "medRet": -0.016,
+        "medRet": -0.0162,
         "profitFactor": 0.88
       },
       "portfolioTrain": {
@@ -3777,13 +3777,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -38,
+        "returnPct": -38.5,
         "maxDDPct": 39.2,
-        "trades": 1927,
+        "trades": 1937,
         "yearly": {
           "2024": -2.9,
           "2025": -25.6,
-          "2026": -14.1
+          "2026": -14.9
         }
       }
     },
@@ -3797,11 +3797,11 @@
         "profitFactor": 0.92
       },
       "test": {
-        "n": 6476,
-        "winRate": 0.3473,
-        "avgRet": -0.0024,
+        "n": 6563,
+        "winRate": 0.3479,
+        "avgRet": -0.0022,
         "medRet": -0.022,
-        "profitFactor": 0.8
+        "profitFactor": 0.82
       },
       "portfolioTrain": {
         "returnPct": -18.6,
@@ -3815,13 +3815,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -41.4,
+        "returnPct": -38.9,
         "maxDDPct": 45.2,
-        "trades": 2029,
+        "trades": 2039,
         "yearly": {
           "2024": -1.5,
           "2025": -26.7,
-          "2026": -18.8
+          "2026": -15.3
         }
       }
     },
@@ -3835,11 +3835,11 @@
         "profitFactor": 1.13
       },
       "test": {
-        "n": 2467,
-        "winRate": 0.317,
+        "n": 2472,
+        "winRate": 0.3167,
         "avgRet": -0.0015,
         "medRet": -0.022,
-        "profitFactor": 0.88
+        "profitFactor": 0.89
       },
       "portfolioTrain": {
         "returnPct": 30.9,
@@ -3853,13 +3853,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -30.8,
+        "returnPct": -30.6,
         "maxDDPct": 33.5,
-        "trades": 1407,
+        "trades": 1412,
         "yearly": {
           "2024": -3.7,
           "2025": -23.5,
-          "2026": -6.2
+          "2026": -5.8
         }
       }
     },
@@ -3873,9 +3873,9 @@
         "profitFactor": 0.75
       },
       "test": {
-        "n": 532,
-        "winRate": 0.4774,
-        "avgRet": 0.0006,
+        "n": 536,
+        "winRate": 0.4776,
+        "avgRet": 0.0005,
         "medRet": -0.0017,
         "profitFactor": 1.04
       },
@@ -3891,13 +3891,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 1.7,
+        "returnPct": 1.3,
         "maxDDPct": 7.7,
-        "trades": 529,
+        "trades": 533,
         "yearly": {
           "2024": -3.2,
           "2025": -1.7,
-          "2026": 6.9
+          "2026": 6.5
         }
       }
     },
@@ -3949,11 +3949,11 @@
         "profitFactor": 0.73
       },
       "test": {
-        "n": 413,
-        "winRate": 0.4939,
-        "avgRet": 0.0018,
+        "n": 417,
+        "winRate": 0.494,
+        "avgRet": 0.0017,
         "medRet": -0.0003,
-        "profitFactor": 1.14
+        "profitFactor": 1.13
       },
       "portfolioTrain": {
         "returnPct": -22.4,
@@ -3967,13 +3967,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 5.9,
+        "returnPct": 5.5,
         "maxDDPct": 6.6,
-        "trades": 417,
+        "trades": 421,
         "yearly": {
           "2024": -0.9,
           "2025": 1.1,
-          "2026": 5.6
+          "2026": 5.2
         }
       }
     },
@@ -4025,11 +4025,11 @@
         "profitFactor": 0.9
       },
       "test": {
-        "n": 532,
-        "winRate": 0.4041,
-        "avgRet": 0.0013,
-        "medRet": -0.006,
-        "profitFactor": 1.13
+        "n": 536,
+        "winRate": 0.403,
+        "avgRet": 0.0012,
+        "medRet": -0.0064,
+        "profitFactor": 1.12
       },
       "portfolioTrain": {
         "returnPct": -7.1,
@@ -4043,13 +4043,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 6.8,
+        "returnPct": 6.2,
         "maxDDPct": 4.6,
-        "trades": 529,
+        "trades": 533,
         "yearly": {
           "2024": -1.3,
           "2025": -0.6,
-          "2026": 8.9
+          "2026": 8.3
         }
       }
     },
@@ -4101,11 +4101,11 @@
         "profitFactor": 0.93
       },
       "test": {
-        "n": 413,
-        "winRate": 0.4262,
-        "avgRet": 0.0027,
-        "medRet": -0.0029,
-        "profitFactor": 1.28
+        "n": 417,
+        "winRate": 0.4245,
+        "avgRet": 0.0026,
+        "medRet": -0.0033,
+        "profitFactor": 1.26
       },
       "portfolioTrain": {
         "returnPct": -3.1,
@@ -4119,13 +4119,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": 10.9,
+        "returnPct": 10.4,
         "maxDDPct": 4.2,
-        "trades": 417,
+        "trades": 421,
         "yearly": {
           "2024": 0.1,
           "2025": 1.8,
-          "2026": 8.8
+          "2026": 8.3
         }
       }
     },
@@ -4177,10 +4177,10 @@
         "profitFactor": 0.82
       },
       "test": {
-        "n": 6923,
-        "winRate": 0.3875,
+        "n": 6939,
+        "winRate": 0.3872,
         "avgRet": -0.011,
-        "medRet": -0.0107,
+        "medRet": -0.0108,
         "profitFactor": 0.66
       },
       "portfolioTrain": {
@@ -4197,11 +4197,11 @@
       "portfolioTest": {
         "returnPct": -99.8,
         "maxDDPct": 99.8,
-        "trades": 4113,
+        "trades": 4123,
         "yearly": {
           "2024": -24.2,
           "2025": -93.9,
-          "2026": -95.3
+          "2026": -95.4
         }
       }
     },
@@ -4253,10 +4253,10 @@
         "profitFactor": 1.23
       },
       "test": {
-        "n": 3643,
-        "winRate": 0.4046,
+        "n": 3659,
+        "winRate": 0.4039,
         "avgRet": -0.0048,
-        "medRet": -0.0098,
+        "medRet": -0.0099,
         "profitFactor": 0.81
       },
       "portfolioTrain": {
@@ -4271,13 +4271,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -87.4,
-        "maxDDPct": 87.4,
-        "trades": 2651,
+        "returnPct": -87.6,
+        "maxDDPct": 87.6,
+        "trades": 2661,
         "yearly": {
           "2024": -15.2,
           "2025": -54.4,
-          "2026": -67.5
+          "2026": -68
         }
       }
     },
@@ -4329,8 +4329,8 @@
         "profitFactor": 0.96
       },
       "test": {
-        "n": 6923,
-        "winRate": 0.2126,
+        "n": 6939,
+        "winRate": 0.2124,
         "avgRet": -0.0045,
         "medRet": -0.022,
         "profitFactor": 0.72
@@ -4347,13 +4347,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -88.6,
-        "maxDDPct": 89.3,
-        "trades": 4113,
+        "returnPct": -88.8,
+        "maxDDPct": 89.4,
+        "trades": 4123,
         "yearly": {
           "2024": -2,
           "2025": -69,
-          "2026": -62.6
+          "2026": -63.1
         }
       }
     },
@@ -4405,9 +4405,9 @@
         "profitFactor": 1.32
       },
       "test": {
-        "n": 3643,
-        "winRate": 0.2427,
-        "avgRet": -0.0036,
+        "n": 3659,
+        "winRate": 0.2421,
+        "avgRet": -0.0037,
         "medRet": -0.022,
         "profitFactor": 0.77
       },
@@ -4423,13 +4423,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -76.1,
-        "maxDDPct": 76.1,
-        "trades": 2651,
+        "returnPct": -76.4,
+        "maxDDPct": 76.4,
+        "trades": 2661,
         "yearly": {
           "2024": -6.6,
           "2025": -50,
-          "2026": -48.9
+          "2026": -49.5
         }
       }
     },
@@ -4481,11 +4481,11 @@
         "profitFactor": 0.96
       },
       "test": {
-        "n": 3878,
-        "winRate": 0.4384,
-        "avgRet": -0.0044,
-        "medRet": -0.0047,
-        "profitFactor": 0.82
+        "n": 3955,
+        "winRate": 0.4475,
+        "avgRet": -0.0027,
+        "medRet": -0.0038,
+        "profitFactor": 0.88
       },
       "portfolioTrain": {
         "returnPct": -83.4,
@@ -4499,13 +4499,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -88.7,
+        "returnPct": -87.8,
         "maxDDPct": 88.7,
-        "trades": 2617,
+        "trades": 2627,
         "yearly": {
           "2024": -15.7,
           "2025": -70,
-          "2026": -55.4
+          "2026": -51.5
         }
       }
     },
@@ -4557,11 +4557,11 @@
         "profitFactor": 0.66
       },
       "test": {
-        "n": 1689,
-        "winRate": 0.37,
-        "avgRet": -0.008,
-        "medRet": -0.0125,
-        "profitFactor": 0.72
+        "n": 1766,
+        "winRate": 0.3935,
+        "avgRet": -0.0041,
+        "medRet": -0.0102,
+        "profitFactor": 0.85
       },
       "portfolioTrain": {
         "returnPct": -60.2,
@@ -4575,13 +4575,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -72.5,
+        "returnPct": -70.1,
         "maxDDPct": 75.5,
-        "trades": 1534,
+        "trades": 1544,
         "yearly": {
           "2024": -8.9,
           "2025": -55.3,
-          "2026": -32.5
+          "2026": -26.7
         }
       }
     },
@@ -4633,11 +4633,11 @@
         "profitFactor": 1.08
       },
       "test": {
-        "n": 3878,
-        "winRate": 0.2937,
-        "avgRet": -0.0012,
+        "n": 3955,
+        "winRate": 0.3037,
+        "avgRet": 0.0002,
         "medRet": -0.022,
-        "profitFactor": 0.91
+        "profitFactor": 1.01
       },
       "portfolioTrain": {
         "returnPct": -59.2,
@@ -4651,13 +4651,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -65.1,
+        "returnPct": -62.9,
         "maxDDPct": 66.1,
-        "trades": 2617,
+        "trades": 2627,
         "yearly": {
           "2024": -6.1,
           "2025": -37.9,
-          "2026": -40.2
+          "2026": -36.4
         }
       }
     },
@@ -4709,11 +4709,11 @@
         "profitFactor": 0.76
       },
       "test": {
-        "n": 1689,
-        "winRate": 0.2013,
-        "avgRet": -0.0048,
+        "n": 1766,
+        "winRate": 0.2276,
+        "avgRet": -0.0014,
         "medRet": -0.022,
-        "profitFactor": 0.71
+        "profitFactor": 0.91
       },
       "portfolioTrain": {
         "returnPct": -38.6,
@@ -4727,13 +4727,13 @@
         }
       },
       "portfolioTest": {
-        "returnPct": -55.2,
+        "returnPct": -52.4,
         "maxDDPct": 58.6,
-        "trades": 1534,
+        "trades": 1544,
         "yearly": {
           "2024": -2.3,
           "2025": -33.4,
-          "2026": -31.1
+          "2026": -26.8
         }
       }
     },
@@ -4779,12 +4779,12 @@
   "dtBaseline": {
     "name": "無作為に10銘柄を寄り買い引け売り×200回",
     "train": {
-      "avg": -79.8,
-      "p90": -74.6
+      "avg": -79.4,
+      "p90": -75.1
     },
     "test": {
-      "avg": -69.6,
-      "p90": -62.8
+      "avg": -70.2,
+      "p90": -63.1
     }
   },
   "dayMoveBuckets": {
@@ -4798,11 +4798,11 @@
           "profitFactor": 1.17
         },
         "test": {
-          "n": 978,
-          "winRate": 0.5061,
-          "avgRet": 0.0015,
-          "medRet": 0.0011,
-          "profitFactor": 1.11
+          "n": 989,
+          "winRate": 0.5096,
+          "avgRet": 0.0022,
+          "medRet": 0.0012,
+          "profitFactor": 1.16
         }
       },
       "0〜5%": {
@@ -4814,10 +4814,10 @@
           "profitFactor": 1.22
         },
         "test": {
-          "n": 1013,
-          "winRate": 0.5222,
+          "n": 1018,
+          "winRate": 0.5226,
           "avgRet": 0.0025,
-          "medRet": 0.002,
+          "medRet": 0.0021,
           "profitFactor": 1.21
         }
       },
@@ -4830,11 +4830,11 @@
           "profitFactor": 2.04
         },
         "test": {
-          "n": 112,
-          "winRate": 0.5357,
+          "n": 113,
+          "winRate": 0.5398,
           "avgRet": 0.0076,
           "medRet": 0.0062,
-          "profitFactor": 1.58
+          "profitFactor": 1.59
         }
       },
       "5〜10%": {
@@ -4846,11 +4846,11 @@
           "profitFactor": 1.29
         },
         "test": {
-          "n": 217,
-          "winRate": 0.5438,
-          "avgRet": 0.0031,
+          "n": 218,
+          "winRate": 0.5413,
+          "avgRet": 0.003,
           "medRet": 0.003,
-          "profitFactor": 1.25
+          "profitFactor": 1.24
         }
       }
     },
@@ -4864,11 +4864,11 @@
           "profitFactor": 1.57
         },
         "test": {
-          "n": 944,
-          "winRate": 0.5244,
-          "avgRet": 0.0065,
-          "medRet": 0.0036,
-          "profitFactor": 1.3
+          "n": 949,
+          "winRate": 0.5227,
+          "avgRet": 0.0061,
+          "medRet": 0.0035,
+          "profitFactor": 1.28
         }
       },
       "0〜5%": {
@@ -4880,11 +4880,11 @@
           "profitFactor": 1.75
         },
         "test": {
-          "n": 997,
-          "winRate": 0.5346,
-          "avgRet": 0.0043,
+          "n": 1004,
+          "winRate": 0.5339,
+          "avgRet": 0.0037,
           "medRet": 0.0039,
-          "profitFactor": 1.22
+          "profitFactor": 1.18
         }
       },
       "10%以上": {
@@ -4912,11 +4912,11 @@
           "profitFactor": 1.39
         },
         "test": {
-          "n": 215,
-          "winRate": 0.5535,
-          "avgRet": 0.0124,
+          "n": 216,
+          "winRate": 0.5509,
+          "avgRet": 0.0113,
           "medRet": 0.009,
-          "profitFactor": 1.59
+          "profitFactor": 1.51
         }
       }
     },
@@ -4930,11 +4930,11 @@
           "profitFactor": 1.29
         },
         "test": {
-          "n": 128,
-          "winRate": 0.5078,
-          "avgRet": 0.0044,
+          "n": 129,
+          "winRate": 0.5039,
+          "avgRet": 0.0042,
           "medRet": 0.0004,
-          "profitFactor": 1.37
+          "profitFactor": 1.35
         }
       },
       "0〜5%": {
@@ -4946,8 +4946,8 @@
           "profitFactor": 1.06
         },
         "test": {
-          "n": 394,
-          "winRate": 0.5127,
+          "n": 395,
+          "winRate": 0.5139,
           "avgRet": 0.0034,
           "medRet": 0.0019,
           "profitFactor": 1.28
@@ -4978,11 +4978,11 @@
           "profitFactor": 1.5
         },
         "test": {
-          "n": 90,
-          "winRate": 0.4333,
-          "avgRet": -0.0029,
+          "n": 92,
+          "winRate": 0.4348,
+          "avgRet": -0.0033,
           "medRet": -0.002,
-          "profitFactor": 0.84
+          "profitFactor": 0.82
         }
       }
     },
@@ -4996,10 +4996,10 @@
           "profitFactor": 1.42
         },
         "test": {
-          "n": 126,
-          "winRate": 0.619,
-          "avgRet": 0.0237,
-          "medRet": 0.0203,
+          "n": 127,
+          "winRate": 0.622,
+          "avgRet": 0.0235,
+          "medRet": 0.0183,
           "profitFactor": 1.99
         }
       },
@@ -5012,11 +5012,11 @@
           "profitFactor": 1.42
         },
         "test": {
-          "n": 387,
-          "winRate": 0.5607,
-          "avgRet": 0.0117,
-          "medRet": 0.008,
-          "profitFactor": 1.58
+          "n": 391,
+          "winRate": 0.5627,
+          "avgRet": 0.0118,
+          "medRet": 0.0083,
+          "profitFactor": 1.59
         }
       },
       "下落": {
@@ -5091,7 +5091,7 @@
       }
     },
     "-3%以上": {
-      "days": 13,
+      "days": 14,
       "next1": {
         "avgPct": -0.5,
         "upRatePct": 53.8,
@@ -5109,19 +5109,19 @@
       }
     },
     "比較：全営業日": {
-      "days": 1219,
+      "days": 1220,
       "next1": {
         "avgPct": 0.04,
         "upRatePct": 55,
         "worstPct": -12.4
       },
       "next5": {
-        "avgPct": 0.2,
+        "avgPct": 0.19,
         "upRatePct": 56.4,
         "worstPct": -19.7
       },
       "next20": {
-        "avgPct": 0.81,
+        "avgPct": 0.8,
         "upRatePct": 61.2,
         "worstPct": -20.7
       }
