@@ -1,5 +1,6 @@
 // 米国株：S&P500銘柄の一覧、Tiingoの日足、SECの決算発表日時とEPS・売上を取得して data-us/ に保存
 // 生データはリポジトリにコミットしない（暗号化キャッシュ）。ログ・ステータスには件数だけを出す
+// SECの連絡先は Secrets の SEC_CONTACT_EMAIL（2026-11-07 登録）
 import fs from 'node:fs';
 import path from 'node:path';
 import https from 'node:https';
