@@ -88,12 +88,32 @@ async function tiingoDaily(ticker, from) {
 
 // ---------- SEC ----------
 let lastSec = 0;
+// SECが拒否する理由を調べるため、名乗り方を何通りか試し、最初に通ったものを使う（応答本文の冒頭だけ記録。個人情報なし）
+const UA_CANDIDATES = [
+  SEC_UA,
+  'takaperon takaperon@users.noreply.github.com',
+  'Claude Kabu Navi research takaperon@users.noreply.github.com',
+];
+let secUA = SEC_UA;
+async function probeSec() {
+  status.sec.probe = [];
+  for (const ua of UA_CANDIDATES) {
+    try {
+      const res = await fetch('https://data.sec.gov/submissions/CIK0000320193.json', { headers: { 'User-Agent': ua } });
+      const body = await res.text();
+      status.sec.probe.push({ ua, status: res.status, body: res.ok ? 'ok' : body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 300) });
+      if (res.ok) { secUA = ua; return true; }
+    } catch (e) { status.sec.probe.push({ ua, error: e.message }); }
+    await sleep(1000);
+  }
+  return false;
+}
 async function secJSON(url) {
   const w = lastSec + 150 - Date.now();
   if (w > 0) await sleep(w);
   lastSec = Date.now();
   status.sec.requests++;
-  const res = await fetch(url, { headers: { 'User-Agent': SEC_UA, 'Accept-Encoding': 'gzip, deflate' } });
+  const res = await fetch(url, { headers: { 'User-Agent': secUA } });
   if (!res.ok) { status.sec.failed++; status.sec.lastError = `${res.status} ${url.split('/').pop()}`; return null; }
   return res.json();
 }
@@ -148,7 +168,8 @@ if (!KEY) {
   status.stoppedBy = 'no-key';
 } else {
   // SEC（1秒に10回まで。余裕を持って約6回）
-  for (const u of universe) {
+  const secOk = await probeSec();
+  for (const u of secOk ? universe : []) {
     if (minutes() > MAX_MIN * 0.3) break;
     try { await secFor(u); } catch (e) { status.sec.failed++; status.sec.lastError = e.message; }
   }
