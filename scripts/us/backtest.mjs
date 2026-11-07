@@ -42,7 +42,9 @@ for (const u of universe) {
   }
   const secF = path.join(DATA, 'sec', `${u.t}.json`);
   const sec = fs.existsSync(secF) ? JSON.parse(fs.readFileSync(secF, 'utf8')) : { earnings: [], eps: [], rev: [] };
-  S.push({ ...u, O, H, L, C, V, DV, RC, sec });
+  const avF = path.join(DATA, 'av', `${u.t}.json`);
+  const av = fs.existsSync(avF) ? JSON.parse(fs.readFileSync(avF, 'utf8')) : null;
+  S.push({ ...u, O, H, L, C, V, DV, RC, sec, av });
 }
 const N = S.length;
 const sma = (A, k, n) => { if (k < n - 1) return NaN; let s = 0; for (let j = k - n + 1; j <= k; j++) s += A[j]; return s / n; };
@@ -50,7 +52,7 @@ const firstIdxOnOrAfter = (d) => { let lo = 0, hi = D; while (lo < hi) { const m
 
 // ---------- イベント ----------
 // entry = 買う日のインデックス（その日の始値）。sig = その前の営業日（シグナル日）
-const EV = { eps_up: [], eps_up_rev: [], eps_down: [], earn_all: [], div_up: [] };
+const EV = { eps_up: [], eps_up_rev: [], eps_down: [], earn_all: [], div_up: [], av_all: [], sup5: [], sup10: [], sup5_rev: [], miss5: [] };
 function yoy(series, end) {
   // 同じ四半期の1年前（end の 330〜400日前）
   const cur = series.find((x) => x.end === end);
@@ -83,6 +85,23 @@ for (let i = 0; i < N; i++) {
     if (g >= 0.2 && rg != null && rg >= 0.1) EV.eps_up_rev.push({ i, sig, entry, score: g });
     if (g <= -0.2) EV.eps_down.push({ i, sig, entry, score: -g });
   }
+  // Alpha Vantage：アナリスト予想に対するサプライズ。pre-market は当日始値、それ以外（post-market）は翌営業日始値
+  // 売上の伸びは SEC の値（同じ四半期）を使う
+  for (const q of s.av ?? []) {
+    if (!q.rd || q.rd < '2021-01-01' || q.spp == null || !Number.isFinite(q.spp) || !(q.est != null)) continue;
+    let entry = firstIdxOnOrAfter(q.rd);
+    if (entry == null) continue;
+    if (dates[entry] === q.rd && q.time !== 'pre-market') entry++;
+    if (entry >= D || entry < 30) continue;
+    const ev = { i, sig: entry - 1, entry, score: q.spp / 100 };
+    EV.av_all.push({ ...ev, score: rand() });
+    const r = q.fde ? yoy(s.sec.rev, s.sec.rev.find((x) => Math.abs(Date.parse(x.end) - Date.parse(q.fde)) / 864e5 <= 10)?.end) : null;
+    const rg = r && r.prev > 0 ? r.cur / r.prev - 1 : null;
+    if (q.spp >= 5) EV.sup5.push(ev);
+    if (q.spp >= 10) EV.sup10.push(ev);
+    if (q.spp >= 5 && rg != null && rg >= 0.1) EV.sup5_rev.push(ev);
+    if (q.spp <= -5) EV.miss5.push({ ...ev, score: -ev.score });
+  }
   // 増配：権利落ち日の配当額が前回より+5%以上（発表はもっと前なので、遅れて気づく形）
   let prevDiv = null;
   for (let k = 1; k < D - 1; k++) {
@@ -102,6 +121,13 @@ const STRATS = {
   eps_up_gap: { name: 'EPS+20%以上＋朝高く始まった時だけ', ev: () => EV.eps_up.filter(gapUp) },
   eps_down: { name: '参考：EPSが前年同期比-20%以下', ev: () => EV.eps_down },
   div_up: { name: '増配（権利落ち日に確認）', ev: () => EV.div_up },
+  av_all: { name: '比較用：予想データのある決算すべて', ev: () => EV.av_all },
+  sup5: { name: 'EPSが予想を+5%以上上回った', ev: () => EV.sup5 },
+  sup10: { name: 'EPSが予想を+10%以上上回った', ev: () => EV.sup10 },
+  sup5_rev: { name: '予想を+5%以上上回り＋売上+10%以上', ev: () => EV.sup5_rev },
+  sup5_gap: { name: '予想を+5%以上上回り＋朝高く始まった時だけ', ev: () => EV.sup5.filter(gapUp) },
+  sup5_trend: { name: '予想を+5%以上上回り＋株価が50日線より上', ev: () => EV.sup5.filter(trend) },
+  miss5: { name: '参考：EPSが予想を5%以上下回った', ev: () => EV.miss5 },
 };
 const EXITS = { dt: { name: 'デイトレ（寄りで買って引けで売る）', hold: 1 }, hold5: { name: '5日保有', hold: 5 }, hold10: { name: '10日保有', hold: 10 }, hold20: { name: '20日保有', hold: 20 } };
 function trade(e, ex) {
@@ -203,6 +229,8 @@ const out = {
   periods: { train: [dates[30], dates[split - 1]], test: [dates[split], dates[D - 1]] },
   events: Object.fromEntries(Object.entries(EV).map(([k, v]) => [k, v.length])),
   secCoverage: { withEarnings: S.filter((s) => s.sec.earnings.length).length, withEps: S.filter((s) => s.sec.eps.length).length },
+  avCoverage: S.filter((s) => s.av?.length).length, // 1日25社ずつ増える。そろうまでは一部の銘柄だけの結果
+
   spy: { trainPct: spyRet(30, split - 1), testPct: spyRet(split, D - 1) },
   randomBase,
   results,

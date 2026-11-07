@@ -26,6 +26,10 @@
 - 日本株とデータ・結果を混ぜない（scripts/us/、data-us/、reports/us-*.json）
 - 銘柄：S&P500構成銘柄（Wikipedia の一覧。生存者バイアスあり）。株価：Tiingo 無料枠（Secrets の TIINGO_API_KEY）
 - 決算発表日時：SEC EDGAR の 8-K（Item 2.02）。EPS・売上：SEC XBRL companyfacts（10-Q/10-Kの値を発表時点の数字とみなす）
+- SECへの連絡先メールは Secrets の `SEC_CONTACT_EMAIL`（公開のステータス・ログには出さない。noreplyアドレスは拒否された）
+- アナリスト予想・サプライズ・発表タイミング：Alpha Vantage 無料枠（Secrets の `ALPHAVANTAGE_API_KEY`、1日25社）。data-us/av/ に暗号化キャッシュ。そろうまで約3週間
+- Tiingo 無料枠は1時間50回・1か月500銘柄まで。株価は7日以上古い銘柄だけ取り直す
+- ナスダックのサイトは規約で自動取得禁止なので使わない
 - 米東部9:30より前の発表は当日始値、それ以降は翌営業日始値で買う。手数料0（ウィブル）＋滑り0.1%。為替は未考慮
 
 ## 検証の方針

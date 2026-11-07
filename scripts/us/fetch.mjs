@@ -14,7 +14,7 @@ const OUT = args.out ?? 'reports-out';
 const MAX_MIN = Number(args['max-minutes'] ?? 300);
 const FROM = '2021-01-01';
 const started = Date.now();
-for (const d of ['prices', 'sec']) fs.mkdirSync(path.join(DATA, d), { recursive: true });
+for (const d of ['prices', 'sec', 'av']) fs.mkdirSync(path.join(DATA, d), { recursive: true });
 fs.mkdirSync(OUT, { recursive: true });
 
 const KEY = process.env.TIINGO_API_KEY;
@@ -30,12 +30,14 @@ const status = {
   universe: 0,
   tiingo: { requests: 0, updated: 0, failed: 0, limitHits: 0, lastError: null },
   sec: { requests: 0, submissions: 0, facts: 0, failed: 0, lastError: null },
+  av: { keyPresent: !!process.env.ALPHAVANTAGE_API_KEY, requests: 0, stored: 0, failed: 0, limitHit: false, lastError: null },
   stoppedBy: 'done',
 };
 const writeStatus = () => {
   status.finishedAt = new Date().toISOString();
   status.pricesStored = fs.readdirSync(path.join(DATA, 'prices')).length;
   status.secStored = fs.readdirSync(path.join(DATA, 'sec')).length;
+  status.av.stored = fs.readdirSync(path.join(DATA, 'av')).length;
   fs.writeFileSync(path.join(OUT, 'us-fetch-status.json'), JSON.stringify(status, null, 2));
   console.log(JSON.stringify(status));
 };
@@ -191,6 +193,33 @@ async function secFor(u) {
   }));
 }
 
+
+// ---------- Alpha Vantage（決算のEPS実績・事前予想・サプライズ・発表タイミング）----------
+// 無料枠は1日25回。持っていない銘柄から順に、全銘柄そろったら90日以上古いものを取り直す
+const AV_KEY = process.env.ALPHAVANTAGE_API_KEY;
+async function avRun(universe) {
+  if (!AV_KEY) return;
+  const list = universe.map((u) => {
+    const f = path.join(DATA, 'av', `${u.t}.json`);
+    return { u, f, age: fs.existsSync(f) ? Date.now() - fs.statSync(f).mtimeMs : Infinity };
+  }).filter((x) => x.age > 90 * 864e5).sort((a, b) => b.age - a.age);
+  status.av.needed = list.length;
+  for (const x of list.slice(0, 25)) {
+    status.av.requests++;
+    try {
+      const res = await fetch(`https://www.alphavantage.co/query?function=EARNINGS&symbol=${encodeURIComponent(x.u.t.replace('.', '-'))}&apikey=${AV_KEY}`);
+      const j = await res.json();
+      if (j.Information || j.Note) { status.av.limitHit = true; status.av.lastError = String(j.Information || j.Note).slice(0, 160); break; }
+      if (!Array.isArray(j.quarterlyEarnings)) { status.av.failed++; status.av.lastError = JSON.stringify(j).slice(0, 160); fs.writeFileSync(x.f, '[]'); continue; }
+      const num = (v) => (v == null || v === 'None' || v === '' ? null : Number(v));
+      fs.writeFileSync(x.f, JSON.stringify(j.quarterlyEarnings.map((q) => ({
+        rd: q.reportedDate, fde: q.fiscalDateEnding, eps: num(q.reportedEPS), est: num(q.estimatedEPS), spp: num(q.surprisePercentage), time: q.reportTime ?? null,
+      }))));
+    } catch (e) { status.av.failed++; status.av.lastError = e.message.slice(0, 160); }
+    await sleep(13000); // 1分5回まで
+  }
+}
+
 // ---------- 実行 ----------
 const universe = await loadUniverse();
 status.universe = universe.length;
@@ -205,6 +234,7 @@ if (!KEY) {
     if (minutes() > MAX_MIN * 0.3) break;
     try { await secFor(u); } catch (e) { status.sec.failed++; status.sec.lastError = e.message; }
   }
+  await avRun(universe);
   // Tiingo：持っていない銘柄を優先、次に古い順。上限に当たったら1時間待って続ける
   const need = [...extra, ...universe].map((u) => {
     const f = path.join(DATA, 'prices', `${u.t}.json`);
