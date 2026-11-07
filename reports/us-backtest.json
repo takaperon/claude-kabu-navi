@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-07T03:07:43.550Z",
-  "universe": 494,
+  "generatedAt": "2026-11-07T04:09:07.416Z",
+  "universe": 496,
   "days": 1469,
   "periods": {
     "train": [
@@ -18,7 +18,7 @@
     "eps_up_rev": 0,
     "eps_down": 0,
     "earn_all": 0,
-    "div_up": 1288
+    "div_up": 1294
   },
   "secCoverage": {
     "withEarnings": 0,
@@ -31,12 +31,12 @@
   "randomBase": {
     "name": "無作為に10銘柄を10日ごとに入れ替え×100回",
     "train": {
-      "avg": 20.3,
-      "p90": 45.9
+      "avg": 22,
+      "p90": 45
     },
     "test": {
-      "avg": 34.7,
-      "p90": 66.8
+      "avg": 36.3,
+      "p90": 66.2
     }
   },
   "results": {
@@ -921,68 +921,68 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 804,
-            "winRate": 0.444,
+            "n": 807,
+            "winRate": 0.4461,
             "avgRet": -0.0018,
-            "profitFactor": 0.74
+            "profitFactor": 0.75
           },
           "test": {
-            "n": 484,
-            "winRate": 0.4277,
+            "n": 487,
+            "winRate": 0.4271,
             "avgRet": -0.0015,
-            "profitFactor": 0.79
+            "profitFactor": 0.78
           },
           "portfolioTrain": {
-            "returnPct": -13.7,
-            "maxDDPct": 13.7,
-            "trades": 803,
+            "returnPct": -13.5,
+            "maxDDPct": 13.5,
+            "trades": 806,
             "yearly": {
               "2021": -4.4,
               "2022": 0.1,
               "2023": -5.3,
-              "2024": -4.8
+              "2024": -4.7
             }
           },
           "portfolioTest": {
-            "returnPct": -7,
+            "returnPct": -7.3,
             "maxDDPct": 8.4,
-            "trades": 482,
+            "trades": 485,
             "yearly": {
               "2024": -3.1,
               "2025": -5.1,
-              "2026": 1.2
+              "2026": 0.8
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 804,
-            "winRate": 0.5211,
+            "n": 807,
+            "winRate": 0.5217,
             "avgRet": -0.0004,
             "profitFactor": 0.97
           },
           "test": {
-            "n": 483,
-            "winRate": 0.4969,
-            "avgRet": 0.0007,
+            "n": 486,
+            "winRate": 0.5,
+            "avgRet": 0.0008,
             "profitFactor": 1.05
           },
           "portfolioTrain": {
-            "returnPct": -12.8,
+            "returnPct": -12.9,
             "maxDDPct": 18.9,
-            "trades": 730,
+            "trades": 733,
             "yearly": {
               "2021": 1.4,
-              "2022": -0.4,
-              "2023": -8.7,
+              "2022": -0.5,
+              "2023": -8.6,
               "2024": -5.5
             }
           },
           "portfolioTest": {
             "returnPct": 2.5,
             "maxDDPct": 10.1,
-            "trades": 436,
+            "trades": 437,
             "yearly": {
               "2024": -4.4,
               "2025": 5.6,
@@ -993,72 +993,72 @@
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 804,
-            "winRate": 0.5261,
+            "n": 807,
+            "winRate": 0.5266,
             "avgRet": 0.0013,
             "profitFactor": 1.07
           },
           "test": {
-            "n": 479,
-            "winRate": 0.5303,
-            "avgRet": 0.0039,
-            "profitFactor": 1.18
+            "n": 482,
+            "winRate": 0.5311,
+            "avgRet": 0.004,
+            "profitFactor": 1.19
           },
           "portfolioTrain": {
-            "returnPct": -7.2,
+            "returnPct": -6.5,
             "maxDDPct": 17.2,
-            "trades": 569,
+            "trades": 570,
             "yearly": {
               "2021": 5.8,
               "2022": -8.3,
-              "2023": -1.5,
-              "2024": -3
+              "2023": -0.5,
+              "2024": -3.2
             }
           },
           "portfolioTest": {
-            "returnPct": 20.6,
+            "returnPct": 19.9,
             "maxDDPct": 14.4,
             "trades": 367,
             "yearly": {
               "2024": -4.7,
               "2025": 13.4,
-              "2026": 11.5
+              "2026": 10.9
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 804,
-            "winRate": 0.5386,
-            "avgRet": 0.0064,
+            "n": 807,
+            "winRate": 0.539,
+            "avgRet": 0.0065,
             "profitFactor": 1.26
           },
           "test": {
-            "n": 479,
-            "winRate": 0.5031,
-            "avgRet": 0.0053,
-            "profitFactor": 1.18
+            "n": 482,
+            "winRate": 0.5041,
+            "avgRet": 0.0054,
+            "profitFactor": 1.19
           },
           "portfolioTrain": {
-            "returnPct": 32.5,
+            "returnPct": 31.2,
             "maxDDPct": 17.3,
             "trades": 372,
             "yearly": {
               "2021": 19,
               "2022": 6.5,
-              "2023": 5.1,
-              "2024": -0.5
+              "2023": 3.4,
+              "2024": 0.2
             }
           },
           "portfolioTest": {
-            "returnPct": 32,
+            "returnPct": 31.1,
             "maxDDPct": 18.9,
             "trades": 244,
             "yearly": {
               "2024": -3,
               "2025": 15.4,
-              "2026": 17.9
+              "2026": 17.1
             }
           }
         }
