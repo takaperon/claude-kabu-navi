@@ -217,6 +217,7 @@ if (!KEY) {
     const fullRefetch = !x.rows || Date.now() - Date.parse(x.last) > 30 * 864e5;
     const from = fullRefetch ? FROM : x.last;
     let rows = await tiingoDaily(x.u.t, from);
+    if (rows === 'limit' && /month/i.test(status.tiingo.lastError ?? '')) { status.stoppedBy = 'tiingo-monthly-symbols'; break; } // 月500銘柄の上限は待っても戻らない
     if (rows === 'limit') {
       if (minutes() + 62 > MAX_MIN) { status.stoppedBy = 'tiingo-limit'; break; }
       await sleep(61 * 60000);
