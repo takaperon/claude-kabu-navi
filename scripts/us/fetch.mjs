@@ -2,6 +2,8 @@
 // 生データはリポジトリにコミットしない（暗号化キャッシュ）。ログ・ステータスには件数だけを出す
 import fs from 'node:fs';
 import path from 'node:path';
+import https from 'node:https';
+import zlib from 'node:zlib';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), [])
@@ -88,6 +90,27 @@ async function tiingoDaily(ticker, from) {
 }
 
 // ---------- SEC ----------
+
+// Node標準のfetchはブラウザ風の sec-fetch-mode 等を自動で付けるため、SECの検問に弾かれることがある。素のhttpsで送る
+function httpsGet(url, ua) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(url, { headers: { 'User-Agent': ua, 'Accept-Encoding': 'gzip, deflate', Host: new URL(url).host } }, (res) => {
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('end', () => {
+        let buf = Buffer.concat(chunks);
+        try {
+          if (res.headers['content-encoding'] === 'gzip') buf = zlib.gunzipSync(buf);
+          else if (res.headers['content-encoding'] === 'deflate') buf = zlib.inflateSync(buf);
+        } catch {}
+        const text = buf.toString('utf8');
+        resolve({ ok: res.statusCode >= 200 && res.statusCode < 300, status: res.statusCode, text: async () => text, json: async () => JSON.parse(text) });
+      });
+    });
+    req.on('error', reject);
+    req.setTimeout(60000, () => req.destroy(new Error('timeout')));
+  });
+}
 let lastSec = 0;
 // SECが拒否する理由を調べるため、名乗り方を何通りか試し、最初に通ったものを使う（応答本文の冒頭だけ記録。個人情報なし）
 const UA_CANDIDATES = [
@@ -100,13 +123,19 @@ async function probeSec() {
   status.sec.probe = [];
   for (const ua of UA_CANDIDATES) {
     try {
-      const res = await fetch('https://data.sec.gov/submissions/CIK0000320193.json', { headers: { 'User-Agent': ua } });
+      const res = await httpsGet('https://data.sec.gov/submissions/CIK0000320193.json', ua);
       const body = await res.text();
       status.sec.probe.push({ ua, status: res.status, body: res.ok ? 'ok' : body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 300) });
       if (res.ok) { secUA = ua; return true; }
     } catch (e) { status.sec.probe.push({ ua, error: e.message }); }
     await sleep(1000);
   }
+  // 比較用：curl でも同じか（通れば、Node側の送り方が原因と分かる）
+  try {
+    const { execFileSync } = await import('node:child_process');
+    const code = execFileSync('curl', ['-s', '-o', '/dev/null', '-w', '%{http_code}', '-A', SEC_UA, 'https://data.sec.gov/submissions/CIK0000320193.json']).toString();
+    status.sec.probe.push({ via: 'curl', status: Number(code) });
+  } catch (e) { status.sec.probe.push({ via: 'curl', error: e.message.slice(0, 120) }); }
   return false;
 }
 async function secJSON(url) {
@@ -114,7 +143,7 @@ async function secJSON(url) {
   if (w > 0) await sleep(w);
   lastSec = Date.now();
   status.sec.requests++;
-  const res = await fetch(url, { headers: { 'User-Agent': secUA } });
+  const res = await httpsGet(url, secUA);
   if (!res.ok) { status.sec.failed++; status.sec.lastError = `${res.status} ${url.split('/').pop()}`; return null; }
   return res.json();
 }
