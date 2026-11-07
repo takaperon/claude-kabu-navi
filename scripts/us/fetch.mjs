@@ -18,6 +18,7 @@ const KEY = process.env.TIINGO_API_KEY;
 const SEC_UA = 'ClaudeKabuNavi takaperon@users.noreply.github.com'; // SECは「名前 連絡先メール」の形式を求める
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const today = new Date().toISOString().slice(0, 10);
+const stale = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
 const minutes = () => (Date.now() - started) / 60000;
 
 const status = {
@@ -178,7 +179,8 @@ if (!KEY) {
     const f = path.join(DATA, 'prices', `${u.t}.json`);
     const rows = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null;
     return { u, f, rows, last: rows?.at(-1)?.[0] ?? '' };
-  }).filter((x) => x.last < today).sort((a, b) => a.last.localeCompare(b.last));
+  // 無料枠は1時間50回なので、毎日全銘柄は取り直さない。持っていない銘柄と、7日以上更新していない銘柄だけ
+  }).filter((x) => x.last < stale).sort((a, b) => a.last.localeCompare(b.last));
   status.tiingo.needed = need.length;
   for (const x of need) {
     if (minutes() > MAX_MIN) { status.stoppedBy = 'time'; break; }
