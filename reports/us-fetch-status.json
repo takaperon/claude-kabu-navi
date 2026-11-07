@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-07T05:02:06.125Z",
+  "startedAt": "2026-11-07T05:16:21.641Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
@@ -11,26 +11,21 @@
     "needed": 3
   },
   "sec": {
-    "requests": 0,
-    "submissions": 0,
-    "facts": 0,
+    "requests": 1004,
+    "submissions": 502,
+    "facts": 502,
     "failed": 0,
     "lastError": null,
     "probe": [
       {
-        "ua": "github-noreply",
-        "status": 403,
-        "body": " SEC.gov | Your Request Originates from an Undeclared Automated Tool html {height: 100%} body {height: 100%; margin:0; padding:0;} #header {background-color:#003968; color:#fff; padding:15px 20px 10px 20px;font-family:Arial, Helvetica, sans-serif; font-size:20px; border-bottom:solid 5px #000;} #foot"
-      },
-      {
-        "via": "curl",
-        "ua": "github-noreply",
-        "status": 403
+        "ua": "secret-email",
+        "status": 200,
+        "body": "ok"
       }
     ]
   },
   "stoppedBy": "done",
-  "finishedAt": "2026-11-07T05:02:08.644Z",
+  "finishedAt": "2026-11-07T05:19:13.775Z",
   "pricesStored": 500,
-  "secStored": 0
+  "secStored": 502
 }
