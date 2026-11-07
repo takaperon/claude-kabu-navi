@@ -1,16 +1,16 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-06T22:47:50.019Z",
-  "universe": 496,
-  "days": 1468,
+  "generatedAt": "2026-11-07T03:07:43.550Z",
+  "universe": 494,
+  "days": 1469,
   "periods": {
     "train": [
       "2021-02-17",
-      "2024-07-03"
+      "2024-07-05"
     ],
     "test": [
-      "2024-07-05",
-      "2026-11-05"
+      "2024-07-08",
+      "2026-11-06"
     ]
   },
   "events": {
@@ -18,25 +18,25 @@
     "eps_up_rev": 0,
     "eps_down": 0,
     "earn_all": 0,
-    "div_up": 1294
+    "div_up": 1288
   },
   "secCoverage": {
     "withEarnings": 0,
     "withEps": 0
   },
   "spy": {
-    "trainPct": 47.9,
-    "testPct": 35.6
+    "trainPct": 48.8,
+    "testPct": 35.9
   },
   "randomBase": {
     "name": "無作為に10銘柄を10日ごとに入れ替え×100回",
     "train": {
-      "avg": 15.1,
-      "p90": 38.8
+      "avg": 20.3,
+      "p90": 45.9
     },
     "test": {
-      "avg": 23.8,
-      "p90": 53.3
+      "avg": 34.7,
+      "p90": 66.8
     }
   },
   "results": {
@@ -921,144 +921,144 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 807,
-            "winRate": 0.4461,
+            "n": 804,
+            "winRate": 0.444,
             "avgRet": -0.0018,
-            "profitFactor": 0.75
+            "profitFactor": 0.74
           },
           "test": {
-            "n": 487,
-            "winRate": 0.4271,
+            "n": 484,
+            "winRate": 0.4277,
             "avgRet": -0.0015,
-            "profitFactor": 0.78
+            "profitFactor": 0.79
           },
           "portfolioTrain": {
-            "returnPct": -13.5,
-            "maxDDPct": 13.5,
-            "trades": 806,
+            "returnPct": -13.7,
+            "maxDDPct": 13.7,
+            "trades": 803,
             "yearly": {
               "2021": -4.4,
               "2022": 0.1,
               "2023": -5.3,
-              "2024": -4.7
+              "2024": -4.8
             }
           },
           "portfolioTest": {
-            "returnPct": -7.3,
+            "returnPct": -7,
             "maxDDPct": 8.4,
-            "trades": 485,
+            "trades": 482,
             "yearly": {
               "2024": -3.1,
               "2025": -5.1,
-              "2026": 0.8
+              "2026": 1.2
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 807,
-            "winRate": 0.5217,
+            "n": 804,
+            "winRate": 0.5211,
             "avgRet": -0.0004,
             "profitFactor": 0.97
           },
           "test": {
             "n": 483,
-            "winRate": 0.501,
-            "avgRet": 0.001,
-            "profitFactor": 1.07
+            "winRate": 0.4969,
+            "avgRet": 0.0007,
+            "profitFactor": 1.05
           },
           "portfolioTrain": {
-            "returnPct": -12.9,
+            "returnPct": -12.8,
             "maxDDPct": 18.9,
-            "trades": 733,
+            "trades": 730,
             "yearly": {
               "2021": 1.4,
-              "2022": -0.5,
-              "2023": -8.6,
+              "2022": -0.4,
+              "2023": -8.7,
               "2024": -5.5
             }
           },
           "portfolioTest": {
-            "returnPct": 3.6,
+            "returnPct": 2.5,
             "maxDDPct": 10.1,
-            "trades": 434,
+            "trades": 436,
             "yearly": {
               "2024": -4.4,
               "2025": 5.6,
-              "2026": 2.6
+              "2026": 1.6
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 807,
-            "winRate": 0.5266,
+            "n": 804,
+            "winRate": 0.5261,
             "avgRet": 0.0013,
             "profitFactor": 1.07
           },
           "test": {
-            "n": 482,
-            "winRate": 0.5311,
-            "avgRet": 0.004,
-            "profitFactor": 1.19
+            "n": 479,
+            "winRate": 0.5303,
+            "avgRet": 0.0039,
+            "profitFactor": 1.18
           },
           "portfolioTrain": {
-            "returnPct": -6.5,
+            "returnPct": -7.2,
             "maxDDPct": 17.2,
-            "trades": 570,
+            "trades": 569,
             "yearly": {
               "2021": 5.8,
               "2022": -8.3,
-              "2023": -0.5,
-              "2024": -3.2
+              "2023": -1.5,
+              "2024": -3
             }
           },
           "portfolioTest": {
-            "returnPct": 19.9,
+            "returnPct": 20.6,
             "maxDDPct": 14.4,
             "trades": 367,
             "yearly": {
               "2024": -4.7,
               "2025": 13.4,
-              "2026": 10.9
+              "2026": 11.5
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 807,
-            "winRate": 0.539,
-            "avgRet": 0.0065,
+            "n": 804,
+            "winRate": 0.5386,
+            "avgRet": 0.0064,
             "profitFactor": 1.26
           },
           "test": {
-            "n": 482,
-            "winRate": 0.5041,
-            "avgRet": 0.0054,
-            "profitFactor": 1.19
+            "n": 479,
+            "winRate": 0.5031,
+            "avgRet": 0.0053,
+            "profitFactor": 1.18
           },
           "portfolioTrain": {
-            "returnPct": 31.2,
+            "returnPct": 32.5,
             "maxDDPct": 17.3,
             "trades": 372,
             "yearly": {
               "2021": 19,
               "2022": 6.5,
-              "2023": 3.4,
-              "2024": 0.2
+              "2023": 5.1,
+              "2024": -0.5
             }
           },
           "portfolioTest": {
-            "returnPct": 31.1,
+            "returnPct": 32,
             "maxDDPct": 18.9,
             "trades": 244,
             "yearly": {
               "2024": -3,
               "2025": 15.4,
-              "2026": 17.1
+              "2026": 17.9
             }
           }
         }
