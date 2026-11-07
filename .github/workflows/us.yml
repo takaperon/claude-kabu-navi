@@ -6,7 +6,7 @@ on:
     branches: [main]
     paths: ['scripts/us/**', '.github/workflows/us.yml']
   schedule:
-    - cron: '20 22 * * 1-5' # 平日 07:20 JST（米国市場の引け後）
+    - cron: '20 22 * * *' # 毎日 07:20 JST（米国市場の引け後。Alpha Vantage を1日25社ずつ進めるため土日も）
   workflow_dispatch:
 permissions:
   contents: write
