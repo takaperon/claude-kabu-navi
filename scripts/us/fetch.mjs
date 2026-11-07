@@ -113,29 +113,30 @@ function httpsGet(url, ua) {
 }
 let lastSec = 0;
 // SECが拒否する理由を調べるため、名乗り方を何通りか試し、最初に通ったものを使う（応答本文の冒頭だけ記録。個人情報なし）
+// 連絡先メールは Secrets（SEC_CONTACT_EMAIL）から。公開リポジトリなので、ステータスやログには名前（label）だけを出す
+const CONTACT = process.env.SEC_CONTACT_EMAIL?.trim();
 const UA_CANDIDATES = [
-  SEC_UA,
-  'takaperon takaperon@users.noreply.github.com',
-  'Claude Kabu Navi research takaperon@users.noreply.github.com',
+  ...(CONTACT ? [{ label: 'secret-email', ua: `ClaudeKabuNavi ${CONTACT}` }] : []),
+  { label: 'github-noreply', ua: SEC_UA },
 ];
 let secUA = SEC_UA;
 async function probeSec() {
   status.sec.probe = [];
-  for (const ua of UA_CANDIDATES) {
+  for (const { label, ua } of UA_CANDIDATES) {
     try {
       const res = await httpsGet('https://data.sec.gov/submissions/CIK0000320193.json', ua);
       const body = await res.text();
-      status.sec.probe.push({ ua, status: res.status, body: res.ok ? 'ok' : body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 300) });
+      status.sec.probe.push({ ua: label, status: res.status, body: res.ok ? 'ok' : body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').slice(0, 300) });
       if (res.ok) { secUA = ua; return true; }
-    } catch (e) { status.sec.probe.push({ ua, error: e.message }); }
+    } catch (e) { status.sec.probe.push({ ua: label, error: e.message.slice(0, 120) }); }
     await sleep(1000);
   }
   // 比較用：curl でも同じか（通れば、Node側の送り方が原因と分かる）
   try {
     const { execFileSync } = await import('node:child_process');
-    const code = execFileSync('curl', ['-s', '-o', '/dev/null', '-w', '%{http_code}', '-A', SEC_UA, 'https://data.sec.gov/submissions/CIK0000320193.json']).toString();
-    status.sec.probe.push({ via: 'curl', status: Number(code) });
-  } catch (e) { status.sec.probe.push({ via: 'curl', error: e.message.slice(0, 120) }); }
+    const code = execFileSync('curl', ['-s', '-o', '/dev/null', '-w', '%{http_code}', '-A', UA_CANDIDATES[0].ua, 'https://data.sec.gov/submissions/CIK0000320193.json']).toString();
+    status.sec.probe.push({ via: 'curl', ua: UA_CANDIDATES[0].label, status: Number(code) });
+  } catch (e) { status.sec.probe.push({ via: 'curl', error: 'curl failed', code: e.status ?? null }); } // エラー文にはコマンド（連絡先入り）が含まれるので出さない
   return false;
 }
 async function secJSON(url) {

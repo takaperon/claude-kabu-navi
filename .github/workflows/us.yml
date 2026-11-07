@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 350
     env:
       TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+      SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
