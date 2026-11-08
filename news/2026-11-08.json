@@ -1,0 +1,491 @@
+{
+  "date": "2026-11-08",
+  "status": "未検証",
+  "period": "2026-11-01〜2026-11-07",
+  "note": "週次ニュース調査（自動実行）。材料の効き目を後で検証するための記録で、売買の推奨ではない。株探の一覧ページ・11/2と11/4の開示まとめ・Japan Timesは取得できず、企業発表は主に11/5・11/6分。数値は報道ベースで公式資料とは未照合。",
+  "items": [
+    {
+      "headline": "日経平均が11/6に3,643円安、終値の下げ幅は歴代3位で6万円割れ",
+      "summary": "前日の米国で半導体株指数(SOX)が約12%急落した流れを受け、東京市場はほぼ全面安となった。プライム市場の大半が下落し、33業種すべてがマイナス。信用取引の追い証による投げ売りも指摘され、週間では9%超の下落となった。",
+      "sources": [
+        "https://news.web.nhk/newsweb/na/nd-20261106de71341",
+        "https://magnikki.com/market-review-2026w45/",
+        "https://www.bloomberg.com/news/articles/2026-11-06/japan-s-nikkei-breaks-below-key-60-000-level-on-ai-selloff"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "マクロ",
+      "sectors": [
+        "電気機器",
+        "情報・通信業",
+        "食料品"
+      ],
+      "stocks": [
+        {
+          "code": "6857",
+          "name": "アドバンテスト",
+          "direction": "-",
+          "reason": "米半導体株急落の影響を強く受けた"
+        },
+        {
+          "code": "8035",
+          "name": "東京エレクトロン",
+          "direction": "-",
+          "reason": "同上"
+        },
+        {
+          "code": "9984",
+          "name": "ソフトバンクグループ",
+          "direction": "-",
+          "reason": "AI投資関連の代表銘柄として大きく売られた"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "高"
+    },
+    {
+      "headline": "米中間選挙で民主党が勝利、AIデータセンター規制への警戒から米半導体株が急落",
+      "summary": "11/4の選挙結果を受け、民主党幹部からデータセンター建設を抑える主張が出たと報じられ、11/5にエヌビディアやAMDなどが大きく下落した。規制が実際にどこまで進むかは未確定。",
+      "sources": [
+        "https://www.cnbc.com/2026/11/05/democrats-data-center-restrictions-midterms.html",
+        "https://www.nbcnews.com/business/markets/tech-stocks-plunge-ai-midterms-rcna607650",
+        "https://www.aljazeera.com/economy/2026/11/5/ai-stocks-plunge-after-election-driving-down-us-markets"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "マクロ",
+      "sectors": [
+        "電気機器",
+        "非鉄金属",
+        "機械"
+      ],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "テーマ：AIデータセンター投資の減速リスク（電線・半導体・電力設備に波及の可能性）",
+      "summary": "米国でデータセンター建設規制が強まれば、半導体製造装置や電線・光ファイバーなど、データセンター需要で伸びてきた日本の関連業種にも逆風になりうる。一方、国内半導体関連の好業績が下支えとの見方もあり、方向は割れている。週間では非鉄金属が20%安と最も下げた。",
+      "sources": [
+        "https://magnikki.com/market-review-2026w45/",
+        "https://www.gaitame.com/media/entry/2026/11/06/164550"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "テーマ",
+      "sectors": [
+        "非鉄金属",
+        "電気機器",
+        "機械"
+      ],
+      "stocks": [],
+      "horizon": "数か月",
+      "confidence": "低"
+    },
+    {
+      "headline": "AI・半導体株から自動車・不動産などへ資金が移る動き（11/5）",
+      "summary": "11/5は日経平均が下げる一方、TOPIXは上昇し、33業種中25業種が値上がりした。輸送用機器が約12%、不動産が約7%上昇するなど、AI関連以外への資金移動が目立った。週間でも空運・輸送用機器・不動産はプラス。",
+      "sources": [
+        "https://magnikki.com/market-review-2026w45/",
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261105"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "マクロ",
+      "sectors": [
+        "輸送用機器",
+        "不動産業",
+        "空運業"
+      ],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "トヨタ、今期最終利益を10%上方修正",
+      "summary": "中間決算とあわせて通期の最終利益予想を引き上げた。11/5は業種間の資金移動も重なり、株価が大きく上昇したと伝えられた。",
+      "sources": [
+        "https://kabutan.jp/news/?b=k202611050032",
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261105"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "企業発表",
+      "sectors": [
+        "輸送用機器"
+      ],
+      "stocks": [
+        {
+          "code": "7203",
+          "name": "トヨタ自動車",
+          "direction": "+",
+          "reason": "通期の利益予想を上方修正"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "JTのロシア事業、プーチン大統領令で一時的にロシア側の管理下に",
+      "summary": "ロシア大統領令により、JT傘下JTIのロシア国内資産が一時管理の対象となり、11/6にJT株はストップ安となった。ロシア事業は利益の大きな割合を占めるとされ、今後の扱いは不透明。",
+      "sources": [
+        "https://www.newsweekjapan.jp/articles/-/339185",
+        "https://minkabu.jp/news/4651888",
+        "https://news.web.nhk/newsweb/na/nd-20261106de71517"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "企業発表",
+      "sectors": [
+        "食料品"
+      ],
+      "stocks": [
+        {
+          "code": "2914",
+          "name": "日本たばこ産業",
+          "direction": "-",
+          "reason": "ロシア資産が一時管理下に置かれた"
+        }
+      ],
+      "horizon": "数か月",
+      "confidence": "高"
+    },
+    {
+      "headline": "三菱重工、今期最終を16%上方修正し最高益予想を上乗せ",
+      "summary": "上期の最終利益が前年から大きく伸び、通期予想も引き上げた。4期連続の最高益見通しをさらに上積みした形。",
+      "sources": [
+        "https://finance.yahoo.co.jp/news/detail/7ae5aafbe391a1c237cf0578d2bc692ae5d085e3"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "企業発表",
+      "sectors": [
+        "機械"
+      ],
+      "stocks": [
+        {
+          "code": "7011",
+          "name": "三菱重工業",
+          "direction": "+",
+          "reason": "通期最終利益予想を上方修正"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "ソニーG・ダイキン・日本製鉄などが上方修正（11/5発表）",
+      "summary": "ソニーグループは今期純利益を10%、日本製鉄は52%上方修正。ダイキンは最高益予想を上乗せし増配、11/6の全面安の中でも上昇した数少ない日経平均採用銘柄だった。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261105",
+        "https://magnikki.com/market-review-2026w45/"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "企業発表",
+      "sectors": [
+        "電気機器",
+        "機械",
+        "鉄鋼"
+      ],
+      "stocks": [
+        {
+          "code": "6758",
+          "name": "ソニーグループ",
+          "direction": "+",
+          "reason": "今期純利益予想を上方修正"
+        },
+        {
+          "code": "6367",
+          "name": "ダイキン工業",
+          "direction": "+",
+          "reason": "最高益予想上乗せと増配"
+        },
+        {
+          "code": "5401",
+          "name": "日本製鉄",
+          "direction": "+",
+          "reason": "今期純利益予想を大幅上方修正"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "電子部品のローム・太陽誘電・東レが上方修正（11/5発表）",
+      "summary": "ロームは今期経常を47%、太陽誘電は19%上方修正。東レは上期純利益を大きく上方修正し5期ぶりの最高益更新見通しとした。太陽誘電は11/6も上昇した。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261105",
+        "https://magnikki.com/market-review-2026w45/"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "企業発表",
+      "sectors": [
+        "電気機器",
+        "繊維製品"
+      ],
+      "stocks": [
+        {
+          "code": "6963",
+          "name": "ローム",
+          "direction": "+",
+          "reason": "今期経常を大幅上方修正"
+        },
+        {
+          "code": "6976",
+          "name": "太陽誘電",
+          "direction": "+",
+          "reason": "今期経常を上方修正"
+        },
+        {
+          "code": "3402",
+          "name": "東レ",
+          "direction": "+",
+          "reason": "最高益更新見通し"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "参天製薬・全国保証・FUJIが自社株買いを発表（11/5）",
+      "summary": "参天製薬は上限350億円、全国保証は80億円の自社株買いを決めた。FUJIは上方修正に加え、取得株を全て消却する自社株買いを実施する。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261105"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "企業発表",
+      "sectors": [
+        "医薬品",
+        "その他金融業",
+        "機械"
+      ],
+      "stocks": [
+        {
+          "code": "4536",
+          "name": "参天製薬",
+          "direction": "+",
+          "reason": "大型の自社株買い"
+        },
+        {
+          "code": "7164",
+          "name": "全国保証",
+          "direction": "+",
+          "reason": "自社株買い"
+        },
+        {
+          "code": "6134",
+          "name": "FUJI",
+          "direction": "+",
+          "reason": "上方修正と消却前提の自社株買い"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "任天堂は7〜9月期が減益、住友林業は下方修正（11/5発表）",
+      "summary": "任天堂は上期全体では増益だが、7〜9月期だけでみると前年から3割減益だった。住友林業は今期経常を20%下方修正した。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261105"
+      ],
+      "eventDate": "2026-11-05",
+      "type": "企業発表",
+      "sectors": [
+        "その他製品",
+        "建設業"
+      ],
+      "stocks": [
+        {
+          "code": "7974",
+          "name": "任天堂",
+          "direction": "-",
+          "reason": "直近四半期が減益"
+        },
+        {
+          "code": "1911",
+          "name": "住友林業",
+          "direction": "-",
+          "reason": "今期経常を下方修正"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "電子部品・装置のニチコン・ウシオ電機・TOWAなどが上方修正（11/6発表）",
+      "summary": "ニチコンは39%、ウシオ電機は29%、TOWAは25%上方修正し、TOWAは5期ぶりの最高益見通し。メイコー・長瀬産業も最高益予想を上乗せした。半導体関連が売られる中での好決算で、反応の差は検証対象になる。",
+      "sources": [
+        "https://finance.yahoo.co.jp/news/detail/e06f22e944c167b53480cf14b3c6c247b0722bb4"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "企業発表",
+      "sectors": [
+        "電気機器",
+        "機械",
+        "卸売業"
+      ],
+      "stocks": [
+        {
+          "code": "6996",
+          "name": "ニチコン",
+          "direction": "+",
+          "reason": "大幅上方修正"
+        },
+        {
+          "code": "6925",
+          "name": "ウシオ電機",
+          "direction": "+",
+          "reason": "大幅上方修正"
+        },
+        {
+          "code": "6315",
+          "name": "TOWA",
+          "direction": "+",
+          "reason": "最高益見通しへ上方修正と増配"
+        },
+        {
+          "code": "6787",
+          "name": "メイコー",
+          "direction": "+",
+          "reason": "上方修正と増配"
+        },
+        {
+          "code": "8012",
+          "name": "長瀬産業",
+          "direction": "+",
+          "reason": "上方修正と増配"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "ミネベアミツミ・島津製作所・関西ペイントが一転増益などへ上方修正（11/6発表）",
+      "summary": "ミネベアミツミは最終増益へ、島津製作所は一転増益に上方修正し増配。関西ペイントも最終利益を23%上方修正した。",
+      "sources": [
+        "https://finance.yahoo.co.jp/news/detail/e06f22e944c167b53480cf14b3c6c247b0722bb4"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "企業発表",
+      "sectors": [
+        "電気機器",
+        "精密機器",
+        "化学"
+      ],
+      "stocks": [
+        {
+          "code": "6479",
+          "name": "ミネベアミツミ",
+          "direction": "+",
+          "reason": "増益へ上方修正"
+        },
+        {
+          "code": "7701",
+          "name": "島津製作所",
+          "direction": "+",
+          "reason": "一転増益と増配"
+        },
+        {
+          "code": "4613",
+          "name": "関西ペイント",
+          "direction": "+",
+          "reason": "最終利益を上方修正"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "地銀・リースでも上方修正（八十二長野銀行・みずほリース・セブン銀行）",
+      "summary": "八十二長野銀行とみずほリースは最高益予想を上乗せし増配、セブン銀行も13%上方修正した。金利のある環境で金融の利益が伸びている流れ。",
+      "sources": [
+        "https://finance.yahoo.co.jp/news/detail/e06f22e944c167b53480cf14b3c6c247b0722bb4"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "企業発表",
+      "sectors": [
+        "銀行業",
+        "その他金融業"
+      ],
+      "stocks": [
+        {
+          "code": "8359",
+          "name": "八十二長野銀行",
+          "direction": "+",
+          "reason": "上方修正と増配"
+        },
+        {
+          "code": "8425",
+          "name": "みずほリース",
+          "direction": "+",
+          "reason": "上方修正と増配"
+        },
+        {
+          "code": "8410",
+          "name": "セブン銀行",
+          "direction": "+",
+          "reason": "上方修正"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "原油が週間で約13%下落、資源株は大幅安・空運は上昇",
+      "summary": "WTI原油は週間で1割超下げ、90ドル台前半となった。週間の業種別では鉱業・石油石炭が大きく下げ、燃料費が下がる空運業は上昇した。",
+      "sources": [
+        "https://magnikki.com/market-review-2026w45/"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "マクロ",
+      "sectors": [
+        "鉱業",
+        "石油・石炭製品",
+        "空運業"
+      ],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "米10月雇用統計は予想を大きく上回る16.5万人増、失業率4.1%",
+      "summary": "11/6発表の米雇用者数は市場予想を大きく超えた。景気の強さは安心材料だが、利下げ期待を後退させ金利を押し上げる方向にも働きうる。",
+      "sources": [
+        "https://abc7news.com/story/us-employers-added-surprising-165000-jobs-october-unemployment-rate-dipped-41/20020018/",
+        "https://investinglive.com/news/us-october-non-farm-payrolls-165k-vs-65k-expected/"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "マクロ",
+      "sectors": [],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "ドル円は158円台、国内外の長期金利はやや低下",
+      "summary": "ドル円は週末に158円台半ばで、円安基調が続いた。株安を受けて日米の10年債利回りはともに低下した。",
+      "sources": [
+        "https://magnikki.com/market-review-2026w45/"
+      ],
+      "eventDate": "2026-11-06",
+      "type": "マクロ",
+      "sectors": [
+        "輸送用機器",
+        "銀行業"
+      ],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "来週の予定：米CPI（11/10）、ソフトバンクG（11/10）・三菱UFJ（11/13）決算",
+      "summary": "11/10に米10月消費者物価とソフトバンクグループ決算、11/13に米生産者物価と三菱UFJ決算が予定される。AI関連の売りが続くかを見る材料になる。",
+      "sources": [
+        "https://magnikki.com/market-review-2026w45/",
+        "https://www.gaitame.com/media/entry/2026/11/06/164550"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "マクロ",
+      "sectors": [
+        "情報・通信業",
+        "銀行業"
+      ],
+      "stocks": [],
+      "horizon": "数日",
+      "confidence": "中"
+    }
+  ]
+}
