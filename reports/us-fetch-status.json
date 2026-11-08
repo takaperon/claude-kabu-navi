@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-07T22:47:02.541Z",
+  "startedAt": "2026-11-08T22:46:37.836Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
@@ -26,15 +26,15 @@
   },
   "av": {
     "keyPresent": true,
-    "requests": 25,
-    "stored": 75,
-    "failed": 0,
-    "limitHit": false,
-    "lastError": null,
-    "needed": 452
+    "requests": 5,
+    "stored": 79,
+    "failed": 1,
+    "limitHit": true,
+    "lastError": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the p",
+    "needed": 427
   },
   "stoppedBy": "done",
-  "finishedAt": "2026-11-07T22:52:32.350Z",
+  "finishedAt": "2026-11-08T22:47:18.491Z",
   "pricesStored": 500,
   "secStored": 502
 }
