@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-09T10:59:53.293Z",
+  "updatedAt": "2026-11-10T10:55:22.413Z",
   "startDate": "2026-11-05",
-  "lastDate": "2026-11-09",
+  "lastDate": "2026-11-10",
   "strategies": {
     "swing_div": {
       "name": "配当予想の引き上げ（5日保有）",
@@ -10,8 +10,8 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 1107875,
-      "returnPct": 10.8,
+      "equityYen": 1144262,
+      "returnPct": 14.4,
       "trades": 0,
       "winRatePct": null,
       "avgRetPct": null,
@@ -21,141 +21,141 @@
           "name": "日本郵船",
           "reason": "配当予想を+37.5%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": -4
+          "daysHeld": 3,
+          "unrealPct": -2.8
         },
         {
           "code": "77600",
           "name": "ＩＭＶ",
           "reason": "配当予想を+33.3%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 24.4
+          "daysHeld": 3,
+          "unrealPct": 29.5
         },
         {
           "code": "31100",
           "name": "日東紡績",
           "reason": "配当予想を+32.1%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 28.1
+          "daysHeld": 3,
+          "unrealPct": 39.7
         },
         {
           "code": "27300",
           "name": "エディオン",
           "reason": "配当予想を+30%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 3
+          "daysHeld": 3,
+          "unrealPct": 2.1
         },
         {
           "code": "81500",
           "name": "三信電気",
           "reason": "配当予想を+21.4%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 4.7
+          "daysHeld": 3,
+          "unrealPct": 8.3
         },
         {
           "code": "69410",
           "name": "山一電機",
           "reason": "配当予想を+20.8%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 16.4
+          "daysHeld": 3,
+          "unrealPct": 26.9
         },
         {
           "code": "30340",
           "name": "クオールホールディングス",
           "reason": "配当予想を+18.5%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 9.1
+          "daysHeld": 3,
+          "unrealPct": 3.5
         },
         {
           "code": "91190",
           "name": "飯野海運",
           "reason": "配当予想を+13.2%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 3.2
+          "daysHeld": 3,
+          "unrealPct": 4.5
         },
         {
           "code": "77110",
           "name": "助川電気工業",
           "reason": "配当予想を来期+11.1%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 15.8
+          "daysHeld": 3,
+          "unrealPct": 21.1
         },
         {
           "code": "79170",
           "name": "ＺＡＣＲＯＳ",
           "reason": "配当予想を+11.1%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 7.1
+          "daysHeld": 3,
+          "unrealPct": 11.5
         }
       ],
       "nextBuys": [
         {
-          "code": "79660",
-          "name": "リンテック",
-          "reason": "配当予想を+50%引き上げ（2026-11-09発表）",
+          "code": "58030",
+          "name": "フジクラ",
+          "reason": "配当予想を+110.5%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "40640",
-          "name": "日本カーバイド工業",
-          "reason": "配当予想を+21.6%引き上げ（2026-11-09発表）",
+          "code": "31310",
+          "name": "シンデン・ハイテックス",
+          "reason": "配当予想を+80.9%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "64480",
-          "name": "ブラザー工業",
-          "reason": "配当予想を+20%引き上げ（2026-11-09発表）",
+          "code": "51210",
+          "name": "藤倉コンポジット",
+          "reason": "配当予想を+62.8%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "70140",
-          "name": "名村造船所",
-          "reason": "配当予想を+16.7%引き上げ（2026-11-09発表）",
+          "code": "64180",
+          "name": "日本金銭機械",
+          "reason": "配当予想を+58.7%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "18030",
-          "name": "清水建設",
-          "reason": "配当予想を+15.6%引き上げ（2026-11-09発表）",
+          "code": "40470",
+          "name": "関東電化工業",
+          "reason": "配当予想を+44.4%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "84390",
-          "name": "東京センチュリー",
-          "reason": "配当予想を+15.6%引き上げ（2026-11-09発表）",
+          "code": "98800",
+          "name": "イノテック",
+          "reason": "配当予想を+30.8%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "83310",
-          "name": "千葉銀行",
-          "reason": "配当予想を+12.5%引き上げ（2026-11-09発表）",
+          "code": "93080",
+          "name": "乾汽船",
+          "reason": "配当予想を+25.3%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "22640",
-          "name": "森永乳業",
-          "reason": "配当予想を+12%引き上げ（2026-11-09発表）",
+          "code": "60800",
+          "name": "Ｍ＆Ａキャピタルパートナーズ",
+          "reason": "配当予想を来期+20.5%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "54630",
-          "name": "丸一鋼管",
-          "reason": "配当予想を+11.5%引き上げ（2026-11-09発表）",
+          "code": "68550",
+          "name": "日本電子材料",
+          "reason": "配当予想を+20%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "66510",
-          "name": "日東工業",
-          "reason": "配当予想を+10.4%引き上げ（2026-11-09発表）",
+          "code": "83670",
+          "name": "南都銀行",
+          "reason": "配当予想を+14.3%引き上げ（2026-11-10発表）",
           "late": false
         }
       ],
@@ -172,6 +172,10 @@
         {
           "date": "2026-11-09",
           "value": 1107875
+        },
+        {
+          "date": "2026-11-10",
+          "value": 1144262
         }
       ]
     },
@@ -182,8 +186,8 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 1016452,
-      "returnPct": 1.6,
+      "equityYen": 1020860,
+      "returnPct": 2.1,
       "trades": 0,
       "winRatePct": null,
       "avgRetPct": null,
@@ -193,75 +197,141 @@
           "name": "エディオン",
           "reason": "営業利益予想を+33.3%上方修正（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 3
+          "daysHeld": 3,
+          "unrealPct": 2.1
         },
         {
           "code": "42020",
           "name": "ダイセル",
           "reason": "営業利益予想を+18.8%上方修正（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 5.1
+          "daysHeld": 3,
+          "unrealPct": 7
         },
         {
           "code": "72030",
           "name": "トヨタ自動車",
           "reason": "営業利益予想を+14.7%上方修正（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": -0.5
+          "daysHeld": 3,
+          "unrealPct": -2.7
         },
         {
           "code": "90210",
           "name": "西日本旅客鉄道",
           "reason": "営業利益予想を+12.1%上方修正（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 1.1
+          "daysHeld": 3,
+          "unrealPct": 0.9
         },
         {
           "code": "54610",
           "name": "中部鋼鈑",
           "reason": "営業利益予想を+166.7%上方修正（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 1.4
+          "daysHeld": 2,
+          "unrealPct": 4
         },
         {
           "code": "46350",
           "name": "東京インキ",
           "reason": "営業利益予想を+35.2%上方修正（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 3.3
+          "daysHeld": 2,
+          "unrealPct": 8.6
         },
         {
           "code": "97060",
           "name": "日本空港ビルデング",
           "reason": "営業利益予想を+12.9%上方修正（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 3
-        }
-      ],
-      "nextBuys": [
+          "daysHeld": 2,
+          "unrealPct": 3.8
+        },
         {
           "code": "18030",
           "name": "清水建設",
           "reason": "営業利益予想を+25.5%上方修正（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "daysHeld": 1,
+          "unrealPct": 0.5
         },
         {
           "code": "22640",
           "name": "森永乳業",
           "reason": "営業利益予想を+14.7%上方修正（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "daysHeld": 1,
+          "unrealPct": -2.7
         },
         {
           "code": "51920",
           "name": "三ツ星ベルト",
           "reason": "営業利益予想を+14.1%上方修正（2026-11-09発表）",
+          "entryDate": "2026-11-10",
+          "daysHeld": 1,
+          "unrealPct": -0.5
+        }
+      ],
+      "nextBuys": [
+        {
+          "code": "31030",
+          "name": "ユニチカ",
+          "reason": "営業利益予想を+62.5%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "49110",
+          "name": "資生堂",
+          "reason": "営業利益予想を+47.5%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "46280",
+          "name": "エスケー化研",
+          "reason": "営業利益予想を+36%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "40230",
+          "name": "クレハ",
+          "reason": "営業利益予想を+22.7%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "78320",
+          "name": "バンダイナムコホールディングス",
+          "reason": "営業利益予想を+22.2%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "72670",
+          "name": "本田技研工業",
+          "reason": "営業利益予想を+20%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "18850",
+          "name": "東亜建設工業",
+          "reason": "営業利益予想を+17.1%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "41160",
+          "name": "大日精化工業",
+          "reason": "営業利益予想を+15.7%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "68690",
+          "name": "シスメックス",
+          "reason": "営業利益予想を+14.2%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "23310",
+          "name": "ＡＬＳＯＫ",
+          "reason": "営業利益予想を+14%上方修正（2026-11-10発表）",
           "late": false
         }
       ],
@@ -278,6 +348,10 @@
         {
           "date": "2026-11-09",
           "value": 1016452
+        },
+        {
+          "date": "2026-11-10",
+          "value": 1020860
         }
       ]
     },
@@ -288,75 +362,165 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 1093686,
-      "returnPct": 9.4,
-      "trades": 20,
-      "winRatePct": 85,
-      "avgRetPct": 4.59,
+      "equityYen": 1094867,
+      "returnPct": 9.5,
+      "trades": 30,
+      "winRatePct": 73.3,
+      "avgRetPct": 3.1,
       "holdings": [],
       "nextBuys": [
+        {
+          "code": "58030",
+          "name": "フジクラ",
+          "reason": "配当予想を+110.5%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "31310",
+          "name": "シンデン・ハイテックス",
+          "reason": "配当予想を+80.9%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "51210",
+          "name": "藤倉コンポジット",
+          "reason": "配当予想を+62.8%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "64180",
+          "name": "日本金銭機械",
+          "reason": "配当予想を+58.7%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "40470",
+          "name": "関東電化工業",
+          "reason": "配当予想を+44.4%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "98800",
+          "name": "イノテック",
+          "reason": "配当予想を+30.8%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "93080",
+          "name": "乾汽船",
+          "reason": "配当予想を+25.3%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "60800",
+          "name": "Ｍ＆Ａキャピタルパートナーズ",
+          "reason": "配当予想を来期+20.5%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "68550",
+          "name": "日本電子材料",
+          "reason": "配当予想を+20%引き上げ（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "83670",
+          "name": "南都銀行",
+          "reason": "配当予想を+14.3%引き上げ（2026-11-10発表）",
+          "late": false
+        }
+      ],
+      "recentClosed": [
         {
           "code": "79660",
           "name": "リンテック",
           "reason": "配当予想を+50%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": 0.2,
+          "profitYen": 190
         },
         {
           "code": "40640",
           "name": "日本カーバイド工業",
           "reason": "配当予想を+21.6%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": -0.2,
+          "profitYen": -219
         },
         {
           "code": "64480",
           "name": "ブラザー工業",
           "reason": "配当予想を+20%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": 8.1,
+          "profitYen": 8835
         },
         {
           "code": "70140",
           "name": "名村造船所",
           "reason": "配当予想を+16.7%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": -0.9,
+          "profitYen": -972
         },
         {
           "code": "18030",
           "name": "清水建設",
           "reason": "配当予想を+15.6%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": 0.5,
+          "profitYen": 545
         },
         {
           "code": "84390",
           "name": "東京センチュリー",
           "reason": "配当予想を+15.6%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": -2.2,
+          "profitYen": -2384
         },
         {
           "code": "83310",
           "name": "千葉銀行",
           "reason": "配当予想を+12.5%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": 2,
+          "profitYen": 2201
         },
         {
           "code": "22640",
           "name": "森永乳業",
           "reason": "配当予想を+12%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": -2.7,
+          "profitYen": -2994
         },
         {
           "code": "54630",
           "name": "丸一鋼管",
           "reason": "配当予想を+11.5%引き上げ（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": -4.6,
+          "profitYen": -4995
         },
         {
           "code": "66510",
           "name": "日東工業",
           "reason": "配当予想を+10.4%引き上げ（2026-11-09発表）",
-          "late": false
-        }
-      ],
-      "recentClosed": [
+          "entryDate": "2026-11-10",
+          "exitDate": "2026-11-10",
+          "retPct": 0.9,
+          "profitYen": 972
+        },
         {
           "code": "67770",
           "name": "ｓａｎｔｅｃ　Ｈｏｌｄｉｎｇｓ",
@@ -550,6 +714,10 @@
         {
           "date": "2026-11-09",
           "value": 1093686
+        },
+        {
+          "date": "2026-11-10",
+          "value": 1094867
         }
       ]
     },
@@ -560,8 +728,8 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 1006343,
-      "returnPct": 0.6,
+      "equityYen": 1009621,
+      "returnPct": 1,
       "trades": 0,
       "winRatePct": null,
       "avgRetPct": null,
@@ -571,35 +739,101 @@
           "name": "東京インキ",
           "reason": "営業利益予想を+35.2%上方修正（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 3.3
+          "daysHeld": 2,
+          "unrealPct": 8.6
         },
         {
           "code": "97060",
           "name": "日本空港ビルデング",
           "reason": "営業利益予想を+12.9%上方修正（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 3
-        }
-      ],
-      "nextBuys": [
+          "daysHeld": 2,
+          "unrealPct": 3.8
+        },
         {
           "code": "18030",
           "name": "清水建設",
           "reason": "営業利益予想を+25.5%上方修正（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "daysHeld": 1,
+          "unrealPct": 0.5
         },
         {
           "code": "22640",
           "name": "森永乳業",
           "reason": "営業利益予想を+14.7%上方修正（2026-11-09発表）",
-          "late": false
+          "entryDate": "2026-11-10",
+          "daysHeld": 1,
+          "unrealPct": -2.7
         },
         {
           "code": "51920",
           "name": "三ツ星ベルト",
           "reason": "営業利益予想を+14.1%上方修正（2026-11-09発表）",
+          "entryDate": "2026-11-10",
+          "daysHeld": 1,
+          "unrealPct": -0.5
+        }
+      ],
+      "nextBuys": [
+        {
+          "code": "31030",
+          "name": "ユニチカ",
+          "reason": "営業利益予想を+62.5%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "49110",
+          "name": "資生堂",
+          "reason": "営業利益予想を+47.5%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "46280",
+          "name": "エスケー化研",
+          "reason": "営業利益予想を+36%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "40230",
+          "name": "クレハ",
+          "reason": "営業利益予想を+22.7%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "78320",
+          "name": "バンダイナムコホールディングス",
+          "reason": "営業利益予想を+22.2%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "72670",
+          "name": "本田技研工業",
+          "reason": "営業利益予想を+20%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "18850",
+          "name": "東亜建設工業",
+          "reason": "営業利益予想を+17.1%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "41160",
+          "name": "大日精化工業",
+          "reason": "営業利益予想を+15.7%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "68690",
+          "name": "シスメックス",
+          "reason": "営業利益予想を+14.2%上方修正（2026-11-10発表）",
+          "late": false
+        },
+        {
+          "code": "23310",
+          "name": "ＡＬＳＯＫ",
+          "reason": "営業利益予想を+14%上方修正（2026-11-10発表）",
           "late": false
         }
       ],
@@ -616,6 +850,10 @@
         {
           "date": "2026-11-09",
           "value": 1006343
+        },
+        {
+          "date": "2026-11-10",
+          "value": 1009621
         }
       ]
     },
@@ -626,8 +864,8 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 1043199,
-      "returnPct": 4.3,
+      "equityYen": 1113644,
+      "returnPct": 11.4,
       "trades": 0,
       "winRatePct": null,
       "avgRetPct": null,
@@ -637,141 +875,141 @@
           "name": "ＨＥＮＮＧＥ",
           "reason": "配当予想を来期+9.1%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 19.3
+          "daysHeld": 3,
+          "unrealPct": 36.2
         },
         {
           "code": "46890",
           "name": "ＬＩＮＥヤフー",
           "reason": "配当予想を+9.1%引き上げ（2026-11-05発表）",
           "entryDate": "2026-11-06",
-          "daysHeld": 2,
-          "unrealPct": 1.4
+          "daysHeld": 3,
+          "unrealPct": -3.8
         },
         {
           "code": "67770",
           "name": "ｓａｎｔｅｃ　Ｈｏｌｄｉｎｇｓ",
           "reason": "配当予想を+43.5%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": -0.2
+          "daysHeld": 2,
+          "unrealPct": 23.6
         },
         {
           "code": "66580",
           "name": "シライ電子工業",
           "reason": "配当予想を+40%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 0.6
+          "daysHeld": 2,
+          "unrealPct": 4
         },
         {
           "code": "83930",
           "name": "宮崎銀行",
           "reason": "配当予想を+25%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 3.8
+          "daysHeld": 2,
+          "unrealPct": 10.1
         },
         {
           "code": "63150",
           "name": "ＴＯＷＡ",
           "reason": "配当予想を+25%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 4.8
+          "daysHeld": 2,
+          "unrealPct": 12.8
         },
         {
           "code": "46350",
           "name": "東京インキ",
           "reason": "配当予想を+21.1%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 3.3
+          "daysHeld": 2,
+          "unrealPct": 8.6
         },
         {
           "code": "15150",
           "name": "日鉄鉱業",
           "reason": "配当予想を+21%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 13.2
+          "daysHeld": 2,
+          "unrealPct": 14.6
         },
         {
           "code": "72720",
           "name": "ヤマハ発動機",
           "reason": "配当予想を+20%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": 1.6
+          "daysHeld": 2,
+          "unrealPct": 3.8
         },
         {
           "code": "49700",
           "name": "東洋合成工業",
           "reason": "配当予想を+20%引き上げ（2026-11-06発表）",
           "entryDate": "2026-11-09",
-          "daysHeld": 1,
-          "unrealPct": -4.7
+          "daysHeld": 2,
+          "unrealPct": 3.7
         }
       ],
       "nextBuys": [
         {
-          "code": "79660",
-          "name": "リンテック",
-          "reason": "配当予想を+50%引き上げ（2026-11-09発表）",
+          "code": "58030",
+          "name": "フジクラ",
+          "reason": "配当予想を+110.5%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "40640",
-          "name": "日本カーバイド工業",
-          "reason": "配当予想を+21.6%引き上げ（2026-11-09発表）",
+          "code": "31310",
+          "name": "シンデン・ハイテックス",
+          "reason": "配当予想を+80.9%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "64480",
-          "name": "ブラザー工業",
-          "reason": "配当予想を+20%引き上げ（2026-11-09発表）",
+          "code": "51210",
+          "name": "藤倉コンポジット",
+          "reason": "配当予想を+62.8%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "70140",
-          "name": "名村造船所",
-          "reason": "配当予想を+16.7%引き上げ（2026-11-09発表）",
+          "code": "64180",
+          "name": "日本金銭機械",
+          "reason": "配当予想を+58.7%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "18030",
-          "name": "清水建設",
-          "reason": "配当予想を+15.6%引き上げ（2026-11-09発表）",
+          "code": "40470",
+          "name": "関東電化工業",
+          "reason": "配当予想を+44.4%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "84390",
-          "name": "東京センチュリー",
-          "reason": "配当予想を+15.6%引き上げ（2026-11-09発表）",
+          "code": "98800",
+          "name": "イノテック",
+          "reason": "配当予想を+30.8%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "83310",
-          "name": "千葉銀行",
-          "reason": "配当予想を+12.5%引き上げ（2026-11-09発表）",
+          "code": "93080",
+          "name": "乾汽船",
+          "reason": "配当予想を+25.3%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "22640",
-          "name": "森永乳業",
-          "reason": "配当予想を+12%引き上げ（2026-11-09発表）",
+          "code": "60800",
+          "name": "Ｍ＆Ａキャピタルパートナーズ",
+          "reason": "配当予想を来期+20.5%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "54630",
-          "name": "丸一鋼管",
-          "reason": "配当予想を+11.5%引き上げ（2026-11-09発表）",
+          "code": "68550",
+          "name": "日本電子材料",
+          "reason": "配当予想を+20%引き上げ（2026-11-10発表）",
           "late": false
         },
         {
-          "code": "66510",
-          "name": "日東工業",
-          "reason": "配当予想を+10.4%引き上げ（2026-11-09発表）",
+          "code": "83670",
+          "name": "南都銀行",
+          "reason": "配当予想を+14.3%引き上げ（2026-11-10発表）",
           "late": false
         }
       ],
@@ -788,6 +1026,10 @@
         {
           "date": "2026-11-09",
           "value": 1043199
+        },
+        {
+          "date": "2026-11-10",
+          "value": 1113644
         }
       ]
     }
