@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-10T13:46:45.606001+00:00",
+  "checkedAt": "2026-11-10T13:47:48.292551+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -9,6 +9,6 @@
   "balanceOk": true,
   "positionsOk": true,
   "error": null,
-  "tokenWaitSec": 16,
+  "tokenWaitSec": 1,
   "accountListStatus": 200
 }
