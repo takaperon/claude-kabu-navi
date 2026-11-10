@@ -218,7 +218,7 @@ section[hidden]{display:none}
     <h2>ルールの順位<small>タップで説明</small></h2>
     <ul class="ranks" id="ranks"></ul>
 
-    <h2>今週のニュース</h2>
+    <h2>最新のニュース</h2>
     <div id="news-teaser"></div>
   </section>
 
@@ -243,8 +243,8 @@ section[hidden]{display:none}
 
   <!-- ニュース -->
   <section id="tab-news" hidden>
-    <h2>今週のニュース</h2>
-    <p class="lead">毎週日曜の夜に、株価に関係しそうなニュースを集めています。売買のルールにはまだ使っていない参考情報です。</p>
+    <h2>最新のニュース</h2>
+    <p class="lead">毎朝7時50分ごろに、株価に関係しそうなニュースを集めています。売買のルールにはまだ使っていない参考情報です。</p>
     <div id="news"></div>
   </section>
 </div>
@@ -551,7 +551,7 @@ function renderTests() {
 
 // ---------- ニュース ----------
 function renderNews() {
-  if (!newsData) { $('news').innerHTML = '<p class="empty">ニュースは毎週日曜の夜に届きます。</p>'; $('news-teaser').innerHTML = ''; return; }
+  if (!newsData) { $('news').innerHTML = '<p class="empty">ニュースは毎朝7時50分ごろに届きます。</p>'; $('news-teaser').innerHTML = ''; return; }
   const items = newsData.items || [];
   const dir = (d) => d === '+' ? '<span class="up">↑</span>' : d === '-' ? '<span class="down">↓</span>' : '';
   const host = (u) => { try { return new URL(u).hostname.replace('www.', ''); } catch { return u; } };

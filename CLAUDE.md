@@ -60,7 +60,7 @@
 
 ## アプリ画面（2026-11-06〜）
 - app/ の1ファイルPWA（index.html）。GitHub Pages で公開（.github/workflows/pages.yml）
-- データは raw.githubusercontent.com の reports ブランチ（paper.json / backtest.json / news/）を直接読む
+- データは raw.githubusercontent.com の reports ブランチ（paper.json / backtest.json / news/）を直接読む。ニュースは毎朝07:47 JSTの定期タスク（2026-11-10〜、土日も）
 - デザイン：株券モチーフ（藍・金の地紋）。初心者向けに用語は点線下線でタップ解説。銘柄コードは4桁表示
 
 ## 開発環境メモ
