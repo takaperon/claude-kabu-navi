@@ -2,6 +2,8 @@ name: live-check
 # ウィブル証券APIの接続確認（読み取りのみ・注文なし）。トークンは暗号化して Actions キャッシュに保存
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '40 23 * * *' # 毎日 08:40 JST。15日使わないとトークンが失効するので、毎日1回つないでおく
   push:
     branches: [main]
     paths: ['scripts/live/**', '.github/workflows/live-check.yml']
