@@ -1,5 +1,5 @@
 // 画面の部品だけをキャッシュ。データ（raw.githubusercontent.com）は毎回取りに行く
-const CACHE = 'kabunavi-v2';
+const CACHE = 'kabunavi-v3';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg', './icon-180.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', (e) => {
