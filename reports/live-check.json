@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-11-10T13:46:45.606001+00:00",
+  "keyPresent": true,
+  "tokenReady": true,
+  "accounts": 1,
+  "accountTypes": [
+    "CASH"
+  ],
+  "balanceOk": true,
+  "positionsOk": true,
+  "error": null,
+  "tokenWaitSec": 16,
+  "accountListStatus": 200
+}
