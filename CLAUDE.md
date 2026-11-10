@@ -38,6 +38,10 @@
 - 申請時に申告した内容に合わせる：スイングトレード・1日10注文未満・1銘柄10%まで最大10銘柄・保有日数で必ず売却。
   **本番前に必ず作る**：1日の損失上限での新規停止、エラー連続時の自動停止（キルスイッチ）。注文部分は公式Python SDK
 - 本物のお金は、仮想売買で成績を確認してから（オーナーの資金準備は年末ごろ）
+- 2026-11-10 API承認・キー発行（Secrets：`WEBULL_APP_KEY` / `WEBULL_APP_SECRET`）。接続確認OK（現物口座1つ、残高・保有の読み取り成功）
+- scripts/live/check.py ＋ .github/workflows/live-check.yml：読み取りのみの接続確認。毎朝08:40 JSTに実行してトークンを維持。
+  トークンは WEBULL_APP_SECRET で暗号化して Actions キャッシュ（webull-token-）。公開の reports/live-check.json は成否と件数だけ
+- SDK：pip の `webull-openapi-python-sdk`（region "jp"、本番 api.webull.co.jp、テスト jp-openapi-alb.uat.webullbroker.com）
 
 ## 検証の方針
 - 過去検証に未来の情報を混ぜない（シグナルは当日終値まで、エントリーは翌日始値）
