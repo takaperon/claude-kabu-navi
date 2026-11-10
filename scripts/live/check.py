@@ -35,6 +35,36 @@ try:
             aid = accts[0].get("account_id")
             out["balanceOk"] = trade.account_v2.get_account_balance(aid).status_code == 200
             out["positionsOk"] = trade.account_v2.get_account_position(aid).status_code == 200
+    # データが取れるかの確認（2026-11-10〜）。価格は出さず、成否・件数・期間だけ記録する
+    from webull.data.data_client import DataClient
+    data = DataClient(api)
+    probes = {}
+    def probe(name, fn, rows=lambda j: j):
+        try:
+            r = fn()
+            item = {"status": r.status_code}
+            if r.status_code == 200:
+                j = rows(r.json())
+                if isinstance(j, list):
+                    item["rows"] = len(j)
+                    ds = sorted(str(x.get("time") or x.get("date") or x.get("trade_date") or "")[:10] for x in j if isinstance(x, dict))
+                    ds = [d for d in ds if d]
+                    if ds: item["from"], item["to"] = ds[0], ds[-1]
+            else:
+                try: item["msg"] = str(r.json().get("message") or r.json().get("msg") or r.json().get("error_code"))[:120]
+                except Exception: item["msg"] = r.text[:120]
+            probes[name] = item
+        except Exception as e:
+            probes[name] = {"error": type(e).__name__, "msg": str(e)[:120]}
+    md = data.market_data
+    probe("jp_daily_7203", lambda: md.get_history_bar("7203", "JP_STOCK", "D", count="1200"))
+    probe("jp_snapshot_7203", lambda: md.get_snapshot("7203", "JP_STOCK"))
+    probe("us_daily_AAPL", lambda: md.get_history_bar("AAPL", "US_STOCK", "D", count="1200"))
+    probe("us_earnings_AAPL", lambda: data.fundamentals.get_earnings_calendar("AAPL", "US_STOCK"))
+    probe("jp_earnings_7203", lambda: data.fundamentals.get_earnings_calendar("7203", "JP_STOCK"))
+    probe("jp_dividend_7203", lambda: data.fundamentals.get_dividend_calendar("7203", "JP_STOCK"))
+    probe("us_forecast_eps_AAPL", lambda: data.fundamentals.get_forecast_eps("AAPL", "US_STOCK"))
+    out["dataProbes"] = probes
 except Exception as e:  # エラー文には識別子が入りうるので、種類とコードだけ
     out["error"] = type(e).__name__ + (":" + str(getattr(e, "error_code", "")) if getattr(e, "error_code", None) else "")
 save()
