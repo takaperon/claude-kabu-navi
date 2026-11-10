@@ -1,0 +1,387 @@
+{
+  "date": "2026-11-11",
+  "status": "未検証",
+  "period": "2026-11-08〜2026-11-11朝",
+  "note": "毎日のニュース調査（自動実行）。材料の効き目を後で検証するための記録で、売買の推奨ではない。株探の開示一覧・みんかぶ・Yahoo!ニュースの本文は取得できず、11/10の企業発表は主に個人ブログの集計による（開示資料とは未照合）。ニトリ・ソニー生命などの情報漏えい報道は本文を確認できなかったため未採用。",
+  "items": [
+    {
+      "headline": "日経平均は11/9・11/10と続伸、11/10は1,684円高で6万円台を回復",
+      "summary": "先週の急落の反動で買い戻しが入り、11/9に続き11/10も大幅高となった。米半導体株の反発、原油安、TSMCの好調な売上などが支えとされ、ソフトバンクGとアドバンテストの2銘柄で日経平均の上げ幅の約4割を占めた。上昇は電気機器・機械・銀行などが中心。",
+      "sources": [
+        "https://times.abema.tv/articles/-/10287890",
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261110",
+        "https://tradingeconomics.com/japan/stock-market/news/501131"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "マクロ",
+      "sectors": [
+        "電気機器",
+        "機械",
+        "銀行業"
+      ],
+      "stocks": [
+        {
+          "code": "9984",
+          "name": "ソフトバンクグループ",
+          "direction": "+",
+          "reason": "11/10の日経平均上昇への寄与が最大だった（決算発表前の値動き）"
+        },
+        {
+          "code": "6857",
+          "name": "アドバンテスト",
+          "direction": "+",
+          "reason": "米半導体株の反発を受け大きく上昇した"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "米10月CPIが予想を上回り、FRB高官から利上げ発言。米10年債利回りは5%台に",
+      "summary": "11/10発表の米10月CPIは総合・コアとも前月比で予想を0.1ポイント上回った。ウォラー理事らが12月の利上げ支持を示し、市場は12月の利上げをほぼ完全に織り込んだ。米2年債利回りは大きく上昇し、ダウ・S&P500・ナスダックはそろって下落。ドル円は11日朝に158円台後半。",
+      "sources": [
+        "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/",
+        "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026",
+        "https://fx.minkabu.jp/news/384078"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "マクロ",
+      "sectors": [
+        "銀行業",
+        "不動産業",
+        "情報・通信業"
+      ],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "エヌビディア株が2日で約1割下落、CEO周辺の対中輸出をめぐる報道と株主訴訟",
+      "summary": "フアンCEOと関係のある人物が大量のNVIDIA製チップの中国向け出荷に関わったとする米報道を受け、11/10にエヌビディア株は5%超下落した。株主訴訟が起こされ、米下院の委員会も調査を求めている。報道内容は未検証で、日本の半導体関連株の重しになる可能性がある。",
+      "sources": [
+        "https://gvwire.com/2026/11/10/wall-st-ends-lower-as-hot-inflation-data-fed-comments-heighten-rate-worries/",
+        "https://www.stocktitan.net/articles/stock-market-today-live-november-10-2026"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "マクロ",
+      "sectors": [
+        "電気機器"
+      ],
+      "stocks": [
+        {
+          "code": "6857",
+          "name": "アドバンテスト",
+          "direction": "-",
+          "reason": "エヌビディア向けの検査装置の比重が大きく、同社株の動きに連動しやすい"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "低"
+    },
+    {
+      "headline": "ソフトバンクG、上期は7,680億円の最終赤字。夜間取引では下落",
+      "summary": "11/10の決算で、4〜9月の最終損益は赤字に転落し、7〜9月だけで1兆円超の赤字となった。前倒し返済に伴う金融費用、インテル株やOpenAI向けワラントのデリバティブ損失、米AIデータセンター向け発電設備の調達見直しによる損失が重なった。年間配当11円は維持。11/10は決算前に大幅高だったが、夜間取引では終値を下回った。",
+      "sources": [
+        "https://kabucho.com/reports/sbg-9984-fy2027-q2-earnings-report",
+        "https://stockexpress.jp/sbg20261110/"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": [
+        "情報・通信業"
+      ],
+      "stocks": [
+        {
+          "code": "9984",
+          "name": "ソフトバンクグループ",
+          "direction": "-",
+          "reason": "上期赤字と有利子負債の増加。決算前に大きく上げていた反動も考えられる"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "テーマ：AIデータセンター向け電力投資に減速懸念（続報）",
+      "summary": "ソフトバンクGが米国のAIデータセンター計画で発電設備の調達を見直し損失を計上したと開示し、米国では発電設備大手GEベルノバの株が大きく下げた。11/8記録の「AIデータセンター投資の減速リスク」の続報で、電力設備・電線関連への波及に注意。",
+      "sources": [
+        "https://www.stocktitan.net/articles/stock-market-today-live-november-10-2026",
+        "https://stockexpress.jp/sbg20261110/"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "テーマ",
+      "sectors": [
+        "電気機器",
+        "非鉄金属"
+      ],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "低"
+    },
+    {
+      "headline": "資生堂、今期の最終利益予想を約48%上方修正",
+      "summary": "11/10に12月期の通期予想を引き上げ、最終利益は420億円から620億円へ、営業利益も約5割増の見通しとした。7〜9月期は前年の赤字から黒字に転換した。配当予想は据え置き。",
+      "sources": [
+        "https://s.kabutan.jp/news/k202611100120/"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": [
+        "化学"
+      ],
+      "stocks": [
+        {
+          "code": "4911",
+          "name": "資生堂",
+          "direction": "+",
+          "reason": "通期の利益予想を大きく引き上げ、黒字転換が進んだ"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "ホンダ・オリンパス・オムロン・ネクソン・りそなHDが上方修正（11/10発表）",
+      "summary": "ホンダは今期最終を25%上方修正、オリンパス・オムロン・ネクソンも利益予想を引き上げた。りそなHDは小幅の上方修正。個人ブログの集計による情報で、各社の開示資料とは未照合。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261110"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": [
+        "輸送用機器",
+        "精密機器",
+        "電気機器",
+        "情報・通信業",
+        "銀行業"
+      ],
+      "stocks": [
+        {
+          "code": "7267",
+          "name": "本田技研工業",
+          "direction": "+",
+          "reason": "今期最終利益を25%上方修正"
+        },
+        {
+          "code": "7733",
+          "name": "オリンパス",
+          "direction": "+",
+          "reason": "今期最終利益を上方修正"
+        },
+        {
+          "code": "6645",
+          "name": "オムロン",
+          "direction": "+",
+          "reason": "今期利益予想を上方修正"
+        },
+        {
+          "code": "3659",
+          "name": "ネクソン",
+          "direction": "+",
+          "reason": "今期最終利益の予想を引き上げ"
+        },
+        {
+          "code": "8308",
+          "name": "りそなホールディングス",
+          "direction": "+",
+          "reason": "今期最終利益を小幅に上方修正"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "住友不動産・岩谷産業・ふくおかFG・日本製鋼所が上方修正と増配（11/10発表）",
+      "summary": "住友不動産は増配に加え、5年以内に配当を倍増させる目標を示した。岩谷産業は最高益見通し、ふくおかFGは配当を大きく増やし、日本製鋼所は一転増益の見通しに修正した。個人ブログの集計で、開示資料とは未照合。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261110"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": [
+        "不動産業",
+        "卸売業",
+        "銀行業",
+        "機械"
+      ],
+      "stocks": [
+        {
+          "code": "8830",
+          "name": "住友不動産",
+          "direction": "+",
+          "reason": "経常上方修正・増配と配当倍増目標"
+        },
+        {
+          "code": "8088",
+          "name": "岩谷産業",
+          "direction": "+",
+          "reason": "経常上方修正で最高益見通し・増配"
+        },
+        {
+          "code": "8354",
+          "name": "ふくおかフィナンシャルグループ",
+          "direction": "+",
+          "reason": "経常上方修正・大幅増配"
+        },
+        {
+          "code": "5631",
+          "name": "日本製鋼所",
+          "direction": "+",
+          "reason": "一転増益に上方修正・増配"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "TOB・提携：加地テックと北陸電気工業にTOB、オキサイドはJX金属と資本業務提携",
+      "summary": "加地テックと北陸電気工業は、それぞれ投資会社などによるTOB（株式公開買付け）で非公開化される方向。オキサイドはJX金属との資本業務提携と資金調達を発表し、11/10にストップ高となった。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261110"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": [
+        "機械",
+        "電気機器",
+        "非鉄金属"
+      ],
+      "stocks": [
+        {
+          "code": "6391",
+          "name": "加地テック",
+          "direction": "+",
+          "reason": "TOBによる非公開化の発表"
+        },
+        {
+          "code": "6989",
+          "name": "北陸電気工業",
+          "direction": "+",
+          "reason": "TOB価格4,180円で非公開化を目指すと発表"
+        },
+        {
+          "code": "6521",
+          "name": "オキサイド",
+          "direction": "+",
+          "reason": "JX金属との資本業務提携"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "悪材料：ニプロ・コーセー・イーレックス・日本ケミコン・アイスタイル（11/10発表）",
+      "summary": "ニプロは上期の大幅減益、コーセーと日本ケミコンは通期予想を引き下げ、イーレックスは上期が最終赤字となった。アイスタイルは第1四半期の減益が嫌気されストップ安。個人ブログの集計で、開示資料とは未照合。",
+      "sources": [
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261110"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": [
+        "精密機器",
+        "化学",
+        "電気・ガス業",
+        "電気機器",
+        "情報・通信業"
+      ],
+      "stocks": [
+        {
+          "code": "8086",
+          "name": "ニプロ",
+          "direction": "-",
+          "reason": "上期経常が3割超の減益"
+        },
+        {
+          "code": "4922",
+          "name": "コーセー",
+          "direction": "-",
+          "reason": "今期経常を下方修正"
+        },
+        {
+          "code": "9517",
+          "name": "イーレックス",
+          "direction": "-",
+          "reason": "上期最終赤字に転落"
+        },
+        {
+          "code": "6997",
+          "name": "日本ケミコン",
+          "direction": "-",
+          "reason": "今期最終を減益に下方修正"
+        },
+        {
+          "code": "3660",
+          "name": "アイスタイル",
+          "direction": "-",
+          "reason": "第1四半期の2ケタ営業減益"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "中"
+    },
+    {
+      "headline": "続報：JT、2日連続ストップ安の後11/10に売買成立",
+      "summary": "ロシアの大統領令でロシア事業が一時管理下に置かれた件で、JT株は11/9まで2営業日連続のストップ安となった後、11/10は寄り付きから売買が成立して上昇した。大統領令の撤回や業績への影響額など、会社側の新しい説明は確認できていない。",
+      "sources": [
+        "https://times.abema.tv/articles/-/10287890",
+        "https://www.newsweekjapan.jp/articles/-/339262"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": [
+        "食料品"
+      ],
+      "stocks": [
+        {
+          "code": "2914",
+          "name": "日本たばこ産業",
+          "direction": "-",
+          "reason": "ロシア事業（利益の約4分の1）の先行きは不透明なまま"
+        }
+      ],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "原油が約2か月ぶりの安値圏、米国のイランへの追加軍事行動見送りで",
+      "summary": "トランプ大統領がイランへの新たな軍事行動を見送る姿勢を示し、11/10もWTIは下落して80ドル台半ばとなった。前週からの下落が続いており、燃料費の負担が軽くなる業種には追い風、資源株には逆風となりやすい。",
+      "sources": [
+        "https://www.stocktitan.net/articles/stock-market-today-live-november-10-2026",
+        "https://tomokutchi.hatenablog.com/entry/kessan-20261110"
+      ],
+      "eventDate": "2026-11-10",
+      "type": "マクロ",
+      "sectors": [
+        "空運業",
+        "鉱業",
+        "石油・石炭製品"
+      ],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "サイバー：技研製作所がランサムウェアを含む不正アクセス被害を公表",
+      "summary": "技研製作所は11/9、業務用サーバー1台がランサムウェアを含む不正アクセスを受け、約3,200人分の個人情報が漏れたおそれがあると公表した。11/6に外部接続を遮断して調査中で、業務停止の有無は確認できていない。",
+      "sources": [
+        "https://act1.co.jp/2026-11-10-03/",
+        "https://rocket-boys.co.jp/security-measures-lab/giken_ransomware_3200_potential_data_leak_20261109/"
+      ],
+      "eventDate": "2026-11-09",
+      "type": "企業発表",
+      "sectors": [
+        "機械"
+      ],
+      "stocks": [
+        {
+          "code": "6289",
+          "name": "技研製作所",
+          "direction": "-",
+          "reason": "ランサムウェア被害の公表（影響範囲は調査中）"
+        }
+      ],
+      "horizon": "数日",
+      "confidence": "低"
+    }
+  ]
+}
