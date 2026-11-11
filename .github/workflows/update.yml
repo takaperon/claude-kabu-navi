@@ -47,6 +47,11 @@ jobs:
       - name: paper trading
         run: node scripts/paper.mjs --data data --out reports-out
 
+      - name: news evaluation
+        run: |
+          git fetch -q --depth=1 origin reports && mkdir -p news-in && git archive FETCH_HEAD news | tar xf - -C news-in || echo "no news"
+          node scripts/news-eval.mjs --data data --news news-in/news --out reports-out
+
       - name: encrypt data
         if: always()
         run: |

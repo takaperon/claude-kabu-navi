@@ -63,6 +63,13 @@
 - データは raw.githubusercontent.com の reports ブランチ（paper.json / backtest.json / news/）を直接読む。ニュースは毎朝07:47 JSTの定期タスク（2026-11-10〜、土日も）
 - デザイン：株券モチーフ（藍・金の地紋）。初心者向けに用語は点線下線でタップ解説。銘柄コードは4桁表示
 
+## ニュースの当たり外れ（2026-11-11〜）
+- scripts/news-eval.mjs：reports ブランチの news/*.json の銘柄（+/-）を、調査日の始値で買い→1・5・20営業日後の終値で、全銘柄平均との差で判定。update.yml の中で実行
+- 企業発表は J-Quants の開示（/fins/summary）と照合し、会社予想の営業利益・配当の変化率を付ける（ブログ等の数字の裏取り）
+- 公開の reports/news-eval.json は損益率・件数だけ
+- 調査で読めるサイト（2026-11-11 テスト）：s.kabutan.jp（スマホ版。PC版 kabutan.jp は不可）、traders.co.jp、media-ir.com、oanda.jp、NHKの記事ページ、act1.co.jp、scan.netsecurity.ne.jp、security-next.com、米国は thestreet・gvwire・stocktitan。
+  読めない：TDnet（robots.txtで禁止）、ロイター日本語版、日経、時事、みんかぶ、Yahoo!ニュース、fisco、Japan Times
+
 ## 開発環境メモ
 - 開発用の作業環境からは J-Quants に直接つながらず、Actions API も使えない
 - main への push で Actions が動き、結果を `reports` ブランチに書き戻す。それを git fetch して読む
