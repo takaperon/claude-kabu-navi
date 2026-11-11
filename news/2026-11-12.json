@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-12",
+  "status": "未検証",
+  "period": "2026-11-11朝〜2026-11-12朝",
+  "note": "毎日のニュース調査（自動実行）。材料の効き目を後で検証するための記録で、売買の推奨ではない。今回は11/11発表分の国内企業開示まとめ・東京市場の大引け記事の本文を読めなかったため、国内の個別決算は記録していない（見出しだけのものは入れていない）。",
+  "items": [
+    {
+      "headline": "米国株は11/11にハイテク主導で反発、ナスダック1.6%高・S&P500は1.3%高",
+      "summary": "前日はCPIの上振れで下げたが、11/11は半導体・AI関連が買い戻され主要3指数がそろって上昇した。S&P500の上昇上位はコヒレント、モノリシック・パワー、ブルーム・エナジーなどAI・半導体関連で、アップルは上場来高値を更新した。東京市場でも半導体関連に追い風となる可能性がある。",
+      "sources": ["https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"],
+      "eventDate": "2026-11-11",
+      "type": "マクロ",
+      "sectors": ["電気機器"],
+      "stocks": [
+        {"code": "6857", "name": "アドバンテスト", "direction": "+", "reason": "米国の半導体・AI関連株の反発が、日本の半導体関連にも波及しやすいため。"},
+        {"code": "8035", "name": "東京エレクトロン", "direction": "+", "reason": "米半導体株高を受けた買い戻しが見込まれるため。"}
+      ],
+      "horizon": "数日",
+      "confidence": "低"
+    },
+    {
+      "headline": "コアウィーブの7〜9月期は売上168%増、通期の利益見通しが市場予想を上回り株価急騰",
+      "summary": "AI向けクラウド大手のコアウィーブは売上が前年の約2.7倍に伸び、通期の調整後営業利益の見通しをアナリスト予想より高く示した。赤字は続くが、AIデータセンター需要の強さを示す材料として受け止められた。直近のAIデータセンター投資の減速懸念を和らげる方向の続報。",
+      "sources": ["https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"],
+      "eventDate": "2026-11-11",
+      "type": "テーマ",
+      "sectors": ["電気機器", "非鉄金属", "情報・通信業"],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "続報：エヌビディアは反発したが、Bairdが格下げ・目標株価を大幅に引き下げ、取締役会は独立調査を開始",
+      "summary": "2日間で時価総額4,300億ドル超を失った後、11/11は反発した。一方でBairdは2027年のデータセンター需要の不透明さとCEOの進退への懸念を理由に投資判断を中立へ下げ、モルガン・スタンレーも最上位推奨から外した。取締役会が独立調査を始めており、不透明感は残る。",
+      "sources": ["https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"],
+      "eventDate": "2026-11-11",
+      "type": "マクロ",
+      "sectors": ["電気機器"],
+      "stocks": [],
+      "horizon": "数週間",
+      "confidence": "中"
+    },
+    {
+      "headline": "マーベルが光通信部品のルメンタムを株式交換で買収すると発表",
+      "summary": "米半導体のマーベル・テクノロジーがルメンタムを全額株式で買収すると発表し、ルメンタム株は12%余り上昇した。AIデータセンター向けの光通信部品をめぐる業界再編の動きで、光部品・電線のテーマに関わる。",
+      "sources": ["https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"],
+      "eventDate": "2026-11-11",
+      "type": "テーマ",
+      "sectors": ["電気機器", "非鉄金属"],
+      "stocks": [],
+      "horizon": "数か月",
+      "confidence": "低"
+    },
+    {
+      "headline": "原油はやや持ち直し、米国では12月の利上げがほぼ織り込まれたとの見方",
+      "summary": "11/11はWTIが1バレル86〜87ドル前後、ブレントが92ドル台とやや上昇した。前日のCPI上振れを受け、市場では12月の利上げがほぼ織り込み済みとのアナリストの見方が出ている。米金利の高止まりは円安・ドル高要因になりやすい。",
+      "sources": ["https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"],
+      "eventDate": "2026-11-11",
+      "type": "マクロ",
+      "sectors": ["鉱業", "石油・石炭製品"],
+      "stocks": [],
+      "horizon": "数日",
+      "confidence": "低"
+    },
+    {
+      "headline": "サイバー：パルマが運営するWebサービスで不正アクセスの痕跡を確認（11/10公表）",
+      "summary": "セルフストレージ事業者向けの業務支援を行うパルマが、自社のWebサービスに第三者による不正アクセスの痕跡があったと公表した。外部の専門機関と影響範囲や情報流出の有無を調べている段階で、対象サービスや業務停止の有無は公表されていない。",
+      "sources": ["https://act1.co.jp/2026-11-11-02/"],
+      "eventDate": "2026-11-10",
+      "type": "企業発表",
+      "sectors": ["不動産業"],
+      "stocks": [
+        {"code": "3461", "name": "パルマ", "direction": "-", "reason": "不正アクセス被害の公表で、調査費用や信用面の悪影響が懸念されるため。"}
+      ],
+      "horizon": "数日",
+      "confidence": "低"
+    }
+  ]
+}
