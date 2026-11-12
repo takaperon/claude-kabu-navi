@@ -41,6 +41,10 @@
 - 2026-11-10 API承認・キー発行（Secrets：`WEBULL_APP_KEY` / `WEBULL_APP_SECRET`）。接続確認OK（現物口座1つ、残高・保有の読み取り成功）
 - scripts/live/check.py ＋ .github/workflows/live-check.yml：読み取りのみの接続確認。毎朝08:40 JSTに実行してトークンを維持。
   トークンは WEBULL_APP_SECRET で暗号化して Actions キャッシュ（webull-token-）。公開の reports/live-check.json は成否と件数だけ
+- **ウィブルは日本株の単元未満株に未対応（アプリもAPIも。2026-11-12 FAQで確認）＝日本株は100株単位**。米国株は端株OK（1ドル〜、通常時間のみ）。
+  日本株APIの注文は成行・指値のみ（逆指値・寄付/引け指定なし）、通常取引時間内のみ。売りは15:25〜15:30（引けの板寄せ）に成行で出して引け値に近づける想定
+- 100株単位の検証：fetch.mjs が data/raw/{date}.json（調整前の始値・終値）も保存。backtest.mjs の lotSim（資金30万〜300万×最大銘柄数1〜10）
+- ウィブルAPIのマーケットデータ（株価）は購読が必要で403。決算予定・配当予定・EPS予想（前後半年）は取れる
 - SDK：pip の `webull-openapi-python-sdk`（region "jp"、本番 api.webull.co.jp、テスト jp-openapi-alb.uat.webullbroker.com）
 
 ## 検証の方針

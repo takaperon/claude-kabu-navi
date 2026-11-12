@@ -13,6 +13,7 @@ const MAX_MIN = Number(args['max-minutes'] ?? 300);
 const started = Date.now();
 
 fs.mkdirSync(path.join(DATA, 'prices'), { recursive: true });
+fs.mkdirSync(path.join(DATA, 'raw'), { recursive: true }); // 調整前の始値・終値（100株単位の必要資金の計算用。2026-11-12〜）
 fs.mkdirSync(path.join(DATA, 'fins'), { recursive: true });
 fs.mkdirSync(OUT, { recursive: true });
 
@@ -97,6 +98,7 @@ try {
       // [Code, AdjO, AdjH, AdjL, AdjC, AdjVo, Va]
       const compact = rows.map((r) => [r.Code, r.AdjO, r.AdjH, r.AdjL, r.AdjC, r.AdjVo, r.Va]);
       fs.writeFileSync(file, JSON.stringify(compact));
+      fs.writeFileSync(path.join(DATA, 'raw', `${d}.json`), JSON.stringify(rows.map((r) => [r.Code, r.O, r.C])));
       delete unavailable[d];
       status.fetchedDays++;
       status.rowsFetched += rows.length;
@@ -110,6 +112,22 @@ try {
       throw e;
     }
   }
+
+  // 調整前の値段の取り直し（過去分。株価ファイルはあるのに raw が無い日だけ。時間の上限まで）
+  status.rawBackfilled = 0;
+  for (const d of days.slice().reverse()) {
+    if (d > ymd(today)) continue;
+    if (!fs.existsSync(path.join(DATA, 'prices', `${d}.json`)) || fs.existsSync(path.join(DATA, 'raw', `${d}.json`))) continue;
+    if ((Date.now() - started) / 60000 > MAX_MIN) { status.stoppedBy = 'time'; break; }
+    try {
+      const rows = await getAll('/equities/bars/daily', { date: d.replaceAll('-', '') });
+      if (rows.length) { fs.writeFileSync(path.join(DATA, 'raw', `${d}.json`), JSON.stringify(rows.map((r) => [r.Code, r.O, r.C]))); status.rawBackfilled++; }
+    } catch (e) {
+      if (e instanceof ApiError && (e.status === 400 || e.status === 403)) continue;
+      throw e;
+    }
+  }
+  status.rawStored = fs.readdirSync(path.join(DATA, 'raw')).length;
 
   // 決算・業績修正・配当修正などの開示（財務情報）。開示日ごとに取得。空の日も記録して取り直さない
   const num = (v) => (v === '' || v == null ? null : Number(v));

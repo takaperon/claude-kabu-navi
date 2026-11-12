@@ -571,6 +571,59 @@ for (const [sk, ek] of [['ev_div_up', 'hold5'], ['ev_earn_up_trend', 'hold5'], [
   }
   robustness[key] = r;
 }
+// ---------- 100株単位の資金シミュレーション（2026-11-12〜。ウィブルは日本株の単元未満株に未対応） ----------
+// 必要資金は調整前の始値×100株。raw が無い日は調整後の始値で代用（分割前は実際より安く見える＝甘め）
+const RO = F(N);
+let rawDays = 0;
+if (fs.existsSync(path.join(DATA, 'raw'))) {
+  for (const f of fs.readdirSync(path.join(DATA, 'raw'))) {
+    const d = di.get(f.slice(0, 10));
+    if (d == null) continue;
+    rawDays++;
+    for (const [code, o] of JSON.parse(fs.readFileSync(path.join(DATA, 'raw', f), 'utf8'))) {
+      const i = ci.get(code);
+      if (i != null && o > 0) RO[i * D + d] = o;
+    }
+  }
+}
+function lotPortfolio(signalsByDay, capital, maxN, fromD, toD) {
+  let cash = capital, peak = capital, maxDD = 0, trades = 0, noMoney = 0, approx = 0;
+  const pos = [];
+  const yearly = {}; let yName = null, yStart = capital, prevM = capital;
+  for (let d = fromD; d <= toD; d++) {
+    for (let k = pos.length - 1; k >= 0; k--) if (pos[k].exitD <= d) { cash += pos[k].size * (1 + pos[k].ret); pos.splice(k, 1); }
+    const eq = cash + pos.reduce((a, p) => a + p.size, 0);
+    for (const s of signalsByDay.get(d - 1) ?? []) {
+      if (pos.length >= maxN) break;
+      if (pos.some((p) => p.i === s.i)) continue;
+      let px = at(RO, s.i, d);
+      if (!(px > 0)) { px = at(O, s.i, d); approx++; }
+      const lot = px * 100 * (1 + SLIP);
+      const lots = Math.floor(Math.min(cash, eq / maxN) / lot);
+      if (lots < 1) { noMoney++; continue; }
+      const size = lots * lot;
+      cash -= size;
+      pos.push({ i: s.i, exitD: d + s.days, ret: s.ret, size, entryPx: at(O, s.i, d) * (1 + SLIP) });
+      trades++;
+    }
+    const m = cash + pos.reduce((a, p) => { const c = at(C, p.i, d); return a + (Number.isNaN(c) ? p.size : p.size * (c * (1 - SLIP)) / p.entryPx); }, 0);
+    const yn = dates[d].slice(0, 4);
+    if (yn !== yName) { if (yName) yearly[yName] = Math.round((prevM / yStart - 1) * 1000) / 10; yName = yn; yStart = prevM; }
+    prevM = m;
+    peak = Math.max(peak, m); maxDD = Math.max(maxDD, 1 - m / peak);
+  }
+  for (const p of pos) cash += p.size * (1 + p.ret);
+  if (yName) yearly[yName] = Math.round((cash / yStart - 1) * 1000) / 10;
+  return { final: Math.round(cash), returnPct: Math.round((cash / capital - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades, skippedNoMoney: noMoney, approxPrice: approx, yearly };
+}
+const lotSim = { rawDays, capitals: [300000, 500000, 1000000, 2000000, 3000000], maxNs: [1, 2, 3, 5, 10], results: {} };
+for (const key of ['ev_div_up|hold5', 'ev_div_up_gap|hold5', 'ev_earn_up_trend|hold5', 'ev_earn_up_trend_gap|hold5']) {
+  const r = (lotSim.results[key] = { name: robustness[key]?.name ?? key, grid: {} });
+  for (const cap of lotSim.capitals) for (const n of lotSim.maxNs) {
+    r.grid[`${cap}|${n}`] = { full: lotPortfolio(BYDAY[key], cap, n, 26, D - 1), train: lotPortfolio(BYDAY[key], cap, n, 26, split - 1), test: lotPortfolio(BYDAY[key], cap, n, split, D - 1) };
+  }
+}
+
 const randomYearly = (() => {
   const base = BYDAY['all|hold10'];
   const acc = {};
@@ -600,6 +653,7 @@ const out = {
   dtBaseline,
   dayMoveBuckets,
   afterDrops,
+  lotSim,
 };
 fs.writeFileSync(path.join(OUT, 'backtest.json'), JSON.stringify(out, null, 2));
 console.log(`backtest ok: days=${D} universe=${N}`);
