@@ -37,6 +37,8 @@ const STRATS = {
   // 夜の反応で選別：寄り付きが前日終値より上の時だけ買う
   swing_earn_gap: { name: '上方修正＋上向き＋朝高く始まった時だけ（5日保有）', kinds: ['earn_up'], hold: 5, trend: true, gap: true, base: 'swing_earn' },
   swing_div_gap: { name: '配当予想の引き上げ＋朝高く始まった時だけ（5日保有）', kinds: ['div_up'], hold: 5, gap: true, base: 'swing_div' },
+  // 本番と同じ条件（2026-11-12〜）：ウィブルは日本株を100株単位でしか買えないので、30万円・最大2銘柄・100株単位
+  real30_div_gap: { name: '本番想定：30万円・100株単位・2銘柄（増配＋朝高）', kinds: ['div_up'], hold: 5, gap: true, base: 'swing_div_gap', capital: 300_000, maxN: 2, lot: 100 },
 };
 
 // ---------- データ ----------
@@ -52,6 +54,14 @@ function pricesOn(date) {
     priceCache.set(date, m);
   }
   return priceCache.get(date);
+}
+const rawCache = new Map();
+function rawOn(date) {
+  if (!rawCache.has(date)) {
+    const f = path.join(DATA, 'raw', `${date}.json`);
+    rawCache.set(date, new Map(fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')).map(([c, o]) => [c, o]) : []));
+  }
+  return rawCache.get(date);
 }
 const master = JSON.parse(fs.readFileSync(path.join(DATA, 'master.json'), 'utf8'));
 const info = new Map(master.map((m) => [m.Code, m]));
@@ -98,7 +108,8 @@ if (!state) {
 }
 for (const [k, cfg] of Object.entries(STRATS)) {
   if (!state.strategies[k]) {
-    state.strategies[k] = { cash: START, positions: [], pending: [], closed: [], equity: [{ date: state.lastDate, value: START }] };
+    const cap = cfg.capital ?? START;
+    state.strategies[k] = { cash: cap, positions: [], pending: [], closed: [], equity: [{ date: state.lastDate, value: cap }] };
     // 途中から追加した戦略は、同じシグナルを使う元の戦略の買い候補を引き継ぐ
     if (cfg.base && state.strategies[cfg.base]) state.strategies[k].pending = JSON.parse(JSON.stringify(state.strategies[cfg.base].pending));
   }
@@ -124,7 +135,7 @@ for (const T of newDates) {
     const basis = () => st.cash + st.positions.reduce((a, p) => a + p.size, 0);
     // 始値で購入
     for (const pd of st.pending.sort((a, b) => b.score - a.score)) {
-      if (st.positions.length >= 10) break;
+      if (st.positions.length >= (cfg.maxN ?? 10)) break;
       if (st.positions.some((p) => p.code === pd.code)) continue;
       const p = px.get(pd.code);
       if (!p || !(p.o > 0)) continue;
@@ -134,10 +145,21 @@ for (const T of newDates) {
         if (!prev || !(p.o > prev.c)) continue; // 朝安く始まったら見送り
       }
       const eq = basis();
-      const size = Math.min(st.cash, eq * 0.1);
-      if (size < eq * 0.05) break;
+      let size;
+      if (cfg.lot) {
+        // 100株単位：調整前の始値で必要資金を計算。買えなければ次の候補へ
+        const raw = rawOn(T).get(pd.code) ?? p.o;
+        const lotCost = raw * cfg.lot * (1 + SLIP);
+        const lots = Math.floor(Math.min(st.cash, eq / cfg.maxN) / lotCost);
+        if (lots < 1) continue;
+        size = lots * lotCost;
+        pd.shares = lots * cfg.lot;
+      } else {
+        size = Math.min(st.cash, eq * 0.1);
+        if (size < eq * 0.05) break;
+      }
       st.cash -= size;
-      st.positions.push({ code: pd.code, kind: pd.kind, reason: pd.reason, entryDate: T, entryPx: p.o * (1 + SLIP), size, held: 0 });
+      st.positions.push({ code: pd.code, kind: pd.kind, reason: pd.reason, entryDate: T, entryPx: p.o * (1 + SLIP), size, held: 0, shares: pd.shares });
     }
     st.pending = [];
     // 保有日数に達したら終値で売却
@@ -204,11 +226,12 @@ for (const [k, cfg] of Object.entries(STRATS)) {
     kinds: cfg.kinds,
     equityYen: eqNow, // 税引き後（売った分の税金を引いた後。持っている株の含み益には、まだ税金はかからない）
     taxYen: Object.values(st.tax ?? {}).reduce((a, b) => a + b, 0),
-    returnPct: pct(eqNow / START - 1),
+    capital: cfg.capital ?? START,
+    returnPct: pct(eqNow / (cfg.capital ?? START) - 1),
     trades: st.closed.length,
     winRatePct: rets.length ? pct(rets.filter((r) => r > 0).length / rets.length) : null,
     avgRetPct: rets.length ? Math.round((rets.reduce((a, b) => a + b, 0) / rets.length) * 100) / 100 : null,
-    holdings: st.positions.map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
+    holdings: st.positions.map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, shares: p.shares, unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
     nextBuys: st.pending.sort((a, b) => b.score - a.score).slice(0, 10).map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, late: p.late })),
     recentClosed: st.closed.slice(-30).reverse(),
     equityHistory: st.equity,

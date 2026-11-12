@@ -80,6 +80,15 @@ h2 small{font-family:var(--gothic);font-weight:400;font-size:13px;color:var(--mu
 .trio .x{font-size:11px;display:block;margin-top:2px}
 
 /* ルールの順位 */
+.real{margin:12px 0 0;background:var(--sheet);border-radius:8px;box-shadow:var(--shadow);padding:14px 16px 12px;border-top:3px solid var(--gold)}
+.real .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.real .hd b{font-family:var(--mincho);font-weight:800;font-size:17px}
+.real .hd span{font-weight:700;font-size:17px}
+.real p{margin:4px 0 8px;font-size:13px;color:var(--muted);line-height:1.6}
+.real ul{list-style:none;margin:0;padding:0}
+.real li{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:6px 0;border-top:1px dashed var(--rule)}
+.real li small{color:var(--muted);margin-left:6px}
+.real button.link{border:none;background:none;padding:0;color:var(--gold);font-size:13px;cursor:pointer;margin-top:6px}
 .ranks{list-style:none;margin:0;padding:0;background:var(--sheet);border-radius:8px;box-shadow:var(--shadow)}
 .ranks li + li{border-top:1px solid var(--rule)}
 .ranks button{width:100%;border:none;background:none;text-align:left;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto;gap:4px 10px;align-items:center;padding:14px 14px 12px}
@@ -215,6 +224,8 @@ section[hidden]{display:none}
 
     <div class="trio" id="trio"></div>
 
+    <div id="real"></div>
+
     <h2>ルールの順位<small>タップで説明</small></h2>
     <ul class="ranks" id="ranks"></ul>
 
@@ -279,9 +290,13 @@ const STRATS = {
   swing_div_gap:  { name: '増配＋朝高い時だけ',  fam: 'div',  gap: true,  desc: '増配の会社のうち、次の朝に前の日より高く始まった時だけ買います。5日後に売ります。', test: 'ev_div_up_gap|hold5' },
   swing_earn:     { name: '上方修正で買う',      fam: 'earn', gap: false, desc: '「今年の利益は予想より多くなりそう」と発表し、株価も上向きの会社を次の朝に買って、5日後に売ります。', test: 'ev_earn_up_trend|hold5' },
   swing_earn_gap: { name: '上方修正＋朝高い時だけ', fam: 'earn', gap: true,  desc: '上方修正の会社のうち、次の朝に前の日より高く始まった時だけ買います。5日後に売ります。', test: 'ev_earn_up_trend_gap|hold5' },
+  real30_div_gap: { name: '本番想定（30万円）',  fam: 'div',  gap: true,  desc: 'ウィブルで本当にやる時と同じ条件です。資金30万円、日本株は100株単位でしか買えないので、増配＋朝高い時だけのルールで、同時に持つのは2銘柄まで。株価が高くて100株買えない銘柄は見送ります。', test: null },
   dt_div:         { name: '増配デイトレ',        fam: 'dt',   gap: false, desc: '増配の会社を次の朝の寄り付きで買い、その日の引け（15時半）に売ります。夜をまたいで持ちません。', test: 'dt' },
 };
 const ORDER = ['swing_div', 'swing_div_gap', 'swing_earn', 'swing_earn_gap', 'dt_div'];
+const REAL = 'real30_div_gap';
+const ALL = () => [...ORDER, ...(paper.strategies[REAL] ? [REAL] : [])];
+const capOf = (k) => paper.strategies[k]?.capital ?? START;
 const RC = { div: 'var(--c-div)', earn: 'var(--c-earn)', dt: 'var(--c-dt)' };
 
 const TERMS = {
@@ -387,7 +402,7 @@ const tradingDays = () => combined().length - 1;
 // ---------- 銘柄の集計（同じ銘柄が複数ルールにあれば1行にまとめる） ----------
 function gather(kind) {
   const map = new Map();
-  for (const k of ORDER) {
+  for (const k of ALL()) {
     const st = paper.strategies[k];
     const list = kind === 'next' ? st.nextBuys : kind === 'hold' ? st.holdings : st.recentClosed;
     for (const x of list) {
@@ -436,6 +451,18 @@ function renderHome() {
     <button data-seg="hold"><span class="l">いま持っている</span><span class="n num">${hold.length}<small>銘柄</small></span><span class="x ${cls(unreal)}">${hold.length ? `平均 ${sign(unreal)}%` : 'なし'}</span></button>
     <button data-seg="sold"><span class="l">売った</span><span class="n num">${allSold.length}<small>回</small></span><span class="x flat">${allSold.length ? `勝率 ${Math.round(wins / allSold.length * 100)}%` : 'まだなし'}</span></button>`;
 
+  // 本番と同じ条件（30万円・100株単位）
+  const R = paper.strategies[REAL];
+  if (R) {
+    const cap = capOf(REAL), d = R.equityYen - cap;
+    $('real').innerHTML = `<div class="real">
+      <div class="hd"><b>本番と同じ条件なら</b><span class="num ${cls(d)}">${sign(R.returnPct)}%</span></div>
+      <p>30万円・100株単位・2銘柄まで（増配＋朝高）。いま <b class="num" style="color:var(--ink)">${yen(R.equityYen)}円</b>（${d >= 0 ? '+' : '−'}${yen(Math.abs(d))}円）${R.trades ? `・${R.trades}回売って勝率${R.winRatePct}%` : ''}</p>
+      ${R.holdings.length ? `<ul>${R.holdings.map((h) => `<li><span>${esc(nf(h.name))}<small>${h.shares ? h.shares + '株' : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`).join('')}</ul>`
+        : `<p style="margin:0">いまは持っていません。${R.nextBuys.length ? `次の朝の候補 ${R.nextBuys.length}銘柄（100株買える範囲で、朝高く始まった時だけ買います）` : ''}</p>`}
+      <button class="link" data-rule="${REAL}">このルールの説明</button></div>`;
+  }
+
   // ルールの順位
   const ranked = ORDER.map((k) => ({ k, s: paper.strategies[k] })).sort((a, b) => b.s.equityYen - a.s.equityYen);
   $('ranks').innerHTML = ranked.map(({ k, s }, i) => {
@@ -445,9 +472,9 @@ function renderHome() {
     return `<li><button data-rule="${k}" aria-label="${STRATS[k].name}の説明">
       <span class="pos">${i + 1}</span>
       <span class="nm">${dot(k)}${STRATS[k].name}</span>
-      <span class="pct num ${cls(s.returnPct)}">${sign(s.returnPct)}%<small>${s.equityYen >= START ? '+' : '−'}${man(s.equityYen - START)}円</small></span>
+      <span class="pct num ${cls(s.returnPct)}">${sign(s.returnPct)}%<small>${s.equityYen >= capOf(k) ? '+' : '−'}${man(s.equityYen - capOf(k))}円</small></span>
       <span class="st">${st}</span>
-      <span class="spark">${line(s.equityHistory.map((e) => e.value), START, 300, 22, { color: RC[STRATS[k].fam], stroke: 1.6, r: 2.2 })}</span>
+      <span class="spark">${line(s.equityHistory.map((e) => e.value), capOf(k), 300, 22, { color: RC[STRATS[k].fam], stroke: 1.6, r: 2.2 })}</span>
     </button></li>`;
   }).join('');
 }
@@ -458,12 +485,12 @@ function openRule(k) {
   const body = `<p>${esc(STRATS[k].desc)}</p>
     <div class="kv">
       <div><span>いまの資産</span><b class="num">${man(s.equityYen)}円</b></div>
-      <div><span>${md(paper.startDate)}からの損益</span><b class="num ${cls(s.returnPct)}">${sign(s.returnPct)}%</b></div>
+      <div><span>${md(s.equityHistory[0]?.date ?? paper.startDate)}からの損益</span><b class="num ${cls(s.returnPct)}">${sign(s.returnPct)}%</b></div>
       <div><span>売った回数</span><b class="num">${s.trades}回</b></div>
       <div><span>${term('勝率')}</span><b class="num">${s.trades ? s.winRatePct + '%' : '—'}</b></div>
     </div>
     ${s.taxYen ? `<p style="font-size:14px;color:var(--muted)">いまの資産は、売った利益にかかる税金 ${yen(s.taxYen)}円を引いた後の金額です。</p>` : ''}
-    ${t ? `<p style="font-size:14px;color:var(--muted)">過去5年で試すと、税金を引いた後で100万円が<b style="color:var(--ink)">${man(START * (1 + t.total / 100))}円</b>になっていました（${term('最大の減り')} ${t.dd}%）。</p>` : ''}`;
+    ${t ? `<p style="font-size:14px;color:var(--muted)">過去5年で試すと、税金を引いた後で${man(capOf(k))}円が<b style="color:var(--ink)">${man(capOf(k) * (1 + t.total / 100))}円</b>になっていました（${term('最大の減り')} ${t.dd}%）。</p>` : ''}`;
   openSheet(`${dot(k)}${STRATS[k].name}`, body);
 }
 
@@ -513,6 +540,10 @@ function renderStocks() {
 function testFor(k) {
   if (!backtest) return null;
   const key = STRATS[k].test;
+  if (k === REAL) {
+    const g = backtest.lotSim?.results?.['ev_div_up_gap|hold5']?.grid?.['300000|2']?.full;
+    return g ? withTax({ dd: g.maxDDPct, yearly: g.yearly }) : null;
+  }
   if (key === 'dt') {
     const d = backtest.daytrade?.['div_up|nostop|all'];
     if (!d) return null;
