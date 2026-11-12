@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T11:02:21.760Z",
+  "updatedAt": "2026-11-12T04:33:42.345Z",
   "startDate": "2026-11-05",
   "lastDate": "2026-11-11",
   "strategies": {
@@ -11,6 +11,7 @@
         "div_up"
       ],
       "equityYen": 1162125,
+      "taxYen": 0,
       "returnPct": 16.2,
       "trades": 0,
       "winRatePct": null,
@@ -191,6 +192,7 @@
         "earn_up"
       ],
       "equityYen": 1031200,
+      "taxYen": 0,
       "returnPct": 3.1,
       "trades": 0,
       "winRatePct": null,
@@ -370,8 +372,9 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 1128666,
-      "returnPct": 12.9,
+      "equityYen": 1102528,
+      "taxYen": 26138,
+      "returnPct": 10.3,
       "trades": 40,
       "winRatePct": 75,
       "avgRetPct": 3.09,
@@ -717,19 +720,19 @@
         },
         {
           "date": "2026-11-06",
-          "value": 1060456
+          "value": 1048174
         },
         {
           "date": "2026-11-09",
-          "value": 1093686
+          "value": 1074653
         },
         {
           "date": "2026-11-10",
-          "value": 1094867
+          "value": 1075595
         },
         {
           "date": "2026-11-11",
-          "value": 1128666
+          "value": 1102528
         }
       ]
     },
@@ -741,6 +744,7 @@
         "earn_up"
       ],
       "equityYen": 1015258,
+      "taxYen": 0,
       "returnPct": 1.5,
       "trades": 0,
       "winRatePct": null,
@@ -921,6 +925,7 @@
         "div_up"
       ],
       "equityYen": 1133856,
+      "taxYen": 0,
       "returnPct": 13.4,
       "trades": 0,
       "winRatePct": null,

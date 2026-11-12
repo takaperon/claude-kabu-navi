@@ -1,11 +1,11 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-11T11:04:17.370Z",
+  "generatedAt": "2026-11-12T04:35:53.072Z",
   "days": 1224,
   "universe": 3703,
   "fins": {
-    "days": 1832,
-    "rows": 95344,
+    "days": 1833,
+    "rows": 95345,
     "events": {
       "earn_up": 5819,
       "earn_down": 4116,
