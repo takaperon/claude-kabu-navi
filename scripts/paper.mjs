@@ -38,6 +38,7 @@ const STRATS = {
   swing_earn_gap: { name: '上方修正＋上向き＋朝高く始まった時だけ（5日保有）', kinds: ['earn_up'], hold: 5, trend: true, gap: true, base: 'swing_earn' },
   swing_div_gap: { name: '配当予想の引き上げ＋朝高く始まった時だけ（5日保有）', kinds: ['div_up'], hold: 5, gap: true, base: 'swing_div' },
   // 本番と同じ条件（2026-11-12〜）：ウィブルは日本株を100株単位でしか買えないので、30万円・最大2銘柄・100株単位
+  real30_dt: { name: '本番想定：30万円・100株単位・3銘柄（増配デイトレ）', kinds: ['div_up'], hold: 1, base: 'dt_div', capital: 300_000, maxN: 3, lot: 100 },
   real30_div_gap: { name: '本番想定：30万円・100株単位・2銘柄（増配＋朝高）', kinds: ['div_up'], hold: 5, gap: true, base: 'swing_div_gap', capital: 300_000, maxN: 2, lot: 100 },
 };
 

@@ -291,11 +291,13 @@ const STRATS = {
   swing_earn:     { name: '上方修正で買う',      fam: 'earn', gap: false, desc: '「今年の利益は予想より多くなりそう」と発表し、株価も上向きの会社を次の朝に買って、5日後に売ります。', test: 'ev_earn_up_trend|hold5' },
   swing_earn_gap: { name: '上方修正＋朝高い時だけ', fam: 'earn', gap: true,  desc: '上方修正の会社のうち、次の朝に前の日より高く始まった時だけ買います。5日後に売ります。', test: 'ev_earn_up_trend_gap|hold5' },
   real30_div_gap: { name: '本番想定（30万円）',  fam: 'div',  gap: true,  desc: 'ウィブルで本当にやる時と同じ条件です。資金30万円、日本株は100株単位でしか買えないので、増配＋朝高い時だけのルールで、同時に持つのは2銘柄まで。株価が高くて100株買えない銘柄は見送ります。', test: null },
+  real30_dt:      { name: '本番想定デイトレ（30万円）', fam: 'dt', gap: false, desc: 'ウィブルで本当にやる時と同じ条件のデイトレです。資金30万円・100株単位で、増配の銘柄を朝に最大3銘柄買い、その日の引けで売ります。', test: null },
   dt_div:         { name: '増配デイトレ',        fam: 'dt',   gap: false, desc: '増配の会社を次の朝の寄り付きで買い、その日の引け（15時半）に売ります。夜をまたいで持ちません。', test: 'dt' },
 };
 const ORDER = ['swing_div', 'swing_div_gap', 'swing_earn', 'swing_earn_gap', 'dt_div'];
 const REAL = 'real30_div_gap';
-const ALL = () => [...ORDER, ...(paper.strategies[REAL] ? [REAL] : [])];
+const REALS = ['real30_div_gap', 'real30_dt'];
+const ALL = () => [...ORDER, ...REALS.filter((k) => paper.strategies[k])];
 const capOf = (k) => paper.strategies[k]?.capital ?? START;
 const RC = { div: 'var(--c-div)', earn: 'var(--c-earn)', dt: 'var(--c-dt)' };
 
@@ -452,16 +454,16 @@ function renderHome() {
     <button data-seg="sold"><span class="l">売った</span><span class="n num">${allSold.length}<small>回</small></span><span class="x flat">${allSold.length ? `勝率 ${Math.round(wins / allSold.length * 100)}%` : 'まだなし'}</span></button>`;
 
   // 本番と同じ条件（30万円・100株単位）
-  const R = paper.strategies[REAL];
-  if (R) {
-    const cap = capOf(REAL), d = R.equityYen - cap;
-    $('real').innerHTML = `<div class="real">
-      <div class="hd"><b>本番と同じ条件なら</b><span class="num ${cls(d)}">${sign(R.returnPct)}%</span></div>
-      <p>30万円・100株単位・2銘柄まで（増配＋朝高）。いま <b class="num" style="color:var(--ink)">${yen(R.equityYen)}円</b>（${d >= 0 ? '+' : '−'}${yen(Math.abs(d))}円）${R.trades ? `・${R.trades}回売って勝率${R.winRatePct}%` : ''}</p>
+  $('real').innerHTML = REALS.filter((k) => paper.strategies[k]).map((RK) => {
+    const R = paper.strategies[RK];
+    const cap = capOf(RK), d = R.equityYen - cap;
+    return `<div class="real">
+      <div class="hd"><b>${RK === 'real30_dt' ? '本番と同じ条件のデイトレなら' : '本番と同じ条件なら'}</b><span class="num ${cls(d)}">${sign(R.returnPct)}%</span></div>
+      <p>${RK === 'real30_dt' ? '30万円・100株単位・3銘柄まで（増配デイトレ）。' : '30万円・100株単位・2銘柄まで（増配＋朝高）。'}いま <b class="num" style="color:var(--ink)">${yen(R.equityYen)}円</b>（${d >= 0 ? '+' : '−'}${yen(Math.abs(d))}円）${R.trades ? `・${R.trades}回売って勝率${R.winRatePct}%` : ''}</p>
       ${R.holdings.length ? `<ul>${R.holdings.map((h) => `<li><span>${esc(nf(h.name))}<small>${h.shares ? h.shares + '株' : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`).join('')}</ul>`
-        : `<p style="margin:0">いまは持っていません。${R.nextBuys.length ? `次の朝の候補 ${R.nextBuys.length}銘柄（100株買える範囲で、朝高く始まった時だけ買います）` : ''}</p>`}
-      <button class="link" data-rule="${REAL}">このルールの説明</button></div>`;
-  }
+        : `<p style="margin:0">いまは持っていません。${R.nextBuys.length ? `次の朝の候補 ${R.nextBuys.length}銘柄（100株買える範囲で買います）` : ''}</p>`}
+      <button class="link" data-rule="${RK}">このルールの説明</button></div>`;
+  }).join('');
 
   // ルールの順位
   const ranked = ORDER.map((k) => ({ k, s: paper.strategies[k] })).sort((a, b) => b.s.equityYen - a.s.equityYen);
@@ -540,6 +542,10 @@ function renderStocks() {
 function testFor(k) {
   if (!backtest) return null;
   const key = STRATS[k].test;
+  if (k === 'real30_dt') {
+    const g = backtest.lotSim?.daytrade?.['div_up|nostop|all']?.grid?.['300000|3']?.full;
+    return g ? withTax({ dd: g.maxDDPct, yearly: g.yearly }) : null;
+  }
   if (k === REAL) {
     const g = backtest.lotSim?.results?.['ev_div_up_gap|hold5']?.grid?.['300000|2']?.full;
     return g ? withTax({ dd: g.maxDDPct, yearly: g.yearly }) : null;
