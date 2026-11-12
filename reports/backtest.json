@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-12T11:35:53.794Z",
+  "generatedAt": "2026-11-12T11:43:33.768Z",
   "days": 1225,
   "universe": 3703,
   "fins": {
@@ -9659,6 +9659,4228 @@
                 "2024": 4.1,
                 "2025": -3.1,
                 "2026": 30.6
+              }
+            }
+          }
+        }
+      }
+    },
+    "daytrade": {
+      "div_up|nostop|all": {
+        "name": "配当予想の引き上げ / 損切りなし / 条件なし",
+        "grid": {
+          "300000|1": {
+            "full": {
+              "final": 766014,
+              "returnPct": 155.3,
+              "maxDDPct": 50.7,
+              "trades": 742,
+              "skippedNoMoney": 158,
+              "yearly": {
+                "2021": -3.9,
+                "2022": 70.5,
+                "2023": -10.4,
+                "2024": 1.1,
+                "2025": 85.7,
+                "2026": -7.4
+              }
+            },
+            "train": {
+              "final": 371149,
+              "returnPct": 23.7,
+              "maxDDPct": 50.7,
+              "trades": 413,
+              "skippedNoMoney": 122,
+              "yearly": {
+                "2021": -3.9,
+                "2022": 70.5,
+                "2023": -10.4,
+                "2024": -15.7
+              }
+            },
+            "test": {
+              "final": 620545,
+              "returnPct": 106.8,
+              "maxDDPct": 37.6,
+              "trades": 326,
+              "skippedNoMoney": 53,
+              "yearly": {
+                "2024": 17.6,
+                "2025": 104,
+                "2026": -13.8
+              }
+            }
+          },
+          "300000|2": {
+            "full": {
+              "final": 1430688,
+              "returnPct": 376.9,
+              "maxDDPct": 28.3,
+              "trades": 1011,
+              "skippedNoMoney": 711,
+              "yearly": {
+                "2021": 0,
+                "2022": 19.4,
+                "2023": 26.6,
+                "2024": 54.1,
+                "2025": 89.8,
+                "2026": 7.9
+              }
+            },
+            "train": {
+              "final": 653726,
+              "returnPct": 117.9,
+              "maxDDPct": 13.2,
+              "trades": 461,
+              "skippedNoMoney": 631,
+              "yearly": {
+                "2021": 0,
+                "2022": 19.4,
+                "2023": 26.6,
+                "2024": 44.2
+              }
+            },
+            "test": {
+              "final": 702160,
+              "returnPct": 134.1,
+              "maxDDPct": 24,
+              "trades": 443,
+              "skippedNoMoney": 385,
+              "yearly": {
+                "2024": 7.5,
+                "2025": 94.1,
+                "2026": 12.2
+              }
+            }
+          },
+          "300000|3": {
+            "full": {
+              "final": 1090655,
+              "returnPct": 263.6,
+              "maxDDPct": 12.9,
+              "trades": 908,
+              "skippedNoMoney": 1832,
+              "yearly": {
+                "2021": 0,
+                "2022": 11.9,
+                "2023": 16.3,
+                "2024": 39.1,
+                "2025": 53,
+                "2026": 31.3
+              }
+            },
+            "train": {
+              "final": 522380,
+              "returnPct": 74.1,
+              "maxDDPct": 9.2,
+              "trades": 359,
+              "skippedNoMoney": 1298,
+              "yearly": {
+                "2021": 0,
+                "2022": 11.9,
+                "2023": 16.3,
+                "2024": 33.8
+              }
+            },
+            "test": {
+              "final": 432423,
+              "returnPct": 44.1,
+              "maxDDPct": 11.3,
+              "trades": 294,
+              "skippedNoMoney": 1358,
+              "yearly": {
+                "2024": -0.9,
+                "2025": 43,
+                "2026": 1.7
+              }
+            }
+          },
+          "300000|5": {
+            "full": {
+              "final": 378117,
+              "returnPct": 26,
+              "maxDDPct": 4.2,
+              "trades": 264,
+              "skippedNoMoney": 4405,
+              "yearly": {
+                "2021": 0,
+                "2022": 4.5,
+                "2023": -1.1,
+                "2024": 3.1,
+                "2025": 12.5,
+                "2026": 5.1
+              }
+            },
+            "train": {
+              "final": 321998,
+              "returnPct": 7.3,
+              "maxDDPct": 4.2,
+              "trades": 132,
+              "skippedNoMoney": 2177,
+              "yearly": {
+                "2021": 0,
+                "2022": 4.5,
+                "2023": -1.1,
+                "2024": 3.8
+              }
+            },
+            "test": {
+              "final": 355417,
+              "returnPct": 18.5,
+              "maxDDPct": 3.9,
+              "trades": 114,
+              "skippedNoMoney": 2267,
+              "yearly": {
+                "2024": -0.7,
+                "2025": 9.1,
+                "2026": 9.4
+              }
+            }
+          },
+          "300000|10": {
+            "full": {
+              "final": 311483,
+              "returnPct": 3.8,
+              "maxDDPct": 0.9,
+              "trades": 39,
+              "skippedNoMoney": 4782,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.4,
+                "2023": 0.9,
+                "2024": 0,
+                "2025": 2.4,
+                "2026": 1
+              }
+            },
+            "train": {
+              "final": 301403,
+              "returnPct": 0.5,
+              "maxDDPct": 0.9,
+              "trades": 18,
+              "skippedNoMoney": 2393,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.4,
+                "2023": 0.9,
+                "2024": 0
+              }
+            },
+            "test": {
+              "final": 310081,
+              "returnPct": 3.4,
+              "maxDDPct": 0.7,
+              "trades": 21,
+              "skippedNoMoney": 2389,
+              "yearly": {
+                "2024": 0,
+                "2025": 2.4,
+                "2026": 1
+              }
+            }
+          },
+          "500000|1": {
+            "full": {
+              "final": 1186364,
+              "returnPct": 137.3,
+              "maxDDPct": 49.2,
+              "trades": 775,
+              "skippedNoMoney": 59,
+              "yearly": {
+                "2021": -1.9,
+                "2022": 42.5,
+                "2023": 7,
+                "2024": 3.6,
+                "2025": 88.7,
+                "2026": -18.9
+              }
+            },
+            "train": {
+              "final": 580691,
+              "returnPct": 16.1,
+              "maxDDPct": 49.2,
+              "trades": 441,
+              "skippedNoMoney": 47,
+              "yearly": {
+                "2021": -1.9,
+                "2022": 42.5,
+                "2023": 7,
+                "2024": -22.4
+              }
+            },
+            "test": {
+              "final": 995315,
+              "returnPct": 99.1,
+              "maxDDPct": 49.2,
+              "trades": 332,
+              "skippedNoMoney": 16,
+              "yearly": {
+                "2024": 26.5,
+                "2025": 98,
+                "2026": -20.5
+              }
+            }
+          },
+          "500000|2": {
+            "full": {
+              "final": 2914299,
+              "returnPct": 482.9,
+              "maxDDPct": 27,
+              "trades": 1239,
+              "skippedNoMoney": 191,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 82.5,
+                "2023": 7.4,
+                "2024": 44.6,
+                "2025": 106.6,
+                "2026": -0.7
+              }
+            },
+            "train": {
+              "final": 1301491,
+              "returnPct": 160.3,
+              "maxDDPct": 22.9,
+              "trades": 667,
+              "skippedNoMoney": 172,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 82.5,
+                "2023": 7.4,
+                "2024": 32.5
+              }
+            },
+            "test": {
+              "final": 1102380,
+              "returnPct": 120.5,
+              "maxDDPct": 27.6,
+              "trades": 521,
+              "skippedNoMoney": 156,
+              "yearly": {
+                "2024": 10.7,
+                "2025": 82.5,
+                "2026": 9.2
+              }
+            }
+          },
+          "500000|3": {
+            "full": {
+              "final": 2433651,
+              "returnPct": 386.7,
+              "maxDDPct": 19,
+              "trades": 1292,
+              "skippedNoMoney": 820,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 14.5,
+                "2023": 28.1,
+                "2024": 48.7,
+                "2025": 55.2,
+                "2026": 43.5
+              }
+            },
+            "train": {
+              "final": 1006596,
+              "returnPct": 101.3,
+              "maxDDPct": 11.8,
+              "trades": 586,
+              "skippedNoMoney": 690,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 14.5,
+                "2023": 28.1,
+                "2024": 36.9
+              }
+            },
+            "test": {
+              "final": 1086733,
+              "returnPct": 117.3,
+              "maxDDPct": 11.9,
+              "trades": 531,
+              "skippedNoMoney": 591,
+              "yearly": {
+                "2024": 4.1,
+                "2025": 50.1,
+                "2026": 39.2
+              }
+            }
+          },
+          "500000|5": {
+            "full": {
+              "final": 792533,
+              "returnPct": 58.5,
+              "maxDDPct": 12.3,
+              "trades": 786,
+              "skippedNoMoney": 3050,
+              "yearly": {
+                "2021": 0,
+                "2022": 8.7,
+                "2023": 9.2,
+                "2024": 10.4,
+                "2025": 24.6,
+                "2026": -2.9
+              }
+            },
+            "train": {
+              "final": 646566,
+              "returnPct": 29.3,
+              "maxDDPct": 6.3,
+              "trades": 368,
+              "skippedNoMoney": 1684,
+              "yearly": {
+                "2021": 0,
+                "2022": 8.7,
+                "2023": 9.2,
+                "2024": 8.9
+              }
+            },
+            "test": {
+              "final": 697391,
+              "returnPct": 39.5,
+              "maxDDPct": 5.9,
+              "trades": 310,
+              "skippedNoMoney": 1721,
+              "yearly": {
+                "2024": 0.1,
+                "2025": 30.8,
+                "2026": 6.5
+              }
+            }
+          },
+          "500000|10": {
+            "full": {
+              "final": 524560,
+              "returnPct": 4.9,
+              "maxDDPct": 4.1,
+              "trades": 166,
+              "skippedNoMoney": 4655,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.4,
+                "2023": 0.7,
+                "2024": -2.4,
+                "2025": 4.1,
+                "2026": 2.9
+              }
+            },
+            "train": {
+              "final": 491093,
+              "returnPct": -1.8,
+              "maxDDPct": 4.1,
+              "trades": 90,
+              "skippedNoMoney": 2321,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.4,
+                "2023": 0.7,
+                "2024": -2.1
+              }
+            },
+            "test": {
+              "final": 533742,
+              "returnPct": 6.7,
+              "maxDDPct": 0.9,
+              "trades": 76,
+              "skippedNoMoney": 2334,
+              "yearly": {
+                "2024": -0.2,
+                "2025": 4.1,
+                "2026": 2.8
+              }
+            }
+          },
+          "1000000|1": {
+            "full": {
+              "final": 2827112,
+              "returnPct": 182.7,
+              "maxDDPct": 54.9,
+              "trades": 791,
+              "skippedNoMoney": 12,
+              "yearly": {
+                "2021": -3.2,
+                "2022": 65.6,
+                "2023": 5.9,
+                "2024": 5.5,
+                "2025": 112.9,
+                "2026": -25.8
+              }
+            },
+            "train": {
+              "final": 1247231,
+              "returnPct": 24.7,
+              "maxDDPct": 54.9,
+              "trades": 454,
+              "skippedNoMoney": 11,
+              "yearly": {
+                "2021": -3.2,
+                "2022": 65.6,
+                "2023": 5.9,
+                "2024": -26.5
+              }
+            },
+            "test": {
+              "final": 1985680,
+              "returnPct": 98.6,
+              "maxDDPct": 48.4,
+              "trades": 337,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2024": 40.1,
+                "2025": 99.8,
+                "2026": -29.1
+              }
+            }
+          },
+          "1000000|2": {
+            "full": {
+              "final": 6521789,
+              "returnPct": 552.2,
+              "maxDDPct": 30.2,
+              "trades": 1309,
+              "skippedNoMoney": 41,
+              "yearly": {
+                "2021": -0.9,
+                "2022": 105.6,
+                "2023": 9.6,
+                "2024": 38.3,
+                "2025": 120.6,
+                "2026": -4.3
+              }
+            },
+            "train": {
+              "final": 2759558,
+              "returnPct": 176,
+              "maxDDPct": 23.6,
+              "trades": 731,
+              "skippedNoMoney": 38,
+              "yearly": {
+                "2021": -0.9,
+                "2022": 105.6,
+                "2023": 9.6,
+                "2024": 23.6
+              }
+            },
+            "test": {
+              "final": 2241247,
+              "returnPct": 124.1,
+              "maxDDPct": 28,
+              "trades": 568,
+              "skippedNoMoney": 31,
+              "yearly": {
+                "2024": 7.8,
+                "2025": 108.7,
+                "2026": -0.4
+              }
+            }
+          },
+          "1000000|3": {
+            "full": {
+              "final": 5346412,
+              "returnPct": 434.6,
+              "maxDDPct": 29.7,
+              "trades": 1595,
+              "skippedNoMoney": 177,
+              "yearly": {
+                "2021": -1.1,
+                "2022": 45.3,
+                "2023": 10.8,
+                "2024": 55.5,
+                "2025": 54,
+                "2026": 40.1
+              }
+            },
+            "train": {
+              "final": 2282115,
+              "returnPct": 128.2,
+              "maxDDPct": 19.4,
+              "trades": 850,
+              "skippedNoMoney": 154,
+              "yearly": {
+                "2021": -1.1,
+                "2022": 45.3,
+                "2023": 10.8,
+                "2024": 43.2
+              }
+            },
+            "test": {
+              "final": 2442033,
+              "returnPct": 144.2,
+              "maxDDPct": 19.1,
+              "trades": 703,
+              "skippedNoMoney": 134,
+              "yearly": {
+                "2024": 8.6,
+                "2025": 55.1,
+                "2026": 44.9
+              }
+            }
+          },
+          "1000000|5": {
+            "full": {
+              "final": 3199234,
+              "returnPct": 219.9,
+              "maxDDPct": 12.7,
+              "trades": 1695,
+              "skippedNoMoney": 980,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 15,
+                "2023": 12.8,
+                "2024": 36.1,
+                "2025": 38.1,
+                "2026": 31.1
+              }
+            },
+            "train": {
+              "final": 1673746,
+              "returnPct": 67.4,
+              "maxDDPct": 9.5,
+              "trades": 787,
+              "skippedNoMoney": 738,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 15,
+                "2023": 12.8,
+                "2024": 28.9
+              }
+            },
+            "test": {
+              "final": 1560275,
+              "returnPct": 56,
+              "maxDDPct": 10.1,
+              "trades": 682,
+              "skippedNoMoney": 751,
+              "yearly": {
+                "2024": 6.2,
+                "2025": 20.9,
+                "2026": 21.6
+              }
+            }
+          },
+          "1000000|10": {
+            "full": {
+              "final": 1366483,
+              "returnPct": 36.6,
+              "maxDDPct": 3,
+              "trades": 778,
+              "skippedNoMoney": 3816,
+              "yearly": {
+                "2021": 0,
+                "2022": 4.5,
+                "2023": 8.5,
+                "2024": 5.2,
+                "2025": 11.8,
+                "2026": 2.4
+              }
+            },
+            "train": {
+              "final": 1183493,
+              "returnPct": 18.3,
+              "maxDDPct": 2.1,
+              "trades": 383,
+              "skippedNoMoney": 1912,
+              "yearly": {
+                "2021": 0,
+                "2022": 4.5,
+                "2023": 8.5,
+                "2024": 4.4
+              }
+            },
+            "test": {
+              "final": 1141627,
+              "returnPct": 14.2,
+              "maxDDPct": 1.9,
+              "trades": 296,
+              "skippedNoMoney": 2059,
+              "yearly": {
+                "2024": 0.1,
+                "2025": 11,
+                "2026": 2.8
+              }
+            }
+          },
+          "2000000|1": {
+            "full": {
+              "final": 5927383,
+              "returnPct": 196.4,
+              "maxDDPct": 56,
+              "trades": 796,
+              "skippedNoMoney": 2,
+              "yearly": {
+                "2021": -3.8,
+                "2022": 67.9,
+                "2023": 9.2,
+                "2024": 19.7,
+                "2025": 109.6,
+                "2026": -33.1
+              }
+            },
+            "train": {
+              "final": 2753331,
+              "returnPct": 37.7,
+              "maxDDPct": 56,
+              "trades": 458,
+              "skippedNoMoney": 2,
+              "yearly": {
+                "2021": -3.8,
+                "2022": 67.9,
+                "2023": 9.2,
+                "2024": -22
+              }
+            },
+            "test": {
+              "final": 4456400,
+              "returnPct": 122.8,
+              "maxDDPct": 49,
+              "trades": 338,
+              "skippedNoMoney": 0,
+              "yearly": {
+                "2024": 56.6,
+                "2025": 106.4,
+                "2026": -31.1
+              }
+            }
+          },
+          "2000000|2": {
+            "full": {
+              "final": 15791963,
+              "returnPct": 689.6,
+              "maxDDPct": 31.6,
+              "trades": 1322,
+              "skippedNoMoney": 14,
+              "yearly": {
+                "2021": -1.6,
+                "2022": 111.3,
+                "2023": 23.7,
+                "2024": 44.7,
+                "2025": 128.2,
+                "2026": -7.1
+              }
+            },
+            "train": {
+              "final": 6439714,
+              "returnPct": 222,
+              "maxDDPct": 24.6,
+              "trades": 743,
+              "skippedNoMoney": 14,
+              "yearly": {
+                "2021": -1.6,
+                "2022": 111.3,
+                "2023": 23.7,
+                "2024": 25.2
+              }
+            },
+            "test": {
+              "final": 4235007,
+              "returnPct": 111.8,
+              "maxDDPct": 30.5,
+              "trades": 578,
+              "skippedNoMoney": 6,
+              "yearly": {
+                "2024": 9.3,
+                "2025": 114,
+                "2026": -9.5
+              }
+            }
+          },
+          "2000000|3": {
+            "full": {
+              "final": 10596246,
+              "returnPct": 429.8,
+              "maxDDPct": 31.4,
+              "trades": 1675,
+              "skippedNoMoney": 35,
+              "yearly": {
+                "2021": -1.1,
+                "2022": 59.8,
+                "2023": 6.9,
+                "2024": 47.3,
+                "2025": 57.8,
+                "2026": 34.9
+              }
+            },
+            "train": {
+              "final": 4652285,
+              "returnPct": 132.6,
+              "maxDDPct": 21.9,
+              "trades": 923,
+              "skippedNoMoney": 31,
+              "yearly": {
+                "2021": -1.1,
+                "2022": 59.8,
+                "2023": 6.9,
+                "2024": 37.7
+              }
+            },
+            "test": {
+              "final": 4754453,
+              "returnPct": 137.7,
+              "maxDDPct": 27.3,
+              "trades": 742,
+              "skippedNoMoney": 30,
+              "yearly": {
+                "2024": 8,
+                "2025": 51.9,
+                "2026": 44.9
+              }
+            }
+          },
+          "2000000|5": {
+            "full": {
+              "final": 7129791,
+              "returnPct": 256.5,
+              "maxDDPct": 20.4,
+              "trades": 2088,
+              "skippedNoMoney": 184,
+              "yearly": {
+                "2021": -0.5,
+                "2022": 35.9,
+                "2023": 16.4,
+                "2024": 16.4,
+                "2025": 41.9,
+                "2026": 37.1
+              }
+            },
+            "train": {
+              "final": 3442308,
+              "returnPct": 72.1,
+              "maxDDPct": 11.5,
+              "trades": 1099,
+              "skippedNoMoney": 143,
+              "yearly": {
+                "2021": -0.5,
+                "2022": 35.9,
+                "2023": 16.4,
+                "2024": 9.4
+              }
+            },
+            "test": {
+              "final": 4232234,
+              "returnPct": 111.6,
+              "maxDDPct": 11.9,
+              "trades": 948,
+              "skippedNoMoney": 137,
+              "yearly": {
+                "2024": 8.5,
+                "2025": 42.1,
+                "2026": 37.2
+              }
+            }
+          },
+          "2000000|10": {
+            "full": {
+              "final": 4021914,
+              "returnPct": 101.1,
+              "maxDDPct": 7.8,
+              "trades": 2033,
+              "skippedNoMoney": 1643,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 7.1,
+                "2023": 9,
+                "2024": 22.6,
+                "2025": 20.8,
+                "2026": 16.3
+              }
+            },
+            "train": {
+              "final": 2839457,
+              "returnPct": 42,
+              "maxDDPct": 4.7,
+              "trades": 935,
+              "skippedNoMoney": 1030,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 7.1,
+                "2023": 9,
+                "2024": 21.5
+              }
+            },
+            "test": {
+              "final": 2967358,
+              "returnPct": 48.4,
+              "maxDDPct": 4.1,
+              "trades": 844,
+              "skippedNoMoney": 1073,
+              "yearly": {
+                "2024": 1.7,
+                "2025": 18.8,
+                "2026": 22.8
+              }
+            }
+          },
+          "3000000|1": {
+            "full": {
+              "final": 9196390,
+              "returnPct": 206.5,
+              "maxDDPct": 58.1,
+              "trades": 797,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2021": -4,
+                "2022": 72.6,
+                "2023": 9.4,
+                "2024": 19.1,
+                "2025": 113,
+                "2026": -33.3
+              }
+            },
+            "train": {
+              "final": 4116867,
+              "returnPct": 37.2,
+              "maxDDPct": 58.1,
+              "trades": 459,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2021": -4,
+                "2022": 72.6,
+                "2023": 9.4,
+                "2024": -24.3
+              }
+            },
+            "test": {
+              "final": 6613885,
+              "returnPct": 120.5,
+              "maxDDPct": 50,
+              "trades": 338,
+              "skippedNoMoney": 0,
+              "yearly": {
+                "2024": 53.4,
+                "2025": 112.4,
+                "2026": -32.3
+              }
+            }
+          },
+          "3000000|2": {
+            "full": {
+              "final": 24660651,
+              "returnPct": 722,
+              "maxDDPct": 31.4,
+              "trades": 1328,
+              "skippedNoMoney": 6,
+              "yearly": {
+                "2021": -1.8,
+                "2022": 119.4,
+                "2023": 19.5,
+                "2024": 49.8,
+                "2025": 129.7,
+                "2026": -7.2
+              }
+            },
+            "train": {
+              "final": 9867162,
+              "returnPct": 228.9,
+              "maxDDPct": 25,
+              "trades": 749,
+              "skippedNoMoney": 6,
+              "yearly": {
+                "2021": -1.8,
+                "2022": 119.4,
+                "2023": 19.5,
+                "2024": 27.8
+              }
+            },
+            "test": {
+              "final": 7027523,
+              "returnPct": 134.3,
+              "maxDDPct": 30,
+              "trades": 578,
+              "skippedNoMoney": 3,
+              "yearly": {
+                "2024": 11.9,
+                "2025": 121.1,
+                "2026": -5.3
+              }
+            }
+          },
+          "3000000|3": {
+            "full": {
+              "final": 17146188,
+              "returnPct": 471.5,
+              "maxDDPct": 31.5,
+              "trades": 1681,
+              "skippedNoMoney": 22,
+              "yearly": {
+                "2021": -1.1,
+                "2022": 52.9,
+                "2023": 14.9,
+                "2024": 51.5,
+                "2025": 59.2,
+                "2026": 36.4
+              }
+            },
+            "train": {
+              "final": 7367257,
+              "returnPct": 145.6,
+              "maxDDPct": 18.9,
+              "trades": 929,
+              "skippedNoMoney": 18,
+              "yearly": {
+                "2021": -1.1,
+                "2022": 52.9,
+                "2023": 14.9,
+                "2024": 41.3
+              }
+            },
+            "test": {
+              "final": 7025600,
+              "returnPct": 134.2,
+              "maxDDPct": 30.3,
+              "trades": 748,
+              "skippedNoMoney": 13,
+              "yearly": {
+                "2024": 7.2,
+                "2025": 59.9,
+                "2026": 36.6
+              }
+            }
+          },
+          "3000000|5": {
+            "full": {
+              "final": 10852700,
+              "returnPct": 261.8,
+              "maxDDPct": 19.5,
+              "trades": 2151,
+              "skippedNoMoney": 75,
+              "yearly": {
+                "2021": -0.7,
+                "2022": 37.6,
+                "2023": 18.2,
+                "2024": 13.3,
+                "2025": 41.7,
+                "2026": 39.7
+              }
+            },
+            "train": {
+              "final": 5202921,
+              "returnPct": 73.4,
+              "maxDDPct": 15.2,
+              "trades": 1154,
+              "skippedNoMoney": 58,
+              "yearly": {
+                "2021": -0.7,
+                "2022": 37.6,
+                "2023": 18.2,
+                "2024": 7.5
+              }
+            },
+            "test": {
+              "final": 6526031,
+              "returnPct": 117.5,
+              "maxDDPct": 19.7,
+              "trades": 985,
+              "skippedNoMoney": 52,
+              "yearly": {
+                "2024": 6.9,
+                "2025": 46,
+                "2026": 39.4
+              }
+            }
+          },
+          "3000000|10": {
+            "full": {
+              "final": 7986649,
+              "returnPct": 166.2,
+              "maxDDPct": 7.3,
+              "trades": 2641,
+              "skippedNoMoney": 615,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 22,
+                "2023": 10.3,
+                "2024": 22.8,
+                "2025": 28.1,
+                "2026": 26.1
+              }
+            },
+            "train": {
+              "final": 4772292,
+              "returnPct": 59.1,
+              "maxDDPct": 5.1,
+              "trades": 1310,
+              "skippedNoMoney": 429,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 22,
+                "2023": 10.3,
+                "2024": 18.6
+              }
+            },
+            "test": {
+              "final": 4606767,
+              "returnPct": 53.6,
+              "maxDDPct": 7.2,
+              "trades": 1143,
+              "skippedNoMoney": 533,
+              "yearly": {
+                "2024": 1.8,
+                "2025": 21.5,
+                "2026": 24.1
+              }
+            }
+          }
+        }
+      },
+      "div_up|nostop|gapUp": {
+        "name": "配当予想の引き上げ / 損切りなし / 寄り付きが前日終値より上",
+        "grid": {
+          "300000|1": {
+            "full": {
+              "final": 1041296,
+              "returnPct": 247.1,
+              "maxDDPct": 50.4,
+              "trades": 642,
+              "skippedNoMoney": 133,
+              "yearly": {
+                "2021": -4.3,
+                "2022": 68.7,
+                "2023": 5.8,
+                "2024": -13.8,
+                "2025": 115.1,
+                "2026": 9.6
+              }
+            },
+            "train": {
+              "final": 400907,
+              "returnPct": 33.6,
+              "maxDDPct": 50.4,
+              "trades": 349,
+              "skippedNoMoney": 104,
+              "yearly": {
+                "2021": -4.3,
+                "2022": 68.7,
+                "2023": 5.8,
+                "2024": -21.8
+              }
+            },
+            "test": {
+              "final": 713357,
+              "returnPct": 137.8,
+              "maxDDPct": 35.8,
+              "trades": 284,
+              "skippedNoMoney": 61,
+              "yearly": {
+                "2024": 4.5,
+                "2025": 133.4,
+                "2026": -2.5
+              }
+            }
+          },
+          "300000|2": {
+            "full": {
+              "final": 880882,
+              "returnPct": 193.6,
+              "maxDDPct": 24.8,
+              "trades": 743,
+              "skippedNoMoney": 777,
+              "yearly": {
+                "2021": 0,
+                "2022": 22,
+                "2023": 14.2,
+                "2024": 5.5,
+                "2025": 75.6,
+                "2026": 13.9
+              }
+            },
+            "train": {
+              "final": 392829,
+              "returnPct": 30.9,
+              "maxDDPct": 20.4,
+              "trades": 348,
+              "skippedNoMoney": 552,
+              "yearly": {
+                "2021": 0,
+                "2022": 22,
+                "2023": 14.2,
+                "2024": -6
+              }
+            },
+            "test": {
+              "final": 602943,
+              "returnPct": 101,
+              "maxDDPct": 16.1,
+              "trades": 327,
+              "skippedNoMoney": 412,
+              "yearly": {
+                "2024": 7.9,
+                "2025": 54.6,
+                "2026": 20.5
+              }
+            }
+          },
+          "300000|3": {
+            "full": {
+              "final": 761365,
+              "returnPct": 153.8,
+              "maxDDPct": 11,
+              "trades": 615,
+              "skippedNoMoney": 1592,
+              "yearly": {
+                "2021": 0,
+                "2022": 13.1,
+                "2023": 13.6,
+                "2024": 22.9,
+                "2025": 36.3,
+                "2026": 17.8
+              }
+            },
+            "train": {
+              "final": 447438,
+              "returnPct": 49.1,
+              "maxDDPct": 6.4,
+              "trades": 254,
+              "skippedNoMoney": 977,
+              "yearly": {
+                "2021": 0,
+                "2022": 13.1,
+                "2023": 13.6,
+                "2024": 16
+              }
+            },
+            "test": {
+              "final": 427950,
+              "returnPct": 42.7,
+              "maxDDPct": 10.6,
+              "trades": 205,
+              "skippedNoMoney": 1031,
+              "yearly": {
+                "2024": 2.1,
+                "2025": 36.9,
+                "2026": 2.1
+              }
+            }
+          },
+          "300000|5": {
+            "full": {
+              "final": 350726,
+              "returnPct": 16.9,
+              "maxDDPct": 2.6,
+              "trades": 149,
+              "skippedNoMoney": 2980,
+              "yearly": {
+                "2021": 0,
+                "2022": 3.7,
+                "2023": 0.5,
+                "2024": 3,
+                "2025": 9.9,
+                "2026": -1
+              }
+            },
+            "train": {
+              "final": 324049,
+              "returnPct": 8,
+              "maxDDPct": 2.1,
+              "trades": 82,
+              "skippedNoMoney": 1484,
+              "yearly": {
+                "2021": 0,
+                "2022": 3.7,
+                "2023": 0.5,
+                "2024": 3.6
+              }
+            },
+            "test": {
+              "final": 331971,
+              "returnPct": 10.7,
+              "maxDDPct": 1.1,
+              "trades": 62,
+              "skippedNoMoney": 1501,
+              "yearly": {
+                "2024": -0.6,
+                "2025": 9.9,
+                "2026": 1.3
+              }
+            }
+          },
+          "300000|10": {
+            "full": {
+              "final": 307830,
+              "returnPct": 2.6,
+              "maxDDPct": 0.4,
+              "trades": 19,
+              "skippedNoMoney": 3135,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.4,
+                "2023": 0,
+                "2024": 0.5,
+                "2025": 2.6,
+                "2026": 0
+              }
+            },
+            "train": {
+              "final": 300092,
+              "returnPct": 0,
+              "maxDDPct": 0.4,
+              "trades": 9,
+              "skippedNoMoney": 1582,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.4,
+                "2023": 0,
+                "2024": 0.5
+              }
+            },
+            "test": {
+              "final": 307737,
+              "returnPct": 2.6,
+              "maxDDPct": 0.2,
+              "trades": 10,
+              "skippedNoMoney": 1553,
+              "yearly": {
+                "2024": 0,
+                "2025": 2.6,
+                "2026": 0
+              }
+            }
+          },
+          "500000|1": {
+            "full": {
+              "final": 1091564,
+              "returnPct": 118.3,
+              "maxDDPct": 46.1,
+              "trades": 654,
+              "skippedNoMoney": 101,
+              "yearly": {
+                "2021": -2.6,
+                "2022": 5.9,
+                "2023": 6.9,
+                "2024": -15.6,
+                "2025": 112.7,
+                "2026": 10.4
+              }
+            },
+            "train": {
+              "final": 423916,
+              "returnPct": -15.2,
+              "maxDDPct": 46.1,
+              "trades": 360,
+              "skippedNoMoney": 75,
+              "yearly": {
+                "2021": -2.6,
+                "2022": 5.9,
+                "2023": 6.9,
+                "2024": -23.1
+              }
+            },
+            "test": {
+              "final": 1157976,
+              "returnPct": 131.6,
+              "maxDDPct": 35.5,
+              "trades": 297,
+              "skippedNoMoney": 16,
+              "yearly": {
+                "2024": 6.9,
+                "2025": 152.1,
+                "2026": -14.1
+              }
+            }
+          },
+          "500000|2": {
+            "full": {
+              "final": 1810176,
+              "returnPct": 262,
+              "maxDDPct": 30.2,
+              "trades": 984,
+              "skippedNoMoney": 269,
+              "yearly": {
+                "2021": 0,
+                "2022": 60.9,
+                "2023": 3,
+                "2024": 2.8,
+                "2025": 105.6,
+                "2026": 3.4
+              }
+            },
+            "train": {
+              "final": 769117,
+              "returnPct": 53.8,
+              "maxDDPct": 28.6,
+              "trades": 520,
+              "skippedNoMoney": 208,
+              "yearly": {
+                "2021": 0,
+                "2022": 60.9,
+                "2023": 3,
+                "2024": -7.2
+              }
+            },
+            "test": {
+              "final": 954514,
+              "returnPct": 90.9,
+              "maxDDPct": 25.7,
+              "trades": 421,
+              "skippedNoMoney": 160,
+              "yearly": {
+                "2024": 10.7,
+                "2025": 79.1,
+                "2026": -3.7
+              }
+            }
+          },
+          "500000|3": {
+            "full": {
+              "final": 1319308,
+              "returnPct": 163.9,
+              "maxDDPct": 16.4,
+              "trades": 937,
+              "skippedNoMoney": 832,
+              "yearly": {
+                "2021": 0,
+                "2022": 9.7,
+                "2023": 26.2,
+                "2024": 13.8,
+                "2025": 41,
+                "2026": 18.7
+              }
+            },
+            "train": {
+              "final": 708642,
+              "returnPct": 41.7,
+              "maxDDPct": 16.4,
+              "trades": 436,
+              "skippedNoMoney": 576,
+              "yearly": {
+                "2021": 0,
+                "2022": 9.7,
+                "2023": 26.2,
+                "2024": 2.4
+              }
+            },
+            "test": {
+              "final": 853247,
+              "returnPct": 70.6,
+              "maxDDPct": 11,
+              "trades": 384,
+              "skippedNoMoney": 558,
+              "yearly": {
+                "2024": 7.3,
+                "2025": 26.2,
+                "2026": 26.1
+              }
+            }
+          },
+          "500000|5": {
+            "full": {
+              "final": 899638,
+              "returnPct": 79.9,
+              "maxDDPct": 8.9,
+              "trades": 628,
+              "skippedNoMoney": 2055,
+              "yearly": {
+                "2021": 0,
+                "2022": 11.3,
+                "2023": 12.2,
+                "2024": 16.9,
+                "2025": 23.1,
+                "2026": 0.1
+              }
+            },
+            "train": {
+              "final": 714801,
+              "returnPct": 43,
+              "maxDDPct": 3.7,
+              "trades": 285,
+              "skippedNoMoney": 1133,
+              "yearly": {
+                "2021": 0,
+                "2022": 11.3,
+                "2023": 12.2,
+                "2024": 14.5
+              }
+            },
+            "test": {
+              "final": 632413,
+              "returnPct": 26.5,
+              "maxDDPct": 5.1,
+              "trades": 200,
+              "skippedNoMoney": 1288,
+              "yearly": {
+                "2024": 1.3,
+                "2025": 23.1,
+                "2026": 1.4
+              }
+            }
+          },
+          "500000|10": {
+            "full": {
+              "final": 518554,
+              "returnPct": 3.7,
+              "maxDDPct": 1.8,
+              "trades": 90,
+              "skippedNoMoney": 3064,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.1,
+                "2023": -0.3,
+                "2024": -0.7,
+                "2025": 4.7,
+                "2026": 0.1
+              }
+            },
+            "train": {
+              "final": 495525,
+              "returnPct": -0.9,
+              "maxDDPct": 1.6,
+              "trades": 53,
+              "skippedNoMoney": 1538,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.1,
+                "2023": -0.3,
+                "2024": -0.5
+              }
+            },
+            "test": {
+              "final": 525438,
+              "returnPct": 5.1,
+              "maxDDPct": 0.4,
+              "trades": 39,
+              "skippedNoMoney": 1524,
+              "yearly": {
+                "2024": -0.2,
+                "2025": 4.7,
+                "2026": 0.6
+              }
+            }
+          },
+          "1000000|1": {
+            "full": {
+              "final": 2441148,
+              "returnPct": 144.1,
+              "maxDDPct": 51.6,
+              "trades": 688,
+              "skippedNoMoney": 15,
+              "yearly": {
+                "2021": -3.9,
+                "2022": 39.4,
+                "2023": 11.9,
+                "2024": -26.3,
+                "2025": 143.5,
+                "2026": -9.2
+              }
+            },
+            "train": {
+              "final": 983636,
+              "returnPct": -1.6,
+              "maxDDPct": 51.6,
+              "trades": 387,
+              "skippedNoMoney": 13,
+              "yearly": {
+                "2021": -3.9,
+                "2022": 39.4,
+                "2023": 11.9,
+                "2024": -34.4
+              }
+            },
+            "test": {
+              "final": 2443129,
+              "returnPct": 144.3,
+              "maxDDPct": 35.7,
+              "trades": 301,
+              "skippedNoMoney": 2,
+              "yearly": {
+                "2024": 8.3,
+                "2025": 148.5,
+                "2026": -9.2
+              }
+            }
+          },
+          "1000000|2": {
+            "full": {
+              "final": 3824849,
+              "returnPct": 282.5,
+              "maxDDPct": 34.7,
+              "trades": 1080,
+              "skippedNoMoney": 64,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 55.7,
+                "2023": 8.2,
+                "2024": -7.3,
+                "2025": 151.5,
+                "2026": -1.4
+              }
+            },
+            "train": {
+              "final": 1433780,
+              "returnPct": 43.4,
+              "maxDDPct": 34.7,
+              "trades": 595,
+              "skippedNoMoney": 57,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 55.7,
+                "2023": 8.2,
+                "2024": -13.8
+              }
+            },
+            "test": {
+              "final": 2450265,
+              "returnPct": 145,
+              "maxDDPct": 27.7,
+              "trades": 480,
+              "skippedNoMoney": 27,
+              "yearly": {
+                "2024": 9.3,
+                "2025": 128.2,
+                "2026": -1.7
+              }
+            }
+          },
+          "1000000|3": {
+            "full": {
+              "final": 2322889,
+              "returnPct": 132.3,
+              "maxDDPct": 30.4,
+              "trades": 1213,
+              "skippedNoMoney": 315,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 29.3,
+                "2023": -0.4,
+                "2024": -5.4,
+                "2025": 57.3,
+                "2026": 22.8
+              }
+            },
+            "train": {
+              "final": 1091964,
+              "returnPct": 9.2,
+              "maxDDPct": 30.4,
+              "trades": 641,
+              "skippedNoMoney": 212,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 29.3,
+                "2023": -0.4,
+                "2024": -14.1
+              }
+            },
+            "test": {
+              "final": 2019530,
+              "returnPct": 102,
+              "maxDDPct": 16.3,
+              "trades": 563,
+              "skippedNoMoney": 124,
+              "yearly": {
+                "2024": 8.6,
+                "2025": 54.1,
+                "2026": 20.7
+              }
+            }
+          },
+          "1000000|5": {
+            "full": {
+              "final": 2360541,
+              "returnPct": 136.1,
+              "maxDDPct": 9.3,
+              "trades": 1258,
+              "skippedNoMoney": 896,
+              "yearly": {
+                "2021": 0,
+                "2022": 11.9,
+                "2023": 12.9,
+                "2024": 25.3,
+                "2025": 26.9,
+                "2026": 17.5
+              }
+            },
+            "train": {
+              "final": 1445618,
+              "returnPct": 44.6,
+              "maxDDPct": 7.5,
+              "trades": 578,
+              "skippedNoMoney": 631,
+              "yearly": {
+                "2021": 0,
+                "2022": 11.9,
+                "2023": 12.9,
+                "2024": 14.4
+              }
+            },
+            "test": {
+              "final": 1624916,
+              "returnPct": 62.5,
+              "maxDDPct": 8,
+              "trades": 530,
+              "skippedNoMoney": 559,
+              "yearly": {
+                "2024": 6.3,
+                "2025": 25.1,
+                "2026": 22.2
+              }
+            }
+          },
+          "1000000|10": {
+            "full": {
+              "final": 1326730,
+              "returnPct": 32.7,
+              "maxDDPct": 2.2,
+              "trades": 496,
+              "skippedNoMoney": 2609,
+              "yearly": {
+                "2021": 0,
+                "2022": 5.4,
+                "2023": 6.9,
+                "2024": 6.1,
+                "2025": 9.6,
+                "2026": 1.3
+              }
+            },
+            "train": {
+              "final": 1187946,
+              "returnPct": 18.8,
+              "maxDDPct": 1.7,
+              "trades": 250,
+              "skippedNoMoney": 1293,
+              "yearly": {
+                "2021": 0,
+                "2022": 5.4,
+                "2023": 6.9,
+                "2024": 5.5
+              }
+            },
+            "test": {
+              "final": 1075960,
+              "returnPct": 7.6,
+              "maxDDPct": 1.6,
+              "trades": 167,
+              "skippedNoMoney": 1396,
+              "yearly": {
+                "2024": 0.7,
+                "2025": 6.3,
+                "2026": 0.5
+              }
+            }
+          },
+          "2000000|1": {
+            "full": {
+              "final": 6308476,
+              "returnPct": 215.4,
+              "maxDDPct": 55.1,
+              "trades": 696,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2021": -4.5,
+                "2022": 49.4,
+                "2023": 29.2,
+                "2024": -18.7,
+                "2025": 163,
+                "2026": -20
+              }
+            },
+            "train": {
+              "final": 2396111,
+              "returnPct": 19.8,
+              "maxDDPct": 55.1,
+              "trades": 394,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2021": -4.5,
+                "2022": 49.4,
+                "2023": 29.2,
+                "2024": -35
+              }
+            },
+            "test": {
+              "final": 4886104,
+              "returnPct": 144.3,
+              "maxDDPct": 37.6,
+              "trades": 301,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2024": 14.9,
+                "2025": 160.3,
+                "2026": -18.3
+              }
+            }
+          },
+          "2000000|2": {
+            "full": {
+              "final": 10772961,
+              "returnPct": 438.6,
+              "maxDDPct": 34,
+              "trades": 1110,
+              "skippedNoMoney": 13,
+              "yearly": {
+                "2021": -1.9,
+                "2022": 73,
+                "2023": 24.2,
+                "2024": -0.1,
+                "2025": 167.7,
+                "2026": -4.4
+              }
+            },
+            "train": {
+              "final": 3920343,
+              "returnPct": 96,
+              "maxDDPct": 34,
+              "trades": 623,
+              "skippedNoMoney": 12,
+              "yearly": {
+                "2021": -1.9,
+                "2022": 73,
+                "2023": 24.2,
+                "2024": -7
+              }
+            },
+            "test": {
+              "final": 5102252,
+              "returnPct": 155.1,
+              "maxDDPct": 29.3,
+              "trades": 486,
+              "skippedNoMoney": 3,
+              "yearly": {
+                "2024": 7.1,
+                "2025": 149.1,
+                "2026": -4.4
+              }
+            }
+          },
+          "2000000|3": {
+            "full": {
+              "final": 5573833,
+              "returnPct": 178.7,
+              "maxDDPct": 30.5,
+              "trades": 1360,
+              "skippedNoMoney": 39,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 50.3,
+                "2023": 7.9,
+                "2024": -10,
+                "2025": 74,
+                "2026": 11.1
+              }
+            },
+            "train": {
+              "final": 2655797,
+              "returnPct": 32.8,
+              "maxDDPct": 30.5,
+              "trades": 746,
+              "skippedNoMoney": 30,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 50.3,
+                "2023": 7.9,
+                "2024": -17
+              }
+            },
+            "test": {
+              "final": 4234396,
+              "returnPct": 111.7,
+              "maxDDPct": 20.7,
+              "trades": 610,
+              "skippedNoMoney": 21,
+              "yearly": {
+                "2024": 8.7,
+                "2025": 73.7,
+                "2026": 12.1
+              }
+            }
+          },
+          "2000000|5": {
+            "full": {
+              "final": 5059477,
+              "returnPct": 153,
+              "maxDDPct": 13.7,
+              "trades": 1637,
+              "skippedNoMoney": 200,
+              "yearly": {
+                "2021": -0.6,
+                "2022": 25.1,
+                "2023": 16.9,
+                "2024": 8.8,
+                "2025": 38.2,
+                "2026": 15.7
+              }
+            },
+            "train": {
+              "final": 2872584,
+              "returnPct": 43.6,
+              "maxDDPct": 13.7,
+              "trades": 842,
+              "skippedNoMoney": 143,
+              "yearly": {
+                "2021": -0.6,
+                "2022": 25.1,
+                "2023": 16.9,
+                "2024": -1.2
+              }
+            },
+            "test": {
+              "final": 3698797,
+              "returnPct": 84.9,
+              "maxDDPct": 10.3,
+              "trades": 748,
+              "skippedNoMoney": 136,
+              "yearly": {
+                "2024": 9.5,
+                "2025": 36.2,
+                "2026": 24.1
+              }
+            }
+          },
+          "2000000|10": {
+            "full": {
+              "final": 3256498,
+              "returnPct": 62.8,
+              "maxDDPct": 5.3,
+              "trades": 1376,
+              "skippedNoMoney": 1390,
+              "yearly": {
+                "2021": 0,
+                "2022": 6.3,
+                "2023": 9.4,
+                "2024": 9.8,
+                "2025": 13.2,
+                "2026": 12.7
+              }
+            },
+            "train": {
+              "final": 2484071,
+              "returnPct": 24.2,
+              "maxDDPct": 4.5,
+              "trades": 647,
+              "skippedNoMoney": 768,
+              "yearly": {
+                "2021": 0,
+                "2022": 6.3,
+                "2023": 9.4,
+                "2024": 6.8
+              }
+            },
+            "test": {
+              "final": 2480631,
+              "returnPct": 24,
+              "maxDDPct": 3.6,
+              "trades": 568,
+              "skippedNoMoney": 858,
+              "yearly": {
+                "2024": 2.3,
+                "2025": 9.3,
+                "2026": 10.9
+              }
+            }
+          },
+          "3000000|1": {
+            "full": {
+              "final": 10221426,
+              "returnPct": 240.7,
+              "maxDDPct": 53.8,
+              "trades": 696,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2021": -4.7,
+                "2022": 51.1,
+                "2023": 33.8,
+                "2024": -18,
+                "2025": 168.4,
+                "2026": -19.6
+              }
+            },
+            "train": {
+              "final": 3930112,
+              "returnPct": 31,
+              "maxDDPct": 53.8,
+              "trades": 394,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2021": -4.7,
+                "2022": 51.1,
+                "2023": 33.8,
+                "2024": -32
+              }
+            },
+            "test": {
+              "final": 7991017,
+              "returnPct": 166.4,
+              "maxDDPct": 38.5,
+              "trades": 302,
+              "skippedNoMoney": 0,
+              "yearly": {
+                "2024": 21.9,
+                "2025": 169.8,
+                "2026": -19
+              }
+            }
+          },
+          "3000000|2": {
+            "full": {
+              "final": 17332606,
+              "returnPct": 477.8,
+              "maxDDPct": 33.7,
+              "trades": 1117,
+              "skippedNoMoney": 6,
+              "yearly": {
+                "2021": -2.2,
+                "2022": 85.7,
+                "2023": 20.8,
+                "2024": 2.5,
+                "2025": 172.7,
+                "2026": -5.8
+              }
+            },
+            "train": {
+              "final": 6072097,
+              "returnPct": 102.4,
+              "maxDDPct": 33.7,
+              "trades": 629,
+              "skippedNoMoney": 6,
+              "yearly": {
+                "2021": -2.2,
+                "2022": 85.7,
+                "2023": 20.8,
+                "2024": -7.7
+              }
+            },
+            "test": {
+              "final": 7992387,
+              "returnPct": 166.4,
+              "maxDDPct": 28.9,
+              "trades": 487,
+              "skippedNoMoney": 1,
+              "yearly": {
+                "2024": 7.3,
+                "2025": 162.9,
+                "2026": -5.6
+              }
+            }
+          },
+          "3000000|3": {
+            "full": {
+              "final": 9619405,
+              "returnPct": 220.6,
+              "maxDDPct": 28.6,
+              "trades": 1369,
+              "skippedNoMoney": 23,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 48.5,
+                "2023": 12.5,
+                "2024": -6.8,
+                "2025": 84,
+                "2026": 13.4
+              }
+            },
+            "train": {
+              "final": 4257050,
+              "returnPct": 41.9,
+              "maxDDPct": 28.6,
+              "trades": 753,
+              "skippedNoMoney": 21,
+              "yearly": {
+                "2021": -1.3,
+                "2022": 48.5,
+                "2023": 12.5,
+                "2024": -14
+              }
+            },
+            "test": {
+              "final": 6369648,
+              "returnPct": 112.3,
+              "maxDDPct": 20.6,
+              "trades": 615,
+              "skippedNoMoney": 8,
+              "yearly": {
+                "2024": 7.9,
+                "2025": 75.4,
+                "2026": 12.2
+              }
+            }
+          },
+          "3000000|5": {
+            "full": {
+              "final": 8280213,
+              "returnPct": 176,
+              "maxDDPct": 16.2,
+              "trades": 1713,
+              "skippedNoMoney": 68,
+              "yearly": {
+                "2021": -0.9,
+                "2022": 30.2,
+                "2023": 18.2,
+                "2024": 7,
+                "2025": 47.6,
+                "2026": 14.6
+              }
+            },
+            "train": {
+              "final": 4398356,
+              "returnPct": 46.6,
+              "maxDDPct": 16.2,
+              "trades": 901,
+              "skippedNoMoney": 52,
+              "yearly": {
+                "2021": -0.9,
+                "2022": 30.2,
+                "2023": 18.2,
+                "2024": -3.9
+              }
+            },
+            "test": {
+              "final": 5643908,
+              "returnPct": 88.1,
+              "maxDDPct": 11.2,
+              "trades": 800,
+              "skippedNoMoney": 44,
+              "yearly": {
+                "2024": 11.1,
+                "2025": 47,
+                "2026": 15.2
+              }
+            }
+          },
+          "3000000|10": {
+            "full": {
+              "final": 5492605,
+              "returnPct": 83.1,
+              "maxDDPct": 7,
+              "trades": 1905,
+              "skippedNoMoney": 644,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 15.8,
+                "2023": 9.5,
+                "2024": 11.9,
+                "2025": 17.8,
+                "2026": 10.1
+              }
+            },
+            "train": {
+              "final": 4043139,
+              "returnPct": 34.8,
+              "maxDDPct": 5.8,
+              "trades": 937,
+              "skippedNoMoney": 397,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 15.8,
+                "2023": 9.5,
+                "2024": 6.8
+              }
+            },
+            "test": {
+              "final": 3995198,
+              "returnPct": 33.2,
+              "maxDDPct": 5.2,
+              "trades": 848,
+              "skippedNoMoney": 439,
+              "yearly": {
+                "2024": 3,
+                "2025": 16,
+                "2026": 11.5
+              }
+            }
+          }
+        }
+      },
+      "div_up|stop2|all": {
+        "name": "配当予想の引き上げ / 損切り-2% / 条件なし",
+        "grid": {
+          "300000|1": {
+            "full": {
+              "final": 388007,
+              "returnPct": 29.3,
+              "maxDDPct": 37.7,
+              "trades": 682,
+              "skippedNoMoney": 347,
+              "yearly": {
+                "2021": -3.7,
+                "2022": 17,
+                "2023": -8.6,
+                "2024": 4.2,
+                "2025": 19.4,
+                "2026": 1
+              }
+            },
+            "train": {
+              "final": 298309,
+              "returnPct": -0.6,
+              "maxDDPct": 37.7,
+              "trades": 380,
+              "skippedNoMoney": 207,
+              "yearly": {
+                "2021": -3.7,
+                "2022": 17,
+                "2023": -8.6,
+                "2024": -3.4
+              }
+            },
+            "test": {
+              "final": 388649,
+              "returnPct": 29.5,
+              "maxDDPct": 26,
+              "trades": 302,
+              "skippedNoMoney": 140,
+              "yearly": {
+                "2024": 7.4,
+                "2025": 19.4,
+                "2026": 1
+              }
+            }
+          },
+          "300000|2": {
+            "full": {
+              "final": 624564,
+              "returnPct": 108.2,
+              "maxDDPct": 19.7,
+              "trades": 806,
+              "skippedNoMoney": 1382,
+              "yearly": {
+                "2021": 0,
+                "2022": 9.1,
+                "2023": 0.9,
+                "2024": 19.2,
+                "2025": 10.9,
+                "2026": 43.3
+              }
+            },
+            "train": {
+              "final": 366194,
+              "returnPct": 22.1,
+              "maxDDPct": 16.7,
+              "trades": 401,
+              "skippedNoMoney": 851,
+              "yearly": {
+                "2021": 0,
+                "2022": 9.1,
+                "2023": 0.9,
+                "2024": 11
+              }
+            },
+            "test": {
+              "final": 351417,
+              "returnPct": 17.1,
+              "maxDDPct": 17.5,
+              "trades": 348,
+              "skippedNoMoney": 729,
+              "yearly": {
+                "2024": 7.6,
+                "2025": 19.5,
+                "2026": -8.9
+              }
+            }
+          },
+          "300000|3": {
+            "full": {
+              "final": 412021,
+              "returnPct": 37.3,
+              "maxDDPct": 13.9,
+              "trades": 629,
+              "skippedNoMoney": 2678,
+              "yearly": {
+                "2021": 0,
+                "2022": 6.3,
+                "2023": 7.2,
+                "2024": 18.8,
+                "2025": 8.4,
+                "2026": -6.4
+              }
+            },
+            "train": {
+              "final": 396137,
+              "returnPct": 32,
+              "maxDDPct": 7.2,
+              "trades": 319,
+              "skippedNoMoney": 1430,
+              "yearly": {
+                "2021": 0,
+                "2022": 6.3,
+                "2023": 7.2,
+                "2024": 15.9
+              }
+            },
+            "test": {
+              "final": 386570,
+              "returnPct": 28.9,
+              "maxDDPct": 8,
+              "trades": 259,
+              "skippedNoMoney": 1544,
+              "yearly": {
+                "2024": 1.5,
+                "2025": 15.1,
+                "2026": 10.3
+              }
+            }
+          },
+          "300000|5": {
+            "full": {
+              "final": 333988,
+              "returnPct": 11.3,
+              "maxDDPct": 6.2,
+              "trades": 239,
+              "skippedNoMoney": 4470,
+              "yearly": {
+                "2021": 0,
+                "2022": 0.7,
+                "2023": -2.2,
+                "2024": 2.4,
+                "2025": 5.4,
+                "2026": 4.7
+              }
+            },
+            "train": {
+              "final": 305795,
+              "returnPct": 1.9,
+              "maxDDPct": 6.2,
+              "trades": 127,
+              "skippedNoMoney": 2201,
+              "yearly": {
+                "2021": 0,
+                "2022": 0.7,
+                "2023": -2.2,
+                "2024": 3.4
+              }
+            },
+            "test": {
+              "final": 326950,
+              "returnPct": 9,
+              "maxDDPct": 3.7,
+              "trades": 111,
+              "skippedNoMoney": 2270,
+              "yearly": {
+                "2024": -1,
+                "2025": 5.7,
+                "2026": 4.2
+              }
+            }
+          },
+          "300000|10": {
+            "full": {
+              "final": 306152,
+              "returnPct": 2.1,
+              "maxDDPct": 0.6,
+              "trades": 39,
+              "skippedNoMoney": 4782,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.5,
+                "2023": 0.2,
+                "2024": 0.4,
+                "2025": 1.6,
+                "2026": 0.2
+              }
+            },
+            "train": {
+              "final": 300513,
+              "returnPct": 0.2,
+              "maxDDPct": 0.5,
+              "trades": 18,
+              "skippedNoMoney": 2393,
+              "yearly": {
+                "2021": 0,
+                "2022": -0.5,
+                "2023": 0.2,
+                "2024": 0.4
+              }
+            },
+            "test": {
+              "final": 305638,
+              "returnPct": 1.9,
+              "maxDDPct": 0.6,
+              "trades": 21,
+              "skippedNoMoney": 2389,
+              "yearly": {
+                "2024": 0,
+                "2025": 1.6,
+                "2026": 0.2
+              }
+            }
+          },
+          "500000|1": {
+            "full": {
+              "final": 418605,
+              "returnPct": -16.3,
+              "maxDDPct": 50,
+              "trades": 726,
+              "skippedNoMoney": 227,
+              "yearly": {
+                "2021": -1.8,
+                "2022": -1,
+                "2023": -24.4,
+                "2024": 2.6,
+                "2025": 23.6,
+                "2026": -10.3
+              }
+            },
+            "train": {
+              "final": 350625,
+              "returnPct": -29.9,
+              "maxDDPct": 50,
+              "trades": 411,
+              "skippedNoMoney": 126,
+              "yearly": {
+                "2021": -1.8,
+                "2022": -1,
+                "2023": -24.4,
+                "2024": -4.7
+              }
+            },
+            "test": {
+              "final": 527714,
+              "returnPct": 5.5,
+              "maxDDPct": 22.4,
+              "trades": 327,
+              "skippedNoMoney": 58,
+              "yearly": {
+                "2024": 9.4,
+                "2025": -0.4,
+                "2026": -3.1
+              }
+            }
+          },
+          "500000|2": {
+            "full": {
+              "final": 799835,
+              "returnPct": 60,
+              "maxDDPct": 28.7,
+              "trades": 1101,
+              "skippedNoMoney": 523,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 41.1,
+                "2023": -7,
+                "2024": 2.9,
+                "2025": 10.3,
+                "2026": 7.2
+              }
+            },
+            "train": {
+              "final": 660430,
+              "returnPct": 32.1,
+              "maxDDPct": 21,
+              "trades": 599,
+              "skippedNoMoney": 307,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 41.1,
+                "2023": -7,
+                "2024": 0.5
+              }
+            },
+            "test": {
+              "final": 742474,
+              "returnPct": 48.5,
+              "maxDDPct": 27,
+              "trades": 476,
+              "skippedNoMoney": 291,
+              "yearly": {
+                "2024": 5.3,
+                "2025": 20.9,
+                "2026": 16.7
+              }
+            }
+          },
+          "500000|3": {
+            "full": {
+              "final": 957771,
+              "returnPct": 91.6,
+              "maxDDPct": 16.2,
+              "trades": 1059,
+              "skippedNoMoney": 1463,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 3.3,
+                "2023": 6,
+                "2024": 29.6,
+                "2025": -0.3,
+                "2026": 34.9
+              }
+            },
+            "train": {
+              "final": 669473,
+              "returnPct": 33.9,
+              "maxDDPct": 6.5,
+              "trades": 521,
+              "skippedNoMoney": 873,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 3.3,
+                "2023": 6,
+                "2024": 21.9
+              }
+            },
+            "test": {
+              "final": 680229,
+              "returnPct": 36,
+              "maxDDPct": 10.4,
+              "trades": 451,
+              "skippedNoMoney": 842,
+              "yearly": {
+                "2024": 6.7,
+                "2025": 12,
+                "2026": 13.8
+              }
+            }
+          },
+          "500000|5": {
+            "full": {
+              "final": 655326,
+              "returnPct": 31.1,
+              "maxDDPct": 5,
+              "trades": 657,
+              "skippedNoMoney": 3451,
+              "yearly": {
+                "2021": 0,
+                "2022": 2,
+                "2023": 7.1,
+                "2024": 9.5,
+                "2025": 6.1,
+                "2026": 3.3
+              }
+            },
+            "train": {
+              "final": 589486,
+              "returnPct": 17.9,
+              "maxDDPct": 3.9,
+              "trades": 333,
+              "skippedNoMoney": 1773,
+              "yearly": {
+                "2021": 0,
+                "2022": 2,
+                "2023": 7.1,
+                "2024": 8
+              }
+            },
+            "test": {
+              "final": 599593,
+              "returnPct": 19.9,
+              "maxDDPct": 4.8,
+              "trades": 270,
+              "skippedNoMoney": 1873,
+              "yearly": {
+                "2024": 1.1,
+                "2025": 9.1,
+                "2026": 8.6
+              }
+            }
+          },
+          "500000|10": {
+            "full": {
+              "final": 506872,
+              "returnPct": 1.4,
+              "maxDDPct": 2.2,
+              "trades": 157,
+              "skippedNoMoney": 4664,
+              "yearly": {
+                "2021": 0,
+                "2022": -1.2,
+                "2023": -0.1,
+                "2024": -0.3,
+                "2025": 2,
+                "2026": 1
+              }
+            },
+            "train": {
+              "final": 493895,
+              "returnPct": -1.2,
+              "maxDDPct": 2.2,
+              "trades": 88,
+              "skippedNoMoney": 2323,
+              "yearly": {
+                "2021": 0,
+                "2022": -1.2,
+                "2023": -0.1,
+                "2024": 0
+              }
+            },
+            "test": {
+              "final": 518295,
+              "returnPct": 3.7,
+              "maxDDPct": 1.3,
+              "trades": 74,
+              "skippedNoMoney": 2336,
+              "yearly": {
+                "2024": -0.3,
+                "2025": 2.5,
+                "2026": 1.5
+              }
+            }
+          },
+          "1000000|1": {
+            "full": {
+              "final": 782113,
+              "returnPct": -21.8,
+              "maxDDPct": 49.3,
+              "trades": 783,
+              "skippedNoMoney": 45,
+              "yearly": {
+                "2021": -3,
+                "2022": 9.8,
+                "2023": -16.9,
+                "2024": -2.7,
+                "2025": -8.1,
+                "2026": -1.1
+              }
+            },
+            "train": {
+              "final": 797068,
+              "returnPct": -20.3,
+              "maxDDPct": 49.3,
+              "trades": 451,
+              "skippedNoMoney": 22,
+              "yearly": {
+                "2021": -3,
+                "2022": 9.8,
+                "2023": -16.9,
+                "2024": -9.9
+              }
+            },
+            "test": {
+              "final": 975209,
+              "returnPct": -2.5,
+              "maxDDPct": 28.1,
+              "trades": 333,
+              "skippedNoMoney": 15,
+              "yearly": {
+                "2024": 8.2,
+                "2025": -9.3,
+                "2026": -0.7
+              }
+            }
+          },
+          "1000000|2": {
+            "full": {
+              "final": 2064537,
+              "returnPct": 106.5,
+              "maxDDPct": 28,
+              "trades": 1292,
+              "skippedNoMoney": 81,
+              "yearly": {
+                "2021": -0.9,
+                "2022": 70.7,
+                "2023": -6.1,
+                "2024": 9.2,
+                "2025": 14.7,
+                "2026": 3.7
+              }
+            },
+            "train": {
+              "final": 1711884,
+              "returnPct": 71.2,
+              "maxDDPct": 19.2,
+              "trades": 720,
+              "skippedNoMoney": 55,
+              "yearly": {
+                "2021": -0.9,
+                "2022": 70.7,
+                "2023": -6.1,
+                "2024": 7.7
+              }
+            },
+            "test": {
+              "final": 1203491,
+              "returnPct": 20.3,
+              "maxDDPct": 26.9,
+              "trades": 549,
+              "skippedNoMoney": 92,
+              "yearly": {
+                "2024": 2.6,
+                "2025": 5.1,
+                "2026": 11.6
+              }
+            }
+          },
+          "1000000|3": {
+            "full": {
+              "final": 1942009,
+              "returnPct": 94.2,
+              "maxDDPct": 22.8,
+              "trades": 1506,
+              "skippedNoMoney": 394,
+              "yearly": {
+                "2021": -1,
+                "2022": 38.4,
+                "2023": -12.6,
+                "2024": 17.2,
+                "2025": 0.8,
+                "2026": 37.3
+              }
+            },
+            "train": {
+              "final": 1299503,
+              "returnPct": 30,
+              "maxDDPct": 22.8,
+              "trades": 808,
+              "skippedNoMoney": 244,
+              "yearly": {
+                "2021": -1,
+                "2022": 38.4,
+                "2023": -12.6,
+                "2024": 8.6
+              }
+            },
+            "test": {
+              "final": 1561736,
+              "returnPct": 56.2,
+              "maxDDPct": 14.6,
+              "trades": 649,
+              "skippedNoMoney": 263,
+              "yearly": {
+                "2024": 6.3,
+                "2025": 4.7,
+                "2026": 40.3
+              }
+            }
+          },
+          "1000000|5": {
+            "full": {
+              "final": 1632790,
+              "returnPct": 63.3,
+              "maxDDPct": 13.4,
+              "trades": 1481,
+              "skippedNoMoney": 1456,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 6.1,
+                "2023": 7.9,
+                "2024": 17.8,
+                "2025": 3.9,
+                "2026": 16.5
+              }
+            },
+            "train": {
+              "final": 1313033,
+              "returnPct": 31.3,
+              "maxDDPct": 5.4,
+              "trades": 738,
+              "skippedNoMoney": 842,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 6.1,
+                "2023": 7.9,
+                "2024": 14.6
+              }
+            },
+            "test": {
+              "final": 1128827,
+              "returnPct": 12.9,
+              "maxDDPct": 13,
+              "trades": 581,
+              "skippedNoMoney": 988,
+              "yearly": {
+                "2024": 2.4,
+                "2025": -3,
+                "2026": 13.6
+              }
+            }
+          },
+          "1000000|10": {
+            "full": {
+              "final": 1161685,
+              "returnPct": 16.2,
+              "maxDDPct": 3.2,
+              "trades": 666,
+              "skippedNoMoney": 3998,
+              "yearly": {
+                "2021": 0,
+                "2022": 0.9,
+                "2023": 4,
+                "2024": 5.1,
+                "2025": 3.5,
+                "2026": 1.8
+              }
+            },
+            "train": {
+              "final": 1093425,
+              "returnPct": 9.3,
+              "maxDDPct": 2.6,
+              "trades": 346,
+              "skippedNoMoney": 1982,
+              "yearly": {
+                "2021": 0,
+                "2022": 0.9,
+                "2023": 4,
+                "2024": 4.2
+              }
+            },
+            "test": {
+              "final": 1064664,
+              "returnPct": 6.5,
+              "maxDDPct": 3,
+              "trades": 272,
+              "skippedNoMoney": 2089,
+              "yearly": {
+                "2024": 0.6,
+                "2025": 3.9,
+                "2026": 1.9
+              }
+            }
+          },
+          "2000000|1": {
+            "full": {
+              "final": 1411310,
+              "returnPct": -29.4,
+              "maxDDPct": 51.7,
+              "trades": 789,
+              "skippedNoMoney": 17,
+              "yearly": {
+                "2021": -3.3,
+                "2022": 8.2,
+                "2023": -16.5,
+                "2024": -3.3,
+                "2025": -15.2,
+                "2026": -1.5
+              }
+            },
+            "train": {
+              "final": 1587259,
+              "returnPct": -20.6,
+              "maxDDPct": 49.5,
+              "trades": 454,
+              "skippedNoMoney": 9,
+              "yearly": {
+                "2021": -3.3,
+                "2022": 8.2,
+                "2023": -16.5,
+                "2024": -9.2
+              }
+            },
+            "test": {
+              "final": 1642549,
+              "returnPct": -17.9,
+              "maxDDPct": 35.3,
+              "trades": 336,
+              "skippedNoMoney": 5,
+              "yearly": {
+                "2024": 6,
+                "2025": -17.6,
+                "2026": -6
+              }
+            }
+          },
+          "2000000|2": {
+            "full": {
+              "final": 4266572,
+              "returnPct": 113.3,
+              "maxDDPct": 30.7,
+              "trades": 1320,
+              "skippedNoMoney": 23,
+              "yearly": {
+                "2021": -1.5,
+                "2022": 68.9,
+                "2023": -3.6,
+                "2024": 19.7,
+                "2025": 16.9,
+                "2026": -5
+              }
+            },
+            "train": {
+              "final": 3828671,
+              "returnPct": 91.4,
+              "maxDDPct": 16.5,
+              "trades": 742,
+              "skippedNoMoney": 18,
+              "yearly": {
+                "2021": -1.5,
+                "2022": 68.9,
+                "2023": -3.6,
+                "2024": 19.3
+              }
+            },
+            "test": {
+              "final": 2346060,
+              "returnPct": 17.3,
+              "maxDDPct": 29.7,
+              "trades": 572,
+              "skippedNoMoney": 20,
+              "yearly": {
+                "2024": 0.6,
+                "2025": 14.6,
+                "2026": 1.7
+              }
+            }
+          },
+          "2000000|3": {
+            "full": {
+              "final": 4837828,
+              "returnPct": 141.9,
+              "maxDDPct": 29.7,
+              "trades": 1665,
+              "skippedNoMoney": 63,
+              "yearly": {
+                "2021": -1,
+                "2022": 54.9,
+                "2023": -8.5,
+                "2024": 27.6,
+                "2025": -1.6,
+                "2026": 37.3
+              }
+            },
+            "train": {
+              "final": 3511216,
+              "returnPct": 75.6,
+              "maxDDPct": 17.3,
+              "trades": 919,
+              "skippedNoMoney": 39,
+              "yearly": {
+                "2021": -1,
+                "2022": 54.9,
+                "2023": -8.5,
+                "2024": 25.1
+              }
+            },
+            "test": {
+              "final": 3233052,
+              "returnPct": 61.7,
+              "maxDDPct": 20.1,
+              "trades": 728,
+              "skippedNoMoney": 64,
+              "yearly": {
+                "2024": 2,
+                "2025": 3.6,
+                "2026": 53.1
+              }
+            }
+          },
+          "2000000|5": {
+            "full": {
+              "final": 3472264,
+              "returnPct": 73.6,
+              "maxDDPct": 15.6,
+              "trades": 2004,
+              "skippedNoMoney": 369,
+              "yearly": {
+                "2021": -0.5,
+                "2022": 24.8,
+                "2023": -1.2,
+                "2024": 7.3,
+                "2025": 1.9,
+                "2026": 29.5
+              }
+            },
+            "train": {
+              "final": 2548044,
+              "returnPct": 27.4,
+              "maxDDPct": 11,
+              "trades": 1069,
+              "skippedNoMoney": 199,
+              "yearly": {
+                "2021": -0.5,
+                "2022": 24.8,
+                "2023": -1.2,
+                "2024": 3.9
+              }
+            },
+            "test": {
+              "final": 2401794,
+              "returnPct": 20.1,
+              "maxDDPct": 19.4,
+              "trades": 881,
+              "skippedNoMoney": 296,
+              "yearly": {
+                "2024": 4.5,
+                "2025": -1.7,
+                "2026": 16.9
+              }
+            }
+          },
+          "2000000|10": {
+            "full": {
+              "final": 2699429,
+              "returnPct": 35,
+              "maxDDPct": 4.9,
+              "trades": 1712,
+              "skippedNoMoney": 2213,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 1.8,
+                "2023": 3.4,
+                "2024": 9.1,
+                "2025": 2.5,
+                "2026": 14.5
+              }
+            },
+            "train": {
+              "final": 2282979,
+              "returnPct": 14.1,
+              "maxDDPct": 3.2,
+              "trades": 867,
+              "skippedNoMoney": 1139,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 1.8,
+                "2023": 3.4,
+                "2024": 8.3
+              }
+            },
+            "test": {
+              "final": 2285463,
+              "returnPct": 14.3,
+              "maxDDPct": 4.7,
+              "trades": 741,
+              "skippedNoMoney": 1263,
+              "yearly": {
+                "2024": -0.1,
+                "2025": 3.1,
+                "2026": 10.8
+              }
+            }
+          },
+          "3000000|1": {
+            "full": {
+              "final": 1932043,
+              "returnPct": -35.6,
+              "maxDDPct": 52.3,
+              "trades": 795,
+              "skippedNoMoney": 5,
+              "yearly": {
+                "2021": -3.6,
+                "2022": 9.4,
+                "2023": -19.4,
+                "2024": 1.6,
+                "2025": -16.8,
+                "2026": -10.3
+              }
+            },
+            "train": {
+              "final": 2426215,
+              "returnPct": -19.1,
+              "maxDDPct": 50.8,
+              "trades": 458,
+              "skippedNoMoney": 2,
+              "yearly": {
+                "2021": -3.6,
+                "2022": 9.4,
+                "2023": -19.4,
+                "2024": -4.8
+              }
+            },
+            "test": {
+              "final": 2508126,
+              "returnPct": -16.4,
+              "maxDDPct": 36,
+              "trades": 338,
+              "skippedNoMoney": 0,
+              "yearly": {
+                "2024": 13.3,
+                "2025": -18.7,
+                "2026": -9.3
+              }
+            }
+          },
+          "3000000|2": {
+            "full": {
+              "final": 6006284,
+              "returnPct": 100.2,
+              "maxDDPct": 30.9,
+              "trades": 1326,
+              "skippedNoMoney": 11,
+              "yearly": {
+                "2021": -1.7,
+                "2022": 73.7,
+                "2023": -11.5,
+                "2024": 18.2,
+                "2025": 16.4,
+                "2026": -3.6
+              }
+            },
+            "train": {
+              "final": 5349477,
+              "returnPct": 78.3,
+              "maxDDPct": 20.5,
+              "trades": 748,
+              "skippedNoMoney": 8,
+              "yearly": {
+                "2021": -1.7,
+                "2022": 73.7,
+                "2023": -11.5,
+                "2024": 18.1
+              }
+            },
+            "test": {
+              "final": 3299169,
+              "returnPct": 10,
+              "maxDDPct": 30.5,
+              "trades": 577,
+              "skippedNoMoney": 8,
+              "yearly": {
+                "2024": 1,
+                "2025": 15.9,
+                "2026": -6.1
+              }
+            }
+          },
+          "3000000|3": {
+            "full": {
+              "final": 6292828,
+              "returnPct": 109.8,
+              "maxDDPct": 31.2,
+              "trades": 1676,
+              "skippedNoMoney": 33,
+              "yearly": {
+                "2021": -1,
+                "2022": 48.5,
+                "2023": -11.3,
+                "2024": 25.1,
+                "2025": -0.1,
+                "2026": 28.8
+              }
+            },
+            "train": {
+              "final": 4793180,
+              "returnPct": 59.8,
+              "maxDDPct": 18.2,
+              "trades": 927,
+              "skippedNoMoney": 21,
+              "yearly": {
+                "2021": -1,
+                "2022": 48.5,
+                "2023": -11.3,
+                "2024": 22.6
+              }
+            },
+            "test": {
+              "final": 4111007,
+              "returnPct": 37,
+              "maxDDPct": 26.8,
+              "trades": 743,
+              "skippedNoMoney": 30,
+              "yearly": {
+                "2024": 2.1,
+                "2025": 0.6,
+                "2026": 33.5
+              }
+            }
+          },
+          "3000000|5": {
+            "full": {
+              "final": 5585086,
+              "returnPct": 86.2,
+              "maxDDPct": 18.9,
+              "trades": 2126,
+              "skippedNoMoney": 132,
+              "yearly": {
+                "2021": -0.7,
+                "2022": 30.9,
+                "2023": -1.7,
+                "2024": 3.2,
+                "2025": 4.2,
+                "2026": 35.5
+              }
+            },
+            "train": {
+              "final": 3877299,
+              "returnPct": 29.2,
+              "maxDDPct": 16,
+              "trades": 1141,
+              "skippedNoMoney": 77,
+              "yearly": {
+                "2021": -0.7,
+                "2022": 30.9,
+                "2023": -1.7,
+                "2024": 1.1
+              }
+            },
+            "test": {
+              "final": 4353203,
+              "returnPct": 45.1,
+              "maxDDPct": 16.2,
+              "trades": 962,
+              "skippedNoMoney": 106,
+              "yearly": {
+                "2024": 3,
+                "2025": 3.1,
+                "2026": 36.6
+              }
+            }
+          },
+          "3000000|10": {
+            "full": {
+              "final": 4374293,
+              "returnPct": 45.8,
+              "maxDDPct": 8.2,
+              "trades": 2391,
+              "skippedNoMoney": 1050,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 10.2,
+                "2023": 4.6,
+                "2024": 6.2,
+                "2025": 1.9,
+                "2026": 17.3
+              }
+            },
+            "train": {
+              "final": 3626595,
+              "returnPct": 20.9,
+              "maxDDPct": 5.5,
+              "trades": 1227,
+              "skippedNoMoney": 553,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 10.2,
+                "2023": 4.6,
+                "2024": 5.3
+              }
+            },
+            "test": {
+              "final": 3776256,
+              "returnPct": 25.9,
+              "maxDDPct": 4.3,
+              "trades": 1070,
+              "skippedNoMoney": 656,
+              "yearly": {
+                "2024": 1.6,
+                "2025": 6.5,
+                "2026": 16.4
+              }
+            }
+          }
+        }
+      },
+      "results|nostop|all": {
+        "name": "比較用：決算発表すべて / 損切りなし / 条件なし",
+        "grid": {
+          "300000|1": {
+            "full": {
+              "final": 41628,
+              "returnPct": -86.1,
+              "maxDDPct": 91.9,
+              "trades": 738,
+              "skippedNoMoney": 3189,
+              "yearly": {
+                "2021": -3.8,
+                "2022": 39,
+                "2023": -55,
+                "2024": -36.3,
+                "2025": -51.1,
+                "2026": -26
+              }
+            },
+            "train": {
+              "final": 130629,
+              "returnPct": -56.5,
+              "maxDDPct": 68.6,
+              "trades": 515,
+              "skippedNoMoney": 581,
+              "yearly": {
+                "2021": -3.8,
+                "2022": 39,
+                "2023": -55,
+                "2024": -27.7
+              }
+            },
+            "test": {
+              "final": 91051,
+              "returnPct": -69.6,
+              "maxDDPct": 72.7,
+              "trades": 332,
+              "skippedNoMoney": 775,
+              "yearly": {
+                "2024": -10.6,
+                "2025": -39.3,
+                "2026": -44
+              }
+            }
+          },
+          "300000|2": {
+            "full": {
+              "final": 136097,
+              "returnPct": -54.6,
+              "maxDDPct": 81.1,
+              "trades": 1380,
+              "skippedNoMoney": 3402,
+              "yearly": {
+                "2021": 5.6,
+                "2022": 112.6,
+                "2023": -32.5,
+                "2024": -21.1,
+                "2025": -44.8,
+                "2026": -31.2
+              }
+            },
+            "train": {
+              "final": 411626,
+              "returnPct": 37.2,
+              "maxDDPct": 45.8,
+              "trades": 895,
+              "skippedNoMoney": 967,
+              "yearly": {
+                "2021": 5.6,
+                "2022": 112.6,
+                "2023": -32.5,
+                "2024": -9.5
+              }
+            },
+            "test": {
+              "final": 136553,
+              "returnPct": -54.5,
+              "maxDDPct": 63.7,
+              "trades": 465,
+              "skippedNoMoney": 2548,
+              "yearly": {
+                "2024": -7,
+                "2025": -30.8,
+                "2026": -29.3
+              }
+            }
+          },
+          "300000|3": {
+            "full": {
+              "final": 198936,
+              "returnPct": -33.7,
+              "maxDDPct": 60.1,
+              "trades": 1575,
+              "skippedNoMoney": 6225,
+              "yearly": {
+                "2021": 2.3,
+                "2022": 47.2,
+                "2023": -14.8,
+                "2024": 2.3,
+                "2025": -31.6,
+                "2026": -26.2
+              }
+            },
+            "train": {
+              "final": 405364,
+              "returnPct": 35.1,
+              "maxDDPct": 28.3,
+              "trades": 963,
+              "skippedNoMoney": 2618,
+              "yearly": {
+                "2021": 2.3,
+                "2022": 47.2,
+                "2023": -14.8,
+                "2024": 5.3
+              }
+            },
+            "test": {
+              "final": 194353,
+              "returnPct": -35.2,
+              "maxDDPct": 54.2,
+              "trades": 577,
+              "skippedNoMoney": 4144,
+              "yearly": {
+                "2024": 5.6,
+                "2025": -29.1,
+                "2026": -13.5
+              }
+            }
+          },
+          "300000|5": {
+            "full": {
+              "final": 287891,
+              "returnPct": -4,
+              "maxDDPct": 34.4,
+              "trades": 1580,
+              "skippedNoMoney": 14525,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 36.1,
+                "2023": -4.3,
+                "2024": -16.8,
+                "2025": -9.6,
+                "2026": -2.2
+              }
+            },
+            "train": {
+              "final": 356340,
+              "returnPct": 18.8,
+              "maxDDPct": 21.2,
+              "trades": 956,
+              "skippedNoMoney": 7141,
+              "yearly": {
+                "2021": 0.2,
+                "2022": 36.1,
+                "2023": -4.3,
+                "2024": -8.9
+              }
+            },
+            "test": {
+              "final": 236989,
+              "returnPct": -21,
+              "maxDDPct": 30.7,
+              "trades": 559,
+              "skippedNoMoney": 8130,
+              "yearly": {
+                "2024": -5.5,
+                "2025": -4,
+                "2026": -12.9
+              }
+            }
+          },
+          "300000|10": {
+            "full": {
+              "final": 265348,
+              "returnPct": -11.6,
+              "maxDDPct": 19.7,
+              "trades": 819,
+              "skippedNoMoney": 26604,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 0.1,
+                "2023": 1.1,
+                "2024": -7.7,
+                "2025": -0.1,
+                "2026": -5.4
+              }
+            },
+            "train": {
+              "final": 299916,
+              "returnPct": 0,
+              "maxDDPct": 10.4,
+              "trades": 435,
+              "skippedNoMoney": 14336,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 0.1,
+                "2023": 1.1,
+                "2024": -1.4
+              }
+            },
+            "test": {
+              "final": 265433,
+              "returnPct": -11.5,
+              "maxDDPct": 19.7,
+              "trades": 384,
+              "skippedNoMoney": 12268,
+              "yearly": {
+                "2024": -6.4,
+                "2025": -0.1,
+                "2026": -5.4
+              }
+            }
+          },
+          "500000|1": {
+            "full": {
+              "final": 41574,
+              "returnPct": -91.7,
+              "maxDDPct": 93.5,
+              "trades": 742,
+              "skippedNoMoney": 3155,
+              "yearly": {
+                "2021": -6.1,
+                "2022": -10.1,
+                "2023": -57.2,
+                "2024": -36.3,
+                "2025": -51.2,
+                "2026": -26
+              }
+            },
+            "train": {
+              "final": 130575,
+              "returnPct": -73.9,
+              "maxDDPct": 74.7,
+              "trades": 519,
+              "skippedNoMoney": 547,
+              "yearly": {
+                "2021": -6.1,
+                "2022": -10.1,
+                "2023": -57.2,
+                "2024": -27.7
+              }
+            },
+            "test": {
+              "final": 152858,
+              "returnPct": -69.4,
+              "maxDDPct": 74.4,
+              "trades": 386,
+              "skippedNoMoney": 321,
+              "yearly": {
+                "2024": 1.6,
+                "2025": -43,
+                "2026": -47.2
+              }
+            }
+          },
+          "500000|2": {
+            "full": {
+              "final": 405136,
+              "returnPct": -19,
+              "maxDDPct": 64,
+              "trades": 1696,
+              "skippedNoMoney": 944,
+              "yearly": {
+                "2021": 4.5,
+                "2022": 106,
+                "2023": -32.3,
+                "2024": -7.6,
+                "2025": -21.8,
+                "2026": -22.9
+              }
+            },
+            "train": {
+              "final": 691317,
+              "returnPct": 38.3,
+              "maxDDPct": 52.1,
+              "trades": 993,
+              "skippedNoMoney": 438,
+              "yearly": {
+                "2021": 4.5,
+                "2022": 106,
+                "2023": -32.3,
+                "2024": -5.1
+              }
+            },
+            "test": {
+              "final": 142717,
+              "returnPct": -71.5,
+              "maxDDPct": 74.8,
+              "trades": 527,
+              "skippedNoMoney": 1983,
+              "yearly": {
+                "2024": -10.6,
+                "2025": -49.1,
+                "2026": -37.3
+              }
+            }
+          },
+          "500000|3": {
+            "full": {
+              "final": 298352,
+              "returnPct": -40.3,
+              "maxDDPct": 72.1,
+              "trades": 1992,
+              "skippedNoMoney": 3084,
+              "yearly": {
+                "2021": 1,
+                "2022": 87.6,
+                "2023": -28.6,
+                "2024": -0.2,
+                "2025": -36.6,
+                "2026": -30.4
+              }
+            },
+            "train": {
+              "final": 649001,
+              "returnPct": 29.8,
+              "maxDDPct": 42.1,
+              "trades": 1233,
+              "skippedNoMoney": 1135,
+              "yearly": {
+                "2021": 1,
+                "2022": 87.6,
+                "2023": -28.6,
+                "2024": -4.1
+              }
+            },
+            "test": {
+              "final": 211494,
+              "returnPct": -57.7,
+              "maxDDPct": 62.2,
+              "trades": 658,
+              "skippedNoMoney": 3038,
+              "yearly": {
+                "2024": -3.3,
+                "2025": -38.1,
+                "2026": -29.4
+              }
+            }
+          },
+          "500000|5": {
+            "full": {
+              "final": 349182,
+              "returnPct": -30.2,
+              "maxDDPct": 54.5,
+              "trades": 2107,
+              "skippedNoMoney": 9393,
+              "yearly": {
+                "2021": 1.4,
+                "2022": 28.3,
+                "2023": -10.8,
+                "2024": 7,
+                "2025": -28.2,
+                "2026": -21.6
+              }
+            },
+            "train": {
+              "final": 643732,
+              "returnPct": 28.7,
+              "maxDDPct": 23.5,
+              "trades": 1284,
+              "skippedNoMoney": 4083,
+              "yearly": {
+                "2021": 1.4,
+                "2022": 28.3,
+                "2023": -10.8,
+                "2024": 11
+              }
+            },
+            "test": {
+              "final": 322190,
+              "returnPct": -35.6,
+              "maxDDPct": 43.3,
+              "trades": 762,
+              "skippedNoMoney": 6087,
+              "yearly": {
+                "2024": -0.2,
+                "2025": -23.6,
+                "2026": -15.5
+              }
+            }
+          },
+          "500000|10": {
+            "full": {
+              "final": 433998,
+              "returnPct": -13.2,
+              "maxDDPct": 27,
+              "trades": 1614,
+              "skippedNoMoney": 22963,
+              "yearly": {
+                "2021": 0,
+                "2022": 5.7,
+                "2023": 3.8,
+                "2024": -12,
+                "2025": -7.2,
+                "2026": -3.1
+              }
+            },
+            "train": {
+              "final": 507905,
+              "returnPct": 1.6,
+              "maxDDPct": 14.2,
+              "trades": 966,
+              "skippedNoMoney": 12100,
+              "yearly": {
+                "2021": 0,
+                "2022": 5.7,
+                "2023": 3.8,
+                "2024": -7.4
+              }
+            },
+            "test": {
+              "final": 434017,
+              "returnPct": -13.2,
+              "maxDDPct": 18.3,
+              "trades": 639,
+              "skippedNoMoney": 10928,
+              "yearly": {
+                "2024": -4.8,
+                "2025": -6.5,
+                "2026": -2.4
+              }
+            }
+          },
+          "1000000|1": {
+            "full": {
+              "final": 152950,
+              "returnPct": -84.7,
+              "maxDDPct": 86,
+              "trades": 972,
+              "skippedNoMoney": 491,
+              "yearly": {
+                "2021": -6.6,
+                "2022": 8.2,
+                "2023": -59.6,
+                "2024": -2.6,
+                "2025": -25.2,
+                "2026": -48.6
+              }
+            },
+            "train": {
+              "final": 377120,
+              "returnPct": -62.3,
+              "maxDDPct": 78.2,
+              "trades": 586,
+              "skippedNoMoney": 162,
+              "yearly": {
+                "2021": -6.6,
+                "2022": 8.2,
+                "2023": -59.6,
+                "2024": -7.6
+              }
+            },
+            "test": {
+              "final": 209166,
+              "returnPct": -79.1,
+              "maxDDPct": 85.4,
+              "trades": 412,
+              "skippedNoMoney": 162,
+              "yearly": {
+                "2024": 18.1,
+                "2025": -67.3,
+                "2026": -45.8
+              }
+            }
+          },
+          "1000000|2": {
+            "full": {
+              "final": 424744,
+              "returnPct": -57.5,
+              "maxDDPct": 75.5,
+              "trades": 1744,
+              "skippedNoMoney": 716,
+              "yearly": {
+                "2021": 6.9,
+                "2022": 51.2,
+                "2023": -38.3,
+                "2024": -29.5,
+                "2025": -22.6,
+                "2026": -21.9
+              }
+            },
+            "train": {
+              "final": 695038,
+              "returnPct": -30.5,
+              "maxDDPct": 62.6,
+              "trades": 1035,
+              "skippedNoMoney": 252,
+              "yearly": {
+                "2021": 6.9,
+                "2022": 51.2,
+                "2023": -38.3,
+                "2024": -30.3
+              }
+            },
+            "test": {
+              "final": 487761,
+              "returnPct": -51.2,
+              "maxDDPct": 57,
+              "trades": 730,
+              "skippedNoMoney": 332,
+              "yearly": {
+                "2024": -2.1,
+                "2025": -37.9,
+                "2026": -19.7
+              }
+            }
+          },
+          "1000000|3": {
+            "full": {
+              "final": 294275,
+              "returnPct": -70.6,
+              "maxDDPct": 77.6,
+              "trades": 2068,
+              "skippedNoMoney": 2716,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 22.5,
+                "2023": -34.6,
+                "2024": -11.2,
+                "2025": -37.7,
+                "2026": -33.4
+              }
+            },
+            "train": {
+              "final": 704241,
+              "returnPct": -29.6,
+              "maxDDPct": 48.2,
+              "trades": 1299,
+              "skippedNoMoney": 778,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 22.5,
+                "2023": -34.6,
+                "2024": -11.7
+              }
+            },
+            "test": {
+              "final": 462725,
+              "returnPct": -53.7,
+              "maxDDPct": 63.8,
+              "trades": 917,
+              "skippedNoMoney": 958,
+              "yearly": {
+                "2024": 2.9,
+                "2025": -33.9,
+                "2026": -32
+              }
+            }
+          },
+          "1000000|5": {
+            "full": {
+              "final": 656344,
+              "returnPct": -34.4,
+              "maxDDPct": 57.8,
+              "trades": 2952,
+              "skippedNoMoney": 3467,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 47.5,
+                "2023": -18,
+                "2024": 4.8,
+                "2025": -25.3,
+                "2026": -30.5
+              }
+            },
+            "train": {
+              "final": 1255217,
+              "returnPct": 25.5,
+              "maxDDPct": 25,
+              "trades": 1769,
+              "skippedNoMoney": 1489,
+              "yearly": {
+                "2021": -0.4,
+                "2022": 47.5,
+                "2023": -18,
+                "2024": 4.1
+              }
+            },
+            "test": {
+              "final": 490998,
+              "returnPct": -50.9,
+              "maxDDPct": 57.8,
+              "trades": 1049,
+              "skippedNoMoney": 2968,
+              "yearly": {
+                "2024": 2.4,
+                "2025": -32.7,
+                "2026": -28.7
+              }
+            }
+          },
+          "1000000|10": {
+            "full": {
+              "final": 815489,
+              "returnPct": -18.5,
+              "maxDDPct": 33.3,
+              "trades": 3109,
+              "skippedNoMoney": 14090,
+              "yearly": {
+                "2021": 0.7,
+                "2022": 16.2,
+                "2023": -9.5,
+                "2024": -4.3,
+                "2025": -5.3,
+                "2026": -15
+              }
+            },
+            "train": {
+              "final": 1087059,
+              "returnPct": 8.7,
+              "maxDDPct": 16.4,
+              "trades": 1848,
+              "skippedNoMoney": 6948,
+              "yearly": {
+                "2021": 0.7,
+                "2022": 16.2,
+                "2023": -9.5,
+                "2024": 2.7
+              }
+            },
+            "test": {
+              "final": 772846,
+              "returnPct": -22.7,
+              "maxDDPct": 28.4,
+              "trades": 1215,
+              "skippedNoMoney": 7688,
+              "yearly": {
+                "2024": -4.7,
+                "2025": -3.6,
+                "2026": -15.8
+              }
+            }
+          },
+          "2000000|1": {
+            "full": {
+              "final": 160343,
+              "returnPct": -92,
+              "maxDDPct": 92.2,
+              "trades": 1000,
+              "skippedNoMoney": 358,
+              "yearly": {
+                "2021": -6.5,
+                "2022": -12.3,
+                "2023": -60.8,
+                "2024": -26.1,
+                "2025": -37.3,
+                "2026": -46.2
+              }
+            },
+            "train": {
+              "final": 479667,
+              "returnPct": -76,
+              "maxDDPct": 82.3,
+              "trades": 608,
+              "skippedNoMoney": 59,
+              "yearly": {
+                "2021": -6.5,
+                "2022": -12.3,
+                "2023": -60.8,
+                "2024": -25.4
+              }
+            },
+            "test": {
+              "final": 446820,
+              "returnPct": -77.7,
+              "maxDDPct": 84.4,
+              "trades": 425,
+              "skippedNoMoney": 31,
+              "yearly": {
+                "2024": 18.4,
+                "2025": -68.2,
+                "2026": -40.7
+              }
+            }
+          },
+          "2000000|2": {
+            "full": {
+              "final": 537164,
+              "returnPct": -73.1,
+              "maxDDPct": 81.5,
+              "trades": 1846,
+              "skippedNoMoney": 298,
+              "yearly": {
+                "2021": 6.7,
+                "2022": 31.9,
+                "2023": -46.8,
+                "2024": -26.3,
+                "2025": -27,
+                "2026": -33.4
+              }
+            },
+            "train": {
+              "final": 1138276,
+              "returnPct": -43.1,
+              "maxDDPct": 65.1,
+              "trades": 1091,
+              "skippedNoMoney": 91,
+              "yearly": {
+                "2021": 6.7,
+                "2022": 31.9,
+                "2023": -46.8,
+                "2024": -24
+              }
+            },
+            "test": {
+              "final": 666377,
+              "returnPct": -66.7,
+              "maxDDPct": 69.7,
+              "trades": 779,
+              "skippedNoMoney": 76,
+              "yearly": {
+                "2024": 0.9,
+                "2025": -33.9,
+                "2026": -50
+              }
+            }
+          },
+          "2000000|3": {
+            "full": {
+              "final": 516129,
+              "returnPct": -74.2,
+              "maxDDPct": 83.8,
+              "trades": 2412,
+              "skippedNoMoney": 1002,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 35,
+                "2023": -35.7,
+                "2024": -26.1,
+                "2025": -38.7,
+                "2026": -34.5
+              }
+            },
+            "train": {
+              "final": 1262885,
+              "returnPct": -36.9,
+              "maxDDPct": 54.5,
+              "trades": 1463,
+              "skippedNoMoney": 214,
+              "yearly": {
+                "2021": 0.1,
+                "2022": 35,
+                "2023": -35.7,
+                "2024": -27.4
+              }
+            },
+            "test": {
+              "final": 998479,
+              "returnPct": -50.1,
+              "maxDDPct": 55.7,
+              "trades": 1069,
+              "skippedNoMoney": 154,
+              "yearly": {
+                "2024": 8.7,
+                "2025": -33.8,
+                "2026": -30.6
+              }
+            }
+          },
+          "2000000|5": {
+            "full": {
+              "final": 1061772,
+              "returnPct": -46.9,
+              "maxDDPct": 67.2,
+              "trades": 3450,
+              "skippedNoMoney": 1215,
+              "yearly": {
+                "2021": 0.3,
+                "2022": 49.2,
+                "2023": -20.6,
+                "2024": -11.5,
+                "2025": -28.6,
+                "2026": -29.3
+              }
+            },
+            "train": {
+              "final": 2104256,
+              "returnPct": 5.2,
+              "maxDDPct": 36.1,
+              "trades": 2044,
+              "skippedNoMoney": 414,
+              "yearly": {
+                "2021": 0.3,
+                "2022": 49.2,
+                "2023": -20.6,
+                "2024": -11.5
+              }
+            },
+            "test": {
+              "final": 1095249,
+              "returnPct": -45.2,
+              "maxDDPct": 55.7,
+              "trades": 1387,
+              "skippedNoMoney": 885,
+              "yearly": {
+                "2024": 2,
+                "2025": -31.6,
+                "2026": -21.4
+              }
+            }
+          },
+          "2000000|10": {
+            "full": {
+              "final": 1492789,
+              "returnPct": -25.4,
+              "maxDDPct": 50.4,
+              "trades": 4593,
+              "skippedNoMoney": 5368,
+              "yearly": {
+                "2021": 0,
+                "2022": 37.7,
+                "2023": -8,
+                "2024": -6.2,
+                "2025": -22.9,
+                "2026": -18.6
+              }
+            },
+            "train": {
+              "final": 2424299,
+              "returnPct": 21.2,
+              "maxDDPct": 19.7,
+              "trades": 2749,
+              "skippedNoMoney": 2391,
+              "yearly": {
+                "2021": 0,
+                "2022": 37.7,
+                "2023": -8,
+                "2024": -4.4
+              }
+            },
+            "test": {
+              "final": 1188071,
+              "returnPct": -40.6,
+              "maxDDPct": 46.4,
+              "trades": 1650,
+              "skippedNoMoney": 4066,
+              "yearly": {
+                "2024": -1,
+                "2025": -25.5,
+                "2026": -19.4
+              }
+            }
+          },
+          "3000000|1": {
+            "full": {
+              "final": 156919,
+              "returnPct": -94.8,
+              "maxDDPct": 94.9,
+              "trades": 1005,
+              "skippedNoMoney": 329,
+              "yearly": {
+                "2021": -7.3,
+                "2022": -10.1,
+                "2023": -61.6,
+                "2024": -39.1,
+                "2025": -48.9,
+                "2026": -47.5
+              }
+            },
+            "train": {
+              "final": 579156,
+              "returnPct": -80.7,
+              "maxDDPct": 85.1,
+              "trades": 611,
+              "skippedNoMoney": 33,
+              "yearly": {
+                "2021": -7.3,
+                "2022": -10.1,
+                "2023": -61.6,
+                "2024": -39.7
+              }
+            },
+            "test": {
+              "final": 591215,
+              "returnPct": -80.3,
+              "maxDDPct": 85.9,
+              "trades": 427,
+              "skippedNoMoney": 18,
+              "yearly": {
+                "2024": 19,
+                "2025": -71.5,
+                "2026": -42
+              }
+            }
+          },
+          "3000000|2": {
+            "full": {
+              "final": 623237,
+              "returnPct": -79.2,
+              "maxDDPct": 86.7,
+              "trades": 1879,
+              "skippedNoMoney": 157,
+              "yearly": {
+                "2021": 6.7,
+                "2022": 36.9,
+                "2023": -47.6,
+                "2024": -32.7,
+                "2025": -30.2,
+                "2026": -42.2
+              }
+            },
+            "train": {
+              "final": 1548309,
+              "returnPct": -48.4,
+              "maxDDPct": 68.8,
+              "trades": 1104,
+              "skippedNoMoney": 48,
+              "yearly": {
+                "2021": 6.7,
+                "2022": 36.9,
+                "2023": -47.6,
+                "2024": -32.6
+              }
+            },
+            "test": {
+              "final": 1190991,
+              "returnPct": -60.3,
+              "maxDDPct": 61.3,
+              "trades": 785,
+              "skippedNoMoney": 26,
+              "yearly": {
+                "2024": 0,
+                "2025": -34.3,
+                "2026": -39.6
+              }
+            }
+          },
+          "3000000|3": {
+            "full": {
+              "final": 999817,
+              "returnPct": -66.7,
+              "maxDDPct": 76.5,
+              "trades": 2569,
+              "skippedNoMoney": 254,
+              "yearly": {
+                "2021": 0,
+                "2022": 40.5,
+                "2023": -35.9,
+                "2024": -17.3,
+                "2025": -34.2,
+                "2026": -32
+              }
+            },
+            "train": {
+              "final": 2083868,
+              "returnPct": -30.5,
+              "maxDDPct": 56.1,
+              "trades": 1499,
+              "skippedNoMoney": 104,
+              "yearly": {
+                "2021": 0,
+                "2022": 40.5,
+                "2023": -35.9,
+                "2024": -22.9
+              }
+            },
+            "test": {
+              "final": 1694796,
+              "returnPct": -43.5,
+              "maxDDPct": 52.6,
+              "trades": 1090,
+              "skippedNoMoney": 45,
+              "yearly": {
+                "2024": 7.6,
+                "2025": -27.2,
+                "2026": -27.9
+              }
+            }
+          },
+          "3000000|5": {
+            "full": {
+              "final": 1352653,
+              "returnPct": -54.9,
+              "maxDDPct": 70.4,
+              "trades": 3625,
+              "skippedNoMoney": 652,
+              "yearly": {
+                "2021": 0.4,
+                "2022": 45,
+                "2023": -24.7,
+                "2024": -10.7,
+                "2025": -32.5,
+                "2026": -31.8
+              }
+            },
+            "train": {
+              "final": 2905273,
+              "returnPct": -3.2,
+              "maxDDPct": 36.6,
+              "trades": 2130,
+              "skippedNoMoney": 203,
+              "yearly": {
+                "2021": 0.4,
+                "2022": 45,
+                "2023": -24.7,
+                "2024": -11.7
+              }
+            },
+            "test": {
+              "final": 1353054,
+              "returnPct": -54.9,
+              "maxDDPct": 60.3,
+              "trades": 1496,
+              "skippedNoMoney": 447,
+              "yearly": {
+                "2024": 0.9,
+                "2025": -34,
+                "2026": -32.2
+              }
+            }
+          },
+          "3000000|10": {
+            "full": {
+              "final": 1921195,
+              "returnPct": -36,
+              "maxDDPct": 48.8,
+              "trades": 5068,
+              "skippedNoMoney": 3322,
+              "yearly": {
+                "2021": 0.4,
+                "2022": 19.3,
+                "2023": -8.4,
+                "2024": -5.7,
+                "2025": -27.3,
+                "2026": -14.8
+              }
+            },
+            "train": {
+              "final": 3158176,
+              "returnPct": 5.3,
+              "maxDDPct": 21.1,
+              "trades": 2991,
+              "skippedNoMoney": 1369,
+              "yearly": {
+                "2021": 0.4,
+                "2022": 19.3,
+                "2023": -8.4,
+                "2024": -3.9
+              }
+            },
+            "test": {
+              "final": 1783012,
+              "returnPct": -40.6,
+              "maxDDPct": 42.9,
+              "trades": 2038,
+              "skippedNoMoney": 2114,
+              "yearly": {
+                "2024": -0.7,
+                "2025": -27.3,
+                "2026": -17.7
               }
             }
           }
