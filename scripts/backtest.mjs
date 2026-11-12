@@ -458,6 +458,7 @@ function dtPortfolio(byDay, fromD, toD) {
   return { returnPct: Math.round((eq / 1_000_000 - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades, yearly };
 }
 const daytrade = {};
+const DTBYDAY = {};
 for (const [sk, sg] of Object.entries(DT_SIGNALS)) {
   const evs = sg.events();
   for (const stop of [0, 0.02]) {
@@ -476,6 +477,7 @@ for (const [sk, sg] of Object.entries(DT_SIGNALS)) {
         byDay.get(e.d).push({ i: e.i, score: e.score, ret: t.ret });
       }
       for (const a of byDay.values()) a.sort((x, y) => y.score - x.score);
+      DTBYDAY[`${sk}|${stop ? 'stop2' : 'nostop'}|${fk}`] = byDay;
       daytrade[`${sk}|${stop ? 'stop2' : 'nostop'}|${fk}`] = {
         name: `${sg.name} / ${stop ? '損切り-2%' : '損切りなし'} / ${f.name}`,
         train: summarize(per.train),
@@ -621,6 +623,38 @@ for (const key of ['ev_div_up|hold5', 'ev_div_up_gap|hold5', 'ev_earn_up_trend|h
   const r = (lotSim.results[key] = { name: robustness[key]?.name ?? key, grid: {} });
   for (const cap of lotSim.capitals) for (const n of lotSim.maxNs) {
     r.grid[`${cap}|${n}`] = { full: lotPortfolio(BYDAY[key], cap, n, 26, D - 1), train: lotPortfolio(BYDAY[key], cap, n, 26, split - 1), test: lotPortfolio(BYDAY[key], cap, n, split, D - 1) };
+  }
+}
+
+// デイトレも100株単位で：毎朝、資金を最大N銘柄に分けて100株単位で買い、その日の引けで売る
+function lotDt(byDay, capital, maxN, fromD, toD) {
+  let eq = capital, peak = eq, maxDD = 0, trades = 0, noMoney = 0;
+  const yearly = {}; let yName = null, yStart = eq;
+  for (let d = fromD; d <= toD; d++) {
+    const yn = dates[d].slice(0, 4);
+    if (yn !== yName) { if (yName) yearly[yName] = Math.round((eq / yStart - 1) * 1000) / 10; yName = yn; yStart = eq; }
+    const arr = byDay.get(d - 1);
+    if (!arr) continue;
+    let cash = eq, pnl = 0, n = 0;
+    for (const s of arr) {
+      if (n >= maxN) break;
+      const px = at(RO, s.i, d) > 0 ? at(RO, s.i, d) : at(O, s.i, d);
+      const lot = px * 100 * (1 + SLIP);
+      const lots = Math.floor(Math.min(cash, eq / maxN) / lot);
+      if (lots < 1) { noMoney++; continue; }
+      cash -= lots * lot; pnl += lots * lot * s.ret; n++; trades++;
+    }
+    eq += pnl;
+    peak = Math.max(peak, eq); maxDD = Math.max(maxDD, 1 - eq / peak);
+  }
+  if (yName) yearly[yName] = Math.round((eq / yStart - 1) * 1000) / 10;
+  return { final: Math.round(eq), returnPct: Math.round((eq / capital - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades, skippedNoMoney: noMoney, yearly };
+}
+lotSim.daytrade = {};
+for (const key of ['div_up|nostop|all', 'div_up|nostop|gapUp', 'div_up|stop2|all', 'results|nostop|all']) {
+  const r = (lotSim.daytrade[key] = { name: daytrade[key]?.name ?? key, grid: {} });
+  for (const cap of lotSim.capitals) for (const n of lotSim.maxNs) {
+    r.grid[`${cap}|${n}`] = { full: lotDt(DTBYDAY[key], cap, n, 27, D - 1), train: lotDt(DTBYDAY[key], cap, n, 27, split - 1), test: lotDt(DTBYDAY[key], cap, n, split, D - 1) };
   }
 }
 
