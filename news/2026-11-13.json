@@ -1,0 +1,226 @@
+{
+ "date": "2026-11-13",
+ "status": "未検証",
+ "period": "2026-11-12朝〜2026-11-13朝",
+ "note": "毎日のニュース調査（自動実行）。材料の効き目を後で検証するための記録で、売買の推奨ではない。国内企業の発表は株探の一覧を読めなかったため個人ブログのまとめ記事（二次情報）に基づいており、数字は各社開示で未確認。",
+ "items": [
+  {
+   "headline": "米国株は11/12に小反落、ダウ・S&P500・ナスダックとも0.4%前後の下げ",
+   "summary": "エヌビディアのCEO退任が重荷となり主要3指数がそろって下落した。米10年債利回りは4.98%と5%に迫り、利上げ観測が成長株の上値を抑えた。金は約3%下落した。",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/12/stock-market-today-nov-12-nvidia-ceo-s-stunning-exit-sends-wall-street-lower-as-rivals-surge/",
+    "https://eurasiabusinessnews.com/2026/11/12/stock-market-today-november-12-2026-nvidia-stock-tumbles-after-jensen-huang-exit-ai-shares-face-leadership-shock/"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "続報：エヌビディアのジェンスン・フアンCEOが即日退任、CFOのクレス氏が暫定CEOに",
+   "summary": "同社は11/12、フアン氏が社長・CEO・取締役を即日退いたと発表した（理由は発表文に記載なし）。CFOのコレット・クレス氏が後任決定まで暫定CEOを兼務し、元シノプシスCEOのハーベイ・ジョーンズ氏が初の取締役会議長に就く。株価は一時大きく下げたが終値は約4%安にとどまり、AMD・ブロードコムは5%超上昇した。決算は予定通り11/17（米国時間）。",
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm",
+    "https://www.fool.com/coverage/stock-market-today/2026/11/12/stock-market-today-nov-12-nvidia-ceo-s-stunning-exit-sends-wall-street-lower-as-rivals-surge/",
+    "https://eurasiabusinessnews.com/2026/11/12/stock-market-today-november-12-2026-nvidia-stock-tumbles-after-jensen-huang-exit-ai-shares-face-leadership-shock/"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "企業発表",
+   "sectors": [
+    "電気機器"
+   ],
+   "stocks": [],
+   "horizon": "数週間",
+   "confidence": "高"
+  },
+  {
+   "headline": "三井住友トラストG、今期最終利益を11%上方修正・増配・最大500億円の自社株買い",
+   "summary": "中間決算で通期の最終利益予想を引き上げ、配当も実質増額とした。発行済株式の約1.6%を上限とする自社株買いを行い、取得分は全株消却する方針。",
+   "sources": [
+    "https://tomokutchi.hatenablog.com/entry/kessan-20261112"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "企業発表",
+   "sectors": [
+    "銀行業"
+   ],
+   "stocks": [
+    {
+     "code": "8309",
+     "name": "三井住友トラストグループ",
+     "direction": "+",
+     "reason": "上方修正・増配・自社株買い（消却）がそろった"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "INPEX・ゼンショー・シチズン・アマダが通期予想を上方修正（11/12発表）",
+   "summary": "INPEXは最終利益を8%、ゼンショーHDは経常利益を4%、シチズン時計は経常利益を28%、アマダは最終利益を18%それぞれ上方修正した。INPEX・ゼンショー・シチズンは最高益予想の上乗せ。",
+   "sources": [
+    "https://tomokutchi.hatenablog.com/entry/kessan-20261112"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "企業発表",
+   "sectors": [
+    "鉱業",
+    "小売業",
+    "精密機器",
+    "機械"
+   ],
+   "stocks": [
+    {
+     "code": "1605",
+     "name": "INPEX",
+     "direction": "+",
+     "reason": "最終利益予想を上方修正"
+    },
+    {
+     "code": "7550",
+     "name": "ゼンショーホールディングス",
+     "direction": "+",
+     "reason": "経常利益予想を上方修正（小幅）"
+    },
+    {
+     "code": "7762",
+     "name": "シチズン時計",
+     "direction": "+",
+     "reason": "経常利益予想を28%上方修正"
+    },
+    {
+     "code": "6113",
+     "name": "アマダ",
+     "direction": "+",
+     "reason": "最終利益予想を18%上方修正"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "明治HDとワコールHDが大型の自社株買い、ワコールは最終利益予想を78%上方修正",
+   "summary": "明治HDは発行済株式の4.4%・400億円を上限とする自社株買いを発表した。ワコールHDは通期最終利益予想を大幅に引き上げ、発行済株式の約11%・200億円を上限とする自社株買いと自己株消却も発表した。",
+   "sources": [
+    "https://tomokutchi.hatenablog.com/entry/kessan-20261112"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "企業発表",
+   "sectors": [
+    "食料品",
+    "繊維製品"
+   ],
+   "stocks": [
+    {
+     "code": "2269",
+     "name": "明治ホールディングス",
+     "direction": "+",
+     "reason": "発行済株式の4.4%の自社株買い"
+    },
+    {
+     "code": "3591",
+     "name": "ワコールホールディングス",
+     "direction": "+",
+     "reason": "大幅上方修正と約11%の自社株買い"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "カシオ・日本証券金融・日本マイクロニクスが上方修正と増配",
+   "summary": "カシオ計算機は経常利益を16%上方修正し未定だった配当を増配、日本証券金融は経常利益を20%上方修正し配当を増額、日本マイクロニクスは経常利益を17%上方修正し配当を増額した。",
+   "sources": [
+    "https://tomokutchi.hatenablog.com/entry/kessan-20261112"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "企業発表",
+   "sectors": [
+    "電気機器",
+    "その他金融業"
+   ],
+   "stocks": [
+    {
+     "code": "6952",
+     "name": "カシオ計算機",
+     "direction": "+",
+     "reason": "上方修正と増配"
+    },
+    {
+     "code": "8511",
+     "name": "日本証券金融",
+     "direction": "+",
+     "reason": "上方修正と増配"
+    },
+    {
+     "code": "6871",
+     "name": "日本マイクロニクス",
+     "direction": "+",
+     "reason": "上方修正と増配"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "悪材料：テルモ・住友ゴム・チェンジHDが下方修正（11/12発表）",
+   "summary": "テルモは通期最終利益予想を27%下方修正した。住友ゴム工業は最終利益を一転減益見通しとし、配当も減額。チェンジHDは最終損益の見通しを赤字を含むレンジに引き下げ、配当を未定とした。ロート製薬も上期は経常減益だった（予想修正の記載はなし）。",
+   "sources": [
+    "https://tomokutchi.hatenablog.com/entry/kessan-20261112"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "企業発表",
+   "sectors": [
+    "精密機器",
+    "ゴム製品",
+    "情報・通信業"
+   ],
+   "stocks": [
+    {
+     "code": "4543",
+     "name": "テルモ",
+     "direction": "-",
+     "reason": "最終利益予想を27%下方修正"
+    },
+    {
+     "code": "5110",
+     "name": "住友ゴム工業",
+     "direction": "-",
+     "reason": "減益見通しへの下方修正と減配"
+    },
+    {
+     "code": "3962",
+     "name": "チェンジホールディングス",
+     "direction": "-",
+     "reason": "赤字含みの下方修正と配当未定化"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "TOB：旭化成ホームズが森組の完全子会社化へ、前日終値を5割超上回る価格",
+   "summary": "旭化成ホームズが森組にTOBを実施する。TOB価格は11/12終値を約54%上回る水準で、買付期間は11/13から2027年1月7日まで。",
+   "sources": [
+    "https://tomokutchi.hatenablog.com/entry/kessan-20261112"
+   ],
+   "eventDate": "2026-11-12",
+   "type": "企業発表",
+   "sectors": [
+    "建設業"
+   ],
+   "stocks": [
+    {
+     "code": "1853",
+     "name": "森組",
+     "direction": "+",
+     "reason": "TOB価格が直近株価を大きく上回る"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  }
+ ]
+}
