@@ -18,6 +18,14 @@ const SLIP = 0.001;
 const MIN_TURNOVER = 1e8;
 const MIN_PRICE = 100;
 const START = 1_000_000;
+// 税金（特定口座・源泉徴収あり）：その年の売却益の合計に 20.315%。年内に損が出たら払いすぎた分は戻る。年をまたいだ損の繰越は考えない
+const TAX = 0.20315;
+const yearOf = (d) => d.slice(0, 4);
+function taxDueAt(st, date) {
+  const y = yearOf(date);
+  const net = st.closed.filter((c) => yearOf(c.exitDate) === y && c.exitDate <= date).reduce((a, c) => a + c.profitYen, 0);
+  return Math.round(Math.max(0, net) * TAX);
+}
 const STOCK_MKT = new Set(['0111', '0112', '0113']);
 fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(path.join(DATA, 'paper'), { recursive: true });
@@ -96,6 +104,17 @@ for (const [k, cfg] of Object.entries(STRATS)) {
   }
 }
 
+// 税金を入れる前の状態からの移行（2026-11-12）：過去の資産の推移と現金から、その時点までの税金を引く
+if (!state.taxApplied) {
+  for (const st of Object.values(state.strategies)) {
+    st.tax = {};
+    for (const e of st.equity) e.value -= taxDueAt(st, e.date);
+    for (const c of st.closed) { const y = yearOf(c.exitDate); st.tax[y] = taxDueAt(st, `${y}-12-31`); }
+    st.cash -= Object.values(st.tax).reduce((a, b) => a + b, 0);
+  }
+  state.taxApplied = 1;
+}
+
 // ---------- 1) 2) 新しい営業日を順に処理 ----------
 const newDates = dates.filter((d) => d > state.lastDate);
 for (const T of newDates) {
@@ -133,6 +152,11 @@ for (const T of newDates) {
         st.cash += pos.size * (1 + r);
         st.closed.push({ code: pos.code, name: nameOf(pos.code), reason: pos.reason, entryDate: pos.entryDate, exitDate: T, retPct: pct(r), profitYen: Math.round(pos.size * r) });
         st.positions.splice(j, 1);
+        // 売るたびに、その年の税金を計算し直して差額を引く（損なら戻る）
+        st.tax ??= {};
+        const y = yearOf(T), due = taxDueAt(st, T);
+        st.cash -= due - (st.tax[y] ?? 0);
+        st.tax[y] = due;
       }
     }
     const mark = st.cash + st.positions.reduce((a, p) => a + p.size * ((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx, 0);
@@ -178,7 +202,8 @@ for (const [k, cfg] of Object.entries(STRATS)) {
     hold: cfg.hold,
     gap: !!cfg.gap,
     kinds: cfg.kinds,
-    equityYen: eqNow,
+    equityYen: eqNow, // 税引き後（売った分の税金を引いた後。持っている株の含み益には、まだ税金はかからない）
+    taxYen: Object.values(st.tax ?? {}).reduce((a, b) => a + b, 0),
     returnPct: pct(eqNow / START - 1),
     trades: st.closed.length,
     winRatePct: rets.length ? pct(rets.filter((r) => r > 0).length / rets.length) : null,

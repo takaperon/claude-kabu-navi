@@ -207,7 +207,7 @@ section[hidden]{display:none}
         <div class="gain num" id="cert-gain">—</div>
         <div class="sub num" id="cert-sub"></div>
         <div class="chart" id="cert-chart"></div>
-        <div class="note">架空の100万円ずつを、5つのルールどおりに売買した結果です。本物のお金は動いていません。</div>
+        <div class="note">架空の100万円ずつを、5つのルールどおりに売買した結果です。売って出た利益からは税金（約20%）を引いてあります。本物のお金は動いていません。</div>
       </div>
     </div>
 
@@ -233,7 +233,7 @@ section[hidden]{display:none}
   <!-- 検証 -->
   <section id="tab-test" hidden>
     <h2>過去5年で試したら</h2>
-    <p class="lead">2021〜2026年の本物の株価で、同じルールを試した結果（<button class="term" data-term="バックテスト">バックテスト</button>）です。これから同じように増える保証はありません。</p>
+    <p class="lead">2021〜2026年の本物の株価で、同じルールを試した結果（<button class="term" data-term="バックテスト">バックテスト</button>）です。利益が出た年は、税金（約20%）を引いて計算しています。これから同じように増える保証はありません。</p>
     <div id="tests"></div>
     <details class="glossary">
       <summary>用語のかんたん解説</summary>
@@ -270,6 +270,8 @@ section[hidden]{display:none}
 <script>
 const RAW = 'https://raw.githubusercontent.com/takaperon/claude-kabu-navi/reports/';
 const START = 1000000;
+const TAX = 0.20315; // 特定口座（源泉徴収あり）の税率
+const afterTax = (r) => r > 0 ? r * (1 - TAX) : r; // 1年の損益（%）を税引き後に
 
 // ルール：色（増配＝金、上方修正＝藍、デイトレ＝青緑）と、白抜きの印＝「朝高い時だけ」
 const STRATS = {
@@ -460,7 +462,8 @@ function openRule(k) {
       <div><span>売った回数</span><b class="num">${s.trades}回</b></div>
       <div><span>${term('勝率')}</span><b class="num">${s.trades ? s.winRatePct + '%' : '—'}</b></div>
     </div>
-    ${t ? `<p style="font-size:14px;color:var(--muted)">過去5年で試すと、100万円が<b style="color:var(--ink)">${man(START * (1 + t.total / 100))}円</b>になっていました（${term('最大の減り')} ${t.dd}%）。</p>` : ''}`;
+    ${s.taxYen ? `<p style="font-size:14px;color:var(--muted)">いまの資産は、売った利益にかかる税金 ${yen(s.taxYen)}円を引いた後の金額です。</p>` : ''}
+    ${t ? `<p style="font-size:14px;color:var(--muted)">過去5年で試すと、税金を引いた後で100万円が<b style="color:var(--ink)">${man(START * (1 + t.total / 100))}円</b>になっていました（${term('最大の減り')} ${t.dd}%）。</p>` : ''}`;
   openSheet(`${dot(k)}${STRATS[k].name}`, body);
 }
 
@@ -491,7 +494,7 @@ function renderStocks() {
         <div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</div></div>${chips(h.ks)}</li>`;
     }).join('')}</ul>` : `<p class="empty">いまは何も持っていません。次の朝に買う銘柄があれば、買ったあとここに並びます。</p>`;
   } else {
-    $('stocks-lead').innerHTML = sold.length ? '売った日ごとに並べています。損益は、本番と同じように売買のずれ（0.1%）を引いた後の数字です。' : '';
+    $('stocks-lead').innerHTML = sold.length ? '売った日ごとに並べています。1回ごとの損益は、売買のずれ（0.1%）を引いた後・税金を引く前の数字です。税金はホームの合計で、1年分まとめて引いています。' : '';
     if (!sold.length) { $('stocks').innerHTML = `<p class="empty">まだ売った銘柄はありません。5日持つルールは、買ってから5営業日後に最初の結果が出ます。</p>`; return; }
     sold.sort((a, b) => b.exitDate.localeCompare(a.exitDate) || b.retPct - a.retPct);
     const days = [...new Set(sold.map((c) => c.exitDate))];
@@ -515,21 +518,26 @@ function testFor(k) {
     if (!d) return null;
     const yearly = {};
     for (const p of [d.portfolioTrain, d.portfolioTest]) for (const [y, v] of Object.entries(p.yearly || {})) yearly[y] = ((1 + (yearly[y] ?? 0) / 100) * (1 + v / 100) - 1) * 100;
-    const total = ((1 + d.portfolioTrain.returnPct / 100) * (1 + d.portfolioTest.returnPct / 100) - 1) * 100;
-    return { total, dd: Math.max(d.portfolioTrain.maxDDPct, d.portfolioTest.maxDDPct), yearly };
+    return withTax({ dd: Math.max(d.portfolioTrain.maxDDPct, d.portfolioTest.maxDDPct), yearly });
   }
   const r = backtest.robustness?.[key];
   if (!r) return null;
-  return { total: r.fullPeriod.returnPct, dd: r.fullPeriod.maxDDPct, yearly: r.fullPeriod.yearly };
+  return withTax({ dd: r.fullPeriod.maxDDPct, yearly: r.fullPeriod.yearly });
+}
+// 1年ごとに、利益が出た年はその20.315%を税金として引いて複利で積み上げる（年をまたいだ損の繰越はしない＝少し厳しめ）
+function withTax(t) {
+  const yearly = Object.fromEntries(Object.entries(t.yearly).map(([y, v]) => [y, afterTax(v)]));
+  const total = (Object.values(yearly).reduce((a, v) => a * (1 + v / 100), 1) - 1) * 100;
+  return { ...t, yearly, total };
 }
 function renderTests() {
   if (!backtest) { $('tests').innerHTML = '<p class="empty">検証結果を読み込めませんでした。電波のよい場所で開き直してください。</p>'; return; }
   const rand = backtest.randomYearly || {};
-  const randTotal = (Object.values(rand).reduce((a, r) => a * (1 + (r.avg ?? 0) / 100), 1) - 1) * 100;
+  const randTotal = (Object.values(rand).reduce((a, r) => a * (1 + afterTax(r.avg ?? 0) / 100), 1) - 1) * 100;
   const rows = ORDER.map((k) => ({ k, t: testFor(k) })).filter((x) => x.t).sort((a, b) => b.t.total - a.t.total);
   $('tests').innerHTML = rows.map(({ k, t }) => {
     const years = Object.entries(t.yearly).filter(([y]) => y !== '2021');
-    const scale = Math.max(20, ...years.map(([, v]) => Math.abs(v)), ...years.map(([y]) => Math.abs(rand[y]?.avg ?? 0)));
+    const scale = Math.max(20, ...years.map(([, v]) => Math.abs(v)), ...years.map(([y]) => Math.abs(afterTax(rand[y]?.avg ?? 0))));
     return `<div class="test" style="--rc:${RC[STRATS[k].fam]}">
       <h3>${dot(k)}${STRATS[k].name}</h3>
       <div class="vs">
@@ -538,7 +546,7 @@ function renderTests() {
       </div>
       <div class="dd">途中の${term('最大の減り')}：${t.dd}%</div>
       <div class="years">${years.map(([y, v]) => {
-        const w = Math.abs(v) / scale * 50, rv = rand[y]?.avg, rw = rv != null ? Math.abs(rv) / scale * 50 : 0;
+        const w = Math.abs(v) / scale * 50, rv = rand[y]?.avg != null ? afterTax(rand[y].avg) : null, rw = rv != null ? Math.abs(rv) / scale * 50 : 0;
         return `<span class="y">${y}年</span><span class="track">
           <i style="${v >= 0 ? `left:50%;width:${w}%` : `right:50%;width:${w}%`};background:${v >= 0 ? 'var(--up)' : 'var(--down)'}"></i>
           ${rv != null ? `<i class="rand" style="${rv >= 0 ? `left:50%;width:${rw}%` : `right:50%;width:${rw}%`}"></i>` : ''}
