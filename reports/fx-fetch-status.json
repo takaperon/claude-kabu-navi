@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-11T23:19:32.496Z",
+  "startedAt": "2026-11-12T23:12:57.328Z",
   "pairs": {
     "usdjpy": {
       "source": "fred-close-only",
@@ -29,9 +29,9 @@
   "rates": {
     "usd": {
       "series": "DFF",
-      "rows": 26430,
+      "rows": 26432,
       "from": "1954-07-01",
-      "to": "2026-11-09"
+      "to": "2026-11-11"
     },
     "jpy": {
       "series": "IRSTCI01JPM156N",
@@ -41,15 +41,15 @@
     },
     "eur": {
       "series": "ECBDFR",
-      "rows": 10177,
+      "rows": 10178,
       "from": "1999-01-01",
-      "to": "2026-11-11"
+      "to": "2026-11-12"
     },
     "gbp": {
       "series": "IUDSOIA",
-      "rows": 7544,
+      "rows": 7545,
       "from": "1997-01-02",
-      "to": "2026-11-09"
+      "to": "2026-11-10"
     },
     "aud": {
       "series": "IRSTCI01AUM156N",
@@ -58,5 +58,5 @@
       "to": "2026-09-01"
     }
   },
-  "finishedAt": "2026-11-11T23:19:43.512Z"
+  "finishedAt": "2026-11-12T23:13:06.901Z"
 }
