@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T11:27:21.433Z",
+  "updatedAt": "2026-11-12T11:32:52.617Z",
   "startDate": "2026-11-05",
   "lastDate": "2026-11-12",
   "strategies": {
@@ -12,6 +12,7 @@
       ],
       "equityYen": 1117885,
       "taxYen": 30054,
+      "capital": 1000000,
       "returnPct": 11.8,
       "trades": 10,
       "winRatePct": 90,
@@ -207,6 +208,7 @@
       ],
       "equityYen": 1042168,
       "taxYen": 2588,
+      "capital": 1000000,
       "returnPct": 4.2,
       "trades": 4,
       "winRatePct": 75,
@@ -379,6 +381,7 @@
       ],
       "equityYen": 1085393,
       "taxYen": 21770,
+      "capital": 1000000,
       "returnPct": 8.5,
       "trades": 50,
       "winRatePct": 64,
@@ -754,6 +757,7 @@
       ],
       "equityYen": 1025589,
       "taxYen": 0,
+      "capital": 1000000,
       "returnPct": 2.6,
       "trades": 0,
       "winRatePct": null,
@@ -921,6 +925,7 @@
       ],
       "equityYen": 1098830,
       "taxYen": 3435,
+      "capital": 1000000,
       "returnPct": 9.9,
       "trades": 2,
       "winRatePct": 50,
@@ -1097,6 +1102,91 @@
         {
           "date": "2026-11-12",
           "value": 1098830
+        }
+      ]
+    },
+    "real30_div_gap": {
+      "name": "本番想定：30万円・100株単位・2銘柄（増配＋朝高）",
+      "hold": 5,
+      "gap": true,
+      "kinds": [
+        "div_up"
+      ],
+      "equityYen": 300000,
+      "taxYen": 0,
+      "capital": 300000,
+      "returnPct": 0,
+      "trades": 0,
+      "winRatePct": null,
+      "avgRetPct": null,
+      "holdings": [],
+      "nextBuys": [
+        {
+          "code": "39680",
+          "name": "セグエグループ",
+          "reason": "配当予想を+55.6%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "43770",
+          "name": "ワンキャリア",
+          "reason": "配当予想を+34.3%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "78030",
+          "name": "ブシロード",
+          "reason": "配当予想を+33.3%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "29820",
+          "name": "ＡＤワークスグループ",
+          "reason": "配当予想を+30%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "59910",
+          "name": "日本発條",
+          "reason": "配当予想を+21.7%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "40510",
+          "name": "ＧＭＯフィナンシャルゲート",
+          "reason": "配当予想を来期+20.6%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "51420",
+          "name": "アキレス",
+          "reason": "配当予想を+20%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "85110",
+          "name": "日本証券金融",
+          "reason": "配当予想を+19.1%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "68710",
+          "name": "日本マイクロニクス",
+          "reason": "配当予想を+16.9%引き上げ（2026-11-12発表）",
+          "late": false
+        },
+        {
+          "code": "74330",
+          "name": "伯東",
+          "reason": "配当予想を+15.9%引き上げ（2026-11-12発表）",
+          "late": false
+        }
+      ],
+      "recentClosed": [],
+      "equityHistory": [
+        {
+          "date": "2026-11-12",
+          "value": 300000
         }
       ]
     }
