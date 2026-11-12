@@ -624,6 +624,22 @@ for (const key of ['ev_div_up|hold5', 'ev_div_up_gap|hold5', 'ev_earn_up_trend|h
   }
 }
 
+// 比較：同じ100株・銘柄数の縛りで、全銘柄から無作為に選んで5日持った場合（50回の平均と上位1割）
+lotSim.random = {};
+for (const cap of [300000, 500000, 1000000]) for (const n of [1, 2, 3, 5]) {
+  const base = BYDAY['all|hold5'];
+  if (!base) break;
+  const finals = [], dds = [];
+  for (let r = 0; r < 50; r++) {
+    const m = new Map();
+    for (const [d, arr] of base) m.set(d, arr.map((x) => ({ ...x, score: rand() })).sort((a, b) => b.score - a.score).slice(0, 30));
+    const p = lotPortfolio(m, cap, n, 26, D - 1);
+    finals.push(p.returnPct); dds.push(p.maxDDPct);
+  }
+  finals.sort((a, b) => a - b);
+  lotSim.random[`${cap}|${n}`] = { avg: Math.round(finals.reduce((a, b) => a + b, 0) / finals.length * 10) / 10, p90: finals[45], p10: finals[5], avgDD: Math.round(dds.reduce((a, b) => a + b, 0) / dds.length * 10) / 10 };
+}
+
 const randomYearly = (() => {
   const base = BYDAY['all|hold10'];
   const acc = {};
