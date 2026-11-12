@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-11T22:59:52.096Z",
+  "startedAt": "2026-11-12T22:56:35.276Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
@@ -27,14 +27,14 @@
   "av": {
     "keyPresent": true,
     "requests": 25,
-    "stored": 154,
+    "stored": 179,
     "failed": 0,
     "limitHit": false,
     "lastError": null,
-    "needed": 373
+    "needed": 348
   },
   "stoppedBy": "done",
-  "finishedAt": "2026-11-11T23:05:22.433Z",
+  "finishedAt": "2026-11-12T23:02:07.491Z",
   "pricesStored": 500,
   "secStored": 502
 }
