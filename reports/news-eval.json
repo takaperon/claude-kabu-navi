@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T11:02:22.440Z",
+  "updatedAt": "2026-11-12T04:33:42.693Z",
   "note": "調査日の始値で買い、n営業日後の終値で売った場合。全銘柄平均との差で判定。手数料0・滑り0.1%/片道。少数のうちは偶然の影響が大きい",
   "horizons": [
     1,
@@ -19,7 +19,7 @@
         "avgSignedExcess": -3.5
       },
       "20": null,
-      "n": 69
+      "n": 72
     },
     "byDirection": {
       "+": {
@@ -34,7 +34,7 @@
           "avgSignedExcess": -3.8
         },
         "20": null,
-        "n": 49
+        "n": 51
       },
       "-": {
         "1": {
@@ -48,7 +48,7 @@
           "avgSignedExcess": -2.6
         },
         "20": null,
-        "n": 20
+        "n": 21
       }
     },
     "byConfidence": {
@@ -78,7 +78,7 @@
           "avgSignedExcess": -7.7
         },
         "20": null,
-        "n": 4
+        "n": 7
       },
       "高": {
         "1": {
@@ -104,7 +104,7 @@
           "avgSignedExcess": -3.5
         },
         "20": null,
-        "n": 63
+        "n": 64
       },
       "マクロ": {
         "1": {
@@ -114,7 +114,7 @@
         },
         "5": null,
         "20": null,
-        "n": 6
+        "n": 8
       }
     }
   },
@@ -2116,8 +2116,62 @@
       "disclosure": {
         "found": false
       }
+    },
+    {
+      "date": "2026-11-12",
+      "eventDate": "2026-11-11",
+      "code": "6857",
+      "name": "アドバンテスト",
+      "direction": "+",
+      "type": "マクロ",
+      "confidence": "低",
+      "horizon": "数日",
+      "headline": "米国株は11/11にハイテク主導で反発、ナスダック1.6%高・S&P500は1.3%高",
+      "entryDate": null,
+      "ret": {},
+      "excess": {},
+      "hit": {},
+      "pre": null,
+      "status": "まだ取引日のデータがない"
+    },
+    {
+      "date": "2026-11-12",
+      "eventDate": "2026-11-11",
+      "code": "8035",
+      "name": "東京エレクトロン",
+      "direction": "+",
+      "type": "マクロ",
+      "confidence": "低",
+      "horizon": "数日",
+      "headline": "米国株は11/11にハイテク主導で反発、ナスダック1.6%高・S&P500は1.3%高",
+      "entryDate": null,
+      "ret": {},
+      "excess": {},
+      "hit": {},
+      "pre": null,
+      "status": "まだ取引日のデータがない"
+    },
+    {
+      "date": "2026-11-12",
+      "eventDate": "2026-11-10",
+      "code": "3461",
+      "name": "パルマ",
+      "direction": "-",
+      "type": "企業発表",
+      "confidence": "低",
+      "horizon": "数日",
+      "headline": "サイバー：パルマが運営するWebサービスで不正アクセスの痕跡を確認（11/10公表）",
+      "entryDate": null,
+      "ret": {},
+      "excess": {},
+      "hit": {},
+      "pre": null,
+      "status": "まだ取引日のデータがない",
+      "disclosure": {
+        "found": false
+      }
     }
   ],
   "lastPriceDate": "2026-11-11",
-  "newsFiles": 3
+  "newsFiles": 4
 }
