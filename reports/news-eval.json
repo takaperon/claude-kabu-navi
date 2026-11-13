@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T11:44:40.393Z",
+  "updatedAt": "2026-11-13T11:01:52.395Z",
   "note": "調査日の始値で買い、n営業日後の終値で売った場合。全銘柄平均との差で判定。手数料0・滑り0.1%/片道。少数のうちは偶然の影響が大きい",
   "horizons": [
     1,
@@ -9,62 +9,62 @@
   "summary": {
     "all": {
       "1": {
-        "n": 72,
-        "hitRate": 48.6,
-        "avgSignedExcess": -0.2
+        "n": 86,
+        "hitRate": 45.3,
+        "avgSignedExcess": -0.4
       },
       "5": {
-        "n": 16,
-        "hitRate": 43.8,
-        "avgSignedExcess": -3.5
+        "n": 44,
+        "hitRate": 54.5,
+        "avgSignedExcess": -0.8
       },
       "20": null,
-      "n": 72
+      "n": 86
     },
     "byDirection": {
       "+": {
         "1": {
-          "n": 51,
-          "hitRate": 49,
-          "avgSignedExcess": 0.1
+          "n": 62,
+          "hitRate": 45.2,
+          "avgSignedExcess": -0.2
         },
         "5": {
-          "n": 12,
-          "hitRate": 41.7,
-          "avgSignedExcess": -3.8
+          "n": 34,
+          "hitRate": 58.8,
+          "avgSignedExcess": -0.1
         },
         "20": null,
-        "n": 51
+        "n": 62
       },
       "-": {
         "1": {
-          "n": 21,
-          "hitRate": 47.6,
-          "avgSignedExcess": -1.2
+          "n": 24,
+          "hitRate": 45.8,
+          "avgSignedExcess": -1
         },
         "5": {
-          "n": 4,
-          "hitRate": 50,
-          "avgSignedExcess": -2.6
+          "n": 10,
+          "hitRate": 40,
+          "avgSignedExcess": -3.1
         },
         "20": null,
-        "n": 21
+        "n": 24
       }
     },
     "byConfidence": {
       "中": {
         "1": {
-          "n": 61,
-          "hitRate": 49.2,
-          "avgSignedExcess": -0.2
+          "n": 75,
+          "hitRate": 45.3,
+          "avgSignedExcess": -0.4
         },
         "5": {
-          "n": 14,
-          "hitRate": 42.9,
-          "avgSignedExcess": -2.9
+          "n": 38,
+          "hitRate": 57.9,
+          "avgSignedExcess": 0
         },
         "20": null,
-        "n": 61
+        "n": 75
       },
       "低": {
         "1": {
@@ -86,7 +86,11 @@
           "hitRate": 75,
           "avgSignedExcess": 1.4
         },
-        "5": null,
+        "5": {
+          "n": 4,
+          "hitRate": 25,
+          "avgSignedExcess": -5.1
+        },
         "20": null,
         "n": 4
       }
@@ -94,17 +98,17 @@
     "byType": {
       "企業発表": {
         "1": {
-          "n": 64,
-          "hitRate": 48.4,
-          "avgSignedExcess": -0.4
+          "n": 78,
+          "hitRate": 44.9,
+          "avgSignedExcess": -0.6
         },
         "5": {
-          "n": 16,
-          "hitRate": 43.8,
-          "avgSignedExcess": -3.5
+          "n": 41,
+          "hitRate": 56.1,
+          "avgSignedExcess": -0.6
         },
         "20": null,
-        "n": 64
+        "n": 78
       },
       "マクロ": {
         "1": {
@@ -112,7 +116,11 @@
           "hitRate": 50,
           "avgSignedExcess": 0.9
         },
-        "5": null,
+        "5": {
+          "n": 3,
+          "hitRate": 33.3,
+          "avgSignedExcess": -3.7
+        },
         "20": null,
         "n": 8
       }
@@ -643,13 +651,16 @@
       "headline": "日経平均が11/6に3,643円安、終値の下げ幅は歴代3位で6万円割れ",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -0.4
+        "1": -0.4,
+        "5": 7.5
       },
       "excess": {
-        "1": -1.1
+        "1": -1.1,
+        "5": 4
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": false
       },
       "pre": -3.6,
       "status": "ok"
@@ -666,13 +677,16 @@
       "headline": "日経平均が11/6に3,643円安、終値の下げ幅は歴代3位で6万円割れ",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 1.3
+        "1": 1.3,
+        "5": 12.8
       },
       "excess": {
-        "1": 0.5
+        "1": 0.5,
+        "5": 9.4
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": false
       },
       "pre": -4.4,
       "status": "ok"
@@ -689,13 +703,16 @@
       "headline": "日経平均が11/6に3,643円安、終値の下げ幅は歴代3位で6万円割れ",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -3.1
+        "1": -3.1,
+        "5": 1.1
       },
       "excess": {
-        "1": -3.8
+        "1": -3.8,
+        "5": -2.3
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": -12.1,
       "status": "ok"
@@ -712,13 +729,16 @@
       "headline": "トヨタ、今期最終利益を10%上方修正",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 2.6
+        "1": 2.6,
+        "5": 0.4
       },
       "excess": {
-        "1": 1.8
+        "1": 1.8,
+        "5": -3
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": false
       },
       "pre": 12.2,
       "status": "ok",
@@ -741,13 +761,16 @@
       "headline": "JTのロシア事業、プーチン大統領令で一時的にロシア側の管理下に",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -0.2
+        "1": -0.2,
+        "5": 12.6
       },
       "excess": {
-        "1": -1
+        "1": -1,
+        "5": 9.2
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": false
       },
       "pre": -28.6,
       "status": "ok",
@@ -767,13 +790,16 @@
       "headline": "三菱重工、今期最終を16%上方修正し最高益予想を上乗せ",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -3.1
+        "1": -3.1,
+        "5": -7.6
       },
       "excess": {
-        "1": -3.8
+        "1": -3.8,
+        "5": -11
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": false
       },
       "pre": 3.3,
       "status": "ok",
@@ -796,13 +822,16 @@
       "headline": "ソニーG・ダイキン・日本製鉄などが上方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 2
+        "1": 2,
+        "5": 3.3
       },
       "excess": {
-        "1": 1.2
+        "1": 1.2,
+        "5": -0.1
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": false
       },
       "pre": 6.9,
       "status": "ok",
@@ -825,13 +854,16 @@
       "headline": "ソニーG・ダイキン・日本製鉄などが上方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 1.5
+        "1": 1.5,
+        "5": 6.1
       },
       "excess": {
-        "1": 0.7
+        "1": 0.7,
+        "5": 2.7
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": 5.6,
       "status": "ok",
@@ -854,13 +886,16 @@
       "headline": "ソニーG・ダイキン・日本製鉄などが上方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 0.7
+        "1": 0.7,
+        "5": 4.1
       },
       "excess": {
-        "1": -0.1
+        "1": -0.1,
+        "5": 0.7
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": true
       },
       "pre": 1.4,
       "status": "ok",
@@ -883,13 +918,16 @@
       "headline": "電子部品のローム・太陽誘電・東レが上方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 1.9
+        "1": 1.9,
+        "5": 5
       },
       "excess": {
-        "1": 1.1
+        "1": 1.1,
+        "5": 1.6
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": -19.7,
       "status": "ok",
@@ -912,13 +950,16 @@
       "headline": "電子部品のローム・太陽誘電・東レが上方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -0.6
+        "1": -0.6,
+        "5": 6.1
       },
       "excess": {
-        "1": -1.3
+        "1": -1.3,
+        "5": 2.7
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": true
       },
       "pre": -12.3,
       "status": "ok",
@@ -941,13 +982,16 @@
       "headline": "電子部品のローム・太陽誘電・東レが上方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 2.5
+        "1": 2.5,
+        "5": 14.6
       },
       "excess": {
-        "1": 1.7
+        "1": 1.7,
+        "5": 11.1
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": 2,
       "status": "ok",
@@ -970,13 +1014,16 @@
       "headline": "参天製薬・全国保証・FUJIが自社株買いを発表（11/5）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 3.3
+        "1": 3.3,
+        "5": 4.1
       },
       "excess": {
-        "1": 2.6
+        "1": 2.6,
+        "5": 0.6
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": 8.7,
       "status": "ok",
@@ -999,13 +1046,16 @@
       "headline": "参天製薬・全国保証・FUJIが自社株買いを発表（11/5）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 0
+        "1": 0,
+        "5": 0.2
       },
       "excess": {
-        "1": -0.8
+        "1": -0.8,
+        "5": -3.2
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": false
       },
       "pre": 7.1,
       "status": "ok",
@@ -1028,13 +1078,16 @@
       "headline": "参天製薬・全国保証・FUJIが自社株買いを発表（11/5）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -2.9
+        "1": -2.9,
+        "5": 4
       },
       "excess": {
-        "1": -3.6
+        "1": -3.6,
+        "5": 0.5
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": true
       },
       "pre": -18,
       "status": "ok",
@@ -1057,13 +1110,16 @@
       "headline": "任天堂は7〜9月期が減益、住友林業は下方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 4.8
+        "1": 4.8,
+        "5": 6.8
       },
       "excess": {
-        "1": 4
+        "1": 4,
+        "5": 3.3
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": false
       },
       "pre": -1.8,
       "status": "ok",
@@ -1086,13 +1142,16 @@
       "headline": "任天堂は7〜9月期が減益、住友林業は下方修正（11/5発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 1.2
+        "1": 1.2,
+        "5": 0.5
       },
       "excess": {
-        "1": 0.5
+        "1": 0.5,
+        "5": -2.9
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": true
       },
       "pre": 0.8,
       "status": "ok",
@@ -1115,13 +1174,16 @@
       "headline": "電子部品・装置のニチコン・ウシオ電機・TOWAなどが上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -1.8
+        "1": -1.8,
+        "5": -0.9
       },
       "excess": {
-        "1": -2.5
+        "1": -2.5,
+        "5": -4.4
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": false
       },
       "pre": 2.2,
       "status": "ok",
@@ -1144,13 +1206,16 @@
       "headline": "電子部品・装置のニチコン・ウシオ電機・TOWAなどが上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 3.1
+        "1": 3.1,
+        "5": 15.4
       },
       "excess": {
-        "1": 2.4
+        "1": 2.4,
+        "5": 12
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": -5.6,
       "status": "ok",
@@ -1173,13 +1238,16 @@
       "headline": "電子部品・装置のニチコン・ウシオ電機・TOWAなどが上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 4.8
+        "1": 4.8,
+        "5": 10.1
       },
       "excess": {
-        "1": 4.1
+        "1": 4.1,
+        "5": 6.7
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": 6.6,
       "status": "ok",
@@ -1202,13 +1270,16 @@
       "headline": "電子部品・装置のニチコン・ウシオ電機・TOWAなどが上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -0.2
+        "1": -0.2,
+        "5": 13.4
       },
       "excess": {
-        "1": -1
+        "1": -1,
+        "5": 10
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": true
       },
       "pre": 9.1,
       "status": "ok",
@@ -1231,13 +1302,16 @@
       "headline": "電子部品・装置のニチコン・ウシオ電機・TOWAなどが上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 0.3
+        "1": 0.3,
+        "5": 8.7
       },
       "excess": {
-        "1": -0.5
+        "1": -0.5,
+        "5": 5.3
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": true
       },
       "pre": -3.1,
       "status": "ok",
@@ -1260,13 +1334,16 @@
       "headline": "ミネベアミツミ・島津製作所・関西ペイントが一転増益などへ上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 1.4
+        "1": 1.4,
+        "5": 11.3
       },
       "excess": {
-        "1": 0.7
+        "1": 0.7,
+        "5": 7.9
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": -6,
       "status": "ok",
@@ -1289,13 +1366,16 @@
       "headline": "ミネベアミツミ・島津製作所・関西ペイントが一転増益などへ上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -0.5
+        "1": -0.5,
+        "5": 0.6
       },
       "excess": {
-        "1": -1.3
+        "1": -1.3,
+        "5": -2.8
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": false
       },
       "pre": 2.9,
       "status": "ok",
@@ -1318,13 +1398,16 @@
       "headline": "ミネベアミツミ・島津製作所・関西ペイントが一転増益などへ上方修正（11/6発表）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 2.3
+        "1": 2.3,
+        "5": 4.8
       },
       "excess": {
-        "1": 1.5
+        "1": 1.5,
+        "5": 1.3
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": -6.4,
       "status": "ok",
@@ -1347,13 +1430,16 @@
       "headline": "地銀・リースでも上方修正（八十二長野銀行・みずほリース・セブン銀行）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": -0.2
+        "1": -0.2,
+        "5": 5
       },
       "excess": {
-        "1": -0.9
+        "1": -0.9,
+        "5": 1.5
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": true
       },
       "pre": -2.9,
       "status": "ok",
@@ -1376,13 +1462,16 @@
       "headline": "地銀・リースでも上方修正（八十二長野銀行・みずほリース・セブン銀行）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 1.6
+        "1": 1.6,
+        "5": 6.5
       },
       "excess": {
-        "1": 0.8
+        "1": 0.8,
+        "5": 3.1
       },
       "hit": {
-        "1": true
+        "1": true,
+        "5": true
       },
       "pre": 4.4,
       "status": "ok",
@@ -1405,13 +1494,16 @@
       "headline": "地銀・リースでも上方修正（八十二長野銀行・みずほリース・セブン銀行）",
       "entryDate": "2026-11-09",
       "ret": {
-        "1": 0.7
+        "1": 0.7,
+        "5": 1.7
       },
       "excess": {
-        "1": -0.1
+        "1": -0.1,
+        "5": -1.8
       },
       "hit": {
-        "1": false
+        "1": false,
+        "5": false
       },
       "pre": -1.1,
       "status": "ok",
@@ -2188,8 +2280,414 @@
       "disclosure": {
         "found": false
       }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "8309",
+      "name": "三井住友トラストグループ",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "三井住友トラストG、今期最終利益を11%上方修正・増配・最大500億円の自社株買い",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": 0.8
+      },
+      "excess": {
+        "1": 0.9
+      },
+      "hit": {
+        "1": true
+      },
+      "pre": 4.7,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": null,
+        "divForecastChg": 7.4
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "1605",
+      "name": "INPEX",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "INPEX・ゼンショー・シチズン・アマダが通期予想を上方修正（11/12発表）",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -0.5
+      },
+      "excess": {
+        "1": -0.4
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": 2,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": -1.6,
+        "divForecastChg": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "7550",
+      "name": "ゼンショーホールディングス",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "INPEX・ゼンショー・シチズン・アマダが通期予想を上方修正（11/12発表）",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": 3.1
+      },
+      "excess": {
+        "1": 3.2
+      },
+      "hit": {
+        "1": true
+      },
+      "pre": 1.1,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 3.4,
+        "divForecastChg": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "7762",
+      "name": "シチズン時計",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "INPEX・ゼンショー・シチズン・アマダが通期予想を上方修正（11/12発表）",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -8.4
+      },
+      "excess": {
+        "1": -8.3
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": 11.5,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 30.9,
+        "divForecastChg": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "6113",
+      "name": "アマダ",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "INPEX・ゼンショー・シチズン・アマダが通期予想を上方修正（11/12発表）",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -11.9
+      },
+      "excess": {
+        "1": -11.7
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": 20.5,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 20.8,
+        "divForecastChg": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "2269",
+      "name": "明治ホールディングス",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "明治HDとワコールHDが大型の自社株買い、ワコールは最終利益予想を78%上方修正",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -0.7
+      },
+      "excess": {
+        "1": -0.6
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": 5.4,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 0,
+        "divForecastChg": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "3591",
+      "name": "ワコールホールディングス",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "明治HDとワコールHDが大型の自社株買い、ワコールは最終利益予想を78%上方修正",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": 0
+      },
+      "excess": {
+        "1": 0.2
+      },
+      "hit": {
+        "1": true
+      },
+      "pre": 9.9,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 0,
+        "divForecastChg": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "6952",
+      "name": "カシオ計算機",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "カシオ・日本証券金融・日本マイクロニクスが上方修正と増配",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -1
+      },
+      "excess": {
+        "1": -0.9
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": -0.6,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 14.7,
+        "divForecastChg": null
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "8511",
+      "name": "日本証券金融",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "カシオ・日本証券金融・日本マイクロニクスが上方修正と増配",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -0.5
+      },
+      "excess": {
+        "1": -0.4
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": 9.3,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 3,
+        "opForecastChg": 19.4,
+        "divForecastChg": 19.1
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "6871",
+      "name": "日本マイクロニクス",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "カシオ・日本証券金融・日本マイクロニクスが上方修正と増配",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -2.9
+      },
+      "excess": {
+        "1": -2.8
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": 5.9,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 15,
+        "divForecastChg": 16.9
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "4543",
+      "name": "テルモ",
+      "direction": "-",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "悪材料：テルモ・住友ゴム・チェンジHDが下方修正（11/12発表）",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": 4
+      },
+      "excess": {
+        "1": 4.1
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": -8.5,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": -25.6,
+        "divForecastChg": 0
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "5110",
+      "name": "住友ゴム工業",
+      "direction": "-",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "悪材料：テルモ・住友ゴム・チェンジHDが下方修正（11/12発表）",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": 2.2
+      },
+      "excess": {
+        "1": 2.4
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": -7.4,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": -10.1,
+        "divForecastChg": -3.6
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "3962",
+      "name": "チェンジホールディングス",
+      "direction": "-",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "悪材料：テルモ・住友ゴム・チェンジHDが下方修正（11/12発表）",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -6.8
+      },
+      "excess": {
+        "1": -6.7
+      },
+      "hit": {
+        "1": true
+      },
+      "pre": -10.8,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": null,
+        "divForecastChg": null
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "eventDate": "2026-11-12",
+      "code": "1853",
+      "name": "森組",
+      "direction": "+",
+      "type": "企業発表",
+      "confidence": "中",
+      "horizon": "数日",
+      "headline": "TOB：旭化成ホームズが森組の完全子会社化へ、前日終値を5割超上回る価格",
+      "entryDate": "2026-11-13",
+      "ret": {
+        "1": -0.2
+      },
+      "excess": {
+        "1": -0.1
+      },
+      "hit": {
+        "1": false
+      },
+      "pre": 41.6,
+      "status": "ok",
+      "disclosure": {
+        "found": true,
+        "n": 1,
+        "opForecastChg": 24.1,
+        "divForecastChg": -100
+      }
     }
   ],
-  "lastPriceDate": "2026-11-12",
-  "newsFiles": 4
+  "lastPriceDate": "2026-11-13",
+  "newsFiles": 5
 }
