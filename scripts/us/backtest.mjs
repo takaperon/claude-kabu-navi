@@ -241,8 +241,54 @@ const randomBase = (() => {
   const st = (x) => { x.sort((p, q) => p - q); return { avg: Math.round((x.reduce((p, q) => p + q, 0) / x.length) * 10) / 10, p90: x[90] }; };
   return { name: '無作為に10銘柄を10日ごとに入れ替え×100回', train: st(res.train), test: st(res.test) };
 })();
+// ---------- 短期売買をいろいろな角度で（2026-11-14〜） ----------
+// 日足で測れるもの：寄り→引け（デイトレ）、引け→翌朝の寄り（夜だけ持つ）。1日最大10銘柄×10%
+function shortPort(byEntry, from, to) {
+  let eq = 1_000_000, peak = eq, maxDD = 0, trades = 0;
+  for (let d = from; d <= to; d++) {
+    const arr = byEntry.get(d); if (!arr) continue;
+    let ch = 0; for (const t of arr.slice(0, 10)) { ch += 0.1 * t.ret; trades++; }
+    eq *= 1 + ch; peak = Math.max(peak, eq); maxDD = Math.max(maxDD, 1 - eq / peak);
+  }
+  return { returnPct: Math.round((eq / 1e6 - 1) * 1000) / 10, maxDDPct: Math.round(maxDD * 1000) / 10, trades };
+}
+const shortTerm = {};
+function addShort(key, name, gen) {
+  const per = { train: [], test: [] }, byEntry = new Map();
+  for (const t of gen()) {
+    if (!Number.isFinite(t.ret)) continue;
+    per[t.d < split ? 'train' : 'test'].push(t.ret);
+    if (!byEntry.has(t.d)) byEntry.set(t.d, []);
+    byEntry.get(t.d).push(t);
+  }
+  for (const a of byEntry.values()) a.sort((x, y) => y.score - x.score);
+  shortTerm[key] = { name, train: summarize(per.train), test: summarize(per.test), portfolioTrain: shortPort(byEntry, 30, split - 1), portfolioTest: shortPort(byEntry, split, D - 1) };
+}
+const oc = (s, k) => (s.C[k] * (1 - SLIP)) / (s.O[k] * (1 + SLIP)) - 1;           // 寄り→引け
+const co = (s, k) => (s.O[k + 1] * (1 - SLIP)) / (s.C[k] * (1 + SLIP)) - 1;       // 引け→翌朝の寄り
+const reactEvents = () => EV.react5.map((e) => ({ ...e, k: e.sig }));             // k = 反応日
+addShort('react10_next_dt', '決算で+10%上がった翌日にデイトレ', () => EV.react10.filter((e) => e.entry < D).map((e) => ({ i: e.i, d: e.entry, score: e.score, ret: oc(S[e.i], e.entry) })));
+addShort('react10_overnight', '決算で+10%上がった日の引けで買い、翌朝の寄りで売る（夜だけ持つ）', () => EV.react10.filter((e) => e.sig + 1 < D).map((e) => ({ i: e.i, d: e.sig, score: e.score, ret: co(S[e.i], e.sig) })));
+addShort('react5_overnight', '決算で+5%上がった日の引けで買い、翌朝の寄りで売る', () => reactEvents().filter((e) => e.k + 1 < D).map((e) => ({ i: e.i, d: e.k, score: e.score, ret: co(S[e.i], e.k) })));
+// 決算の当日、大きく安く始まった銘柄を寄りで買い引けで売る（行き過ぎの戻り狙い）
+const reactDayGap = (cond) => () => {
+  const o = [];
+  for (const e of EV.earn_all) { const s = S[e.i], k = e.entry; if (!(k < D)) continue; const g = s.O[k] / s.C[k - 1] - 1; if (cond(g)) o.push({ i: e.i, d: k, score: Math.abs(g), ret: oc(s, k) }); }
+  return o;
+};
+addShort('earn_gapdown5_dt', '決算の当日に-5%以上安く始まった銘柄をデイトレ（戻り狙い）', reactDayGap((g) => g <= -0.05));
+addShort('earn_gapup5_dt', '決算の当日に+5%以上高く始まった銘柄をデイトレ（勢い狙い）', reactDayGap((g) => g >= 0.05));
+addShort('earn_gapdown10_dt', '決算の当日に-10%以上安く始まった銘柄をデイトレ', reactDayGap((g) => g <= -0.1));
+// 比較：何もない日も含めて、全銘柄を毎日 寄り→引け／引け→翌朝 で持った場合（無作為10銘柄）
+addShort('all_dt', '比較：無作為に10銘柄をデイトレ', () => { const o = []; for (let d = 30; d < D; d++) for (let n = 0; n < 10; n++) { const i = Math.floor(rand() * N); o.push({ i, d, score: rand(), ret: oc(S[i], d) }); } return o; });
+addShort('all_overnight', '比較：無作為に10銘柄を夜だけ持つ', () => { const o = []; for (let d = 30; d < D - 1; d++) for (let n = 0; n < 10; n++) { const i = Math.floor(rand() * N); o.push({ i, d, score: rand(), ret: co(S[i], d) }); } return o; });
+// SPY自体の、昼（寄り→引け）と夜（引け→翌朝）の合計（滑りなし）
+const spyIntraday = (() => { let a = 1, b = 1; for (let k = 30; k < D - 1; k++) { a *= spy[k][4] / spy[k][1]; b *= spy[k + 1][1] / spy[k][4]; } return { dayPct: Math.round((a - 1) * 1000) / 10, nightPct: Math.round((b - 1) * 1000) / 10 }; })();
+
 const out = {
   ok: true,
+  shortTerm,
+  spyIntraday,
   generatedAt: new Date().toISOString(),
   universe: N,
   days: D,
