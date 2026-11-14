@@ -164,11 +164,13 @@ function summarize(rets) {
   return { n, winRate: r4(w.length / n), avgRet: r4(rets.reduce((a, b) => a + b, 0) / n), profitFactor: gl > 0 ? Math.round((gw / gl) * 100) / 100 : null };
 }
 // 資金：最大10銘柄・各10%
-function portfolio(byEntry, from, to) {
+function portfolio(byEntry, from, to, idleSpy = false) {
   let cash = 1_000_000, peak = cash, maxDD = 0, trades = 0;
   const pos = [];
   const yearly = {}; let yName = null, yStart = cash;
   for (let d = from; d <= to; d++) {
+    // 空いている資金をS&P500（SPY）に置いておく場合：その日のSPYの値動きぶん増減（売買は端株・手数料0の前提）
+    if (idleSpy && d > from && spy[d][4] > 0 && spy[d - 1][4] > 0) cash *= spy[d][4] / spy[d - 1][4];
     const eqNow = () => cash + pos.reduce((a, p) => a + p.size * (S[p.i].C[d] > 0 ? S[p.i].C[d] / p.px : 1), 0);
     for (const c of byEntry.get(d) ?? []) {
       if (pos.length >= 10) break;
@@ -213,6 +215,7 @@ for (const [sk, st] of Object.entries(STRATS)) {
     results[sk].exits[ek] = {
       name: ex.name, train: summarize(per.train), test: summarize(per.test),
       portfolioTrain: portfolio(byEntry, 30, split - 1), portfolioTest: portfolio(byEntry, split, D - 1),
+      idleSpyTrain: portfolio(byEntry, 30, split - 1, true), idleSpyTest: portfolio(byEntry, split, D - 1, true),
     };
   }
 }
