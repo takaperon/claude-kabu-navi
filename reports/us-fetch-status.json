@@ -1,19 +1,19 @@
 {
-  "startedAt": "2026-11-13T22:54:03.984Z",
+  "startedAt": "2026-11-14T05:02:44.427Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
-    "requests": 250,
-    "updated": 216,
+    "requests": 255,
+    "updated": 226,
     "failed": 3,
-    "limitHits": 4,
+    "limitHits": 5,
     "lastError": "429 {\"detail\":\"Error: You have run over your hourly request allocation. Please upgrade at https://api.tiingo.com/pricing to have your limits increased.\"}",
-    "needed": 246
+    "needed": 287
   },
   "sec": {
-    "requests": 1004,
-    "submissions": 502,
-    "facts": 502,
+    "requests": 0,
+    "submissions": 0,
+    "facts": 0,
     "failed": 0,
     "lastError": null,
     "probe": [
@@ -27,14 +27,14 @@
   "av": {
     "keyPresent": true,
     "requests": 25,
-    "stored": 203,
-    "failed": 0,
+    "stored": 227,
+    "failed": 1,
     "limitHit": true,
-    "lastError": "We have detected your API key as *** and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https:",
-    "needed": 323
+    "lastError": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the p",
+    "needed": 299
   },
-  "stoppedBy": "done",
-  "finishedAt": "2026-11-14T03:11:43.552Z",
+  "stoppedBy": "tiingo-limit",
+  "finishedAt": "2026-11-14T09:16:50.762Z",
   "pricesStored": 500,
   "secStored": 502
 }
