@@ -1,6 +1,212 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-14T05:15:30.493Z",
+  "shortTerm": {
+    "react10_next_dt": {
+      "name": "決算で+10%上がった翌日にデイトレ",
+      "train": {
+        "n": 183,
+        "winRate": 0.5137,
+        "avgRet": 0.0024,
+        "profitFactor": 1.23
+      },
+      "test": {
+        "n": 190,
+        "winRate": 0.5,
+        "avgRet": 0.003,
+        "profitFactor": 1.23
+      },
+      "portfolioTrain": {
+        "returnPct": 4.4,
+        "maxDDPct": 2.5,
+        "trades": 183
+      },
+      "portfolioTest": {
+        "returnPct": 5.6,
+        "maxDDPct": 3.3,
+        "trades": 190
+      }
+    },
+    "react10_overnight": {
+      "name": "決算で+10%上がった日の引けで買い、翌朝の寄りで売る（夜だけ持つ）",
+      "train": {
+        "n": 183,
+        "winRate": 0.4044,
+        "avgRet": -0.0018,
+        "profitFactor": 0.71
+      },
+      "test": {
+        "n": 190,
+        "winRate": 0.4579,
+        "avgRet": -0.0012,
+        "profitFactor": 0.82
+      },
+      "portfolioTrain": {
+        "returnPct": -3.3,
+        "maxDDPct": 4.2,
+        "trades": 183
+      },
+      "portfolioTest": {
+        "returnPct": -2.3,
+        "maxDDPct": 3.8,
+        "trades": 190
+      }
+    },
+    "react5_overnight": {
+      "name": "決算で+5%上がった日の引けで買い、翌朝の寄りで売る",
+      "train": {
+        "n": 598,
+        "winRate": 0.4281,
+        "avgRet": -0.0011,
+        "profitFactor": 0.79
+      },
+      "test": {
+        "n": 499,
+        "winRate": 0.4289,
+        "avgRet": -0.0021,
+        "profitFactor": 0.67
+      },
+      "portfolioTrain": {
+        "returnPct": -6.6,
+        "maxDDPct": 8.3,
+        "trades": 589
+      },
+      "portfolioTest": {
+        "returnPct": -9.4,
+        "maxDDPct": 11,
+        "trades": 497
+      }
+    },
+    "earn_gapdown5_dt": {
+      "name": "決算の当日に-5%以上安く始まった銘柄をデイトレ（戻り狙い）",
+      "train": {
+        "n": 312,
+        "winRate": 0.4551,
+        "avgRet": -0.0016,
+        "profitFactor": 0.91
+      },
+      "test": {
+        "n": 369,
+        "winRate": 0.458,
+        "avgRet": -0.0033,
+        "profitFactor": 0.84
+      },
+      "portfolioTrain": {
+        "returnPct": -5.2,
+        "maxDDPct": 9.1,
+        "trades": 312
+      },
+      "portfolioTest": {
+        "returnPct": -12,
+        "maxDDPct": 17.9,
+        "trades": 369
+      }
+    },
+    "earn_gapup5_dt": {
+      "name": "決算の当日に+5%以上高く始まった銘柄をデイトレ（勢い狙い）",
+      "train": {
+        "n": 395,
+        "winRate": 0.4354,
+        "avgRet": -0.0039,
+        "profitFactor": 0.8
+      },
+      "test": {
+        "n": 344,
+        "winRate": 0.4971,
+        "avgRet": 0.0038,
+        "profitFactor": 1.23
+      },
+      "portfolioTrain": {
+        "returnPct": -14.6,
+        "maxDDPct": 15.3,
+        "trades": 395
+      },
+      "portfolioTest": {
+        "returnPct": 13.6,
+        "maxDDPct": 5.2,
+        "trades": 344
+      }
+    },
+    "earn_gapdown10_dt": {
+      "name": "決算の当日に-10%以上安く始まった銘柄をデイトレ",
+      "train": {
+        "n": 92,
+        "winRate": 0.5,
+        "avgRet": 0.004,
+        "profitFactor": 1.22
+      },
+      "test": {
+        "n": 114,
+        "winRate": 0.4737,
+        "avgRet": -0.0001,
+        "profitFactor": 1
+      },
+      "portfolioTrain": {
+        "returnPct": 3.7,
+        "maxDDPct": 2.7,
+        "trades": 92
+      },
+      "portfolioTest": {
+        "returnPct": -0.3,
+        "maxDDPct": 6.9,
+        "trades": 114
+      }
+    },
+    "all_dt": {
+      "name": "比較：無作為に10銘柄をデイトレ",
+      "train": {
+        "n": 8334,
+        "winRate": 0.4432,
+        "avgRet": -0.002,
+        "profitFactor": 0.72
+      },
+      "test": {
+        "n": 5866,
+        "winRate": 0.4605,
+        "avgRet": -0.0015,
+        "profitFactor": 0.79
+      },
+      "portfolioTrain": {
+        "returnPct": -82.1,
+        "maxDDPct": 82.4,
+        "trades": 8334
+      },
+      "portfolioTest": {
+        "returnPct": -60.5,
+        "maxDDPct": 61,
+        "trades": 5866
+      }
+    },
+    "all_overnight": {
+      "name": "比較：無作為に10銘柄を夜だけ持つ",
+      "train": {
+        "n": 8344,
+        "winRate": 0.4004,
+        "avgRet": -0.0017,
+        "profitFactor": 0.61
+      },
+      "test": {
+        "n": 5853,
+        "winRate": 0.4032,
+        "avgRet": -0.0013,
+        "profitFactor": 0.71
+      },
+      "portfolioTrain": {
+        "returnPct": -76.2,
+        "maxDDPct": 76.2,
+        "trades": 8344
+      },
+      "portfolioTest": {
+        "returnPct": -54.6,
+        "maxDDPct": 56.5,
+        "trades": 5853
+      }
+    }
+  },
+  "spyIntraday": {
+    "dayPct": 32.2,
+    "nightPct": 53.8
+  },
+  "generatedAt": "2026-11-14T05:30:35.010Z",
   "universe": 470,
   "days": 1469,
   "periods": {
