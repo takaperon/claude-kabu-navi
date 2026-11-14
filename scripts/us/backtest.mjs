@@ -52,7 +52,7 @@ const firstIdxOnOrAfter = (d) => { let lo = 0, hi = D; while (lo < hi) { const m
 
 // ---------- イベント ----------
 // entry = 買う日のインデックス（その日の始値）。sig = その前の営業日（シグナル日）
-const EV = { eps_up: [], eps_up_rev: [], eps_down: [], earn_all: [], div_up: [], av_all: [], sup5: [], sup10: [], sup5_rev: [], miss5: [] };
+const EV = { react5: [], react10: [], react5_eps: [], reactneg5: [], eps_up: [], eps_up_rev: [], eps_down: [], earn_all: [], div_up: [], av_all: [], sup5: [], sup10: [], sup5_rev: [], miss5: [] };
 function yoy(series, end) {
   // 同じ四半期の1年前（end の 330〜400日前）
   const cur = series.find((x) => x.end === end);
@@ -75,6 +75,18 @@ for (let i = 0; i < N; i++) {
     const t = Date.parse(day);
     const q = s.sec.eps.filter((x) => { const g = (t - Date.parse(x.end)) / 864e5; return g >= 0 && g <= 120; }).at(-1);
     EV.earn_all.push({ i, sig, entry, score: rand() });
+    // 決算への市場の反応（2026-11-14〜）：発表後はじめての取引日の値動き（前日終値→その日の終値）。
+    // 予想データがなくても「市場がサプライズと受け取ったか」が分かる。反応の翌営業日の始値で買う
+    const re = s.C[entry] / s.C[entry - 1] - 1;
+    const rx = { i, sig: entry, entry: entry + 1, score: re };
+    let epsG = null;
+    if (q) { const e0 = yoy(s.sec.eps, q.end); if (e0 && e0.prev > 0) epsG = e0.cur / e0.prev - 1; }
+    if (entry + 1 < D && Number.isFinite(re)) {
+      if (re >= 0.05) EV.react5.push(rx);
+      if (re >= 0.1) EV.react10.push(rx);
+      if (re >= 0.05 && epsG != null && epsG >= 0.2) EV.react5_eps.push(rx);
+      if (re <= -0.05) EV.reactneg5.push({ ...rx, score: -re });
+    }
     if (!q) continue;
     const e = yoy(s.sec.eps, q.end);
     if (!e || !(e.prev > 0)) continue;
@@ -114,6 +126,11 @@ const trend = (e) => S[e.i].C[e.sig] > sma(S[e.i].C, e.sig, 50);
 const gapUp = (e) => S[e.i].O[e.entry] > S[e.i].C[e.sig];
 const STRATS = {
   earn_all: { name: '比較用：決算発表すべて', ev: () => EV.earn_all },
+  react5: { name: '決算の翌日に+5%以上上がった→次の朝に買う', ev: () => EV.react5 },
+  react10: { name: '決算の翌日に+10%以上上がった→次の朝に買う', ev: () => EV.react10 },
+  react5_eps: { name: '決算で+5%以上上がり＋EPSが前年比+20%以上', ev: () => EV.react5_eps },
+  react5_trend: { name: '決算で+5%以上上がり＋株価が50日線より上', ev: () => EV.react5.filter(trend) },
+  reactneg5: { name: '参考：決算の翌日に-5%以上下がった→買う（反発狙い）', ev: () => EV.reactneg5 },
   eps_up: { name: 'EPSが前年同期比+20%以上', ev: () => EV.eps_up },
   eps_up_trend: { name: 'EPS+20%以上＋株価が50日線より上', ev: () => EV.eps_up.filter(trend) },
   eps_up_rev: { name: 'EPS+20%以上＋売上+10%以上', ev: () => EV.eps_up_rev },
