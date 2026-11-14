@@ -38,8 +38,12 @@ const writeStatus = () => {
   status.pricesStored = fs.readdirSync(path.join(DATA, 'prices')).length;
   status.secStored = fs.readdirSync(path.join(DATA, 'sec')).length;
   status.av.stored = fs.readdirSync(path.join(DATA, 'av')).length;
-  fs.writeFileSync(path.join(OUT, 'us-fetch-status.json'), JSON.stringify(status, null, 2));
-  console.log(JSON.stringify(status));
+  // 公開されるので、秘密の値（APIキー・メール）と「API key as ○○」のような文字列は必ず伏せる（2026-11-14 漏えいの修正）
+  let text = JSON.stringify(status, null, 2);
+  for (const v of [process.env.TIINGO_API_KEY, process.env.ALPHAVANTAGE_API_KEY, process.env.SEC_CONTACT_EMAIL]) if (v && v.length > 3) text = text.split(v).join('***');
+  text = text.replace(/(api ?key( is| as)?:?\s*)[A-Za-z0-9_-]{6,}/gi, '$1***').replace(/[\w.+-]+@[\w-]+\.[\w.]+/g, '***@***');
+  fs.writeFileSync(path.join(OUT, 'us-fetch-status.json'), text);
+  console.log(text.replace(/\s+/g, ' '));
 };
 
 // ---------- 銘柄一覧（WikipediaのS&P500構成銘柄表。ティッカーとCIK） ----------
