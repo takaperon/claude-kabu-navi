@@ -254,6 +254,8 @@ if (!KEY) {
     const from = fullRefetch ? FROM : x.last;
     let rows = await tiingoDaily(x.u.t, from);
     if (rows === 'limit' && /month/i.test(status.tiingo.lastError ?? '')) { status.stoppedBy = 'tiingo-monthly-symbols'; break; } // 月500銘柄の上限は待っても戻らない
+    // 持っている銘柄の更新だけなら、上限に当たったら待たずに次回へ（検証は数日古くても困らない。実行を長引かせない）
+    if (rows === 'limit' && need.every((y) => y.rows)) { status.stoppedBy = 'tiingo-limit-later'; break; }
     if (rows === 'limit') {
       if (minutes() + 62 > MAX_MIN) { status.stoppedBy = 'tiingo-limit'; break; }
       await sleep(61 * 60000);
