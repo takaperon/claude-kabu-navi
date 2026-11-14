@@ -244,6 +244,38 @@ const randomBase = (() => {
   const st = (x) => { x.sort((p, q) => p - q); return { avg: Math.round((x.reduce((p, q) => p + q, 0) / x.length) * 10) / 10, p90: x[90] }; };
   return { name: '無作為に10銘柄を10日ごとに入れ替え×100回', train: st(res.train), test: st(res.test) };
 })();
+// ---------- 仮想売買で使う設定を自動で選ぶ（2026-11-14〜。オーナーの指示「最適解を導き出すのも株ナビの仕事」） ----------
+// 候補：決算の反応のしきい値 × 保有日数 × 空き資金の置き方。
+// 条件：前半・後半とも S&P500 を上回り、途中の最大の減りが両方30%以内。その中で「前半と後半の年率の低い方」が一番大きいもの（たまたま片方だけ良いものを選ばない）
+const spyTr = spyRet(30, split - 1), spyTe = spyRet(split, D - 1);
+const cagr = (p, a, b) => Math.round((Math.pow(1 + p.returnPct / 100, 252 / (b - a + 1)) - 1) * 1000) / 10;
+const candidates = [];
+for (const th of [0.05, 0.07, 0.1, 0.15]) {
+  for (const hold of [5, 10, 20, 40]) {
+    const byEntry = new Map(), seen = new Set();
+    for (const e of EV.react5) {
+      if (e.score < th) continue;
+      const key = e.i * D + e.entry; if (seen.has(key)) continue; seen.add(key);
+      if (!(S[e.i].RC[e.sig] >= 5)) continue;
+      const t = trade(e, { hold }); if (!t) continue;
+      if (!byEntry.has(e.entry)) byEntry.set(e.entry, []);
+      byEntry.get(e.entry).push({ i: e.i, score: e.score, ...t });
+    }
+    for (const a of byEntry.values()) a.sort((x, y) => y.score - x.score);
+    for (const idle of ['cash', 'trend', 'spy']) {
+      const mode = idle === 'cash' ? false : idle === 'spy' ? true : 'trend';
+      const tr = portfolio(byEntry, 30, split - 1, mode), te = portfolio(byEntry, split, D - 1, mode);
+      const c = { react: th, hold, idle, trainPct: tr.returnPct, testPct: te.returnPct, trainCagr: cagr(tr, 30, split - 1), testCagr: cagr(te, split, D - 1), maxDD: Math.max(tr.maxDDPct, te.maxDDPct), trades: tr.trades + te.trades };
+      c.ok = c.maxDD <= 30 && c.trainPct > spyTr && c.testPct > spyTe;
+      c.score = Math.min(c.trainCagr, c.testCagr);
+      candidates.push(c);
+    }
+  }
+}
+candidates.sort((a, b) => (b.ok - a.ok) || (b.score - a.score) || (a.maxDD - b.maxDD));
+const choice = candidates[0]?.ok ? { ...candidates[0], chosenAt: new Date().toISOString(), rule: '前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの' } : null;
+if (choice) fs.writeFileSync(path.join(DATA, 'choice.json'), JSON.stringify(choice));
+
 // ---------- 短期売買をいろいろな角度で（2026-11-14〜） ----------
 // 日足で測れるもの：寄り→引け（デイトレ）、引け→翌朝の寄り（夜だけ持つ）。1日最大10銘柄×10%
 function shortPort(byEntry, from, to) {
@@ -290,6 +322,8 @@ const spyIntraday = (() => { let a = 1, b = 1; for (let k = 30; k < D - 1; k++) 
 
 const out = {
   ok: true,
+  choice,
+  candidates: candidates.slice(0, 15),
   shortTerm,
   spyIntraday,
   generatedAt: new Date().toISOString(),

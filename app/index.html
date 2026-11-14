@@ -269,12 +269,13 @@ section[hidden]{display:none}
         <div class="gain num" id="us-gain">—</div>
         <div class="sub num" id="us-sub"></div>
         <div class="chart" id="us-chart"></div>
-        <div class="note">決算の翌日に+10%以上上がった株を次の夜に買い、20日持つルールの仮想売買です。空いているお金はS&P500に置いておく計算です。税金は引いてあり、為替の影響は入っていません。</div>
+        <div class="note" id="us-rule"></div>
+        <div class="note">ルールは、過去5年の検証で一番安定して増えた組み合わせを、株ナビが毎朝自動で選び直しています。税金は引いてあり、為替の影響は入っていません。</div>
       </div>
     </div>
     <div class="say" id="us-say"></div>
     <div class="trio" id="us-trio"></div>
-    <h2>最近の決算の反応<small>+10%以上なら買い</small></h2>
+    <h2>最近の決算の反応<small>条件を超えたら買い</small></h2>
     <div id="us-react"></div>
     <button class="more" data-us="1">このルールの説明</button>
   </section>
@@ -544,13 +545,16 @@ function openRule(k) {
 function openUS() {
   const U = usPaper;
   const rr = (U.recentReactions ?? []).slice(0, 8).map((x) => `<li><span>${esc(x.name)}<small>${esc(x.t)}・${md(x.date)}</small></span><span class="num ${cls(x.rePct)}">${sign(x.rePct)}%</span></li>`).join('');
-  openSheet('米国株：決算の反応で買う', `<p>アメリカの大企業（S&P500）が決算を発表したあと、最初の取引日に株価が+10%以上上がったら、市場が「予想よりずっと良かった」と受け取ったサインと見て、次の取引日の寄り付きで買います。20取引日（約1か月）たったら売ります。</p>
-    <p>買う機会は月に数回なので、待っている間のお金はS&P500に置いておき、市場全体の上昇も取ります。ウィブルは米国株を1ドル単位で買えるので、30万円でもこの通りにできます。</p>
-    <p style="font-size:14px;color:var(--muted)">過去5年の検証（全496社）では、前半+139%・後半+71%で、同じ期間のS&P500（+49%・+36%）を上回りました。為替の影響と手数料は入っていません。</p>
+  openSheet('米国株：決算の反応で買う', `<p>アメリカの大企業（S&P500）が決算を発表したあと、最初の取引日に株価が+${usTh()}%以上上がったら、市場が「予想よりずっと良かった」と受け取ったサインと見て、次の取引日の寄り付きで買います。${usHold()}取引日たったら売ります。</p>
+    <p>買う機会は月に数回です。${usIdleText()}設定です。ウィブルは米国株を1ドル単位で買えるので、30万円でもこの通りにできます。</p>
+    <p style="font-size:14px;color:var(--muted)">この設定は、しきい値（+5〜15%）×持つ日数（5〜40日）×空いているお金の置き方（3通り）の48通りを過去5年で試し、「前半・後半ともS&P500を上回り、途中の最大の減りが30%以内」の中で、悪い方の半分でも一番増えたものを自動で選んでいます。</p>
     ${rr ? `<p style="font-size:14px;margin-bottom:4px"><b>最近の決算の反応</b></p><div class="real" style="box-shadow:none;padding:0;margin:0;border:none"><ul>${rr}</ul></div>` : ''}`);
 }
 
 // ---------- 米国株 ----------
+const usTh = () => Math.round((usPaper?.settings?.react ?? 0.1) * 100);
+const usHold = () => usPaper?.settings?.hold ?? 20;
+const usIdleText = () => ({ spy: '空いているお金はS&P500に置いておく', trend: '空いているお金は、S&P500が上向きの時だけS&P500に置き、下向きの時は現金にする', cash: '空いているお金は現金のまま' })[usPaper?.settings?.idle ?? 'spy'];
 function usTradingDays() { return (usPaper?.equityHistory?.length ?? 1) - 1; }
 function renderUS() {
   const U = usPaper;
@@ -567,7 +571,8 @@ function renderUS() {
   let say = `<b>${md(day)}（${wd(day)}）</b>のアメリカ市場では、`;
   say += bought.length || sold.length ? `${bought.length ? `${bought.length}銘柄を買い` : ''}${sold.length ? `${bought.length ? '、' : ''}${sold.length}銘柄を売りました` : 'ました'}。` : '売り買いはありませんでした。';
   say += U.nextBuys.length ? `今夜は<b>${U.nextBuys.length}銘柄</b>を買う予定です。` : '今夜買う予定の銘柄はありません。';
-  say += ` 資金の<b>${Math.round(U.idleInSpyPct)}%</b>はS&P500に置いています。`;
+  say += U.idleInSpyPct > 0 ? ` 資金の<b>${Math.round(U.idleInSpyPct)}%</b>はS&P500に置いています。` : ` 資金の<b>${Math.round(U.idlePct ?? 0)}%</b>は現金で待機しています。`;
+  $('us-rule').innerHTML = `いまのルール：決算の翌日に<b>+${usTh()}%以上</b>上がった株を次の夜に買い、<b>${usHold()}取引日</b>持つ。${usIdleText()}。`;
   $('us-say').innerHTML = say;
   const wins = U.recentClosed.filter((c) => c.retPct > 0).length;
   const avgU = U.holdings.length ? U.holdings.reduce((a, h) => a + h.unrealPct, 0) / U.holdings.length : 0;
@@ -578,7 +583,7 @@ function renderUS() {
   const rr = (U.recentReactions ?? []).slice(0, 12);
   $('us-react').innerHTML = rr.length ? `<ul class="stocks">${rr.map((x) => `<li><div class="srow"><div>
       <div class="nm">${esc(x.name)}<span class="cd">${esc(x.t)}</span></div>
-      <div class="when">${md(x.date)}の反応${x.rePct >= 10 ? '・買いの条件に合格' : ''}</div></div>
+      <div class="when">${md(x.date)}の反応${x.rePct >= usTh() ? '・買いの条件に合格' : ''}</div></div>
       <div class="badge num ${cls(x.rePct)}">${sign(x.rePct)}%</div></div></li>`).join('')}</ul>`
     : '<p class="empty">ここ数日、決算を出した会社はありません。</p>';
   renderUSStocks(); renderUSTests();
@@ -594,7 +599,7 @@ function renderUSStocks() {
     $('us-stocks-lead').innerHTML = U.nextBuys.length ? '日本時間の今夜23:30（アメリカの取引開始）に、仮想で買います。' : '';
     $('us-stocks').innerHTML = U.nextBuys.length ? `<ul class="stocks">${U.nextBuys.map((b) => row(b.name, b.t, esc(b.reason))).join('')}</ul>` : '<p class="empty">いまは条件に合う決算がありません。決算シーズン（1・4・7・10月の中旬〜翌月）に増えます。</p>';
   } else if (useg === 'hold') {
-    $('us-stocks-lead').innerHTML = U.holdings.length ? `買った値段からの${term('含み益')}です。20取引日たったら、その日の終値で売ります。` : '';
+    $('us-stocks-lead').innerHTML = U.holdings.length ? `買った値段からの${term('含み益')}です。${usHold()}取引日たったら、その日の終値で売ります。` : '';
     $('us-stocks').innerHTML = U.holdings.length ? `<ul class="stocks">${U.holdings.slice().sort((a, b) => b.unrealPct - a.unrealPct).map((h) => row(h.name, h.t, `${md(h.entryDate)}に買った・あと${h.daysLeft}取引日で売る`, `<div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</div>`)).join('')}</ul>` : '<p class="empty">いまは個別株を持っていません。資金は全部S&P500に置いている計算です。</p>';
   } else {
     $('us-stocks-lead').innerHTML = sold.length ? '1回ごとの損益は、税金を引く前の数字です。' : '';
@@ -610,10 +615,15 @@ function renderUSTests() {
     <div><span>後半（〜${B.periods.test[1].slice(0, 4)}）</span><b class="num ${cls(b)}">${sign(b)}<small>%</small></b></div></div>
     ${note ? `<div class="dd">${note}</div>` : ''}</div>`;
   let h = '';
-  if (r) h += card('いまのルール：決算で+10%→20日持つ＋空きはS&P500', r.idleSpyTrain.returnPct, r.idleSpyTest.returnPct, `途中の${term('最大の減り')}：${Math.max(r.idleSpyTrain.maxDDPct, r.idleSpyTest.maxDDPct)}%・1回あたり平均 ${sign(r.train.avgRet * 100, 2)}%／${sign(r.test.avgRet * 100, 2)}%`, 'var(--c-earn)');
+  if (r && !B.choice) h += card('決算で+10%→20日持つ＋空きはS&P500', r.idleSpyTrain.returnPct, r.idleSpyTest.returnPct, `途中の${term('最大の減り')}：${Math.max(r.idleSpyTrain.maxDDPct, r.idleSpyTest.maxDDPct)}%・1回あたり平均 ${sign(r.train.avgRet * 100, 2)}%／${sign(r.test.avgRet * 100, 2)}%`, 'var(--c-earn)');
   h += card('比較：S&P500をただ持つ', B.spy.trainPct, B.spy.testPct, '', 'var(--muted)');
-  if (r) h += card('同じルールで、空いているお金は現金のまま', r.portfolioTrain.returnPct, r.portfolioTest.returnPct, '', 'var(--c-earn)');
+  if (r && !B.choice) h += card('同じルールで、空いているお金は現金のまま', r.portfolioTrain.returnPct, r.portfolioTest.returnPct, '', 'var(--c-earn)');
   if (all) h += card('比較：決算を出した株を全部買う（20日）', all.portfolioTrain.returnPct, all.portfolioTest.returnPct, `1回あたり平均 ${sign(all.train.avgRet * 100, 2)}%／${sign(all.test.avgRet * 100, 2)}%`, 'var(--muted)');
+  if (B.choice) {
+    const c = B.choice, idl = { spy: 'S&P500に置く', trend: '上向きの時だけS&P500', cash: '現金' };
+    h = card(`株ナビが選んだ設定：+${Math.round(c.react * 100)}%以上・${c.hold}日・空きは${idl[c.idle]}`, c.trainPct, c.testPct, `年率 ${sign(c.trainCagr)}%／${sign(c.testCagr)}%・途中の${term('最大の減り')} ${c.maxDD}%`, 'var(--gold)') + h;
+    h += `<h2>試した組み合わせ（上位）</h2><ul class="stocks">${(B.candidates || []).slice(0, 8).map((x) => `<li><div class="srow"><div><div class="nm" style="font-size:14px">+${Math.round(x.react * 100)}%以上・${x.hold}日・空きは${idl[x.idle]}</div><div class="when">年率 ${sign(x.trainCagr)}%／${sign(x.testCagr)}%・最大の減り ${x.maxDD}%${x.ok ? '' : '・条件外'}</div></div><div class="badge num ${cls(x.score)}">${sign(x.score)}%<small>悪い方の年率</small></div></div></li>`).join('')}</ul>`;
+  }
   h += `<div class="callout">米国株のデイトレ（寄りで買って引けで売る）は、8通り試してどれもほぼ勝てませんでした。米国株の上昇の多くは夜の間（取引していない時間）に起きているためです。</div>`;
   $('us-tests').innerHTML = h;
 }

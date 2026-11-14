@@ -15,7 +15,10 @@ const OUT = args.out ?? 'reports-out';
 const SLIP = 0.001;
 const START = 300_000; // 円換算の元手（為替は考えない）
 const TAX = 0.20315;
-const HOLD = 20, REACT = 0.10, MAXN = 10, MIN_PX = 5;
+// 設定は検証（backtest.mjs）が自動で選んだもの（data-us/choice.json）を使う。無ければ既定値
+const choiceF = path.join(DATA, 'choice.json');
+const CH = fs.existsSync(choiceF) ? JSON.parse(fs.readFileSync(choiceF, 'utf8')) : null;
+const HOLD = CH?.hold ?? 20, REACT = CH?.react ?? 0.10, IDLE = CH?.idle ?? 'spy', MAXN = 10, MIN_PX = 5;
 fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(path.join(DATA, 'paper'), { recursive: true });
 
@@ -40,6 +43,7 @@ function px(t) {
   }
   return P.get(t);
 }
+const ma200 = (k) => { if (k < 199) return Infinity; let t = 0; for (let j = k - 199; j <= k; j++) t += spy[j][4]; return t / 200; };
 const firstIdxOnOrAfter = (d) => { let lo = 0, hi = D; while (lo < hi) { const m = (lo + hi) >> 1; if (dates[m] >= d) hi = m; else lo = m + 1; } return lo < D ? lo : null; };
 
 // 決算への反応（バックテストと同じ定義）。反応日 = 9:30前の発表は当日、それ以降は翌取引日
@@ -80,7 +84,9 @@ for (const T of newDates) {
   const k = di.get(T);
   // 空いているお金はSPYに置いている：前日終値→当日終値のSPYの動きで増減
   const s0 = spy[k - 1]?.[4], s1 = spy[k][4];
-  if (s0 > 0 && s1 > 0) st.cash *= s1 / s0;
+  const inSpy = IDLE === 'spy' || (IDLE === 'trend' && s0 > ma200(k - 1));
+  if (inSpy && s0 > 0 && s1 > 0) st.cash *= s1 / s0;
+  st.idleNow = inSpy ? 'spy' : 'cash';
   // 始値で購入（スコア＝反応の大きい順）
   const eq = st.cash + st.positions.reduce((a, p) => a + p.size, 0);
   for (const pd of st.pending.sort((a, b) => b.re - a.re)) {
@@ -91,7 +97,7 @@ for (const T of newDates) {
     const size = Math.min(st.cash, eq * 0.1);
     if (size < eq * 0.05) break;
     st.cash -= size;
-    st.positions.push({ t: pd.t, name: pd.name, reason: pd.reason, entryDate: T, entryPx: o * (1 + SLIP), size, held: 0, lastPx: null });
+    st.positions.push({ t: pd.t, name: pd.name, reason: pd.reason, entryDate: T, entryPx: o * (1 + SLIP), size, held: 0, hold: HOLD, lastPx: null });
   }
   st.pending = [];
   // 20取引日目の終値で売却
@@ -101,7 +107,7 @@ for (const T of newDates) {
     if (!(c > 0)) continue; // 値段がない日は持ち越し
     pos.held++;
     pos.lastPx = c;
-    if (pos.held >= HOLD) {
+    if (pos.held >= (pos.hold ?? HOLD)) {
       const r = (c * (1 - SLIP)) / pos.entryPx - 1;
       st.cash += pos.size * (1 + r);
       st.closed.push({ t: pos.t, name: pos.name, reason: pos.reason, entryDate: pos.entryDate, exitDate: T, retPct: pct(r), profitYen: Math.round(pos.size * r) });
@@ -143,16 +149,18 @@ const rets = st.closed.map((c) => c.retPct);
 const spyStartK = di.get(st.startDate);
 const out = {
   updatedAt: new Date().toISOString(),
-  name: '決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）',
+  name: `決算の翌日に+${Math.round(REACT * 100)}%以上上がった株を次の朝に買い、${HOLD}日持つ（空いているお金は${IDLE === 'spy' ? 'S&P500' : IDLE === 'trend' ? 'S&P500が上向きの時だけS&P500' : '現金'}）`,
+  settings: { react: REACT, hold: HOLD, idle: IDLE, idleNow: st.idleNow ?? null, chosenAt: CH?.chosenAt ?? null, rule: CH?.rule ?? null },
   startDate: st.startDate, lastDate: st.lastDate, capital: START,
   equityYen: eqNow, returnPct: pct(eqNow / START - 1),
   spyReturnPct: spyStartK != null ? pct(spy[lastK][4] / spy[spyStartK][4] - 1) : null,
-  idleInSpyPct: pct(st.cash / Math.max(1, eqNow)),
+  idleInSpyPct: st.idleNow === 'cash' ? 0 : pct(st.cash / Math.max(1, eqNow)),
+  idlePct: pct(st.cash / Math.max(1, eqNow)),
   taxYen: Object.values(st.tax).reduce((a, b) => a + b, 0),
   trades: st.closed.length,
   winRatePct: rets.length ? pct(rets.filter((r) => r > 0).length / rets.length) : null,
   avgRetPct: rets.length ? Math.round((rets.reduce((a, b) => a + b, 0) / rets.length) * 100) / 100 : null,
-  holdings: st.positions.map((p) => ({ t: p.t, name: p.name, reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, daysLeft: Math.max(0, HOLD - p.held), unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
+  holdings: st.positions.map((p) => ({ t: p.t, name: p.name, reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, daysLeft: Math.max(0, (p.hold ?? HOLD) - p.held), unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
   nextBuys: st.pending.sort((a, b) => b.re - a.re).map((p) => ({ t: p.t, name: p.name, reason: p.reason })),
   recentReactions: recent.sort((a, b) => b.date.localeCompare(a.date) || b.rePct - a.rePct).slice(0, 30),
   recentClosed: st.closed.slice(-30).reverse(),

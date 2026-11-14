@@ -40,6 +40,8 @@ jobs:
           fi
       - name: fetch
         run: node scripts/us/fetch.mjs --data data-us --out reports-out --max-minutes 300
+      - name: backtest (chooses the settings for paper trading)
+        run: node scripts/us/backtest.mjs --data data-us --out reports-out
       - name: paper trading
         run: node scripts/us/paper.mjs --data data-us --out reports-out
       - name: encrypt data
@@ -54,8 +56,6 @@ jobs:
         with:
           path: data-us.tar.enc
           key: us-v1-${{ github.run_id }}
-      - name: backtest
-        run: node scripts/us/backtest.mjs --data data-us --out reports-out
       - name: publish reports
         if: always()
         run: |
