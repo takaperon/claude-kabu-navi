@@ -1,15 +1,15 @@
 {
-  "startedAt": "2026-11-14T11:35:34.626Z",
+  "startedAt": "2026-11-14T14:33:01.037Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
-    "requests": 23,
-    "updated": 20,
+    "requests": 17,
+    "updated": 14,
     "failed": 3,
     "limitHits": 0,
     "lastError": "{\"detail\": \"You have run over your 500 symbol look up for this month. Please upgrade at https://api.tiingo.com/pricing to have your limits increased.\"}",
     "priority": 14,
-    "needed": 23
+    "needed": 17
   },
   "sec": {
     "requests": 0,
@@ -27,15 +27,15 @@
   },
   "av": {
     "keyPresent": true,
-    "requests": 4,
-    "stored": 255,
-    "failed": 1,
-    "limitHit": true,
-    "lastError": "Thank you for using Alpha Vantage! Please consider spreading out your free API requests more sparingly (1 request per second). You may subscribe to any of the p",
-    "needed": 250
+    "requests": 25,
+    "stored": 280,
+    "failed": 0,
+    "limitHit": false,
+    "lastError": null,
+    "needed": 247
   },
   "stoppedBy": "done",
-  "finishedAt": "2026-11-14T11:36:30.253Z",
+  "finishedAt": "2026-11-14T14:38:46.091Z",
   "pricesStored": 500,
   "secStored": 502
 }

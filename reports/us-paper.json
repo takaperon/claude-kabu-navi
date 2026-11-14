@@ -1,6 +1,14 @@
 {
-  "updatedAt": "2026-11-14T11:36:30.726Z",
+  "updatedAt": "2026-11-14T14:38:48.054Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
+  "settings": {
+    "react": 0.1,
+    "hold": 20,
+    "idle": "spy",
+    "idleNow": null,
+    "chosenAt": "2026-11-14T14:38:47.430Z",
+    "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
+  },
   "startDate": "2026-11-13",
   "lastDate": "2026-11-13",
   "capital": 300000,
@@ -8,6 +16,7 @@
   "returnPct": 0,
   "spyReturnPct": 0,
   "idleInSpyPct": 100,
+  "idlePct": 100,
   "taxYen": 0,
   "trades": 0,
   "winRatePct": null,
