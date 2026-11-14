@@ -42,6 +42,9 @@ a{color:inherit}
 .wrap{max-width:560px;margin:0 auto;padding:0 16px}
 header.top{padding:calc(14px + env(safe-area-inset-top)) 0 4px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{font-family:var(--mincho);font-weight:800;font-size:21px;letter-spacing:.04em}
+.mkt{display:grid;grid-template-columns:1fr 1fr;background:var(--rule);border-radius:10px;padding:3px;margin:8px 0 2px}
+.mkt button{border:none;background:none;border-radius:8px;padding:7px 4px;font-size:15px;cursor:pointer;color:var(--ink-soft);font-weight:500}
+.mkt button[aria-pressed="true"]{background:var(--ink);color:var(--paper);font-weight:700}
 .status{font-size:12px;color:var(--muted);text-align:right;line-height:1.4}
 .status b{display:block;color:var(--gold);font-weight:700}
 h2{font-family:var(--mincho);font-weight:800;font-size:20px;margin:30px 0 10px;letter-spacing:.02em;line-height:1.4}
@@ -205,6 +208,10 @@ section[hidden]{display:none}
     <div class="brand">Claude株ナビ</div>
     <div class="status" id="status"></div>
   </header>
+  <div class="mkt" role="group" aria-label="日本株と米国株を切り替える">
+    <button data-mkt="jp" aria-pressed="true">日本株</button>
+    <button data-mkt="us" aria-pressed="false">米国株</button>
+  </div>
 
   <!-- ホーム -->
   <section id="tab-home">
@@ -225,7 +232,6 @@ section[hidden]{display:none}
     <div class="trio" id="trio"></div>
 
     <div id="real"></div>
-    <div id="us"></div>
 
     <h2>ルールの順位<small>タップで説明</small></h2>
     <ul class="ranks" id="ranks"></ul>
@@ -251,6 +257,41 @@ section[hidden]{display:none}
       <summary>用語のかんたん解説</summary>
       <dl id="glossary"></dl>
     </details>
+  </section>
+
+  <!-- 米国株：ホーム -->
+  <section id="tab-home-us" hidden>
+    <div class="cert">
+      <svg class="guil" aria-hidden="true" id="guil-us"></svg>
+      <div class="seal" aria-hidden="true">仮想<br>売買</div>
+      <div class="inner">
+        <div class="kind">米国株・30万円</div>
+        <div class="gain num" id="us-gain">—</div>
+        <div class="sub num" id="us-sub"></div>
+        <div class="chart" id="us-chart"></div>
+        <div class="note">決算の翌日に+10%以上上がった株を次の夜に買い、20日持つルールの仮想売買です。空いているお金はS&P500に置いておく計算です。税金は引いてあり、為替の影響は入っていません。</div>
+      </div>
+    </div>
+    <div class="say" id="us-say"></div>
+    <div class="trio" id="us-trio"></div>
+    <h2>最近の決算の反応<small>+10%以上なら買い</small></h2>
+    <div id="us-react"></div>
+    <button class="more" data-us="1">このルールの説明</button>
+  </section>
+
+  <!-- 米国株：銘柄 -->
+  <section id="tab-stocks-us" hidden>
+    <h2 id="us-stocks-title">銘柄</h2>
+    <div class="seg" id="us-seg" role="group" aria-label="表示を切り替える"></div>
+    <p class="lead" id="us-stocks-lead"></p>
+    <div id="us-stocks"></div>
+  </section>
+
+  <!-- 米国株：検証 -->
+  <section id="tab-test-us" hidden>
+    <h2>過去5年で試したら</h2>
+    <p class="lead">S&P500の約500社で、2021〜2026年の本物の株価を使って試した結果です（税金・為替は入っていません）。今のS&P500に残っている会社だけで試しているので、少し甘めに出ている可能性があります。</p>
+    <div id="us-tests"></div>
   </section>
 
   <!-- ニュース -->
@@ -317,7 +358,7 @@ const TERMS = {
   '朝高': '次の朝の寄り付きが、前の日の終わりの値段より高く始まること。市場がその発表を好感したサインと見ています。',
 };
 
-let usPaper = null;
+let usPaper = null, usBT = null, mkt = 'jp', useg = 'hold';
 let paper = null, backtest = null, newsData = null, seg = 'hold';
 
 const $ = (id) => document.getElementById(id);
@@ -342,7 +383,9 @@ async function getJSON(path) {
 
 // ---------- 株券の地紋 ----------
 function drawGuilloche() {
-  const svg = $('guil');
+  for (const id of ['guil', 'guil-us']) drawGuil($(id));
+}
+function drawGuil(svg) {
   const w = 400, h = 300;
   svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
   svg.setAttribute('preserveAspectRatio', 'none');
@@ -467,20 +510,6 @@ function renderHome() {
       <button class="link" data-rule="${RK}">このルールの説明</button></div>`;
   }).join('');
 
-  // 米国株（仮想）
-  if (usPaper) {
-    const U = usPaper, d = U.equityYen - U.capital;
-    const rows = [
-      ...U.holdings.map((h) => `<li><span>${esc(h.name)}<small>${esc(h.t)}・あと${h.daysLeft}日</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`),
-      ...U.nextBuys.map((b) => `<li><span>${esc(b.name)}<small>${esc(b.t)}・次の夜に買う</small></span><span class="num flat">${esc(b.reason.replace(/（.*）/, '').replace('決算の翌日に', ''))}</span></li>`),
-    ];
-    $('us').innerHTML = `<div class="real" style="border-top-color:var(--c-earn)">
-      <div class="hd"><b>米国株なら（30万円）</b><span class="num ${cls(d)}">${sign(U.returnPct)}%</span></div>
-      <p>決算の翌日に+10%以上上がった株を次の夜に買い、20日持ちます。空いているお金はS&P500に置いておきます。いま <b class="num" style="color:var(--ink)">${yen(U.equityYen)}円</b>${U.spyReturnPct != null ? `・同じ期間のS&P500は ${sign(U.spyReturnPct)}%` : ''}${U.trades ? `・${U.trades}回売って勝率${U.winRatePct}%` : ''}</p>
-      ${rows.length ? `<ul>${rows.join('')}</ul>` : `<p style="margin:0">いまは全額S&P500に置いています。条件に合う決算が出たら、ここに並びます。</p>`}
-      <button class="link" data-us="1">このルールの説明</button></div>`;
-  }
-
   // ルールの順位
   const ranked = ORDER.map((k) => ({ k, s: paper.strategies[k] })).sort((a, b) => b.s.equityYen - a.s.equityYen);
   $('ranks').innerHTML = ranked.map(({ k, s }, i) => {
@@ -519,6 +548,87 @@ function openUS() {
     <p>買う機会は月に数回なので、待っている間のお金はS&P500に置いておき、市場全体の上昇も取ります。ウィブルは米国株を1ドル単位で買えるので、30万円でもこの通りにできます。</p>
     <p style="font-size:14px;color:var(--muted)">過去5年の検証（全496社）では、前半+139%・後半+71%で、同じ期間のS&P500（+49%・+36%）を上回りました。為替の影響と手数料は入っていません。</p>
     ${rr ? `<p style="font-size:14px;margin-bottom:4px"><b>最近の決算の反応</b></p><div class="real" style="box-shadow:none;padding:0;margin:0;border:none"><ul>${rr}</ul></div>` : ''}`);
+}
+
+// ---------- 米国株 ----------
+function usTradingDays() { return (usPaper?.equityHistory?.length ?? 1) - 1; }
+function renderUS() {
+  const U = usPaper;
+  if (!U) {
+    $('tab-home-us').innerHTML = '<p class="empty" style="margin-top:16px">米国株の仮想売買は、準備ができしだいここに表示されます（毎朝7時半ごろ更新）。</p>';
+    $('us-stocks').innerHTML = ''; return;
+  }
+  const d = U.equityYen - U.capital;
+  $('us-gain').innerHTML = `<span class="${cls(d)}">${d >= 0 ? '+' : '−'}${yen(Math.abs(d))}<span class="unit">円</span></span>`;
+  $('us-sub').innerHTML = `30万円 → <b>${yen(U.equityYen)}円</b>（<span class="${cls(d)}">${sign(U.returnPct)}%</span>）${U.spyReturnPct != null ? `・S&P500は <span class="${cls(U.spyReturnPct)}">${sign(U.spyReturnPct)}%</span>` : ''}`;
+  $('us-chart').innerHTML = line(U.equityHistory.map((e) => e.value), U.capital, 300, 78, { fill: true, label: '米国株の資産の推移', empty: '記録がたまるとグラフになります' });
+  const day = U.lastDate;
+  const sold = U.recentClosed.filter((c) => c.exitDate === day), bought = U.holdings.filter((h) => h.entryDate === day);
+  let say = `<b>${md(day)}（${wd(day)}）</b>のアメリカ市場では、`;
+  say += bought.length || sold.length ? `${bought.length ? `${bought.length}銘柄を買い` : ''}${sold.length ? `${bought.length ? '、' : ''}${sold.length}銘柄を売りました` : 'ました'}。` : '売り買いはありませんでした。';
+  say += U.nextBuys.length ? `今夜は<b>${U.nextBuys.length}銘柄</b>を買う予定です。` : '今夜買う予定の銘柄はありません。';
+  say += ` 資金の<b>${Math.round(U.idleInSpyPct)}%</b>はS&P500に置いています。`;
+  $('us-say').innerHTML = say;
+  const wins = U.recentClosed.filter((c) => c.retPct > 0).length;
+  const avgU = U.holdings.length ? U.holdings.reduce((a, h) => a + h.unrealPct, 0) / U.holdings.length : 0;
+  $('us-trio').innerHTML = `
+    <button data-useg="next"><span class="l">今夜買う</span><span class="n num">${U.nextBuys.length}<small>銘柄</small></span><span class="x flat">${U.nextBuys.length ? 'タップで一覧' : 'なし'}</span></button>
+    <button data-useg="hold"><span class="l">いま持っている</span><span class="n num">${U.holdings.length}<small>銘柄</small></span><span class="x ${cls(avgU)}">${U.holdings.length ? `平均 ${sign(avgU)}%` : 'なし'}</span></button>
+    <button data-useg="sold"><span class="l">売った</span><span class="n num">${U.trades}<small>回</small></span><span class="x flat">${U.trades ? `勝率 ${Math.round(wins / Math.max(1, U.recentClosed.length) * 100)}%` : 'まだなし'}</span></button>`;
+  const rr = (U.recentReactions ?? []).slice(0, 12);
+  $('us-react').innerHTML = rr.length ? `<ul class="stocks">${rr.map((x) => `<li><div class="srow"><div>
+      <div class="nm">${esc(x.name)}<span class="cd">${esc(x.t)}</span></div>
+      <div class="when">${md(x.date)}の反応${x.rePct >= 10 ? '・買いの条件に合格' : ''}</div></div>
+      <div class="badge num ${cls(x.rePct)}">${sign(x.rePct)}%</div></div></li>`).join('')}</ul>`
+    : '<p class="empty">ここ数日、決算を出した会社はありません。</p>';
+  renderUSStocks(); renderUSTests();
+}
+function renderUSStocks() {
+  const U = usPaper; if (!U) return;
+  const sold = U.recentClosed;
+  $('us-seg').innerHTML = [['next', '今夜買う', U.nextBuys.length], ['hold', '持っている', U.holdings.length], ['sold', '売った', sold.length]]
+    .map(([k, n, c]) => `<button aria-pressed="${useg === k}" data-useg="${k}">${n}<small>${c}</small></button>`).join('');
+  $('us-stocks-title').textContent = { next: '今夜買う銘柄', hold: 'いま持っている銘柄', sold: '売った銘柄' }[useg];
+  const row = (name, t, sub, badge) => `<li><div class="srow"><div><div class="nm">${esc(name)}<span class="cd">${esc(t)}</span></div><div class="when">${sub}</div></div>${badge ?? ''}</div></li>`;
+  if (useg === 'next') {
+    $('us-stocks-lead').innerHTML = U.nextBuys.length ? '日本時間の今夜23:30（アメリカの取引開始）に、仮想で買います。' : '';
+    $('us-stocks').innerHTML = U.nextBuys.length ? `<ul class="stocks">${U.nextBuys.map((b) => row(b.name, b.t, esc(b.reason))).join('')}</ul>` : '<p class="empty">いまは条件に合う決算がありません。決算シーズン（1・4・7・10月の中旬〜翌月）に増えます。</p>';
+  } else if (useg === 'hold') {
+    $('us-stocks-lead').innerHTML = U.holdings.length ? `買った値段からの${term('含み益')}です。20取引日たったら、その日の終値で売ります。` : '';
+    $('us-stocks').innerHTML = U.holdings.length ? `<ul class="stocks">${U.holdings.slice().sort((a, b) => b.unrealPct - a.unrealPct).map((h) => row(h.name, h.t, `${md(h.entryDate)}に買った・あと${h.daysLeft}取引日で売る`, `<div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</div>`)).join('')}</ul>` : '<p class="empty">いまは個別株を持っていません。資金は全部S&P500に置いている計算です。</p>';
+  } else {
+    $('us-stocks-lead').innerHTML = sold.length ? '1回ごとの損益は、税金を引く前の数字です。' : '';
+    $('us-stocks').innerHTML = sold.length ? `<ul class="stocks">${sold.map((c) => row(c.name, c.t, `${md(c.entryDate)}に買って${md(c.exitDate)}に売った`, `<div class="badge num ${cls(c.retPct)}">${sign(c.retPct)}%</div>`)).join('')}</ul>` : '<p class="empty">まだ売った銘柄はありません。買ってから約1か月後に最初の結果が出ます。</p>';
+  }
+}
+function renderUSTests() {
+  const B = usBT; if (!B?.results) { $('us-tests').innerHTML = '<p class="empty">検証結果を読み込めませんでした。</p>'; return; }
+  const e = (k, h) => B.results[k]?.exits?.[h];
+  const r = e('react10', 'hold20'), all = e('earn_all', 'hold20');
+  const card = (title, a, b, note, rc) => `<div class="test" style="--rc:${rc}"><h3>${title}</h3>
+    <div class="vs"><div><span>前半（${B.periods.train[0].slice(0, 4)}〜）</span><b class="num ${cls(a)}">${sign(a)}<small>%</small></b></div>
+    <div><span>後半（〜${B.periods.test[1].slice(0, 4)}）</span><b class="num ${cls(b)}">${sign(b)}<small>%</small></b></div></div>
+    ${note ? `<div class="dd">${note}</div>` : ''}</div>`;
+  let h = '';
+  if (r) h += card('いまのルール：決算で+10%→20日持つ＋空きはS&P500', r.idleSpyTrain.returnPct, r.idleSpyTest.returnPct, `途中の${term('最大の減り')}：${Math.max(r.idleSpyTrain.maxDDPct, r.idleSpyTest.maxDDPct)}%・1回あたり平均 ${sign(r.train.avgRet * 100, 2)}%／${sign(r.test.avgRet * 100, 2)}%`, 'var(--c-earn)');
+  h += card('比較：S&P500をただ持つ', B.spy.trainPct, B.spy.testPct, '', 'var(--muted)');
+  if (r) h += card('同じルールで、空いているお金は現金のまま', r.portfolioTrain.returnPct, r.portfolioTest.returnPct, '', 'var(--c-earn)');
+  if (all) h += card('比較：決算を出した株を全部買う（20日）', all.portfolioTrain.returnPct, all.portfolioTest.returnPct, `1回あたり平均 ${sign(all.train.avgRet * 100, 2)}%／${sign(all.test.avgRet * 100, 2)}%`, 'var(--muted)');
+  h += `<div class="callout">米国株のデイトレ（寄りで買って引けで売る）は、8通り試してどれもほぼ勝てませんでした。米国株の上昇の多くは夜の間（取引していない時間）に起きているためです。</div>`;
+  $('us-tests').innerHTML = h;
+}
+function setMkt(m) {
+  mkt = m === 'us' ? 'us' : 'jp';
+  for (const b of document.querySelectorAll('[data-mkt]')) b.setAttribute('aria-pressed', String(b.dataset.mkt === mkt));
+  try { localStorage.setItem('mkt', mkt); } catch {}
+  setStatus();
+  go(curTab);
+}
+function setStatus() {
+  const src = mkt === 'us' && usPaper ? usPaper : paper;
+  const u = new Date(src.updatedAt);
+  const days = mkt === 'us' && usPaper ? usTradingDays() : tradingDays();
+  $('status').innerHTML = `<b>${mkt === 'us' ? '米国 ' : ''}仮想売買 ${days}日目</b>${u.getMonth() + 1}/${u.getDate()} ${String(u.getHours()).padStart(2, '0')}:${String(u.getMinutes()).padStart(2, '0')} 更新`;
 }
 
 // ---------- 銘柄 ----------
@@ -641,8 +751,11 @@ function openSheet(title, html) {
   $('sheet-close').focus();
 }
 function closeSheet() { $('sheet-bg').classList.remove('open'); }
+let curTab = 'home';
 function go(tab) {
-  for (const s of document.querySelectorAll('section')) s.hidden = s.id !== 'tab-' + tab;
+  curTab = tab;
+  const id = tab !== 'news' && mkt === 'us' ? `tab-${tab}-us` : `tab-${tab}`;
+  for (const s of document.querySelectorAll('section')) s.hidden = s.id !== id;
   for (const b of document.querySelectorAll('.tabbar button')) {
     if (b.dataset.tab === tab) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
   }
@@ -653,6 +766,8 @@ document.addEventListener('click', (e) => {
   const t = e.target.closest('.term'); if (t) { e.stopPropagation(); openSheet(esc(t.dataset.term), `<p>${TERMS[t.dataset.term] ?? ''}</p>`); return; }
   const r = e.target.closest('[data-rule]'); if (r) { openRule(r.dataset.rule); return; }
   const us = e.target.closest('[data-us]'); if (us) { openUS(); return; }
+  const mk = e.target.closest('[data-mkt]'); if (mk) { setMkt(mk.dataset.mkt); return; }
+  const useg2 = e.target.closest('[data-useg]'); if (useg2) { useg = useg2.dataset.useg; renderUSStocks(); go('stocks'); return; }
   const s = e.target.closest('[data-seg]'); if (s) { seg = s.dataset.seg; try { localStorage.setItem('seg', seg); } catch {} renderStocks(); go('stocks'); return; }
   const b = e.target.closest('.tabbar button'); if (b) { go(b.dataset.tab); return; }
   const g = e.target.closest('[data-go]'); if (g) { go(g.dataset.go); return; }
@@ -670,16 +785,17 @@ async function main() {
     $('tab-home').innerHTML = `<p class="empty" style="margin-top:20px">データを読み込めませんでした。電波のよい場所で、もう一度開いてください。</p>`;
     return;
   }
-  const [bt, idx, us] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json')]);
+  const [bt, idx, us, ub] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json'), getJSON('reports/us-backtest.json')]);
   usPaper = us.status === 'fulfilled' ? us.value : null;
+  usBT = ub.status === 'fulfilled' ? ub.value : null;
   backtest = bt.status === 'fulfilled' ? bt.value : null;
   if (idx.status === 'fulfilled' && idx.value.latest) {
     try { newsData = await getJSON(`news/${idx.value.latest}.json`); } catch {}
   }
-  const u = new Date(paper.updatedAt);
-  $('status').innerHTML = `<b>仮想売買 ${tradingDays()}日目</b>${u.getMonth() + 1}/${u.getDate()} ${String(u.getHours()).padStart(2, '0')}:${String(u.getMinutes()).padStart(2, '0')} 更新`;
-  renderHome(); renderStocks(); renderTests(); renderNews();
-  try { const t = localStorage.getItem('tab'); if (t && $('tab-' + t)) go(t); } catch {}
+  renderHome(); renderStocks(); renderTests(); renderNews(); renderUS();
+  try { mkt = localStorage.getItem('mkt') === 'us' ? 'us' : 'jp'; } catch {}
+  try { const t = localStorage.getItem('tab'); if (t && $('tab-' + t)) curTab = t; } catch {}
+  setMkt(mkt);
 }
 main();
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
