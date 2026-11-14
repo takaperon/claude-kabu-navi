@@ -225,6 +225,7 @@ section[hidden]{display:none}
     <div class="trio" id="trio"></div>
 
     <div id="real"></div>
+    <div id="us"></div>
 
     <h2>ルールの順位<small>タップで説明</small></h2>
     <ul class="ranks" id="ranks"></ul>
@@ -316,6 +317,7 @@ const TERMS = {
   '朝高': '次の朝の寄り付きが、前の日の終わりの値段より高く始まること。市場がその発表を好感したサインと見ています。',
 };
 
+let usPaper = null;
 let paper = null, backtest = null, newsData = null, seg = 'hold';
 
 const $ = (id) => document.getElementById(id);
@@ -465,6 +467,20 @@ function renderHome() {
       <button class="link" data-rule="${RK}">このルールの説明</button></div>`;
   }).join('');
 
+  // 米国株（仮想）
+  if (usPaper) {
+    const U = usPaper, d = U.equityYen - U.capital;
+    const rows = [
+      ...U.holdings.map((h) => `<li><span>${esc(h.name)}<small>${esc(h.t)}・あと${h.daysLeft}日</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`),
+      ...U.nextBuys.map((b) => `<li><span>${esc(b.name)}<small>${esc(b.t)}・次の夜に買う</small></span><span class="num flat">${esc(b.reason.replace(/（.*）/, '').replace('決算の翌日に', ''))}</span></li>`),
+    ];
+    $('us').innerHTML = `<div class="real" style="border-top-color:var(--c-earn)">
+      <div class="hd"><b>米国株なら（30万円）</b><span class="num ${cls(d)}">${sign(U.returnPct)}%</span></div>
+      <p>決算の翌日に+10%以上上がった株を次の夜に買い、20日持ちます。空いているお金はS&P500に置いておきます。いま <b class="num" style="color:var(--ink)">${yen(U.equityYen)}円</b>${U.spyReturnPct != null ? `・同じ期間のS&P500は ${sign(U.spyReturnPct)}%` : ''}${U.trades ? `・${U.trades}回売って勝率${U.winRatePct}%` : ''}</p>
+      ${rows.length ? `<ul>${rows.join('')}</ul>` : `<p style="margin:0">いまは全額S&P500に置いています。条件に合う決算が出たら、ここに並びます。</p>`}
+      <button class="link" data-us="1">このルールの説明</button></div>`;
+  }
+
   // ルールの順位
   const ranked = ORDER.map((k) => ({ k, s: paper.strategies[k] })).sort((a, b) => b.s.equityYen - a.s.equityYen);
   $('ranks').innerHTML = ranked.map(({ k, s }, i) => {
@@ -494,6 +510,15 @@ function openRule(k) {
     ${s.taxYen ? `<p style="font-size:14px;color:var(--muted)">いまの資産は、売った利益にかかる税金 ${yen(s.taxYen)}円を引いた後の金額です。</p>` : ''}
     ${t ? `<p style="font-size:14px;color:var(--muted)">過去5年で試すと、税金を引いた後で${man(capOf(k))}円が<b style="color:var(--ink)">${man(capOf(k) * (1 + t.total / 100))}円</b>になっていました（${term('最大の減り')} ${t.dd}%）。</p>` : ''}`;
   openSheet(`${dot(k)}${STRATS[k].name}`, body);
+}
+
+function openUS() {
+  const U = usPaper;
+  const rr = (U.recentReactions ?? []).slice(0, 8).map((x) => `<li><span>${esc(x.name)}<small>${esc(x.t)}・${md(x.date)}</small></span><span class="num ${cls(x.rePct)}">${sign(x.rePct)}%</span></li>`).join('');
+  openSheet('米国株：決算の反応で買う', `<p>アメリカの大企業（S&P500）が決算を発表したあと、最初の取引日に株価が+10%以上上がったら、市場が「予想よりずっと良かった」と受け取ったサインと見て、次の取引日の寄り付きで買います。20取引日（約1か月）たったら売ります。</p>
+    <p>買う機会は月に数回なので、待っている間のお金はS&P500に置いておき、市場全体の上昇も取ります。ウィブルは米国株を1ドル単位で買えるので、30万円でもこの通りにできます。</p>
+    <p style="font-size:14px;color:var(--muted)">過去5年の検証（全496社）では、前半+139%・後半+71%で、同じ期間のS&P500（+49%・+36%）を上回りました。為替の影響と手数料は入っていません。</p>
+    ${rr ? `<p style="font-size:14px;margin-bottom:4px"><b>最近の決算の反応</b></p><div class="real" style="box-shadow:none;padding:0;margin:0;border:none"><ul>${rr}</ul></div>` : ''}`);
 }
 
 // ---------- 銘柄 ----------
@@ -627,6 +652,7 @@ function go(tab) {
 document.addEventListener('click', (e) => {
   const t = e.target.closest('.term'); if (t) { e.stopPropagation(); openSheet(esc(t.dataset.term), `<p>${TERMS[t.dataset.term] ?? ''}</p>`); return; }
   const r = e.target.closest('[data-rule]'); if (r) { openRule(r.dataset.rule); return; }
+  const us = e.target.closest('[data-us]'); if (us) { openUS(); return; }
   const s = e.target.closest('[data-seg]'); if (s) { seg = s.dataset.seg; try { localStorage.setItem('seg', seg); } catch {} renderStocks(); go('stocks'); return; }
   const b = e.target.closest('.tabbar button'); if (b) { go(b.dataset.tab); return; }
   const g = e.target.closest('[data-go]'); if (g) { go(g.dataset.go); return; }
@@ -644,7 +670,8 @@ async function main() {
     $('tab-home').innerHTML = `<p class="empty" style="margin-top:20px">データを読み込めませんでした。電波のよい場所で、もう一度開いてください。</p>`;
     return;
   }
-  const [bt, idx] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json')]);
+  const [bt, idx, us] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json')]);
+  usPaper = us.status === 'fulfilled' ? us.value : null;
   backtest = bt.status === 'fulfilled' ? bt.value : null;
   if (idx.status === 'fulfilled' && idx.value.latest) {
     try { newsData = await getJSON(`news/${idx.value.latest}.json`); } catch {}

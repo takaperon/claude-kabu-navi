@@ -40,6 +40,8 @@ jobs:
           fi
       - name: fetch
         run: node scripts/us/fetch.mjs --data data-us --out reports-out --max-minutes 300
+      - name: paper trading
+        run: node scripts/us/paper.mjs --data data-us --out reports-out
       - name: encrypt data
         if: always()
         run: |

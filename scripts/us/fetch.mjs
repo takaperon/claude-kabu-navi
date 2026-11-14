@@ -176,7 +176,9 @@ function quarterly(facts, tags, unit) {
 }
 async function secFor(u) {
   const f = path.join(DATA, 'sec', `${u.t}.json`);
-  if (fs.existsSync(f) && Date.now() - fs.statSync(f).mtimeMs < 3 * 864e5) return;
+  // 仮想売買のため、決算発表の一覧は毎日更新（約20時間ごと）。EPS・売上（companyfacts、大きい）は新しい発表があった時か30日ごと
+  const old = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null;
+  if (old && Date.now() - (old.checkedAt ?? fs.statSync(f).mtimeMs) < 20 * 3600e3) return;
   const sub = await secJSON(`https://data.sec.gov/submissions/CIK${u.cik}.json`);
   if (!sub) return;
   status.sec.submissions++;
@@ -188,13 +190,15 @@ async function secFor(u) {
     if (r.filingDate[k] < FROM) continue;
     earnings.push(r.acceptanceDateTime[k]); // 例 2024-07-30T16:05:12.000Z（SECの時刻は米東部時間をZ表記で返す）
   }
-  const facts = await secJSON(`https://data.sec.gov/api/xbrl/companyfacts/CIK${u.cik}.json`);
-  if (facts) status.sec.facts++;
-  fs.writeFileSync(f, JSON.stringify({
-    earnings: earnings.sort(),
-    eps: quarterly(facts?.facts, QTAGS_EPS, 'USD/shares'),
-    rev: quarterly(facts?.facts, QTAGS_REV, 'USD'),
-  }));
+  earnings.sort();
+  const changed = !old || JSON.stringify(old.earnings) !== JSON.stringify(earnings);
+  let eps = old?.eps ?? [], rev = old?.rev ?? [], factsAt = old?.factsAt ?? 0;
+  if (changed || Date.now() - factsAt > 30 * 864e5) {
+    const facts = await secJSON(`https://data.sec.gov/api/xbrl/companyfacts/CIK${u.cik}.json`);
+    if (facts) { status.sec.facts++; eps = quarterly(facts.facts, QTAGS_EPS, 'USD/shares'); rev = quarterly(facts.facts, QTAGS_REV, 'USD'); factsAt = Date.now(); }
+  }
+  if (changed && old) status.sec.newEarnings = (status.sec.newEarnings ?? 0) + 1;
+  fs.writeFileSync(f, JSON.stringify({ earnings, eps, rev, checkedAt: Date.now(), factsAt }));
 }
 
 
@@ -239,13 +243,24 @@ if (!KEY) {
     try { await secFor(u); } catch (e) { status.sec.failed++; status.sec.lastError = e.message; }
   }
   await avRun(universe);
+  const priority = new Set(['SPY']);
+  const recentCut = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+  for (const u of universe) {
+    const f = path.join(DATA, 'sec', `${u.t}.json`);
+    if (fs.existsSync(f) && (JSON.parse(fs.readFileSync(f, 'utf8')).earnings ?? []).some((a) => a.slice(0, 10) >= recentCut)) priority.add(u.t);
+  }
+  const pst = path.join(DATA, 'paper', 'state.json');
+  if (fs.existsSync(pst)) { const ps = JSON.parse(fs.readFileSync(pst, 'utf8')); for (const x of [...ps.positions, ...ps.pending]) priority.add(x.t); }
+  status.tiingo.priority = priority.size;
   // Tiingo：持っていない銘柄を優先、次に古い順。上限に当たったら1時間待って続ける
   const need = [...extra, ...universe].map((u) => {
     const f = path.join(DATA, 'prices', `${u.t}.json`);
     const rows = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null;
     return { u, f, rows, last: rows?.at(-1)?.[0] ?? '' };
-  // 無料枠は1時間50回なので、毎日全銘柄は取り直さない。持っていない銘柄と、7日以上更新していない銘柄だけ
-  }).filter((x) => x.last < stale).sort((a, b) => a.last.localeCompare(b.last));
+  // 無料枠は1時間50回なので、毎日全銘柄は取り直さない。持っていない銘柄と、7日以上更新していない銘柄だけ。
+  // ただし仮想売買に要る銘柄（SPY・直近7日に決算発表・保有中・買い候補）は毎日取る（優先）
+  }).filter((x) => x.last < stale || (priority.has(x.u.t) && x.last < today))
+    .sort((a, b) => (priority.has(b.u.t) - priority.has(a.u.t)) || a.last.localeCompare(b.last));
   status.tiingo.needed = need.length;
   for (const x of need) {
     if (minutes() > MAX_MIN) { status.stoppedBy = 'time'; break; }
@@ -255,7 +270,7 @@ if (!KEY) {
     let rows = await tiingoDaily(x.u.t, from);
     if (rows === 'limit' && /month/i.test(status.tiingo.lastError ?? '')) { status.stoppedBy = 'tiingo-monthly-symbols'; break; } // 月500銘柄の上限は待っても戻らない
     // 持っている銘柄の更新だけなら、上限に当たったら待たずに次回へ（検証は数日古くても困らない。実行を長引かせない）
-    if (rows === 'limit' && need.every((y) => y.rows)) { status.stoppedBy = 'tiingo-limit-later'; break; }
+    if (rows === 'limit' && need.every((y) => y.rows) && !priority.has(x.u.t)) { status.stoppedBy = 'tiingo-limit-later'; break; }
     if (rows === 'limit') {
       if (minutes() + 62 > MAX_MIN) { status.stoppedBy = 'tiingo-limit'; break; }
       await sleep(61 * 60000);
