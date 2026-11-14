@@ -1,0 +1,146 @@
+{
+  "updatedAt": "2026-11-14T11:26:11.260Z",
+  "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
+  "startDate": "2026-11-13",
+  "lastDate": "2026-11-13",
+  "capital": 300000,
+  "equityYen": 300000,
+  "returnPct": 0,
+  "spyReturnPct": 0,
+  "idleInSpyPct": 100,
+  "taxYen": 0,
+  "trades": 0,
+  "winRatePct": null,
+  "avgRetPct": null,
+  "holdings": [],
+  "nextBuys": [],
+  "recentReactions": [
+    {
+      "t": "VYLR",
+      "name": "Vylor",
+      "date": "2026-11-13",
+      "rePct": 0.7
+    },
+    {
+      "t": "EXPD",
+      "name": "Expeditors International",
+      "date": "2026-11-13",
+      "rePct": -0.4
+    },
+    {
+      "t": "AMAT",
+      "name": "Applied Materials",
+      "date": "2026-11-13",
+      "rePct": -2.7
+    },
+    {
+      "t": "CSCO",
+      "name": "Cisco",
+      "date": "2026-11-13",
+      "rePct": -6.2
+    },
+    {
+      "t": "TDG",
+      "name": "TransDigm Group",
+      "date": "2026-11-11",
+      "rePct": 1.6
+    },
+    {
+      "t": "TTWO",
+      "name": "Take-Two Interactive",
+      "date": "2026-11-10",
+      "rePct": 8.3
+    },
+    {
+      "t": "KKR",
+      "name": "KKR & Co.",
+      "date": "2026-11-10",
+      "rePct": 2.8
+    },
+    {
+      "t": "OXY",
+      "name": "Occidental Petroleum",
+      "date": "2026-11-10",
+      "rePct": 2
+    },
+    {
+      "t": "BRK.B",
+      "name": "Berkshire Hathaway",
+      "date": "2026-11-10",
+      "rePct": 1.4
+    },
+    {
+      "t": "FERG",
+      "name": "Ferguson Enterprises",
+      "date": "2026-11-10",
+      "rePct": -0.2
+    },
+    {
+      "t": "NRG",
+      "name": "NRG Energy",
+      "date": "2026-11-10",
+      "rePct": -0.3
+    },
+    {
+      "t": "CEG",
+      "name": "Constellation Energy",
+      "date": "2026-11-10",
+      "rePct": -3
+    },
+    {
+      "t": "SKYD",
+      "name": "Skydance",
+      "date": "2026-11-10",
+      "rePct": -7.6
+    },
+    {
+      "t": "VST",
+      "name": "Vistra Corp",
+      "date": "2026-11-09",
+      "rePct": 7.3
+    },
+    {
+      "t": "BEN",
+      "name": "Franklin Resources",
+      "date": "2026-11-09",
+      "rePct": 6.3
+    },
+    {
+      "t": "MRNA",
+      "name": "Moderna",
+      "date": "2026-11-09",
+      "rePct": 5.8
+    },
+    {
+      "t": "CHTR",
+      "name": "Charter Communications",
+      "date": "2026-11-09",
+      "rePct": 2.7
+    },
+    {
+      "t": "DTE",
+      "name": "DTE Energy",
+      "date": "2026-11-09",
+      "rePct": 2.4
+    },
+    {
+      "t": "PPL",
+      "name": "PPL Corporation",
+      "date": "2026-11-09",
+      "rePct": -0.3
+    },
+    {
+      "t": "HUM",
+      "name": "Humana",
+      "date": "2026-11-09",
+      "rePct": -2.4
+    }
+  ],
+  "recentClosed": [],
+  "equityHistory": [
+    {
+      "date": "2026-11-13",
+      "value": 300000
+    }
+  ]
+}
