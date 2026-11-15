@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "mode": "dry",
+  "maxUsd": 200,
+  "dailyLossStopPct": 5,
+  "maxErrors": 3,
+  "resetHalt": false
+}

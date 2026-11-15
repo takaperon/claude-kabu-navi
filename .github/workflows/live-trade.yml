@@ -1,0 +1,80 @@
+name: live-trade
+# 本番の自動売買（米国株・少額）。毎平日の米国市場が開いた後（日本時間 23:50、夏時間は 22:50 頃に相当）
+# 設定は live/config.json。安全装置は scripts/live/trade.py の先頭を参照
+on:
+  schedule:
+    - cron: '50 14 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'dry / test / live（空なら config.json のまま）'
+        required: false
+        default: ''
+  push:
+    branches: [main]
+    paths: ['live/config.json', 'scripts/live/trade.py', '.github/workflows/live-trade.yml']
+permissions:
+  contents: write
+concurrency:
+  group: live
+  cancel-in-progress: false
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      WEBULL_APP_KEY: ${{ secrets.WEBULL_APP_KEY }}
+      WEBULL_APP_SECRET: ${{ secrets.WEBULL_APP_SECRET }}
+      WEBULL_OPENAPI_TOKEN_DIR: .wbtoken
+      LIVE_MODE: ${{ github.event.inputs.mode }}
+      LIVE_STATE: .livestate/state.json
+      US_PAPER: us-paper.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q webull-openapi-python-sdk
+      - name: restore token and state
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            wbtoken.enc
+            livestate.enc
+          key: webull-live-${{ github.run_id }}
+          restore-keys: webull-live-
+      - name: restore token (from daily check)
+        uses: actions/cache/restore@v4
+        with:
+          path: wbtoken-check.enc
+          key: webull-token-${{ github.run_id }}
+          restore-keys: webull-token-
+      - name: decrypt
+        run: |
+          mkdir -p .wbtoken .livestate
+          if [ -f wbtoken.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken.enc -out .wbtoken/token.txt || true; fi
+          if [ ! -s .wbtoken/token.txt ] && [ -f wbtoken-check.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken-check.enc -out .wbtoken/token.txt || true; fi
+          if [ -f livestate.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in livestate.enc -out .livestate/state.json && echo "state restored"; fi
+          git fetch -q origin reports && git show origin/reports:reports/us-paper.json > us-paper.json || echo '{}' > us-paper.json
+      - name: trade
+        run: python scripts/live/trade.py
+      - name: encrypt
+        if: always()
+        run: |
+          if [ -s .wbtoken/token.txt ]; then openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:WEBULL_APP_SECRET -in .wbtoken/token.txt -out wbtoken.enc; fi
+          if [ -s .livestate/state.json ]; then openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:WEBULL_APP_SECRET -in .livestate/state.json -out livestate.enc; fi
+      - name: save token and state
+        if: always() && hashFiles('livestate.enc') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            wbtoken.enc
+            livestate.enc
+          key: webull-live-${{ github.run_id }}
+      - name: publish
+        if: always()
+        run: |
+          git fetch origin reports:reports && git worktree add rep reports
+          mkdir -p rep/reports && cp reports-out/live.json rep/reports/ 2>/dev/null || exit 0
+          cd rep && git config user.name "kabunavi-bot" && git config user.email "kabunavi-bot@users.noreply.github.com"
+          git add -A && git commit -q -m "live $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
+          for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
