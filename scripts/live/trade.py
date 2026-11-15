@@ -94,7 +94,7 @@ try:
 
     def place(symbol, side, qty, why):
         o = base(symbol, side, qty)
-        rec = {"t": symbol, "side": side, "why": why}
+        rec = {"t": symbol, "side": side, "why": why, "qtyDigits": len(qty.split(".")[1]) if "." in qty else 0}
         if mode != "live" and not (mode == "test" and symbol == "SPY"):
             rec["sent"] = False
             pub["orders"].append(rec); return o["client_order_id"]
@@ -179,7 +179,8 @@ try:
         if n_orders >= MAX_ORDERS: pub["skipped"].append({"t": b["t"], "why": "1日の注文数の上限"}); continue
         if any(p["t"] == b["t"] for p in st["positions"]): continue
         used = sum(p["qty"] * (p.get("entryPx") or 0) for p in st["positions"])
-        amt = min(PER_POS, MAX_USD - used, cash_usd if cash_usd is not None else PER_POS)
+        avail = cash_usd if (cash_usd is not None and mode != "dry") else PER_POS  # dry は口座の残高に関係なく形だけ確認
+        amt = min(PER_POS, MAX_USD - used, avail)
         if amt < 2: pub["skipped"].append({"t": b["t"], "why": "使えるお金が足りない"}); continue
         px = price(b["t"])
         if not px: pub["skipped"].append({"t": b["t"], "why": "値段を確認できない"}); continue
