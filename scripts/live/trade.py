@@ -97,6 +97,10 @@ try:
         rec = {"t": symbol, "side": side, "why": why, "qtyDigits": len(qty.split(".")[1]) if "." in qty else 0}
         if mode != "live" and not (mode == "test" and symbol == "SPY"):
             rec["sent"] = False
+            try:  # 出さない注文も、見積もり（preview）で形が正しいかだけ確かめる
+                r = trade.order_v3.preview_order(aid, [o]); rec["previewOk"] = r.status_code == 200
+            except Exception as e:
+                rec["previewOk"] = False; rec["previewErr"] = str(e)[:100]
             pub["orders"].append(rec); return o["client_order_id"]
         r = trade.order_v3.place_order(aid, [o])
         rec["sent"] = True; rec["ok"] = r.status_code == 200
