@@ -54,7 +54,7 @@
 - 100株単位の検証：fetch.mjs が data/raw/{date}.json（調整前の始値・終値）も保存。backtest.mjs の lotSim（資金30万〜300万×最大銘柄数1〜10）
 - ウィブルAPIのマーケットデータ（株価）は購読が必要で403。決算予定・配当予定・EPS予想（前後半年）は取れる
 - **本番エンジン（2026-11-15〜、オーナーの指示で米国株3万円から）**：scripts/live/trade.py ＋ .github/workflows/live-trade.yml（平日 14:50 UTC＝米国の取引開始後）。
-  設定は live/config.json（enabled／mode=dry・test・live／maxUsd=200／dailyLossStopPct=5／maxErrors=3／resetHalt）。iPhoneのGitHub画面で編集して止められる。
+  設定は live/config.json（enabled／mode=dry・test・live／maxUsd=180（3万円＝約186ドル）／dailyLossStopPct=5／maxErrors=3／resetHalt）。iPhoneのGitHub画面で編集して止められる。
   信号は reports/us-paper.json の nextBuys と settings.hold。売りは保有日数に達した翌取引日の寄り付き後（仮想は引け）。空き資金は現金のまま（SPY置きは未実装）。
   注文：order_v3、market US、MARKET、CORE、entrust_type QTY（端数4桁）、account_tax_type SPECIFIC（必須。無いと417）。値段は1株の preview の estimated_cost で取る（株価データは購読が要るため）。
   AMOUNT（金額指定）は preview で 0 が返り項目名不明なので使わない。状態は Actions キャッシュ webull-live-（WEBULL_APP_SECRET で暗号化）。公開 reports/live.json は銘柄・損益率・件数だけ
