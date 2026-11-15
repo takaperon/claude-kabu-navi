@@ -70,7 +70,7 @@ try:
         import uuid
         pv = {}
         base = {"combo_type": "NORMAL", "symbol": "SPY", "instrument_type": "EQUITY", "market": "US", "order_type": "MARKET",
-                "support_trading_session": "CORE", "side": "BUY", "time_in_force": "DAY"}
+                "support_trading_session": "CORE", "side": "BUY", "time_in_force": "DAY", "account_tax_type": "SPECIFIC"}
         variants = {
             "amount_total_cash_amount": {"entrust_type": "AMOUNT", "total_cash_amount": "5"},
             "amount_amount": {"entrust_type": "AMOUNT", "amount": "5"},
