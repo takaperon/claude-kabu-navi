@@ -54,7 +54,7 @@ jobs:
           if [ -f wbtoken.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken.enc -out .wbtoken/token.txt || true; fi
           if [ ! -s .wbtoken/token.txt ] && [ -f wbtoken-check.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken-check.enc -out .wbtoken/token.txt || true; fi
           if [ -f livestate.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in livestate.enc -out .livestate/state.json && echo "state restored"; fi
-          git fetch -q origin reports && git show origin/reports:reports/us-paper.json > us-paper.json || echo '{}' > us-paper.json
+          git fetch -q origin reports && cp live/sample-paper.json us-paper.json  # TEMP dry test
       - name: trade
         run: python scripts/live/trade.py
       - name: encrypt
