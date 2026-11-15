@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-15T08:15:57.537426+00:00",
+  "checkedAt": "2026-11-15T08:16:56.521625+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -45,47 +45,27 @@
     "amount_total_cash_amount": {
       "status": 200,
       "msg": "",
-      "keys": [
-        "estimated_cost",
-        "estimated_transaction_fee",
-        "estimated_transaction_fee_detail"
-      ]
+      "estimated_cost": "0.00"
     },
     "amount_amount": {
       "status": 200,
       "msg": "",
-      "keys": [
-        "estimated_cost",
-        "estimated_transaction_fee",
-        "estimated_transaction_fee_detail"
-      ]
+      "estimated_cost": "0.00"
     },
     "amount_cash_amount": {
       "status": 200,
       "msg": "",
-      "keys": [
-        "estimated_cost",
-        "estimated_transaction_fee",
-        "estimated_transaction_fee_detail"
-      ]
+      "estimated_cost": "0.00"
     },
     "qty_fraction": {
       "status": 200,
       "msg": "",
-      "keys": [
-        "estimated_cost",
-        "estimated_transaction_fee",
-        "estimated_transaction_fee_detail"
-      ]
+      "estimated_cost": "8.24"
     },
     "qty_one": {
       "status": 200,
       "msg": "",
-      "keys": [
-        "estimated_cost",
-        "estimated_transaction_fee",
-        "estimated_transaction_fee_detail"
-      ]
+      "estimated_cost": "824.46"
     }
   }
 }
