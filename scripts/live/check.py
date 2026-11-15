@@ -65,6 +65,33 @@ try:
     probe("jp_dividend_7203", lambda: data.fundamentals.get_dividend_calendar("7203", "JP_STOCK"))
     probe("us_forecast_eps_AAPL", lambda: data.fundamentals.get_forecast_eps("AAPL", "US_STOCK"))
     out["dataProbes"] = probes
+    # 注文の形の確認（preview＝見積もりだけで、注文は出ない）。米国株を金額指定・端数で買えるか
+    if os.getenv("PREVIEW_PROBE") == "1" and accts:
+        import uuid
+        pv = {}
+        base = {"combo_type": "NORMAL", "symbol": "SPY", "instrument_type": "EQUITY", "market": "US", "order_type": "MARKET",
+                "support_trading_session": "CORE", "side": "BUY", "time_in_force": "DAY"}
+        variants = {
+            "amount_total_cash_amount": {"entrust_type": "AMOUNT", "total_cash_amount": "5"},
+            "amount_amount": {"entrust_type": "AMOUNT", "amount": "5"},
+            "amount_cash_amount": {"entrust_type": "AMOUNT", "cash_amount": "5"},
+            "qty_fraction": {"entrust_type": "QTY", "quantity": "0.01"},
+            "qty_one": {"entrust_type": "QTY", "quantity": "1"},
+        }
+        for name, v in variants.items():
+            try:
+                r = trade.order_v3.preview_order(aid, [{**base, **v, "client_order_id": uuid.uuid4().hex}])
+                item = {"status": r.status_code}
+                try:
+                    j = r.json()
+                    item["msg"] = str(j.get("message") or j.get("msg") or j.get("error_code") or "")[:160]
+                    if r.status_code == 200: item["keys"] = sorted(list(j.keys()))[:12] if isinstance(j, dict) else str(type(j))
+                except Exception:
+                    item["msg"] = r.text[:160]
+                pv[name] = item
+            except Exception as e:
+                pv[name] = {"error": type(e).__name__, "msg": str(e)[:160]}
+        out["previewProbes"] = pv
 except Exception as e:  # エラー文には識別子が入りうるので、種類とコードだけ
     out["error"] = type(e).__name__ + (":" + str(getattr(e, "error_code", "")) if getattr(e, "error_code", None) else "")
 save()
