@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-15T08:14:59.327060+00:00",
+  "checkedAt": "2026-11-15T08:15:57.537426+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -43,24 +43,49 @@
   },
   "previewProbes": {
     "amount_total_cash_amount": {
-      "error": "ServerException",
-      "msg": "HTTP Status: 417, Code: OPENAPI_PARAM_ERR, Msg: Parameter error, invalid account_tax_type, value: null, RequestID: 7bfb4f18-6e85-425a-a224-0695c831f892"
+      "status": 200,
+      "msg": "",
+      "keys": [
+        "estimated_cost",
+        "estimated_transaction_fee",
+        "estimated_transaction_fee_detail"
+      ]
     },
     "amount_amount": {
-      "error": "ServerException",
-      "msg": "HTTP Status: 417, Code: OPENAPI_PARAM_ERR, Msg: Parameter error, invalid account_tax_type, value: null, RequestID: 1ad57dcc-db02-4ae0-b392-9ec431fa7383"
+      "status": 200,
+      "msg": "",
+      "keys": [
+        "estimated_cost",
+        "estimated_transaction_fee",
+        "estimated_transaction_fee_detail"
+      ]
     },
     "amount_cash_amount": {
-      "error": "ServerException",
-      "msg": "HTTP Status: 417, Code: OPENAPI_PARAM_ERR, Msg: Parameter error, invalid account_tax_type, value: null, RequestID: 1d3298e4-5573-4a7e-8eb0-1382b40d2756"
+      "status": 200,
+      "msg": "",
+      "keys": [
+        "estimated_cost",
+        "estimated_transaction_fee",
+        "estimated_transaction_fee_detail"
+      ]
     },
     "qty_fraction": {
-      "error": "ServerException",
-      "msg": "HTTP Status: 417, Code: OPENAPI_PARAM_ERR, Msg: Parameter error, invalid account_tax_type, value: null, RequestID: bdcd6339-4622-4414-a27e-4309d9920ed8"
+      "status": 200,
+      "msg": "",
+      "keys": [
+        "estimated_cost",
+        "estimated_transaction_fee",
+        "estimated_transaction_fee_detail"
+      ]
     },
     "qty_one": {
-      "error": "ServerException",
-      "msg": "HTTP Status: 417, Code: OPENAPI_PARAM_ERR, Msg: Parameter error, invalid account_tax_type, value: null, RequestID: 4f01f1f4-9329-4011-9f51-95049a2c0825"
+      "status": 200,
+      "msg": "",
+      "keys": [
+        "estimated_cost",
+        "estimated_transaction_fee",
+        "estimated_transaction_fee_detail"
+      ]
     }
   }
 }
