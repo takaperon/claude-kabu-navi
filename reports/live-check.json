@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-15T08:22:16.360696+00:00",
+  "checkedAt": "2026-11-15T08:23:19.557422+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -39,33 +39,6 @@
     "us_forecast_eps_AAPL": {
       "status": 200,
       "rows": 5
-    }
-  },
-  "previewProbes": {
-    "amount_total_cash_amount": {
-      "status": 200,
-      "msg": "",
-      "estimated_cost": "0.00"
-    },
-    "amount_amount": {
-      "status": 200,
-      "msg": "",
-      "estimated_cost": "0.00"
-    },
-    "amount_cash_amount": {
-      "status": 200,
-      "msg": "",
-      "estimated_cost": "0.00"
-    },
-    "qty_fraction": {
-      "status": 200,
-      "msg": "",
-      "estimated_cost": "8.24"
-    },
-    "qty_one": {
-      "status": 200,
-      "msg": "",
-      "estimated_cost": "824.46"
     }
   }
 }
