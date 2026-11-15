@@ -273,6 +273,7 @@ section[hidden]{display:none}
         <div class="note">ルールは、過去5年の検証で一番安定して増えた組み合わせを、株ナビが毎朝自動で選び直しています。税金は引いてあり、為替の影響は入っていません。</div>
       </div>
     </div>
+    <div id="us-live"></div>
     <div class="say" id="us-say"></div>
     <div class="trio" id="us-trio"></div>
     <h2>最近の決算の反応<small>条件を超えたら買い</small></h2>
@@ -359,6 +360,7 @@ const TERMS = {
   '朝高': '次の朝の寄り付きが、前の日の終わりの値段より高く始まること。市場がその発表を好感したサインと見ています。',
 };
 
+let usLive = null;
 let usPaper = null, usBT = null, mkt = 'jp', useg = 'hold';
 let paper = null, backtest = null, newsData = null, seg = 'hold';
 
@@ -574,6 +576,16 @@ function renderUS() {
   say += U.idleInSpyPct > 0 ? ` 資金の<b>${Math.round(U.idleInSpyPct)}%</b>はS&P500に置いています。` : ` 資金の<b>${Math.round(U.idlePct ?? 0)}%</b>は現金で待機しています。`;
   $('us-rule').innerHTML = `いまのルール：決算の翌日に<b>+${usTh()}%以上</b>上がった株を次の夜に買い、<b>${usHold()}取引日</b>持つ。${usIdleText()}。`;
   $('us-say').innerHTML = say;
+  // 本物の口座（少額）
+  const L = usLive;
+  if (L && L.enabled) {
+    const state = L.status === 'halted' || L.halted ? '<span class="down">停止中</span>' : L.mode === 'live' ? '<span class="up">本番で動いています</span>' : L.mode === 'test' ? '接続テスト中' : '練習中（注文は出していません）';
+    const rows = (L.holdings || []).map((h) => `<li><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日</small></span><span class="num ${cls(h.unrealPct ?? 0)}">${h.unrealPct != null ? sign(h.unrealPct) + '%' : '—'}</span></li>`).join('');
+    $('us-live').innerHTML = `<div class="real" style="border-top-color:var(--up)">
+      <div class="hd"><b>本物の口座（3万円）</b><span class="num ${cls(L.returnPct ?? 0)}">${L.returnPct != null ? sign(L.returnPct) + '%' : ''}</span></div>
+      <p>${state}・${md(L.date)}の実行${(L.orders || []).length ? `で注文${L.orders.length}件${L.mode !== 'live' ? '（出したことにしただけ）' : ''}` : '：注文なし'}${(L.notes || []).length ? '・' + L.notes.map(esc).join('・') : ''}</p>
+      ${rows ? `<ul>${rows}</ul>` : ''}</div>`;
+  }
   const wins = U.recentClosed.filter((c) => c.retPct > 0).length;
   const avgU = U.holdings.length ? U.holdings.reduce((a, h) => a + h.unrealPct, 0) / U.holdings.length : 0;
   $('us-trio').innerHTML = `
@@ -795,9 +807,10 @@ async function main() {
     $('tab-home').innerHTML = `<p class="empty" style="margin-top:20px">データを読み込めませんでした。電波のよい場所で、もう一度開いてください。</p>`;
     return;
   }
-  const [bt, idx, us, ub] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json'), getJSON('reports/us-backtest.json')]);
+  const [bt, idx, us, ub, lv] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json'), getJSON('reports/us-backtest.json'), getJSON('reports/live.json')]);
   usPaper = us.status === 'fulfilled' ? us.value : null;
   usBT = ub.status === 'fulfilled' ? ub.value : null;
+  usLive = lv.status === 'fulfilled' ? lv.value : null;
   backtest = bt.status === 'fulfilled' ? bt.value : null;
   if (idx.status === 'fulfilled' && idx.value.latest) {
     try { newsData = await getJSON(`news/${idx.value.latest}.json`); } catch {}

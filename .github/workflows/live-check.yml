@@ -20,7 +20,6 @@ jobs:
       WEBULL_APP_KEY: ${{ secrets.WEBULL_APP_KEY }}
       WEBULL_APP_SECRET: ${{ secrets.WEBULL_APP_SECRET }}
       WEBULL_OPENAPI_TOKEN_DIR: .wbtoken
-      PREVIEW_PROBE: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
