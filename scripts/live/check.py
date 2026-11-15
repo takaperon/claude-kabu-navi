@@ -85,7 +85,7 @@ try:
                 try:
                     j = r.json()
                     item["msg"] = str(j.get("message") or j.get("msg") or j.get("error_code") or "")[:160]
-                    if r.status_code == 200: item["keys"] = sorted(list(j.keys()))[:12] if isinstance(j, dict) else str(type(j))
+                    if r.status_code == 200 and isinstance(j, dict): item["estimated_cost"] = str(j.get("estimated_cost"))[:20]  # 5ドル分の見積もり額だけ（口座情報ではない）
                 except Exception:
                     item["msg"] = r.text[:160]
                 pv[name] = item
