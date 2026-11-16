@@ -164,19 +164,26 @@ try:
         if px:
             p["unrealPct"] = round((px / p["entryPx"] - 1) * 100, 1) if p.get("entryPx") else None
             pv += px * p["qty"]
-    bal = trade.account_v2.get_account_balance(aid)
-    cash_usd = None
-    if bal.status_code == 200:
+    def get_cash():
+        bal = trade.account_v2.get_account_balance(aid)
+        if bal.status_code != 200: return None
         bj = bal.json() or {}
         st["balanceKeys"] = sorted(list(bj.keys()))[:40]  # 中身ではなく項目名だけ（形の確認用）
         for c in bj.get("account_currency_assets") or bj.get("currency_assets") or []:
             if str(c.get("currency")) == "USD":
-                cash_usd = num(c.get("cash_balance") or c.get("buying_power") or c.get("available_cash") or c.get("settled_cash"))
+                return num(c.get("cash_balance") or c.get("buying_power") or c.get("available_cash") or c.get("settled_cash"))
+        return None
+    cash_usd = get_cash()
+    # 空いているお金はSPYに置く（2026-11-17 オーナーOK。検証の1位の形）。このシステムが買ったSPYの数量・元値は状態にだけ持つ
+    IDLE_SPY = bool(CFG.get("idleSpy")) and mode == "live"
+    spy_q = st.get("spyQty", 0.0)
+    spy_px = price("SPY") if (spy_q or IDLE_SPY) else None
+    spy_val = spy_q * (spy_px or 0)
     pub["usdCashFound"] = bool(cash_usd and cash_usd > 0)  # 金額は出さず、ドルの残高が読めたかだけ
     pub["usdCashEnough"] = bool(cash_usd and cash_usd >= MAX_USD * 0.9)
     used = sum(p["qty"] * (p.get("entryPx") or 0) for p in st["positions"])
-    budget_left = max(0.0, MAX_USD - used)
-    equity = pv + budget_left  # このシステムが預かっている分（上限内）だけで測る
+    budget_left = max(0.0, MAX_USD - used - st.get("spyCost", 0.0))
+    equity = pv + spy_val + budget_left  # このシステムが預かっている分（上限内）だけで測る
     if st.get("maxUsdSeen") != MAX_USD:  # 上限を変えた時は、損益の基準も新しい上限で測り直す（200→180の変更で-10%と出ていた）
         st["maxUsdSeen"] = MAX_USD; st["startEquity"] = MAX_USD; st["lastEquity"] = None
     if new_day:
@@ -218,8 +225,24 @@ try:
         if n_orders >= MAX_ORDERS: pub["skipped"].append({"t": b["t"], "why": "1日の注文数の上限"}); continue
         if any(p["t"] == b["t"] for p in st["positions"]): continue
         used = sum(p["qty"] * (p.get("entryPx") or 0) for p in st["positions"])
+        want = min(PER_POS, MAX_USD - used)
+        if mode == "live" and st.get("spyQty", 0) > 0 and (cash_usd or 0) < want and n_orders < MAX_ORDERS - 1:
+            # 現金が足りなければ、置いておいたSPYを必要な分だけ売る
+            spx = price("SPY")
+            have = pos_qty("SPY")
+            sq = min(st["spyQty"], have if have is not None else st["spyQty"], (want - (cash_usd or 0)) / (spx or 1e9) * 1.02)
+            sq = math.floor(sq * 10000) / 10000
+            if sq > 0:
+                cid = place("SPY", "SELL", f"{sq:.4f}".rstrip("0").rstrip("."), f"{b['t']} を買うお金をSPYから出す")
+                n_orders += 1
+                q, fpx, s = filled(cid)
+                if q:
+                    st["spyCost"] = st.get("spyCost", 0.0) * (1 - q / st["spyQty"]); st["spyQty"] = max(0.0, st["spyQty"] - q)
+                    time.sleep(3); cash_usd = get_cash()
+                else:
+                    pub["notes"].append(f"SPYの売りが約定しませんでした（{s}）")
         avail = cash_usd if (cash_usd is not None and mode != "dry") else PER_POS  # dry は口座の残高に関係なく形だけ確認
-        amt = min(PER_POS, MAX_USD - used, avail)
+        amt = min(want, avail)
         if amt < 2: pub["skipped"].append({"t": b["t"], "why": "使えるお金が足りない"}); continue
         px = price(b["t"])
         if not px: pub["skipped"].append({"t": b["t"], "why": "値段を確認できない"}); continue
@@ -303,6 +326,27 @@ try:
             except Exception: pass
         pub["special"] = {"t": sp["t"], "state": rec["state"], "entryDate": rec.get("entryDate"), "exitDate": rec.get("exitDate"),
                           "retPct": rec.get("retPct"), "unrealPct": rec.get("unrealPct")}
+
+    # ---------- 空いているお金をSPYへ（その日の売買が終わった後） ----------
+    if IDLE_SPY and not stop_buys and n_orders < MAX_ORDERS and not any(r.get("state") in ("waiting", "ordered", "held") for r in (st.get("special") or {}).values() if CFG.get("special")):
+        cash_usd = get_cash()
+        used = sum(p["qty"] * (p.get("entryPx") or 0) for p in st["positions"])
+        spx = price("SPY")
+        room = MAX_USD - used - st.get("spyQty", 0.0) * (spx or 0)  # 上限の中で、まだSPYに入れていない分
+        add = min(room, (cash_usd or 0) - 1)  # 1ドルは残す
+        if spx and add >= 5:
+            q0 = math.floor(add / spx * 10000) / 10000
+            cid = place("SPY", "BUY", f"{q0:.4f}".rstrip("0").rstrip("."), "空いているお金をSPYに置く")
+            n_orders += 1
+            q, fpx, s = filled(cid)
+            if q:
+                st["spyQty"] = st.get("spyQty", 0.0) + q; st["spyCost"] = st.get("spyCost", 0.0) + q * (fpx or spx)
+            else:
+                pub["notes"].append(f"SPYの買いが約定しませんでした（{s}）")
+    if st.get("spyQty"):
+        spx = price("SPY")
+        pub["idleSpy"] = {"inSpyPct": round(st["spyQty"] * (spx or 0) / MAX_USD * 100, 1),
+                          "spyUnrealPct": round((st["spyQty"] * spx / st["spyCost"] - 1) * 100, 1) if (spx and st.get("spyCost")) else None}
 
     # ---------- テスト：SPYを5ドル分買って、すぐ売る（つながるかの確認） ----------
     # 2026-11-17：初回は買いが約定したが、売りで「保有数量を超えている」（417）。約定数量の読み違いか、端株の反映待ち。
