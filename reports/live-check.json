@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-16T08:55:02.880152+00:00",
+  "checkedAt": "2026-11-16T08:55:53.919187+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -22,51 +22,108 @@
     },
     "us_daily_AAPL": {
       "status": 200,
-      "keys": [
-        "result"
+      "rows": 1200,
+      "barKeys": [
+        "close",
+        "high",
+        "low",
+        "open",
+        "time",
+        "trading_session",
+        "volume"
       ],
-      "listKey": "result",
-      "rowKeys": [
-        "delay_minutes",
-        "instrument_id",
-        "result",
-        "symbol"
-      ],
-      "rows": 1
+      "from": "2022-02-03",
+      "to": "2026-11-13"
     },
     "us_snapshot_AAPL": {
       "status": 200,
-      "rows": 1
+      "rows": 1,
+      "barKeys": [
+        "bps",
+        "change",
+        "change_ratio",
+        "close",
+        "eps",
+        "eps_ttm",
+        "fifty_two_wk_high",
+        "fifty_two_wk_low",
+        "high",
+        "instrument_id",
+        "last_trade_time",
+        "list_status",
+        "lot_size",
+        "low",
+        "market_value"
+      ]
     },
     "us_daily_RDDT": {
       "status": 200,
-      "keys": [
-        "result"
+      "rows": 666,
+      "barKeys": [
+        "close",
+        "high",
+        "low",
+        "open",
+        "time",
+        "trading_session",
+        "volume"
       ],
-      "listKey": "result",
-      "rowKeys": [
-        "delay_minutes",
-        "instrument_id",
-        "result",
-        "symbol"
-      ],
-      "rows": 1
+      "from": "2024-03-21",
+      "to": "2026-11-13"
     },
     "us_earnings_AAPL": {
       "status": 200,
-      "rows": 2
+      "rows": 2,
+      "barKeys": [
+        "currency",
+        "eps_actual",
+        "eps_est",
+        "expected_publish_date",
+        "fiscal_period",
+        "fiscal_year",
+        "rev_actual",
+        "rev_est"
+      ]
     },
     "jp_earnings_7203": {
       "status": 200,
-      "rows": 2
+      "rows": 2,
+      "barKeys": [
+        "currency",
+        "eps_actual",
+        "eps_est",
+        "expected_publish_date",
+        "fiscal_period",
+        "fiscal_year",
+        "rev_actual",
+        "rev_est"
+      ]
     },
     "jp_dividend_7203": {
       "status": 200,
-      "rows": 2
+      "rows": 2,
+      "barKeys": [
+        "amount",
+        "currency",
+        "declare_date",
+        "div_type",
+        "ex_div_date",
+        "market",
+        "pay_date",
+        "record_date",
+        "symbol"
+      ]
     },
     "us_forecast_eps_AAPL": {
       "status": 200,
-      "rows": 5
+      "rows": 5,
+      "barKeys": [
+        "actual",
+        "est",
+        "fiscal_period",
+        "fiscal_year",
+        "reported"
+      ]
     }
   }
 }
