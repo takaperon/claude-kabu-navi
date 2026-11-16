@@ -54,7 +54,14 @@ try:
                             break
                 if isinstance(j, list):
                     item["rows"] = len(j)
-                    ds = sorted(str(x.get("time") or x.get("date") or x.get("trade_date") or "")[:10] for x in j if isinstance(x, dict))
+                    if j and isinstance(j[0], dict): item["barKeys"] = sorted(list(j[0].keys()))[:15]
+                    def _d(x):
+                        v = x.get("time") or x.get("date") or x.get("trade_date") or x.get("timestamp") or ""
+                        if isinstance(v, (int, float)) or (isinstance(v, str) and v.isdigit()):
+                            v = int(v); v = v / 1000 if v > 1e11 else v
+                            return datetime.fromtimestamp(v, timezone.utc).date().isoformat()
+                        return str(v)[:10]
+                    ds = sorted(_d(x) for x in j if isinstance(x, dict))
                     ds = [d for d in ds if d]
                     if ds: item["from"], item["to"] = ds[0], ds[-1]
             else:
@@ -66,9 +73,9 @@ try:
     md = data.market_data
     probe("jp_daily_7203", lambda: md.get_history_bar("7203", "JP_STOCK", "D", count="1200"))
     probe("jp_snapshot_7203", lambda: md.get_snapshot("7203", "JP_STOCK"))
-    probe("us_daily_AAPL", lambda: md.get_history_bar("AAPL", "US_STOCK", "D", count="1200"))
+    probe("us_daily_AAPL", lambda: md.get_history_bar("AAPL", "US_STOCK", "D", count="1200"), rows=lambda j: (j.get("result") or [{}])[0].get("result", []))
     probe("us_snapshot_AAPL", lambda: md.get_snapshot("AAPL", "US_STOCK"))
-    probe("us_daily_RDDT", lambda: md.get_history_bar("RDDT", "US_STOCK", "D", count="1200"))  # 2024年上場（IPOの検証に使えるか）
+    probe("us_daily_RDDT", lambda: md.get_history_bar("RDDT", "US_STOCK", "D", count="1200"), rows=lambda j: (j.get("result") or [{}])[0].get("result", []))  # 2024年上場（IPOの検証に使えるか）
     probe("us_earnings_AAPL", lambda: data.fundamentals.get_earnings_calendar("AAPL", "US_STOCK"))
     probe("jp_earnings_7203", lambda: data.fundamentals.get_earnings_calendar("7203", "JP_STOCK"))
     probe("jp_dividend_7203", lambda: data.fundamentals.get_dividend_calendar("7203", "JP_STOCK"))
