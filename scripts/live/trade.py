@@ -161,7 +161,7 @@ try:
             for k in ("available_quantity", "available_qty", "sellable_quantity", "quantity", "qty", "position", "holding_quantity"):
                 v = num(it.get(k))
                 if v is not None:
-                    pub.setdefault("positionQtyKey", k); return v
+                    pub.setdefault("positionQtyKey", k); st.setdefault("_cost", {})[symbol] = num(it.get("cost_price")); return v
         return 0.0
 
     # ---------- 新しい取引日：保有日数を1つ進める ----------
@@ -188,8 +188,17 @@ try:
     cash_usd = get_cash()
     # 空いているお金はSPYに置く（2026-11-17 オーナーOK。検証の1位の形）。このシステムが買ったSPYの数量・元値は状態にだけ持つ
     IDLE_SPY = bool(CFG.get("idleSpy")) and mode == "live"
+    spy_px = price("SPY") if (st.get("spyQty") or IDLE_SPY) else None
+    if mode == "live" and spy_px:
+        # 状態ファイルが古い・失われた時に備え、SPYの数量は口座の保有で確かめる（このシステムの上限内の分だけ自分のものとみなす）
+        acct = pos_qty("SPY")
+        if acct is not None:
+            mine = min(acct, MAX_USD * 1.1 / spy_px)
+            if abs(mine - st.get("spyQty", 0.0)) > 1e-4:
+                cp = (st.get("_cost") or {}).get("SPY")
+                st["spyCost"] = mine * cp if cp else (st.get("spyCost", 0.0) if st.get("spyQty") else mine * spy_px)
+                st["spyQty"] = mine
     spy_q = st.get("spyQty", 0.0)
-    spy_px = price("SPY") if (spy_q or IDLE_SPY) else None
     spy_val = spy_q * (spy_px or 0)
     pub["usdCashFound"] = bool(cash_usd and cash_usd > 0)  # 金額は出さず、ドルの残高が読めたかだけ
     pub["usdCashEnough"] = bool(cash_usd and cash_usd >= MAX_USD * 0.9)
@@ -346,8 +355,12 @@ try:
         spx = price("SPY")
         room = MAX_USD - used - st.get("spyQty", 0.0) * (spx or 0)  # 上限の中で、まだSPYに入れていない分
         add = min(room, (cash_usd or 0) - 1)  # 1ドルは残す
-        if spx and add >= 5:
-            q0 = math.floor(add / spx * 10000) / 10000
+        q0 = math.floor(add / spx * 10000) / 10000 if spx and add >= 5 else 0
+        if q0 > 0:
+            try: pv_ok = trade.order_v3.preview_order(aid, [base("SPY", "BUY", f"{q0:.4f}".rstrip("0").rstrip("."))]).status_code == 200
+            except Exception: pv_ok = False
+            if not pv_ok: pub["notes"].append("SPYに置く分の買いは、口座の買付余力が足りないので見送りました"); q0 = 0
+        if q0 > 0:
             cid = place("SPY", "BUY", f"{q0:.4f}".rstrip("0").rstrip("."), "空いているお金をSPYに置く")
             n_orders += 1
             q, fpx, s = filled(cid)
