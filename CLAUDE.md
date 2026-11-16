@@ -59,12 +59,14 @@
 - ウィブルAPIのマーケットデータ（株価）は購読が必要で403。決算予定・配当予定・EPS予想（前後半年）は取れる
 - **本番エンジン（2026-11-15〜、オーナーの指示で米国株3万円から）**：scripts/live/trade.py ＋ .github/workflows/live-trade.yml（平日 14:50 UTC＝米国の取引開始後）。
   設定は live/config.json（enabled／mode=dry・test・live／maxUsd=180（3万円＝約186ドル）／dailyLossStopPct=5／maxErrors=3／resetHalt）。iPhoneのGitHub画面で編集して止められる。
-  信号は reports/us-paper.json の nextBuys と settings.hold。売りは保有日数に達した翌取引日の寄り付き後（仮想は引け）。空き資金は現金のまま（SPY置きは未実装）。
+  信号は reports/us-paper.json の nextBuys と settings.hold。売りは保有日数に達した翌取引日の寄り付き後（仮想は引け）。空き資金はSPY（2026-11-17〜）。
   注文：order_v3、market US、MARKET、CORE、entrust_type QTY（端数4桁）、account_tax_type SPECIFIC（必須。無いと417）。値段は1株の preview の estimated_cost で取る（株価データは購読が要るため）。
   AMOUNT（金額指定）は preview で 0 が返り項目名不明なので使わない。状態は Actions キャッシュ webull-live-（WEBULL_APP_SECRET で暗号化）。公開 reports/live.json は銘柄・損益率・件数だけ
 - 2026-11-17 01:10 JST 接続テスト成功（SPY 5ドル：買い・売りとも FILLED）→ mode=live で本番開始。初回の売りは約定数量で出して417（保有数量超え）。
   売る数量は口座の get_account_position の available_quantity を上限にする。NY 10:30以降は新しく買わない。定期実行は 14:50 と予備 15:12 UTC（11/16 は 14:50 が飛ばされた）。
   特別注文（config の special：1回だけ指値で買い翌日の寄りで売る）の仕組みあり（ANT用に作ったがオーナー判断で取りやめ）
+- 2026-11-17 空いているお金をSPYに置く（config の idleSpy、オーナーOK）。買う株が出たらSPYを必要分だけ売る。SPYの数量は口座の保有（available_quantity・cost_price）で確かめる。
+  値段は Nasdaq Basic のスナップショット（close）。preview の estimated_cost は約3%高めに出るので予備だけ。余力不足は preview で止めてエラーにしない
 - SDK：pip の `webull-openapi-python-sdk`（region "jp"、本番 api.webull.co.jp、テスト jp-openapi-alb.uat.webullbroker.com）
 
 ## 検証の方針
