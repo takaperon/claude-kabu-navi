@@ -4,8 +4,6 @@ name: live-trade
 on:
   schedule:
     - cron: '50 14 * * 1-5'
-    # 2026-11-19 だけ：ANT の上場初日（取引開始時刻が決まっていないので、NY 11:00〜15:30 に30分ごとに確認）
-    - cron: '0,30 16-20 19 11 *'
   workflow_dispatch:
     inputs:
       mode:
