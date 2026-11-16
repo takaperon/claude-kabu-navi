@@ -60,6 +60,11 @@ if st.get("halted"):
     pub["notes"].append("エラーが続いたため停止中（config の resetHalt で解除）"); finish("halted"); sys.exit(0)
 if mode != "dry" and (today in HOLIDAYS or datetime.now(timezone.utc).astimezone(ET).weekday() >= 5):  # dry は注文を出さないので休日も確認に使える
     finish("market-closed"); sys.exit(0)
+from zoneinfo import ZoneInfo
+_ny = datetime.now(timezone.utc).astimezone(ZoneInfo("America/New_York"))
+NY_HM = _ny.strftime("%H:%M")
+if mode != "dry" and not ("09:30" <= NY_HM < "16:00"):  # 取引時間外は注文しない（設定の変更で動いた時など）
+    pub["notes"].append(f"米国の取引時間外（ニューヨーク {NY_HM}）なので何もしません"); finish("market-closed"); sys.exit(0)
 
 MAX_USD = float(CFG.get("maxUsd", 200))
 PER_POS = MAX_USD * 0.10
@@ -82,20 +87,23 @@ try:
     if not accts: raise RuntimeError("no account")
     aid = accts[0]["account_id"]
 
-    def base(symbol, side, qty):
-        return {"combo_type": "NORMAL", "client_order_id": uuid.uuid4().hex, "symbol": symbol, "instrument_type": "EQUITY", "market": "US",
-                "order_type": "MARKET", "quantity": qty, "support_trading_session": "CORE", "side": side, "time_in_force": "DAY",
-                "entrust_type": "QTY", "account_tax_type": "SPECIFIC"}
+    def base(symbol, side, qty, limit=None):
+        o = {"combo_type": "NORMAL", "client_order_id": uuid.uuid4().hex, "symbol": symbol, "instrument_type": "EQUITY", "market": "US",
+             "order_type": "MARKET", "quantity": qty, "support_trading_session": "CORE", "side": side, "time_in_force": "DAY",
+             "entrust_type": "QTY", "account_tax_type": "SPECIFIC"}
+        if limit:
+            o["order_type"] = "LIMIT"; o["limit_price"] = f"{limit:.2f}"
+        return o
 
     def price(symbol):
         # 株価データは購読が必要なので、1株の買い注文の「見積もり（preview）」から今の値段を知る（注文は出ない）
         r = trade.order_v3.preview_order(aid, [base(symbol, "BUY", "1")])
         return num(r.json().get("estimated_cost")) if r.status_code == 200 else None
 
-    def place(symbol, side, qty, why):
-        o = base(symbol, side, qty)
+    def place(symbol, side, qty, why, limit=None, force_send=False):
+        o = base(symbol, side, qty, limit)
         rec = {"t": symbol, "side": side, "why": why, "qtyDigits": len(qty.split(".")[1]) if "." in qty else 0}
-        if mode != "live" and not (mode == "test" and symbol == "SPY"):
+        if mode != "live" and not (mode == "test" and symbol == "SPY") and not force_send:
             rec["sent"] = False
             try:  # 出さない注文も、見積もり（preview）で形が正しいかだけ確かめる
                 r = trade.order_v3.preview_order(aid, [o]); rec["previewOk"] = r.status_code == 200
@@ -200,6 +208,76 @@ try:
             qty, px = q, fpx or px
         st["positions"].append({"t": b["t"], "name": b.get("name"), "qty": qty, "entryPx": px, "entryDate": today, "held": 0, "hold": hold, "dry": mode != "live"})
         if cash_usd is not None: cash_usd -= qty * px
+
+    # ---------- オーナーの指示による1回だけの特別注文（自動売買のルールとは別枠） ----------
+    # live/config.json の "special"：{"id","t","usd","offerPrice","limitMult","buyDate","sell":"nextOpen"}
+    # 買い：buyDate の取引時間中、値段（見積もり）が 公開価格×limitMult 以下なら指値で買う。上回れば買わずに次の回を待つ。15:30（NY）を過ぎたら見送り
+    # 売り：買った次の取引日の最初の実行（寄り付き後）で成行で売る。test / live のどちらでも本物の注文を出す（dry は見積もりだけ）
+    sp = CFG.get("special") or {}
+    sps = st.setdefault("special", {})
+    if sp.get("id") and mode != "dry":
+        rec = sps.setdefault(sp["id"], {"state": "waiting"})
+        pub["special"] = {"t": sp["t"], "state": rec["state"]}
+        if rec["state"] == "waiting":
+            if today > sp["buyDate"]:
+                rec["state"] = "skipped"; pub["notes"].append(f"{sp['t']}：買う日を過ぎたので見送りました")
+            elif today == sp["buyDate"]:
+                op = num(sp.get("offerPrice"))
+                if not op:
+                    pub["notes"].append(f"{sp['t']}：公開価格がまだ設定されていないので買いません")
+                else:
+                    lim = round(op * float(sp.get("limitMult", 1.3)), 2)
+                    px = None
+                    try: px = price(sp["t"])
+                    except Exception: px = None
+                    if not px:
+                        pub["notes"].append(f"{sp['t']}：まだ取引が始まっていない（値段を確認できない）。次の回にもう一度確認します")
+                        if NY_HM >= "15:30": rec["state"] = "skipped"; pub["notes"].append(f"{sp['t']}：取引時間の終わりまでに買えなかったので見送りました")
+                    elif px > lim:
+                        pub["notes"].append(f"{sp['t']}：値段が上限（公開価格の{sp.get('limitMult', 1.3)}倍）を超えているので買いません")
+                        if NY_HM >= "15:30": rec["state"] = "skipped"; pub["notes"].append(f"{sp['t']}：最後まで上限を超えていたので見送りました")
+                    else:
+                        usd = min(float(sp["usd"]), cash_usd if cash_usd is not None else float(sp["usd"]))
+                        qty = math.floor(usd / lim * 10000) / 10000  # 上限の値段で買えても予算に収まる数量
+                        qs = f"{qty:.4f}".rstrip("0").rstrip(".")
+                        pv_ok = False
+                        try: pv_ok = trade.order_v3.preview_order(aid, [base(sp["t"], "BUY", qs, lim)]).status_code == 200
+                        except Exception: pv_ok = False
+                        if not pv_ok and math.floor(qty) >= 1:  # 端株の指値が通らなければ、1株単位で指値
+                            qs = str(math.floor(qty)); pub["notes"].append(f"{sp['t']}：端株の指値が通らないので1株単位で注文します")
+                        elif not pv_ok:
+                            qs = None; pub["notes"].append(f"{sp['t']}：指値の注文の形が通りませんでした（見積もりで拒否）。次の回にもう一度試します")
+                        if qs:
+                            cid = place(sp["t"], "BUY", qs, "オーナーの指示（1回だけ）", limit=lim, force_send=True)
+                            n_orders += 1
+                            q, fpx, s = filled(cid, 120)
+                            pub["notes"].append(f"{sp['t']} の買い：{s}")
+                            if q:
+                                rec.update({"state": "held", "qty": q, "entryPx": fpx or px, "entryDate": today})
+                            elif s in ("CANCELLED", "FAILED", "REJECTED"):
+                                pub["notes"].append(f"{sp['t']}：注文が通りませんでした。次の回にもう一度試します")
+                            else:
+                                rec.update({"state": "ordered", "cid": cid, "entryDate": today})
+        elif rec["state"] == "ordered":  # 指値が出たまま。約定したか確認
+            q, fpx, s = filled(rec["cid"], 30)
+            if q: rec.update({"state": "held", "qty": q, "entryPx": fpx})
+            elif today > rec["entryDate"] or s in ("CANCELLED", "FAILED", "REJECTED"): rec["state"] = "skipped"; pub["notes"].append(f"{sp['t']}：指値が約定しないまま終わりました（{s}）")
+            pub["notes"].append(f"{sp['t']} の指値：{s}")
+        elif rec["state"] == "held" and today > rec["entryDate"] and sp.get("sell") == "nextOpen":
+            cid = place(sp["t"], "SELL", f"{rec['qty']:.4f}".rstrip("0").rstrip("."), "翌日の寄りで売る（オーナーの指示）", force_send=True)
+            n_orders += 1
+            q, fpx, s = filled(cid, 120)
+            pub["notes"].append(f"{sp['t']} の売り：{s}")
+            if q:
+                ret = round(((fpx or price(sp["t"]) or rec["entryPx"]) / rec["entryPx"] - 1) * 100, 1) if rec.get("entryPx") else None
+                rec.update({"state": "sold", "exitDate": today, "retPct": ret})
+                st["closed"].append({"t": sp["t"], "name": "特別注文（オーナーの指示）", "entryDate": rec["entryDate"], "exitDate": today, "retPct": ret})
+        if rec.get("entryPx") and rec["state"] == "held":
+            try:
+                cp = price(sp["t"]); rec["unrealPct"] = round((cp / rec["entryPx"] - 1) * 100, 1) if cp else None
+            except Exception: pass
+        pub["special"] = {"t": sp["t"], "state": rec["state"], "entryDate": rec.get("entryDate"), "exitDate": rec.get("exitDate"),
+                          "retPct": rec.get("retPct"), "unrealPct": rec.get("unrealPct")}
 
     # ---------- テスト：SPYを5ドル分買って、すぐ売る（つながるかの確認） ----------
     if mode == "test" and not st.get("testDone"):

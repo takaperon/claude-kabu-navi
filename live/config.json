@@ -4,5 +4,15 @@
   "maxUsd": 180,
   "dailyLossStopPct": 5,
   "maxErrors": 3,
-  "resetHalt": false
+  "resetHalt": false,
+  "special": {
+    "id": "ant-ipo-2026-11",
+    "t": "ANT",
+    "usd": 180,
+    "offerPrice": null,
+    "limitMult": 1.3,
+    "buyDate": "2026-11-19",
+    "sell": "nextOpen",
+    "note": "オーナーの指示（2026-11-16）：上場初日に1回だけ買い、翌日の寄りで売る。公開価格の1.3倍を超えたら買わない。offerPrice は公開価格が決まったら入れる（空のあいだは買わない）"
+  }
 }
