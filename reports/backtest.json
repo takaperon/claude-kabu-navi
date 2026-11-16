@@ -1,6 +1,287 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-16T04:39:12.981Z",
+  "ipo": {
+    "count": 424,
+    "note": "今上場している銘柄だけ・公開価格は不明・滑り片道0.1%",
+    "runs": {
+      "day1_dt": {
+        "name": "上場初日：初値で買って引けで売る",
+        "train": {
+          "n": 290,
+          "winRate": 0.3897,
+          "avgRet": -0.014,
+          "medRet": -0.0219,
+          "profitFactor": 0.75
+        },
+        "test": {
+          "n": 134,
+          "winRate": 0.3955,
+          "avgRet": -0.0055,
+          "medRet": -0.0253,
+          "profitFactor": 0.9
+        },
+        "portTrain": {
+          "returnPct": -34.9,
+          "maxDDPct": 37.2
+        },
+        "portTest": {
+          "returnPct": -8.1,
+          "maxDDPct": 16.1
+        }
+      },
+      "day2_dt": {
+        "name": "上場2日目：寄りで買って引けで売る",
+        "train": {
+          "n": 286,
+          "winRate": 0.3916,
+          "avgRet": -0.0084,
+          "medRet": -0.0172,
+          "profitFactor": 0.8
+        },
+        "test": {
+          "n": 133,
+          "winRate": 0.391,
+          "avgRet": -0.0118,
+          "medRet": -0.0116,
+          "profitFactor": 0.69
+        },
+        "portTrain": {
+          "returnPct": -22.3,
+          "maxDDPct": 31.7
+        },
+        "portTest": {
+          "returnPct": -15,
+          "maxDDPct": 19
+        }
+      },
+      "day3_dt": {
+        "name": "上場3日目：寄りで買って引けで売る",
+        "train": {
+          "n": 286,
+          "winRate": 0.3497,
+          "avgRet": -0.0131,
+          "medRet": -0.0181,
+          "profitFactor": 0.64
+        },
+        "test": {
+          "n": 133,
+          "winRate": 0.4436,
+          "avgRet": -0.0034,
+          "medRet": -0.0087,
+          "profitFactor": 0.89
+        },
+        "portTrain": {
+          "returnPct": -32,
+          "maxDDPct": 36.6
+        },
+        "portTest": {
+          "returnPct": -4.8,
+          "maxDDPct": 9.8
+        }
+      },
+      "day1_up_day2_dt": {
+        "name": "初日に初値より上で引けた銘柄を、2日目にデイトレ",
+        "train": {
+          "n": 113,
+          "winRate": 0.354,
+          "avgRet": -0.0202,
+          "medRet": -0.0226,
+          "profitFactor": 0.58
+        },
+        "test": {
+          "n": 53,
+          "winRate": 0.3962,
+          "avgRet": -0.0243,
+          "medRet": -0.0116,
+          "profitFactor": 0.52
+        },
+        "portTrain": {
+          "returnPct": -20.9,
+          "maxDDPct": 25.9
+        },
+        "portTest": {
+          "returnPct": -12.3,
+          "maxDDPct": 14.4
+        }
+      },
+      "day1_down_day2_dt": {
+        "name": "初日に初値より下で引けた銘柄を、2日目にデイトレ",
+        "train": {
+          "n": 168,
+          "winRate": 0.4226,
+          "avgRet": 0.0007,
+          "medRet": -0.0164,
+          "profitFactor": 1.02
+        },
+        "test": {
+          "n": 79,
+          "winRate": 0.3924,
+          "avgRet": -0.0031,
+          "medRet": -0.0103,
+          "profitFactor": 0.9
+        },
+        "portTrain": {
+          "returnPct": 0.4,
+          "maxDDPct": 11.6
+        },
+        "portTest": {
+          "returnPct": -2.7,
+          "maxDDPct": 7.3
+        }
+      },
+      "day1_overnight": {
+        "name": "初日の引けで買って、2日目の寄りで売る",
+        "train": {
+          "n": 286,
+          "winRate": 0.507,
+          "avgRet": 0.0091,
+          "medRet": 0.0016,
+          "profitFactor": 1.44
+        },
+        "test": {
+          "n": 133,
+          "winRate": 0.5263,
+          "avgRet": 0.0175,
+          "medRet": 0.0011,
+          "profitFactor": 2.18
+        },
+        "portTrain": {
+          "returnPct": 28.7,
+          "maxDDPct": 3.9
+        },
+        "portTest": {
+          "returnPct": 25.8,
+          "maxDDPct": 2.2
+        }
+      },
+      "day1_open_hold5": {
+        "name": "初値で買って5日持つ",
+        "train": {
+          "n": 286,
+          "winRate": 0.3566,
+          "avgRet": -0.0227,
+          "medRet": -0.0581,
+          "profitFactor": 0.78
+        },
+        "test": {
+          "n": 134,
+          "winRate": 0.3134,
+          "avgRet": -0.0105,
+          "medRet": -0.0579,
+          "profitFactor": 0.88
+        },
+        "portTrain": {
+          "returnPct": -53.2,
+          "maxDDPct": 61.1
+        },
+        "portTest": {
+          "returnPct": -17.3,
+          "maxDDPct": 38.1
+        }
+      },
+      "day1_open_hold20": {
+        "name": "初値で買って20日持つ",
+        "train": {
+          "n": 284,
+          "winRate": 0.2958,
+          "avgRet": -0.0748,
+          "medRet": -0.1188,
+          "profitFactor": 0.52
+        },
+        "test": {
+          "n": 134,
+          "winRate": 0.3284,
+          "avgRet": -0.03,
+          "medRet": -0.0701,
+          "profitFactor": 0.74
+        },
+        "portTrain": {
+          "returnPct": -90.2,
+          "maxDDPct": 91.4
+        },
+        "portTest": {
+          "returnPct": -36.5,
+          "maxDDPct": 39.2
+        }
+      },
+      "day2_open_hold20": {
+        "name": "2日目の寄りで買って20日持つ",
+        "train": {
+          "n": 286,
+          "winRate": 0.3217,
+          "avgRet": -0.0689,
+          "medRet": -0.0839,
+          "profitFactor": 0.51
+        },
+        "test": {
+          "n": 133,
+          "winRate": 0.3459,
+          "avgRet": -0.0511,
+          "medRet": -0.0763,
+          "profitFactor": 0.52
+        },
+        "portTrain": {
+          "returnPct": -88.3,
+          "maxDDPct": 90.1
+        },
+        "portTest": {
+          "returnPct": -51,
+          "maxDDPct": 52.1
+        }
+      },
+      "day21_open_hold20": {
+        "name": "上場から1か月後の寄りで買って20日持つ",
+        "train": {
+          "n": 279,
+          "winRate": 0.3871,
+          "avgRet": -0.0258,
+          "medRet": -0.0412,
+          "profitFactor": 0.73
+        },
+        "test": {
+          "n": 135,
+          "winRate": 0.4741,
+          "avgRet": 0.0339,
+          "medRet": -0.0026,
+          "profitFactor": 1.58
+        },
+        "portTrain": {
+          "returnPct": -56,
+          "maxDDPct": 65.4
+        },
+        "portTest": {
+          "returnPct": 51.9,
+          "maxDDPct": 22.2
+        }
+      },
+      "day1_up_hold20": {
+        "name": "初日に初値より上で引けた銘柄を、2日目の寄りで買って20日持つ",
+        "train": {
+          "n": 113,
+          "winRate": 0.292,
+          "avgRet": -0.0929,
+          "medRet": -0.0823,
+          "profitFactor": 0.41
+        },
+        "test": {
+          "n": 53,
+          "winRate": 0.3774,
+          "avgRet": -0.0604,
+          "medRet": -0.0903,
+          "profitFactor": 0.55
+        },
+        "portTrain": {
+          "returnPct": -66.7,
+          "maxDDPct": 67.2
+        },
+        "portTest": {
+          "returnPct": -28.6,
+          "maxDDPct": 32
+        }
+      }
+    }
+  },
+  "generatedAt": "2026-11-16T04:43:08.945Z",
   "days": 1226,
   "universe": 3703,
   "fins": {
@@ -5054,287 +5335,6 @@
     }
   },
   "afterDrops": {
-    "ipo": {
-      "count": 424,
-      "note": "今上場している銘柄だけ・公開価格は不明・滑り片道0.1%",
-      "runs": {
-        "day1_dt": {
-          "name": "上場初日：初値で買って引けで売る",
-          "train": {
-            "n": 290,
-            "winRate": 0.3897,
-            "avgRet": -0.014,
-            "medRet": -0.0219,
-            "profitFactor": 0.75
-          },
-          "test": {
-            "n": 134,
-            "winRate": 0.3955,
-            "avgRet": -0.0055,
-            "medRet": -0.0253,
-            "profitFactor": 0.9
-          },
-          "portTrain": {
-            "returnPct": -34.9,
-            "maxDDPct": 37.2
-          },
-          "portTest": {
-            "returnPct": -8.1,
-            "maxDDPct": 16.1
-          }
-        },
-        "day2_dt": {
-          "name": "上場2日目：寄りで買って引けで売る",
-          "train": {
-            "n": 286,
-            "winRate": 0.3916,
-            "avgRet": -0.0084,
-            "medRet": -0.0172,
-            "profitFactor": 0.8
-          },
-          "test": {
-            "n": 133,
-            "winRate": 0.391,
-            "avgRet": -0.0118,
-            "medRet": -0.0116,
-            "profitFactor": 0.69
-          },
-          "portTrain": {
-            "returnPct": -22.3,
-            "maxDDPct": 31.7
-          },
-          "portTest": {
-            "returnPct": -15,
-            "maxDDPct": 19
-          }
-        },
-        "day3_dt": {
-          "name": "上場3日目：寄りで買って引けで売る",
-          "train": {
-            "n": 286,
-            "winRate": 0.3497,
-            "avgRet": -0.0131,
-            "medRet": -0.0181,
-            "profitFactor": 0.64
-          },
-          "test": {
-            "n": 133,
-            "winRate": 0.4436,
-            "avgRet": -0.0034,
-            "medRet": -0.0087,
-            "profitFactor": 0.89
-          },
-          "portTrain": {
-            "returnPct": -32,
-            "maxDDPct": 36.6
-          },
-          "portTest": {
-            "returnPct": -4.8,
-            "maxDDPct": 9.8
-          }
-        },
-        "day1_up_day2_dt": {
-          "name": "初日に初値より上で引けた銘柄を、2日目にデイトレ",
-          "train": {
-            "n": 113,
-            "winRate": 0.354,
-            "avgRet": -0.0202,
-            "medRet": -0.0226,
-            "profitFactor": 0.58
-          },
-          "test": {
-            "n": 53,
-            "winRate": 0.3962,
-            "avgRet": -0.0243,
-            "medRet": -0.0116,
-            "profitFactor": 0.52
-          },
-          "portTrain": {
-            "returnPct": -20.9,
-            "maxDDPct": 25.9
-          },
-          "portTest": {
-            "returnPct": -12.3,
-            "maxDDPct": 14.4
-          }
-        },
-        "day1_down_day2_dt": {
-          "name": "初日に初値より下で引けた銘柄を、2日目にデイトレ",
-          "train": {
-            "n": 168,
-            "winRate": 0.4226,
-            "avgRet": 0.0007,
-            "medRet": -0.0164,
-            "profitFactor": 1.02
-          },
-          "test": {
-            "n": 79,
-            "winRate": 0.3924,
-            "avgRet": -0.0031,
-            "medRet": -0.0103,
-            "profitFactor": 0.9
-          },
-          "portTrain": {
-            "returnPct": 0.4,
-            "maxDDPct": 11.6
-          },
-          "portTest": {
-            "returnPct": -2.7,
-            "maxDDPct": 7.3
-          }
-        },
-        "day1_overnight": {
-          "name": "初日の引けで買って、2日目の寄りで売る",
-          "train": {
-            "n": 286,
-            "winRate": 0.507,
-            "avgRet": 0.0091,
-            "medRet": 0.0016,
-            "profitFactor": 1.44
-          },
-          "test": {
-            "n": 133,
-            "winRate": 0.5263,
-            "avgRet": 0.0175,
-            "medRet": 0.0011,
-            "profitFactor": 2.18
-          },
-          "portTrain": {
-            "returnPct": 28.7,
-            "maxDDPct": 3.9
-          },
-          "portTest": {
-            "returnPct": 25.8,
-            "maxDDPct": 2.2
-          }
-        },
-        "day1_open_hold5": {
-          "name": "初値で買って5日持つ",
-          "train": {
-            "n": 286,
-            "winRate": 0.3566,
-            "avgRet": -0.0227,
-            "medRet": -0.0581,
-            "profitFactor": 0.78
-          },
-          "test": {
-            "n": 134,
-            "winRate": 0.3134,
-            "avgRet": -0.0105,
-            "medRet": -0.0579,
-            "profitFactor": 0.88
-          },
-          "portTrain": {
-            "returnPct": -53.2,
-            "maxDDPct": 61.1
-          },
-          "portTest": {
-            "returnPct": -17.3,
-            "maxDDPct": 38.1
-          }
-        },
-        "day1_open_hold20": {
-          "name": "初値で買って20日持つ",
-          "train": {
-            "n": 284,
-            "winRate": 0.2958,
-            "avgRet": -0.0748,
-            "medRet": -0.1188,
-            "profitFactor": 0.52
-          },
-          "test": {
-            "n": 134,
-            "winRate": 0.3284,
-            "avgRet": -0.03,
-            "medRet": -0.0701,
-            "profitFactor": 0.74
-          },
-          "portTrain": {
-            "returnPct": -90.2,
-            "maxDDPct": 91.4
-          },
-          "portTest": {
-            "returnPct": -36.5,
-            "maxDDPct": 39.2
-          }
-        },
-        "day2_open_hold20": {
-          "name": "2日目の寄りで買って20日持つ",
-          "train": {
-            "n": 286,
-            "winRate": 0.3217,
-            "avgRet": -0.0689,
-            "medRet": -0.0839,
-            "profitFactor": 0.51
-          },
-          "test": {
-            "n": 133,
-            "winRate": 0.3459,
-            "avgRet": -0.0511,
-            "medRet": -0.0763,
-            "profitFactor": 0.52
-          },
-          "portTrain": {
-            "returnPct": -88.3,
-            "maxDDPct": 90.1
-          },
-          "portTest": {
-            "returnPct": -51,
-            "maxDDPct": 52.1
-          }
-        },
-        "day21_open_hold20": {
-          "name": "上場から1か月後の寄りで買って20日持つ",
-          "train": {
-            "n": 279,
-            "winRate": 0.3871,
-            "avgRet": -0.0258,
-            "medRet": -0.0412,
-            "profitFactor": 0.73
-          },
-          "test": {
-            "n": 135,
-            "winRate": 0.4741,
-            "avgRet": 0.0339,
-            "medRet": -0.0026,
-            "profitFactor": 1.58
-          },
-          "portTrain": {
-            "returnPct": -56,
-            "maxDDPct": 65.4
-          },
-          "portTest": {
-            "returnPct": 51.9,
-            "maxDDPct": 22.2
-          }
-        },
-        "day1_up_hold20": {
-          "name": "初日に初値より上で引けた銘柄を、2日目の寄りで買って20日持つ",
-          "train": {
-            "n": 113,
-            "winRate": 0.292,
-            "avgRet": -0.0929,
-            "medRet": -0.0823,
-            "profitFactor": 0.41
-          },
-          "test": {
-            "n": 53,
-            "winRate": 0.3774,
-            "avgRet": -0.0604,
-            "medRet": -0.0903,
-            "profitFactor": 0.55
-          },
-          "portTrain": {
-            "returnPct": -66.7,
-            "maxDDPct": 67.2
-          },
-          "portTest": {
-            "returnPct": -28.6,
-            "maxDDPct": 32
-          }
-        }
-      }
-    },
     "-1〜-2%": {
       "days": 117,
       "next1": {
