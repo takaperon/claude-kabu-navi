@@ -185,6 +185,45 @@ for (const T of newDates) {
     const mark = st.cash + st.positions.reduce((a, p) => a + p.size * ((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx, 0);
     st.equity.push({ date: T, value: Math.round(mark) });
   }
+  // ---------- IPO一晩持ち（2026-11-16〜）：上場初日（初値がついた日）の引けで買い、次の日の寄りで売る。30万円・100株単位・最大2銘柄 ----------
+  {
+    const st = (state.ipoNight ??= { cash: 300_000, positions: [], closed: [], tax: {}, equity: [{ date: state.lastDate, value: 300_000 }] });
+    const k = idxOf.get(T);
+    // 1) 前の日の引けで買ったものを、今日の寄りで売る
+    for (const pos of st.positions.splice(0)) {
+      const p = px.get(pos.code);
+      const o = p?.o > 0 ? p.o : p?.c; // 寄りがつかなければ（売買停止など）終値で
+      if (!(o > 0)) { st.positions.push(pos); continue; }
+      const r = (o * (1 - SLIP)) / pos.entryPx - 1;
+      st.cash += pos.size * (1 + r);
+      st.closed.push({ code: pos.code, name: nameOf(pos.code), reason: pos.reason, entryDate: pos.entryDate, exitDate: T, retPct: pct(r), profitYen: Math.round(pos.size * r), shares: pos.shares });
+      const y = yearOf(T), net = st.closed.filter((c) => yearOf(c.exitDate) === y).reduce((a, c) => a + c.profitYen, 0);
+      const due = Math.round(Math.max(0, net) * TAX);
+      st.cash -= due - (st.tax[y] ?? 0); st.tax[y] = due;
+    }
+    // 2) 今日が上場初日（直近25営業日に始値がない銘柄に、今日はじめて始値がついた）なら、引けで買う
+    const firsts = [];
+    for (const [code, p] of px) {
+      if (!(p.o > 0 && p.c > 0) || !STOCK_MKT.has(info.get(code)?.Mkt)) continue;
+      let before = false;
+      for (let j = Math.max(0, k - 25); j < k; j++) { if (pricesOn(dates[j]).get(code)?.o > 0) { before = true; break; } }
+      if (before || k < 25) continue;
+      firsts.push({ code, p });
+    }
+    firsts.sort((a, b) => (b.p.va ?? 0) - (a.p.va ?? 0)); // 売買代金の大きい順
+    const eq = st.cash;
+    for (const { code, p } of firsts) {
+      if (st.positions.length >= 2) break;
+      const raw = rawOn(T).get(code) ?? p.o;
+      const rawC = raw * (p.c / p.o); // 調整前の終値（rawは始値なので比で換算）
+      const lotCost = rawC * 100 * (1 + SLIP);
+      const lots = Math.floor(Math.min(st.cash, eq / 2) / lotCost);
+      if (lots < 1) continue;
+      st.cash -= lots * lotCost;
+      st.positions.push({ code, entryDate: T, entryPx: p.c * (1 + SLIP), size: lots * lotCost, shares: lots * 100, reason: `${T}に新規上場（初日の引けで購入）` });
+    }
+    st.equity.push({ date: T, value: Math.round(st.cash + st.positions.reduce((a, q) => a + q.size, 0)) });
+  }
   state.lastDate = T;
 }
 
@@ -236,6 +275,16 @@ for (const [k, cfg] of Object.entries(STRATS)) {
     nextBuys: st.pending.sort((a, b) => b.score - a.score).slice(0, 10).map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, late: p.late })),
     recentClosed: st.closed.slice(-30).reverse(),
     equityHistory: st.equity,
+  };
+}
+if (state.ipoNight) {
+  const st = state.ipoNight, eqNow = st.equity.at(-1).value, rets = st.closed.map((c) => c.retPct);
+  out.ipoNight = {
+    name: 'IPO一晩持ち：上場初日の引けで買い、次の日の寄りで売る（30万円・100株単位・2銘柄まで）',
+    capital: 300_000, equityYen: eqNow, returnPct: pct(eqNow / 300_000 - 1), taxYen: Object.values(st.tax).reduce((a, b) => a + b, 0),
+    trades: st.closed.length, winRatePct: rets.length ? pct(rets.filter((r) => r > 0).length / rets.length) : null,
+    holdings: st.positions.map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, entryDate: p.entryDate, shares: p.shares })),
+    recentClosed: st.closed.slice(-30).reverse(), equityHistory: st.equity,
   };
 }
 fs.writeFileSync(path.join(OUT, 'paper.json'), JSON.stringify(out, null, 2));
