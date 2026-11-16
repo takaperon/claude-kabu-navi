@@ -12,7 +12,7 @@
     "trades": 298,
     "ok": true,
     "score": 28.9,
-    "chosenAt": "2026-11-16T09:07:51.138Z",
+    "chosenAt": "2026-11-16T10:55:25.047Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "candidates": [
@@ -366,51 +366,51 @@
     "all_dt": {
       "name": "比較：無作為に10銘柄をデイトレ",
       "train": {
-        "n": 8388,
-        "winRate": 0.4465,
-        "avgRet": -0.0016,
-        "profitFactor": 0.77
+        "n": 8393,
+        "winRate": 0.4523,
+        "avgRet": -0.0019,
+        "profitFactor": 0.73
       },
       "test": {
-        "n": 5888,
-        "winRate": 0.4327,
-        "avgRet": -0.0024,
-        "profitFactor": 0.69
+        "n": 5886,
+        "winRate": 0.4511,
+        "avgRet": -0.0015,
+        "profitFactor": 0.79
       },
       "portfolioTrain": {
-        "returnPct": -74.6,
-        "maxDDPct": 75.3,
-        "trades": 8388
+        "returnPct": -80.3,
+        "maxDDPct": 80.5,
+        "trades": 8393
       },
       "portfolioTest": {
-        "returnPct": -76.4,
-        "maxDDPct": 77.3,
-        "trades": 5888
+        "returnPct": -60.2,
+        "maxDDPct": 60.9,
+        "trades": 5886
       }
     },
     "all_overnight": {
       "name": "比較：無作為に10銘柄を夜だけ持つ",
       "train": {
-        "n": 8385,
-        "winRate": 0.3902,
-        "avgRet": -0.0017,
-        "profitFactor": 0.61
+        "n": 8388,
+        "winRate": 0.395,
+        "avgRet": -0.0018,
+        "profitFactor": 0.6
       },
       "test": {
-        "n": 5880,
-        "winRate": 0.3995,
-        "avgRet": -0.0014,
+        "n": 5879,
+        "winRate": 0.4011,
+        "avgRet": -0.0015,
         "profitFactor": 0.69
       },
       "portfolioTrain": {
-        "returnPct": -76.9,
-        "maxDDPct": 77.3,
-        "trades": 8385
+        "returnPct": -77.5,
+        "maxDDPct": 77.6,
+        "trades": 8388
       },
       "portfolioTest": {
-        "returnPct": -56,
-        "maxDDPct": 57.1,
-        "trades": 5880
+        "returnPct": -58.2,
+        "maxDDPct": 59.3,
+        "trades": 5879
       }
     }
   },
@@ -418,7 +418,7 @@
     "dayPct": 35.6,
     "nightPct": 55
   },
-  "generatedAt": "2026-11-16T09:07:51.174Z",
+  "generatedAt": "2026-11-16T10:55:25.083Z",
   "universe": 496,
   "days": 1474,
   "periods": {
@@ -441,17 +441,17 @@
     "eps_down": 1962,
     "earn_all": 11450,
     "div_up": 1300,
-    "av_all": 8067,
-    "sup5": 4126,
-    "sup10": 2618,
-    "sup5_rev": 1067,
-    "miss5": 795
+    "av_all": 8629,
+    "sup5": 4409,
+    "sup10": 2791,
+    "sup5_rev": 1159,
+    "miss5": 850
   },
   "secCoverage": {
     "withEarnings": 495,
     "withEps": 490
   },
-  "avCoverage": 350,
+  "avCoverage": 375,
   "spy": {
     "trainPct": 50.5,
     "testPct": 39.1
@@ -459,12 +459,12 @@
   "randomBase": {
     "name": "無作為に10銘柄を10日ごとに入れ替え×100回",
     "train": {
-      "avg": 20.7,
-      "p90": 45.9
+      "avg": 18.5,
+      "p90": 46.2
     },
     "test": {
-      "avg": 22.5,
-      "p90": 56.2
+      "avg": 20.5,
+      "p90": 43.3
     }
   },
   "results": {
@@ -486,66 +486,66 @@
             "profitFactor": 0.82
           },
           "portfolioTrain": {
-            "returnPct": -34,
-            "maxDDPct": 35.2,
+            "returnPct": -32.2,
+            "maxDDPct": 33.4,
             "trades": 3380,
             "yearly": {
-              "2021": -12.8,
-              "2022": 3.6,
-              "2023": -15.7,
-              "2024": -13.3
+              "2021": -14.2,
+              "2022": -1.2,
+              "2023": -8.8,
+              "2024": -12.3
             }
           },
           "portfolioTest": {
-            "returnPct": -23,
-            "maxDDPct": 36.6,
+            "returnPct": -24.8,
+            "maxDDPct": 37.4,
             "trades": 2543,
             "yearly": {
-              "2024": -18.1,
-              "2025": -20.7,
-              "2026": 18.6
+              "2024": -17.6,
+              "2025": -20.9,
+              "2026": 15.3
             }
           },
           "idleSpyTrain": {
-            "returnPct": -0.6,
-            "maxDDPct": 32.5,
+            "returnPct": 2,
+            "maxDDPct": 37.2,
             "trades": 3380,
             "yearly": {
-              "2021": 6.9,
-              "2022": -15.2,
-              "2023": 6.4,
-              "2024": 3
+              "2021": 5.2,
+              "2022": -19.2,
+              "2023": 15,
+              "2024": 4.2
             }
           },
           "idleSpyTest": {
-            "returnPct": 7.1,
-            "maxDDPct": 35,
+            "returnPct": 4.6,
+            "maxDDPct": 33.7,
             "trades": 2543,
             "yearly": {
-              "2024": -13.2,
-              "2025": -6.7,
-              "2026": 32.2
+              "2024": -12.6,
+              "2025": -6.9,
+              "2026": 28.5
             }
           },
           "idleTrendTrain": {
-            "returnPct": -17.9,
-            "maxDDPct": 29.8,
+            "returnPct": -15.7,
+            "maxDDPct": 33.9,
             "trades": 3380,
             "yearly": {
-              "2021": -7.1,
-              "2022": -11.8,
-              "2023": -2.7,
-              "2024": 3
+              "2021": -8.6,
+              "2022": -15.9,
+              "2023": 5.2,
+              "2024": 4.2
             }
           },
           "idleTrendTest": {
-            "returnPct": -2.4,
-            "maxDDPct": 29.8,
+            "returnPct": -4.7,
+            "maxDDPct": 27.9,
             "trades": 2543,
             "yearly": {
-              "2024": -13.2,
-              "2025": -11.4,
-              "2026": 26.9
+              "2024": -12.6,
+              "2025": -11.6,
+              "2026": 23.3
             }
           }
         },
@@ -564,66 +564,66 @@
             "profitFactor": 1.14
           },
           "portfolioTrain": {
-            "returnPct": 15.1,
-            "maxDDPct": 20.7,
+            "returnPct": 31.2,
+            "maxDDPct": 20.1,
             "trades": 1366,
             "yearly": {
-              "2021": 6.1,
-              "2022": -6.1,
-              "2023": 21.5,
-              "2024": -4.9
+              "2021": 9.8,
+              "2022": -3.3,
+              "2023": 27.2,
+              "2024": -2.9
             }
           },
           "portfolioTest": {
-            "returnPct": 21,
-            "maxDDPct": 28.5,
+            "returnPct": 13.5,
+            "maxDDPct": 23.5,
             "trades": 979,
             "yearly": {
-              "2024": -11,
-              "2025": 4.9,
-              "2026": 29.6
+              "2024": -8.4,
+              "2025": 2.9,
+              "2026": 20.4
             }
           },
           "idleSpyTrain": {
-            "returnPct": 21.5,
-            "maxDDPct": 33.2,
+            "returnPct": 38.4,
+            "maxDDPct": 31.4,
             "trades": 1366,
             "yearly": {
-              "2021": 13,
-              "2022": -18,
-              "2023": 32.8,
-              "2024": -1.3
+              "2021": 17,
+              "2022": -15.6,
+              "2023": 39,
+              "2024": 0.8
             }
           },
           "idleSpyTest": {
-            "returnPct": 27.3,
-            "maxDDPct": 32.5,
+            "returnPct": 19.4,
+            "maxDDPct": 28.6,
             "trades": 979,
             "yearly": {
-              "2024": -7.4,
-              "2025": 4.2,
-              "2026": 31.9
+              "2024": -4.8,
+              "2025": 2.3,
+              "2026": 22.6
             }
           },
           "idleTrendTrain": {
-            "returnPct": 16.5,
-            "maxDDPct": 26.1,
+            "returnPct": 32.8,
+            "maxDDPct": 23.6,
             "trades": 1366,
             "yearly": {
-              "2021": 5.6,
-              "2022": -12.3,
-              "2023": 27.5,
-              "2024": -1.3
+              "2021": 9.3,
+              "2022": -9.7,
+              "2023": 33.4,
+              "2024": 0.8
             }
           },
           "idleTrendTest": {
-            "returnPct": 29.3,
-            "maxDDPct": 26.8,
+            "returnPct": 21.3,
+            "maxDDPct": 22.6,
             "trades": 979,
             "yearly": {
-              "2024": -7.4,
-              "2025": 5.9,
-              "2026": 31.8
+              "2024": -4.8,
+              "2025": 4,
+              "2026": 22.5
             }
           }
         },
@@ -642,66 +642,66 @@
             "profitFactor": 1.3
           },
           "portfolioTrain": {
-            "returnPct": 52.5,
-            "maxDDPct": 18.2,
+            "returnPct": 51.7,
+            "maxDDPct": 20.2,
             "trades": 789,
             "yearly": {
-              "2021": 16.4,
-              "2022": 3.9,
-              "2023": 36.2,
-              "2024": -7.4
+              "2021": 17.1,
+              "2022": -2.1,
+              "2023": 40.1,
+              "2024": -5.5
             }
           },
           "portfolioTest": {
-            "returnPct": 37.6,
-            "maxDDPct": 20.2,
+            "returnPct": 63.8,
+            "maxDDPct": 16.6,
             "trades": 549,
             "yearly": {
-              "2024": -2.9,
-              "2025": 7.1,
-              "2026": 32.3
+              "2024": -2.2,
+              "2025": 18.9,
+              "2026": 40.8
             }
           },
           "idleSpyTrain": {
-            "returnPct": 56.3,
-            "maxDDPct": 21.1,
+            "returnPct": 55.9,
+            "maxDDPct": 24.8,
             "trades": 789,
             "yearly": {
-              "2021": 16.4,
-              "2022": -0.9,
-              "2023": 41.4,
-              "2024": -4.2
+              "2021": 17.1,
+              "2022": -6.4,
+              "2023": 45.5,
+              "2024": -2.3
             }
           },
           "idleSpyTest": {
-            "returnPct": 42.4,
-            "maxDDPct": 24.4,
+            "returnPct": 69.4,
+            "maxDDPct": 21,
             "trades": 549,
             "yearly": {
-              "2024": -0.2,
-              "2025": 5.4,
-              "2026": 35.4
+              "2024": 0.4,
+              "2025": 17.1,
+              "2026": 44.2
             }
           },
           "idleTrendTrain": {
-            "returnPct": 54.1,
-            "maxDDPct": 18.6,
+            "returnPct": 53.4,
+            "maxDDPct": 23.1,
             "trades": 789,
             "yearly": {
-              "2021": 16.1,
-              "2022": -0.2,
-              "2023": 38.8,
-              "2024": -4.2
+              "2021": 16.8,
+              "2022": -5.9,
+              "2023": 42.9,
+              "2024": -2.3
             }
           },
           "idleTrendTest": {
-            "returnPct": 44.9,
-            "maxDDPct": 23,
+            "returnPct": 72.5,
+            "maxDDPct": 19.5,
             "trades": 549,
             "yearly": {
-              "2024": -0.2,
-              "2025": 6.7,
-              "2026": 36.1
+              "2024": 0.4,
+              "2025": 18.6,
+              "2026": 45
             }
           }
         },
@@ -720,66 +720,66 @@
             "profitFactor": 1.51
           },
           "portfolioTrain": {
-            "returnPct": 64,
-            "maxDDPct": 17.4,
+            "returnPct": 88.2,
+            "maxDDPct": 15.1,
             "trades": 417,
             "yearly": {
-              "2021": 30,
-              "2022": -5.2,
-              "2023": 28.8,
-              "2024": 3.3
+              "2021": 33.8,
+              "2022": -3.4,
+              "2023": 32,
+              "2024": 10.4
             }
           },
           "portfolioTest": {
-            "returnPct": 40.5,
-            "maxDDPct": 14.1,
+            "returnPct": 56.6,
+            "maxDDPct": 17.4,
             "trades": 280,
             "yearly": {
-              "2024": -1.5,
-              "2025": 13.9,
-              "2026": 25.2
+              "2024": 2.5,
+              "2025": 17.6,
+              "2026": 29.9
             }
           },
           "idleSpyTrain": {
-            "returnPct": 62.5,
-            "maxDDPct": 19.2,
+            "returnPct": 86.4,
+            "maxDDPct": 17,
             "trades": 417,
             "yearly": {
-              "2021": 29.2,
-              "2022": -8,
-              "2023": 31.6,
-              "2024": 3.8
+              "2021": 32.9,
+              "2022": -6.4,
+              "2023": 35.1,
+              "2024": 10.9
             }
           },
           "idleSpyTest": {
-            "returnPct": 51.2,
-            "maxDDPct": 15.2,
+            "returnPct": 69.1,
+            "maxDDPct": 17.8,
             "trades": 280,
             "yearly": {
-              "2024": 2.2,
-              "2025": 16.7,
-              "2026": 26.9
+              "2024": 6.4,
+              "2025": 20.7,
+              "2026": 31.6
             }
           },
           "idleTrendTrain": {
-            "returnPct": 62.5,
-            "maxDDPct": 19.3,
+            "returnPct": 86.5,
+            "maxDDPct": 16.5,
             "trades": 417,
             "yearly": {
-              "2021": 29.4,
-              "2022": -7.2,
-              "2023": 30.4,
-              "2024": 3.8
+              "2021": 33.1,
+              "2022": -5.6,
+              "2023": 33.8,
+              "2024": 10.9
             }
           },
           "idleTrendTest": {
-            "returnPct": 47.7,
-            "maxDDPct": 14.6,
+            "returnPct": 65.1,
+            "maxDDPct": 17.4,
             "trades": 280,
             "yearly": {
-              "2024": 2.2,
-              "2025": 15,
-              "2026": 25.7
+              "2024": 6.4,
+              "2025": 18.9,
+              "2026": 30.4
             }
           }
         }
@@ -4595,312 +4595,312 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 4627,
-            "winRate": 0.4852,
+            "n": 4946,
+            "winRate": 0.4836,
             "avgRet": -0.0009,
-            "profitFactor": 0.94
+            "profitFactor": 0.93
           },
           "test": {
-            "n": 3438,
-            "winRate": 0.4889,
+            "n": 3681,
+            "winRate": 0.4893,
             "avgRet": -0.0012,
             "profitFactor": 0.92
           },
           "portfolioTrain": {
-            "returnPct": -20.5,
-            "maxDDPct": 26.2,
-            "trades": 2904,
+            "returnPct": -27.6,
+            "maxDDPct": 27.8,
+            "trades": 3010,
             "yearly": {
-              "2021": 0.6,
-              "2022": -6.7,
-              "2023": 4.6,
-              "2024": -19
+              "2021": -1.3,
+              "2022": -11.4,
+              "2023": 4.2,
+              "2024": -20.5
             }
           },
           "portfolioTest": {
-            "returnPct": -30.1,
-            "maxDDPct": 40.1,
-            "trades": 2109,
+            "returnPct": -28.4,
+            "maxDDPct": 37.7,
+            "trades": 2178,
             "yearly": {
-              "2024": -10.8,
-              "2025": -29.7,
-              "2026": 11.5
+              "2024": -8.1,
+              "2025": -29.4,
+              "2026": 10.4
             }
           },
           "idleSpyTrain": {
-            "returnPct": 19.7,
-            "maxDDPct": 35,
-            "trades": 2904,
+            "returnPct": 9,
+            "maxDDPct": 37.6,
+            "trades": 3010,
             "yearly": {
-              "2021": 23.4,
-              "2022": -23.6,
-              "2023": 32,
-              "2024": -3.7
+              "2021": 21.1,
+              "2022": -27.5,
+              "2023": 31.5,
+              "2024": -5.5
             }
           },
           "idleSpyTest": {
-            "returnPct": -2.8,
-            "maxDDPct": 32.2,
-            "trades": 2109,
+            "returnPct": -0.4,
+            "maxDDPct": 31.2,
+            "trades": 2178,
             "yearly": {
-              "2024": -5.5,
-              "2025": -17.2,
-              "2026": 24.3
+              "2024": -2.6,
+              "2025": -16.9,
+              "2026": 23
             }
           },
           "idleTrendTrain": {
-            "returnPct": -1.1,
-            "maxDDPct": 25.9,
-            "trades": 2904,
+            "returnPct": -9.9,
+            "maxDDPct": 29.5,
+            "trades": 3010,
             "yearly": {
-              "2021": 7.2,
-              "2022": -20.6,
-              "2023": 20.7,
-              "2024": -3.7
+              "2021": 5.2,
+              "2022": -24.6,
+              "2023": 20.2,
+              "2024": -5.5
             }
           },
           "idleTrendTest": {
-            "returnPct": -11.4,
-            "maxDDPct": 30.6,
-            "trades": 2109,
+            "returnPct": -9.3,
+            "maxDDPct": 29.5,
+            "trades": 2178,
             "yearly": {
-              "2024": -5.5,
-              "2025": -21.4,
-              "2026": 19.2
+              "2024": -2.6,
+              "2025": -21.1,
+              "2026": 18
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 4627,
-            "winRate": 0.5334,
-            "avgRet": 0.0041,
-            "profitFactor": 1.22
+            "n": 4946,
+            "winRate": 0.5323,
+            "avgRet": 0.0042,
+            "profitFactor": 1.23
           },
           "test": {
-            "n": 3437,
-            "winRate": 0.5167,
-            "avgRet": 0.0036,
-            "profitFactor": 1.17
+            "n": 3680,
+            "winRate": 0.5158,
+            "avgRet": 0.0034,
+            "profitFactor": 1.16
           },
           "portfolioTrain": {
-            "returnPct": 65.3,
-            "maxDDPct": 20.4,
-            "trades": 1243,
+            "returnPct": 64.2,
+            "maxDDPct": 20.6,
+            "trades": 1265,
             "yearly": {
-              "2021": 27.8,
-              "2022": 0.6,
-              "2023": 30.3,
-              "2024": -1.3
+              "2021": 29.8,
+              "2022": 0.2,
+              "2023": 29,
+              "2024": -2.1
             }
           },
           "portfolioTest": {
-            "returnPct": 20.6,
-            "maxDDPct": 13.8,
-            "trades": 850,
+            "returnPct": 22.3,
+            "maxDDPct": 13.5,
+            "trades": 863,
             "yearly": {
-              "2024": -5.2,
-              "2025": 3,
-              "2026": 23.5
+              "2024": -2.1,
+              "2025": 3.1,
+              "2026": 21.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 98.3,
-            "maxDDPct": 30.6,
-            "trades": 1243,
+            "returnPct": 91.7,
+            "maxDDPct": 29.6,
+            "trades": 1265,
             "yearly": {
-              "2021": 41.8,
-              "2022": -9.9,
-              "2023": 52,
-              "2024": 2.1
+              "2021": 43.7,
+              "2022": -11.8,
+              "2023": 49.7,
+              "2024": 1
             }
           },
           "idleSpyTest": {
-            "returnPct": 36.2,
-            "maxDDPct": 20.9,
-            "trades": 850,
+            "returnPct": 35.4,
+            "maxDDPct": 20.8,
+            "trades": 863,
             "yearly": {
-              "2024": -1,
-              "2025": -0.4,
-              "2026": 38.1
+              "2024": 1.5,
+              "2025": -1,
+              "2026": 34.7
             }
           },
           "idleTrendTrain": {
-            "returnPct": 80.2,
-            "maxDDPct": 21.8,
-            "trades": 1243,
+            "returnPct": 78.3,
+            "maxDDPct": 22.2,
+            "trades": 1265,
             "yearly": {
-              "2021": 29,
-              "2022": -5.1,
-              "2023": 44.1,
-              "2024": 2.1
+              "2021": 31.2,
+              "2022": -5.4,
+              "2023": 42.2,
+              "2024": 1
             }
           },
           "idleTrendTest": {
-            "returnPct": 38.8,
-            "maxDDPct": 12.1,
-            "trades": 850,
+            "returnPct": 37.9,
+            "maxDDPct": 12.2,
+            "trades": 863,
             "yearly": {
-              "2024": -1,
-              "2025": 4.3,
-              "2026": 34.3
+              "2024": 1.5,
+              "2025": 3.8,
+              "2026": 30.9
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 4627,
-            "winRate": 0.5535,
-            "avgRet": 0.0084,
+            "n": 4946,
+            "winRate": 0.5534,
+            "avgRet": 0.0085,
             "profitFactor": 1.4
           },
           "test": {
-            "n": 3341,
-            "winRate": 0.5373,
-            "avgRet": 0.0077,
+            "n": 3576,
+            "winRate": 0.5372,
+            "avgRet": 0.0076,
             "profitFactor": 1.31
           },
           "portfolioTrain": {
             "returnPct": 81,
-            "maxDDPct": 21.5,
-            "trades": 733,
+            "maxDDPct": 22.6,
+            "trades": 738,
             "yearly": {
-              "2021": 26,
-              "2022": 1.4,
-              "2023": 25.6,
-              "2024": 12.7
+              "2021": 29.5,
+              "2022": 0.5,
+              "2023": 28.2,
+              "2024": 8.4
             }
           },
           "portfolioTest": {
-            "returnPct": -2.6,
-            "maxDDPct": 19,
-            "trades": 504,
+            "returnPct": -0.2,
+            "maxDDPct": 23.4,
+            "trades": 510,
             "yearly": {
-              "2024": 0.2,
-              "2025": -1.2,
-              "2026": -1.6
+              "2024": 2.4,
+              "2025": -2.5,
+              "2026": 0
             }
           },
           "idleSpyTrain": {
-            "returnPct": 94.8,
-            "maxDDPct": 24.9,
-            "trades": 733,
+            "returnPct": 93.1,
+            "maxDDPct": 26.7,
+            "trades": 738,
             "yearly": {
-              "2021": 27.7,
-              "2022": -5.4,
-              "2023": 41.5,
-              "2024": 13.9
+              "2021": 29.7,
+              "2022": -5.7,
+              "2023": 43.7,
+              "2024": 9.9
             }
           },
           "idleSpyTest": {
-            "returnPct": 8.4,
-            "maxDDPct": 23.7,
-            "trades": 504,
+            "returnPct": 11.6,
+            "maxDDPct": 22.3,
+            "trades": 510,
             "yearly": {
-              "2024": 4.2,
-              "2025": 0,
-              "2026": 4.1
+              "2024": 5.9,
+              "2025": -1.1,
+              "2026": 6.6
             }
           },
           "idleTrendTrain": {
-            "returnPct": 84.1,
-            "maxDDPct": 25,
-            "trades": 733,
+            "returnPct": 85.3,
+            "maxDDPct": 27.1,
+            "trades": 738,
             "yearly": {
-              "2021": 25.2,
-              "2022": -4.4,
-              "2023": 35,
-              "2024": 13.9
+              "2021": 28.8,
+              "2022": -5.1,
+              "2023": 38,
+              "2024": 9.9
             }
           },
           "idleTrendTest": {
-            "returnPct": 5.8,
-            "maxDDPct": 17.4,
-            "trades": 504,
+            "returnPct": 9,
+            "maxDDPct": 20.6,
+            "trades": 510,
             "yearly": {
-              "2024": 4.2,
-              "2025": -0.5,
-              "2026": 2.1
+              "2024": 5.9,
+              "2025": -1.6,
+              "2026": 4.6
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 4627,
-            "winRate": 0.5563,
-            "avgRet": 0.0134,
+            "n": 4946,
+            "winRate": 0.5562,
+            "avgRet": 0.0133,
             "profitFactor": 1.5
           },
           "test": {
-            "n": 3158,
-            "winRate": 0.5494,
-            "avgRet": 0.0155,
+            "n": 3382,
+            "winRate": 0.5485,
+            "avgRet": 0.0153,
             "profitFactor": 1.54
           },
           "portfolioTrain": {
-            "returnPct": 74.2,
-            "maxDDPct": 22.5,
-            "trades": 410,
-            "yearly": {
-              "2021": 34.4,
-              "2022": -3.4,
-              "2023": 23.6,
-              "2024": 8.5
-            }
-          },
-          "portfolioTest": {
-            "returnPct": 10.8,
-            "maxDDPct": 25,
-            "trades": 274,
-            "yearly": {
-              "2024": 9.9,
-              "2025": -5.3,
-              "2026": 6.4
-            }
-          },
-          "idleSpyTrain": {
-            "returnPct": 73,
-            "maxDDPct": 25,
-            "trades": 410,
-            "yearly": {
-              "2021": 34.6,
-              "2022": -7.3,
-              "2023": 27.5,
-              "2024": 8.8
-            }
-          },
-          "idleSpyTest": {
-            "returnPct": 18.1,
-            "maxDDPct": 24.5,
-            "trades": 274,
-            "yearly": {
-              "2024": 14.8,
-              "2025": -3.7,
-              "2026": 6.9
-            }
-          },
-          "idleTrendTrain": {
-            "returnPct": 73.3,
+            "returnPct": 76.5,
             "maxDDPct": 23.7,
             "trades": 410,
             "yearly": {
-              "2021": 34.5,
-              "2022": -5,
-              "2023": 24.6,
-              "2024": 8.8
+              "2021": 40.1,
+              "2022": -10.5,
+              "2023": 28.2,
+              "2024": 9.8
+            }
+          },
+          "portfolioTest": {
+            "returnPct": 20.4,
+            "maxDDPct": 22.2,
+            "trades": 276,
+            "yearly": {
+              "2024": 13,
+              "2025": -3.2,
+              "2026": 10
+            }
+          },
+          "idleSpyTrain": {
+            "returnPct": 73.6,
+            "maxDDPct": 27.2,
+            "trades": 410,
+            "yearly": {
+              "2021": 40.5,
+              "2022": -15.1,
+              "2023": 32.3,
+              "2024": 10
+            }
+          },
+          "idleSpyTest": {
+            "returnPct": 28.9,
+            "maxDDPct": 21.7,
+            "trades": 276,
+            "yearly": {
+              "2024": 17.8,
+              "2025": -0.9,
+              "2026": 10.4
+            }
+          },
+          "idleTrendTrain": {
+            "returnPct": 75.6,
+            "maxDDPct": 25,
+            "trades": 410,
+            "yearly": {
+              "2021": 40.2,
+              "2022": -12,
+              "2023": 29.3,
+              "2024": 10
             }
           },
           "idleTrendTest": {
-            "returnPct": 15.2,
-            "maxDDPct": 25.1,
-            "trades": 274,
+            "returnPct": 25.7,
+            "maxDDPct": 22.3,
+            "trades": 276,
             "yearly": {
-              "2024": 14.8,
-              "2025": -5.8,
-              "2026": 6.6
+              "2024": 17.8,
+              "2025": -3,
+              "2026": 10
             }
           }
         }
@@ -4912,312 +4912,312 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 2424,
-            "winRate": 0.4897,
+            "n": 2603,
+            "winRate": 0.4902,
             "avgRet": -0.0002,
             "profitFactor": 0.98
           },
           "test": {
-            "n": 1702,
-            "winRate": 0.4965,
+            "n": 1806,
+            "winRate": 0.4994,
             "avgRet": -0.0002,
             "profitFactor": 0.99
           },
           "portfolioTrain": {
-            "returnPct": -10.6,
-            "maxDDPct": 19,
-            "trades": 1956,
+            "returnPct": -17.1,
+            "maxDDPct": 19.1,
+            "trades": 2045,
             "yearly": {
-              "2021": -7.8,
-              "2022": 4.3,
-              "2023": 12.4,
-              "2024": -17.3
+              "2021": -10.5,
+              "2022": -0.6,
+              "2023": 12.9,
+              "2024": -17.5
             }
           },
           "portfolioTest": {
-            "returnPct": 12.6,
-            "maxDDPct": 19.2,
-            "trades": 1414,
+            "returnPct": 16.5,
+            "maxDDPct": 18,
+            "trades": 1467,
             "yearly": {
-              "2024": -1.2,
-              "2025": -9.8,
-              "2026": 26.4
+              "2024": 1.2,
+              "2025": -8.1,
+              "2026": 25.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 34.6,
-            "maxDDPct": 29.8,
-            "trades": 1956,
+            "returnPct": 24.8,
+            "maxDDPct": 30.8,
+            "trades": 2045,
             "yearly": {
-              "2021": 13.1,
-              "2022": -14.6,
-              "2023": 41.9,
-              "2024": -1.7
+              "2021": 9.8,
+              "2022": -18.7,
+              "2023": 42.5,
+              "2024": -1.9
             }
           },
           "idleSpyTest": {
-            "returnPct": 56.6,
-            "maxDDPct": 25.5,
-            "trades": 1414,
+            "returnPct": 62,
+            "maxDDPct": 26,
+            "trades": 1467,
             "yearly": {
-              "2024": 4.7,
-              "2025": 6.2,
-              "2026": 40.9
+              "2024": 7.3,
+              "2025": 8.2,
+              "2026": 39.6
             }
           },
           "idleTrendTrain": {
-            "returnPct": 11.2,
-            "maxDDPct": 16.7,
-            "trades": 1956,
+            "returnPct": 3.1,
+            "maxDDPct": 22.2,
+            "trades": 2045,
             "yearly": {
-              "2021": -1.8,
-              "2022": -11.2,
-              "2023": 29.8,
-              "2024": -1.7
+              "2021": -4.6,
+              "2022": -15.4,
+              "2023": 30.3,
+              "2024": -1.9
             }
           },
           "idleTrendTest": {
-            "returnPct": 42.7,
-            "maxDDPct": 17.4,
-            "trades": 1414,
+            "returnPct": 47.6,
+            "maxDDPct": 17.5,
+            "trades": 1467,
             "yearly": {
-              "2024": 4.7,
-              "2025": 0.8,
-              "2026": 35.2
+              "2024": 7.3,
+              "2025": 2.7,
+              "2026": 34
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 2424,
-            "winRate": 0.533,
-            "avgRet": 0.0044,
-            "profitFactor": 1.24
+            "n": 2603,
+            "winRate": 0.5355,
+            "avgRet": 0.0048,
+            "profitFactor": 1.27
           },
           "test": {
-            "n": 1701,
-            "winRate": 0.5226,
-            "avgRet": 0.0045,
-            "profitFactor": 1.21
+            "n": 1805,
+            "winRate": 0.5202,
+            "avgRet": 0.0042,
+            "profitFactor": 1.19
           },
           "portfolioTrain": {
-            "returnPct": 28.3,
-            "maxDDPct": 18,
-            "trades": 967,
+            "returnPct": 28.6,
+            "maxDDPct": 17.8,
+            "trades": 988,
             "yearly": {
-              "2021": 6.3,
-              "2022": 3.2,
-              "2023": 13.1,
-              "2024": 3.4
+              "2021": 6,
+              "2022": 0,
+              "2023": 18.2,
+              "2024": 2.6
             }
           },
           "portfolioTest": {
-            "returnPct": 45,
+            "returnPct": 53.2,
             "maxDDPct": 28.5,
-            "trades": 641,
+            "trades": 647,
             "yearly": {
-              "2024": -10.4,
-              "2025": 8.1,
-              "2026": 49.6
+              "2024": -10.8,
+              "2025": 11.4,
+              "2026": 54.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 58.1,
-            "maxDDPct": 31.7,
-            "trades": 967,
+            "returnPct": 53.5,
+            "maxDDPct": 31.4,
+            "trades": 988,
             "yearly": {
-              "2021": 19.9,
-              "2022": -14.1,
-              "2023": 37.8,
-              "2024": 11.4
+              "2021": 19.5,
+              "2022": -18.8,
+              "2023": 44.1,
+              "2024": 9.8
             }
           },
           "idleSpyTest": {
-            "returnPct": 71.1,
-            "maxDDPct": 33.7,
-            "trades": 641,
+            "returnPct": 80.3,
+            "maxDDPct": 34.2,
+            "trades": 647,
             "yearly": {
-              "2024": -4.5,
-              "2025": 11.1,
-              "2026": 61.3
+              "2024": -4.8,
+              "2025": 13.7,
+              "2026": 66.6
             }
           },
           "idleTrendTrain": {
-            "returnPct": 45.9,
-            "maxDDPct": 20.7,
-            "trades": 967,
+            "returnPct": 46.6,
+            "maxDDPct": 20.4,
+            "trades": 988,
             "yearly": {
-              "2021": 9.2,
-              "2022": -6.9,
-              "2023": 29,
-              "2024": 11.4
+              "2021": 8.6,
+              "2022": -8.8,
+              "2023": 34.9,
+              "2024": 9.8
             }
           },
           "idleTrendTest": {
-            "returnPct": 71.5,
-            "maxDDPct": 25.4,
-            "trades": 641,
+            "returnPct": 80.8,
+            "maxDDPct": 25.9,
+            "trades": 647,
             "yearly": {
-              "2024": -4.5,
-              "2025": 15,
-              "2026": 56.1
+              "2024": -4.8,
+              "2025": 17.7,
+              "2026": 61.3
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 2424,
-            "winRate": 0.5602,
-            "avgRet": 0.01,
-            "profitFactor": 1.49
+            "n": 2603,
+            "winRate": 0.5624,
+            "avgRet": 0.0101,
+            "profitFactor": 1.5
           },
           "test": {
-            "n": 1646,
-            "winRate": 0.5419,
-            "avgRet": 0.0079,
-            "profitFactor": 1.3
+            "n": 1746,
+            "winRate": 0.5395,
+            "avgRet": 0.0074,
+            "profitFactor": 1.29
           },
           "portfolioTrain": {
-            "returnPct": 40.3,
-            "maxDDPct": 22,
-            "trades": 632,
+            "returnPct": 55.3,
+            "maxDDPct": 18.8,
+            "trades": 645,
             "yearly": {
-              "2021": 13.8,
-              "2022": 2.5,
-              "2023": 13.5,
-              "2024": 6
+              "2021": 19.2,
+              "2022": 2.3,
+              "2023": 25.8,
+              "2024": 1.3
             }
           },
           "portfolioTest": {
-            "returnPct": 46,
-            "maxDDPct": 24.6,
-            "trades": 414,
+            "returnPct": 44.6,
+            "maxDDPct": 22.8,
+            "trades": 417,
             "yearly": {
-              "2024": -2.6,
-              "2025": 18.1,
-              "2026": 26.9
+              "2024": -2.8,
+              "2025": 15.3,
+              "2026": 29
             }
           },
           "idleSpyTrain": {
-            "returnPct": 55.9,
-            "maxDDPct": 27.4,
-            "trades": 632,
+            "returnPct": 70.2,
+            "maxDDPct": 26,
+            "trades": 645,
             "yearly": {
-              "2021": 20.7,
-              "2022": -9.4,
-              "2023": 29.4,
-              "2024": 10.1
+              "2021": 25.6,
+              "2022": -10.1,
+              "2023": 43.3,
+              "2024": 5.2
             }
           },
           "idleSpyTest": {
-            "returnPct": 66.3,
-            "maxDDPct": 32,
-            "trades": 414,
+            "returnPct": 65.8,
+            "maxDDPct": 30,
+            "trades": 417,
             "yearly": {
-              "2024": 0.1,
-              "2025": 23.2,
-              "2026": 34.8
+              "2024": 0.5,
+              "2025": 20,
+              "2026": 37.5
             }
           },
           "idleTrendTrain": {
-            "returnPct": 48.2,
-            "maxDDPct": 25.5,
-            "trades": 632,
+            "returnPct": 66.7,
+            "maxDDPct": 22,
+            "trades": 645,
             "yearly": {
-              "2021": 15.2,
-              "2022": -4.6,
-              "2023": 22.5,
-              "2024": 10.1
+              "2021": 20.4,
+              "2022": -3.7,
+              "2023": 36.7,
+              "2024": 5.2
             }
           },
           "idleTrendTest": {
-            "returnPct": 63.7,
-            "maxDDPct": 25.4,
-            "trades": 414,
+            "returnPct": 62.7,
+            "maxDDPct": 23.4,
+            "trades": 417,
             "yearly": {
-              "2024": 0.1,
-              "2025": 24,
-              "2026": 31.9
+              "2024": 0.5,
+              "2025": 20.3,
+              "2026": 34.5
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 2424,
-            "winRate": 0.5697,
-            "avgRet": 0.016,
-            "profitFactor": 1.63
+            "n": 2603,
+            "winRate": 0.5682,
+            "avgRet": 0.0157,
+            "profitFactor": 1.62
           },
           "test": {
-            "n": 1552,
-            "winRate": 0.5683,
-            "avgRet": 0.019,
-            "profitFactor": 1.65
+            "n": 1647,
+            "winRate": 0.5647,
+            "avgRet": 0.0181,
+            "profitFactor": 1.63
           },
           "portfolioTrain": {
-            "returnPct": 50.8,
-            "maxDDPct": 26.1,
-            "trades": 384,
+            "returnPct": 57.5,
+            "maxDDPct": 24.8,
+            "trades": 388,
             "yearly": {
-              "2021": 37.1,
-              "2022": -11.2,
-              "2023": 16.8,
-              "2024": 6.2
+              "2021": 39.4,
+              "2022": -14,
+              "2023": 22.7,
+              "2024": 7.1
             }
           },
           "portfolioTest": {
-            "returnPct": 21.1,
-            "maxDDPct": 32.4,
+            "returnPct": 23,
+            "maxDDPct": 31.5,
             "trades": 246,
             "yearly": {
-              "2024": -3.2,
-              "2025": 5.8,
-              "2026": 18.3
+              "2024": -3.3,
+              "2025": 9.4,
+              "2026": 16.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 49.3,
-            "maxDDPct": 31.3,
-            "trades": 384,
+            "returnPct": 56.1,
+            "maxDDPct": 29.5,
+            "trades": 388,
             "yearly": {
-              "2021": 35.8,
-              "2022": -16.6,
-              "2023": 21.8,
-              "2024": 8.2
+              "2021": 37.7,
+              "2022": -18.7,
+              "2023": 28.1,
+              "2024": 8.8
             }
           },
           "idleSpyTest": {
-            "returnPct": 37,
-            "maxDDPct": 32.8,
+            "returnPct": 40.1,
+            "maxDDPct": 31.5,
             "trades": 246,
             "yearly": {
-              "2024": 1.7,
-              "2025": 12.8,
-              "2026": 19.5
+              "2024": 2.3,
+              "2025": 16.4,
+              "2026": 17.6
             }
           },
           "idleTrendTrain": {
-            "returnPct": 51.1,
-            "maxDDPct": 28.4,
-            "trades": 384,
+            "returnPct": 57,
+            "maxDDPct": 27.4,
+            "trades": 388,
             "yearly": {
-              "2021": 37.1,
-              "2022": -14.6,
-              "2023": 19.2,
-              "2024": 8.2
+              "2021": 38.8,
+              "2022": -16.8,
+              "2023": 24.9,
+              "2024": 8.8
             }
           },
           "idleTrendTest": {
-            "returnPct": 32.5,
-            "maxDDPct": 32.3,
+            "returnPct": 35.5,
+            "maxDDPct": 31.1,
             "trades": 246,
             "yearly": {
-              "2024": 1.7,
-              "2025": 10.2,
-              "2026": 18.3
+              "2024": 2.3,
+              "2025": 13.8,
+              "2026": 16.4
             }
           }
         }
@@ -5229,312 +5229,312 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 1575,
-            "winRate": 0.4952,
-            "avgRet": 0.0005,
+            "n": 1687,
+            "winRate": 0.4956,
+            "avgRet": 0.0004,
             "profitFactor": 1.03
           },
           "test": {
-            "n": 1043,
-            "winRate": 0.5024,
-            "avgRet": 0.0012,
-            "profitFactor": 1.08
+            "n": 1104,
+            "winRate": 0.5036,
+            "avgRet": 0.001,
+            "profitFactor": 1.07
           },
           "portfolioTrain": {
-            "returnPct": 0.7,
-            "maxDDPct": 12.6,
-            "trades": 1411,
+            "returnPct": -1.5,
+            "maxDDPct": 12.1,
+            "trades": 1493,
             "yearly": {
-              "2021": -6.5,
-              "2022": 7.7,
-              "2023": 11,
-              "2024": -9.9
+              "2021": -8.6,
+              "2022": 8.1,
+              "2023": 10.7,
+              "2024": -10
             }
           },
           "portfolioTest": {
-            "returnPct": 13.3,
-            "maxDDPct": 10.6,
-            "trades": 975,
+            "returnPct": 13.6,
+            "maxDDPct": 10.4,
+            "trades": 1022,
             "yearly": {
-              "2024": 2.5,
-              "2025": -5.4,
-              "2026": 16.8
+              "2024": 3.3,
+              "2025": -4.3,
+              "2026": 14.9
             }
           },
           "idleSpyTrain": {
-            "returnPct": 51.6,
-            "maxDDPct": 26.8,
-            "trades": 1411,
+            "returnPct": 48.2,
+            "maxDDPct": 27,
+            "trades": 1493,
             "yearly": {
-              "2021": 14.7,
-              "2022": -11.9,
-              "2023": 40,
-              "2024": 7.1
+              "2021": 12.2,
+              "2022": -11.6,
+              "2023": 39.7,
+              "2024": 6.9
             }
           },
           "idleSpyTest": {
-            "returnPct": 57.6,
-            "maxDDPct": 21.3,
-            "trades": 975,
+            "returnPct": 58,
+            "maxDDPct": 21.9,
+            "trades": 1022,
             "yearly": {
-              "2024": 8.6,
-              "2025": 11.4,
-              "2026": 30.3
+              "2024": 9.5,
+              "2025": 12.7,
+              "2026": 28.1
             }
           },
           "idleTrendTrain": {
-            "returnPct": 25.3,
-            "maxDDPct": 13.3,
-            "trades": 1411,
+            "returnPct": 22.5,
+            "maxDDPct": 15.9,
+            "trades": 1493,
             "yearly": {
-              "2021": -0.3,
-              "2022": -8.3,
-              "2023": 28.1,
-              "2024": 7.1
+              "2021": -2.5,
+              "2022": -8,
+              "2023": 27.8,
+              "2024": 6.9
             }
           },
           "idleTrendTest": {
-            "returnPct": 43.5,
-            "maxDDPct": 13.4,
-            "trades": 975,
+            "returnPct": 44,
+            "maxDDPct": 13.7,
+            "trades": 1022,
             "yearly": {
-              "2024": 8.6,
-              "2025": 5.8,
-              "2026": 25
+              "2024": 9.5,
+              "2025": 7,
+              "2026": 22.9
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 1575,
-            "winRate": 0.5371,
-            "avgRet": 0.0056,
-            "profitFactor": 1.31
+            "n": 1687,
+            "winRate": 0.5376,
+            "avgRet": 0.0058,
+            "profitFactor": 1.33
           },
           "test": {
-            "n": 1042,
-            "winRate": 0.5393,
-            "avgRet": 0.0076,
-            "profitFactor": 1.35
+            "n": 1103,
+            "winRate": 0.5376,
+            "avgRet": 0.0069,
+            "profitFactor": 1.31
           },
           "portfolioTrain": {
-            "returnPct": 35.6,
-            "maxDDPct": 18.8,
-            "trades": 770,
+            "returnPct": 45.9,
+            "maxDDPct": 15.2,
+            "trades": 794,
             "yearly": {
-              "2021": 1.8,
-              "2022": 13,
-              "2023": 11.4,
-              "2024": 5.8
+              "2021": 1.4,
+              "2022": 15.2,
+              "2023": 12.9,
+              "2024": 10.6
             }
           },
           "portfolioTest": {
-            "returnPct": 54.8,
-            "maxDDPct": 19.1,
-            "trades": 499,
+            "returnPct": 57.5,
+            "maxDDPct": 17,
+            "trades": 510,
             "yearly": {
-              "2024": -2.5,
-              "2025": 6,
-              "2026": 49.9
+              "2024": -3.6,
+              "2025": 12.6,
+              "2026": 45
             }
           },
           "idleSpyTrain": {
-            "returnPct": 79.6,
-            "maxDDPct": 27.2,
-            "trades": 770,
+            "returnPct": 88,
+            "maxDDPct": 23.6,
+            "trades": 794,
             "yearly": {
-              "2021": 15.4,
-              "2022": -2,
-              "2023": 37.9,
-              "2024": 15.2
+              "2021": 14.5,
+              "2022": -2.1,
+              "2023": 40.2,
+              "2024": 19.6
             }
           },
           "idleSpyTest": {
-            "returnPct": 87.7,
-            "maxDDPct": 28.9,
-            "trades": 499,
+            "returnPct": 88.9,
+            "maxDDPct": 26.6,
+            "trades": 510,
             "yearly": {
-              "2024": 4.5,
-              "2025": 11.9,
-              "2026": 60.6
+              "2024": 3.2,
+              "2025": 18,
+              "2026": 55.1
             }
           },
           "idleTrendTrain": {
-            "returnPct": 55.7,
-            "maxDDPct": 20.6,
-            "trades": 770,
+            "returnPct": 67.2,
+            "maxDDPct": 16.8,
+            "trades": 794,
             "yearly": {
-              "2021": 4.4,
-              "2022": 0.1,
-              "2023": 29.4,
-              "2024": 15.2
+              "2021": 3.7,
+              "2022": 2.3,
+              "2023": 31.7,
+              "2024": 19.6
             }
           },
           "idleTrendTest": {
-            "returnPct": 88.8,
-            "maxDDPct": 20,
-            "trades": 499,
+            "returnPct": 90.1,
+            "maxDDPct": 17.4,
+            "trades": 510,
             "yearly": {
-              "2024": 4.5,
-              "2025": 16.3,
-              "2026": 55.3
+              "2024": 3.2,
+              "2025": 22.7,
+              "2026": 50
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 1575,
-            "winRate": 0.5606,
-            "avgRet": 0.0113,
-            "profitFactor": 1.55
+            "n": 1687,
+            "winRate": 0.5625,
+            "avgRet": 0.0114,
+            "profitFactor": 1.56
           },
           "test": {
-            "n": 1005,
-            "winRate": 0.5721,
-            "avgRet": 0.0118,
-            "profitFactor": 1.45
+            "n": 1063,
+            "winRate": 0.5682,
+            "avgRet": 0.0109,
+            "profitFactor": 1.41
           },
           "portfolioTrain": {
-            "returnPct": 47.7,
-            "maxDDPct": 21,
-            "trades": 520,
+            "returnPct": 60.9,
+            "maxDDPct": 17.7,
+            "trades": 531,
             "yearly": {
-              "2021": 15.4,
-              "2022": 7.8,
-              "2023": 13.6,
-              "2024": 4.6
+              "2021": 16.1,
+              "2022": 11.1,
+              "2023": 14.9,
+              "2024": 8.5
             }
           },
           "portfolioTest": {
-            "returnPct": 45,
-            "maxDDPct": 17.9,
-            "trades": 326,
+            "returnPct": 33.8,
+            "maxDDPct": 20.2,
+            "trades": 328,
             "yearly": {
-              "2024": 0.4,
-              "2025": 18.9,
-              "2026": 21.5
+              "2024": -2.7,
+              "2025": 19.4,
+              "2026": 15.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 72.3,
-            "maxDDPct": 25.1,
-            "trades": 520,
+            "returnPct": 83.3,
+            "maxDDPct": 23.7,
+            "trades": 531,
             "yearly": {
-              "2021": 25.8,
-              "2022": -5.9,
-              "2023": 33.2,
-              "2024": 9.3
+              "2021": 25.9,
+              "2022": -4.9,
+              "2023": 35.1,
+              "2024": 13.3
             }
           },
           "idleSpyTest": {
-            "returnPct": 72.8,
-            "maxDDPct": 26.2,
-            "trades": 326,
+            "returnPct": 58.8,
+            "maxDDPct": 28.8,
+            "trades": 328,
             "yearly": {
-              "2024": 3.5,
-              "2025": 26,
-              "2026": 32.5
+              "2024": 1.2,
+              "2025": 25.6,
+              "2026": 25
             }
           },
           "idleTrendTrain": {
-            "returnPct": 59.4,
-            "maxDDPct": 22.7,
-            "trades": 520,
+            "returnPct": 74.9,
+            "maxDDPct": 22.6,
+            "trades": 531,
             "yearly": {
-              "2021": 18.2,
-              "2022": -1.9,
-              "2023": 25.8,
-              "2024": 9.3
+              "2021": 18.7,
+              "2022": 1.4,
+              "2023": 28.2,
+              "2024": 13.3
             }
           },
           "idleTrendTest": {
-            "returnPct": 74.9,
-            "maxDDPct": 17.9,
-            "trades": 326,
+            "returnPct": 60.8,
+            "maxDDPct": 20.8,
+            "trades": 328,
             "yearly": {
-              "2024": 3.5,
-              "2025": 30.4,
-              "2026": 29.6
+              "2024": 1.2,
+              "2025": 30,
+              "2026": 22.2
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 1575,
-            "winRate": 0.5663,
-            "avgRet": 0.0168,
-            "profitFactor": 1.65
+            "n": 1687,
+            "winRate": 0.5631,
+            "avgRet": 0.0163,
+            "profitFactor": 1.63
           },
           "test": {
-            "n": 947,
-            "winRate": 0.5776,
-            "avgRet": 0.0228,
-            "profitFactor": 1.75
+            "n": 1002,
+            "winRate": 0.5749,
+            "avgRet": 0.0214,
+            "profitFactor": 1.7
           },
           "portfolioTrain": {
-            "returnPct": 50.1,
-            "maxDDPct": 19.2,
-            "trades": 334,
+            "returnPct": 40.8,
+            "maxDDPct": 21.6,
+            "trades": 338,
             "yearly": {
-              "2021": 25.1,
-              "2022": -2.8,
-              "2023": 13.2,
-              "2024": 9
+              "2021": 25.2,
+              "2022": -9.8,
+              "2023": 13.9,
+              "2024": 9.4
             }
           },
           "portfolioTest": {
-            "returnPct": 25.8,
-            "maxDDPct": 24.9,
-            "trades": 210,
+            "returnPct": 16.7,
+            "maxDDPct": 28.7,
+            "trades": 211,
             "yearly": {
-              "2024": -3.8,
-              "2025": 8.1,
-              "2026": 21
+              "2024": -6.1,
+              "2025": 4.1,
+              "2026": 19.4
             }
           },
           "idleSpyTrain": {
-            "returnPct": 64.9,
-            "maxDDPct": 25.1,
-            "trades": 334,
+            "returnPct": 53.1,
+            "maxDDPct": 27.5,
+            "trades": 338,
             "yearly": {
-              "2021": 28.6,
-              "2022": -9.6,
-              "2023": 26.3,
-              "2024": 12.3
+              "2021": 27.9,
+              "2022": -15.9,
+              "2023": 26.6,
+              "2024": 12.5
             }
           },
           "idleSpyTest": {
-            "returnPct": 44.2,
-            "maxDDPct": 29.7,
-            "trades": 210,
+            "returnPct": 33.4,
+            "maxDDPct": 33.2,
+            "trades": 211,
             "yearly": {
-              "2024": -0.5,
-              "2025": 14.6,
-              "2026": 26.3
+              "2024": -1.8,
+              "2025": 10.4,
+              "2026": 23
             }
           },
           "idleTrendTrain": {
-            "returnPct": 56,
-            "maxDDPct": 23.6,
-            "trades": 334,
+            "returnPct": 46.4,
+            "maxDDPct": 25.4,
+            "trades": 338,
             "yearly": {
-              "2021": 26.5,
-              "2022": -9.9,
-              "2023": 21.9,
-              "2024": 12.3
+              "2021": 26.3,
+              "2022": -15.6,
+              "2023": 22.2,
+              "2024": 12.5
             }
           },
           "idleTrendTest": {
-            "returnPct": 44.3,
-            "maxDDPct": 24.7,
-            "trades": 210,
+            "returnPct": 33,
+            "maxDDPct": 28.6,
+            "trades": 211,
             "yearly": {
-              "2024": -0.5,
-              "2025": 16.2,
-              "2026": 24.8
+              "2024": -1.8,
+              "2025": 11.6,
+              "2026": 21.2
             }
           }
         }
@@ -5546,312 +5546,312 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 669,
-            "winRate": 0.4858,
-            "avgRet": -0.001,
-            "profitFactor": 0.93
+            "n": 733,
+            "winRate": 0.4911,
+            "avgRet": -0.0008,
+            "profitFactor": 0.94
           },
           "test": {
-            "n": 398,
-            "winRate": 0.5075,
-            "avgRet": 0.0013,
-            "profitFactor": 1.09
+            "n": 426,
+            "winRate": 0.5117,
+            "avgRet": 0.0012,
+            "profitFactor": 1.08
           },
           "portfolioTrain": {
-            "returnPct": -7.5,
-            "maxDDPct": 12.1,
-            "trades": 653,
+            "returnPct": -7.8,
+            "maxDDPct": 12.2,
+            "trades": 714,
             "yearly": {
-              "2021": 2.7,
-              "2022": -4.8,
-              "2023": -1.9,
-              "2024": -3.7
+              "2021": 2.2,
+              "2022": -5.1,
+              "2023": -1.7,
+              "2024": -3.2
             }
           },
           "portfolioTest": {
-            "returnPct": 5.1,
-            "maxDDPct": 5.5,
-            "trades": 398,
+            "returnPct": 4.8,
+            "maxDDPct": 6,
+            "trades": 426,
             "yearly": {
-              "2024": 2.8,
-              "2025": -0.4,
-              "2026": 2.6
+              "2024": 2.1,
+              "2025": 0.4,
+              "2026": 2.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 39.2,
-            "maxDDPct": 29.2,
-            "trades": 653,
+            "returnPct": 38.9,
+            "maxDDPct": 29,
+            "trades": 714,
             "yearly": {
-              "2021": 26,
-              "2022": -22.1,
-              "2023": 23.8,
-              "2024": 14.5
+              "2021": 25.3,
+              "2022": -22.3,
+              "2023": 24,
+              "2024": 15
             }
           },
           "idleSpyTest": {
-            "returnPct": 46.2,
-            "maxDDPct": 20,
-            "trades": 398,
+            "returnPct": 45.9,
+            "maxDDPct": 19.9,
+            "trades": 426,
             "yearly": {
-              "2024": 9,
-              "2025": 17.2,
-              "2026": 14.4
+              "2024": 8.3,
+              "2025": 18.2,
+              "2026": 13.9
             }
           },
           "idleTrendTrain": {
-            "returnPct": 15,
+            "returnPct": 14.8,
             "maxDDPct": 24.5,
-            "trades": 653,
+            "trades": 714,
             "yearly": {
-              "2021": 9.5,
-              "2022": -19,
-              "2023": 13.3,
-              "2024": 14.5
+              "2021": 8.9,
+              "2022": -19.2,
+              "2023": 13.4,
+              "2024": 15
             }
           },
           "idleTrendTest": {
-            "returnPct": 33.2,
-            "maxDDPct": 11.3,
-            "trades": 398,
+            "returnPct": 32.9,
+            "maxDDPct": 11.2,
+            "trades": 426,
             "yearly": {
-              "2024": 9,
-              "2025": 11.3,
-              "2026": 9.8
+              "2024": 8.3,
+              "2025": 12.3,
+              "2026": 9.3
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 669,
-            "winRate": 0.5471,
-            "avgRet": 0.0055,
-            "profitFactor": 1.28
+            "n": 733,
+            "winRate": 0.5512,
+            "avgRet": 0.0066,
+            "profitFactor": 1.35
           },
           "test": {
-            "n": 398,
-            "winRate": 0.5578,
-            "avgRet": 0.0111,
-            "profitFactor": 1.52
+            "n": 426,
+            "winRate": 0.5516,
+            "avgRet": 0.0096,
+            "profitFactor": 1.45
           },
           "portfolioTrain": {
-            "returnPct": 30.5,
-            "maxDDPct": 15,
-            "trades": 405,
+            "returnPct": 41.5,
+            "maxDDPct": 12.5,
+            "trades": 434,
             "yearly": {
-              "2021": 12.1,
-              "2022": 0,
-              "2023": 9.4,
-              "2024": 6.4
+              "2021": 12.8,
+              "2022": 3,
+              "2023": 11.5,
+              "2024": 9.3
             }
           },
           "portfolioTest": {
-            "returnPct": 44.2,
-            "maxDDPct": 9.4,
-            "trades": 310,
+            "returnPct": 47.5,
+            "maxDDPct": 8.6,
+            "trades": 321,
             "yearly": {
-              "2024": 8.9,
-              "2025": 8.2,
-              "2026": 22.4
+              "2024": 8.2,
+              "2025": 8.3,
+              "2026": 25.9
             }
           },
           "idleSpyTrain": {
-            "returnPct": 74.4,
-            "maxDDPct": 29.5,
-            "trades": 405,
+            "returnPct": 81.5,
+            "maxDDPct": 26.9,
+            "trades": 434,
             "yearly": {
-              "2021": 33.9,
-              "2022": -18.1,
-              "2023": 31.7,
-              "2024": 20.8
+              "2021": 33.7,
+              "2022": -16.9,
+              "2023": 32.6,
+              "2024": 23.2
             }
           },
           "idleSpyTest": {
-            "returnPct": 71.7,
-            "maxDDPct": 21.6,
-            "trades": 310,
+            "returnPct": 75,
+            "maxDDPct": 20.8,
+            "trades": 321,
             "yearly": {
-              "2024": 16.9,
-              "2025": 12.6,
-              "2026": 30.5
+              "2024": 16.5,
+              "2025": 12.8,
+              "2026": 33.2
             }
           },
           "idleTrendTrain": {
-            "returnPct": 48.2,
-            "maxDDPct": 24.3,
-            "trades": 405,
+            "returnPct": 58.2,
+            "maxDDPct": 21.6,
+            "trades": 434,
             "yearly": {
-              "2021": 17,
-              "2022": -14.4,
-              "2023": 22.5,
-              "2024": 20.8
+              "2021": 17.6,
+              "2022": -11.5,
+              "2023": 23.5,
+              "2024": 23.2
             }
           },
           "idleTrendTest": {
-            "returnPct": 66.7,
-            "maxDDPct": 12.3,
-            "trades": 310,
+            "returnPct": 69.8,
+            "maxDDPct": 11.4,
+            "trades": 321,
             "yearly": {
-              "2024": 16.9,
-              "2025": 13.6,
-              "2026": 25.4
+              "2024": 16.5,
+              "2025": 13.9,
+              "2026": 28.1
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 669,
-            "winRate": 0.571,
-            "avgRet": 0.0125,
+            "n": 733,
+            "winRate": 0.5703,
+            "avgRet": 0.0123,
             "profitFactor": 1.57
           },
           "test": {
-            "n": 379,
-            "winRate": 0.591,
-            "avgRet": 0.0186,
-            "profitFactor": 1.82
+            "n": 406,
+            "winRate": 0.5764,
+            "avgRet": 0.0161,
+            "profitFactor": 1.69
           },
           "portfolioTrain": {
-            "returnPct": 15,
-            "maxDDPct": 21.3,
-            "trades": 300,
+            "returnPct": 29.1,
+            "maxDDPct": 20.4,
+            "trades": 324,
             "yearly": {
-              "2021": 11.7,
-              "2022": -4.7,
-              "2023": 4.7,
-              "2024": 3.2
+              "2021": 11.8,
+              "2022": -4.3,
+              "2023": 9.9,
+              "2024": 9.8
             }
           },
           "portfolioTest": {
-            "returnPct": 41.2,
-            "maxDDPct": 13.1,
-            "trades": 211,
+            "returnPct": 44.6,
+            "maxDDPct": 13,
+            "trades": 218,
             "yearly": {
-              "2024": 16.5,
-              "2025": 10.9,
-              "2026": 9.3
+              "2024": 19,
+              "2025": 11.3,
+              "2026": 9.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 41.3,
-            "maxDDPct": 32.7,
-            "trades": 300,
+            "returnPct": 56.4,
+            "maxDDPct": 31.7,
+            "trades": 324,
             "yearly": {
-              "2021": 27.7,
+              "2021": 27.1,
               "2022": -21.1,
-              "2023": 22.3,
-              "2024": 14.7
+              "2023": 28.3,
+              "2024": 21.6
             }
           },
           "idleSpyTest": {
-            "returnPct": 66.7,
-            "maxDDPct": 20.6,
-            "trades": 211,
+            "returnPct": 70.8,
+            "maxDDPct": 20.2,
+            "trades": 218,
             "yearly": {
-              "2024": 21.5,
-              "2025": 14.9,
-              "2026": 19.4
+              "2024": 24.4,
+              "2025": 15.1,
+              "2026": 19.3
             }
           },
           "idleTrendTrain": {
-            "returnPct": 24.3,
-            "maxDDPct": 29.1,
-            "trades": 300,
+            "returnPct": 40.1,
+            "maxDDPct": 28,
+            "trades": 324,
             "yearly": {
-              "2021": 15.2,
-              "2022": -17.9,
-              "2023": 14.6,
-              "2024": 14.7
+              "2021": 15.1,
+              "2022": -16.7,
+              "2023": 20.1,
+              "2024": 21.6
             }
           },
           "idleTrendTest": {
-            "returnPct": 65.5,
+            "returnPct": 69.6,
             "maxDDPct": 13.6,
-            "trades": 211,
+            "trades": 218,
             "yearly": {
-              "2024": 21.5,
-              "2025": 18.3,
-              "2026": 15.2
+              "2024": 24.4,
+              "2025": 18.5,
+              "2026": 15.1
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 669,
-            "winRate": 0.58,
-            "avgRet": 0.0201,
-            "profitFactor": 1.77
+            "n": 733,
+            "winRate": 0.5744,
+            "avgRet": 0.0193,
+            "profitFactor": 1.74
           },
           "test": {
-            "n": 356,
-            "winRate": 0.6264,
-            "avgRet": 0.0385,
-            "profitFactor": 2.55
+            "n": 382,
+            "winRate": 0.6126,
+            "avgRet": 0.0347,
+            "profitFactor": 2.34
           },
           "portfolioTrain": {
-            "returnPct": 19.5,
-            "maxDDPct": 19.6,
-            "trades": 210,
+            "returnPct": 15.6,
+            "maxDDPct": 21.7,
+            "trades": 228,
             "yearly": {
-              "2021": 14.9,
-              "2022": -5.8,
-              "2023": 2.1,
-              "2024": 8.2
+              "2021": 11.7,
+              "2022": -9.3,
+              "2023": 5.2,
+              "2024": 8.5
             }
           },
           "portfolioTest": {
-            "returnPct": 52.9,
-            "maxDDPct": 12.7,
-            "trades": 136,
+            "returnPct": 55.6,
+            "maxDDPct": 10.7,
+            "trades": 141,
             "yearly": {
-              "2024": 12.1,
-              "2025": 17.4,
-              "2026": 16.2
+              "2024": 10.8,
+              "2025": 17.1,
+              "2026": 19.9
             }
           },
           "idleSpyTrain": {
-            "returnPct": 41.4,
-            "maxDDPct": 28.2,
-            "trades": 210,
+            "returnPct": 35.1,
+            "maxDDPct": 28.3,
+            "trades": 228,
             "yearly": {
-              "2021": 25.4,
-              "2022": -18.3,
-              "2023": 17.5,
-              "2024": 17.3
+              "2021": 20.9,
+              "2022": -19.9,
+              "2023": 20,
+              "2024": 16.2
             }
           },
           "idleSpyTest": {
-            "returnPct": 72.1,
-            "maxDDPct": 18.5,
-            "trades": 136,
+            "returnPct": 77.7,
+            "maxDDPct": 18.2,
+            "trades": 141,
             "yearly": {
-              "2024": 12.6,
-              "2025": 24.4,
-              "2026": 22.8
+              "2024": 12.5,
+              "2025": 24.3,
+              "2026": 27.1
             }
           },
           "idleTrendTrain": {
-            "returnPct": 25.9,
-            "maxDDPct": 27.7,
-            "trades": 210,
+            "returnPct": 21.4,
+            "maxDDPct": 28.5,
+            "trades": 228,
             "yearly": {
-              "2021": 16.7,
-              "2022": -17.7,
-              "2023": 11.7,
-              "2024": 17.3
+              "2021": 13.1,
+              "2022": -19.2,
+              "2023": 14.3,
+              "2024": 16.2
             }
           },
           "idleTrendTest": {
-            "returnPct": 69.3,
-            "maxDDPct": 12.9,
-            "trades": 136,
+            "returnPct": 74.9,
+            "maxDDPct": 10.9,
+            "trades": 141,
             "yearly": {
-              "2024": 12.6,
-              "2025": 26.3,
-              "2026": 19
+              "2024": 12.5,
+              "2025": 26.1,
+              "2026": 23.2
             }
           }
         }
@@ -5863,312 +5863,312 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 1543,
-            "winRate": 0.4938,
-            "avgRet": 0,
-            "profitFactor": 1
+            "n": 1659,
+            "winRate": 0.4901,
+            "avgRet": -0.0002,
+            "profitFactor": 0.98
           },
           "test": {
-            "n": 1064,
-            "winRate": 0.4746,
-            "avgRet": -0.0015,
+            "n": 1132,
+            "winRate": 0.4806,
+            "avgRet": -0.0014,
             "profitFactor": 0.91
           },
           "portfolioTrain": {
-            "returnPct": -1.2,
-            "maxDDPct": 14.4,
-            "trades": 1414,
+            "returnPct": -7.2,
+            "maxDDPct": 15,
+            "trades": 1494,
             "yearly": {
-              "2021": 0.7,
-              "2022": -1.4,
-              "2023": 11.5,
-              "2024": -10.8
+              "2021": -0.4,
+              "2022": -3.8,
+              "2023": 9.3,
+              "2024": -11.4
             }
           },
           "portfolioTest": {
-            "returnPct": -9.1,
-            "maxDDPct": 18.3,
-            "trades": 997,
+            "returnPct": -7.8,
+            "maxDDPct": 17.7,
+            "trades": 1048,
             "yearly": {
-              "2024": 1.9,
-              "2025": -15.3,
-              "2026": 5.3
+              "2024": 2.6,
+              "2025": -14.3,
+              "2026": 4.9
             }
           },
           "idleSpyTrain": {
-            "returnPct": 48.8,
-            "maxDDPct": 27.1,
-            "trades": 1414,
+            "returnPct": 39.7,
+            "maxDDPct": 29,
+            "trades": 1494,
             "yearly": {
-              "2021": 23.6,
-              "2022": -19.3,
-              "2023": 40.7,
-              "2024": 6.1
+              "2021": 22.2,
+              "2022": -21.3,
+              "2023": 37.9,
+              "2024": 5.4
             }
           },
           "idleSpyTest": {
-            "returnPct": 26.5,
-            "maxDDPct": 22,
-            "trades": 997,
+            "returnPct": 28.3,
+            "maxDDPct": 21.8,
+            "trades": 1048,
             "yearly": {
-              "2024": 8,
-              "2025": -0.3,
-              "2026": 17.4
+              "2024": 8.7,
+              "2025": 0.9,
+              "2026": 16.9
             }
           },
           "idleTrendTrain": {
-            "returnPct": 22.9,
-            "maxDDPct": 17.8,
-            "trades": 1414,
+            "returnPct": 15.4,
+            "maxDDPct": 19.8,
+            "trades": 1494,
             "yearly": {
-              "2021": 7.4,
-              "2022": -16.1,
-              "2023": 28.7,
-              "2024": 6.1
+              "2021": 6.1,
+              "2022": -18.1,
+              "2023": 26.1,
+              "2024": 5.4
             }
           },
           "idleTrendTest": {
-            "returnPct": 15.2,
-            "maxDDPct": 18.9,
-            "trades": 997,
+            "returnPct": 16.9,
+            "maxDDPct": 18.6,
+            "trades": 1048,
             "yearly": {
-              "2024": 8,
-              "2025": -5.3,
-              "2026": 12.7
+              "2024": 8.7,
+              "2025": -4.2,
+              "2026": 12.2
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 1543,
-            "winRate": 0.5483,
+            "n": 1659,
+            "winRate": 0.5479,
             "avgRet": 0.0052,
             "profitFactor": 1.3
           },
           "test": {
-            "n": 1064,
-            "winRate": 0.5235,
-            "avgRet": 0.0042,
-            "profitFactor": 1.19
+            "n": 1132,
+            "winRate": 0.5239,
+            "avgRet": 0.0039,
+            "profitFactor": 1.18
           },
           "portfolioTrain": {
-            "returnPct": 36.9,
-            "maxDDPct": 16.4,
-            "trades": 777,
+            "returnPct": 43.9,
+            "maxDDPct": 12.5,
+            "trades": 800,
             "yearly": {
-              "2021": 5.8,
-              "2022": 3.6,
-              "2023": 18,
-              "2024": 5.8
+              "2021": 6.8,
+              "2022": 7.3,
+              "2023": 18.3,
+              "2024": 6.2
             }
           },
           "portfolioTest": {
-            "returnPct": 30.1,
+            "returnPct": 30.8,
             "maxDDPct": 16.6,
-            "trades": 512,
+            "trades": 524,
             "yearly": {
-              "2024": -5.5,
-              "2025": 5.4,
-              "2026": 30.6
+              "2024": -5.8,
+              "2025": 8.1,
+              "2026": 28.4
             }
           },
           "idleSpyTrain": {
-            "returnPct": 72,
-            "maxDDPct": 28.9,
-            "trades": 777,
+            "returnPct": 74.1,
+            "maxDDPct": 27.7,
+            "trades": 800,
             "yearly": {
-              "2021": 21.2,
-              "2022": -14.3,
-              "2023": 43.9,
-              "2024": 15
+              "2021": 22.4,
+              "2022": -14.1,
+              "2023": 43.6,
+              "2024": 15.3
             }
           },
           "idleSpyTest": {
-            "returnPct": 52.1,
-            "maxDDPct": 24.4,
-            "trades": 512,
+            "returnPct": 52.6,
+            "maxDDPct": 24,
+            "trades": 524,
             "yearly": {
-              "2024": 1.3,
-              "2025": 10.3,
-              "2026": 36.1
+              "2024": 1,
+              "2025": 12.7,
+              "2026": 34.1
             }
           },
           "idleTrendTrain": {
-            "returnPct": 55,
-            "maxDDPct": 21.3,
-            "trades": 777,
+            "returnPct": 61.5,
+            "maxDDPct": 19.2,
+            "trades": 800,
             "yearly": {
-              "2021": 9.2,
-              "2022": -8.1,
-              "2023": 34.4,
-              "2024": 15
+              "2021": 9.8,
+              "2022": -4.9,
+              "2023": 34.1,
+              "2024": 15.3
             }
           },
           "idleTrendTest": {
-            "returnPct": 50.3,
-            "maxDDPct": 15.6,
-            "trades": 512,
+            "returnPct": 51.3,
+            "maxDDPct": 15.2,
+            "trades": 524,
             "yearly": {
-              "2024": 1.3,
-              "2025": 13.6,
-              "2026": 30.5
+              "2024": 1,
+              "2025": 16.5,
+              "2026": 28.6
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 1543,
-            "winRate": 0.5755,
-            "avgRet": 0.0112,
+            "n": 1659,
+            "winRate": 0.5769,
+            "avgRet": 0.0111,
             "profitFactor": 1.58
           },
           "test": {
-            "n": 1028,
-            "winRate": 0.5389,
-            "avgRet": 0.0054,
+            "n": 1092,
+            "winRate": 0.5385,
+            "avgRet": 0.0052,
             "profitFactor": 1.2
           },
           "portfolioTrain": {
-            "returnPct": 62.7,
-            "maxDDPct": 15.8,
-            "trades": 527,
+            "returnPct": 74.4,
+            "maxDDPct": 13,
+            "trades": 538,
             "yearly": {
-              "2021": 17.6,
-              "2022": 10,
-              "2023": 10,
-              "2024": 14.3
+              "2021": 22.6,
+              "2022": 11,
+              "2023": 12.4,
+              "2024": 14
             }
           },
           "portfolioTest": {
-            "returnPct": 36.2,
-            "maxDDPct": 11.3,
-            "trades": 332,
+            "returnPct": 33.7,
+            "maxDDPct": 10.6,
+            "trades": 335,
             "yearly": {
-              "2024": 3.8,
+              "2024": 3.1,
               "2025": 16.5,
-              "2026": 12.7
+              "2026": 11.3
             }
           },
           "idleSpyTrain": {
-            "returnPct": 81.1,
+            "returnPct": 88.7,
             "maxDDPct": 23.9,
-            "trades": 527,
+            "trades": 538,
             "yearly": {
-              "2021": 28.8,
-              "2022": -9.1,
-              "2023": 28,
-              "2024": 20.8
+              "2021": 33.7,
+              "2022": -8.9,
+              "2023": 28.9,
+              "2024": 20.2
             }
           },
           "idleSpyTest": {
-            "returnPct": 60.8,
-            "maxDDPct": 20.1,
-            "trades": 332,
+            "returnPct": 58.6,
+            "maxDDPct": 19.5,
+            "trades": 335,
             "yearly": {
-              "2024": 6.4,
-              "2025": 20.9,
-              "2026": 25.1
+              "2024": 7.3,
+              "2025": 20.4,
+              "2026": 22.8
             }
           },
           "idleTrendTrain": {
-            "returnPct": 75.8,
-            "maxDDPct": 20.3,
-            "trades": 527,
+            "returnPct": 85.8,
+            "maxDDPct": 18.7,
+            "trades": 538,
             "yearly": {
-              "2021": 20.4,
-              "2022": 0.6,
-              "2023": 20.1,
-              "2024": 20.8
+              "2021": 25.3,
+              "2022": 2,
+              "2023": 20.9,
+              "2024": 20.2
             }
           },
           "idleTrendTest": {
-            "returnPct": 60,
-            "maxDDPct": 11.7,
-            "trades": 332,
+            "returnPct": 57.8,
+            "maxDDPct": 11,
+            "trades": 335,
             "yearly": {
-              "2024": 6.4,
-              "2025": 25,
-              "2026": 20.3
+              "2024": 7.3,
+              "2025": 24.5,
+              "2026": 18.1
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 1543,
-            "winRate": 0.58,
-            "avgRet": 0.0171,
-            "profitFactor": 1.69
+            "n": 1659,
+            "winRate": 0.5763,
+            "avgRet": 0.0164,
+            "profitFactor": 1.66
           },
           "test": {
-            "n": 972,
-            "winRate": 0.5689,
-            "avgRet": 0.0166,
-            "profitFactor": 1.55
+            "n": 1031,
+            "winRate": 0.5674,
+            "avgRet": 0.0161,
+            "profitFactor": 1.53
           },
           "portfolioTrain": {
-            "returnPct": 44.8,
-            "maxDDPct": 19.6,
-            "trades": 344,
+            "returnPct": 50.5,
+            "maxDDPct": 18.7,
+            "trades": 350,
             "yearly": {
-              "2021": 17.2,
-              "2022": -1.4,
-              "2023": 6.1,
-              "2024": 18.1
+              "2021": 19.8,
+              "2022": -7.3,
+              "2023": 16.2,
+              "2024": 16.6
             }
           },
           "portfolioTest": {
-            "returnPct": 48,
-            "maxDDPct": 17.9,
-            "trades": 210,
+            "returnPct": 30.6,
+            "maxDDPct": 18.4,
+            "trades": 211,
             "yearly": {
-              "2024": 3.7,
-              "2025": 17.1,
-              "2026": 21.9
+              "2024": 1.1,
+              "2025": 17.3,
+              "2026": 10.2
             }
           },
           "idleSpyTrain": {
-            "returnPct": 56.7,
+            "returnPct": 60.6,
             "maxDDPct": 24.7,
-            "trades": 344,
+            "trades": 350,
             "yearly": {
-              "2021": 23.4,
-              "2022": -9.5,
-              "2023": 15.8,
-              "2024": 21.2
+              "2021": 25.5,
+              "2022": -14.7,
+              "2023": 25.6,
+              "2024": 19.6
             }
           },
           "idleSpyTest": {
-            "returnPct": 76.2,
-            "maxDDPct": 22.8,
-            "trades": 210,
+            "returnPct": 55.9,
+            "maxDDPct": 23.2,
+            "trades": 211,
             "yearly": {
-              "2024": 7.6,
-              "2025": 23.8,
-              "2026": 32.2
+              "2024": 6,
+              "2025": 24,
+              "2026": 18.6
             }
           },
           "idleTrendTrain": {
-            "returnPct": 51.6,
-            "maxDDPct": 22.1,
-            "trades": 344,
+            "returnPct": 55.9,
+            "maxDDPct": 21.7,
+            "trades": 350,
             "yearly": {
-              "2021": 19.1,
-              "2022": -6.4,
-              "2023": 12.2,
-              "2024": 21.2
+              "2021": 20.9,
+              "2022": -11.5,
+              "2023": 21.8,
+              "2024": 19.6
             }
           },
           "idleTrendTest": {
-            "returnPct": 70.5,
-            "maxDDPct": 18.2,
-            "trades": 210,
+            "returnPct": 50.5,
+            "maxDDPct": 18.7,
+            "trades": 211,
             "yearly": {
-              "2024": 7.6,
+              "2024": 6,
               "2025": 23.9,
-              "2026": 27.9
+              "2026": 14.6
             }
           }
         }
@@ -6180,312 +6180,312 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 1425,
-            "winRate": 0.5011,
-            "avgRet": 0.0004,
-            "profitFactor": 1.03
+            "n": 1529,
+            "winRate": 0.4997,
+            "avgRet": 0.0003,
+            "profitFactor": 1.02
           },
           "test": {
-            "n": 1050,
-            "winRate": 0.5114,
+            "n": 1112,
+            "winRate": 0.5135,
             "avgRet": 0.0012,
             "profitFactor": 1.08
           },
           "portfolioTrain": {
-            "returnPct": 12.7,
-            "maxDDPct": 13.7,
-            "trades": 1285,
+            "returnPct": 9,
+            "maxDDPct": 14.9,
+            "trades": 1360,
             "yearly": {
-              "2021": 11.4,
+              "2021": 8.9,
               "2022": 8.9,
-              "2023": 2.7,
-              "2024": -9.5
+              "2023": 2.6,
+              "2024": -10.4
             }
           },
           "portfolioTest": {
-            "returnPct": 19.1,
-            "maxDDPct": 13,
-            "trades": 984,
+            "returnPct": 19.5,
+            "maxDDPct": 14.6,
+            "trades": 1032,
             "yearly": {
-              "2024": 2.2,
-              "2025": -4,
-              "2026": 21.4
+              "2024": 3.2,
+              "2025": -5.2,
+              "2026": 22.1
             }
           },
           "idleSpyTrain": {
-            "returnPct": 69.7,
-            "maxDDPct": 25.1,
-            "trades": 1285,
+            "returnPct": 64.2,
+            "maxDDPct": 25.7,
+            "trades": 1360,
             "yearly": {
-              "2021": 36.7,
+              "2021": 33.6,
               "2022": -10.9,
-              "2023": 29.6,
-              "2024": 7.6
+              "2023": 29.5,
+              "2024": 6.5
             }
           },
           "idleSpyTest": {
-            "returnPct": 65.7,
-            "maxDDPct": 24.3,
-            "trades": 984,
+            "returnPct": 66.3,
+            "maxDDPct": 24.8,
+            "trades": 1032,
             "yearly": {
-              "2024": 8.4,
-              "2025": 13,
-              "2026": 35.3
+              "2024": 9.4,
+              "2025": 11.6,
+              "2026": 36.1
             }
           },
           "idleTrendTrain": {
-            "returnPct": 40.3,
-            "maxDDPct": 14.8,
-            "trades": 1285,
+            "returnPct": 35.7,
+            "maxDDPct": 15.6,
+            "trades": 1360,
             "yearly": {
-              "2021": 18.8,
+              "2021": 16.1,
               "2022": -7.3,
-              "2023": 18.5,
-              "2024": 7.6
+              "2023": 18.4,
+              "2024": 6.5
             }
           },
           "idleTrendTest": {
-            "returnPct": 50.9,
-            "maxDDPct": 18,
-            "trades": 984,
+            "returnPct": 51.5,
+            "maxDDPct": 18.5,
+            "trades": 1032,
             "yearly": {
-              "2024": 8.4,
-              "2025": 7.3,
-              "2026": 29.8
+              "2024": 9.4,
+              "2025": 6,
+              "2026": 30.6
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 1425,
-            "winRate": 0.546,
-            "avgRet": 0.0049,
-            "profitFactor": 1.29
+            "n": 1529,
+            "winRate": 0.5487,
+            "avgRet": 0.005,
+            "profitFactor": 1.3
           },
           "test": {
-            "n": 1050,
-            "winRate": 0.5248,
-            "avgRet": 0.0049,
-            "profitFactor": 1.23
+            "n": 1112,
+            "winRate": 0.5207,
+            "avgRet": 0.0044,
+            "profitFactor": 1.2
           },
           "portfolioTrain": {
-            "returnPct": 28,
-            "maxDDPct": 11.9,
-            "trades": 720,
+            "returnPct": 26.8,
+            "maxDDPct": 12.4,
+            "trades": 738,
             "yearly": {
-              "2021": 8,
-              "2022": 11.2,
-              "2023": -1.4,
-              "2024": 8.1
+              "2021": 7.1,
+              "2022": 6.4,
+              "2023": 0.4,
+              "2024": 10.8
             }
           },
           "portfolioTest": {
-            "returnPct": 38.5,
-            "maxDDPct": 22.9,
-            "trades": 522,
+            "returnPct": 40.4,
+            "maxDDPct": 18.8,
+            "trades": 530,
             "yearly": {
-              "2024": -9.9,
-              "2025": 15.2,
-              "2026": 33.5
+              "2024": -5,
+              "2025": 14.3,
+              "2026": 29.3
             }
           },
           "idleSpyTrain": {
-            "returnPct": 68.8,
-            "maxDDPct": 22.3,
-            "trades": 720,
+            "returnPct": 65.8,
+            "maxDDPct": 23.3,
+            "trades": 738,
             "yearly": {
-              "2021": 25.7,
-              "2022": -2.5,
-              "2023": 17,
-              "2024": 17.7
+              "2021": 24.5,
+              "2022": -6.9,
+              "2023": 19.5,
+              "2024": 19.7
             }
           },
           "idleSpyTest": {
-            "returnPct": 58.3,
-            "maxDDPct": 29.2,
-            "trades": 522,
+            "returnPct": 58.8,
+            "maxDDPct": 28.1,
+            "trades": 530,
             "yearly": {
-              "2024": -2.2,
-              "2025": 17.2,
-              "2026": 38.1
+              "2024": 2.6,
+              "2025": 16,
+              "2026": 33.4
             }
           },
           "idleTrendTrain": {
-            "returnPct": 43.6,
-            "maxDDPct": 16.1,
-            "trades": 720,
+            "returnPct": 41.1,
+            "maxDDPct": 19.1,
+            "trades": 738,
             "yearly": {
-              "2021": 12.9,
-              "2022": -1.4,
-              "2023": 9.6,
-              "2024": 17.7
+              "2021": 11.6,
+              "2022": -5.8,
+              "2023": 12.1,
+              "2024": 19.7
             }
           },
           "idleTrendTest": {
-            "returnPct": 56,
-            "maxDDPct": 20.9,
-            "trades": 522,
+            "returnPct": 56.5,
+            "maxDDPct": 19.7,
+            "trades": 530,
             "yearly": {
-              "2024": -2.2,
-              "2025": 20.2,
-              "2026": 32.7
+              "2024": 2.6,
+              "2025": 19,
+              "2026": 28.2
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 1425,
-            "winRate": 0.5572,
-            "avgRet": 0.0081,
-            "profitFactor": 1.4
+            "n": 1529,
+            "winRate": 0.5598,
+            "avgRet": 0.0083,
+            "profitFactor": 1.42
           },
           "test": {
-            "n": 1008,
-            "winRate": 0.5377,
-            "avgRet": 0.0095,
-            "profitFactor": 1.38
+            "n": 1068,
+            "winRate": 0.5328,
+            "avgRet": 0.0085,
+            "profitFactor": 1.34
           },
           "portfolioTrain": {
-            "returnPct": 44.8,
-            "maxDDPct": 13.5,
-            "trades": 503,
+            "returnPct": 33.3,
+            "maxDDPct": 15.3,
+            "trades": 510,
             "yearly": {
-              "2021": 14,
-              "2022": 6.3,
-              "2023": 5.5,
-              "2024": 13.2
+              "2021": 14.8,
+              "2022": 2.2,
+              "2023": 5,
+              "2024": 8.2
             }
           },
           "portfolioTest": {
-            "returnPct": 56.3,
-            "maxDDPct": 16.9,
-            "trades": 331,
+            "returnPct": 48.5,
+            "maxDDPct": 17.1,
+            "trades": 335,
             "yearly": {
-              "2024": 3.4,
-              "2025": 26.9,
-              "2026": 19.1
+              "2024": 4.9,
+              "2025": 20.5,
+              "2026": 17.4
             }
           },
           "idleSpyTrain": {
-            "returnPct": 62.1,
-            "maxDDPct": 23.4,
-            "trades": 503,
+            "returnPct": 50.2,
+            "maxDDPct": 24.6,
+            "trades": 510,
             "yearly": {
-              "2021": 26.1,
-              "2022": -5.6,
-              "2023": 14.3,
-              "2024": 19.1
+              "2021": 26.4,
+              "2022": -8.2,
+              "2023": 14.5,
+              "2024": 13.1
             }
           },
           "idleSpyTest": {
-            "returnPct": 77,
-            "maxDDPct": 28.4,
-            "trades": 331,
+            "returnPct": 68.4,
+            "maxDDPct": 28.8,
+            "trades": 335,
             "yearly": {
-              "2024": 8.1,
-              "2025": 28.6,
-              "2026": 27.3
+              "2024": 10.7,
+              "2025": 21.3,
+              "2026": 25.4
             }
           },
           "idleTrendTrain": {
-            "returnPct": 47.4,
-            "maxDDPct": 15.9,
-            "trades": 503,
+            "returnPct": 36.2,
+            "maxDDPct": 18.7,
+            "trades": 510,
             "yearly": {
-              "2021": 17.4,
-              "2022": -2.5,
-              "2023": 8.1,
-              "2024": 19.1
+              "2021": 18,
+              "2022": -5.7,
+              "2023": 8.3,
+              "2024": 13.1
             }
           },
           "idleTrendTest": {
-            "returnPct": 76.4,
-            "maxDDPct": 20,
-            "trades": 331,
+            "returnPct": 67.8,
+            "maxDDPct": 20.4,
+            "trades": 335,
             "yearly": {
-              "2024": 8.1,
-              "2025": 33.2,
-              "2026": 22.5
+              "2024": 10.7,
+              "2025": 25.6,
+              "2026": 20.8
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 1425,
-            "winRate": 0.5516,
-            "avgRet": 0.0089,
-            "profitFactor": 1.33
+            "n": 1529,
+            "winRate": 0.55,
+            "avgRet": 0.0085,
+            "profitFactor": 1.32
           },
           "test": {
-            "n": 947,
-            "winRate": 0.5576,
-            "avgRet": 0.0205,
-            "profitFactor": 1.7
+            "n": 1004,
+            "winRate": 0.5518,
+            "avgRet": 0.0192,
+            "profitFactor": 1.65
           },
           "portfolioTrain": {
-            "returnPct": 26.5,
-            "maxDDPct": 26.6,
-            "trades": 316,
+            "returnPct": 27,
+            "maxDDPct": 25.8,
+            "trades": 321,
             "yearly": {
-              "2021": 31.2,
-              "2022": -12.3,
-              "2023": -0.5,
-              "2024": 10.5
+              "2021": 30,
+              "2022": -13.1,
+              "2023": 2.5,
+              "2024": 9.6
             }
           },
           "portfolioTest": {
-            "returnPct": 28.9,
-            "maxDDPct": 20.7,
-            "trades": 209,
+            "returnPct": 28.7,
+            "maxDDPct": 21.4,
+            "trades": 210,
             "yearly": {
-              "2024": -0.7,
-              "2025": 18.3,
-              "2026": 9.8
+              "2024": -1.7,
+              "2025": 17.4,
+              "2026": 11.5
             }
           },
           "idleSpyTrain": {
-            "returnPct": 30.5,
-            "maxDDPct": 30.2,
-            "trades": 316,
+            "returnPct": 32.7,
+            "maxDDPct": 29.5,
+            "trades": 321,
             "yearly": {
-              "2021": 37.1,
-              "2022": -18.4,
-              "2023": 2.5,
-              "2024": 13.9
+              "2021": 35.3,
+              "2022": -18,
+              "2023": 6.1,
+              "2024": 12.6
             }
           },
           "idleSpyTest": {
-            "returnPct": 44.8,
-            "maxDDPct": 28.2,
-            "trades": 209,
+            "returnPct": 44.5,
+            "maxDDPct": 28.7,
+            "trades": 210,
             "yearly": {
-              "2024": 3.5,
-              "2025": 22.1,
-              "2026": 14.6
+              "2024": 3.4,
+              "2025": 20.6,
+              "2026": 15.9
             }
           },
           "idleTrendTrain": {
-            "returnPct": 25.2,
-            "maxDDPct": 30,
-            "trades": 316,
+            "returnPct": 26.9,
+            "maxDDPct": 28.3,
+            "trades": 321,
             "yearly": {
-              "2021": 32.8,
-              "2022": -16.8,
-              "2023": -0.5,
-              "2024": 13.9
+              "2021": 31.4,
+              "2022": -16.5,
+              "2023": 2.8,
+              "2024": 12.6
             }
           },
           "idleTrendTest": {
-            "returnPct": 45,
-            "maxDDPct": 21.5,
-            "trades": 209,
+            "returnPct": 44.5,
+            "maxDDPct": 22.1,
+            "trades": 210,
             "yearly": {
-              "2024": 3.5,
-              "2025": 25.6,
-              "2026": 11.6
+              "2024": 3.4,
+              "2025": 23.9,
+              "2026": 12.8
             }
           }
         }
@@ -6497,312 +6497,312 @@
         "dt": {
           "name": "デイトレ（寄りで買って引けで売る）",
           "train": {
-            "n": 510,
-            "winRate": 0.4706,
-            "avgRet": -0.0009,
-            "profitFactor": 0.95
+            "n": 549,
+            "winRate": 0.4645,
+            "avgRet": -0.0012,
+            "profitFactor": 0.93
           },
           "test": {
-            "n": 284,
-            "winRate": 0.4366,
-            "avgRet": -0.0064,
-            "profitFactor": 0.69
+            "n": 300,
+            "winRate": 0.4433,
+            "avgRet": -0.006,
+            "profitFactor": 0.7
           },
           "portfolioTrain": {
-            "returnPct": -5.1,
-            "maxDDPct": 12,
-            "trades": 510,
+            "returnPct": -7,
+            "maxDDPct": 13.7,
+            "trades": 549,
             "yearly": {
-              "2021": -0.5,
-              "2022": -0.1,
-              "2023": -3.9,
-              "2024": -0.6
+              "2021": -0.4,
+              "2022": 0.7,
+              "2023": -6.5,
+              "2024": -0.8
             }
           },
           "portfolioTest": {
-            "returnPct": -16.9,
-            "maxDDPct": 19.3,
-            "trades": 284,
+            "returnPct": -16.8,
+            "maxDDPct": 19.9,
+            "trades": 300,
             "yearly": {
-              "2024": -9.9,
-              "2025": -2.9,
-              "2026": -5
+              "2024": -9.8,
+              "2025": -3.4,
+              "2026": -4.6
             }
           },
           "idleSpyTrain": {
-            "returnPct": 42.9,
-            "maxDDPct": 22.5,
-            "trades": 510,
+            "returnPct": 40,
+            "maxDDPct": 22.9,
+            "trades": 549,
             "yearly": {
-              "2021": 22,
-              "2022": -18.2,
-              "2023": 21.3,
-              "2024": 18.2
+              "2021": 22.1,
+              "2022": -17.6,
+              "2023": 18,
+              "2024": 17.9
             }
           },
           "idleSpyTest": {
-            "returnPct": 15.6,
-            "maxDDPct": 21.5,
-            "trades": 284,
+            "returnPct": 15.7,
+            "maxDDPct": 21.7,
+            "trades": 300,
             "yearly": {
-              "2024": -4.5,
-              "2025": 14.3,
-              "2026": 5.9
+              "2024": -4.4,
+              "2025": 13.7,
+              "2026": 6.4
             }
           },
           "idleTrendTrain": {
-            "returnPct": 18.1,
+            "returnPct": 15.8,
             "maxDDPct": 22.6,
-            "trades": 510,
+            "trades": 549,
             "yearly": {
-              "2021": 6,
-              "2022": -15,
-              "2023": 10.9,
-              "2024": 18.2
+              "2021": 6.1,
+              "2022": -14.2,
+              "2023": 7.9,
+              "2024": 17.9
             }
           },
           "idleTrendTest": {
-            "returnPct": 5.3,
-            "maxDDPct": 12.9,
-            "trades": 284,
+            "returnPct": 5.4,
+            "maxDDPct": 13.2,
+            "trades": 300,
             "yearly": {
-              "2024": -4.5,
-              "2025": 8.5,
-              "2026": 1.6
+              "2024": -4.4,
+              "2025": 7.9,
+              "2026": 2.1
             }
           }
         },
         "hold5": {
           "name": "5日保有",
           "train": {
-            "n": 510,
-            "winRate": 0.5216,
-            "avgRet": 0.0029,
-            "profitFactor": 1.12
+            "n": 549,
+            "winRate": 0.5155,
+            "avgRet": 0.0025,
+            "profitFactor": 1.1
           },
           "test": {
-            "n": 284,
-            "winRate": 0.4789,
-            "avgRet": -0.0028,
-            "profitFactor": 0.91
+            "n": 300,
+            "winRate": 0.4767,
+            "avgRet": -0.0029,
+            "profitFactor": 0.9
           },
           "portfolioTrain": {
-            "returnPct": 7.9,
-            "maxDDPct": 21.1,
-            "trades": 436,
+            "returnPct": 6.1,
+            "maxDDPct": 19.5,
+            "trades": 460,
             "yearly": {
-              "2021": -0.3,
-              "2022": -2.8,
-              "2023": 0.4,
-              "2024": 11
+              "2021": 2,
+              "2022": -5.3,
+              "2023": 0.3,
+              "2024": 9.6
             }
           },
           "portfolioTest": {
-            "returnPct": -8.4,
-            "maxDDPct": 16.9,
-            "trades": 256,
+            "returnPct": -8.1,
+            "maxDDPct": 18,
+            "trades": 269,
             "yearly": {
-              "2024": -4.6,
-              "2025": -10.6,
-              "2026": 7.4
+              "2024": -4.8,
+              "2025": -11.4,
+              "2026": 8.9
             }
           },
           "idleSpyTrain": {
-            "returnPct": 39.3,
-            "maxDDPct": 29.7,
-            "trades": 436,
+            "returnPct": 35.3,
+            "maxDDPct": 32.2,
+            "trades": 460,
             "yearly": {
-              "2021": 20.3,
-              "2022": -21.8,
-              "2023": 20.6,
-              "2024": 22.8
+              "2021": 22.9,
+              "2022": -24.1,
+              "2023": 19.8,
+              "2024": 21
             }
           },
           "idleSpyTest": {
-            "returnPct": 17,
+            "returnPct": 16.8,
             "maxDDPct": 21.9,
-            "trades": 256,
+            "trades": 269,
             "yearly": {
-              "2024": 1.7,
-              "2025": 0.2,
-              "2026": 14.7
+              "2024": 1,
+              "2025": -0.9,
+              "2026": 16.7
             }
           },
           "idleTrendTrain": {
-            "returnPct": 22,
-            "maxDDPct": 26.5,
-            "trades": 436,
+            "returnPct": 19.1,
+            "maxDDPct": 24.9,
+            "trades": 460,
             "yearly": {
-              "2021": 4,
-              "2022": -15.6,
-              "2023": 13.2,
-              "2024": 22.8
+              "2021": 6.2,
+              "2022": -17.7,
+              "2023": 12.6,
+              "2024": 21
             }
           },
           "idleTrendTest": {
-            "returnPct": 12.2,
-            "maxDDPct": 14.2,
-            "trades": 256,
+            "returnPct": 12.1,
+            "maxDDPct": 14.3,
+            "trades": 269,
             "yearly": {
-              "2024": 1.7,
-              "2025": 0.1,
-              "2026": 10.2
+              "2024": 1,
+              "2025": -1,
+              "2026": 12.1
             }
           }
         },
         "hold10": {
           "name": "10日保有",
           "train": {
-            "n": 510,
-            "winRate": 0.5039,
-            "avgRet": 0.0036,
-            "profitFactor": 1.12
+            "n": 549,
+            "winRate": 0.5064,
+            "avgRet": 0.004,
+            "profitFactor": 1.13
           },
           "test": {
-            "n": 278,
-            "winRate": 0.5216,
-            "avgRet": 0.0087,
-            "profitFactor": 1.27
+            "n": 293,
+            "winRate": 0.5222,
+            "avgRet": 0.0085,
+            "profitFactor": 1.28
           },
           "portfolioTrain": {
-            "returnPct": 21.2,
-            "maxDDPct": 19.9,
-            "trades": 317,
+            "returnPct": 29.3,
+            "maxDDPct": 18.8,
+            "trades": 328,
             "yearly": {
-              "2021": 0.6,
-              "2022": 0.5,
-              "2023": 3.6,
-              "2024": 15.7
+              "2021": 3.8,
+              "2022": 4.1,
+              "2023": 4.4,
+              "2024": 14.6
             }
           },
           "portfolioTest": {
-            "returnPct": 3.2,
-            "maxDDPct": 15.5,
-            "trades": 194,
+            "returnPct": 5.6,
+            "maxDDPct": 14.3,
+            "trades": 200,
             "yearly": {
               "2024": 11.5,
-              "2025": -13,
-              "2026": 6.5
+              "2025": -11.4,
+              "2026": 6.9
             }
           },
           "idleSpyTrain": {
-            "returnPct": 46.6,
-            "maxDDPct": 32.6,
-            "trades": 317,
+            "returnPct": 53.8,
+            "maxDDPct": 30.1,
+            "trades": 328,
             "yearly": {
-              "2021": 19,
-              "2022": -18.7,
-              "2023": 21.9,
-              "2024": 24.4
+              "2021": 22.4,
+              "2022": -16.7,
+              "2023": 22.6,
+              "2024": 23.1
             }
           },
           "idleSpyTest": {
-            "returnPct": 32.2,
-            "maxDDPct": 20.1,
-            "trades": 194,
+            "returnPct": 35.4,
+            "maxDDPct": 19.3,
+            "trades": 200,
             "yearly": {
-              "2024": 16.5,
-              "2025": -0.8,
-              "2026": 14.4
+              "2024": 16.6,
+              "2025": 0.9,
+              "2026": 15
             }
           },
           "idleTrendTrain": {
-            "returnPct": 31.9,
-            "maxDDPct": 23.1,
-            "trades": 317,
+            "returnPct": 39.6,
+            "maxDDPct": 21.9,
+            "trades": 328,
             "yearly": {
-              "2021": 3.2,
-              "2022": -10.9,
-              "2023": 15.3,
-              "2024": 24.4
+              "2021": 6.5,
+              "2022": -8.3,
+              "2023": 16,
+              "2024": 23.1
             }
           },
           "idleTrendTest": {
-            "returnPct": 28.3,
-            "maxDDPct": 13.2,
-            "trades": 194,
+            "returnPct": 31.1,
+            "maxDDPct": 11.9,
+            "trades": 200,
             "yearly": {
-              "2024": 16.5,
-              "2025": 0.4,
-              "2026": 9.7
+              "2024": 16.6,
+              "2025": 1.9,
+              "2026": 10.3
             }
           }
         },
         "hold20": {
           "name": "20日保有",
           "train": {
-            "n": 510,
-            "winRate": 0.5275,
-            "avgRet": 0.0083,
+            "n": 549,
+            "winRate": 0.5246,
+            "avgRet": 0.0079,
             "profitFactor": 1.22
           },
           "test": {
-            "n": 263,
-            "winRate": 0.4601,
-            "avgRet": 0.0059,
-            "profitFactor": 1.15
+            "n": 277,
+            "winRate": 0.4621,
+            "avgRet": 0.0065,
+            "profitFactor": 1.17
           },
           "portfolioTrain": {
-            "returnPct": 11.7,
-            "maxDDPct": 21.6,
-            "trades": 215,
+            "returnPct": 18.1,
+            "maxDDPct": 19.9,
+            "trades": 220,
             "yearly": {
-              "2021": 3.2,
-              "2022": -1.4,
-              "2023": -4.1,
-              "2024": 14.5
+              "2021": 10.6,
+              "2022": -2.4,
+              "2023": -1.6,
+              "2024": 11.2
             }
           },
           "portfolioTest": {
-            "returnPct": -10.8,
-            "maxDDPct": 19.6,
-            "trades": 129,
+            "returnPct": -8.8,
+            "maxDDPct": 19.4,
+            "trades": 132,
             "yearly": {
-              "2024": 0.3,
-              "2025": -6.7,
-              "2026": -4.6
+              "2024": -0.2,
+              "2025": -6.5,
+              "2026": -2.4
             }
           },
           "idleSpyTrain": {
-            "returnPct": 25.7,
-            "maxDDPct": 30.9,
-            "trades": 215,
+            "returnPct": 31.7,
+            "maxDDPct": 30.7,
+            "trades": 220,
             "yearly": {
-              "2021": 16.3,
-              "2022": -17.7,
-              "2023": 9.7,
-              "2024": 19.8
+              "2021": 24.1,
+              "2022": -19,
+              "2023": 12.6,
+              "2024": 16.3
             }
           },
           "idleSpyTest": {
-            "returnPct": 7.3,
+            "returnPct": 10.2,
             "maxDDPct": 15.2,
-            "trades": 129,
+            "trades": 132,
             "yearly": {
-              "2024": 0.6,
+              "2024": 1,
               "2025": 6.2,
-              "2026": 0.4
+              "2026": 2.8
             }
           },
           "idleTrendTrain": {
-            "returnPct": 22,
-            "maxDDPct": 20.1,
-            "trades": 215,
+            "returnPct": 28.2,
+            "maxDDPct": 19.6,
+            "trades": 220,
             "yearly": {
-              "2021": 5.4,
-              "2022": -9.4,
-              "2023": 6.7,
-              "2024": 19.8
+              "2021": 12.8,
+              "2022": -10.8,
+              "2023": 9.5,
+              "2024": 16.3
             }
           },
           "idleTrendTest": {
-            "returnPct": 5.1,
+            "returnPct": 8,
             "maxDDPct": 14.3,
-            "trades": 129,
+            "trades": 132,
             "yearly": {
-              "2024": 0.6,
+              "2024": 1,
               "2025": 8,
-              "2026": -3.3
+              "2026": -1
             }
           }
         }
