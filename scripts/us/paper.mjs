@@ -6,6 +6,7 @@
 // 状態（価格入り）は data-us/paper/state.json（暗号化キャッシュ）。公開の reports-out/us-paper.json は銘柄・日付・損益率だけ。
 import fs from 'node:fs';
 import path from 'node:path';
+import { usFeatures, usScore, US_LABEL } from './lib-pro.mjs';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), [])
@@ -37,8 +38,8 @@ const P = new Map();
 function px(t) {
   if (!P.has(t)) {
     const f = path.join(DATA, 'prices', `${t}.json`);
-    const m = { O: new Float64Array(D).fill(NaN), C: new Float64Array(D).fill(NaN), RC: new Float64Array(D).fill(NaN) };
-    if (fs.existsSync(f)) for (const [d, o, , , c, , , , rc] of load(f)) { const k = di.get(d); if (k != null) { m.O[k] = o; m.C[k] = c; m.RC[k] = rc; } }
+    const m = { O: new Float64Array(D).fill(NaN), H: new Float64Array(D).fill(NaN), L: new Float64Array(D).fill(NaN), C: new Float64Array(D).fill(NaN), V: new Float64Array(D).fill(NaN), RC: new Float64Array(D).fill(NaN) };
+    if (fs.existsSync(f)) for (const [d, o, h, l, c, v, , , rc] of load(f)) { const k = di.get(d); if (k != null) { m.O[k] = o; m.H[k] = h; m.L[k] = l; m.C[k] = c; m.V[k] = v; m.RC[k] = rc; } }
     P.set(t, m);
   }
   return P.get(t);
@@ -60,7 +61,7 @@ function reactions(u) {
     const p = px(u.t);
     const re = p.C[k] / p.C[k - 1] - 1;
     if (!Number.isFinite(re)) continue;
-    out.push({ t: u.t, name: u.name, acc, k, re, raw: p.RC[k] });
+    out.push({ t: u.t, name: u.name, acc, day, k, re, raw: p.RC[k] });
   }
   return out;
 }
@@ -122,6 +123,49 @@ for (const T of newDates) {
   st.lastDate = T;
 }
 
+// ---------- 試験中（2026-11-17〜）：プロの判断。反応日に+5%以上の銘柄のうち、検証（scripts/us/pro.mjs）が前半だけで選んだ
+// 「効く特徴」に3つ以上当てはまるものを次の朝に買い、40日持つ。最大10銘柄×10%、空いているお金はSPY ----------
+const PRO_HOLD = 40, PRO_MIN = 3, PRO_REACT = 0.05;
+const proChoiceF = path.join(DATA, 'pro-choice.json');
+const PROC = fs.existsSync(proChoiceF) ? load(proChoiceF) : null;
+st.pro ??= { startDate: st.lastDate, cash: START, positions: [], pending: [], closed: [], tax: {}, equity: [{ date: st.lastDate, value: START }] };
+{
+  const P = st.pro;
+  const taxDueP = (date) => { const y = yearOf(date); const net = P.closed.filter((c) => yearOf(c.exitDate) === y && c.exitDate <= date).reduce((a, c) => a + c.profitYen, 0); return Math.round(Math.max(0, net) * TAX); };
+  for (const T of newDates) {
+    const k = di.get(T);
+    const s0 = spy[k - 1]?.[4], s1 = spy[k][4];
+    if (s0 > 0 && s1 > 0) P.cash *= s1 / s0;
+    const eq = P.cash + P.positions.reduce((a, q) => a + q.size, 0);
+    for (const pd of P.pending.sort((a, b) => b.score - a.score)) {
+      if (P.positions.length >= MAXN) break;
+      if (P.positions.some((q) => q.t === pd.t)) continue;
+      const o = px(pd.t).O[k];
+      if (!(o > 0)) continue;
+      const size = Math.min(P.cash, eq * 0.1);
+      if (size < eq * 0.05) break;
+      P.cash -= size;
+      P.positions.push({ t: pd.t, name: pd.name, reason: pd.reason, entryDate: T, entryPx: o * (1 + SLIP), size, held: 0, hold: PRO_HOLD, lastPx: null });
+    }
+    P.pending = [];
+    for (let j = P.positions.length - 1; j >= 0; j--) {
+      const pos = P.positions[j];
+      const c = px(pos.t).C[k];
+      if (!(c > 0)) continue;
+      pos.held++; pos.lastPx = c;
+      if (pos.held >= pos.hold) {
+        const r = (c * (1 - SLIP)) / pos.entryPx - 1;
+        P.cash += pos.size * (1 + r);
+        P.closed.push({ t: pos.t, name: pos.name, reason: pos.reason, entryDate: pos.entryDate, exitDate: T, retPct: pct(r), profitYen: Math.round(pos.size * r) });
+        P.positions.splice(j, 1);
+        const y = yearOf(T), due = taxDueP(T);
+        P.cash -= due - (P.tax[y] ?? 0); P.tax[y] = due;
+      }
+    }
+    P.equity.push({ date: T, value: Math.round(P.cash + P.positions.reduce((a, q) => a + q.size * ((q.lastPx ?? q.entryPx) * (1 - SLIP)) / q.entryPx, 0)) });
+  }
+}
+
 // ---------- 次の取引日に買う候補：反応日が最新の取引日で、+10%以上 ----------
 const lastK = di.get(st.lastDate);
 const found = [];
@@ -134,6 +178,16 @@ for (const u of universe) {
     const key = `${r.t}|${r.acc}`;
     if (st.seen[key]) continue;
     st.seen[key] = 1;
+    if (PROC?.rules && r.re >= PRO_REACT && r.raw >= MIN_PX && r.k >= 260 && !st.pro.pending.some((q) => q.t === r.t) && !st.pro.positions.some((q) => q.t === r.t)) {
+      const secF = path.join(DATA, 'sec', `${u.t}.json`), avF = path.join(DATA, 'av', `${u.t}.json`);
+      const sObj = { ...px(u.t), sec: fs.existsSync(secF) ? load(secF) : {}, av: fs.existsSync(avF) ? load(avF) : null };
+      const f = usFeatures(sObj, r.k, spy.map((x) => x[4]), r.day);
+      const sc = usScore(f, PROC.rules);
+      if (sc >= PRO_MIN) {
+        const hit = PROC.rules.chosen.filter((c) => usScore(f, { chosen: [c] }) > 0).map((c) => US_LABEL[c.key]?.[c.side === 'high' ? 0 : 1] ?? c.key);
+        st.pro.pending.push({ t: r.t, name: r.name, score: sc * 10 + r.re, reason: `決算の翌日に+${pct(r.re)}%（${dates[r.k]}）／点数${sc}：${hit.join('・')}`, signalDate: dates[r.k] });
+      }
+    }
     if (!(r.re >= REACT) || !(r.raw >= MIN_PX)) continue;
     if (st.pending.some((p) => p.t === r.t) || st.positions.some((p) => p.t === r.t)) continue;
     const reason = `決算の翌日に${pct(r.re) > 0 ? '+' : ''}${pct(r.re)}%（${dates[r.k]}）`;
@@ -166,5 +220,16 @@ const out = {
   recentClosed: st.closed.slice(-30).reverse(),
   equityHistory: st.equity,
 };
+{
+  const P = st.pro, eqP = P.equity.at(-1).value, rp = P.closed.map((c) => c.retPct);
+  out.pro = {
+    name: '試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）', trial: true, chosenAt: PROC?.chosenAt ?? null,
+    startDate: P.startDate, capital: START, equityYen: eqP, returnPct: pct(eqP / START - 1), taxYen: Object.values(P.tax).reduce((a, b) => a + b, 0),
+    trades: P.closed.length, winRatePct: rp.length ? pct(rp.filter((r) => r > 0).length / rp.length) : null,
+    holdings: P.positions.map((p) => ({ t: p.t, name: p.name, reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, daysLeft: Math.max(0, p.hold - p.held), unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
+    nextBuys: P.pending.sort((a, b) => b.score - a.score).map((p) => ({ t: p.t, name: p.name, reason: p.reason })),
+    recentClosed: P.closed.slice(-30).reverse(), equityHistory: P.equity,
+  };
+}
 fs.writeFileSync(path.join(OUT, 'us-paper.json'), JSON.stringify(out, null, 2));
 console.log(`us-paper ok: lastDate=${st.lastDate} newDates=${newDates.length} newSignals=${found.length} holdings=${st.positions.length}`);

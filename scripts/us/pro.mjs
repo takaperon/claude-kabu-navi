@@ -10,6 +10,7 @@
 // 未来の情報は使わない。モデルは前半だけで作り、後半で成績を見る。出力は集計値だけ（reports-out/pro-us.json）
 import fs from 'node:fs';
 import path from 'node:path';
+import { usFeatures, usScore, sma, yoy } from './lib-pro.mjs';
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), []));
 const DATA = args.data ?? 'data-us';
@@ -39,16 +40,9 @@ for (const u of universe) {
   const av = fs.existsSync(avF) ? JSON.parse(fs.readFileSync(avF, 'utf8')) : null;
   S.push({ ...u, O, H, L, C, V, RC, sec, av });
 }
-const sma = (A, k, n) => { if (k < n - 1) return NaN; let s = 0; for (let j = k - n + 1; j <= k; j++) s += A[j]; return s / n; };
 const firstIdx = (d) => { let lo = 0, hi = D; while (lo < hi) { const m = (lo + hi) >> 1; if (dates[m] >= d) hi = m; else lo = m + 1; } return lo < D ? lo : null; };
 const split = Math.floor(D * 0.6);
 const spyMA200 = (k) => sma(SPC, k, 200);
-function yoy(series, end) {
-  const cur = series.find((x) => x.end === end); if (!cur) return null;
-  const t = Date.parse(end);
-  const prev = series.find((x) => { const g = (t - Date.parse(x.end)) / 864e5; return g >= 330 && g <= 400; });
-  return prev && prev.val > 0 ? cur.val / prev.val - 1 : null;
-}
 
 // ---------- 売り方（entry の始値で買う） ----------
 function outcomes(s, entry, atr) {
@@ -90,35 +84,13 @@ for (let i = 0; i < S.length; i++) {
     const re = s.C[r] / s.C[r - 1] - 1;
     if (!(re >= 0.05) || !(s.RC[r] >= 5)) continue;
     const entry = r + 1;
-    let rs = 0, rs2 = 0, rn = 0, rg = 0, rgn = 0;
-    for (let k = r - 20; k <= r - 1; k++) { const x = s.C[k] / s.C[k - 1] - 1; if (Number.isFinite(x)) { rs += x; rs2 += x * x; rn++; } const g = (s.H[k] - s.L[k]) / s.C[k - 1]; if (Number.isFinite(g)) { rg += g; rgn++; } }
-    const atr = rgn > 5 ? rg / rgn : NaN;
-    let hi252 = -Infinity; for (let k = r - 252; k < r; k++) if (s.H[k] > hi252) hi252 = s.H[k];
-    const t = Date.parse(day);
-    const q = (s.sec.eps ?? []).filter((x) => { const g = (t - Date.parse(x.end)) / 864e5; return g >= 0 && g <= 120; }).at(-1);
-    const av = (s.av ?? []).find((x) => x.rd && Math.abs(Date.parse(x.rd) - t) / 864e5 <= 3);
-    const out = outcomes(s, entry, atr);
+    const f = usFeatures(s, r, SPC, day);
+    f.gap = s.O[entry] / s.C[r] - 1;                                   // 買う日の寄り付き（買う瞬間）
+    const out = outcomes(s, entry, f.atr);
     if (!out) continue;
     T.push({
       i, r, entry, half: entry < split ? 'train' : 'test', year: dates[entry].slice(0, 4), re,
-      f: {
-        re: Math.min(re, 0.6),
-        gapPart: s.O[r] / s.C[r - 1] - 1,                               // 反応日の寄り付きでの跳ね
-        intraday: s.C[r] / s.O[r] - 1,                                  // 反応日の寄り付きから引けまで（場中に買われたか）
-        closePos: s.H[r] > s.L[r] ? (s.C[r] - s.L[r]) / (s.H[r] - s.L[r]) : NaN, // その日の値幅のどこで引けたか（1=高値引け）
-        volSurge: Math.log2(s.V[r] / sma(s.V, r - 1, 20)),              // 出来高の増え方
-        epsG: q ? (yoy(s.sec.eps, q.end) ?? NaN) : NaN,
-        revG: q ? (yoy(s.sec.rev ?? [], q.end) ?? NaN) : NaN,
-        surprise: av && Number.isFinite(av.spp) ? Math.max(-100, Math.min(100, av.spp)) / 100 : NaN, // アナリスト予想との差
-        run20: s.C[r - 1] / s.C[r - 21] - 1,                            // 発表前20日の上昇
-        hi52: s.C[r] / hi252 - 1,                                       // 52週高値との差（0以上＝高値更新）
-        ma50: s.C[r] / sma(s.C, r, 50) - 1,
-        vol20: rn > 5 ? Math.sqrt(Math.max(0, rs2 / rn - (rs / rn) ** 2)) : NaN,
-        atr,
-        liq: Math.log10(sma(s.C, r, 20) * sma(s.V, r, 20)),
-        spyTrend: SPC[r] / spyMA200(r) - 1, spy1: SPC[r] / SPC[r - 1] - 1, spy5: SPC[r] / SPC[r - 5] - 1,
-        gap: s.O[entry] / s.C[r] - 1,                                   // 買う日の寄り付き（買う瞬間）
-      },
+      f,
       out,
     });
   }
@@ -243,7 +215,9 @@ for (const exit of Object.keys(EXITS)) {
     if (top.avg - all.avg >= 0.01 && top.med >= all.med) chosen.push({ f, side: 'high', cut: hi, train: top });
     else if (bot.avg - all.avg >= 0.01 && bot.med >= all.med) chosen.push({ f, side: 'low', cut: lo, train: bot });
   }
-  const score = (t) => chosen.reduce((a, c) => a + (Number.isFinite(t.f[c.f]) && (c.side === 'high' ? t.f[c.f] >= c.cut : t.f[c.f] <= c.cut) ? 1 : 0), 0);
+  const rules = { chosen: chosen.map((c) => ({ key: c.f, side: c.side, cut: c.cut })) };
+  const score = (t) => usScore(t.f, rules);
+  try { fs.writeFileSync(path.join(DATA, 'pro-choice.json'), JSON.stringify({ chosenAt: new Date().toISOString(), trainTo: dates[split - 1], exit: 'h20', rules })); } catch {}
   const byScore = {};
   for (const h of ['train', 'test']) for (let k = 0; k <= 6; k++) {
     const a = T.filter((t) => t.half === h && t.out[exit] && Math.min(score(t), 6) === k).map((t) => t.out[exit].ret);
@@ -261,7 +235,7 @@ for (const exit of Object.keys(EXITS)) {
     ['react5_score5', (t) => (score(t) >= 5 ? score(t) + t.re : null)],
     ['react10_score3', (t) => (t.re >= 0.1 && score(t) >= 3 ? score(t) + t.re : null)],
   ]) for (const ex of ['h20', 'h40']) sims[nm + '|' + ex] = { train: sim(pick, ex, 260, split - 1), test: sim(pick, ex, split, D - 1) };
-  result.trainChosen = { rule: '前半だけで選ぶ：上位(下位)1/5の平均が全体+1%以上かつ中央値も全体以上', chosen: chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut), train: c.train })), byScore, sims };
+  result.trainChosen = { rules, rule: '前半だけで選ぶ：上位(下位)1/5の平均が全体+1%以上かつ中央値も全体以上', chosen: chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut), train: c.train })), byScore, sims };
 }
 writeOut(result);
 console.log(`pro-us ok: events ${result.events.train}/${result.events.test} surprise=${result.events.withSurprise}`);

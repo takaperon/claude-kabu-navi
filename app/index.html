@@ -274,6 +274,7 @@ section[hidden]{display:none}
       </div>
     </div>
     <div id="us-live"></div>
+    <div id="us-pro"></div>
     <div class="say" id="us-say"></div>
     <div class="trio" id="us-trio"></div>
     <h2>最近の決算の反応<small>条件を超えたら買い</small></h2>
@@ -598,6 +599,17 @@ function renderUS() {
       <p>${state}・${md(L.date)}の実行${(L.orders || []).length ? `で注文${L.orders.length}件${L.mode !== 'live' ? '（出したことにしただけ）' : ''}` : '：注文なし'}${(L.notes || []).length ? '・' + L.notes.map(esc).join('・') : ''}</p>
       ${rows ? `<ul>${rows}</ul>` : ''}</div>`;
   }
+  // 試験中：プロの判断（2026-11-17〜）
+  const PR = U.pro;
+  $('us-pro').innerHTML = PR ? (() => {
+    const d = PR.equityYen - PR.capital;
+    const rows = [...PR.holdings.map((h) => `<li><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`),
+      ...PR.nextBuys.map((h) => `<li><span>${esc(h.name || h.t)}<small>${esc(h.t)}・今夜買う予定${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num flat">予定</span></li>`)].join('');
+    return `<div class="real" style="border-top-color:var(--c-div)">
+      <div class="hd"><b>試験中：プロの判断（30万円）</b><span class="num ${cls(d)}">${sign(PR.returnPct)}%</span></div>
+      <p>決算の翌日に+5%以上上がった株のうち、検証で「効く」と分かった特徴（出来高の急増・EPSや売上の大きな伸び・上げ幅の大きさなど）に3つ以上当てはまるものだけを買い、40日持ちます。いま <b class="num" style="color:var(--ink)">${yen(PR.equityYen)}円</b>${PR.trades ? `・${PR.trades}回売って勝率${PR.winRatePct}%` : ''}</p>
+      ${rows ? `<ul>${rows}</ul>` : '<p style="margin:0">まだ当てはまる株は出ていません。</p>'}</div>`;
+  })() : '';
   const wins = U.recentClosed.filter((c) => c.retPct > 0).length;
   const avgU = U.holdings.length ? U.holdings.reduce((a, h) => a + h.unrealPct, 0) / U.holdings.length : 0;
   $('us-trio').innerHTML = `
