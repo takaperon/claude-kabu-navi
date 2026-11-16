@@ -1,14 +1,15 @@
 {
-  "generatedAt": "2026-11-16T11:15:38.351988+00:00",
+  "generatedAt": "2026-11-16T11:47:13.814466+00:00",
   "status": {
-    "startedAt": "2026-11-16T10:49:39.967597+00:00",
+    "startedAt": "2026-11-16T11:15:53.365527+00:00",
     "filings424B4": 1907,
     "withTicker": 1456,
-    "nonSpacListed": 1078,
+    "nonSpacListed": 1077,
     "lastBarError": "ServerException",
-    "barFails": 6,
+    "barFails": 5,
     "notIpo": 474,
-    "ipos": 598
+    "ipos": 598,
+    "offerPriceParsed": 373
   },
   "period": {
     "from": "2022-02-04",
@@ -301,6 +302,1249 @@
         "p10": -0.5811,
         "p90": 0.2772
       }
+    }
+  },
+  "factors": {
+    "note": "買う時点で分かる特徴ごとの成績（初日=初値→引け、nextOpen=初値→2日目の寄り、hold20=初値→20日目の引け。滑り片道0.1%）。公開価格は424B4の表紙から読めたものだけ",
+    "byPrice": {
+      "a:5ドル未満": {
+        "train": {
+          "day1": {
+            "n": 47,
+            "winRate": 0.34,
+            "avgRet": -0.0644,
+            "median": -0.0755
+          },
+          "nextOpen": {
+            "n": 47,
+            "winRate": 0.298,
+            "avgRet": -0.0456,
+            "median": -0.078
+          },
+          "hold20": {
+            "n": 47,
+            "winRate": 0.298,
+            "avgRet": -0.0513,
+            "median": -0.1706
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 68,
+            "winRate": 0.368,
+            "avgRet": 0.0239,
+            "median": -0.0381
+          },
+          "nextOpen": {
+            "n": 68,
+            "winRate": 0.309,
+            "avgRet": 0.0202,
+            "median": -0.0589
+          },
+          "hold20": {
+            "n": 67,
+            "winRate": 0.388,
+            "avgRet": 0.1391,
+            "median": -0.0495
+          }
+        }
+      },
+      "b:5〜10ドル": {
+        "train": {
+          "day1": {
+            "n": 33,
+            "winRate": 0.364,
+            "avgRet": -0.0486,
+            "median": -0.0126
+          },
+          "nextOpen": {
+            "n": 33,
+            "winRate": 0.303,
+            "avgRet": 0.005,
+            "median": -0.0544
+          },
+          "hold20": {
+            "n": 33,
+            "winRate": 0.303,
+            "avgRet": 0.4175,
+            "median": -0.0897
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 27,
+            "winRate": 0.296,
+            "avgRet": 0.0165,
+            "median": -0.0593
+          },
+          "nextOpen": {
+            "n": 27,
+            "winRate": 0.333,
+            "avgRet": 0.04,
+            "median": -0.0495
+          },
+          "hold20": {
+            "n": 27,
+            "winRate": 0.259,
+            "avgRet": -0.0302,
+            "median": -0.1867
+          }
+        }
+      },
+      "c:10〜20ドル": {
+        "train": {
+          "day1": {
+            "n": 69,
+            "winRate": 0.348,
+            "avgRet": -0.0263,
+            "median": -0.0172
+          },
+          "nextOpen": {
+            "n": 69,
+            "winRate": 0.406,
+            "avgRet": -0.0275,
+            "median": -0.0197
+          },
+          "hold20": {
+            "n": 69,
+            "winRate": 0.464,
+            "avgRet": -0.0318,
+            "median": -0.0192
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 93,
+            "winRate": 0.398,
+            "avgRet": -0.021,
+            "median": -0.0088
+          },
+          "nextOpen": {
+            "n": 93,
+            "winRate": 0.452,
+            "avgRet": -0.0035,
+            "median": -0.0088
+          },
+          "hold20": {
+            "n": 90,
+            "winRate": 0.356,
+            "avgRet": -0.0641,
+            "median": -0.0893
+          }
+        }
+      },
+      "d:20ドル以上": {
+        "train": {
+          "day1": {
+            "n": 134,
+            "winRate": 0.358,
+            "avgRet": 0.2268,
+            "median": -0.0347
+          },
+          "nextOpen": {
+            "n": 134,
+            "winRate": 0.358,
+            "avgRet": 0.1287,
+            "median": -0.0401
+          },
+          "hold20": {
+            "n": 134,
+            "winRate": 0.261,
+            "avgRet": -0.2107,
+            "median": -0.2721
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 127,
+            "winRate": 0.409,
+            "avgRet": -0.0298,
+            "median": -0.0137
+          },
+          "nextOpen": {
+            "n": 127,
+            "winRate": 0.354,
+            "avgRet": -0.0341,
+            "median": -0.0221
+          },
+          "hold20": {
+            "n": 126,
+            "winRate": 0.413,
+            "avgRet": -0.0693,
+            "median": -0.0723
+          }
+        }
+      }
+    },
+    "byPop": {
+      "a:公開価格より下で初値": {
+        "train": {
+          "day1": {
+            "n": 39,
+            "winRate": 0.487,
+            "avgRet": 0.0252,
+            "median": -0.002
+          },
+          "nextOpen": {
+            "n": 39,
+            "winRate": 0.564,
+            "avgRet": 0.0117,
+            "median": 0.0064
+          },
+          "hold20": {
+            "n": 39,
+            "winRate": 0.538,
+            "avgRet": -0.0036,
+            "median": 0.0085
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 50,
+            "winRate": 0.38,
+            "avgRet": -0.0286,
+            "median": -0.0116
+          },
+          "nextOpen": {
+            "n": 50,
+            "winRate": 0.38,
+            "avgRet": -0.0003,
+            "median": -0.0149
+          },
+          "hold20": {
+            "n": 48,
+            "winRate": 0.396,
+            "avgRet": -0.0728,
+            "median": -0.0878
+          }
+        }
+      },
+      "b:0〜+20%": {
+        "train": {
+          "day1": {
+            "n": 47,
+            "winRate": 0.277,
+            "avgRet": -0.065,
+            "median": -0.0342
+          },
+          "nextOpen": {
+            "n": 47,
+            "winRate": 0.319,
+            "avgRet": -0.0722,
+            "median": -0.031
+          },
+          "hold20": {
+            "n": 47,
+            "winRate": 0.277,
+            "avgRet": -0.0928,
+            "median": -0.0669
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 88,
+            "winRate": 0.432,
+            "avgRet": 0.0409,
+            "median": -0.0049
+          },
+          "nextOpen": {
+            "n": 88,
+            "winRate": 0.398,
+            "avgRet": 0.0329,
+            "median": -0.0113
+          },
+          "hold20": {
+            "n": 87,
+            "winRate": 0.437,
+            "avgRet": -0.0309,
+            "median": -0.0293
+          }
+        }
+      },
+      "c:+20〜50%": {
+        "train": {
+          "day1": {
+            "n": 31,
+            "winRate": 0.29,
+            "avgRet": -0.0811,
+            "median": -0.0912
+          },
+          "nextOpen": {
+            "n": 31,
+            "winRate": 0.226,
+            "avgRet": -0.0714,
+            "median": -0.0869
+          },
+          "hold20": {
+            "n": 31,
+            "winRate": 0.323,
+            "avgRet": -0.0943,
+            "median": -0.112
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 42,
+            "winRate": 0.381,
+            "avgRet": -0.0077,
+            "median": -0.0261
+          },
+          "nextOpen": {
+            "n": 42,
+            "winRate": 0.357,
+            "avgRet": 0.0015,
+            "median": -0.0331
+          },
+          "hold20": {
+            "n": 42,
+            "winRate": 0.405,
+            "avgRet": -0.0144,
+            "median": -0.0534
+          }
+        }
+      },
+      "d:+50〜100%": {
+        "train": {
+          "day1": {
+            "n": 10,
+            "winRate": 0.5,
+            "avgRet": -0.0216,
+            "median": -0.0298
+          },
+          "nextOpen": {
+            "n": 10,
+            "winRate": 0.6,
+            "avgRet": 0.0941,
+            "median": 0.0556
+          },
+          "hold20": {
+            "n": 10,
+            "winRate": 0.6,
+            "avgRet": 1.5393,
+            "median": 0.0527
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 15,
+            "winRate": 0.4,
+            "avgRet": -0.064,
+            "median": -0.0152
+          },
+          "nextOpen": {
+            "n": 15,
+            "winRate": 0.4,
+            "avgRet": -0.0258,
+            "median": -0.0185
+          },
+          "hold20": {
+            "n": 14,
+            "winRate": 0.429,
+            "avgRet": -0.0578,
+            "median": -0.009
+          }
+        }
+      },
+      "e:+100%以上": {
+        "train": {
+          "day1": {
+            "n": 31,
+            "winRate": 0.419,
+            "avgRet": -0.0028,
+            "median": -0.012
+          },
+          "nextOpen": {
+            "n": 31,
+            "winRate": 0.419,
+            "avgRet": 0.0799,
+            "median": -0.0385
+          },
+          "hold20": {
+            "n": 31,
+            "winRate": 0.323,
+            "avgRet": -0.0193,
+            "median": -0.1706
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 20,
+            "winRate": 0.4,
+            "avgRet": -0.0008,
+            "median": -0.0656
+          },
+          "nextOpen": {
+            "n": 20,
+            "winRate": 0.4,
+            "avgRet": 0.0476,
+            "median": -0.0515
+          },
+          "hold20": {
+            "n": 20,
+            "winRate": 0.3,
+            "avgRet": -0.0838,
+            "median": -0.3073
+          }
+        }
+      }
+    },
+    "bySector": {
+      "IT・半導体": {
+        "train": {
+          "day1": {
+            "n": 46,
+            "winRate": 0.457,
+            "avgRet": 0.0659,
+            "median": -0.007
+          },
+          "nextOpen": {
+            "n": 46,
+            "winRate": 0.391,
+            "avgRet": 0.0609,
+            "median": -0.0291
+          },
+          "hold20": {
+            "n": 46,
+            "winRate": 0.261,
+            "avgRet": -0.0903,
+            "median": -0.1518
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 55,
+            "winRate": 0.364,
+            "avgRet": -0.0085,
+            "median": -0.039
+          },
+          "nextOpen": {
+            "n": 55,
+            "winRate": 0.327,
+            "avgRet": 0.0106,
+            "median": -0.0436
+          },
+          "hold20": {
+            "n": 55,
+            "winRate": 0.273,
+            "avgRet": -0.0098,
+            "median": -0.1651
+          }
+        }
+      },
+      "その他": {
+        "train": {
+          "day1": {
+            "n": 117,
+            "winRate": 0.333,
+            "avgRet": 0.0609,
+            "median": -0.0367
+          },
+          "nextOpen": {
+            "n": 117,
+            "winRate": 0.325,
+            "avgRet": -0.0041,
+            "median": -0.0594
+          },
+          "hold20": {
+            "n": 117,
+            "winRate": 0.316,
+            "avgRet": -0.1189,
+            "median": -0.1517
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 133,
+            "winRate": 0.391,
+            "avgRet": 0.0036,
+            "median": -0.0181
+          },
+          "nextOpen": {
+            "n": 133,
+            "winRate": 0.361,
+            "avgRet": -0.0096,
+            "median": -0.0226
+          },
+          "hold20": {
+            "n": 133,
+            "winRate": 0.391,
+            "avgRet": -0.0194,
+            "median": -0.075
+          }
+        }
+      },
+      "医薬・医療": {
+        "train": {
+          "day1": {
+            "n": 65,
+            "winRate": 0.292,
+            "avgRet": -0.0467,
+            "median": -0.0495
+          },
+          "nextOpen": {
+            "n": 65,
+            "winRate": 0.338,
+            "avgRet": 0.0061,
+            "median": -0.0519
+          },
+          "hold20": {
+            "n": 65,
+            "winRate": 0.308,
+            "avgRet": -0.1044,
+            "median": -0.0897
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 64,
+            "winRate": 0.453,
+            "avgRet": -0.0182,
+            "median": -0.002
+          },
+          "nextOpen": {
+            "n": 64,
+            "winRate": 0.484,
+            "avgRet": 0.0026,
+            "median": -0.006
+          },
+          "hold20": {
+            "n": 60,
+            "winRate": 0.433,
+            "avgRet": -0.0665,
+            "median": -0.0623
+          }
+        }
+      },
+      "小売・消費": {
+        "train": {
+          "day1": {
+            "n": 28,
+            "winRate": 0.286,
+            "avgRet": -0.018,
+            "median": -0.0824
+          },
+          "nextOpen": {
+            "n": 28,
+            "winRate": 0.321,
+            "avgRet": -0.045,
+            "median": -0.0906
+          },
+          "hold20": {
+            "n": 28,
+            "winRate": 0.357,
+            "avgRet": -0.1679,
+            "median": -0.1129
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 27,
+            "winRate": 0.37,
+            "avgRet": -0.0227,
+            "median": -0.002
+          },
+          "nextOpen": {
+            "n": 27,
+            "winRate": 0.37,
+            "avgRet": -0.0291,
+            "median": -0.0191
+          },
+          "hold20": {
+            "n": 27,
+            "winRate": 0.444,
+            "avgRet": 0.0699,
+            "median": -0.0296
+          }
+        }
+      },
+      "金融・不動産": {
+        "train": {
+          "day1": {
+            "n": 27,
+            "winRate": 0.481,
+            "avgRet": 0.6415,
+            "median": -0.0015
+          },
+          "nextOpen": {
+            "n": 27,
+            "winRate": 0.481,
+            "avgRet": 0.4413,
+            "median": -0.0115
+          },
+          "hold20": {
+            "n": 27,
+            "winRate": 0.444,
+            "avgRet": 0.3884,
+            "median": -0.0246
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 36,
+            "winRate": 0.306,
+            "avgRet": -0.0529,
+            "median": -0.0391
+          },
+          "nextOpen": {
+            "n": 36,
+            "winRate": 0.278,
+            "avgRet": -0.025,
+            "median": -0.0502
+          },
+          "hold20": {
+            "n": 35,
+            "winRate": 0.343,
+            "avgRet": -0.022,
+            "median": -0.0505
+          }
+        }
+      }
+    },
+    "byYear": {
+      "2022": {
+        "train": {
+          "day1": {
+            "n": 53,
+            "winRate": 0.34,
+            "avgRet": 0.0301,
+            "median": -0.0827
+          },
+          "nextOpen": {
+            "n": 53,
+            "winRate": 0.434,
+            "avgRet": 0.1543,
+            "median": -0.0548
+          },
+          "hold20": {
+            "n": 53,
+            "winRate": 0.151,
+            "avgRet": -0.0387,
+            "median": -0.3427
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 0
+          },
+          "nextOpen": {
+            "n": 0
+          },
+          "hold20": {
+            "n": 0
+          }
+        }
+      },
+      "2023": {
+        "train": {
+          "day1": {
+            "n": 91,
+            "winRate": 0.363,
+            "avgRet": 0.2856,
+            "median": -0.0215
+          },
+          "nextOpen": {
+            "n": 91,
+            "winRate": 0.242,
+            "avgRet": 0.0952,
+            "median": -0.0653
+          },
+          "hold20": {
+            "n": 91,
+            "winRate": 0.319,
+            "avgRet": -0.1365,
+            "median": -0.23
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 0
+          },
+          "nextOpen": {
+            "n": 0
+          },
+          "hold20": {
+            "n": 0
+          }
+        }
+      },
+      "2024": {
+        "train": {
+          "day1": {
+            "n": 139,
+            "winRate": 0.353,
+            "avgRet": -0.0262,
+            "median": -0.0283
+          },
+          "nextOpen": {
+            "n": 139,
+            "winRate": 0.396,
+            "avgRet": -0.025,
+            "median": -0.0229
+          },
+          "hold20": {
+            "n": 139,
+            "winRate": 0.388,
+            "avgRet": -0.033,
+            "median": -0.0669
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 7,
+            "winRate": 0.286,
+            "avgRet": -0.0868,
+            "median": -0.0305
+          },
+          "nextOpen": {
+            "n": 7,
+            "winRate": 0.429,
+            "avgRet": -0.0877,
+            "median": -0.0436
+          },
+          "hold20": {
+            "n": 7,
+            "winRate": 0.429,
+            "avgRet": 0.051,
+            "median": -0.021
+          }
+        }
+      },
+      "2025": {
+        "train": {
+          "day1": {
+            "n": 0
+          },
+          "nextOpen": {
+            "n": 0
+          },
+          "hold20": {
+            "n": 0
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 190,
+            "winRate": 0.374,
+            "avgRet": -0.0027,
+            "median": -0.0363
+          },
+          "nextOpen": {
+            "n": 190,
+            "winRate": 0.353,
+            "avgRet": 0.0091,
+            "median": -0.0391
+          },
+          "hold20": {
+            "n": 189,
+            "winRate": 0.354,
+            "avgRet": 0.0078,
+            "median": -0.1074
+          }
+        }
+      },
+      "2026": {
+        "train": {
+          "day1": {
+            "n": 0
+          },
+          "nextOpen": {
+            "n": 0
+          },
+          "hold20": {
+            "n": 0
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 118,
+            "winRate": 0.415,
+            "avgRet": -0.0217,
+            "median": -0.0101
+          },
+          "nextOpen": {
+            "n": 118,
+            "winRate": 0.398,
+            "avgRet": -0.0281,
+            "median": -0.0139
+          },
+          "hold20": {
+            "n": 114,
+            "winRate": 0.412,
+            "avgRet": -0.0687,
+            "median": -0.0395
+          }
+        }
+      }
+    },
+    "bySpyTrend": {
+      "S&P500が200日平均より上": {
+        "train": {
+          "day1": {
+            "n": 227,
+            "winRate": 0.357,
+            "avgRet": 0.1004,
+            "median": -0.0283
+          },
+          "nextOpen": {
+            "n": 227,
+            "winRate": 0.335,
+            "avgRet": 0.024,
+            "median": -0.0372
+          },
+          "hold20": {
+            "n": 227,
+            "winRate": 0.357,
+            "avgRet": -0.0845,
+            "median": -0.1054
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 284,
+            "winRate": 0.394,
+            "avgRet": -0.0193,
+            "median": -0.0166
+          },
+          "nextOpen": {
+            "n": 284,
+            "winRate": 0.387,
+            "avgRet": -0.0055,
+            "median": -0.0214
+          },
+          "hold20": {
+            "n": 279,
+            "winRate": 0.376,
+            "avgRet": -0.0129,
+            "median": -0.0832
+          }
+        }
+      },
+      "S&P500が200日平均より下": {
+        "train": {
+          "day1": {
+            "n": 5,
+            "winRate": 0.2,
+            "avgRet": -0.1165,
+            "median": -0.0398
+          },
+          "nextOpen": {
+            "n": 5,
+            "winRate": 0.4,
+            "avgRet": -0.0837,
+            "median": -0.0494
+          },
+          "hold20": {
+            "n": 5,
+            "winRate": 0.4,
+            "avgRet": 0.3614,
+            "median": -0.0461
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 31,
+            "winRate": 0.323,
+            "avgRet": 0.058,
+            "median": -0.0573
+          },
+          "nextOpen": {
+            "n": 31,
+            "winRate": 0.226,
+            "avgRet": -0.0208,
+            "median": -0.0671
+          },
+          "hold20": {
+            "n": 31,
+            "winRate": 0.387,
+            "avgRet": -0.0774,
+            "median": -0.0931
+          }
+        }
+      }
+    },
+    "byDay1DollarVolume": {
+      "a:1000万ドル未満": {
+        "train": {
+          "day1": {
+            "n": 115,
+            "winRate": 0.209,
+            "avgRet": -0.1135,
+            "median": -0.091
+          },
+          "nextOpen": {
+            "n": 115,
+            "winRate": 0.226,
+            "avgRet": -0.0969,
+            "median": -0.1176
+          },
+          "hold20": {
+            "n": 115,
+            "winRate": 0.261,
+            "avgRet": -0.0362,
+            "median": -0.2204
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 99,
+            "winRate": 0.253,
+            "avgRet": -0.1146,
+            "median": -0.0678
+          },
+          "nextOpen": {
+            "n": 99,
+            "winRate": 0.263,
+            "avgRet": -0.0987,
+            "median": -0.0791
+          },
+          "hold20": {
+            "n": 98,
+            "winRate": 0.296,
+            "avgRet": -0.077,
+            "median": -0.1535
+          }
+        }
+      },
+      "b:1000万〜1億ドル": {
+        "train": {
+          "day1": {
+            "n": 116,
+            "winRate": 0.457,
+            "avgRet": 0.2123,
+            "median": -0.0114
+          },
+          "nextOpen": {
+            "n": 116,
+            "winRate": 0.405,
+            "avgRet": 0.1157,
+            "median": -0.028
+          },
+          "hold20": {
+            "n": 116,
+            "winRate": 0.345,
+            "avgRet": -0.0949,
+            "median": -0.1279
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 118,
+            "winRate": 0.407,
+            "avgRet": -0.0058,
+            "median": -0.0129
+          },
+          "nextOpen": {
+            "n": 118,
+            "winRate": 0.39,
+            "avgRet": -0.01,
+            "median": -0.0166
+          },
+          "hold20": {
+            "n": 114,
+            "winRate": 0.351,
+            "avgRet": -0.0158,
+            "median": -0.1133
+          }
+        }
+      },
+      "c:1億ドル以上": {
+        "train": {
+          "day1": {
+            "n": 52,
+            "winRate": 0.442,
+            "avgRet": 0.2377,
+            "median": -0.002
+          },
+          "nextOpen": {
+            "n": 52,
+            "winRate": 0.519,
+            "avgRet": 0.2133,
+            "median": 0.0008
+          },
+          "hold20": {
+            "n": 52,
+            "winRate": 0.404,
+            "avgRet": -0.075,
+            "median": -0.0219
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 98,
+            "winRate": 0.5,
+            "avgRet": 0.0853,
+            "median": 0.0
+          },
+          "nextOpen": {
+            "n": 98,
+            "winRate": 0.459,
+            "avgRet": 0.0893,
+            "median": -0.0055
+          },
+          "hold20": {
+            "n": 98,
+            "winRate": 0.49,
+            "avgRet": 0.0341,
+            "median": -0.007
+          }
+        }
+      }
+    },
+    "bigMovers": {
+      "count": 28,
+      "rule": "初日に初値→引けで+50%以上",
+      "priceShare": {
+        "a:5ドル未満": 0.179,
+        "b:5〜10ドル": 0.107,
+        "c:10〜20ドル": 0.071,
+        "d:20ドル以上": 0.643
+      },
+      "priceShareAll": {
+        "a:5ドル未満": 0.192,
+        "b:5〜10ドル": 0.1,
+        "c:10〜20ドル": 0.271,
+        "d:20ドル以上": 0.436
+      },
+      "sectorShare": {
+        "IT・半導体": 0.286,
+        "その他": 0.393,
+        "医薬・医療": 0.071,
+        "小売・消費": 0.143,
+        "金融・不動産": 0.107
+      },
+      "sectorShareAll": {
+        "IT・半導体": 0.169,
+        "その他": 0.418,
+        "医薬・医療": 0.216,
+        "小売・消費": 0.092,
+        "金融・不動産": 0.105
+      },
+      "list": [
+        {
+          "t": "AIRE",
+          "first": "2023-10-23",
+          "sector": "金融・不動産",
+          "price": "20ドル以上",
+          "day1Pct": 1663.8,
+          "hold20Pct": -59.3
+        },
+        {
+          "t": "NWTG",
+          "first": "2023-08-15",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 557.1,
+          "hold20Pct": -65.0
+        },
+        {
+          "t": "UCAR",
+          "first": "2023-04-20",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 432.0,
+          "hold20Pct": -51.8
+        },
+        {
+          "t": "WTF",
+          "first": "2025-04-01",
+          "sector": "その他",
+          "price": "5ドル未満",
+          "day1Pct": 361.8,
+          "hold20Pct": 49.1
+        },
+        {
+          "t": "OST",
+          "first": "2022-04-27",
+          "sector": "IT・半導体",
+          "price": "20ドル以上",
+          "day1Pct": 291.9,
+          "hold20Pct": -81.7
+        },
+        {
+          "t": "MWG",
+          "first": "2023-04-03",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 190.2,
+          "hold20Pct": -64.3
+        },
+        {
+          "t": "TGL",
+          "first": "2022-08-11",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 165.8,
+          "hold20Pct": -58.2
+        },
+        {
+          "t": "SWMR",
+          "first": "2026-03-17",
+          "sector": "IT・半導体",
+          "price": "5〜10ドル",
+          "day1Pct": 147.5,
+          "hold20Pct": 237.9
+        },
+        {
+          "t": "FOFO",
+          "first": "2025-09-12",
+          "sector": "その他",
+          "price": "5〜10ドル",
+          "day1Pct": 134.8,
+          "hold20Pct": 135.3
+        },
+        {
+          "t": "GSIW",
+          "first": "2023-12-01",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 128.8,
+          "hold20Pct": 74.9
+        },
+        {
+          "t": "SMXT",
+          "first": "2024-02-27",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 128.1,
+          "hold20Pct": 129.0
+        },
+        {
+          "t": "MSS",
+          "first": "2023-10-05",
+          "sector": "小売・消費",
+          "price": "20ドル以上",
+          "day1Pct": 123.6,
+          "hold20Pct": 63.2
+        },
+        {
+          "t": "NCI",
+          "first": "2024-04-23",
+          "sector": "小売・消費",
+          "price": "20ドル以上",
+          "day1Pct": 118.0,
+          "hold20Pct": -76.8
+        },
+        {
+          "t": "GNS",
+          "first": "2022-04-12",
+          "sector": "IT・半導体",
+          "price": "20ドル以上",
+          "day1Pct": 101.4,
+          "hold20Pct": -62.3
+        },
+        {
+          "t": "FATN",
+          "first": "2025-04-08",
+          "sector": "IT・半導体",
+          "price": "5〜10ドル",
+          "day1Pct": 99.6,
+          "hold20Pct": 24.4
+        },
+        {
+          "t": "MEGL",
+          "first": "2022-08-05",
+          "sector": "金融・不動産",
+          "price": "20ドル以上",
+          "day1Pct": 93.6,
+          "hold20Pct": -87.0
+        },
+        {
+          "t": "AIRO",
+          "first": "2025-06-13",
+          "sector": "その他",
+          "price": "10〜20ドル",
+          "day1Pct": 85.7,
+          "hold20Pct": 118.8
+        },
+        {
+          "t": "CTNT",
+          "first": "2023-08-01",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 83.6,
+          "hold20Pct": -40.1
+        },
+        {
+          "t": "DGNX",
+          "first": "2025-01-22",
+          "sector": "IT・半導体",
+          "price": "5ドル未満",
+          "day1Pct": 75.7,
+          "hold20Pct": 883.9
+        },
+        {
+          "t": "OBAI",
+          "first": "2026-02-04",
+          "sector": "その他",
+          "price": "20ドル以上",
+          "day1Pct": 64.7,
+          "hold20Pct": -90.2
+        },
+        {
+          "t": "MFI",
+          "first": "2024-04-22",
+          "sector": "IT・半導体",
+          "price": "20ドル以上",
+          "day1Pct": 61.4,
+          "hold20Pct": -82.4
+        },
+        {
+          "t": "SHPH",
+          "first": "2022-08-31",
+          "sector": "医薬・医療",
+          "price": "20ドル以上",
+          "day1Pct": 59.7,
+          "hold20Pct": -76.9
+        },
+        {
+          "t": "AGCC",
+          "first": "2025-10-22",
+          "sector": "小売・消費",
+          "price": "5ドル未満",
+          "day1Pct": 58.1,
+          "hold20Pct": 62.2
+        },
+        {
+          "t": "NA",
+          "first": "2022-07-12",
+          "sector": "IT・半導体",
+          "price": "10〜20ドル",
+          "day1Pct": 58.0,
+          "hold20Pct": -16.9
+        },
+        {
+          "t": "CWD",
+          "first": "2023-05-17",
+          "sector": "金融・不動産",
+          "price": "5ドル未満",
+          "day1Pct": 57.6,
+          "hold20Pct": -40.6
+        },
+        {
+          "t": "CHOW",
+          "first": "2025-09-16",
+          "sector": "IT・半導体",
+          "price": "20ドル以上",
+          "day1Pct": 57.3,
+          "hold20Pct": -9.8
+        },
+        {
+          "t": "MCTA",
+          "first": "2025-10-21",
+          "sector": "医薬・医療",
+          "price": "5ドル未満",
+          "day1Pct": 52.2,
+          "hold20Pct": null
+        },
+        {
+          "t": "WSHP",
+          "first": "2025-11-14",
+          "sector": "小売・消費",
+          "price": "20ドル以上",
+          "day1Pct": 50.6,
+          "hold20Pct": 478.3
+        }
+      ]
     }
   },
   "byYear": {
