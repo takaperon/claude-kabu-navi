@@ -281,12 +281,12 @@
       }
     }
   },
-  "generatedAt": "2026-11-16T11:30:57.185Z",
+  "generatedAt": "2026-11-16T19:12:13.613Z",
   "days": 1227,
   "universe": 3703,
   "fins": {
     "days": 1837,
-    "rows": 96739,
+    "rows": 96740,
     "events": {
       "earn_up": 5978,
       "earn_down": 4203,
@@ -5053,6 +5053,209 @@
           "2024": -1.2,
           "2025": 1.8,
           "2026": -9
+        }
+      }
+    }
+  },
+  "holdLosers": {
+    "note": "増配デイトレ。引けで買値を下回った時だけ持ち越し、買値以上で引けた最初の日に売る（最長N日）。滑り片道0.1%",
+    "rules": {
+      "sameDay": {
+        "name": "その日の引けで売る（今のルール）",
+        "train": {
+          "n": 2433,
+          "winRate": 0.508,
+          "avgRet": 0.003,
+          "medRet": 0.0009,
+          "profitFactor": 1.24,
+          "avgDays": 1,
+          "losersOnly": {
+            "n": 1197,
+            "winRate": 0,
+            "avgRet": -0.0256,
+            "medRet": -0.0191,
+            "profitFactor": 0
+          }
+        },
+        "test": {
+          "n": 2443,
+          "winRate": 0.5162,
+          "avgRet": 0.0023,
+          "medRet": 0.0017,
+          "profitFactor": 1.18,
+          "avgDays": 1,
+          "losersOnly": {
+            "n": 1182,
+            "winRate": 0,
+            "avgRet": -0.0265,
+            "medRet": -0.0191,
+            "profitFactor": 0
+          }
+        }
+      },
+      "holdUpTo1": {
+        "name": "マイナスなら最長1日持ち越す",
+        "train": {
+          "n": 2433,
+          "winRate": 0.6473,
+          "avgRet": 0.006,
+          "medRet": 0.0083,
+          "profitFactor": 1.45,
+          "avgDays": 1.49,
+          "losersOnly": {
+            "n": 1197,
+            "winRate": 0.2832,
+            "avgRet": -0.0195,
+            "medRet": -0.018,
+            "profitFactor": 0.29
+          }
+        },
+        "test": {
+          "n": 2443,
+          "winRate": 0.6201,
+          "avgRet": 0.0033,
+          "medRet": 0.0069,
+          "profitFactor": 1.21,
+          "avgDays": 1.47,
+          "losersOnly": {
+            "n": 1182,
+            "winRate": 0.2149,
+            "avgRet": -0.0244,
+            "medRet": -0.0225,
+            "profitFactor": 0.23
+          }
+        }
+      },
+      "holdUpTo3": {
+        "name": "マイナスなら最長3日持ち越す",
+        "train": {
+          "n": 2433,
+          "winRate": 0.7213,
+          "avgRet": 0.007,
+          "medRet": 0.0108,
+          "profitFactor": 1.51,
+          "avgDays": 2.15,
+          "losersOnly": {
+            "n": 1197,
+            "winRate": 0.4336,
+            "avgRet": -0.0174,
+            "medRet": -0.0103,
+            "profitFactor": 0.37
+          }
+        },
+        "test": {
+          "n": 2443,
+          "winRate": 0.7016,
+          "avgRet": 0.0034,
+          "medRet": 0.0096,
+          "profitFactor": 1.21,
+          "avgDays": 2.15,
+          "losersOnly": {
+            "n": 1182,
+            "winRate": 0.3832,
+            "avgRet": -0.0242,
+            "medRet": -0.0187,
+            "profitFactor": 0.29
+          }
+        }
+      },
+      "holdUpTo5": {
+        "name": "マイナスなら最長5日持ち越す",
+        "train": {
+          "n": 2433,
+          "winRate": 0.7608,
+          "avgRet": 0.0078,
+          "medRet": 0.0116,
+          "profitFactor": 1.58,
+          "avgDays": 2.69,
+          "losersOnly": {
+            "n": 1197,
+            "winRate": 0.5138,
+            "avgRet": -0.0159,
+            "medRet": 0.0004,
+            "profitFactor": 0.42
+          }
+        },
+        "test": {
+          "n": 2443,
+          "winRate": 0.7364,
+          "avgRet": 0.0044,
+          "medRet": 0.0107,
+          "profitFactor": 1.27,
+          "avgDays": 2.67,
+          "losersOnly": {
+            "n": 1182,
+            "winRate": 0.4552,
+            "avgRet": -0.0221,
+            "medRet": -0.0118,
+            "profitFactor": 0.34
+          }
+        }
+      },
+      "holdUpTo10": {
+        "name": "マイナスなら最長10日持ち越す",
+        "train": {
+          "n": 2433,
+          "winRate": 0.8126,
+          "avgRet": 0.0082,
+          "medRet": 0.0126,
+          "profitFactor": 1.59,
+          "avgDays": 3.77,
+          "losersOnly": {
+            "n": 1197,
+            "winRate": 0.619,
+            "avgRet": -0.0151,
+            "medRet": 0.0032,
+            "profitFactor": 0.46
+          }
+        },
+        "test": {
+          "n": 2443,
+          "winRate": 0.7937,
+          "avgRet": 0.0057,
+          "medRet": 0.0122,
+          "profitFactor": 1.36,
+          "avgDays": 3.72,
+          "losersOnly": {
+            "n": 1182,
+            "winRate": 0.5736,
+            "avgRet": -0.0194,
+            "medRet": 0.0024,
+            "profitFactor": 0.41
+          }
+        }
+      },
+      "holdUpTo20": {
+        "name": "マイナスなら最長20日持ち越す",
+        "train": {
+          "n": 2433,
+          "winRate": 0.8611,
+          "avgRet": 0.0093,
+          "medRet": 0.0134,
+          "profitFactor": 1.7,
+          "avgDays": 5.38,
+          "losersOnly": {
+            "n": 1197,
+            "winRate": 0.7176,
+            "avgRet": -0.0129,
+            "medRet": 0.0055,
+            "profitFactor": 0.52
+          }
+        },
+        "test": {
+          "n": 2443,
+          "winRate": 0.8371,
+          "avgRet": 0.0059,
+          "medRet": 0.0131,
+          "profitFactor": 1.36,
+          "avgDays": 5.2,
+          "losersOnly": {
+            "n": 1182,
+            "winRate": 0.6633,
+            "avgRet": -0.019,
+            "medRet": 0.0049,
+            "profitFactor": 0.44
+          }
         }
       }
     }
