@@ -10,6 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { detectEvents } from './lib/events.mjs';
+import { proFeatures, proScore } from './lib/pro-features.mjs';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), [])
@@ -73,6 +74,7 @@ for (let d = 1; d < D; d++) {
   MKT[d] = n ? s / n : 0; MKTI[d] = MKTI[d - 1] * (1 + MKT[d]); MGAP[d] = gn ? g / gn : NaN;
 }
 const mktMA = (d, n) => { if (d < n - 1) return NaN; let s = 0; for (let k = d - n + 1; k <= d; k++) s += MKTI[k]; return s / n; };
+const MK = { r: (j) => MKT[j], idx: (j) => MKTI[j], ma: mktMA };
 
 // ---------- 前夜の米国株（SPY、Stooqの日足。取れなければ使わない） ----------
 const US = new Map(); // 米国の日付 → 前日終値→終値
@@ -98,7 +100,6 @@ const evs = detectEvents(rows);
 const sameDisc = new Map(); // code|dd → kinds
 for (const ev of evs) { const k = ev.c + '|' + ev.dd; if (!sameDisc.has(k)) sameDisc.set(k, new Set()); sameDisc.get(k).add(ev.kind); }
 function signalDayFor(dd) { let lo = 0, hi = D; while (lo < hi) { const m = (lo + hi) >> 1; if (dates[m] > dd) hi = m; else lo = m + 1; } return lo < D ? lo - 1 : null; }
-const closeTime = (dd) => (dd >= '2024-11-05' ? '15:30' : '15:00'); // 東証の大引けは 2024-11-05 から 15:30
 
 // ---------- 売り方（買う日 e の始値で買う） ----------
 function outcomes(i, e, atr) {
@@ -148,43 +149,14 @@ for (const ev of evs) {
   seen.add(key);
   countByDay[ev.kind + '|' + d] = (countByDay[ev.kind + '|' + d] ?? 0) + 1;
   const e = d + 1;
-  const c = at(C, i, d);
-  let rs = 0, rs2 = 0, rn = 0, rg = 0, rgn = 0;
-  for (let k = d - 19; k <= d; k++) {
-    const r = at(C, i, k) / at(C, i, k - 1) - 1;
-    if (Number.isFinite(r)) { rs += r; rs2 += r * r; rn++; }
-    const g = (at(H, i, k) - at(L, i, k)) / at(C, i, k - 1);
-    if (Number.isFinite(g)) { rg += g; rgn++; }
-  }
-  const vol20 = rn > 5 ? Math.sqrt(Math.max(0, rs2 / rn - (rs / rn) ** 2)) : NaN;
-  const atr = rgn > 5 ? rg / rgn : NaN;
-  const kinds = sameDisc.get(ev.c + '|' + ev.dd) ?? new Set();
-  const timing = dates[d] !== ev.dd ? 'holiday' : (ev.dt && ev.dt.slice(0, 5) < closeTime(ev.dd) ? 'intraday' : 'afterClose');
-  const rawPx = at(RO, i, d) > 0 ? at(RO, i, d) : NaN;
-  const out = outcomes(i, e, atr);
+  const q = (j) => (j >= 0 && at(C, i, j) > 0 ? { o: at(O, i, j), h: at(H, i, j), l: at(L, i, j), c: at(C, i, j), va: at(VA, i, j) } : null);
+  const f = proFeatures(ev, d, q, (j) => (at(RO, i, j) > 0 ? at(RO, i, j) : NaN), MK, { sameKinds: sameDisc.get(ev.c + '|' + ev.dd) ?? new Set(), crowd: 1, isTradingDay: dates[d] === ev.dd });
+  f.us1 = usBefore(dates[e]) ?? NaN;            // 前夜の米国株
+  f.gap = at(O, i, e) / at(C, i, d) - 1;        // 寄り付きの上げ下げ（買う瞬間に分かる）
+  f.mgap = MGAP[e];                             // 市場全体の寄り付き（買う瞬間に分かる）
+  const out = outcomes(i, e, f.atr);
   if (!out) continue;
-  T.push({
-    kind: ev.kind, i, d, e, half: d < Math.floor(D * 0.6) ? 'train' : 'test', year: dates[e].slice(0, 4), score: ev.score,
-    f: {
-      size: Math.min(ev.score, 3),                                   // 引き上げ幅（増配率・上方修正率）
-      withOther: ev.kind === 'div_up' ? (kinds.has('earn_up') ? 1 : 0) : (kinds.has('div_up') ? 1 : 0), // 増配と上方修正が同時
-      withDown: kinds.has('earn_down') ? 1 : 0,                     // 同時に下方修正（増配なのに業績は下がる）
-      nextYear: ev.detail?.nextYear ? 1 : 0,                        // 本決算での来期予想
-      yield: ev.kind === 'div_up' && ev.detail?.now > 0 && rawPx > 0 ? Math.min(ev.detail.now / rawPx, 0.15) : NaN, // 配当利回り（引き上げ後、発表日の始値で）
-      timing,
-      react0: c / at(C, i, d - 1) - 1,                              // シグナル日の値動き（場中発表なら反応の一部）
-      run5: c / at(C, i, d - 5) - 1, run20: c / at(C, i, d - 20) - 1, // 発表前の上昇
-      ma25: c / sma(C, i, d, 25) - 1,
-      vol20, atr,
-      liq: Math.log10(sma(VA, i, d, 20)),                           // 売買代金（20日平均、対数）
-      crowd: 0,                                                      // 同じ日に同じ種類のイベントが何件あったか（後で入れる）
-      mkt1: MKT[d], mkt5: MKTI[d] / MKTI[d - 5] - 1, mktTrend: MKTI[d] / mktMA(d, 25) - 1,
-      us1: usBefore(dates[e]) ?? NaN,                               // 前夜の米国株
-      gap: at(O, i, e) / c - 1,                                     // 寄り付きの上げ下げ（買う瞬間に分かる）
-      mgap: MGAP[e],                                                 // 市場全体の寄り付き（買う瞬間に分かる）
-    },
-    out,
-  });
+  T.push({ kind: ev.kind, i, d, e, half: d < Math.floor(D * 0.6) ? 'train' : 'test', year: dates[e].slice(0, 4), score: ev.score, f, out });
 }
 for (const t of T) t.f.crowd = Math.log2(countByDay[t.kind + '|' + t.d] ?? 1);
 status.events = { div_up: T.filter((t) => t.kind === 'div_up').length, earn_up: T.filter((t) => t.kind === 'earn_up').length };
@@ -379,7 +351,8 @@ for (const [kind, exit] of [['div_up', 'dt'], ['div_up', 'h5'], ['div_up', 'hl10
   }
   const intra = summ(tr.filter((t) => t.f.timing === 'intraday').map((t) => t.out[exit].ret));
   const useIntra = intra.n >= 50 && intra.avg > all.avg && intra.med >= all.med;
-  const score = (t) => chosen.reduce((a, c) => a + (c.side === 'is1' ? (t.f[c.f] === 1 ? 1 : 0) : Number.isFinite(t.f[c.f]) && (c.side === 'high' ? t.f[c.f] >= c.cut : t.f[c.f] <= c.cut) ? 1 : 0), 0) + (useIntra && t.f.timing === 'intraday' ? 1 : 0);
+  const rules = { chosen: chosen.map((c) => ({ key: c.f, side: c.side, cut: c.cut ?? null })), useIntra };
+  const score = (t) => proScore(t.f, rules);
   const byScore = {};
   for (const h of ['train', 'test']) for (let k = 0; k <= 4; k++) (byScore[k] ??= {})[h] = summ(sub.filter((t) => t.half === h && t.out[exit] && Math.min(score(t), 4) === k).map((t) => t.out[exit].ret));
   const sims = {};
@@ -393,7 +366,7 @@ for (const [kind, exit] of [['div_up', 'dt'], ['div_up', 'h5'], ['div_up', 'hl10
   }
   result.scored[kind + '|' + exit] = {
     chosen: [...chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'is1' ? 'あると良い' : c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut) })), ...(useIntra ? [{ f: '場中の発表', side: 'あると良い' }] : [])],
-    byScore, sims,
+    rules, byScore, sims,
   };
 }
 // 年ごとの成績（増配・その日に売る／マイナスなら持ち越し）：偏りの確認
@@ -403,6 +376,11 @@ for (const exit of ['dt', 'hl10', 'h5']) {
   for (const t of T.filter((t) => t.kind === 'div_up')) { const r = t.out[exit]?.ret; if (r != null) (g[t.year] ??= []).push(r); }
   result.byYear[exit] = Object.fromEntries(Object.entries(g).map(([y, a]) => [y, summ(a)]));
 }
+// 仮想売買（scripts/paper.mjs）が使う「効く特徴」の選び方を保存する（前半だけで選んだもの）
+try {
+  fs.mkdirSync(path.join(DATA, 'paper'), { recursive: true });
+  fs.writeFileSync(path.join(DATA, 'paper', 'pro-choice.json'), JSON.stringify({ chosenAt: new Date().toISOString(), trainTo: dates[split - 1], rules: Object.fromEntries(Object.entries(result.scored).map(([k, v]) => [k, v.rules])) }));
+} catch (e) { status.choiceWriteError = e.message; }
 status.finishedAt = new Date().toISOString();
 writeOut(result);
 console.log(`pro-jp ok: events div_up=${status.events.div_up} earn_up=${status.events.earn_up} spyDays=${status.spyDays ?? 0}`);

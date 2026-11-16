@@ -8,6 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { detectEvents } from './lib/events.mjs';
+import { proFeatures, proScore } from './lib/pro-features.mjs';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), [])
@@ -40,7 +41,21 @@ const STRATS = {
   // 本番と同じ条件（2026-11-12〜）：ウィブルは日本株を100株単位でしか買えないので、30万円・最大2銘柄・100株単位
   real30_dt: { name: '本番想定：30万円・100株単位・3銘柄（増配デイトレ）', kinds: ['div_up'], hold: 1, base: 'dt_div', capital: 300_000, maxN: 3, lot: 100 },
   real30_div_gap: { name: '本番想定：30万円・100株単位・2銘柄（増配＋朝高）', kinds: ['div_up'], hold: 5, gap: true, base: 'swing_div_gap', capital: 300_000, maxN: 2, lot: 100 },
+  // 試験中（2026-11-17〜、オーナーの指示「もっと専門性を持って」）：プロの判断の検証（scripts/pro.mjs）で前半だけで選んだ「効く特徴」の点数で選ぶ
+  real30_dt_pro: { name: '試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）', kinds: ['div_up'], hold: 1, holdLosers: 10, capital: 300_000, maxN: 3, lot: 100, pro: { key: 'div_up|hl10', min: 2 }, trial: true },
+  real30_div_pro: { name: '試験中：プロの判断のスイング（点数1以上・5日）', kinds: ['div_up'], hold: 5, capital: 300_000, maxN: 3, lot: 100, pro: { key: 'div_up|h5', min: 1 }, trial: true },
 };
+const choiceF = path.join(DATA, 'paper', 'pro-choice.json');
+const PRO = fs.existsSync(choiceF) ? JSON.parse(fs.readFileSync(choiceF, 'utf8')) : null;
+const PRO_LABEL = { size: '引き上げ幅が大きい', withOther: '上方修正も同時', withDown: '同時に下方修正', nextYear: '本決算での来期予想', yield: '配当利回りが高い', react0: '発表日に上げた', run5: '直前5日', run20: '直前20日', ma25: '25日線との差', vol20: '値動きの荒さ', atr: '値幅', liq: '売買代金', crowd: '材料の多い日', mkt1: '前日の市場', mkt5: '市場の5日の動き', mktTrend: '市場が25日平均より' };
+function proLabel(c) {
+  if (c.side === 'is1') return PRO_LABEL[c.key];
+  const lo = c.side === 'low';
+  if (c.key === 'run5' || c.key === 'run20') return lo ? `${PRO_LABEL[c.key]}で上がりすぎていない` : `${PRO_LABEL[c.key]}で上げている`;
+  if (c.key === 'mkt1' || c.key === 'mkt5') return lo ? `${PRO_LABEL[c.key]}が下げた後` : `${PRO_LABEL[c.key]}が上げた後`;
+  if (c.key === 'mktTrend') return lo ? '市場が25日平均より下（押し目）' : '市場が25日平均より上';
+  return PRO_LABEL[c.key] ?? c.key;
+}
 
 // ---------- データ ----------
 const priceFiles = fs.readdirSync(path.join(DATA, 'prices')).filter((f) => f.endsWith('.json')).sort();
@@ -170,7 +185,10 @@ for (const T of newDates) {
       if (!p) continue; // 売買停止などで値段がない日は持ち越し
       pos.held++;
       pos.lastPx = p.c;
-      if (pos.held >= cfg.hold) {
+      const rNow = (p.c * (1 - SLIP)) / pos.entryPx - 1;
+      // マイナスで引けたら持ち越し、買値以上で引けた日に売る（最長 hold + holdLosers 日）
+      const keep = cfg.holdLosers && pos.held >= cfg.hold && rNow < 0 && pos.held < cfg.hold + cfg.holdLosers;
+      if (pos.held >= cfg.hold && !keep) {
         const r = (p.c * (1 - SLIP)) / pos.entryPx - 1;
         st.cash += pos.size * (1 + r);
         st.closed.push({ code: pos.code, name: nameOf(pos.code), reason: pos.reason, entryDate: pos.entryDate, exitDate: T, retPct: pct(r), profitYen: Math.round(pos.size * r) });
@@ -230,6 +248,36 @@ for (const T of newDates) {
 // ---------- 3) 新しい開示から次の営業日の買い候補 ----------
 const lastK = idxOf.get(state.lastDate);
 const found = [];
+// プロの判断の特徴に使う：市場全体（流動性条件を満たす銘柄の等金額平均）、同じ開示の種類、同じ日の件数
+const mktCache = new Map();
+function mktR(j) {
+  if (!mktCache.has(j)) {
+    let s = 0, n = 0;
+    const a = pricesOn(dates[j]), b = pricesOn(dates[j - 1]);
+    for (const [code, p] of a) { const pc = b.get(code)?.c; if (!(pc > 0) || !eligibleAt(code, j - 1)) continue; const r = p.c / pc - 1; if (Number.isFinite(r) && Math.abs(r) < 0.5) { s += r; n++; } }
+    mktCache.set(j, n ? s / n : 0);
+  }
+  return mktCache.get(j);
+}
+function mktFor(k) {
+  const base = k - 30, idx = new Map([[base, 1]]);
+  for (let j = base + 1; j <= k; j++) idx.set(j, idx.get(j - 1) * (1 + mktR(j)));
+  return { r: mktR, idx: (j) => idx.get(j) ?? NaN, ma: (j, n) => { let t = 0; for (let x = j - n + 1; x <= j; x++) t += idx.get(x); return t / n; } };
+}
+const sameKindsMap = new Map();
+for (const e of events) { const kk = e.c + '|' + e.dd; if (!sameKindsMap.has(kk)) sameKindsMap.set(kk, new Set()); sameKindsMap.get(kk).add(e.kind); }
+const crowdMap = new Map();
+const mktByK = new Map();
+function proOf(e, k) {
+  if (!mktByK.has(k)) mktByK.set(k, mktFor(k));
+  if (!crowdMap.has(e.kind + '|' + k)) {
+    const set = new Set();
+    for (const x of events) if (x.kind === e.kind && signalIdx(x.dd) === k && eligibleAt(x.c, k)) set.add(x.c);
+    crowdMap.set(e.kind + '|' + k, set.size);
+  }
+  const q = (j) => { const p = j >= 0 ? pricesOn(dates[j]).get(e.c) : null; return p ? { o: p.o, h: p.h, l: p.l, c: p.c, va: p.va } : null; };
+  return proFeatures(e, k, q, (j) => rawOn(dates[j]).get(e.c) ?? NaN, mktByK.get(k), { sameKinds: sameKindsMap.get(e.c + '|' + e.dd) ?? new Set(), crowd: crowdMap.get(e.kind + '|' + k), isTradingDay: dates[k] === e.dd });
+}
 for (const e of events) {
   const key = evKey(e);
   if (state.seen[key]) continue;
@@ -243,10 +291,22 @@ for (const e of events) {
     if (cfg.trend && !aboveMA25(e.c, k)) continue;
     const st = state.strategies[sk];
     if (st.pending.some((p) => p.code === e.c)) continue;
-    const reason = e.kind === 'div_up'
+    let reason = e.kind === 'div_up'
       ? `配当予想を${e.detail.nextYear ? '来期' : ''}+${pct(e.score)}%引き上げ（${e.dd}発表）`
       : `営業利益予想を+${pct(e.score)}%上方修正（${e.dd}発表）`;
-    st.pending.push({ code: e.c, kind: e.kind, score: e.score, reason, signalDate: dates[k], late });
+    let score = e.score;
+    if (cfg.pro) {
+      const rules = PRO?.rules?.[cfg.pro.key];
+      if (!rules || k < 31) continue;
+      const f = proOf(e, k);
+      const sc = proScore(f, rules);
+      if (sc < cfg.pro.min) continue;
+      const hit = rules.chosen.filter((c) => proScore(f, { chosen: [c] }) > 0).map(proLabel);
+      if (rules.useIntra && f.timing === 'intraday') hit.push('場中の発表');
+      reason += `／点数${sc}：${hit.join('・')}${Number.isFinite(f.yield) ? `（利回り${pct(f.yield)}%）` : ''}`;
+      score = sc * 10 + e.score;
+    }
+    st.pending.push({ code: e.c, kind: e.kind, score, reason, signalDate: dates[k], late });
     found.push(sk);
   }
 }
@@ -261,6 +321,8 @@ for (const [k, cfg] of Object.entries(STRATS)) {
   const rets = st.closed.map((c) => c.retPct);
   out.strategies[k] = {
     name: cfg.name,
+    trial: !!cfg.trial,
+    proChosenAt: cfg.pro ? PRO?.chosenAt ?? null : undefined,
     hold: cfg.hold,
     gap: !!cfg.gap,
     kinds: cfg.kinds,
