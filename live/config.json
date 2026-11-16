@@ -1,6 +1,6 @@
 {
   "enabled": true,
-  "mode": "dry",
+  "mode": "test",
   "maxUsd": 180,
   "dailyLossStopPct": 5,
   "maxErrors": 3,
