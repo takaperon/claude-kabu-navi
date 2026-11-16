@@ -176,12 +176,15 @@ def offer_price(cik, d424):
             if f != "424B4" or fd != d424: continue
             html = sec_get(f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc.replace('-', '')}/{doc}").decode("latin-1")
             txt = re.sub(r"<[^>]+>", " ", html[:400000]); txt = re.sub(r"&nbsp;|&#160;", " ", txt); txt = re.sub(r"\s+", " ", txt)
+            head = txt[:30000]
+            ms = re.search(r"([\d,]{6,})\s+(?:shares|ordinary shares|common shares|class a (?:common|ordinary) (?:stock|shares)|american depositary shares|ADSs)", head, re.I)
+            shares = float(ms.group(1).replace(",", "")) if ms else None
             m = re.search(r"(?:initial )?public offering price[^$]{0,120}\$\s?(\d{1,4}(?:\.\d{1,2})?)\s*per (?:share|ADS|American Depositary)", txt, re.I) \
                 or re.search(r"offering price (?:of|is) \$\s?(\d{1,4}(?:\.\d{1,2})?)", txt, re.I)
-            return float(m.group(1)) if m else None
+            return (float(m.group(1)) if m else None, shares)
     except Exception:
-        return None
-    return None
+        return (None, None)
+    return (None, None)
 
 offer_ok = 0
 for x in ipos:
@@ -190,7 +193,10 @@ for x in ipos:
     x["h20"] = hold(b, 0, 20)
     x["o2o"] = (b[1][1] * (1 - SLIP)) / (b[0][1] * (1 + SLIP)) - 1
     x["spyUp"] = spy_up(x["first"])
-    op = offer_price(x["cik"], x["d424"])
+    op, sh = offer_price(x["cik"], x["d424"])
+    x["deal"] = op * sh if (op and sh and 1e5 < op * sh < 5e10) else None
+    x["c2o"] = (b[1][1] * (1 - SLIP)) / (b[0][2] * (1 + SLIP)) - 1
+    x["c20"] = ((b[20][2] * (1 - SLIP)) / (b[0][2] * (1 + SLIP)) - 1) if len(b) > 20 else None
     if op and not (0.1 < b[0][1] / op < 20): op = None  # 読み違い（ワラント価格など）を除く
     x["pop"] = (b[0][1] / op - 1) if op else None
     x["offer"] = op
@@ -212,6 +218,17 @@ def group(keyfn):
         g.setdefault(k, {"train": [], "test": []})[half].append(x)
     return {k: {h: {"day1": summ2([x["d1"] for x in v[h]]), "nextOpen": summ2([x["o2o"] for x in v[h]]), "hold20": summ2([x["h20"] for x in v[h]])} for h in ("train", "test")} for k, v in sorted(g.items())}
 
+def deal_bucket(x):  # 募集額＝公開価格×株数（424B4の表紙。上場前に分かる）
+    v = x["deal"]
+    return None if not v else "a:1000万ドル未満" if v < 1e7 else "b:1000万〜5000万ドル" if v < 5e7 else "c:5000万〜2億ドル" if v < 2e8 else "d:2億ドル以上"
+def group2(keyfn):  # 初日の引けで買う形（初日の売買代金が分かってから買う）
+    g = {}
+    for x in ipos:
+        k = keyfn(x)
+        if k is None: continue
+        half = "train" if x["first"] < split_date else "test"
+        g.setdefault(k, {"train": [], "test": []})[half].append(x)
+    return {k: {h: {"closeToNextOpen": summ2([x["c2o"] for x in v[h]]), "closeHold20": summ2([x["c20"] for x in v[h]])} for h in ("train", "test")} for k, v in sorted(g.items())}
 def px_bucket(x):
     o = x["offer"] or x["b"][0][1]
     return "a:5ドル未満" if o < 5 else "b:5〜10ドル" if o < 10 else "c:10〜20ドル" if o < 20 else "d:20ドル以上"
@@ -242,6 +259,10 @@ factors = {
     "byPrice": group(px_bucket), "byPop": group(pop_bucket), "bySector": group(sector), "byYear": group(lambda x: x["first"][:4]),
     "bySpyTrend": group(lambda x: None if x["spyUp"] is None else ("S&P500が200日平均より上" if x["spyUp"] else "S&P500が200日平均より下")),
     "byDay1DollarVolume": group(dollar_vol),
+    "byDealSize": group(deal_bucket),
+    "closeBuyByDay1DollarVolume": group2(dollar_vol),
+    "dealParsed": sum(1 for x in ipos if x["deal"]),
+    "caution": "初値の水準（byPrice）と公開価格からの上げ幅（byPop）は、上場後の株式併合で日足の値段が調整されている銘柄があり当てにならない。売買代金と募集額（公開価格×株数）は併合の影響を受けない",
     "bigMovers": {"count": len(big), "rule": "初日に初値→引けで+50%以上",
                   "priceShare": share(big, px_bucket), "priceShareAll": share(ipos, px_bucket),
                   "sectorShare": share(big, sector), "sectorShareAll": share(ipos, sector),
