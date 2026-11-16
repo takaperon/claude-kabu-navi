@@ -492,6 +492,15 @@ function renderHome() {
     const best = sold.slice().sort((a, b) => b.retPct - a.retPct)[0];
     if (best && best.retPct > 0) say += `いちばん稼いだのは<b>${esc(nf(best.name))}</b>の<b class="up">${sign(best.retPct)}%</b>です。`;
   }
+  // ふりかえり：その日の相場全体と比べる（負けが相場のせいか、選んだ株のせいか）
+  const M = paper.market;
+  if (M && M.date === day && sold.length) {
+    const dtSold = sold.filter((c) => c.entryDate === c.exitDate); // その日に買って売ったもの（相場の1日と比べられる）
+    const avgSold = dtSold.length ? dtSold.reduce((a, c) => a + c.retPct, 0) / dtSold.length : null;
+    say += ` この日の市場全体は<b class="${cls(M.dayPct)}">${sign(M.dayPct)}%</b>`;
+    say += Math.abs(M.dayPct) >= 1 ? `と大きく${M.dayPct > 0 ? '上げ' : '下げ'}ました。` : 'でした。';
+    if (avgSold != null) say += avgSold - M.dayPct >= 0.5 ? 'デイトレの株は相場より良い成績です。' : avgSold - M.dayPct <= -0.5 ? 'デイトレの株は相場より悪い成績でした。' : 'デイトレの株は相場とほぼ同じ動きでした。';
+  }
   say += next.length ? `次の朝は<b>${next.length}銘柄</b>を買う予定です。` : '次の朝に買う予定の銘柄はありません。';
   $('say').innerHTML = say;
 

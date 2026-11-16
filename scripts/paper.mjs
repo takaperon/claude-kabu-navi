@@ -349,5 +349,10 @@ if (state.ipoNight) {
     recentClosed: st.closed.slice(-30).reverse(), equityHistory: st.equity,
   };
 }
+// 毎日のふりかえり用：その日の市場全体（流動性条件を満たす銘柄の平均）と、売った取引を相場と比べた差
+if (lastK >= 31) {
+  const m1 = mktR(lastK), mk = mktFor(lastK);
+  out.market = { date: state.lastDate, dayPct: pct(m1), fiveDayPct: pct(mk.idx(lastK) / mk.idx(lastK - 5) - 1), vsTrendPct: pct(mk.idx(lastK) / mk.ma(lastK, 25) - 1) };
+}
 fs.writeFileSync(path.join(OUT, 'paper.json'), JSON.stringify(out, null, 2));
 console.log(`paper ok: lastDate=${state.lastDate} newDates=${newDates.length} newSignals=${found.length}`);
