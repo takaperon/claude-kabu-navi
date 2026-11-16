@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-16T03:07:49.138001+00:00",
+  "checkedAt": "2026-11-16T08:54:08.416442+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -21,8 +21,14 @@
       "msg": "HTTP Status: 403, Code: MARKET_DATA_NOT_SUBSCRIBED, Msg: Insufficient permission, please subscribe to STOCK QUOTES. Mana"
     },
     "us_daily_AAPL": {
-      "error": "ServerException",
-      "msg": "HTTP Status: 403, Code: MARKET_DATA_NOT_SUBSCRIBED, Msg: Insufficient permission, please subscribe to STOCK QUOTES. Mana"
+      "status": 200
+    },
+    "us_snapshot_AAPL": {
+      "status": 200,
+      "rows": 1
+    },
+    "us_daily_RDDT": {
+      "status": 200
     },
     "us_earnings_AAPL": {
       "status": 200,
