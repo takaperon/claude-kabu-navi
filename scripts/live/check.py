@@ -45,6 +45,13 @@ try:
             item = {"status": r.status_code}
             if r.status_code == 200:
                 j = rows(r.json())
+                if isinstance(j, dict):  # 形の確認：項目名と、中の一覧の長さ（値段は出さない）
+                    item["keys"] = sorted(list(j.keys()))[:15]
+                    for kk, vv in j.items():
+                        if isinstance(vv, list):
+                            item["listKey"] = kk; j = vv
+                            if vv and isinstance(vv[0], dict): item["rowKeys"] = sorted(list(vv[0].keys()))[:15]
+                            break
                 if isinstance(j, list):
                     item["rows"] = len(j)
                     ds = sorted(str(x.get("time") or x.get("date") or x.get("trade_date") or "")[:10] for x in j if isinstance(x, dict))
