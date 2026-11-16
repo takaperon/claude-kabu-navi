@@ -245,8 +245,8 @@ for (const exit of Object.keys(EXITS)) {
   }
   const score = (t) => chosen.reduce((a, c) => a + (Number.isFinite(t.f[c.f]) && (c.side === 'high' ? t.f[c.f] >= c.cut : t.f[c.f] <= c.cut) ? 1 : 0), 0);
   const byScore = {};
-  for (const h of ['train', 'test']) for (let k = 0; k <= 4; k++) {
-    const a = T.filter((t) => t.half === h && t.out[exit] && Math.min(score(t), 4) === k).map((t) => t.out[exit].ret);
+  for (const h of ['train', 'test']) for (let k = 0; k <= 6; k++) {
+    const a = T.filter((t) => t.half === h && t.out[exit] && Math.min(score(t), 6) === k).map((t) => t.out[exit].ret);
     (byScore[k] ??= {})[h] = summ(a);
   }
   const sims = {};
@@ -256,6 +256,10 @@ for (const exit of Object.keys(EXITS)) {
     ['react5_score2', (t) => (score(t) >= 2 ? score(t) + t.re : null)],
     ['react10_score1', (t) => (t.re >= 0.1 && score(t) >= 1 ? score(t) + t.re : null)],
     ['react10_score0first', (t) => (t.re >= 0.1 ? score(t) + t.re : null)],
+    ['react5_score3', (t) => (score(t) >= 3 ? score(t) + t.re : null)],
+    ['react5_score4', (t) => (score(t) >= 4 ? score(t) + t.re : null)],
+    ['react5_score5', (t) => (score(t) >= 5 ? score(t) + t.re : null)],
+    ['react10_score3', (t) => (t.re >= 0.1 && score(t) >= 3 ? score(t) + t.re : null)],
   ]) for (const ex of ['h20', 'h40']) sims[nm + '|' + ex] = { train: sim(pick, ex, 260, split - 1), test: sim(pick, ex, split, D - 1) };
   result.trainChosen = { rule: '前半だけで選ぶ：上位(下位)1/5の平均が全体+1%以上かつ中央値も全体以上', chosen: chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut), train: c.train })), byScore, sims };
 }
