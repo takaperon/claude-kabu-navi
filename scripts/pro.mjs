@@ -352,6 +352,50 @@ for (const kind of ['div_up', 'earn_up']) {
     }
   }
 }
+// ---------- 前半だけで選んだ「効く特徴」の点数（説明できる形のルール） ----------
+// 選び方（前半だけ、後半は見ない）：特徴ごとに前半の5分位で、良い側の1/5（上位または下位）の平均が全体より一定以上（その日に売る=+0.2%、ほか=+0.5%）、
+// かつ中央値も全体以上なら「効く」。発表の時刻・同時の上方修正など 0/1 の特徴は、良い側の平均が全体より上なら「効く」。
+// 点数 = 効く特徴のうち、その銘柄が良い側に入っている数。寄り付きの特徴は使わない（前の夜までに分かることだけ）
+result.scored = {};
+for (const [kind, exit] of [['div_up', 'dt'], ['div_up', 'h5'], ['div_up', 'hl10'], ['div_up', 'h10'], ['earn_up', 'h5'], ['earn_up', 'h10']]) {
+  const sub = T.filter((t) => t.kind === kind);
+  const tr = sub.filter((t) => t.half === 'train' && t.out[exit]);
+  const all = summ(tr.map((t) => t.out[exit].ret));
+  const margin = exit === 'dt' ? 0.002 : 0.005;
+  const chosen = [];
+  for (const f of NUMF.filter((c) => !OPENF.has(c))) {
+    const v = tr.map((t) => t.f[f]).filter(Number.isFinite).sort((a, b) => a - b);
+    if (v.length < tr.length * 0.3) continue;
+    const uniq = new Set(v);
+    if (uniq.size <= 2) { // 0/1 の特徴
+      const one = summ(tr.filter((t) => t.f[f] === 1).map((t) => t.out[exit].ret));
+      if (one.n >= 50 && one.avg > all.avg && one.med >= all.med) chosen.push({ f, side: 'is1' });
+      continue;
+    }
+    const lo = v[Math.floor(v.length * 0.2)], hi = v[Math.floor(v.length * 0.8)];
+    const top = summ(tr.filter((t) => t.f[f] >= hi).map((t) => t.out[exit].ret)), bot = summ(tr.filter((t) => t.f[f] <= lo).map((t) => t.out[exit].ret));
+    if (top.avg - all.avg >= margin && top.med >= all.med) chosen.push({ f, side: 'high', cut: hi });
+    else if (bot.avg - all.avg >= margin && bot.med >= all.med) chosen.push({ f, side: 'low', cut: lo });
+  }
+  const intra = summ(tr.filter((t) => t.f.timing === 'intraday').map((t) => t.out[exit].ret));
+  const useIntra = intra.n >= 50 && intra.avg > all.avg && intra.med >= all.med;
+  const score = (t) => chosen.reduce((a, c) => a + (c.side === 'is1' ? (t.f[c.f] === 1 ? 1 : 0) : Number.isFinite(t.f[c.f]) && (c.side === 'high' ? t.f[c.f] >= c.cut : t.f[c.f] <= c.cut) ? 1 : 0), 0) + (useIntra && t.f.timing === 'intraday' ? 1 : 0);
+  const byScore = {};
+  for (const h of ['train', 'test']) for (let k = 0; k <= 4; k++) (byScore[k] ??= {})[h] = summ(sub.filter((t) => t.half === h && t.out[exit] && Math.min(score(t), 4) === k).map((t) => t.out[exit].ret));
+  const sims = {};
+  for (const [nm, pick] of [['all', (t) => t.score], ['score1', (t) => (score(t) >= 1 ? score(t) * 10 + t.score : null)], ['score2', (t) => (score(t) >= 2 ? score(t) * 10 + t.score : null)], ['score3', (t) => (score(t) >= 3 ? score(t) * 10 + t.score : null)]]) {
+    const bd = byDayOf(sub, exit, pick);
+    sims[nm] = {
+      fund10: { train: sim(bd, 31, split - 1), test: sim(bd, split, D - 1) },
+      lot30x2: { train: sim(bd, 31, split - 1, { capital: 300000, maxN: 2, lot: true }), test: sim(bd, split, D - 1, { capital: 300000, maxN: 2, lot: true }) },
+      lot30x3: { train: sim(bd, 31, split - 1, { capital: 300000, maxN: 3, lot: true }), test: sim(bd, split, D - 1, { capital: 300000, maxN: 3, lot: true }) },
+    };
+  }
+  result.scored[kind + '|' + exit] = {
+    chosen: [...chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'is1' ? 'あると良い' : c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut) })), ...(useIntra ? [{ f: '場中の発表', side: 'あると良い' }] : [])],
+    byScore, sims,
+  };
+}
 // 年ごとの成績（増配・その日に売る／マイナスなら持ち越し）：偏りの確認
 result.byYear = {};
 for (const exit of ['dt', 'hl10', 'h5']) {
