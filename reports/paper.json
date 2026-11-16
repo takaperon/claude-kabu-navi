@@ -1,10 +1,11 @@
 {
-  "updatedAt": "2026-11-16T19:21:26.296Z",
+  "updatedAt": "2026-11-16T19:28:36.923Z",
   "startDate": "2026-11-05",
   "lastDate": "2026-11-16",
   "strategies": {
     "swing_div": {
       "name": "配当予想の引き上げ（5日保有）",
+      "trial": false,
       "hold": 5,
       "gap": false,
       "kinds": [
@@ -254,6 +255,7 @@
     },
     "swing_earn": {
       "name": "上方修正＋株価が上向き（5日保有）",
+      "trial": false,
       "hold": 5,
       "gap": false,
       "kinds": [
@@ -461,6 +463,7 @@
     },
     "dt_div": {
       "name": "デイトレ：配当予想の引き上げ（寄りで買って引けで売る）",
+      "trial": false,
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -809,6 +812,7 @@
     },
     "swing_earn_gap": {
       "name": "上方修正＋上向き＋朝高く始まった時だけ（5日保有）",
+      "trial": false,
       "hold": 5,
       "gap": true,
       "kinds": [
@@ -971,6 +975,7 @@
     },
     "swing_div_gap": {
       "name": "配当予想の引き上げ＋朝高く始まった時だけ（5日保有）",
+      "trial": false,
       "hold": 5,
       "gap": true,
       "kinds": [
@@ -1220,6 +1225,7 @@
     },
     "real30_dt": {
       "name": "本番想定：30万円・100株単位・3銘柄（増配デイトレ）",
+      "trial": false,
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1332,6 +1338,7 @@
     },
     "real30_div_gap": {
       "name": "本番想定：30万円・100株単位・2銘柄（増配＋朝高）",
+      "trial": false,
       "hold": 5,
       "gap": true,
       "kinds": [
@@ -1403,6 +1410,58 @@
         {
           "date": "2026-11-16",
           "value": 298846
+        }
+      ]
+    },
+    "real30_dt_pro": {
+      "name": "試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）",
+      "trial": true,
+      "proChosenAt": null,
+      "hold": 1,
+      "gap": false,
+      "kinds": [
+        "div_up"
+      ],
+      "equityYen": 300000,
+      "taxYen": 0,
+      "capital": 300000,
+      "returnPct": 0,
+      "trades": 0,
+      "winRatePct": null,
+      "avgRetPct": null,
+      "holdings": [],
+      "nextBuys": [],
+      "recentClosed": [],
+      "equityHistory": [
+        {
+          "date": "2026-11-16",
+          "value": 300000
+        }
+      ]
+    },
+    "real30_div_pro": {
+      "name": "試験中：プロの判断のスイング（点数1以上・5日）",
+      "trial": true,
+      "proChosenAt": null,
+      "hold": 5,
+      "gap": false,
+      "kinds": [
+        "div_up"
+      ],
+      "equityYen": 300000,
+      "taxYen": 0,
+      "capital": 300000,
+      "returnPct": 0,
+      "trades": 0,
+      "winRatePct": null,
+      "avgRetPct": null,
+      "holdings": [],
+      "nextBuys": [],
+      "recentClosed": [],
+      "equityHistory": [
+        {
+          "date": "2026-11-16",
+          "value": 300000
         }
       ]
     }

@@ -1,14 +1,14 @@
 {
  "ok": true,
- "generatedAt": "2026-11-16T19:25:07.175Z",
+ "generatedAt": "2026-11-16T19:28:41.548Z",
  "status": {
-  "startedAt": "2026-11-16T19:25:03.036Z",
+  "startedAt": "2026-11-16T19:28:37.733Z",
   "spyDays": 0,
   "events": {
    "div_up": 4874,
    "earn_up": 2724
   },
-  "finishedAt": "2026-11-16T19:25:08.160Z"
+  "finishedAt": "2026-11-16T19:28:42.409Z"
  },
  "periods": {
   "train": [
@@ -23742,6 +23742,36 @@
      "side": "あると良い"
     }
    ],
+   "rules": {
+    "chosen": [
+     {
+      "key": "withOther",
+      "side": "is1",
+      "cut": null
+     },
+     {
+      "key": "yield",
+      "side": "high",
+      "cut": 0.040045051905471654
+     },
+     {
+      "key": "react0",
+      "side": "high",
+      "cut": 0.024087024087024123
+     },
+     {
+      "key": "run5",
+      "side": "high",
+      "cut": 0.04314515754776371
+     },
+     {
+      "key": "mkt1",
+      "side": "low",
+      "cut": -0.007133232422687287
+     }
+    ],
+    "useIntra": true
+   },
    "byScore": {
     "0": {
      "train": {
@@ -24050,6 +24080,41 @@
      "side": "あると良い"
     }
    ],
+   "rules": {
+    "chosen": [
+     {
+      "key": "withOther",
+      "side": "is1",
+      "cut": null
+     },
+     {
+      "key": "yield",
+      "side": "high",
+      "cut": 0.040045051905471654
+     },
+     {
+      "key": "run20",
+      "side": "low",
+      "cut": -0.04150943396226414
+     },
+     {
+      "key": "mkt1",
+      "side": "low",
+      "cut": -0.007133232422687287
+     },
+     {
+      "key": "mkt5",
+      "side": "low",
+      "cut": -0.011680019219022508
+     },
+     {
+      "key": "mktTrend",
+      "side": "low",
+      "cut": -0.019281020154234607
+     }
+    ],
+    "useIntra": true
+   },
    "byScore": {
     "0": {
      "train": {
@@ -24353,6 +24418,36 @@
      "side": "あると良い"
     }
    ],
+   "rules": {
+    "chosen": [
+     {
+      "key": "withOther",
+      "side": "is1",
+      "cut": null
+     },
+     {
+      "key": "yield",
+      "side": "high",
+      "cut": 0.040045051905471654
+     },
+     {
+      "key": "mkt1",
+      "side": "low",
+      "cut": -0.007133232422687287
+     },
+     {
+      "key": "mkt5",
+      "side": "low",
+      "cut": -0.011680019219022508
+     },
+     {
+      "key": "mktTrend",
+      "side": "low",
+      "cut": -0.019281020154234607
+     }
+    ],
+    "useIntra": true
+   },
    "byScore": {
     "0": {
      "train": {
@@ -24676,6 +24771,56 @@
      "side": "あると良い"
     }
    ],
+   "rules": {
+    "chosen": [
+     {
+      "key": "size",
+      "side": "high",
+      "cut": 0.33333333333333326
+     },
+     {
+      "key": "withOther",
+      "side": "is1",
+      "cut": null
+     },
+     {
+      "key": "yield",
+      "side": "high",
+      "cut": 0.040045051905471654
+     },
+     {
+      "key": "react0",
+      "side": "high",
+      "cut": 0.024087024087024123
+     },
+     {
+      "key": "run20",
+      "side": "low",
+      "cut": -0.04150943396226414
+     },
+     {
+      "key": "vol20",
+      "side": "high",
+      "cut": 0.026111197962943138
+     },
+     {
+      "key": "mkt1",
+      "side": "low",
+      "cut": -0.007133232422687287
+     },
+     {
+      "key": "mkt5",
+      "side": "low",
+      "cut": -0.011680019219022508
+     },
+     {
+      "key": "mktTrend",
+      "side": "low",
+      "cut": -0.019281020154234607
+     }
+    ],
+    "useIntra": true
+   },
    "byScore": {
     "0": {
      "train": {
@@ -24974,6 +25119,31 @@
      "side": "あると良い"
     }
    ],
+   "rules": {
+    "chosen": [
+     {
+      "key": "withOther",
+      "side": "is1",
+      "cut": null
+     },
+     {
+      "key": "run5",
+      "side": "low",
+      "cut": -0.024347826086956514
+     },
+     {
+      "key": "mkt1",
+      "side": "low",
+      "cut": -0.005964204073520721
+     },
+     {
+      "key": "mktTrend",
+      "side": "low",
+      "cut": -0.015319308802322906
+     }
+    ],
+    "useIntra": true
+   },
    "byScore": {
     "0": {
      "train": {
@@ -25282,6 +25452,41 @@
      "side": "あると良い"
     }
    ],
+   "rules": {
+    "chosen": [
+     {
+      "key": "withOther",
+      "side": "is1",
+      "cut": null
+     },
+     {
+      "key": "run5",
+      "side": "low",
+      "cut": -0.024347826086956514
+     },
+     {
+      "key": "liq",
+      "side": "low",
+      "cut": 8.205639172281835
+     },
+     {
+      "key": "mkt1",
+      "side": "high",
+      "cut": 0.010956846144291212
+     },
+     {
+      "key": "mkt5",
+      "side": "low",
+      "cut": -0.006596426782331077
+     },
+     {
+      "key": "mktTrend",
+      "side": "low",
+      "cut": -0.015319308802322906
+     }
+    ],
+    "useIntra": true
+   },
    "byScore": {
     "0": {
      "train": {
