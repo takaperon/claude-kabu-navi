@@ -143,6 +143,8 @@ def hold(b, i, n):  # i日目の始値で買い、n日目の終値で売る
 runs = {
     "day1_dt": run("上場初日：初値で買って引けで売る", lambda b: (b[0][0], oc(b[0][1], b[0][2]))),
     "day1_overnight": run("上場初日の引けで買って、2日目の寄りで売る", lambda b: (b[0][0], (b[1][1] * (1 - SLIP)) / (b[0][2] * (1 + SLIP)) - 1)),
+    "day1_open_day2_open": run("初値で買って、2日目の寄りで売る", lambda b: (b[0][0], (b[1][1] * (1 - SLIP)) / (b[0][1] * (1 + SLIP)) - 1)),
+    "day1_open_day2_close": run("初値で買って、2日目の引けで売る", lambda b: (b[0][0], hold(b, 0, 2))),
     "day2_dt": run("上場2日目にデイトレ", lambda b: (b[1][0], oc(b[1][1], b[1][2]))),
     "day3_dt": run("上場3日目にデイトレ", lambda b: (b[2][0], oc(b[2][1], b[2][2]))),
     "day1_up_day2_dt": run("初日に初値より上で引けた銘柄を、2日目にデイトレ", lambda b: (b[1][0], oc(b[1][1], b[1][2])) if b[0][2] > b[0][1] else None),
