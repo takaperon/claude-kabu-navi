@@ -488,6 +488,50 @@ for (const [sk, sg] of Object.entries(DT_SIGNALS)) {
     }
   }
 }
+// ---------- デイトレで「マイナスのまま売らずに持ち越す」とどうなるか（2026-11-17 オーナーの疑問「マイナスのまま売るってどうなん？」） ----------
+// 増配デイトレ（寄りで買う）で、引けがマイナスだった時だけ持ち越し、買値に戻った最初の引けで売る。N日たっても戻らなければN日目の引けで売る。
+// 比較：その日の引けで売る（今のルール）。負けた取引だけを取り出した成績も出す
+const holdLosers = (() => {
+  const out = { note: '増配デイトレ。引けで買値を下回った時だけ持ち越し、買値以上で引けた最初の日に売る（最長N日）。滑り片道0.1%', rules: {} };
+  const evs = EVENTS.div_up;
+  const seen = new Set();
+  const trades = [];
+  for (const e of evs) {
+    const k = e.i * D + e.d;
+    if (!elig[k] || seen.has(k)) continue;
+    seen.add(k);
+    const en = e.d + 1;
+    const o = at(O, e.i, en), c = at(C, e.i, en);
+    if (!(o > 0) || !(c > 0)) continue;
+    trades.push({ i: e.i, d: e.d, en, entry: o * (1 + SLIP), c0: c });
+  }
+  for (const N of [0, 1, 3, 5, 10, 20]) {
+    const per = { train: [], test: [] }, perL = { train: [], test: [] }, days = { train: [], test: [] };
+    for (const t of trades) {
+      let exitPx = t.c0, held = 0;
+      if (N > 0 && t.c0 * (1 - SLIP) < t.entry) {
+        for (let j = 1; j <= N && t.en + j < D; j++) {
+          const cj = at(C, t.i, t.en + j);
+          if (!(cj > 0)) continue;
+          exitPx = cj; held = j;
+          if (cj * (1 - SLIP) >= t.entry) break;
+        }
+      }
+      const r = (exitPx * (1 - SLIP)) / t.entry - 1;
+      const h = t.d < split ? 'train' : 'test';
+      per[h].push(r); days[h].push(held + 1);
+      if (t.c0 * (1 - SLIP) < t.entry) perL[h].push(r);
+    }
+    const avg = (a) => a.length ? Math.round((a.reduce((x, y) => x + y, 0) / a.length) * 100) / 100 : null;
+    out.rules[N === 0 ? 'sameDay' : `holdUpTo${N}`] = {
+      name: N === 0 ? 'その日の引けで売る（今のルール）' : `マイナスなら最長${N}日持ち越す`,
+      train: { ...summarize(per.train), avgDays: avg(days.train), losersOnly: summarize(perL.train) },
+      test: { ...summarize(per.test), avgDays: avg(days.test), losersOnly: summarize(perL.test) },
+    };
+  }
+  return out;
+})();
+
 // 比較用：毎日、流動性条件を満たす銘柄から無作為に10銘柄を寄り買い・引け売り ×200回
 const dtBaseline = (() => {
   const daily = new Map();
@@ -743,6 +787,7 @@ const out = {
   robustness,
   randomYearly,
   daytrade,
+  holdLosers,
   dtBaseline,
   dayMoveBuckets,
   afterDrops,
