@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-11-16T19:29:05.649Z",
+  "updatedAt": "2026-11-16T20:36:37.257Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": null,
-    "chosenAt": "2026-11-16T19:29:05.235Z",
+    "chosenAt": "2026-11-16T20:36:35.925Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
@@ -151,5 +151,26 @@
       "date": "2026-11-13",
       "value": 300000
     }
-  ]
+  ],
+  "pro": {
+    "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
+    "trial": true,
+    "chosenAt": "2026-11-16T20:36:36.759Z",
+    "startDate": "2026-11-13",
+    "capital": 300000,
+    "equityYen": 300000,
+    "returnPct": 0,
+    "taxYen": 0,
+    "trades": 0,
+    "winRatePct": null,
+    "holdings": [],
+    "nextBuys": [],
+    "recentClosed": [],
+    "equityHistory": [
+      {
+        "date": "2026-11-13",
+        "value": 300000
+      }
+    ]
+  }
 }
