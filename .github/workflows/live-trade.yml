@@ -1,5 +1,6 @@
 name: live-trade
 # 本番の自動売買（米国株・少額）。毎平日の米国市場が開いた後（日本時間 23:50、夏時間は 22:50 頃に相当）
+# （GitHub の定期実行は遅れたり飛ばされたりすることがある。2026-11-16 の 14:50 UTC は実行されなかった）
 # 設定は live/config.json。安全装置は scripts/live/trade.py の先頭を参照
 on:
   schedule:
