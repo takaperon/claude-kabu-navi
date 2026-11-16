@@ -227,5 +227,37 @@ for (const exit of Object.keys(EXITS)) {
   }
   X.sims = sims;
 }
+// ---------- 前半だけで選んだ「効く特徴」で点数をつける（20日持つ） ----------
+// 選び方（前半だけ、後半は見ない）：特徴ごとに前半の5分位で、上位1/5（または下位1/5）の平均が全体より+1%以上、かつ中央値も全体以上なら「効く」。
+// 点数 = 効く特徴のうち、その銘柄が良い側の1/5に入っている数。点数の高い順に買う
+{
+  const exit = 'h20';
+  const tr = T.filter((t) => t.half === 'train' && t.out[exit]);
+  const all = summ(tr.map((t) => t.out[exit].ret));
+  const chosen = [];
+  for (const f of NUMF.filter((c) => !OPENF.has(c))) {
+    const v = tr.map((t) => t.f[f]).filter(Number.isFinite).sort((a, b) => a - b);
+    if (v.length < tr.length * 0.3) continue;
+    const lo = v[Math.floor(v.length * 0.2)], hi = v[Math.floor(v.length * 0.8)];
+    const top = summ(tr.filter((t) => t.f[f] >= hi).map((t) => t.out[exit].ret)), bot = summ(tr.filter((t) => t.f[f] <= lo).map((t) => t.out[exit].ret));
+    if (top.avg - all.avg >= 0.01 && top.med >= all.med) chosen.push({ f, side: 'high', cut: hi, train: top });
+    else if (bot.avg - all.avg >= 0.01 && bot.med >= all.med) chosen.push({ f, side: 'low', cut: lo, train: bot });
+  }
+  const score = (t) => chosen.reduce((a, c) => a + (Number.isFinite(t.f[c.f]) && (c.side === 'high' ? t.f[c.f] >= c.cut : t.f[c.f] <= c.cut) ? 1 : 0), 0);
+  const byScore = {};
+  for (const h of ['train', 'test']) for (let k = 0; k <= 4; k++) {
+    const a = T.filter((t) => t.half === h && t.out[exit] && Math.min(score(t), 4) === k).map((t) => t.out[exit].ret);
+    (byScore[k] ??= {})[h] = summ(a);
+  }
+  const sims = {};
+  for (const [nm, pick] of [
+    ['react10', (t) => (t.re >= 0.1 ? t.re : null)],
+    ['react5_score1', (t) => (score(t) >= 1 ? score(t) + t.re : null)],
+    ['react5_score2', (t) => (score(t) >= 2 ? score(t) + t.re : null)],
+    ['react10_score1', (t) => (t.re >= 0.1 && score(t) >= 1 ? score(t) + t.re : null)],
+    ['react10_score0first', (t) => (t.re >= 0.1 ? score(t) + t.re : null)],
+  ]) for (const ex of ['h20', 'h40']) sims[nm + '|' + ex] = { train: sim(pick, ex, 260, split - 1), test: sim(pick, ex, split, D - 1) };
+  result.trainChosen = { rule: '前半だけで選ぶ：上位(下位)1/5の平均が全体+1%以上かつ中央値も全体以上', chosen: chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut), train: c.train })), byScore, sims };
+}
 writeOut(result);
 console.log(`pro-us ok: events ${result.events.train}/${result.events.test} surprise=${result.events.withSurprise}`);
