@@ -69,6 +69,10 @@ jobs:
       - name: backtest
         run: node scripts/backtest.mjs --data data --out reports-out
 
+      - name: pro (プロの判断の検証)
+        continue-on-error: true
+        run: node scripts/pro.mjs --data data --out reports-out
+
       - name: publish reports
         if: always()
         run: |
