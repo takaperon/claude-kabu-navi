@@ -148,6 +148,8 @@ try:
         for c in bj.get("account_currency_assets") or bj.get("currency_assets") or []:
             if str(c.get("currency")) == "USD":
                 cash_usd = num(c.get("cash_balance") or c.get("buying_power") or c.get("available_cash") or c.get("settled_cash"))
+    pub["usdCashFound"] = bool(cash_usd and cash_usd > 0)  # 金額は出さず、ドルの残高が読めたかだけ
+    pub["usdCashEnough"] = bool(cash_usd and cash_usd >= MAX_USD * 0.9)
     used = sum(p["qty"] * (p.get("entryPx") or 0) for p in st["positions"])
     budget_left = max(0.0, MAX_USD - used)
     equity = pv + budget_left  # このシステムが預かっている分（上限内）だけで測る
