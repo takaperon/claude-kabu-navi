@@ -91,6 +91,12 @@
   唯一「初日の引けで買い→翌朝の寄りで売る」が前半+0.91%/後半+1.75%（勝率51/53%、最大の減り4%/2%）。paper.mjs の state.ipoNight（30万円・100株・2銘柄）で仮想売買、公開は paper.json の ipoNight
 - デイトレは日足で測れる「寄りで買って引けで売る」だけ。分足はJ-Quantsのアドオン（月5,500円）が必要で、オーナー未承認
 
+## プロの判断（2026-11-17〜、オーナーの指示「機械的すぎる。もっと専門性を持って、突き詰めて」）
+- 検証：scripts/pro.mjs（日本株、update.yml で毎日。data/paper/pro-choice.json に前半だけで選んだ特徴を保存）・scripts/us/pro.mjs（us.yml・us-backtest.yml。data-us/pro-choice.json）
+- 特徴の計算は検証と仮想売買で共通：scripts/lib/pro-features.mjs・scripts/us/lib-pro.mjs。点数＝前半で選んだ「効く特徴」に当てはまる数
+- 仮想売買の試験中：日本 real30_dt_pro（点数2以上・マイナスなら最長10日持ち越し・30万円3銘柄）、real30_div_pro（点数1以上・5日）、米国 pro（+5%以上・点数3以上・40日）
+- 結果は research/log.md。一番効くのは日本は「増配後の配当利回り」、米国は「反応の大きさ・出来高急増・EPS/売上の伸び」
+
 ## アプリ画面（2026-11-06〜）
 - app/ の1ファイルPWA（index.html）。GitHub Pages で公開（.github/workflows/pages.yml）
 - データは raw.githubusercontent.com の reports ブランチ（paper.json / backtest.json / news/）を直接読む。ニュースは毎朝07:47 JSTの定期タスク（2026-11-10〜、土日も）
