@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-16T08:55:53.919187+00:00",
+  "checkedAt": "2026-11-16T13:25:48.891635+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -39,6 +39,10 @@
       "status": 200,
       "rows": 1,
       "barKeys": [
+        "ask",
+        "ask_size",
+        "bid",
+        "bid_size",
         "bps",
         "change",
         "change_ratio",
@@ -49,11 +53,7 @@
         "fifty_two_wk_low",
         "high",
         "instrument_id",
-        "last_trade_time",
-        "list_status",
-        "lot_size",
-        "low",
-        "market_value"
+        "last_trade_time"
       ]
     },
     "us_daily_RDDT": {
