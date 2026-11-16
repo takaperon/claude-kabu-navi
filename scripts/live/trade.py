@@ -280,17 +280,51 @@ try:
                           "retPct": rec.get("retPct"), "unrealPct": rec.get("unrealPct")}
 
     # ---------- テスト：SPYを5ドル分買って、すぐ売る（つながるかの確認） ----------
+    # 2026-11-17：初回は買いが約定したが、売りで「保有数量を超えている」（417）。約定数量の読み違いか、端株の反映待ち。
+    # 売る数量は口座の保有（get_account_position）から読み、テストで買った分（約5ドル）を超えない分だけ売る
+    def pos_qty(symbol):
+        r = trade.account_v2.get_account_position(aid)
+        if r.status_code != 200: return None
+        j = r.json()
+        items = j if isinstance(j, list) else (j.get("holdings") or j.get("positions") or j.get("items") or j.get("data") or [])
+        if items and isinstance(items[0], dict):
+            pub["positionKeys"] = sorted(items[0].keys())[:40]  # 項目名だけ（値は出さない）
+        for it in items:
+            sym = it.get("symbol") or (it.get("instrument") or {}).get("symbol") or (it.get("ticker") or {}).get("symbol")
+            if str(sym).upper() != symbol: continue
+            for k in ("available_quantity", "available_qty", "sellable_quantity", "quantity", "qty", "position", "holding_quantity"):
+                v = num(it.get(k))
+                if v is not None:
+                    pub.setdefault("positionQtyKey", k); return v
+        return 0.0
+
     if mode == "test" and not st.get("testDone"):
-        q5 = math.floor(5 / (price("SPY") or 1e9) * 10000) / 10000
-        if q5 > 0:
-            cid = place("SPY", "BUY", f"{q5:.4f}".rstrip("0").rstrip("."), "接続テスト（5ドル）")
-            q, fpx, s = filled(cid, 90)
-            pub["notes"].append(f"テストの買い：{s}")
-            if q:
-                cid2 = place("SPY", "SELL", f"{q:.4f}".rstrip("0").rstrip("."), "接続テストの売り")
+        spx = price("SPY") or 0
+        have = pos_qty("SPY")
+        if not st.get("testBought") and have and spx and have * spx <= 6:  # 前回のテストで買って売れ残った分（5ドル程度）だけ
+            st["testBought"] = True; st["testQty"] = have
+            pub["notes"].append("前回のテストで買ったSPYが残っているので、売りだけ行います")
+        if not st.get("testBought"):
+            q5 = math.floor(5 / (spx or 1e9) * 10000) / 10000
+            if q5 > 0:
+                cid = place("SPY", "BUY", f"{q5:.4f}".rstrip("0").rstrip("."), "接続テスト（5ドル）")
+                q, fpx, s = filled(cid, 90)
+                pub["notes"].append(f"テストの買い：{s}")
+                if q:
+                    st["testBought"] = True; st["testQty"] = q
+                    time.sleep(10)
+                    have = pos_qty("SPY")
+        if st.get("testBought"):
+            sell_q = min(x for x in (have, st.get("testQty")) if x is not None) if have is not None else None
+            sell_q = math.floor((sell_q or 0) * 10000) / 10000
+            if sell_q > 0:
+                cid2 = place("SPY", "SELL", f"{sell_q:.4f}".rstrip("0").rstrip("."), "接続テストの売り")
                 q2, _, s2 = filled(cid2, 90)
                 pub["notes"].append(f"テストの売り：{s2}")
-                st["testDone"] = bool(q2)
+                if q2: st["testDone"] = True
+            else:
+                pub["notes"].append("テストの売り：口座の保有数量をまだ読めません（次回もう一度）")
+        pub["detailKeys"] = st.get("detailKeys")  # 注文詳細の項目名だけ（値は出さない）
 
     if mode != "live":  # dry / test のあいだは、出したことにした保有は状態に残さない（本番開始時にまっさらにする）
         st["positions"] = [p for p in st["positions"] if not p.get("dry")]
