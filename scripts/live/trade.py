@@ -95,8 +95,20 @@ try:
             o["order_type"] = "LIMIT"; o["limit_price"] = f"{limit:.2f}"
         return o
 
+    from webull.data.data_client import DataClient
+    md = DataClient(api).market_data
     def price(symbol):
-        # 株価データは購読が必要なので、1株の買い注文の「見積もり（preview）」から今の値段を知る（注文は出ない）
+        # 今の値段：Nasdaq Basic（API用・無料）のスナップショットの最新値。
+        # 取れない時だけ、1株の買い注文の見積もり（preview）を使う（見積もりは約3%上乗せされていて高めに出る。2026-11-17 確認）
+        try:
+            r = md.get_snapshot(symbol, "US_STOCK")
+            if r.status_code == 200:
+                j = r.json()
+                rows = j if isinstance(j, list) else (j.get("result") or j.get("data") or [j])
+                v = num((rows[0] or {}).get("close")) if rows else None
+                if v and v > 0: return v
+        except Exception:
+            pass
         r = trade.order_v3.preview_order(aid, [base(symbol, "BUY", "1")])
         return num(r.json().get("estimated_cost")) if r.status_code == 200 else None
 
