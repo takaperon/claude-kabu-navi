@@ -295,7 +295,50 @@ for (let d = 1; d < D; d++) {
 const mktMA = (d, n) => { if (d < n - 1) return NaN; let s = 0; for (let k = d - n + 1; k <= d; k++) s += MKTI[k]; return s / n; };
 // 大きく下げた日のあと、市場全体はどうなったか（翌日・5日後・20日後）
 const afterDrops = (() => {
-  const out = {};
+  // ---------- IPO（新規上場）銘柄に絞った短期売買（2026-11-16〜、オーナーの提案） ----------
+// 上場日 = データの途中（20日目以降）で初めて値段がついた日。初値 = その日の始値（初値がつかない日は飛ばして最初に始値がついた日）
+// 注意：今上場している銘柄だけ（上場後に廃止された銘柄は入っていない）、公開価格は分からない
+SLIP = 0.001;
+const ipoList = [];
+for (let i = 0; i < N; i++) {
+  let f = -1;
+  for (let d = 0; d < D; d++) if (at(C, i, d) > 0) { f = d; break; }
+  if (f < 20) continue;
+  let d0 = f;
+  while (d0 < D && !(at(O, i, d0) > 0)) d0++;
+  if (d0 >= D - 2) continue;
+  ipoList.push({ i, d0 });
+}
+const ipoRuns = {};
+function ipoRule(key, name, fn) {
+  const per = { train: [], test: [] }, byDay = new Map();
+  for (const x of ipoList) {
+    const r = fn(x.i, x.d0);
+    if (!r || !Number.isFinite(r.ret)) continue;
+    per[r.d < split ? 'train' : 'test'].push(r.ret);
+    if (!byDay.has(r.d)) byDay.set(r.d, []);
+    byDay.get(r.d).push(r.ret);
+  }
+  // 資金の増え方（1回あたり資金の10%、同じ日に複数あれば最大10件）
+  const port = (from, to) => { let eq = 1, peak = 1, dd = 0; for (let d = from; d <= to; d++) { const a = byDay.get(d); if (!a) continue; eq *= 1 + a.slice(0, 10).reduce((s, r) => s + 0.1 * r, 0); peak = Math.max(peak, eq); dd = Math.max(dd, 1 - eq / peak); } return { returnPct: Math.round((eq - 1) * 1000) / 10, maxDDPct: Math.round(dd * 1000) / 10 }; };
+  ipoRuns[key] = { name, train: summarize(per.train), test: summarize(per.test), portTrain: port(0, split - 1), portTest: port(split, D - 1) };
+}
+const oc1 = (i, d) => (at(C, i, d) * (1 - SLIP)) / (at(O, i, d) * (1 + SLIP)) - 1;
+const hold = (i, buyPx, d, n) => { const e = Math.min(D - 1, d + n - 1); const c = at(C, i, e); return c > 0 ? (c * (1 - SLIP)) / (buyPx * (1 + SLIP)) - 1 : NaN; };
+ipoRule('day1_dt', '上場初日：初値で買って引けで売る', (i, d) => ({ d, ret: oc1(i, d) }));
+ipoRule('day2_dt', '上場2日目：寄りで買って引けで売る', (i, d) => ({ d: d + 1, ret: oc1(i, d + 1) }));
+ipoRule('day3_dt', '上場3日目：寄りで買って引けで売る', (i, d) => d + 2 < D && ({ d: d + 2, ret: oc1(i, d + 2) }));
+ipoRule('day1_up_day2_dt', '初日に初値より上で引けた銘柄を、2日目にデイトレ', (i, d) => at(C, i, d) > at(O, i, d) && ({ d: d + 1, ret: oc1(i, d + 1) }));
+ipoRule('day1_down_day2_dt', '初日に初値より下で引けた銘柄を、2日目にデイトレ', (i, d) => at(C, i, d) < at(O, i, d) && ({ d: d + 1, ret: oc1(i, d + 1) }));
+ipoRule('day1_overnight', '初日の引けで買って、2日目の寄りで売る', (i, d) => ({ d, ret: (at(O, i, d + 1) * (1 - SLIP)) / (at(C, i, d) * (1 + SLIP)) - 1 }));
+ipoRule('day1_open_hold5', '初値で買って5日持つ', (i, d) => ({ d, ret: hold(i, at(O, i, d), d, 5) }));
+ipoRule('day1_open_hold20', '初値で買って20日持つ', (i, d) => ({ d, ret: hold(i, at(O, i, d), d, 20) }));
+ipoRule('day2_open_hold20', '2日目の寄りで買って20日持つ', (i, d) => ({ d: d + 1, ret: hold(i, at(O, i, d + 1), d + 1, 20) }));
+ipoRule('day21_open_hold20', '上場から1か月後の寄りで買って20日持つ', (i, d) => d + 21 < D && ({ d: d + 21, ret: hold(i, at(O, i, d + 21), d + 21, 20) }));
+ipoRule('day1_up_hold20', '初日に初値より上で引けた銘柄を、2日目の寄りで買って20日持つ', (i, d) => at(C, i, d) > at(O, i, d) && ({ d: d + 1, ret: hold(i, at(O, i, d + 1), d + 1, 20) }));
+
+const out = {
+  ipo: { count: ipoList.length, note: '今上場している銘柄だけ・公開価格は不明・滑り片道0.1%', runs: ipoRuns },};
   for (const [name, lo, hi] of [['-1〜-2%', -0.02, -0.01], ['-2〜-3%', -0.03, -0.02], ['-3%以上', -1, -0.03], ['比較：全営業日', -1, 1]]) {
     const acc = { 1: [], 5: [], 20: [] };
     let cnt = 0;
