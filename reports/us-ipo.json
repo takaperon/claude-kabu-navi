@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-16T11:47:13.814466+00:00",
+  "generatedAt": "2026-11-16T12:23:36.154682+00:00",
   "status": {
-    "startedAt": "2026-11-16T11:15:53.365527+00:00",
+    "startedAt": "2026-11-16T11:49:06.180640+00:00",
     "filings424B4": 1907,
     "withTicker": 1456,
     "nonSpacListed": 1077,
@@ -1290,6 +1290,270 @@
         }
       }
     },
+    "byDealSize": {
+      "a:1000万ドル未満": {
+        "train": {
+          "day1": {
+            "n": 79,
+            "winRate": 0.253,
+            "avgRet": -0.0425,
+            "median": -0.0886
+          },
+          "nextOpen": {
+            "n": 79,
+            "winRate": 0.241,
+            "avgRet": -0.0096,
+            "median": -0.1145
+          },
+          "hold20": {
+            "n": 79,
+            "winRate": 0.19,
+            "avgRet": -0.2375,
+            "median": -0.3057
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 49,
+            "winRate": 0.347,
+            "avgRet": -0.0274,
+            "median": -0.0651
+          },
+          "nextOpen": {
+            "n": 49,
+            "winRate": 0.388,
+            "avgRet": -0.0188,
+            "median": -0.0671
+          },
+          "hold20": {
+            "n": 48,
+            "winRate": 0.375,
+            "avgRet": -0.0818,
+            "median": -0.0741
+          }
+        }
+      },
+      "b:1000万〜5000万ドル": {
+        "train": {
+          "day1": {
+            "n": 58,
+            "winRate": 0.431,
+            "avgRet": 0.185,
+            "median": -0.0391
+          },
+          "nextOpen": {
+            "n": 58,
+            "winRate": 0.397,
+            "avgRet": 0.1554,
+            "median": -0.0616
+          },
+          "hold20": {
+            "n": 58,
+            "winRate": 0.241,
+            "avgRet": -0.1426,
+            "median": -0.2178
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 37,
+            "winRate": 0.324,
+            "avgRet": 0.0255,
+            "median": -0.0918
+          },
+          "nextOpen": {
+            "n": 37,
+            "winRate": 0.27,
+            "avgRet": 0.0091,
+            "median": -0.059
+          },
+          "hold20": {
+            "n": 37,
+            "winRate": 0.297,
+            "avgRet": -0.1688,
+            "median": -0.2202
+          }
+        }
+      },
+      "c:5000万〜2億ドル": {
+        "train": {
+          "day1": {
+            "n": 34,
+            "winRate": 0.441,
+            "avgRet": -0.0179,
+            "median": -0.0025
+          },
+          "nextOpen": {
+            "n": 34,
+            "winRate": 0.5,
+            "avgRet": 0.0007,
+            "median": 0.0011
+          },
+          "hold20": {
+            "n": 34,
+            "winRate": 0.5,
+            "avgRet": 0.4284,
+            "median": 0.0118
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 47,
+            "winRate": 0.426,
+            "avgRet": 0.0014,
+            "median": -0.002
+          },
+          "nextOpen": {
+            "n": 47,
+            "winRate": 0.404,
+            "avgRet": 0.0153,
+            "median": -0.0088
+          },
+          "hold20": {
+            "n": 45,
+            "winRate": 0.378,
+            "avgRet": 0.0198,
+            "median": -0.0493
+          }
+        }
+      },
+      "d:2億ドル以上": {
+        "train": {
+          "day1": {
+            "n": 47,
+            "winRate": 0.383,
+            "avgRet": -0.0063,
+            "median": -0.0129
+          },
+          "nextOpen": {
+            "n": 47,
+            "winRate": 0.426,
+            "avgRet": -0.0068,
+            "median": -0.0163
+          },
+          "hold20": {
+            "n": 47,
+            "winRate": 0.468,
+            "avgRet": 0.0012,
+            "median": -0.0101
+          }
+        },
+        "test": {
+          "day1": {
+            "n": 92,
+            "winRate": 0.446,
+            "avgRet": -0.0037,
+            "median": -0.003
+          },
+          "nextOpen": {
+            "n": 92,
+            "winRate": 0.413,
+            "avgRet": 0.0142,
+            "median": -0.0086
+          },
+          "hold20": {
+            "n": 91,
+            "winRate": 0.495,
+            "avgRet": -0.0165,
+            "median": -0.0042
+          }
+        }
+      }
+    },
+    "closeBuyByDay1DollarVolume": {
+      "a:1000万ドル未満": {
+        "train": {
+          "closeToNextOpen": {
+            "n": 115,
+            "winRate": 0.461,
+            "avgRet": 0.0202,
+            "median": -0.002
+          },
+          "closeHold20": {
+            "n": 115,
+            "winRate": 0.322,
+            "avgRet": 0.0258,
+            "median": -0.1129
+          }
+        },
+        "test": {
+          "closeToNextOpen": {
+            "n": 99,
+            "winRate": 0.394,
+            "avgRet": 0.0148,
+            "median": -0.0107
+          },
+          "closeHold20": {
+            "n": 98,
+            "winRate": 0.378,
+            "avgRet": -0.0077,
+            "median": -0.0786
+          }
+        }
+      },
+      "b:1000万〜1億ドル": {
+        "train": {
+          "closeToNextOpen": {
+            "n": 116,
+            "winRate": 0.345,
+            "avgRet": -0.0129,
+            "median": -0.0216
+          },
+          "closeHold20": {
+            "n": 116,
+            "winRate": 0.388,
+            "avgRet": -0.0954,
+            "median": -0.0872
+          }
+        },
+        "test": {
+          "closeToNextOpen": {
+            "n": 118,
+            "winRate": 0.331,
+            "avgRet": -0.0096,
+            "median": -0.0174
+          },
+          "closeHold20": {
+            "n": 114,
+            "winRate": 0.395,
+            "avgRet": -0.033,
+            "median": -0.0442
+          }
+        }
+      },
+      "c:1億ドル以上": {
+        "train": {
+          "closeToNextOpen": {
+            "n": 52,
+            "winRate": 0.404,
+            "avgRet": 0.0167,
+            "median": -0.003
+          },
+          "closeHold20": {
+            "n": 52,
+            "winRate": 0.481,
+            "avgRet": -0.101,
+            "median": -0.007
+          }
+        },
+        "test": {
+          "closeToNextOpen": {
+            "n": 98,
+            "winRate": 0.357,
+            "avgRet": 0.0046,
+            "median": -0.0081
+          },
+          "closeHold20": {
+            "n": 98,
+            "winRate": 0.398,
+            "avgRet": -0.0396,
+            "median": -0.056
+          }
+        }
+      }
+    },
+    "dealParsed": 443,
+    "caution": "初値の水準（byPrice）と公開価格からの上げ幅（byPop）は、上場後の株式併合で日足の値段が調整されている銘柄があり当てにならない。売買代金と募集額（公開価格×株数）は併合の影響を受けない",
     "bigMovers": {
       "count": 28,
       "rule": "初日に初値→引けで+50%以上",
