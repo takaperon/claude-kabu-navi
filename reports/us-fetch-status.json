@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-14T22:48:07.894Z",
+  "startedAt": "2026-11-16T02:08:36.241Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
@@ -12,9 +12,9 @@
     "needed": 17
   },
   "sec": {
-    "requests": 1004,
+    "requests": 502,
     "submissions": 502,
-    "facts": 502,
+    "facts": 0,
     "failed": 0,
     "lastError": null,
     "probe": [
@@ -23,20 +23,19 @@
         "status": 200,
         "body": "ok"
       }
-    ],
-    "newEarnings": 1
+    ]
   },
   "av": {
     "keyPresent": true,
     "requests": 25,
-    "stored": 305,
+    "stored": 330,
     "failed": 0,
     "limitHit": false,
     "lastError": null,
-    "needed": 222
+    "needed": 197
   },
   "stoppedBy": "done",
-  "finishedAt": "2026-11-14T22:57:13.159Z",
+  "finishedAt": "2026-11-16T02:15:45.104Z",
   "pricesStored": 500,
   "secStored": 502
 }
