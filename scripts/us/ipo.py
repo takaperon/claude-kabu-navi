@@ -91,7 +91,8 @@ def bars(sym):
                 else:
                     d = str(tv)[:10]
                 o, c = float(b.get("open") or 0), float(b.get("close") or 0)
-                if o > 0 and c > 0: out.append((d, o, c))
+                v = float(b.get("volume") or 0)
+                if o > 0 and c > 0: out.append((d, o, c, v))
             out.sort()
             return out
         except Exception as e:
@@ -116,9 +117,9 @@ for c in kept:
 status.update({"barFails": fails, "notIpo": notIpo, "ipos": len(ipos)})
 
 # ---------- 4) 売買ルール ----------
-dates_all = sorted({d for x in ipos for d, _, _ in x["b"]})
+dates_all = sorted({x2[0] for x in ipos for x2 in x["b"]})
 split_date = dates_all[int(len(dates_all) * 0.6)] if dates_all else "2025-01-01"
-spy_c = {d: c for d, o, c in spy}
+spy_c = {r[0]: r[2] for r in spy}
 
 def oc(o, c): return (c * (1 - SLIP)) / (o * (1 + SLIP)) - 1
 def run(name, fn):
@@ -157,12 +158,104 @@ runs = {
     "day21_open_hold20": run("上場1か月後の寄りで買って20日持つ", lambda b: (b[21][0], hold(b, 21, 20)) if len(b) > 41 else None),
     "day1_up_hold20": run("初日に初値より上で引けた銘柄を、2日目の寄りで買って20日持つ", lambda b: (b[1][0], hold(b, 1, 20)) if b[0][2] > b[0][1] else None),
 }
+# ---------- 5) 跳ねた要因の分析（2026-11-16 オーナーの指摘「跳ねた要因は何だったのか」） ----------
+# 各IPOの特徴（買う時点で分かるもの）ごとに、初日（初値→引け）と20日（初値→20日目の引け）の成績を分ける
+# 特徴：初値の水準・業種・上場年・その時のS&P500の調子（前日終値が200日平均より上か）・上場前の公開価格（424B4から読む）に対する初値の上げ幅
+spy_d = [r[0] for r in spy]; spy_cl = [r[2] for r in spy]
+def spy_up(d):
+    k = max((i for i, x in enumerate(spy_d) if x < d), default=None)
+    if k is None or k < 199: return None
+    return spy_cl[k] > sum(spy_cl[k - 199:k + 1]) / 200
+
+def offer_price(cik, d424):
+    # 424B4 の表紙の「public offering price ... $xx.xx per share」を読む（読めなければ None）
+    try:
+        idx = json.loads(sec_get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json"))
+        rec = idx.get("filings", {}).get("recent", {})
+        for f, fd, acc, doc in zip(rec.get("form", []), rec.get("filingDate", []), rec.get("accessionNumber", []), rec.get("primaryDocument", [])):
+            if f != "424B4" or fd != d424: continue
+            html = sec_get(f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc.replace('-', '')}/{doc}").decode("latin-1")
+            txt = re.sub(r"<[^>]+>", " ", html[:400000]); txt = re.sub(r"&nbsp;|&#160;", " ", txt); txt = re.sub(r"\s+", " ", txt)
+            m = re.search(r"(?:initial )?public offering price[^$]{0,120}\$\s?(\d{1,4}(?:\.\d{1,2})?)\s*per (?:share|ADS|American Depositary)", txt, re.I) \
+                or re.search(r"offering price (?:of|is) \$\s?(\d{1,4}(?:\.\d{1,2})?)", txt, re.I)
+            return float(m.group(1)) if m else None
+    except Exception:
+        return None
+    return None
+
+offer_ok = 0
+for x in ipos:
+    b = x["b"]
+    x["d1"] = oc(b[0][1], b[0][2])
+    x["h20"] = hold(b, 0, 20)
+    x["o2o"] = (b[1][1] * (1 - SLIP)) / (b[0][1] * (1 + SLIP)) - 1
+    x["spyUp"] = spy_up(x["first"])
+    op = offer_price(x["cik"], x["d424"])
+    if op and not (0.1 < b[0][1] / op < 20): op = None  # 読み違い（ワラント価格など）を除く
+    x["pop"] = (b[0][1] / op - 1) if op else None
+    x["offer"] = op
+    if op: offer_ok += 1
+status["offerPriceParsed"] = offer_ok
+
+def summ2(a):
+    a = [r for r in a if r is not None and r == r]
+    if not a: return {"n": 0}
+    s = sorted(a)
+    return {"n": len(a), "winRate": round(sum(1 for r in a if r > 0) / len(a), 3), "avgRet": round(sum(a) / len(a), 4), "median": round(statistics.median(a), 4)}
+
+def group(keyfn):
+    g = {}
+    for x in ipos:
+        k = keyfn(x)
+        if k is None: continue
+        half = "train" if x["first"] < split_date else "test"
+        g.setdefault(k, {"train": [], "test": []})[half].append(x)
+    return {k: {h: {"day1": summ2([x["d1"] for x in v[h]]), "nextOpen": summ2([x["o2o"] for x in v[h]]), "hold20": summ2([x["h20"] for x in v[h]])} for h in ("train", "test")} for k, v in sorted(g.items())}
+
+def px_bucket(x):
+    o = x["offer"] or x["b"][0][1]
+    return "a:5ドル未満" if o < 5 else "b:5〜10ドル" if o < 10 else "c:10〜20ドル" if o < 20 else "d:20ドル以上"
+def pop_bucket(x):
+    p = x["pop"]
+    if p is None: return None
+    return "a:公開価格より下で初値" if p < 0 else "b:0〜+20%" if p < 0.2 else "c:+20〜50%" if p < 0.5 else "d:+50〜100%" if p < 1 else "e:+100%以上"
+def sector(x):
+    s = x.get("sic", "").lower()
+    if any(w in s for w in ("pharmaceutical", "biological", "medical", "surgical", "diagnostic", "health")): return "医薬・医療"
+    if any(w in s for w in ("software", "computer", "data processing", "semiconductor", "electronic", "prepackaged")): return "IT・半導体"
+    if any(w in s for w in ("bank", "finance", "insurance", "investment", "credit", "real estate", "security brokers")): return "金融・不動産"
+    if any(w in s for w in ("retail", "eating", "apparel", "food", "beverage", "hotel", "amusement")): return "小売・消費"
+    return "その他"
+def dollar_vol(x):  # 初日の売買代金（初日の引けで分かる。翌朝売り・20日持ちの判断用）
+    v = x["b"][0][3] * x["b"][0][2]
+    return None if not v else "a:1000万ドル未満" if v < 1e7 else "b:1000万〜1億ドル" if v < 1e8 else "c:1億ドル以上"
+
+# 大化け（初日+50%以上）とそれ以外で、特徴の割合を比べる
+big = [x for x in ipos if x["d1"] >= 0.5]
+def share(a, fn):
+    out = {}
+    for x in a:
+        k = fn(x); out[k] = out.get(k, 0) + 1
+    return {k: round(v / len(a), 3) for k, v in sorted(out.items(), key=lambda kv: str(kv[0]))} if a else {}
+factors = {
+    "note": "買う時点で分かる特徴ごとの成績（初日=初値→引け、nextOpen=初値→2日目の寄り、hold20=初値→20日目の引け。滑り片道0.1%）。公開価格は424B4の表紙から読めたものだけ",
+    "byPrice": group(px_bucket), "byPop": group(pop_bucket), "bySector": group(sector), "byYear": group(lambda x: x["first"][:4]),
+    "bySpyTrend": group(lambda x: None if x["spyUp"] is None else ("S&P500が200日平均より上" if x["spyUp"] else "S&P500が200日平均より下")),
+    "byDay1DollarVolume": group(dollar_vol),
+    "bigMovers": {"count": len(big), "rule": "初日に初値→引けで+50%以上",
+                  "priceShare": share(big, px_bucket), "priceShareAll": share(ipos, px_bucket),
+                  "sectorShare": share(big, sector), "sectorShareAll": share(ipos, sector),
+                  "list": [{"t": x["t"], "first": x["first"], "sector": sector(x), "price": px_bucket(x)[2:], "day1Pct": round(x["d1"] * 100, 1),
+                            "hold20Pct": None if x["h20"] is None else round(x["h20"] * 100, 1)} for x in sorted(big, key=lambda x: -x["d1"])[:30]]},
+}
+
 # 比較：同じ日にS&P500を寄り→引け／引け→翌朝 で持った平均（滑りなし）
 out = {
     "generatedAt": datetime.now(timezone.utc).isoformat(), "status": status,
     "period": {"from": dates_all[0] if dates_all else None, "split": split_date, "to": dates_all[-1] if dates_all else None},
     "note": "今も上場している米国IPOだけ（廃止は含まない）・SPAC除外・ウィブルの日足（Nasdaq Basic）・滑り片道0.1%",
     "runs": runs,
+    "factors": factors,
     "byYear": {y: sum(1 for x in ipos if x["first"].startswith(y)) for y in sorted({x["first"][:4] for x in ipos})},
 }
 json.dump(out, open("reports-out/us-ipo.json", "w"), ensure_ascii=False, indent=2)
