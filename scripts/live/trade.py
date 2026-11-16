@@ -136,6 +136,22 @@ try:
             time.sleep(5)
         return None, None, "timeout"
 
+    def pos_qty(symbol):
+        r = trade.account_v2.get_account_position(aid)
+        if r.status_code != 200: return None
+        j = r.json()
+        items = j if isinstance(j, list) else (j.get("holdings") or j.get("positions") or j.get("items") or j.get("data") or [])
+        if items and isinstance(items[0], dict):
+            pub["positionKeys"] = sorted(items[0].keys())[:40]  # 項目名だけ（値は出さない）
+        for it in items:
+            sym = it.get("symbol") or (it.get("instrument") or {}).get("symbol") or (it.get("ticker") or {}).get("symbol")
+            if str(sym).upper() != symbol: continue
+            for k in ("available_quantity", "available_qty", "sellable_quantity", "quantity", "qty", "position", "holding_quantity"):
+                v = num(it.get(k))
+                if v is not None:
+                    pub.setdefault("positionQtyKey", k); return v
+        return 0.0
+
     # ---------- 新しい取引日：保有日数を1つ進める ----------
     new_day = st.get("lastRunDate") != today
     if new_day:
@@ -161,6 +177,8 @@ try:
     used = sum(p["qty"] * (p.get("entryPx") or 0) for p in st["positions"])
     budget_left = max(0.0, MAX_USD - used)
     equity = pv + budget_left  # このシステムが預かっている分（上限内）だけで測る
+    if st.get("maxUsdSeen") != MAX_USD:  # 上限を変えた時は、損益の基準も新しい上限で測り直す（200→180の変更で-10%と出ていた）
+        st["maxUsdSeen"] = MAX_USD; st["startEquity"] = MAX_USD; st["lastEquity"] = None
     if new_day:
         if st.get("startEquity") is None: st["startEquity"] = MAX_USD
         stop_buys = st.get("lastEquity") and equity < st["lastEquity"] * (1 - LOSS_STOP)
@@ -173,7 +191,12 @@ try:
     # ---------- 売り：保有日数に達したもの ----------
     for p in list(st["positions"]):
         if p["held"] < p["hold"] or n_orders >= MAX_ORDERS: continue
-        cid = place(p["t"], "SELL", f"{p['qty']:.4f}".rstrip("0").rstrip("."), f"{p['hold']}取引日たった")
+        sq = p["qty"]
+        if mode == "live":  # 売る数量は口座の「売れる数量」を超えないように（2026-11-17 のテストで約定数量より少なかった）
+            have = pos_qty(p["t"])
+            if have is not None: sq = min(sq, have)
+            if not sq or sq <= 0: pub["notes"].append(f"{p['t']}：口座に売れる数量がありません"); continue
+        cid = place(p["t"], "SELL", f"{math.floor(sq * 10000) / 10000:.4f}".rstrip("0").rstrip("."), f"{p['hold']}取引日たった")
         n_orders += 1
         if mode == "live":
             q, px, s = filled(cid)
@@ -187,7 +210,9 @@ try:
     # ---------- 買い：仮想売買の「今夜買う」銘柄 ----------
     paper = json.load(open(PAPER_F)) if os.path.exists(PAPER_F) else {}
     hold = int((paper.get("settings") or {}).get("hold") or 20)
+    late = NY_HM >= "10:30"  # 仮想売買は「寄り付きで買う」前提。寄りから大きく離れた時間には買わない（定期実行が遅れた時・設定変更で動いた時）
     for b in paper.get("nextBuys", []):
+        if late and mode != "dry": pub["skipped"].append({"t": b["t"], "why": "寄り付きから時間がたっている（NY 10:30以降）"}); continue
         if stop_buys: pub["skipped"].append({"t": b["t"], "why": "1日の損失上限"}); continue
         if len(st["positions"]) >= MAX_POS: pub["skipped"].append({"t": b["t"], "why": "10銘柄まで"}); continue
         if n_orders >= MAX_ORDERS: pub["skipped"].append({"t": b["t"], "why": "1日の注文数の上限"}); continue
@@ -282,22 +307,6 @@ try:
     # ---------- テスト：SPYを5ドル分買って、すぐ売る（つながるかの確認） ----------
     # 2026-11-17：初回は買いが約定したが、売りで「保有数量を超えている」（417）。約定数量の読み違いか、端株の反映待ち。
     # 売る数量は口座の保有（get_account_position）から読み、テストで買った分（約5ドル）を超えない分だけ売る
-    def pos_qty(symbol):
-        r = trade.account_v2.get_account_position(aid)
-        if r.status_code != 200: return None
-        j = r.json()
-        items = j if isinstance(j, list) else (j.get("holdings") or j.get("positions") or j.get("items") or j.get("data") or [])
-        if items and isinstance(items[0], dict):
-            pub["positionKeys"] = sorted(items[0].keys())[:40]  # 項目名だけ（値は出さない）
-        for it in items:
-            sym = it.get("symbol") or (it.get("instrument") or {}).get("symbol") or (it.get("ticker") or {}).get("symbol")
-            if str(sym).upper() != symbol: continue
-            for k in ("available_quantity", "available_qty", "sellable_quantity", "quantity", "qty", "position", "holding_quantity"):
-                v = num(it.get(k))
-                if v is not None:
-                    pub.setdefault("positionQtyKey", k); return v
-        return 0.0
-
     if mode == "test" and not st.get("testDone"):
         spx = price("SPY") or 0
         have = pos_qty("SPY")

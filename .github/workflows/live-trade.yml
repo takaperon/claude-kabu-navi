@@ -5,6 +5,7 @@ name: live-trade
 on:
   schedule:
     - cron: '50 14 * * 1-5'
+    - cron: '12 15 * * 1-5'  # 予備（1回目が飛ばされた時用。同じ日に2回動いても、買った銘柄・売った銘柄は重ねない）
   workflow_dispatch:
     inputs:
       mode:
