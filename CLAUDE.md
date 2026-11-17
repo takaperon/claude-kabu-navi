@@ -9,6 +9,10 @@
 - KITAICHI・KYOTEI・格差ナビには触らない
 
 ## データの扱い（公開リポジトリなので厳守）
+- **本物のお金の情報は公開しない（2026-11-18 オーナーの指示「全部隠して。筒抜けにしないで」）**：金額・上限額・損益・保有は平文でコミット・ログ・公開ファイルに出さない。
+  メモやコミット文にも金額を書かない。2026-12 にリポジトリを非公開にする予定（オーナー）
+  reports ブランチの過去の live.json は履歴ごと削除済み（2026-11-18 強制push）。main の過去のコミットには少額の上限額が残る（別セッションが同時に push しているため書き換えは見送り。非公開化で解消）。
+  reports ブランチは強制pushしたので、古いローカルの reports から push・pull --rebase しない（必ず fetch し直してから）
 - データ源：J-Quants API V2（ライトプラン：過去5年・遅延なし、1分60リクエストまで）
 - APIキーは GitHub Secrets の `JQUANTS_API_KEY` のみ。コード・ログ・コミットに絶対出さない
 - **株価などJ-Quantsの生データはリポジトリにコミットしない**（再配布にならないように）。
@@ -61,12 +65,12 @@
   日本株APIの注文は成行・指値のみ（逆指値・寄付/引け指定なし）、通常取引時間内のみ。売りは15:25〜15:30（引けの板寄せ）に成行で出して引け値に近づける想定
 - 100株単位の検証：fetch.mjs が data/raw/{date}.json（調整前の始値・終値）も保存。backtest.mjs の lotSim（資金30万〜300万×最大銘柄数1〜10）
 - ウィブルAPIのマーケットデータ（株価）は購読が必要で403。決算予定・配当予定・EPS予想（前後半年）は取れる
-- **本番エンジン（2026-11-15〜、オーナーの指示で米国株3万円から）**：scripts/live/trade.py ＋ .github/workflows/live-trade.yml（平日 14:50 UTC＝米国の取引開始後）。
-  設定は live/config.json（enabled／mode=dry・test・live／maxUsd=180（3万円＝約186ドル）／dailyLossStopPct=5／maxErrors=3／resetHalt）。iPhoneのGitHub画面で編集して止められる。
+- **本番エンジン（2026-11-15〜、オーナーの指示で米国株・少額から）**：scripts/live/trade.py ＋ .github/workflows/live-trade.yml（平日 14:50 UTC＝米国の取引開始後）。
+  設定は live/config.json（enabled／mode=dry・test・live／使うお金の上限は公開しない（Secrets の LIVE_MAX_USD。無いと売買しない）／dailyLossStopPct=5／maxErrors=3／resetHalt）。iPhoneのGitHub画面で編集して止められる。
   信号は reports/us-paper.json の nextBuys と settings.hold。売りは保有日数に達した翌取引日の寄り付き後（仮想は引け）。空き資金はSPY（2026-11-17〜）。
   注文：order_v3、market US、MARKET、CORE、entrust_type QTY（端数4桁）、account_tax_type SPECIFIC（必須。無いと417）。値段は1株の preview の estimated_cost で取る（株価データは購読が要るため）。
-  AMOUNT（金額指定）は preview で 0 が返り項目名不明なので使わない。状態は Actions キャッシュ webull-live-（WEBULL_APP_SECRET で暗号化）。公開 reports/live.json は銘柄・損益率・件数だけ
-- 2026-11-17 01:10 JST 接続テスト成功（SPY 5ドル：買い・売りとも FILLED）→ mode=live で本番開始。初回の売りは約定数量で出して417（保有数量超え）。
+  AMOUNT（金額指定）は preview で 0 が返り項目名不明なので使わない。状態は Actions キャッシュ webull-live-（WEBULL_APP_SECRET で暗号化）。公開は reports/live.enc（Secrets の LIVE_VIEW_PASS で暗号化、scripts/live/seal.sh。アプリで合言葉を入れて復号）。合言葉が無い時は reports/live.min.json（状態だけ）
+- 2026-11-17 01:10 JST 接続テスト成功（SPY 少額：買い・売りとも FILLED）→ mode=live で本番開始。初回の売りは約定数量で出して417（保有数量超え）。
   売る数量は口座の get_account_position の available_quantity を上限にする。NY 10:30以降は新しく買わない。定期実行は 14:50 と予備 15:12 UTC（11/16 は 14:50 が飛ばされた）。
   特別注文（config の special：1回だけ指値で買い翌日の寄りで売る）の仕組みあり（ANT用に作ったがオーナー判断で取りやめ）
 - 2026-11-17 空いているお金をSPYに置く（config の idleSpy、オーナーOK）。買う株が出たらSPYを必要分だけ売る。SPYの数量は口座の保有（available_quantity・cost_price）で確かめる。

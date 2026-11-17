@@ -397,6 +397,42 @@ async function getJSON(path) {
   return r.json();
 }
 
+// ---------- 本物の口座：合言葉で暗号化された成績を開く（2026-11-18〜） ----------
+// reports/live.enc は openssl enc -aes-256-cbc -pbkdf2 -iter 200000 -md sha256 -salt -a の形式（scripts/live/seal.sh）
+async function openSealed(b64, pass) {
+  const raw = Uint8Array.from(atob(b64.trim()), (c) => c.charCodeAt(0));
+  if (new TextDecoder().decode(raw.slice(0, 8)) !== 'Salted__') throw new Error('format');
+  const salt = raw.slice(8, 16), body = raw.slice(16);
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveBits']);
+  const bits = new Uint8Array(await crypto.subtle.deriveBits({ name: 'PBKDF2', salt, iterations: 200000, hash: 'SHA-256' }, base, 384));
+  const key = await crypto.subtle.importKey('raw', bits.slice(0, 32), 'AES-CBC', false, ['decrypt']);
+  const plain = await crypto.subtle.decrypt({ name: 'AES-CBC', iv: bits.slice(32, 48) }, key, body);
+  return JSON.parse(new TextDecoder().decode(plain));
+}
+async function getLive() {
+  let enc = null;
+  try {
+    const r = await fetch(RAW + 'reports/live.enc?t=' + Math.floor(Date.now() / 60000), { cache: 'no-store' });
+    if (r.ok) enc = await r.text();
+  } catch {}
+  if (enc) {
+    let pass = null;
+    try { pass = localStorage.getItem('livePass'); } catch {}
+    if (!pass) return { locked: true };
+    try { return await openSealed(enc, pass); }
+    catch { try { localStorage.removeItem('livePass'); } catch {} return { locked: true, wrong: true }; }
+  }
+  try { return await getJSON('reports/live.min.json'); } catch { return null; }
+}
+async function unlockLive(ev) {
+  ev.preventDefault();
+  const v = ($('live-pass')?.value || '').trim();
+  if (!v) return;
+  try { localStorage.setItem('livePass', v); } catch {}
+  usLive = await getLive();
+  renderUS();
+}
+
 // ---------- 株券の地紋 ----------
 function drawGuilloche() {
   for (const id of ['guil', 'guil-us']) drawGuil($(id));
@@ -609,11 +645,20 @@ function renderUS() {
   $('us-say').innerHTML = say;
   // 本物の口座（少額）
   const L = usLive;
-  if (L && L.enabled) {
+  if (L && L.locked) {
+    $('us-live').innerHTML = `<div class="real" style="border-top-color:var(--up)">
+      <div class="hd"><b>本物の口座</b><span class="num flat">🔒</span></div>
+      <p>成績は合言葉で暗号化しています。${L.wrong ? '<span class="down">合言葉が違うようです。</span>' : 'GitHubのSecretsに登録した合言葉を入れると、このiPhoneで見られます。'}</p>
+      <form onsubmit="unlockLive(event)" style="display:flex;gap:6px"><input id="live-pass" type="password" autocomplete="current-password" placeholder="合言葉" style="flex:1;min-width:0;padding:8px;font:inherit"><button type="submit" style="padding:8px 14px;font:inherit">見る</button></form></div>`;
+  } else if (L && L.sealed === false) {
+    $('us-live').innerHTML = `<div class="real" style="border-top-color:var(--up)">
+      <div class="hd"><b>本物の口座</b></div>
+      <p>${L.status === 'halted' || L.halted ? '<span class="down">停止中</span>' : L.mode === 'live' ? '<span class="up">本番で動いています</span>' : '練習中'}・${esc(L.note || '')}</p></div>`;
+  } else if (L && L.enabled) {
     const state = L.status === 'halted' || L.halted ? '<span class="down">停止中</span>' : L.mode === 'live' ? '<span class="up">本番で動いています</span>' : L.mode === 'test' ? '接続テスト中' : '練習中（注文は出していません）';
     const rows = (L.holdings || []).map((h) => `<li><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日</small></span><span class="num ${cls(h.unrealPct ?? 0)}">${h.unrealPct != null ? sign(h.unrealPct) + '%' : '—'}</span></li>`).join('');
     $('us-live').innerHTML = `<div class="real" style="border-top-color:var(--up)">
-      <div class="hd"><b>本物の口座（3万円）</b><span class="num ${cls(L.returnPct ?? 0)}">${L.returnPct != null ? sign(L.returnPct) + '%' : ''}</span></div>
+      <div class="hd"><b>本物の口座</b><span class="num ${cls(L.returnPct ?? 0)}">${L.returnPct != null ? sign(L.returnPct) + '%' : ''}</span></div>
       <p>${state}・${md(L.date)}の実行${(L.orders || []).length ? `で注文${L.orders.length}件${L.mode !== 'live' ? '（出したことにしただけ）' : ''}` : '：注文なし'}${(L.notes || []).length ? '・' + L.notes.map(esc).join('・') : ''}</p>
       ${rows ? `<ul>${rows}</ul>` : ''}</div>`;
   }
@@ -849,7 +894,7 @@ async function main() {
     $('tab-home').innerHTML = `<p class="empty" style="margin-top:20px">データを読み込めませんでした。電波のよい場所で、もう一度開いてください。</p>`;
     return;
   }
-  const [bt, idx, us, ub, lv, mj, mu] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json'), getJSON('reports/us-backtest.json'), getJSON('reports/live.json'), getJSON('reports/movers-jp.json'), getJSON('reports/movers-us.json')]);
+  const [bt, idx, us, ub, lv, mj, mu] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json'), getJSON('reports/us-backtest.json'), getLive(), getJSON('reports/movers-jp.json'), getJSON('reports/movers-us.json')]);
   renderMovers('movers-jp', mj.status === 'fulfilled' ? mj.value : null, true);
   renderMovers('movers-us', mu.status === 'fulfilled' ? mu.value : null, false);
   usPaper = us.status === 'fulfilled' ? us.value : null;

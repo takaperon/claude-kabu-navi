@@ -1,10 +1,10 @@
-# 本番の自動売買（米国株・少額）。2026-11-15〜、オーナーの指示で3万円から。
+# 本番の自動売買（米国株・少額）。2026-11-15〜、オーナーの指示で少額から。
 # 仮想売買（scripts/us/paper.mjs）と同じ信号で、ウィブル証券に本物の注文を出す。
 #
 # 安全装置（どれか1つでも当てはまれば新しく買わない）
 #   1) live/config.json の enabled が true でないと何もしない（iPhoneのブラウザで false にすれば即停止）
 #   2) mode が "dry" のあいだは注文を出さず、出す予定の注文を記録するだけ
-#   3) 使うお金の上限 maxUsd（初期200ドル≒3万円）。1銘柄はその10%まで、同時に最大10銘柄
+#   3) 使うお金の上限（Secrets の LIVE_MAX_USD）。1銘柄はその10%まで、同時に最大10銘柄
 #   4) 1日の損失上限：前回より dailyLossStopPct% 以上減っていたら、その日は新規の買いをしない（売りはする）
 #   5) エラーが maxErrors 回続いたら halted（停止）にして、以後は何もしない。解除は config の resetHalt を true に
 #   6) 1回の実行で出す注文は最大10件（申請時の申告「1日10注文未満」に合わせる）
@@ -36,7 +36,7 @@ pub = {"runAt": datetime.now(timezone.utc).isoformat(), "date": today, "mode": N
 def save_pub():
     with open("reports-out/live.json", "w") as f:
         json.dump(pub, f, ensure_ascii=False, indent=2)
-    print(json.dumps({k: pub[k] for k in ("date", "mode", "status", "notes")}, ensure_ascii=False))
+    print(json.dumps({k: pub[k] for k in ("date", "mode", "status")}, ensure_ascii=False))  # 公開ログには状態だけ（中身は暗号化して公開）
 
 st = json.load(open(STATE_F)) if os.path.exists(STATE_F) else {"positions": [], "closed": [], "errors": 0, "halted": False, "lastEquity": None, "startEquity": None, "lastRunDate": None, "testDone": False}
 
@@ -69,7 +69,13 @@ NY_HM = _ny.strftime("%H:%M")
 if mode != "dry" and not ("09:30" <= NY_HM < "16:00"):  # 取引時間外は注文しない（設定の変更で動いた時など）
     pub["notes"].append(f"米国の取引時間外（ニューヨーク {NY_HM}）なので何もしません"); finish("market-closed"); sys.exit(0)
 
-MAX_USD = float(CFG.get("maxUsd", 200))
+# 使うお金の上限は公開しない（2026-11-18）：GitHub Secrets の LIVE_MAX_USD から読む。
+# 無ければ config の maxUsd（移行用）。どちらも無い時は何もしない（売買を止めて知らせる）
+_cap = (os.environ.get("LIVE_MAX_USD") or "").strip() or CFG.get("maxUsd")
+try: MAX_USD = float(_cap) if _cap not in (None, "") else None
+except ValueError: MAX_USD = None
+if not MAX_USD or MAX_USD <= 0:
+    pub["notes"].append("使うお金の上限（Secrets の LIVE_MAX_USD）が未設定なので、売買しません"); finish("no-cap"); sys.exit(0)
 PER_POS = MAX_USD * 0.10
 MAX_POS = 10
 MAX_ORDERS = 10
@@ -208,7 +214,7 @@ try:
     used = sum(p["qty"] * (p.get("entryPx") or 0) for p in st["positions"])
     budget_left = max(0.0, MAX_USD - used - st.get("spyCost", 0.0))
     equity = pv + spy_val + budget_left  # このシステムが預かっている分（上限内）だけで測る
-    if st.get("maxUsdSeen") != MAX_USD:  # 上限を変えた時は、損益の基準も新しい上限で測り直す（200→180の変更で-10%と出ていた）
+    if st.get("maxUsdSeen") != MAX_USD:  # 上限を変えた時は、損益の基準も新しい上限で測り直す（上限を下げた時に損益が-10%と出ていた）
         st["maxUsdSeen"] = MAX_USD; st["startEquity"] = MAX_USD; st["lastEquity"] = None
     if new_day:
         if st.get("startEquity") is None: st["startEquity"] = MAX_USD
@@ -376,19 +382,19 @@ try:
         pub["idleSpy"] = {"inSpyPct": round(st["spyQty"] * (spx or 0) / MAX_USD * 100, 1),
                           "spyUnrealPct": round((st["spyQty"] * spx / st["spyCost"] - 1) * 100, 1) if (spx and st.get("spyCost")) else None}
 
-    # ---------- テスト：SPYを5ドル分買って、すぐ売る（つながるかの確認） ----------
+    # ---------- テスト：SPYを少額買って、すぐ売る（つながるかの確認） ----------
     # 2026-11-17：初回は買いが約定したが、売りで「保有数量を超えている」（417）。約定数量の読み違いか、端株の反映待ち。
-    # 売る数量は口座の保有（get_account_position）から読み、テストで買った分（約5ドル）を超えない分だけ売る
+    # 売る数量は口座の保有（get_account_position）から読み、テストで買った分（少額）を超えない分だけ売る
     if mode == "test" and not st.get("testDone"):
         spx = price("SPY") or 0
         have = pos_qty("SPY")
-        if not st.get("testBought") and have and spx and have * spx <= 6:  # 前回のテストで買って売れ残った分（5ドル程度）だけ
+        if not st.get("testBought") and have and spx and have * spx <= 6:  # 前回のテストで買って売れ残った分（少額）だけ
             st["testBought"] = True; st["testQty"] = have
             pub["notes"].append("前回のテストで買ったSPYが残っているので、売りだけ行います")
         if not st.get("testBought"):
             q5 = math.floor(5 / (spx or 1e9) * 10000) / 10000
             if q5 > 0:
-                cid = place("SPY", "BUY", f"{q5:.4f}".rstrip("0").rstrip("."), "接続テスト（5ドル）")
+                cid = place("SPY", "BUY", f"{q5:.4f}".rstrip("0").rstrip("."), "接続テスト（少額）")
                 q, fpx, s = filled(cid, 90)
                 pub["notes"].append(f"テストの買い：{s}")
                 if q:

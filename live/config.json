@@ -1,7 +1,6 @@
 {
   "enabled": true,
   "mode": "live",
-  "maxUsd": 180,
   "dailyLossStopPct": 5,
   "maxErrors": 3,
   "resetHalt": false,

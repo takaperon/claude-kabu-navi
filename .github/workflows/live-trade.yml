@@ -27,6 +27,8 @@ jobs:
     env:
       WEBULL_APP_KEY: ${{ secrets.WEBULL_APP_KEY }}
       WEBULL_APP_SECRET: ${{ secrets.WEBULL_APP_SECRET }}
+      LIVE_MAX_USD: ${{ secrets.LIVE_MAX_USD }}
+      LIVE_VIEW_PASS: ${{ secrets.LIVE_VIEW_PASS }}
       WEBULL_OPENAPI_TOKEN_DIR: .wbtoken
       LIVE_MODE: ${{ github.event.inputs.mode }}
       LIVE_STATE: .livestate/state.json
@@ -75,8 +77,11 @@ jobs:
       - name: publish
         if: always()
         run: |
+          [ -f reports-out/live.json ] || exit 0
+          bash scripts/live/seal.sh
           git fetch origin reports:reports && git worktree add rep reports
-          mkdir -p rep/reports && cp reports-out/live.json rep/reports/ 2>/dev/null || exit 0
+          mkdir -p rep/reports && rm -f rep/reports/live.json rep/reports/live.enc rep/reports/live.min.json
+          cp reports-out/live.enc reports-out/live.min.json rep/reports/ 2>/dev/null || true
           cd rep && git config user.name "kabunavi-bot" && git config user.email "kabunavi-bot@users.noreply.github.com"
           git add -A && git commit -q -m "live $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
           for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
