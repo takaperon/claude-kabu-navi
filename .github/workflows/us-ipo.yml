@@ -35,7 +35,7 @@ jobs:
           mkdir -p .wbtoken
           if [ -f wbtoken.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken.enc -out .wbtoken/token.txt; fi
       - name: ipo
-        run: python scripts/us/ipo.py
+        run: bash scripts/quiet.sh python scripts/us/ipo.py
       - name: publish
         if: always()
         run: |

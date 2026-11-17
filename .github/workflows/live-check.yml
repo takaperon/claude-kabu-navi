@@ -36,10 +36,10 @@ jobs:
           mkdir -p .wbtoken
           if [ -f wbtoken.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken.enc -out .wbtoken/token.txt && echo "token restored"; else echo "no token yet"; fi
       - name: check
-        run: python scripts/live/check.py
+        run: bash scripts/quiet.sh python scripts/live/check.py
       - name: movers (S&P500の値上がりランキング)
         continue-on-error: true
-        run: python scripts/live/movers.py
+        run: bash scripts/quiet.sh python scripts/live/movers.py
       - name: encrypt token
         if: always()
         run: |

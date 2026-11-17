@@ -3,7 +3,10 @@
 import json, logging, os, sys, time
 from datetime import datetime, timezone
 
-logging.basicConfig(level=logging.WARNING)  # SDKの詳細ログ（口座情報を含みうる）を出さない
+logging.basicConfig(level=logging.WARNING)
+# 2026-11-18：ウィブルSDKは独自のハンドラでエラー時にリクエスト全体（アクセストークン・口座ID）をログに出していた。
+# 公開リポジトリのActionsログは誰でも読めるので、ログ出力そのものを全部止める（自分の結果は print で出す）
+logging.disable(logging.CRITICAL)
 out = {"checkedAt": datetime.now(timezone.utc).isoformat(), "keyPresent": bool(os.getenv("WEBULL_APP_KEY")) and bool(os.getenv("WEBULL_APP_SECRET")),
        "tokenReady": False, "accounts": None, "accountTypes": None, "balanceOk": None, "positionsOk": None, "error": None}
 os.makedirs("reports-out", exist_ok=True)
@@ -71,8 +74,7 @@ try:
         except Exception as e:
             probes[name] = {"error": type(e).__name__, "msg": str(e)[:120]}
     md = data.market_data
-    probe("jp_daily_7203", lambda: md.get_history_bar("7203", "JP_STOCK", "D", count="1200"))
-    probe("jp_snapshot_7203", lambda: md.get_snapshot("7203", "JP_STOCK"))
+    # 日本株の株価（JP_STOCK）は購読なしで403が確定済み（2026-11-12）。毎回エラーになりSDKがリクエストをログに出すので外した
     probe("us_daily_AAPL", lambda: md.get_history_bar("AAPL", "US_STOCK", "D", count="1200"), rows=lambda j: (j.get("result") or [{}])[0].get("result", []))
     probe("us_snapshot_AAPL", lambda: md.get_snapshot("AAPL", "US_STOCK"))
     probe("us_daily_RDDT", lambda: md.get_history_bar("RDDT", "US_STOCK", "D", count="1200"), rows=lambda j: (j.get("result") or [{}])[0].get("result", []))  # 2024年上場（IPOの検証に使えるか）

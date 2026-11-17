@@ -58,7 +58,7 @@ jobs:
           if [ -f livestate.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in livestate.enc -out .livestate/state.json && echo "state restored"; fi
           git fetch -q origin reports && git show origin/reports:reports/us-paper.json > us-paper.json || echo "{}" > us-paper.json
       - name: trade
-        run: python scripts/live/trade.py
+        run: bash scripts/quiet.sh python scripts/live/trade.py
       - name: encrypt
         if: always()
         run: |

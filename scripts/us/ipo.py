@@ -10,6 +10,9 @@ from datetime import datetime, timezone, date, timedelta
 import urllib.request, gzip
 
 logging.basicConfig(level=logging.WARNING)
+# 2026-11-18：ウィブルSDKは独自のハンドラでエラー時にリクエスト全体（アクセストークン・口座ID）をログに出していた。
+# 公開リポジトリのActionsログは誰でも読めるので、ログ出力そのものを全部止める（自分の結果は print で出す）
+logging.disable(logging.CRITICAL)
 UA = f"ClaudeKabuNavi {os.environ.get('SEC_CONTACT_EMAIL', '').strip()}"
 SLIP = 0.001
 os.makedirs("reports-out", exist_ok=True)

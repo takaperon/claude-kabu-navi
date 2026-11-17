@@ -14,6 +14,9 @@ import json, logging, math, os, sys, time, uuid
 from datetime import datetime, timezone, timedelta
 
 logging.basicConfig(level=logging.WARNING)
+# 2026-11-18：ウィブルSDKは独自のハンドラでエラー時にリクエスト全体（アクセストークン・口座ID）をログに出していた。
+# 公開リポジトリのActionsログは誰でも読めるので、ログ出力そのものを全部止める（自分の結果は print で出す）
+logging.disable(logging.CRITICAL)
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CFG = json.load(open(os.path.join(ROOT, "live", "config.json")))
 STATE_F = os.environ.get("LIVE_STATE", ".livestate/state.json")

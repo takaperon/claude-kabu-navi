@@ -4,6 +4,9 @@
 import json, logging, os, re, time, urllib.request
 from datetime import datetime, timezone
 logging.basicConfig(level=logging.WARNING)
+# 2026-11-18：ウィブルSDKは独自のハンドラでエラー時にリクエスト全体（アクセストークン・口座ID）をログに出していた。
+# 公開リポジトリのActionsログは誰でも読めるので、ログ出力そのものを全部止める（自分の結果は print で出す）
+logging.disable(logging.CRITICAL)
 os.makedirs("reports-out", exist_ok=True)
 GICS_JA = {"Information Technology": "情報技術", "Health Care": "ヘルスケア", "Financials": "金融", "Consumer Discretionary": "一般消費財", "Communication Services": "通信サービス", "Industrials": "資本財", "Consumer Staples": "生活必需品", "Energy": "エネルギー", "Utilities": "公益", "Real Estate": "不動産", "Materials": "素材"}
 GICS = list(GICS_JA)
