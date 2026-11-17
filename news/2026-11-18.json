@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-18",
+ "status": "未検証",
+ "period": "2026-11-14〜2026-11-18 朝（11/14〜17 の調査は保存できず欠け）",
+ "note": "米国はソフトウェア株を中心に4日続落。NVIDIAは引け後の決算で予想を上回った。日本は値上がり上位の多くで材料を記事から確かめられなかった。",
+ "items": [
+  {
+   "headline": "米国株は4日続落、ソフトウェア株が大きく売られる",
+   "summary": "11/17 の米国市場はダウ -1.6%、S&P500 -1.0%、ナスダック -0.7%。Salesforce・Intuit・ServiceNowなどソフトウェア株が4〜9%下げた。記事は個別の悪材料ではなく思惑による売りとしている。",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ],
+   "eventDate": "2026-11-17",
+   "type": "マクロ",
+   "sectors": [
+    "情報･通信業"
+   ],
+   "stocks": [],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "NVIDIA 決算は市場予想を上回り、時間外で上昇",
+   "summary": "NVIDIA は 11/17 の引け後に決算を発表し、高い期待を上回った。時間外取引で一時3%ほど上げた。日本の半導体関連にも影響しうるが、向きは寄り付きまで分からない。",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ],
+   "eventDate": "2026-11-17",
+   "type": "マクロ",
+   "sectors": [
+    "電気機器"
+   ],
+   "stocks": [],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "Aiロボティクス、今期の営業利益予想を下方修正",
+   "summary": "11/13 の引け後に今期の営業利益予想を60億円に引き下げた。11/17 も大きく下げ、値下がり上位に入った。",
+   "sources": [
+    "https://s.kabutan.jp/news/n202611150061/"
+   ],
+   "eventDate": "2026-11-13",
+   "type": "企業発表",
+   "sectors": [
+    "化学"
+   ],
+   "stocks": [],
+   "horizon": "数日",
+   "confidence": "中"
+  }
+ ]
+}

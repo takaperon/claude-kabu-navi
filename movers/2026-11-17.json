@@ -1,0 +1,101 @@
+{
+ "date": "2026-11-17",
+ "note": "2026-11-18 朝の調査。米国は前日の取引時間中（NY 11時ごろ）のスナップショットの順位。理由は記事で確かめたものだけ、分からないものは「不明」",
+ "items": [
+  {
+   "market": "jp",
+   "code": "4888",
+   "pct": 22.7,
+   "cat": "不明",
+   "reason": "ストップ高。出来高が前日の約2倍。トレーダーズ・ウェブの銘柄ページに当日の材料の記事・開示は見当たらない",
+   "sources": [
+    "https://www.traders.co.jp/stocks/63_4888/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4547",
+   "pct": 12.5,
+   "cat": "不明",
+   "reason": "出来高が前日の約10倍。トレーダーズ・ウェブの銘柄ページに当日の材料の記事は見当たらない",
+   "sources": [
+    "https://www.traders.co.jp/stocks/4547/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "2334",
+   "pct": 18.8,
+   "cat": "不明",
+   "reason": "記事で理由を確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "247A",
+   "pct": -17.9,
+   "cat": "下方修正",
+   "reason": "11/13 の引け後に今期の営業利益の予想を60億円に下方修正（株探の好悪材料で悪材料）。11/17 も売られた",
+   "sources": [
+    "https://s.kabutan.jp/news/n202611150061/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "3905",
+   "pct": -25.2,
+   "cat": "不明",
+   "reason": "記事で理由を確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CRM",
+   "pct": -8.5,
+   "cat": "テーマ/思惑",
+   "reason": "米国のソフトウェア株が全面安（Salesforce -9.5%、Intuit -7.2%、ServiceNow -6.5%）。記事は「事実より思惑による売り」とし、個別の悪材料は挙げていない。S&P500は4日続落",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "NOW",
+   "pct": -6.4,
+   "cat": "テーマ/思惑",
+   "reason": "同上（ソフトウェア株の全面安）",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "INTU",
+   "pct": -6.2,
+   "cat": "テーマ/思惑",
+   "reason": "同上（ソフトウェア株の全面安）",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "AVGO",
+   "pct": 1.4,
+   "cat": "不明",
+   "reason": "終値では+2.5%。記事は理由を書いていない（NVIDIAの決算前）",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ],
+   "confidence": "低"
+  }
+ ]
+}

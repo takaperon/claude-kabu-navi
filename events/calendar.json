@@ -1,0 +1,29 @@
+{
+ "note": "前もって発表された日付の一覧（記事で日付を確かめたものだけ）",
+ "items": [
+  {
+   "date": "2026-11-18",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "上場",
+   "title": "Anthropic の新規上場（記事の予定）",
+   "announcedOn": "2026-11-17",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ]
+  },
+  {
+   "date": "2026-11-18",
+   "market": "us",
+   "t": null,
+   "name": "FOMC",
+   "type": "マクロ",
+   "title": "FOMC（10月会合）の議事要旨の公表",
+   "announcedOn": "2026-11-17",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ]
+  }
+ ]
+}
