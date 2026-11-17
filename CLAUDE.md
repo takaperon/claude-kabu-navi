@@ -109,6 +109,10 @@
 - 調査で読めるサイト（2026-11-11 テスト）：s.kabutan.jp（スマホ版。PC版 kabutan.jp は不可）、traders.co.jp、media-ir.com、oanda.jp、NHKの記事ページ、act1.co.jp、scan.netsecurity.ne.jp、security-next.com、米国は thestreet・gvwire・stocktitan。
   読めない：TDnet（robots.txtで禁止）、ロイター日本語版、日経、時事、みんかぶ、Yahoo!ニュース、fisco、Japan Times
 
+## 定期の調査・研究の動かし方（2026-11-17〜）
+- 定期タスク（新しいセッション）はこのリポジトリが sources に無く、push が git proxy で 403（add_repo ツールも無い）。11/14〜17 のニュースはこのため未保存
+- 毎朝のニュース調査・週次研究は、push できる元のチャット（セッション）で send_later を毎回予約し直して実行する。定期タスク2つは停止中（プロンプトは手順書として残す）
+
 ## 週次研究（2026-11-16〜、オーナーの指示「自己成長を続けて。違う角度で試すとか」）
 - 定期タスク「Claude株ナビ 週次研究」（毎週日曜 13:37 JST）：点検 → research/log.md の未着手の角度から1〜3個を検証 → 有望なら仮想売買に「試験中」で追加 → 記録・報告
 - 本物のお金の設定（live/config.json、scripts/live/trade.py）は研究では変えない。本番への反映は提案してオーナーの確認を取る
