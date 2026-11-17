@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-16T17:07:37.928052+00:00",
+  "checkedAt": "2026-11-17T05:15:21.490324+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -32,8 +32,8 @@
         "trading_session",
         "volume"
       ],
-      "from": "2022-02-03",
-      "to": "2026-11-13"
+      "from": "2022-02-04",
+      "to": "2026-11-16"
     },
     "us_snapshot_AAPL": {
       "status": 200,
@@ -58,7 +58,7 @@
     },
     "us_daily_RDDT": {
       "status": 200,
-      "rows": 666,
+      "rows": 667,
       "barKeys": [
         "close",
         "high",
@@ -69,7 +69,7 @@
         "volume"
       ],
       "from": "2024-03-21",
-      "to": "2026-11-13"
+      "to": "2026-11-16"
     },
     "us_earnings_AAPL": {
       "status": 200,
