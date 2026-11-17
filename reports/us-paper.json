@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-16T20:36:37.257Z",
+  "updatedAt": "2026-11-17T04:30:37.646Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
-    "idleNow": null,
-    "chosenAt": "2026-11-16T20:36:35.925Z",
+    "idleNow": "spy",
+    "chosenAt": "2026-11-17T04:30:36.023Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-13",
+  "lastDate": "2026-11-16",
   "capital": 300000,
-  "equityYen": 300000,
-  "returnPct": 0,
-  "spyReturnPct": 0,
+  "equityYen": 294265,
+  "returnPct": -1.9,
+  "spyReturnPct": -1.9,
   "idleInSpyPct": 100,
   "idlePct": 100,
   "taxYen": 0,
@@ -101,48 +101,6 @@
       "name": "Skydance",
       "date": "2026-11-10",
       "rePct": -7.6
-    },
-    {
-      "t": "VST",
-      "name": "Vistra Corp",
-      "date": "2026-11-09",
-      "rePct": 7.3
-    },
-    {
-      "t": "BEN",
-      "name": "Franklin Resources",
-      "date": "2026-11-09",
-      "rePct": 6.3
-    },
-    {
-      "t": "MRNA",
-      "name": "Moderna",
-      "date": "2026-11-09",
-      "rePct": 5.8
-    },
-    {
-      "t": "CHTR",
-      "name": "Charter Communications",
-      "date": "2026-11-09",
-      "rePct": 2.7
-    },
-    {
-      "t": "DTE",
-      "name": "DTE Energy",
-      "date": "2026-11-09",
-      "rePct": 2.4
-    },
-    {
-      "t": "PPL",
-      "name": "PPL Corporation",
-      "date": "2026-11-09",
-      "rePct": -0.3
-    },
-    {
-      "t": "HUM",
-      "name": "Humana",
-      "date": "2026-11-09",
-      "rePct": -2.4
     }
   ],
   "recentClosed": [],
@@ -150,16 +108,20 @@
     {
       "date": "2026-11-13",
       "value": 300000
+    },
+    {
+      "date": "2026-11-16",
+      "value": 294265
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-16T20:36:36.759Z",
+    "chosenAt": "2026-11-17T04:30:37.007Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 300000,
-    "returnPct": 0,
+    "equityYen": 294265,
+    "returnPct": -1.9,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
@@ -170,6 +132,10 @@
       {
         "date": "2026-11-13",
         "value": 300000
+      },
+      {
+        "date": "2026-11-16",
+        "value": 294265
       }
     ]
   }
