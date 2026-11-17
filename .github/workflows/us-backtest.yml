@@ -3,7 +3,7 @@ name: us-backtest
 on:
   push:
     branches: [main]
-    paths: ['scripts/us/backtest.mjs', 'scripts/us/pro.mjs', '.github/workflows/us-backtest.yml']
+    paths: ['scripts/us/backtest.mjs', 'scripts/us/pro.mjs', 'scripts/us/calendar.mjs', '.github/workflows/us-backtest.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -40,12 +40,15 @@ jobs:
       - name: pro (プロの判断の検証)
         continue-on-error: true
         run: node scripts/us/pro.mjs --data data-us --out reports-out
+      - name: calendar (決まった時期の動き)
+        continue-on-error: true
+        run: node scripts/us/calendar.mjs --data data-us --out reports-out
       - name: publish reports
         if: always()
         run: |
           git fetch origin reports:reports 2>/dev/null && git worktree add rep reports || git worktree add --orphan -b reports rep
           mkdir -p rep/reports
-          cp reports-out/us-backtest.json reports-out/pro-us.json rep/reports/ 2>/dev/null || true
+          for f in us-backtest pro-us calendar-us; do cp reports-out/$f.json rep/reports/ 2>/dev/null || true; done
           cd rep
           git config user.name "kabunavi-bot"
           git config user.email "kabunavi-bot@users.noreply.github.com"
