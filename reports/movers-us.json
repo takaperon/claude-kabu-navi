@@ -1,0 +1,197 @@
+{
+ "updatedAt": "2026-11-17T15:15:33.919882+00:00",
+ "error": null,
+ "universe": 502,
+ "batchOk": 25,
+ "single": 18,
+ "date": "2026-11-17",
+ "count": 500,
+ "note": "S&P500構成銘柄（Wikipediaの一覧）。ウィブルの相場情報（Nasdaq Basic）",
+ "avgPct": -0.25,
+ "up": 202,
+ "down": 270,
+ "gainers": [
+  {
+   "t": "RDDT",
+   "name": "Reddit",
+   "sector": "Communication Services",
+   "pct": 4.5
+  },
+  {
+   "t": "TSCO",
+   "name": "Tractor Supply",
+   "sector": "[[Tractor Supply]]",
+   "pct": 2.9
+  },
+  {
+   "t": "COHR",
+   "name": "Coherent Corp.",
+   "sector": "[[Coherent Corp.]]",
+   "pct": 2.7
+  },
+  {
+   "t": "NKE",
+   "name": "Nike, Inc.",
+   "sector": "[[Nike, Inc.]]",
+   "pct": 2.7
+  },
+  {
+   "t": "CHTR",
+   "name": "Charter Communications",
+   "sector": "[[Charter Communications]]",
+   "pct": 2.5
+  },
+  {
+   "t": "MCHP",
+   "name": "Microchip Technology",
+   "sector": "[[Microchip Technology]]",
+   "pct": 2.5
+  },
+  {
+   "t": "SYK",
+   "name": "Stryker Corporation",
+   "sector": "[[Stryker Corporation]]",
+   "pct": 2.5
+  },
+  {
+   "t": "DIS",
+   "name": "Walt Disney Company (The)",
+   "sector": "[[The Walt Disney Company|Walt Disney Company (The)]]",
+   "pct": 2.5
+  },
+  {
+   "t": "FIX",
+   "name": "Comfort Systems USA",
+   "sector": "[[Comfort Systems USA]]",
+   "pct": 2.3
+  },
+  {
+   "t": "DPZ",
+   "name": "Domino's",
+   "sector": "[[Domino's]]",
+   "pct": 2.3
+  },
+  {
+   "t": "ZBH",
+   "name": "Zimmer Biomet",
+   "sector": "[[Zimmer Biomet]]",
+   "pct": 2.3
+  },
+  {
+   "t": "DXCM",
+   "name": "Dexcom",
+   "sector": "[[Dexcom]]",
+   "pct": 2.1
+  },
+  {
+   "t": "MPWR",
+   "name": "Monolithic Power Systems",
+   "sector": "[[Monolithic Power Systems]]",
+   "pct": 1.9
+  },
+  {
+   "t": "NEM",
+   "name": "Newmont",
+   "sector": "[[Newmont]]",
+   "pct": 1.9
+  },
+  {
+   "t": "NUE",
+   "name": "Nucor",
+   "sector": "[[Nucor]]",
+   "pct": 1.9
+  },
+  {
+   "t": "CHRW",
+   "name": "C.H. Robinson",
+   "sector": "[[C.H. Robinson]]",
+   "pct": 1.8
+  },
+  {
+   "t": "PODD",
+   "name": "Insulet Corporation",
+   "sector": "[[Insulet Corporation]]",
+   "pct": 1.8
+  },
+  {
+   "t": "LYV",
+   "name": "Live Nation Entertainment",
+   "sector": "[[Live Nation Entertainment]]",
+   "pct": 1.8
+  },
+  {
+   "t": "LULU",
+   "name": "Lululemon Athletica",
+   "sector": "[[Lululemon|Lululemon Athletica]]",
+   "pct": 1.8
+  },
+  {
+   "t": "ROK",
+   "name": "Rockwell Automation",
+   "sector": "[[Rockwell Automation]]",
+   "pct": 1.8
+  }
+ ],
+ "losers": [
+  {
+   "t": "CRM",
+   "name": "Salesforce",
+   "sector": "[[Salesforce]]",
+   "pct": -7.1
+  },
+  {
+   "t": "DDOG",
+   "name": "Datadog",
+   "sector": "[[Datadog]]",
+   "pct": -5.0
+  },
+  {
+   "t": "WDAY",
+   "name": "Workday, Inc.",
+   "sector": "[[Workday, Inc.]]",
+   "pct": -4.8
+  },
+  {
+   "t": "UNH",
+   "name": "UnitedHealth Group",
+   "sector": "[[UnitedHealth Group]]",
+   "pct": -4.8
+  },
+  {
+   "t": "NOW",
+   "name": "ServiceNow",
+   "sector": "[[ServiceNow]]",
+   "pct": -4.7
+  },
+  {
+   "t": "INTU",
+   "name": "Intuit",
+   "sector": "[[Intuit]]",
+   "pct": -4.6
+  },
+  {
+   "t": "OKTA",
+   "name": "Okta, Inc.",
+   "sector": "[[Okta, Inc.]]",
+   "pct": -4.2
+  },
+  {
+   "t": "BE",
+   "name": "Bloom Energy",
+   "sector": "[[Bloom Energy]]",
+   "pct": -4.2
+  },
+  {
+   "t": "MRNA",
+   "name": "Moderna",
+   "sector": "[[Moderna]]",
+   "pct": -4.1
+  },
+  {
+   "t": "HUM",
+   "name": "Humana",
+   "sector": "[[Humana]]",
+   "pct": -4.1
+  }
+ ]
+}
