@@ -50,11 +50,17 @@ jobs:
       - name: news evaluation
         run: |
           git fetch -q --depth=1 origin reports && mkdir -p news-in && git archive FETCH_HEAD news | tar xf - -C news-in || echo "no news"
+          git archive FETCH_HEAD movers 2>/dev/null | tar xf - -C news-in 2>/dev/null || echo "no movers"
           node scripts/news-eval.mjs --data data --news news-in/news --out reports-out
+          node scripts/movers-eval.mjs --data data --movers news-in/movers --out reports-out || echo "movers-eval failed"
 
       - name: pro (プロの判断の検証。仮想売買が使う特徴の選び方も data/paper に保存)
         continue-on-error: true
         run: node scripts/pro.mjs --data data --out reports-out
+
+      - name: movers (本日の値上がりランキング)
+        continue-on-error: true
+        run: node scripts/movers.mjs --data data --out reports-out
 
       - name: encrypt data
         if: always()

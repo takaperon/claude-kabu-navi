@@ -109,6 +109,15 @@
 - 調査で読めるサイト（2026-11-11 テスト）：s.kabutan.jp（スマホ版。PC版 kabutan.jp は不可）、traders.co.jp、media-ir.com、oanda.jp、NHKの記事ページ、act1.co.jp、scan.netsecurity.ne.jp、security-next.com、米国は thestreet・gvwire・stocktitan。
   読めない：TDnet（robots.txtで禁止）、ロイター日本語版、日経、時事、みんかぶ、Yahoo!ニュース、fisco、Japan Times
 
+## 値上がりランキングと「上がった理由」の学習（2026-11-18〜、オーナーの要望）
+- 日本：scripts/movers.mjs（update.yml）→ reports/movers-jp.json（売買代金1億円以上・100円以上、上位20・下位10、前日〜当日の開示を印に）
+- 米国：scripts/live/movers.py（live-check.yml、毎朝08:40 JST）→ reports/movers-us.json（S&P500、ウィブルのスナップショットの前日比）
+- 理由の調査：毎朝のニュース調査で、前の取引日の値上がり上位10（日米）と値下がり上位5の理由を調べ、reports の movers/YYYY-MM-DD.json に
+  {date, items:[{market:'jp'|'us', code|t, pct, cat, reason, sources, confidence}]}。cat は 決算・上方修正・増配・自社株買い・提携/買収/TOB・新製品/受注・テーマ/思惑・
+  アナリスト評価・需給（指数採用など）・悪材料の出尽くし・不明 のどれか。本文を読めず理由が分からなければ「不明」（推測で埋めない）。値動きを見る前の時点の情報だけで書く
+- 学習：scripts/movers-eval.mjs（update.yml）→ reports/movers-eval.json。A) 過去5年の値上がり上位20を、開示の種類・上げ幅・翌朝の寄り付きで分け、次の日の寄りで買った後の1・5・20日（全銘柄平均との差）。
+  B) 調べた理由（cat）ごとに同じ成績を積み上げる。週次研究で読み、効く形があれば仮想売買の試験中に
+
 ## 定期の調査・研究の動かし方（2026-11-17〜）
 - 定期タスク（新しいセッション）はこのリポジトリが sources に無く、push が git proxy で 403（add_repo ツールも無い）。11/14〜17 のニュースはこのため未保存
 - 毎朝のニュース調査・週次研究は、push できる元のチャット（セッション）で send_later を毎回予約し直して実行する。定期タスク2つは停止中（プロンプトは手順書として残す）

@@ -91,6 +91,12 @@ h2 small{font-family:var(--gothic);font-weight:400;font-size:13px;color:var(--mu
 .real ul{list-style:none;margin:0;padding:0}
 .real li{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:6px 0;border-top:1px dashed var(--rule)}
 .real li small{color:var(--muted);margin-left:6px}
+.movers .tabs{display:flex;gap:6px;margin:4px 0 6px}
+.movers .tabs button{flex:1;border:1px solid var(--rule);background:transparent;border-radius:8px;padding:6px 0;font:inherit;font-size:13px;color:var(--muted)}
+.movers .tabs button[aria-pressed=true]{background:var(--ink);color:var(--paper,#fff);border-color:var(--ink)}
+.movers li .rk{display:inline-block;min-width:1.6em;color:var(--muted);font-variant-numeric:tabular-nums}
+.movers .morebtn{border:0;background:none;font:inherit;font-size:13px;color:var(--ink);text-decoration:underline dotted;padding:4px 8px}
+.movers .tag{font-size:11px;border:1px solid var(--c-div);color:var(--c-div);border-radius:4px;padding:0 4px;margin-left:6px;white-space:nowrap}
 .real button.link{border:none;background:none;padding:0;color:var(--gold);font-size:13px;cursor:pointer;margin-top:6px}
 .ranks{list-style:none;margin:0;padding:0;background:var(--sheet);border-radius:8px;box-shadow:var(--shadow)}
 .ranks li + li{border-top:1px solid var(--rule)}
@@ -233,6 +239,8 @@ section[hidden]{display:none}
 
     <div id="real"></div>
 
+    <div id="movers-jp"></div>
+
     <h2>ルールの順位<small>タップで説明</small></h2>
     <ul class="ranks" id="ranks"></ul>
 
@@ -276,6 +284,7 @@ section[hidden]{display:none}
     <div id="us-live"></div>
     <div id="us-pro"></div>
     <div class="say" id="us-say"></div>
+    <div id="movers-us"></div>
     <div class="trio" id="us-trio"></div>
     <h2>最近の決算の反応<small>条件を超えたら買い</small></h2>
     <div id="us-react"></div>
@@ -840,7 +849,9 @@ async function main() {
     $('tab-home').innerHTML = `<p class="empty" style="margin-top:20px">データを読み込めませんでした。電波のよい場所で、もう一度開いてください。</p>`;
     return;
   }
-  const [bt, idx, us, ub, lv] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json'), getJSON('reports/us-backtest.json'), getJSON('reports/live.json')]);
+  const [bt, idx, us, ub, lv, mj, mu] = await Promise.allSettled([getJSON('reports/backtest.json'), getJSON('news/index.json'), getJSON('reports/us-paper.json'), getJSON('reports/us-backtest.json'), getJSON('reports/live.json'), getJSON('reports/movers-jp.json'), getJSON('reports/movers-us.json')]);
+  renderMovers('movers-jp', mj.status === 'fulfilled' ? mj.value : null, true);
+  renderMovers('movers-us', mu.status === 'fulfilled' ? mu.value : null, false);
   usPaper = us.status === 'fulfilled' ? us.value : null;
   usBT = ub.status === 'fulfilled' ? ub.value : null;
   usLive = lv.status === 'fulfilled' ? lv.value : null;
@@ -852,6 +863,25 @@ async function main() {
   try { mkt = localStorage.getItem('mkt') === 'us' ? 'us' : 'jp'; } catch {}
   try { const t = localStorage.getItem('tab'); if (t && $('tab-' + t)) curTab = t; } catch {}
   setMkt(mkt);
+}
+// 本日の値上がり・値下がりランキング（2026-11-18〜）
+function renderMovers(id, M, jp) {
+  const el = $(id);
+  if (!M || !M.gainers?.length) { el.innerHTML = ''; return; }
+  let side = 'up', more = false;
+  const row = (x, k) => `<li><span><span class="rk">${k + 1}</span>${esc(jp ? nf(x.name) : x.name)}<small>${esc(jp ? x.code : x.t)}${x.sector ? '・' + esc(x.sector) : ''}</small>${x.news ? `<span class="tag">${esc(x.news)}</span>` : ''}</span><span class="num ${cls(x.pct)}">${sign(x.pct)}%</span></li>`;
+  const draw = () => {
+    const arr = side === 'up' ? M.gainers : M.losers;
+    const shown = more ? arr : arr.slice(0, 10);
+    el.innerHTML = `<div class="real movers"><div class="hd"><b>${md(M.date)}（${wd(M.date)}）の${jp ? '値上がり' : '米国の値上がり'}</b><span class="num ${cls(M.avgPct)}" title="平均">${sign(M.avgPct)}%</span></div>
+      <p>${jp ? 'よく売買されている東証の株' : 'S&P500の500社'}（${M.count}銘柄）で、上げ${M.up}・下げ${M.down}。右上は全体の平均です。${jp ? '印は前の日〜当日の開示です。' : ''}</p>
+      <div class="tabs"><button data-s="up" aria-pressed="${side === 'up'}">値上がり</button><button data-s="down" aria-pressed="${side === 'down'}">値下がり</button></div>
+      <ul>${shown.map(row).join('')}</ul>
+      ${arr.length > 10 ? `<p style="margin:6px 0 0;text-align:center"><button class="morebtn" data-more>${more ? 'たたむ' : 'もっと見る'}</button></p>` : ''}</div>`;
+    el.querySelectorAll('[data-s]').forEach((b) => b.onclick = () => { side = b.dataset.s; more = false; draw(); });
+    const mb = el.querySelector('[data-more]'); if (mb) mb.onclick = () => { more = !more; draw(); };
+  };
+  draw();
 }
 main();
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
