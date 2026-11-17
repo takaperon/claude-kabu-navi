@@ -5,6 +5,8 @@ import json, logging, os, re, time, urllib.request
 from datetime import datetime, timezone
 logging.basicConfig(level=logging.WARNING)
 os.makedirs("reports-out", exist_ok=True)
+GICS_JA = {"Information Technology": "情報技術", "Health Care": "ヘルスケア", "Financials": "金融", "Consumer Discretionary": "一般消費財", "Communication Services": "通信サービス", "Industrials": "資本財", "Consumer Staples": "生活必需品", "Energy": "エネルギー", "Utilities": "公益", "Real Estate": "不動産", "Materials": "素材"}
+GICS = list(GICS_JA)
 out = {"updatedAt": datetime.now(timezone.utc).isoformat(), "error": None}
 
 def save():
@@ -19,8 +21,8 @@ try:
         m = re.search(r"\{\{(?:NyseSymbol|NasdaqSymbol|nyse|nasdaq|Nyse|Nasdaq)\|([A-Z.\-]+)\}\}", row)
         if not m: continue
         nm = re.search(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", row)
-        cells = row.split("||")
-        uni.append({"t": m.group(1), "name": (nm.group(2) or nm.group(1)).strip() if nm else m.group(1), "sector": cells[2].strip() if len(cells) > 2 else None})
+        sec = next((g for g in GICS if g in row), None)  # 業種（GICSの11分類）
+        uni.append({"t": m.group(1), "name": (nm.group(2) or nm.group(1)).strip() if nm else m.group(1), "sector": GICS_JA.get(sec)})
     out["universe"] = len(uni)
     if len(uni) < 400: raise RuntimeError(f"universe {len(uni)}")
 
