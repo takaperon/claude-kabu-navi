@@ -1,0 +1,565 @@
+{
+ "ok": true,
+ "generatedAt": "2026-11-17T15:57:19.209Z",
+ "periods": {
+  "train": [
+   "2021-01-04",
+   "2024-07-11"
+  ],
+  "test": [
+   "2024-07-12",
+   "2026-11-16"
+  ]
+ },
+ "note": "毎月、過去の同じ月にS&P500より上がっていた上位20銘柄（2年以上の記録）を月初の寄りで買い月末の引けで売る。S&P500との差。consistent＝毎年+2%以上だった銘柄すべて",
+ "top": {
+  "train": {
+   "n": 19,
+   "avg": -0.0062,
+   "med": 0.0003,
+   "win": 0.5263
+  },
+  "test": {
+   "n": 27,
+   "avg": 0.013,
+   "med": 0.0073,
+   "win": 0.5926
+  }
+ },
+ "bottom": {
+  "train": {
+   "n": 19,
+   "avg": 0.0117,
+   "med": -0.0006,
+   "win": 0.4737
+  },
+  "test": {
+   "n": 27,
+   "avg": 0.0279,
+   "med": 0.0228,
+   "win": 0.6667
+  }
+ },
+ "consistent": {
+  "train": {
+   "n": 19,
+   "avg": -0.0036,
+   "med": -0.0018,
+   "win": 0.4211
+  },
+  "test": {
+   "n": 27,
+   "avg": -0.0027,
+   "med": -0.011,
+   "win": 0.4444
+  }
+ },
+ "byMonth": [
+  {
+   "ym": "2023-01",
+   "top20": 0.0003,
+   "bottom20": 0.0774,
+   "consistentN": 54,
+   "top3": [
+    "OXY",
+    "FANG",
+    "XOM"
+   ]
+  },
+  {
+   "ym": "2023-02",
+   "top20": -0.0102,
+   "bottom20": -0.0168,
+   "consistentN": 125,
+   "top3": [
+    "NUE",
+    "DVN",
+    "OXY"
+   ]
+  },
+  {
+   "ym": "2023-03",
+   "top20": -0.0405,
+   "bottom20": -0.031,
+   "consistentN": 90,
+   "top3": [
+    "TPL",
+    "EQT",
+    "NUE"
+   ]
+  },
+  {
+   "ym": "2023-04",
+   "top20": -0.0257,
+   "bottom20": -0.0974,
+   "consistentN": 73,
+   "top3": [
+    "SHW",
+    "AVY",
+    "EQT"
+   ]
+  },
+  {
+   "ym": "2023-05",
+   "top20": -0.0388,
+   "bottom20": 0.0899,
+   "consistentN": 98,
+   "top3": [
+    "DVN",
+    "EXE",
+    "BKR"
+   ]
+  },
+  {
+   "ym": "2023-06",
+   "top20": -0.0363,
+   "bottom20": 0.116,
+   "consistentN": 47,
+   "top3": [
+    "BIIB",
+    "MRNA",
+    "VEEV"
+   ]
+  },
+  {
+   "ym": "2023-07",
+   "top20": 0.0434,
+   "bottom20": 0.0489,
+   "consistentN": 77,
+   "top3": [
+    "MRNA",
+    "HCA",
+    "VRT"
+   ]
+  },
+  {
+   "ym": "2023-08",
+   "top20": -0.0347,
+   "bottom20": -0.0006,
+   "consistentN": 77,
+   "top3": [
+    "FSLR",
+    "P",
+    "HOOD"
+   ]
+  },
+  {
+   "ym": "2023-09",
+   "top20": 0.0205,
+   "bottom20": -0.0192,
+   "consistentN": 60,
+   "top3": [
+    "BIIB",
+    "COP",
+    "CF"
+   ]
+  },
+  {
+   "ym": "2023-10",
+   "top20": -0.0377,
+   "bottom20": -0.0595,
+   "consistentN": 73,
+   "top3": [
+    "DXCM",
+    "BE",
+    "HAL"
+   ]
+  },
+  {
+   "ym": "2023-11",
+   "top20": 0.0439,
+   "bottom20": 0.061,
+   "consistentN": 66,
+   "top3": [
+    "AMD",
+    "NVDA",
+    "SMCI"
+   ]
+  },
+  {
+   "ym": "2023-12",
+   "top20": 0.024,
+   "bottom20": 0.125,
+   "consistentN": 120,
+   "top3": [
+    "CIEN",
+    "FERG",
+    "AVGO"
+   ]
+  },
+  {
+   "ym": "2024-01",
+   "top20": -0.0729,
+   "bottom20": 0.0099,
+   "consistentN": 17,
+   "top3": [
+    "CVNA",
+    "COIN",
+    "OXY"
+   ]
+  },
+  {
+   "ym": "2024-02",
+   "top20": 0.0129,
+   "bottom20": -0.0049,
+   "consistentN": 44,
+   "top3": [
+    "RCL",
+    "MOS",
+    "NUE"
+   ]
+  },
+  {
+   "ym": "2024-03",
+   "top20": 0.0184,
+   "bottom20": 0.036,
+   "consistentN": 19,
+   "top3": [
+    "TPL",
+    "KR",
+    "EQT"
+   ]
+  },
+  {
+   "ym": "2024-04",
+   "top20": 0.0048,
+   "bottom20": -0.0355,
+   "consistentN": 22,
+   "top3": [
+    "PHM",
+    "SHW",
+    "EQT"
+   ]
+  },
+  {
+   "ym": "2024-05",
+   "top20": 0.0106,
+   "bottom20": -0.0627,
+   "consistentN": 17,
+   "top3": [
+    "SMCI",
+    "APP",
+    "PLTR"
+   ]
+  },
+  {
+   "ym": "2024-06",
+   "top20": -0.0067,
+   "bottom20": -0.0324,
+   "consistentN": 9,
+   "top3": [
+    "CVNA",
+    "GNRC",
+    "DPZ"
+   ]
+  },
+  {
+   "ym": "2024-07",
+   "top20": 0.0078,
+   "bottom20": 0.0185,
+   "consistentN": 24,
+   "top3": [
+    "CVNA",
+    "SMCI",
+    "MRNA"
+   ]
+  },
+  {
+   "ym": "2024-08",
+   "top20": 0.0272,
+   "bottom20": 0.0273,
+   "consistentN": 20,
+   "top3": [
+    "VRT",
+    "CEG",
+    "P"
+   ]
+  },
+  {
+   "ym": "2024-09",
+   "top20": -0.0223,
+   "bottom20": 0.0337,
+   "consistentN": 26,
+   "top3": [
+    "CF",
+    "COP",
+    "FANG"
+   ]
+  },
+  {
+   "ym": "2024-10",
+   "top20": -0.0224,
+   "bottom20": 0.0143,
+   "consistentN": 26,
+   "top3": [
+    "FIX",
+    "DXCM",
+    "VRT"
+   ]
+  },
+  {
+   "ym": "2024-11",
+   "top20": -0.0112,
+   "bottom20": 0.0876,
+   "consistentN": 36,
+   "top3": [
+    "AMD",
+    "NVDA",
+    "QCOM"
+   ]
+  },
+  {
+   "ym": "2024-12",
+   "top20": -0.0139,
+   "bottom20": -0.0372,
+   "consistentN": 35,
+   "top3": [
+    "OKTA",
+    "ECHO",
+    "AVGO"
+   ]
+  },
+  {
+   "ym": "2025-01",
+   "top20": 0.0168,
+   "bottom20": 0.0197,
+   "consistentN": 3,
+   "top3": [
+    "CVNA",
+    "SMCI",
+    "ABNB"
+   ]
+  },
+  {
+   "ym": "2025-02",
+   "top20": 0.0073,
+   "bottom20": -0.0185,
+   "consistentN": 14,
+   "top3": [
+    "SMCI",
+    "COIN",
+    "CVNA"
+   ]
+  },
+  {
+   "ym": "2025-03",
+   "top20": -0.0239,
+   "bottom20": -0.0204,
+   "consistentN": 9,
+   "top3": [
+    "WSM",
+    "KR",
+    "TPL"
+   ]
+  },
+  {
+   "ym": "2025-04",
+   "top20": 0.0028,
+   "bottom20": 0.055,
+   "consistentN": 8,
+   "top3": [
+    "HAS",
+    "EQT",
+    "DELL"
+   ]
+  },
+  {
+   "ym": "2025-05",
+   "top20": 0.1059,
+   "bottom20": 0.0228,
+   "consistentN": 10,
+   "top3": [
+    "SMCI",
+    "APP",
+    "NVDA"
+   ]
+  },
+  {
+   "ym": "2025-06",
+   "top20": 0.014,
+   "bottom20": 0.0641,
+   "consistentN": 2,
+   "top3": [
+    "CVNA",
+    "COHR",
+    "ADBE"
+   ]
+  },
+  {
+   "ym": "2025-07",
+   "top20": 0.0497,
+   "bottom20": 0.0233,
+   "consistentN": 10,
+   "top3": [
+    "CVNA",
+    "MRNA",
+    "ON"
+   ]
+  },
+  {
+   "ym": "2025-08",
+   "top20": -0.0354,
+   "bottom20": -0.0201,
+   "consistentN": 8,
+   "top3": [
+    "VRT",
+    "CEG",
+    "WDAY"
+   ]
+  },
+  {
+   "ym": "2025-09",
+   "top20": 0.0564,
+   "bottom20": -0.012,
+   "consistentN": 8,
+   "top3": [
+    "CEG",
+    "CF",
+    "PLTR"
+   ]
+  },
+  {
+   "ym": "2025-10",
+   "top20": -0.0265,
+   "bottom20": -0.0195,
+   "consistentN": 11,
+   "top3": [
+    "TPL",
+    "VRT",
+    "DXCM"
+   ]
+  },
+  {
+   "ym": "2025-11",
+   "top20": -0.0829,
+   "bottom20": 0.0411,
+   "consistentN": 13,
+   "top3": [
+    "BE",
+    "COIN",
+    "AXON"
+   ]
+  },
+  {
+   "ym": "2025-12",
+   "top20": 0.0639,
+   "bottom20": 0.0074,
+   "consistentN": 2,
+   "top3": [
+    "AVGO",
+    "CIEN",
+    "OKTA"
+   ]
+  },
+  {
+   "ym": "2026-01",
+   "top20": 0.051,
+   "bottom20": 0.1081,
+   "consistentN": 9,
+   "top3": [
+    "CVNA",
+    "SMCI",
+    "GE"
+   ]
+  },
+  {
+   "ym": "2026-02",
+   "top20": 0.0122,
+   "bottom20": 0.0688,
+   "consistentN": 8,
+   "top3": [
+    "SMCI",
+    "RL",
+    "CVNA"
+   ]
+  },
+  {
+   "ym": "2026-03",
+   "top20": 0.0311,
+   "bottom20": 0.036,
+   "consistentN": 12,
+   "top3": [
+    "KR",
+    "NEM",
+    "EQT"
+   ]
+  },
+  {
+   "ym": "2026-04",
+   "top20": -0.0253,
+   "bottom20": 0.0992,
+   "consistentN": 8,
+   "top3": [
+    "GEV",
+    "HAS",
+    "TKO"
+   ]
+  },
+  {
+   "ym": "2026-05",
+   "top20": 0.1629,
+   "bottom20": -0.0236,
+   "consistentN": 12,
+   "top3": [
+    "SMCI",
+    "APP",
+    "FSLR"
+   ]
+  },
+  {
+   "ym": "2026-06",
+   "top20": 0.0061,
+   "bottom20": -0.0012,
+   "consistentN": 2,
+   "top3": [
+    "CVNA",
+    "RDDT",
+    "CCL"
+   ]
+  },
+  {
+   "ym": "2026-07",
+   "top20": -0.044,
+   "bottom20": 0.0221,
+   "consistentN": 15,
+   "top3": [
+    "CVNA",
+    "BE",
+    "GNRC"
+   ]
+  },
+  {
+   "ym": "2026-08",
+   "top20": 0.0388,
+   "bottom20": 0.1632,
+   "consistentN": 8,
+   "top3": [
+    "ECHO",
+    "BE",
+    "APP"
+   ]
+  },
+  {
+   "ym": "2026-09",
+   "top20": 0.0244,
+   "bottom20": -0.0694,
+   "consistentN": 6,
+   "top3": [
+    "APP",
+    "HOOD",
+    "PLTR"
+   ]
+  },
+  {
+   "ym": "2026-10",
+   "top20": -0.0115,
+   "bottom20": 0.0802,
+   "consistentN": 6,
+   "top3": [
+    "RDDT",
+    "VRT",
+    "TPL"
+   ]
+  }
+ ]
+}
