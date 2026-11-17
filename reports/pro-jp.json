@@ -1,14 +1,14 @@
 {
  "ok": true,
- "generatedAt": "2026-11-17T15:57:35.887Z",
+ "generatedAt": "2026-11-17T16:40:38.210Z",
  "status": {
-  "startedAt": "2026-11-17T15:57:31.790Z",
-  "spyDays": 0,
+  "startedAt": "2026-11-17T16:40:24.588Z",
+  "spyError": "TypeError",
   "events": {
    "div_up": 4878,
    "earn_up": 2727
   },
-  "finishedAt": "2026-11-17T15:57:36.844Z"
+  "finishedAt": "2026-11-17T16:40:39.099Z"
  },
  "periods": {
   "train": [
