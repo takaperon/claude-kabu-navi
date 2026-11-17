@@ -66,6 +66,10 @@ jobs:
         continue-on-error: true
         run: node scripts/calendar.mjs --data data --out reports-out
 
+      - name: earnpre (決算発表の前の動き)
+        continue-on-error: true
+        run: node scripts/earnpre.mjs --data data --out reports-out
+
       - name: movers (本日の値上がりランキング)
         continue-on-error: true
         run: node scripts/movers.mjs --data data --out reports-out

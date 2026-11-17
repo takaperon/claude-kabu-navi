@@ -122,6 +122,12 @@
 - 学習：scripts/movers-eval.mjs（update.yml）→ reports/movers-eval.json。A) 過去5年の値上がり上位20を、開示の種類・上げ幅・翌朝の寄り付きで分け、次の日の寄りで買った後の1・5・20日（全銘柄平均との差）。
   B) 調べた理由（cat）ごとに同じ成績を積み上げる。週次研究で読み、効く形があれば仮想売買の試験中に
 
+## 前もって分かる日付（2026-11-18〜、オーナーの提案「確実にこの日、という日は早くて1か月前に発表される。前もって予測しておく」）
+- 決算発表予定日：fetch.mjs が J-Quants /fins/earnings-date を公表日ごとに data/earndate/{date}.json（[Code, PubDate, SchDate, FQName, FYE]）に保存。
+  PubDate より後にしか予定日を知らなかった扱いで、scripts/earnpre.mjs が決算前の値動きを検証 → reports/earnpre-jp.json
+- 会社ごとの行事（セール・新製品発表・説明会・月次売上・指数の入れ替えなど）：毎朝のニュース調査で、記事に「将来の日付」が出ていたら reports の events/calendar.json に
+  {date, market, code|t, name, type, title, announcedOn, sources} で追記（重複しない）。行事の前後の値動きは、件数がたまってから検証
+
 ## 定期の調査・研究の動かし方（2026-11-17〜）
 - 定期タスク（新しいセッション）はこのリポジトリが sources に無く、push が git proxy で 403（add_repo ツールも無い）。11/14〜17 のニュースはこのため未保存
 - 毎朝のニュース調査・週次研究は、push できる元のチャット（セッション）で send_later を毎回予約し直して実行する。定期タスク2つは停止中（プロンプトは手順書として残す）

@@ -165,6 +165,34 @@ try {
       throw e;
     }
   }
+
+  // 決算発表予定日（2026-11-18〜、オーナーの提案「前もって発表される日付の一覧」）：/fins/earnings-date を公表日（PubDate）ごとに取得。
+  // 「いつの時点で、いつ決算をすると分かっていたか」が残るので、決算前の値動きを未来の情報なしで検証できる。空の日も記録して取り直さない（直近4日は毎回）
+  fs.mkdirSync(path.join(DATA, 'earndate'), { recursive: true });
+  status.earnDateFetched = 0;
+  for (const r of cal.slice().reverse()) {
+    const d = r.Date;
+    if (d > ymd(today)) continue;
+    const file = path.join(DATA, 'earndate', `${d}.json`);
+    const recent = new Date(today); recent.setDate(recent.getDate() - 4);
+    if (fs.existsSync(file) && d < ymd(recent)) continue;
+    if (status.earnDateUnavailable) break;
+    if ((Date.now() - started) / 60000 > MAX_MIN) { status.stoppedBy = 'time'; break; }
+    try {
+      const rows = await getAll('/fins/earnings-date', { date: d.replaceAll('-', '') });
+      fs.writeFileSync(file, JSON.stringify(rows.map((x) => [x.Code, x.PubDate, x.SchDate, x.FQName, x.FYE])));
+      status.earnDateFetched++;
+    } catch (e) {
+      if (e instanceof ApiError && (e.status === 400 || e.status === 403)) {
+        status.earnDateErrors = (status.earnDateErrors ?? 0) + 1;
+        status.earnDateLastError = e.message;
+        if (status.earnDateErrors >= 5 && !status.earnDateFetched) status.earnDateUnavailable = true; // プランで使えない時は打ち切り
+        continue;
+      }
+      throw e;
+    }
+  }
+  status.earnDateStored = fs.readdirSync(path.join(DATA, 'earndate')).length;
 } catch (e) {
   status.stoppedBy = 'error';
   status.fatal = `${e.status ?? ''} ${e.message}`.trim();
