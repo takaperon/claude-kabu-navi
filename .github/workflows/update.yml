@@ -58,6 +58,10 @@ jobs:
         continue-on-error: true
         run: node scripts/pro.mjs --data data --out reports-out
 
+      - name: precursor (上がる前の気配の検証)
+        continue-on-error: true
+        run: node scripts/precursor.mjs --data data --out reports-out
+
       - name: movers (本日の値上がりランキング)
         continue-on-error: true
         run: node scripts/movers.mjs --data data --out reports-out
