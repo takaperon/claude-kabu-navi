@@ -1,0 +1,223 @@
+{
+ "date": "2026-11-17",
+ "updatedAt": "2026-11-17T15:15:46.884Z",
+ "note": "売買代金（20日平均）1億円以上・100円以上の東証の株",
+ "count": 1718,
+ "avgPct": -1.5,
+ "up": 274,
+ "down": 1398,
+ "gainers": [
+  {
+   "code": "4888",
+   "name": "ステラファーマ",
+   "sector": "医薬品",
+   "pct": 22.7,
+   "news": null
+  },
+  {
+   "code": "2334",
+   "name": "イオレ",
+   "sector": "サービス業",
+   "pct": 18.8,
+   "news": null
+  },
+  {
+   "code": "4547",
+   "name": "キッセイ薬品工業",
+   "sector": "医薬品",
+   "pct": 12.5,
+   "news": null
+  },
+  {
+   "code": "4884",
+   "name": "クリングルファーマ",
+   "sector": "医薬品",
+   "pct": 8.5,
+   "news": null
+  },
+  {
+   "code": "4418",
+   "name": "ＪＤＳＣ",
+   "sector": "情報･通信業",
+   "pct": 8,
+   "news": null
+  },
+  {
+   "code": "7630",
+   "name": "壱番屋",
+   "sector": "小売業",
+   "pct": 8,
+   "news": null
+  },
+  {
+   "code": "2585",
+   "name": "ライフドリンク　カンパニー",
+   "sector": "食料品",
+   "pct": 5.3,
+   "news": null
+  },
+  {
+   "code": "6098",
+   "name": "リクルートホールディングス",
+   "sector": "サービス業",
+   "pct": 5,
+   "news": null
+  },
+  {
+   "code": "6145",
+   "name": "ＮＩＴＴＯＫＵ",
+   "sector": "機械",
+   "pct": 5,
+   "news": null
+  },
+  {
+   "code": "4403",
+   "name": "日油",
+   "sector": "化学",
+   "pct": 4.2,
+   "news": null
+  },
+  {
+   "code": "3825",
+   "name": "リミックスポイント",
+   "sector": "小売業",
+   "pct": 3.9,
+   "news": null
+  },
+  {
+   "code": "6027",
+   "name": "弁護士ドットコム",
+   "sector": "サービス業",
+   "pct": 3.7,
+   "news": null
+  },
+  {
+   "code": "4887",
+   "name": "サワイグループホールディングス",
+   "sector": "医薬品",
+   "pct": 3.6,
+   "news": null
+  },
+  {
+   "code": "6862",
+   "name": "ミナトホールディングス",
+   "sector": "電気機器",
+   "pct": 3.6,
+   "news": null
+  },
+  {
+   "code": "5101",
+   "name": "横浜ゴム",
+   "sector": "ゴム製品",
+   "pct": 3.4,
+   "news": null
+  },
+  {
+   "code": "6570",
+   "name": "共和コーポレーション",
+   "sector": "サービス業",
+   "pct": 3.4,
+   "news": null
+  },
+  {
+   "code": "7318",
+   "name": "セレンディップ・ホールディングス",
+   "sector": "輸送用機器",
+   "pct": 3.4,
+   "news": null
+  },
+  {
+   "code": "9831",
+   "name": "ヤマダホールディングス",
+   "sector": "小売業",
+   "pct": 3.4,
+   "news": null
+  },
+  {
+   "code": "6523",
+   "name": "ＰＨＣホールディングス",
+   "sector": "電気機器",
+   "pct": 3.2,
+   "news": null
+  },
+  {
+   "code": "8086",
+   "name": "ニプロ",
+   "sector": "精密機器",
+   "pct": 3.2,
+   "news": null
+  }
+ ],
+ "losers": [
+  {
+   "code": "3905",
+   "name": "データセクション",
+   "sector": "情報･通信業",
+   "pct": -25.2,
+   "news": null
+  },
+  {
+   "code": "7047",
+   "name": "ポート",
+   "sector": "サービス業",
+   "pct": -23.1,
+   "news": null
+  },
+  {
+   "code": "634A",
+   "name": "レイヤード",
+   "sector": "情報･通信業",
+   "pct": -21.1,
+   "news": null
+  },
+  {
+   "code": "247A",
+   "name": "Ａｉロボティクス",
+   "sector": "化学",
+   "pct": -17.9,
+   "news": null
+  },
+  {
+   "code": "4165",
+   "name": "プレイド",
+   "sector": "情報･通信業",
+   "pct": -15.4,
+   "news": null
+  },
+  {
+   "code": "479A",
+   "name": "ＰＲＯＮＩ",
+   "sector": "情報･通信業",
+   "pct": -15,
+   "news": null
+  },
+  {
+   "code": "6834",
+   "name": "精工技研",
+   "sector": "電気機器",
+   "pct": -14.7,
+   "news": null
+  },
+  {
+   "code": "6574",
+   "name": "コンヴァノ",
+   "sector": "サービス業",
+   "pct": -13.6,
+   "news": null
+  },
+  {
+   "code": "319A",
+   "name": "技術承継機構",
+   "sector": "金属製品",
+   "pct": -12.7,
+   "news": null
+  },
+  {
+   "code": "6721",
+   "name": "ウインテスト",
+   "sector": "電気機器",
+   "pct": -12,
+   "news": null
+  }
+ ]
+}
