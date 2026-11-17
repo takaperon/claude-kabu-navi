@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T15:15:33.919882+00:00",
+ "updatedAt": "2026-11-17T15:27:25.044950+00:00",
  "error": null,
  "universe": 502,
  "batchOk": 25,
@@ -7,191 +7,191 @@
  "date": "2026-11-17",
  "count": 500,
  "note": "S&P500構成銘柄（Wikipediaの一覧）。ウィブルの相場情報（Nasdaq Basic）",
- "avgPct": -0.25,
- "up": 202,
- "down": 270,
+ "avgPct": -0.33,
+ "up": 172,
+ "down": 306,
  "gainers": [
-  {
-   "t": "RDDT",
-   "name": "Reddit",
-   "sector": "Communication Services",
-   "pct": 4.5
-  },
-  {
-   "t": "TSCO",
-   "name": "Tractor Supply",
-   "sector": "[[Tractor Supply]]",
-   "pct": 2.9
-  },
   {
    "t": "COHR",
    "name": "Coherent Corp.",
-   "sector": "[[Coherent Corp.]]",
-   "pct": 2.7
+   "sector": "情報技術",
+   "pct": 3.9
   },
   {
-   "t": "NKE",
-   "name": "Nike, Inc.",
-   "sector": "[[Nike, Inc.]]",
-   "pct": 2.7
-  },
-  {
-   "t": "CHTR",
-   "name": "Charter Communications",
-   "sector": "[[Charter Communications]]",
-   "pct": 2.5
+   "t": "RDDT",
+   "name": "Reddit",
+   "sector": "通信サービス",
+   "pct": 3.7
   },
   {
    "t": "MCHP",
    "name": "Microchip Technology",
-   "sector": "[[Microchip Technology]]",
-   "pct": 2.5
+   "sector": "情報技術",
+   "pct": 3.1
   },
   {
-   "t": "SYK",
-   "name": "Stryker Corporation",
-   "sector": "[[Stryker Corporation]]",
-   "pct": 2.5
-  },
-  {
-   "t": "DIS",
-   "name": "Walt Disney Company (The)",
-   "sector": "[[The Walt Disney Company|Walt Disney Company (The)]]",
-   "pct": 2.5
-  },
-  {
-   "t": "FIX",
-   "name": "Comfort Systems USA",
-   "sector": "[[Comfort Systems USA]]",
-   "pct": 2.3
-  },
-  {
-   "t": "DPZ",
-   "name": "Domino's",
-   "sector": "[[Domino's]]",
-   "pct": 2.3
-  },
-  {
-   "t": "ZBH",
-   "name": "Zimmer Biomet",
-   "sector": "[[Zimmer Biomet]]",
-   "pct": 2.3
-  },
-  {
-   "t": "DXCM",
-   "name": "Dexcom",
-   "sector": "[[Dexcom]]",
-   "pct": 2.1
-  },
-  {
-   "t": "MPWR",
-   "name": "Monolithic Power Systems",
-   "sector": "[[Monolithic Power Systems]]",
-   "pct": 1.9
+   "t": "LITE",
+   "name": "Lumentum",
+   "sector": "情報技術",
+   "pct": 2.7
   },
   {
    "t": "NEM",
    "name": "Newmont",
-   "sector": "[[Newmont]]",
-   "pct": 1.9
+   "sector": "素材",
+   "pct": 2.5
+  },
+  {
+   "t": "MPWR",
+   "name": "Monolithic Power Systems",
+   "sector": "情報技術",
+   "pct": 2.4
+  },
+  {
+   "t": "DIS",
+   "name": "Walt Disney Company (The)",
+   "sector": "通信サービス",
+   "pct": 2.4
+  },
+  {
+   "t": "ZBH",
+   "name": "Zimmer Biomet",
+   "sector": "ヘルスケア",
+   "pct": 2.3
+  },
+  {
+   "t": "ADI",
+   "name": "Analog Devices",
+   "sector": "情報技術",
+   "pct": 2.2
+  },
+  {
+   "t": "FIX",
+   "name": "Comfort Systems USA",
+   "sector": "資本財",
+   "pct": 2.2
+  },
+  {
+   "t": "DXCM",
+   "name": "Dexcom",
+   "sector": "ヘルスケア",
+   "pct": 2.2
+  },
+  {
+   "t": "NKE",
+   "name": "Nike, Inc.",
+   "sector": "一般消費財",
+   "pct": 2.2
   },
   {
    "t": "NUE",
    "name": "Nucor",
-   "sector": "[[Nucor]]",
+   "sector": "素材",
+   "pct": 2.1
+  },
+  {
+   "t": "SYK",
+   "name": "Stryker Corporation",
+   "sector": "ヘルスケア",
+   "pct": 2.0
+  },
+  {
+   "t": "TMUS",
+   "name": "T-Mobile US",
+   "sector": "通信サービス",
+   "pct": 2.0
+  },
+  {
+   "t": "ALB",
+   "name": "Albemarle Corporation",
+   "sector": "素材",
    "pct": 1.9
   },
   {
-   "t": "CHRW",
-   "name": "C.H. Robinson",
-   "sector": "[[C.H. Robinson]]",
+   "t": "FANG",
+   "name": "Diamondback Energy",
+   "sector": "エネルギー",
+   "pct": 1.9
+  },
+  {
+   "t": "GM",
+   "name": "General Motors",
+   "sector": "一般消費財",
+   "pct": 1.9
+  },
+  {
+   "t": "AVGO",
+   "name": "Broadcom",
+   "sector": "情報技術",
    "pct": 1.8
   },
   {
    "t": "PODD",
    "name": "Insulet Corporation",
-   "sector": "[[Insulet Corporation]]",
-   "pct": 1.8
-  },
-  {
-   "t": "LYV",
-   "name": "Live Nation Entertainment",
-   "sector": "[[Live Nation Entertainment]]",
-   "pct": 1.8
-  },
-  {
-   "t": "LULU",
-   "name": "Lululemon Athletica",
-   "sector": "[[Lululemon|Lululemon Athletica]]",
-   "pct": 1.8
-  },
-  {
-   "t": "ROK",
-   "name": "Rockwell Automation",
-   "sector": "[[Rockwell Automation]]",
-   "pct": 1.8
+   "sector": "ヘルスケア",
+   "pct": 1.7
   }
  ],
  "losers": [
   {
    "t": "CRM",
    "name": "Salesforce",
-   "sector": "[[Salesforce]]",
-   "pct": -7.1
-  },
-  {
-   "t": "DDOG",
-   "name": "Datadog",
-   "sector": "[[Datadog]]",
-   "pct": -5.0
-  },
-  {
-   "t": "WDAY",
-   "name": "Workday, Inc.",
-   "sector": "[[Workday, Inc.]]",
-   "pct": -4.8
-  },
-  {
-   "t": "UNH",
-   "name": "UnitedHealth Group",
-   "sector": "[[UnitedHealth Group]]",
-   "pct": -4.8
+   "sector": "情報技術",
+   "pct": -8.1
   },
   {
    "t": "NOW",
    "name": "ServiceNow",
-   "sector": "[[ServiceNow]]",
-   "pct": -4.7
+   "sector": "情報技術",
+   "pct": -5.5
   },
   {
    "t": "INTU",
    "name": "Intuit",
-   "sector": "[[Intuit]]",
-   "pct": -4.6
+   "sector": "情報技術",
+   "pct": -5.5
+  },
+  {
+   "t": "WDAY",
+   "name": "Workday, Inc.",
+   "sector": "情報技術",
+   "pct": -4.8
+  },
+  {
+   "t": "DDOG",
+   "name": "Datadog",
+   "sector": "情報技術",
+   "pct": -4.8
   },
   {
    "t": "OKTA",
    "name": "Okta, Inc.",
-   "sector": "[[Okta, Inc.]]",
+   "sector": "情報技術",
+   "pct": -4.3
+  },
+  {
+   "t": "FSLR",
+   "name": "First Solar",
+   "sector": "情報技術",
    "pct": -4.2
   },
   {
-   "t": "BE",
-   "name": "Bloom Energy",
-   "sector": "[[Bloom Energy]]",
+   "t": "APP",
+   "name": "AppLovin",
+   "sector": "通信サービス",
    "pct": -4.2
   },
   {
-   "t": "MRNA",
-   "name": "Moderna",
-   "sector": "[[Moderna]]",
-   "pct": -4.1
+   "t": "UNH",
+   "name": "UnitedHealth Group",
+   "sector": "ヘルスケア",
+   "pct": -3.9
   },
   {
    "t": "HUM",
    "name": "Humana",
-   "sector": "[[Humana]]",
-   "pct": -4.1
+   "sector": "ヘルスケア",
+   "pct": -3.9
   }
  ]
 }
