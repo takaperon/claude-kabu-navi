@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T15:45:10.190051+00:00",
+ "updatedAt": "2026-11-17T16:08:18.948045+00:00",
  "error": null,
  "universe": 502,
  "batchOk": 25,
@@ -7,128 +7,128 @@
  "date": "2026-11-17",
  "count": 500,
  "note": "S&P500構成銘柄（Wikipediaの一覧）。ウィブルの相場情報（Nasdaq Basic）",
- "avgPct": -0.94,
- "up": 101,
- "down": 384,
+ "avgPct": -0.98,
+ "up": 85,
+ "down": 403,
  "gainers": [
   {
    "t": "RDDT",
    "name": "Reddit",
    "sector": "通信サービス",
-   "pct": 3.6
+   "pct": 3.8
+  },
+  {
+   "t": "COHR",
+   "name": "Coherent Corp.",
+   "sector": "情報技術",
+   "pct": 2.6
   },
   {
    "t": "NEM",
    "name": "Newmont",
    "sector": "素材",
-   "pct": 2.7
-  },
-  {
-   "t": "ZBH",
-   "name": "Zimmer Biomet",
-   "sector": "ヘルスケア",
    "pct": 2.2
   },
   {
-   "t": "DXCM",
-   "name": "Dexcom",
-   "sector": "ヘルスケア",
-   "pct": 2.0
+   "t": "MCHP",
+   "name": "Microchip Technology",
+   "sector": "情報技術",
+   "pct": 2.1
   },
   {
-   "t": "SYK",
-   "name": "Stryker Corporation",
-   "sector": "ヘルスケア",
+   "t": "LITE",
+   "name": "Lumentum",
+   "sector": "情報技術",
    "pct": 2.0
   },
   {
    "t": "FANG",
    "name": "Diamondback Energy",
    "sector": "エネルギー",
-   "pct": 1.8
+   "pct": 1.7
   },
   {
-   "t": "GILD",
-   "name": "Gilead Sciences",
+   "t": "MPWR",
+   "name": "Monolithic Power Systems",
+   "sector": "情報技術",
+   "pct": 1.7
+  },
+  {
+   "t": "ZBH",
+   "name": "Zimmer Biomet",
    "sector": "ヘルスケア",
-   "pct": 1.8
-  },
-  {
-   "t": "PODD",
-   "name": "Insulet Corporation",
-   "sector": "ヘルスケア",
-   "pct": 1.6
-  },
-  {
-   "t": "TMUS",
-   "name": "T-Mobile US",
-   "sector": "通信サービス",
-   "pct": 1.5
-  },
-  {
-   "t": "DIS",
-   "name": "Walt Disney Company (The)",
-   "sector": "通信サービス",
-   "pct": 1.5
+   "pct": 1.7
   },
   {
    "t": "EIX",
    "name": "Edison International",
    "sector": "公益",
+   "pct": 1.5
+  },
+  {
+   "t": "AVGO",
+   "name": "Broadcom",
+   "sector": "情報技術",
    "pct": 1.4
-  },
-  {
-   "t": "HRL",
-   "name": "Hormel Foods",
-   "sector": "生活必需品",
-   "pct": 1.4
-  },
-  {
-   "t": "T",
-   "name": "AT&T",
-   "sector": "通信サービス",
-   "pct": 1.3
-  },
-  {
-   "t": "NKE",
-   "name": "Nike, Inc.",
-   "sector": "一般消費財",
-   "pct": 1.3
-  },
-  {
-   "t": "NUE",
-   "name": "Nucor",
-   "sector": "素材",
-   "pct": 1.3
-  },
-  {
-   "t": "SKYD",
-   "name": "Skydance",
-   "sector": "通信サービス",
-   "pct": 1.2
-  },
-  {
-   "t": "ALB",
-   "name": "Albemarle Corporation",
-   "sector": "素材",
-   "pct": 1.1
   },
   {
    "t": "CASY",
    "name": "Casey's",
    "sector": "生活必需品",
-   "pct": 1.1
+   "pct": 1.4
   },
   {
-   "t": "DPZ",
-   "name": "Domino's",
+   "t": "NKE",
+   "name": "Nike, Inc.",
    "sector": "一般消費財",
-   "pct": 1.1
+   "pct": 1.4
   },
   {
-   "t": "XOM",
-   "name": "ExxonMobil",
+   "t": "FIX",
+   "name": "Comfort Systems USA",
+   "sector": "資本財",
+   "pct": 1.3
+  },
+  {
+   "t": "NOC",
+   "name": "Northrop Grumman",
+   "sector": "資本財",
+   "pct": 1.3
+  },
+  {
+   "t": "RTX",
+   "name": "RTX Corporation",
+   "sector": "資本財",
+   "pct": 1.3
+  },
+  {
+   "t": "CHRW",
+   "name": "C.H. Robinson",
+   "sector": "資本財",
+   "pct": 1.2
+  },
+  {
+   "t": "NUE",
+   "name": "Nucor",
+   "sector": "素材",
+   "pct": 1.2
+  },
+  {
+   "t": "PM",
+   "name": "Philip Morris International",
+   "sector": "生活必需品",
+   "pct": 1.2
+  },
+  {
+   "t": "TPL",
+   "name": "Texas Pacific Land Corporation",
    "sector": "エネルギー",
+   "pct": 1.2
+  },
+  {
+   "t": "HRL",
+   "name": "Hormel Foods",
+   "sector": "生活必需品",
    "pct": 1.1
   }
  ],
@@ -137,61 +137,61 @@
    "t": "CRM",
    "name": "Salesforce",
    "sector": "情報技術",
-   "pct": -8.9
+   "pct": -8.5
   },
   {
    "t": "NOW",
    "name": "ServiceNow",
    "sector": "情報技術",
-   "pct": -6.6
+   "pct": -6.4
   },
   {
    "t": "INTU",
    "name": "Intuit",
    "sector": "情報技術",
-   "pct": -6.4
-  },
-  {
-   "t": "BE",
-   "name": "Bloom Energy",
-   "sector": "資本財",
-   "pct": -6.3
-  },
-  {
-   "t": "SMCI",
-   "name": "Supermicro",
-   "sector": "情報技術",
-   "pct": -5.6
-  },
-  {
-   "t": "MU",
-   "name": "Micron Technology",
-   "sector": "情報技術",
-   "pct": -5.6
-  },
-  {
-   "t": "SNDK",
-   "name": "Sandisk",
-   "sector": "情報技術",
-   "pct": -5.5
-  },
-  {
-   "t": "DDOG",
-   "name": "Datadog",
-   "sector": "情報技術",
-   "pct": -5.5
+   "pct": -6.2
   },
   {
    "t": "APP",
    "name": "AppLovin",
    "sector": "通信サービス",
-   "pct": -5.3
+   "pct": -6.2
   },
   {
-   "t": "FSLR",
-   "name": "First Solar",
+   "t": "WDAY",
+   "name": "Workday, Inc.",
    "sector": "情報技術",
-   "pct": -5.1
+   "pct": -4.9
+  },
+  {
+   "t": "HOOD",
+   "name": "Robinhood Markets",
+   "sector": "金融",
+   "pct": -4.6
+  },
+  {
+   "t": "BE",
+   "name": "Bloom Energy",
+   "sector": "資本財",
+   "pct": -4.6
+  },
+  {
+   "t": "OKTA",
+   "name": "Okta, Inc.",
+   "sector": "情報技術",
+   "pct": -4.5
+  },
+  {
+   "t": "DDOG",
+   "name": "Datadog",
+   "sector": "情報技術",
+   "pct": -4.5
+  },
+  {
+   "t": "SNDK",
+   "name": "Sandisk",
+   "sector": "情報技術",
+   "pct": -4.4
   }
  ]
 }
