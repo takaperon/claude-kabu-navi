@@ -135,6 +135,7 @@ h2 small{font-family:var(--gothic);font-weight:400;font-size:13px;color:var(--mu
 .badge{flex:none;min-width:72px;text-align:center;border-radius:6px;padding:4px 8px;font-weight:700;font-size:16px;line-height:1.3}
 .badge.up{background:var(--up-bg)} .badge.down{background:var(--down-bg)} .badge.flat{background:var(--paper)}
 .badge small{display:block;font-weight:400;font-size:11px;opacity:.85}
+small.amt{display:block;font-weight:400;font-size:11px;color:var(--muted);white-space:nowrap}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .daygrp{font-size:13px;color:var(--muted);margin:16px 2px 6px;display:flex;justify-content:space-between}
 .daygrp b{color:var(--ink);font-weight:700}
@@ -384,6 +385,8 @@ let paper = null, backtest = null, newsData = null, seg = 'hold';
 
 const $ = (id) => document.getElementById(id);
 const yen = (v) => Math.round(v).toLocaleString('ja-JP');
+// 仮想の金額（買った金額 → 今の金額）。1株の値段は公開しない（J-Quants のデータを配らないため）
+const amtS = (h) => (h.costYen ? `<small class="amt">${yen(h.costYen)}円→${yen(h.valueYen)}円</small>` : '');
 const man = (v) => { const a = Math.abs(v); return a >= 10000 ? (Math.round(a / 1000) / 10).toLocaleString('ja-JP') + '万' : yen(a); };
 const code4 = (c) => (c && c.length === 5 && c.endsWith('0')) ? c.slice(0, 4) : c;
 const cls = (v) => v > 0 ? 'up' : v < 0 ? 'down' : 'flat';
@@ -513,6 +516,7 @@ function gather(kind) {
       const key = kind === 'sold' ? `${x.code}|${x.entryDate}|${x.exitDate}` : kind === 'hold' ? `${x.code}|${x.entryDate}` : x.code;
       if (!map.has(key)) map.set(key, { ...x, ks: [], hold: st.hold });
       const m = map.get(key);
+      if (m.ks.length && kind === 'hold' && x.costYen) { m.costYen = (m.costYen ?? 0) + x.costYen; m.valueYen = (m.valueYen ?? 0) + x.valueYen; }
       m.ks.push(k);
       m.hold = Math.min(m.hold, st.hold);
     }
@@ -571,7 +575,7 @@ function renderHome() {
     return `<div class="real">
       <div class="hd"><b>${REAL_TITLE[RK][0]}</b><span class="num ${cls(d)}">${sign(R.returnPct)}%</span></div>
       <p>${REAL_TITLE[RK][1]}いま <b class="num" style="color:var(--ink)">${yen(R.equityYen)}円</b>（${d >= 0 ? '+' : '−'}${yen(Math.abs(d))}円）${R.trades ? `・${R.trades}回売って勝率${R.winRatePct}%` : ''}</p>
-      ${R.holdings.length ? `<ul>${R.holdings.map((h) => `<li ${ch('jp',h.code)}><span>${esc(nf(h.name))}<small>${h.shares ? h.shares + '株' : ''}${R.trial && h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`).join('')}</ul>`
+      ${R.holdings.length ? `<ul>${R.holdings.map((h) => `<li ${ch('jp',h.code)}><span>${esc(nf(h.name))}<small>${h.shares ? h.shares + '株' : ''}${R.trial && h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%${amtS(h)}</span></li>`).join('')}</ul>`
         : `<p style="margin:0">いまは持っていません。${R.nextBuys.length ? `次の朝の候補 ${R.nextBuys.length}銘柄（100株買える範囲で買います）` : ''}</p>`}
       <button class="link" data-rule="${RK}">このルールの説明</button></div>`;
   }).join('') + (() => {
@@ -671,7 +675,7 @@ function renderUS() {
   const PR = U.pro;
   $('us-pro').innerHTML = PR ? (() => {
     const d = PR.equityYen - PR.capital;
-    const rows = [...PR.holdings.map((h) => `<li ${ch('us',h.t)}><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`),
+    const rows = [...PR.holdings.map((h) => `<li ${ch('us',h.t)}><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%${amtS(h)}</span></li>`),
       ...PR.nextBuys.map((h) => `<li ${ch('us',h.t)}><span>${esc(h.name || h.t)}<small>${esc(h.t)}・今夜買う予定${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num flat">予定</span></li>`)].join('');
     return `<div class="real" style="border-top-color:var(--c-div)">
       <div class="hd"><b>試験中：プロの判断（30万円）</b><span class="num ${cls(d)}">${sign(PR.returnPct)}%</span></div>
@@ -703,8 +707,8 @@ function renderUSStocks() {
     $('us-stocks-lead').innerHTML = U.nextBuys.length ? '日本時間の今夜23:30（アメリカの取引開始）に、仮想で買います。' : '';
     $('us-stocks').innerHTML = U.nextBuys.length ? `<ul class="stocks">${U.nextBuys.map((b) => row(b.name, b.t, esc(b.reason))).join('')}</ul>` : '<p class="empty">いまは条件に合う決算がありません。決算シーズン（1・4・7・10月の中旬〜翌月）に増えます。</p>';
   } else if (useg === 'hold') {
-    $('us-stocks-lead').innerHTML = U.holdings.length ? `買った値段からの${term('含み益')}です。${usHold()}取引日たったら、その日の終値で売ります。` : '';
-    $('us-stocks').innerHTML = U.holdings.length ? `<ul class="stocks">${U.holdings.slice().sort((a, b) => b.unrealPct - a.unrealPct).map((h) => row(h.name, h.t, `${md(h.entryDate)}に買った・あと${h.daysLeft}取引日で売る`, `<div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</div>`)).join('')}</ul>` : '<p class="empty">いまは個別株を持っていません。資金は全部S&P500に置いている計算です。</p>';
+    $('us-stocks-lead').innerHTML = U.holdings.length ? `買った値段からの${term('含み益')}と、仮想で買った金額→今の金額です。${usHold()}取引日たったら、その日の終値で売ります。` : '';
+    $('us-stocks').innerHTML = U.holdings.length ? `<ul class="stocks">${U.holdings.slice().sort((a, b) => b.unrealPct - a.unrealPct).map((h) => row(h.name, h.t, `${md(h.entryDate)}に買った・あと${h.daysLeft}取引日で売る`, `<div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%${amtS(h)}</div>`)).join('')}</ul>` : '<p class="empty">いまは個別株を持っていません。資金は全部S&P500に置いている計算です。</p>';
   } else {
     $('us-stocks-lead').innerHTML = sold.length ? '1回ごとの損益は、税金を引く前の数字です。' : '';
     $('us-stocks').innerHTML = sold.length ? `<ul class="stocks">${sold.map((c) => row(c.name, c.t, `${md(c.entryDate)}に買って${md(c.exitDate)}に売った`, `<div class="badge num ${cls(c.retPct)}">${sign(c.retPct)}%</div>`)).join('')}</ul>` : '<p class="empty">まだ売った銘柄はありません。買ってから約1か月後に最初の結果が出ます。</p>';
@@ -763,13 +767,13 @@ function renderStocks() {
       : `<p class="empty">いまは条件に合う発表がありません。夕方の発表しだいで、毎日入れ替わります。</p>`;
   } else if (seg === 'hold') {
     hold.sort((a, b) => b.unrealPct - a.unrealPct);
-    $('stocks-lead').innerHTML = hold.length ? `買った値段からの${term('含み益')}です。決めた日数がたったら、その日の${term('引け')}で売ります。` : '';
+    $('stocks-lead').innerHTML = hold.length ? `買った値段からの${term('含み益')}と、仮想で買った金額→今の金額です。決めた日数がたったら、その日の${term('引け')}で売ります。` : '';
     $('stocks').innerHTML = hold.length ? `<ul class="stocks">${hold.map((h) => {
       const left = Math.max(0, h.hold - h.daysHeld);
       return `<li ${ch('jp',h.code)}><div class="srow"><div>
         <div class="nm">${esc(nf(h.name))}<span class="cd">${code4(h.code)}</span></div>
         <div class="when">${md(h.entryDate)}に買った・${left ? `あと${left}営業日で売る` : '次の引けで売る'}</div></div>
-        <div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</div></div>${chips(h.ks)}</li>`;
+        <div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%${amtS(h)}</div></div>${chips(h.ks)}</li>`;
     }).join('')}</ul>` : `<p class="empty">いまは何も持っていません。次の朝に買う銘柄があれば、買ったあとここに並びます。</p>`;
   } else {
     $('stocks-lead').innerHTML = sold.length ? '売った日ごとに並べています。1回ごとの損益は、売買のずれ（0.1%）を引いた後・税金を引く前の数字です。税金はホームの合計で、1年分まとめて引いています。' : '';

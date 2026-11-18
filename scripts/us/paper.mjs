@@ -214,7 +214,7 @@ const out = {
   trades: st.closed.length,
   winRatePct: rets.length ? pct(rets.filter((r) => r > 0).length / rets.length) : null,
   avgRetPct: rets.length ? Math.round((rets.reduce((a, b) => a + b, 0) / rets.length) * 100) / 100 : null,
-  holdings: st.positions.map((p) => ({ t: p.t, name: p.name, reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, daysLeft: Math.max(0, (p.hold ?? HOLD) - p.held), unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
+  holdings: st.positions.map((p) => ({ t: p.t, name: p.name, reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, daysLeft: Math.max(0, (p.hold ?? HOLD) - p.held), unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1), costYen: Math.round(p.size), valueYen: Math.round(p.size * ((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx) })),
   nextBuys: st.pending.sort((a, b) => b.re - a.re).map((p) => ({ t: p.t, name: p.name, reason: p.reason })),
   recentReactions: recent.sort((a, b) => b.date.localeCompare(a.date) || b.rePct - a.rePct).slice(0, 30),
   recentClosed: st.closed.slice(-30).reverse(),
@@ -226,7 +226,7 @@ const out = {
     name: '試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）', trial: true, chosenAt: PROC?.chosenAt ?? null,
     startDate: P.startDate, capital: START, equityYen: eqP, returnPct: pct(eqP / START - 1), taxYen: Object.values(P.tax).reduce((a, b) => a + b, 0),
     trades: P.closed.length, winRatePct: rp.length ? pct(rp.filter((r) => r > 0).length / rp.length) : null,
-    holdings: P.positions.map((p) => ({ t: p.t, name: p.name, reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, daysLeft: Math.max(0, p.hold - p.held), unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
+    holdings: P.positions.map((p) => ({ t: p.t, name: p.name, reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, daysLeft: Math.max(0, p.hold - p.held), unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1), costYen: Math.round(p.size), valueYen: Math.round(p.size * ((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx) })),
     nextBuys: P.pending.sort((a, b) => b.score - a.score).map((p) => ({ t: p.t, name: p.name, reason: p.reason })),
     recentClosed: P.closed.slice(-30).reverse(), equityHistory: P.equity,
   };

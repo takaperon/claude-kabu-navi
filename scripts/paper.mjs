@@ -333,7 +333,7 @@ for (const [k, cfg] of Object.entries(STRATS)) {
     trades: st.closed.length,
     winRatePct: rets.length ? pct(rets.filter((r) => r > 0).length / rets.length) : null,
     avgRetPct: rets.length ? Math.round((rets.reduce((a, b) => a + b, 0) / rets.length) * 100) / 100 : null,
-    holdings: st.positions.map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, shares: p.shares, unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1) })),
+    holdings: st.positions.map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, shares: p.shares, unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1), costYen: Math.round(p.size), valueYen: Math.round(p.size * ((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx) })),
     nextBuys: st.pending.sort((a, b) => b.score - a.score).slice(0, 10).map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, late: p.late })),
     recentClosed: st.closed.slice(-30).reverse(),
     equityHistory: st.equity,
