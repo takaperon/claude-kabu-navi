@@ -102,6 +102,54 @@ def evaluate(iv):
             per = [g if g is not None else 0.0 for g in got]
             o[h] = {**summ(traded), 'perEvent': r4(sum(per) / len(per)) if per else None, 'vsBase': r4((sum(per) - sum(base)) / len(per)) if per else None, 'tradedRate': r4(len(traded) / len(got)) if got else None}
         res['rules'][key] = o
+    # 損は小さく・利益は伸ばす（2026-11-18 オーナー「損は少なく、儲けは大きく」）：
+    # 買う日の引け（正式な終値）でプラスなら持ち越し、以後は「それまでの高値から z% 下がる」か「買値に戻る」で売る（最長 N 日、最後の日は最後の足で売る）。
+    # 引けでマイナスなら、その日の引けで売る（損を翌日に持ち越さない）。sl があれば買う日の場中にも損切り
+    if iv == '60m':
+        multi = {}
+        for z in (0.03, 0.05, 0.08):
+            for N in (5, 10):
+                for sl in (None, 0.05):
+                    multi[f'let_z{int(z*100)}_d{N}' + (f'_sl{int(sl*100)}' if sl else '')] = (z, N, sl)
+        res['letRun'] = {'note': '買う日の引けでプラスなら持ち越して、高値から z% 下げるか買値に戻ったら売る（最長 d 日）。マイナスなら引けで売る。sl＝買う日の場中の損切り', 'rules': {}}
+        for key, (z, N, sl) in multi.items():
+            oo = {}
+            for h in ('train', 'test'):
+                got, days, base = [], [], []
+                for r in rows:
+                    if r['half'] != h: continue
+                    x, B = r['x'], r['B']
+                    b0 = run(B, RULES['base'], x.get('dt'))
+                    base.append(b0)
+                    d0 = run(B, {'kind': 'tpsl', 'sl': sl}, x.get('dt')) if sl else b0
+                    o0 = B[0][1]; entry = o0 * (1 + SLIP)
+                    sell = lambda px, bad=False: px * (1 - SLIP) * ((1 - BAD) if bad else 1) / entry - 1
+                    if (sl and min(b[3] for b in B) <= o0 * (1 - sl)) or d0 <= 0:
+                        got.append(d0); days.append(1); continue
+                    allb = bars(x['c'], iv)
+                    nxt = [d for d in sorted(allb) if d > x['e']][:N - 1]
+                    hi = max(max(b[2] for b in B), o0 * (1 + (x['dt'] or 0)) * (1 + SLIP) / (1 - SLIP))
+                    ret, held = None, 1
+                    for j, d in enumerate(nxt):
+                        held = j + 2
+                        for (t, o, hh, l, c, v) in allb[d]:
+                            stop = max(hi * (1 - z), entry / (1 - SLIP))  # 買値は割らない
+                            if l <= stop: ret = sell(min(o, stop), True); break
+                            hi = max(hi, hh)
+                        if ret is not None: break
+                    if ret is None:
+                        ret = sell(allb[nxt[-1]][-1][4]) if nxt else d0
+                    got.append(ret); days.append(held)
+                wins = [g for g in got if g > 0]; loss = [g for g in got if g <= 0]
+                oo[h] = {**summ(got), 'vsBase': r4((sum(got) - sum(base)) / len(got)) if got else None, 'avgDays': r4(sum(days) / len(days)) if days else None,
+                        'avgWin': r4(sum(wins) / len(wins)) if wins else None, 'avgLoss': r4(sum(loss) / len(loss)) if loss else None}
+            res['letRun']['rules'][key] = oo
+        bw = {}
+        for h in ('train', 'test'):
+            b = [run(r['B'], RULES['base'], r['x'].get('dt')) for r in rows if r['half'] == h]
+            w = [g for g in b if g > 0]; l_ = [g for g in b if g <= 0]
+            bw[h] = {'avgWin': r4(sum(w) / len(w)) if w else None, 'avgLoss': r4(sum(l_) / len(l_)) if l_ else None}
+        res['letRun']['base'] = bw
     # 「気配」：最初の足の出来高の多さ・寄り付きの上げで分けた今のやり方の成績（買う前に分かる・最初の1時間で分かる）
     grp = {}
     for r in rows:
