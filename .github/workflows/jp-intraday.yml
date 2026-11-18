@@ -1,0 +1,32 @@
+name: jp-intraday
+# 日本株の分足（yfinance）の確認・収集（2026-11-18〜）。値段は公開しない（本数・集計だけ）
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/jp/intraday*', '.github/workflows/jp-intraday.yml']
+permissions:
+  contents: write
+concurrency:
+  group: jp-intraday
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q yfinance
+      - name: probe
+        run: python scripts/jp/intraday_probe.py
+      - name: publish
+        if: always()
+        run: |
+          [ -f jp-intraday-probe.json ] || exit 0
+          git fetch origin reports:reports && git worktree add rep reports
+          mkdir -p rep/reports && cp jp-intraday-probe.json rep/reports/
+          cd rep && git config user.name "kabunavi-bot" && git config user.email "kabunavi-bot@users.noreply.github.com"
+          git add -A && git commit -q -m "jp intraday probe" || exit 0
+          for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
