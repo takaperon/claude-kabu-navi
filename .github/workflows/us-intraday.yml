@@ -1,0 +1,47 @@
+name: us-intraday
+# 米国株の場中（分足）の検証（2026-11-18〜）。まずはどこからどれだけ取れるかの確認
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/us/intraday*', '.github/workflows/us-intraday.yml']
+permissions:
+  contents: write
+concurrency:
+  group: live
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      WEBULL_APP_KEY: ${{ secrets.WEBULL_APP_KEY }}
+      WEBULL_APP_SECRET: ${{ secrets.WEBULL_APP_SECRET }}
+      WEBULL_OPENAPI_TOKEN_DIR: .wbtoken
+      TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+      ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q webull-openapi-python-sdk
+      - name: restore token
+        uses: actions/cache/restore@v4
+        with:
+          path: wbtoken.enc
+          key: webull-token-${{ github.run_id }}
+          restore-keys: webull-token-
+      - name: decrypt token
+        run: |
+          mkdir -p .wbtoken
+          if [ -f wbtoken.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken.enc -out .wbtoken/token.txt && echo "token restored"; else echo "no token yet"; fi
+      - name: probe
+        run: bash scripts/quiet.sh python scripts/us/intraday_probe.py
+      - name: publish
+        if: always()
+        run: |
+          git fetch origin reports:reports && git worktree add rep reports
+          mkdir -p rep/reports && cp reports-out/us-intraday-probe.json rep/reports/ 2>/dev/null || exit 0
+          cd rep && git config user.name "kabunavi-bot" && git config user.email "kabunavi-bot@users.noreply.github.com"
+          git add -A && git commit -q -m "us intraday probe $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
+          for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
