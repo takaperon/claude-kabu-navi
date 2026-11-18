@@ -1,14 +1,14 @@
 {
  "ok": true,
- "generatedAt": "2026-11-17T19:08:32.005Z",
+ "generatedAt": "2026-11-18T06:49:05.048Z",
  "status": {
-  "startedAt": "2026-11-17T19:08:28.871Z",
+  "startedAt": "2026-11-18T06:49:00.863Z",
   "spyDays": 0,
   "events": {
    "div_up": 4878,
    "earn_up": 2727
   },
-  "finishedAt": "2026-11-17T19:08:32.970Z"
+  "finishedAt": "2026-11-18T06:49:06.169Z"
  },
  "periods": {
   "train": [
@@ -25754,6 +25754,923 @@
        "trades": 33,
        "noMoney": 124
       }
+     }
+    }
+   }
+  }
+ },
+ "dtIntraday": {
+  "note": "増配デイトレ（寄りで買う）。tp=利益確定の指値、sl=損切り。日足の高値・安値で近似、同じ日に両方なら損切りが先、損切りは0.5%余分に不利",
+  "rules": {
+   "tp-_sl-": {
+    "tp": null,
+    "sl": null,
+    "train": {
+     "n": 2431,
+     "avg": 0.003,
+     "med": 0.0009,
+     "win": 0.508,
+     "p10": -0.0416,
+     "p90": 0.0494,
+     "tpRate": 0,
+     "slRate": 0
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0023,
+     "med": 0.0017,
+     "win": 0.5166,
+     "p10": -0.0429,
+     "p90": 0.0475,
+     "tpRate": 0,
+     "slRate": 0
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 76.8,
+      "maxDDPct": 9.2,
+      "trades": 362,
+      "noMoney": 1302
+     },
+     "test": {
+      "returnPct": 40,
+      "maxDDPct": 11,
+      "trades": 294,
+      "noMoney": 1378
+     }
+    }
+   },
+   "tp-_sl2": {
+    "tp": null,
+    "sl": 0.02,
+    "train": {
+     "n": 2431,
+     "avg": 0,
+     "med": -0.0088,
+     "win": 0.4015,
+     "p10": -0.0259,
+     "p90": 0.0442,
+     "tpRate": 0,
+     "slRate": 0.4558
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0008,
+     "med": -0.0112,
+     "win": 0.4001,
+     "p10": -0.0259,
+     "p90": 0.0426,
+     "tpRate": 0,
+     "slRate": 0.4696
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 18.7,
+      "maxDDPct": 8.4,
+      "trades": 291,
+      "noMoney": 1512
+     },
+     "test": {
+      "returnPct": 12.8,
+      "maxDDPct": 14.2,
+      "trades": 249,
+      "noMoney": 1620
+     }
+    }
+   },
+   "tp-_sl3": {
+    "tp": null,
+    "sl": 0.03,
+    "train": {
+     "n": 2431,
+     "avg": 0.0016,
+     "med": -0.002,
+     "win": 0.4677,
+     "p10": -0.0358,
+     "p90": 0.048,
+     "tpRate": 0,
+     "slRate": 0.2929
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0004,
+     "med": -0.002,
+     "win": 0.4642,
+     "p10": -0.0358,
+     "p90": 0.0456,
+     "tpRate": 0,
+     "slRate": 0.3159
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 49.6,
+      "maxDDPct": 9.1,
+      "trades": 343,
+      "noMoney": 1346
+     },
+     "test": {
+      "returnPct": 29.2,
+      "maxDDPct": 12.1,
+      "trades": 281,
+      "noMoney": 1451
+     }
+    }
+   },
+   "tp-_sl5": {
+    "tp": null,
+    "sl": 0.05,
+    "train": {
+     "n": 2431,
+     "avg": 0.0026,
+     "med": 0.0004,
+     "win": 0.5035,
+     "p10": -0.0557,
+     "p90": 0.0492,
+     "tpRate": 0,
+     "slRate": 0.1304
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0019,
+     "med": 0.001,
+     "win": 0.5088,
+     "p10": -0.0557,
+     "p90": 0.0475,
+     "tpRate": 0,
+     "slRate": 0.1332
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 58.2,
+      "maxDDPct": 8.7,
+      "trades": 358,
+      "noMoney": 1312
+     },
+     "test": {
+      "returnPct": 27.4,
+      "maxDDPct": 11,
+      "trades": 279,
+      "noMoney": 1418
+     }
+    }
+   },
+   "tp1_sl-": {
+    "tp": 0.01,
+    "sl": null,
+    "train": {
+     "n": 2431,
+     "avg": -0.0013,
+     "med": 0.009,
+     "win": 0.7265,
+     "p10": -0.0305,
+     "p90": 0.009,
+     "tpRate": 0.7063,
+     "slRate": 0
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0007,
+     "med": 0.009,
+     "win": 0.7413,
+     "p10": -0.0294,
+     "p90": 0.009,
+     "tpRate": 0.727,
+     "slRate": 0
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 7.9,
+      "maxDDPct": 9.5,
+      "trades": 268,
+      "noMoney": 1580
+     },
+     "test": {
+      "returnPct": -1.1,
+      "maxDDPct": 12.3,
+      "trades": 216,
+      "noMoney": 1740
+     }
+    }
+   },
+   "tp1_sl2": {
+    "tp": 0.01,
+    "sl": 0.02,
+    "train": {
+     "n": 2431,
+     "avg": -0.0081,
+     "med": -0.0026,
+     "win": 0.4698,
+     "p10": -0.0259,
+     "p90": 0.009,
+     "tpRate": 0.4554,
+     "slRate": 0.4558
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0083,
+     "med": -0.0033,
+     "win": 0.4687,
+     "p10": -0.0259,
+     "p90": 0.009,
+     "tpRate": 0.4626,
+     "slRate": 0.4696
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": -31.4,
+      "maxDDPct": 34.3,
+      "trades": 190,
+      "noMoney": 1819
+     },
+     "test": {
+      "returnPct": -28.6,
+      "maxDDPct": 29.5,
+      "trades": 157,
+      "noMoney": 1950
+     }
+    }
+   },
+   "tp1_sl3": {
+    "tp": 0.01,
+    "sl": 0.03,
+    "train": {
+     "n": 2431,
+     "avg": -0.0065,
+     "med": 0.009,
+     "win": 0.587,
+     "p10": -0.0358,
+     "p90": 0.009,
+     "tpRate": 0.5689,
+     "slRate": 0.2929
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0072,
+     "med": 0.009,
+     "win": 0.5791,
+     "p10": -0.0358,
+     "p90": 0.009,
+     "tpRate": 0.568,
+     "slRate": 0.3159
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": -27.9,
+      "maxDDPct": 30.6,
+      "trades": 198,
+      "noMoney": 1748
+     },
+     "test": {
+      "returnPct": -23.5,
+      "maxDDPct": 25.1,
+      "trades": 170,
+      "noMoney": 1879
+     }
+    }
+   },
+   "tp1_sl5": {
+    "tp": 0.01,
+    "sl": 0.05,
+    "train": {
+     "n": 2431,
+     "avg": -0.0042,
+     "med": 0.009,
+     "win": 0.6808,
+     "p10": -0.0557,
+     "p90": 0.009,
+     "tpRate": 0.661,
+     "slRate": 0.1304
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0043,
+     "med": 0.009,
+     "win": 0.6857,
+     "p10": -0.0557,
+     "p90": 0.009,
+     "tpRate": 0.6714,
+     "slRate": 0.1332
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": -25.1,
+      "maxDDPct": 28.5,
+      "trades": 214,
+      "noMoney": 1703
+     },
+     "test": {
+      "returnPct": -24.5,
+      "maxDDPct": 26.1,
+      "trades": 175,
+      "noMoney": 1871
+     }
+    }
+   },
+   "tp2_sl-": {
+    "tp": 0.02,
+    "sl": null,
+    "train": {
+     "n": 2431,
+     "avg": 0.0001,
+     "med": 0.019,
+     "win": 0.6084,
+     "p10": -0.0376,
+     "p90": 0.019,
+     "tpRate": 0.5167,
+     "slRate": 0
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0007,
+     "med": 0.019,
+     "win": 0.6277,
+     "p10": -0.0374,
+     "p90": 0.019,
+     "tpRate": 0.5407,
+     "slRate": 0
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 25,
+      "maxDDPct": 7.2,
+      "trades": 310,
+      "noMoney": 1460
+     },
+     "test": {
+      "returnPct": 16.9,
+      "maxDDPct": 11,
+      "trades": 247,
+      "noMoney": 1622
+     }
+    }
+   },
+   "tp2_sl2": {
+    "tp": 0.02,
+    "sl": 0.02,
+    "train": {
+     "n": 2431,
+     "avg": -0.0052,
+     "med": -0.0074,
+     "win": 0.4327,
+     "p10": -0.0259,
+     "p90": 0.019,
+     "tpRate": 0.3653,
+     "slRate": 0.4558
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0052,
+     "med": -0.0083,
+     "win": 0.4369,
+     "p10": -0.0259,
+     "p90": 0.019,
+     "tpRate": 0.3792,
+     "slRate": 0.4696
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": -23.1,
+      "maxDDPct": 27.1,
+      "trades": 203,
+      "noMoney": 1723
+     },
+     "test": {
+      "returnPct": -18,
+      "maxDDPct": 26.1,
+      "trades": 171,
+      "noMoney": 1875
+     }
+    }
+   },
+   "tp2_sl3": {
+    "tp": 0.02,
+    "sl": 0.03,
+    "train": {
+     "n": 2431,
+     "avg": -0.0034,
+     "med": 0.0034,
+     "win": 0.5249,
+     "p10": -0.0358,
+     "p90": 0.019,
+     "tpRate": 0.4406,
+     "slRate": 0.2929
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0039,
+     "med": 0.0038,
+     "win": 0.5239,
+     "p10": -0.0358,
+     "p90": 0.019,
+     "tpRate": 0.4487,
+     "slRate": 0.3159
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": -13.7,
+      "maxDDPct": 17.3,
+      "trades": 232,
+      "noMoney": 1685
+     },
+     "test": {
+      "returnPct": -13.8,
+      "maxDDPct": 23.5,
+      "trades": 189,
+      "noMoney": 1845
+     }
+    }
+   },
+   "tp2_sl5": {
+    "tp": 0.02,
+    "sl": 0.05,
+    "train": {
+     "n": 2431,
+     "avg": -0.0019,
+     "med": 0.0142,
+     "win": 0.5829,
+     "p10": -0.0557,
+     "p90": 0.019,
+     "tpRate": 0.4932,
+     "slRate": 0.1304
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0014,
+     "med": 0.019,
+     "win": 0.5999,
+     "p10": -0.0557,
+     "p90": 0.019,
+     "tpRate": 0.5157,
+     "slRate": 0.1332
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 0.5,
+      "maxDDPct": 13.1,
+      "trades": 282,
+      "noMoney": 1525
+     },
+     "test": {
+      "returnPct": -7,
+      "maxDDPct": 16.7,
+      "trades": 223,
+      "noMoney": 1706
+     }
+    }
+   },
+   "tp3_sl-": {
+    "tp": 0.03,
+    "sl": null,
+    "train": {
+     "n": 2431,
+     "avg": 0.001,
+     "med": 0.0052,
+     "win": 0.557,
+     "p10": -0.0396,
+     "p90": 0.029,
+     "tpRate": 0.3657,
+     "slRate": 0
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0018,
+     "med": 0.007,
+     "win": 0.5738,
+     "p10": -0.0397,
+     "p90": 0.029,
+     "tpRate": 0.3935,
+     "slRate": 0
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 32.9,
+      "maxDDPct": 11.5,
+      "trades": 322,
+      "noMoney": 1409
+     },
+     "test": {
+      "returnPct": 25,
+      "maxDDPct": 11.8,
+      "trades": 258,
+      "noMoney": 1586
+     }
+    }
+   },
+   "tp3_sl2": {
+    "tp": 0.03,
+    "sl": 0.02,
+    "train": {
+     "n": 2431,
+     "avg": -0.0032,
+     "med": -0.0079,
+     "win": 0.4167,
+     "p10": -0.0259,
+     "p90": 0.029,
+     "tpRate": 0.2707,
+     "slRate": 0.4558
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0033,
+     "med": -0.0104,
+     "win": 0.416,
+     "p10": -0.0259,
+     "p90": 0.029,
+     "tpRate": 0.2844,
+     "slRate": 0.4696
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": -17,
+      "maxDDPct": 21.5,
+      "trades": 220,
+      "noMoney": 1688
+     },
+     "test": {
+      "returnPct": -10.2,
+      "maxDDPct": 21.6,
+      "trades": 188,
+      "noMoney": 1835
+     }
+    }
+   },
+   "tp3_sl3": {
+    "tp": 0.03,
+    "sl": 0.03,
+    "train": {
+     "n": 2431,
+     "avg": -0.0015,
+     "med": -0.0002,
+     "win": 0.4957,
+     "p10": -0.0358,
+     "p90": 0.029,
+     "tpRate": 0.3204,
+     "slRate": 0.2929
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0019,
+     "med": -0.0006,
+     "win": 0.4924,
+     "p10": -0.0358,
+     "p90": 0.029,
+     "tpRate": 0.3335,
+     "slRate": 0.3159
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 10.8,
+      "maxDDPct": 9.8,
+      "trades": 287,
+      "noMoney": 1517
+     },
+     "test": {
+      "returnPct": 5.5,
+      "maxDDPct": 15.4,
+      "trades": 227,
+      "noMoney": 1683
+     }
+    }
+   },
+   "tp3_sl5": {
+    "tp": 0.03,
+    "sl": 0.05,
+    "train": {
+     "n": 2431,
+     "avg": -0.0003,
+     "med": 0.0039,
+     "win": 0.5409,
+     "p10": -0.0557,
+     "p90": 0.029,
+     "tpRate": 0.3534,
+     "slRate": 0.1304
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0004,
+     "med": 0.0056,
+     "win": 0.5541,
+     "p10": -0.0557,
+     "p90": 0.029,
+     "tpRate": 0.3784,
+     "slRate": 0.1332
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 13.7,
+      "maxDDPct": 11,
+      "trades": 300,
+      "noMoney": 1476
+     },
+     "test": {
+      "returnPct": 6.6,
+      "maxDDPct": 8.9,
+      "trades": 237,
+      "noMoney": 1664
+     }
+    }
+   },
+   "tp5_sl-": {
+    "tp": 0.05,
+    "sl": null,
+    "train": {
+     "n": 2431,
+     "avg": 0.0023,
+     "med": 0.0019,
+     "win": 0.5195,
+     "p10": -0.0405,
+     "p90": 0.049,
+     "tpRate": 0.1826,
+     "slRate": 0
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0022,
+     "med": 0.0025,
+     "win": 0.53,
+     "p10": -0.0423,
+     "p90": 0.049,
+     "tpRate": 0.1859,
+     "slRate": 0
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 46.6,
+      "maxDDPct": 11.7,
+      "trades": 329,
+      "noMoney": 1403
+     },
+     "test": {
+      "returnPct": 43,
+      "maxDDPct": 10,
+      "trades": 287,
+      "noMoney": 1395
+     }
+    }
+   },
+   "tp5_sl2": {
+    "tp": 0.05,
+    "sl": 0.02,
+    "train": {
+     "n": 2431,
+     "avg": -0.0013,
+     "med": -0.0088,
+     "win": 0.4044,
+     "p10": -0.0259,
+     "p90": 0.049,
+     "tpRate": 0.1427,
+     "slRate": 0.4558
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0016,
+     "med": -0.011,
+     "win": 0.4025,
+     "p10": -0.0259,
+     "p90": 0.049,
+     "tpRate": 0.1414,
+     "slRate": 0.4696
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 6.4,
+      "maxDDPct": 10.3,
+      "trades": 255,
+      "noMoney": 1593
+     },
+     "test": {
+      "returnPct": 7.2,
+      "maxDDPct": 15.4,
+      "trades": 236,
+      "noMoney": 1665
+     }
+    }
+   },
+   "tp5_sl3": {
+    "tp": 0.05,
+    "sl": 0.03,
+    "train": {
+     "n": 2431,
+     "avg": 0.0004,
+     "med": -0.002,
+     "win": 0.4735,
+     "p10": -0.0358,
+     "p90": 0.049,
+     "tpRate": 0.1641,
+     "slRate": 0.2929
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0005,
+     "med": -0.002,
+     "win": 0.4687,
+     "p10": -0.0358,
+     "p90": 0.049,
+     "tpRate": 0.1614,
+     "slRate": 0.3159
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 26.3,
+      "maxDDPct": 12.7,
+      "trades": 322,
+      "noMoney": 1433
+     },
+     "test": {
+      "returnPct": 11,
+      "maxDDPct": 14.4,
+      "trades": 252,
+      "noMoney": 1633
+     }
+    }
+   },
+   "tp5_sl5": {
+    "tp": 0.05,
+    "sl": 0.05,
+    "train": {
+     "n": 2431,
+     "avg": 0.0014,
+     "med": 0.0012,
+     "win": 0.5109,
+     "p10": -0.0557,
+     "p90": 0.049,
+     "tpRate": 0.1777,
+     "slRate": 0.1304
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0015,
+     "med": 0.0018,
+     "win": 0.5194,
+     "p10": -0.0557,
+     "p90": 0.049,
+     "tpRate": 0.1819,
+     "slRate": 0.1332
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 37.5,
+      "maxDDPct": 11.5,
+      "trades": 338,
+      "noMoney": 1364
+     },
+     "test": {
+      "returnPct": 16.8,
+      "maxDDPct": 10.6,
+      "trades": 271,
+      "noMoney": 1493
+     }
+    }
+   },
+   "tp8_sl-": {
+    "tp": 0.08,
+    "sl": null,
+    "train": {
+     "n": 2431,
+     "avg": 0.0029,
+     "med": 0.0011,
+     "win": 0.5093,
+     "p10": -0.0412,
+     "p90": 0.0525,
+     "tpRate": 0.0609,
+     "slRate": 0
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0023,
+     "med": 0.0018,
+     "win": 0.5182,
+     "p10": -0.0429,
+     "p90": 0.0491,
+     "tpRate": 0.0552,
+     "slRate": 0
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 73.3,
+      "maxDDPct": 9.6,
+      "trades": 362,
+      "noMoney": 1302
+     },
+     "test": {
+      "returnPct": 39.2,
+      "maxDDPct": 8.9,
+      "trades": 286,
+      "noMoney": 1406
+     }
+    }
+   },
+   "tp8_sl2": {
+    "tp": 0.08,
+    "sl": 0.02,
+    "train": {
+     "n": 2431,
+     "avg": -0.0002,
+     "med": -0.0088,
+     "win": 0.4019,
+     "p10": -0.0259,
+     "p90": 0.0466,
+     "tpRate": 0.049,
+     "slRate": 0.4558
+    },
+    "test": {
+     "n": 2447,
+     "avg": -0.0009,
+     "med": -0.0112,
+     "win": 0.4001,
+     "p10": -0.0259,
+     "p90": 0.0435,
+     "tpRate": 0.0437,
+     "slRate": 0.4696
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 19,
+      "maxDDPct": 9.4,
+      "trades": 297,
+      "noMoney": 1508
+     },
+     "test": {
+      "returnPct": 14.9,
+      "maxDDPct": 12.3,
+      "trades": 245,
+      "noMoney": 1640
+     }
+    }
+   },
+   "tp8_sl3": {
+    "tp": 0.08,
+    "sl": 0.03,
+    "train": {
+     "n": 2431,
+     "avg": 0.0015,
+     "med": -0.002,
+     "win": 0.4685,
+     "p10": -0.0358,
+     "p90": 0.0506,
+     "tpRate": 0.0555,
+     "slRate": 0.2929
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.0003,
+     "med": -0.002,
+     "win": 0.4655,
+     "p10": -0.0358,
+     "p90": 0.0478,
+     "tpRate": 0.0507,
+     "slRate": 0.3159
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 47.1,
+      "maxDDPct": 9.4,
+      "trades": 344,
+      "noMoney": 1345
+     },
+     "test": {
+      "returnPct": 18.9,
+      "maxDDPct": 13,
+      "trades": 257,
+      "noMoney": 1591
+     }
+    }
+   },
+   "tp8_sl5": {
+    "tp": 0.08,
+    "sl": 0.05,
+    "train": {
+     "n": 2431,
+     "avg": 0.0024,
+     "med": 0.0005,
+     "win": 0.5043,
+     "p10": -0.0557,
+     "p90": 0.0523,
+     "tpRate": 0.0601,
+     "slRate": 0.1304
+    },
+    "test": {
+     "n": 2447,
+     "avg": 0.002,
+     "med": 0.0012,
+     "win": 0.5104,
+     "p10": -0.0557,
+     "p90": 0.0491,
+     "tpRate": 0.0552,
+     "slRate": 0.1332
+    },
+    "lot30x3": {
+     "train": {
+      "returnPct": 56.1,
+      "maxDDPct": 8.6,
+      "trades": 356,
+      "noMoney": 1314
+     },
+     "test": {
+      "returnPct": 24.9,
+      "maxDDPct": 11.8,
+      "trades": 274,
+      "noMoney": 1488
      }
     }
    }

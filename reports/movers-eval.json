@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T19:08:28.817Z",
+ "updatedAt": "2026-11-18T06:49:00.799Z",
  "periods": {
   "train": [
    "2021-12-08",
@@ -1688,7 +1688,7 @@
   }
  },
  "researched": {
-  "items": 0,
+  "items": 5,
   "byCat": {}
  }
 }
