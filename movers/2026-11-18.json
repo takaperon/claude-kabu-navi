@@ -1,0 +1,165 @@
+{
+ "date": "2026-11-18",
+ "note": "2026-11-19 朝の調査。理由は記事で確かめたものだけ、分からないものは「不明」。米国分は 08:40 の順位更新の後に追記",
+ "items": [
+  {
+   "market": "jp",
+   "code": "3909",
+   "pct": 17.2,
+   "cat": "テーマ/思惑",
+   "reason": "ストップ高。セキュリティ関連の一角として押し目買い（楽天証券の不正アクセスをきっかけにセキュリティ株に資金）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261119/878296.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "338A",
+   "pct": 15.6,
+   "cat": "テーマ/思惑",
+   "reason": "情報漏えいが相次ぎ、セキュリティ関連株に資金が集まった",
+   "sources": [
+    "https://jp.investing.com/news/stock-market-news/article-1763406",
+    "https://finance.yahoo.co.jp/news/detail/970e29a1c727b0cf895b36893dc3e762ae8cd356"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "3624",
+   "pct": 14.9,
+   "cat": "不明",
+   "reason": "18日の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3042",
+   "pct": 14.6,
+   "cat": "テーマ/思惑",
+   "reason": "ストップ高。楽天証券の不正アクセス問題を受けてセキュリティ関連として注目",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261119/878296.html",
+    "https://finance.yahoo.co.jp/news/detail/970e29a1c727b0cf895b36893dc3e762ae8cd356"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4288",
+   "pct": 13.8,
+   "cat": "テーマ/思惑",
+   "reason": "サイバーセキュリティ関連として買いが集まった",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261119/878296.html",
+    "https://finance.yahoo.co.jp/news/ai-market/detail/4066"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "436A",
+   "pct": 13.2,
+   "cat": "不明",
+   "reason": "セキュリティ関連の会社だが、18日の上げを説明した記事は確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4972",
+   "pct": 13.0,
+   "cat": "不明",
+   "reason": "18日の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "2334",
+   "pct": 10.9,
+   "cat": "上方修正",
+   "reason": "27年3月期の業績予想の上方修正が手掛かり",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261119/878296.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "153A",
+   "pct": 10.2,
+   "cat": "テーマ/思惑",
+   "reason": "金融機関向けに不正アクセス検知サービスを提供。楽天証券の不正アクセスで需要拡大を期待",
+   "sources": [
+    "https://finance.yahoo.co.jp/news/detail/970e29a1c727b0cf895b36893dc3e762ae8cd356"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "6490",
+   "pct": 9.4,
+   "cat": "需給（指数採用など）",
+   "reason": "直近でエフィッシモ（物言う株主のファンド）が大株主として浮上",
+   "sources": [
+    "https://jp.investing.com/news/stock-market-news/article-1763406"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4165",
+   "pct": -18.2,
+   "cat": "不祥事・事故",
+   "reason": "連日のストップ安。顧客企業が「KARTE」経由の個人情報漏えいを相次いで発表",
+   "sources": [
+    "https://jp.investing.com/news/stock-market-news/article-1763406"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "5838",
+   "pct": -15.2,
+   "cat": "不祥事・事故",
+   "reason": "子会社の楽天証券に不正アクセス、最大1125万口座の情報流出のおそれ",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261118/878164.html",
+    "https://jp.investing.com/news/stock-market-news/article-1763406"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "4169",
+   "pct": -9.8,
+   "cat": "不明",
+   "reason": "18日の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "634A",
+   "pct": -9.4,
+   "cat": "決算",
+   "reason": "第1四半期決算の進捗の低さを引き続き嫌気",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261119/878296.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "6027",
+   "pct": -8.7,
+   "cat": "不明",
+   "reason": "18日の材料を記事で確かめられなかった（SaaS株安の日だが、記事での確認なし）",
+   "sources": [],
+   "confidence": "低"
+  }
+ ]
+}

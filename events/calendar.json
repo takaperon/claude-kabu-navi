@@ -4,18 +4,6 @@
   {
    "date": "2026-11-18",
    "market": "us",
-   "t": "ANT",
-   "name": "Anthropic",
-   "type": "上場",
-   "title": "Anthropic の新規上場（記事の予定）",
-   "announcedOn": "2026-11-17",
-   "sources": [
-    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
-   ]
-  },
-  {
-   "date": "2026-11-18",
-   "market": "us",
    "t": null,
    "name": "FOMC",
    "type": "マクロ",
@@ -23,6 +11,31 @@
    "announcedOn": "2026-11-17",
    "sources": [
     "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d"
+   ]
+  },
+  {
+   "date": "2026-11-19",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "上場",
+   "title": "Anthropic の Nasdaq 上場・取引開始（11/18夜に値決め、仮の範囲70〜78ドル）",
+   "announcedOn": "2026-11-17",
+   "sources": [
+    "https://www.marketscreener.com/news/wall-street-ends-lower-ahead-of-nvidia-results-focus-turns-to-anthropic-debut-ce785edcdc81fe2d",
+    "https://vistapglobal.com/u-s-stock-market-today-november-18-2026-dow-falls-561-points-nasdaq-rises-ahead-of-anthropic-ipo-ant-eprx-googl-modd-nvda-ser-tgt/"
+   ]
+  },
+  {
+   "date": "2026-11-19",
+   "market": "us",
+   "t": null,
+   "name": "米国勢調査局",
+   "type": "マクロ",
+   "title": "7-9月期のサービス業統計（速報、米東部10時）",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://vistapglobal.com/u-s-stock-market-today-november-18-2026-dow-falls-561-points-nasdaq-rises-ahead-of-anthropic-ipo-ant-eprx-googl-modd-nvda-ser-tgt/"
    ]
   }
  ]

@@ -1,0 +1,158 @@
+{
+ "date": "2026-11-19",
+ "status": "未検証",
+ "period": "2026-11-18 朝〜2026-11-19 朝",
+ "note": "日本は楽天証券の不正アクセスで楽天銀行・楽天Gが急落し、サイバーセキュリティ株に買いが集中。米国はFOMC議事録が利上げ継続を示しS&P500は5日続落、UNH・Humanaが規制案で急落。Anthropicは今夜（11/19）Nasdaqで取引開始の予定。",
+ "items": [
+  {
+   "headline": "楽天証券に不正アクセス、最大1125万口座の情報流出のおそれ。楽天銀行が急落",
+   "summary": "楽天証券が第三者の不正アクセスを発表。約447万口座で年収・金融資産などを含む個人情報が、さらに最大約1125万口座で顧客コード・ログインIDが流出したおそれ。パスワード・暗証番号の流出や不正取引は確認されていないとしている。11/18 は楽天銀行が-15.2%（プライム値下がり1位）、楽天グループも年初来安値。",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261118/878164.html",
+    "https://www.bloomberg.com/jp/news/articles/2026-11-18/-g",
+    "https://jp.investing.com/news/stock-market-news/article-1763406"
+   ],
+   "eventDate": "2026-11-17",
+   "type": "企業発表",
+   "sectors": [
+    "銀行業",
+    "サービス業"
+   ],
+   "stocks": [
+    {
+     "code": "5838",
+     "name": "楽天銀行",
+     "dir": "-"
+    },
+    {
+     "code": "4755",
+     "name": "楽天グループ",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "サイバーセキュリティ関連株に買い集中",
+   "summary": "楽天証券の不正アクセスや、プレイドの「KARTE」経由の情報漏えい発表が相次いだことで、カウリス・セキュアヴェイル（ストップ高）・Zenmu・アズジェント・ショーケースなどが大きく上げた。記事は一過性か、対策投資の継続需要につながるかが焦点としている。",
+   "sources": [
+    "https://finance.yahoo.co.jp/news/detail/970e29a1c727b0cf895b36893dc3e762ae8cd356",
+    "https://finance.yahoo.co.jp/news/ai-market/detail/4066",
+    "https://www.zaikei.co.jp/article/20261119/878296.html"
+   ],
+   "eventDate": "2026-11-18",
+   "type": "テーマ",
+   "sectors": [
+    "情報･通信業"
+   ],
+   "stocks": [
+    {
+     "code": "153A",
+     "name": "カウリス",
+     "dir": "+"
+    },
+    {
+     "code": "3042",
+     "name": "セキュアヴェイル",
+     "dir": "+"
+    },
+    {
+     "code": "338A",
+     "name": "ZenmuTech",
+     "dir": "+"
+    },
+    {
+     "code": "4288",
+     "name": "アズジェント",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "プレイドが連日のストップ安、顧客企業がKARTE経由の情報漏えいを発表",
+   "summary": "不正アクセスでCXプラットフォーム「KARTE」から情報が漏えいしたと顧客企業が相次いで発表し、プレイドは-18.2%（連日のストップ安）。SaaS関連（Sansan・ラクス・マネーフォワード）も米SaaS株安の流れで売られた。",
+   "sources": [
+    "https://jp.investing.com/news/stock-market-news/article-1763406",
+    "https://kabutan.jp/news/marketnews/?b=n202611180878"
+   ],
+   "eventDate": "2026-11-18",
+   "type": "企業発表",
+   "sectors": [
+    "情報･通信業"
+   ],
+   "stocks": [
+    {
+     "code": "4165",
+     "name": "プレイド",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "FOMC議事録が利上げ継続を示唆、S&P500は5日続落・200日線割れ",
+   "summary": "11/18 はダウ-1.11%、S&P500-0.23%（5日続落、200日線を下回る）、ナスダック+0.42%。議事録でほぼ全員がさらなる利上げが必要になりうると見ていたことが分かり、ドルは19か月ぶり高値、金は-3.5%。",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/",
+    "https://vistapglobal.com/u-s-stock-market-today-november-18-2026-dow-falls-561-points-nasdaq-rises-ahead-of-anthropic-ipo-ant-eprx-googl-modd-nvda-ser-tgt/"
+   ],
+   "eventDate": "2026-11-18",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [],
+   "horizon": "数週間",
+   "confidence": "高"
+  },
+  {
+   "headline": "UnitedHealth -10%・Humana -13%、メディケア・アドバンテージの監査拡大案",
+   "summary": "連邦政府がメディケア・アドバンテージの監査を広げ、2018年以降の不適切な支払いを回収する案を出し、保険会社の負担増が懸念された。TJXは既存店売上と通期見通しの引き上げで+8%。",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/"
+   ],
+   "eventDate": "2026-11-18",
+   "type": "企業発表",
+   "sectors": [],
+   "stocks": [
+    {
+     "t": "UNH",
+     "dir": "-"
+    },
+    {
+     "t": "HUM",
+     "dir": "-"
+    },
+    {
+     "t": "TJX",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "NVIDIA は決算後の上げを消して-2.9%、中国向けHopperの販売停止",
+   "summary": "売上は前年比+103%だったが、中国向けの四半期約24億ドル分のHopper販売を止め、今後は売上を見込まないとした。日本では18日にKOKUSAI・TOWAなど半導体関連が決算を好感して上げていた。",
+   "sources": [
+    "https://vistapglobal.com/u-s-stock-market-today-november-18-2026-dow-falls-561-points-nasdaq-rises-ahead-of-anthropic-ipo-ant-eprx-googl-modd-nvda-ser-tgt/",
+    "https://jp.investing.com/news/stock-market-news/article-1763406"
+   ],
+   "eventDate": "2026-11-18",
+   "type": "企業発表",
+   "sectors": [
+    "電気機器"
+   ],
+   "stocks": [
+    {
+     "t": "NVDA",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  }
+ ]
+}
