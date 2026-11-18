@@ -1,5 +1,5 @@
 {
- "at": "2026-11-18T06:57:24.161209+00:00",
+ "at": "2026-11-18T06:58:28.356239+00:00",
  "webull": {
   "signature": "(symbol, category, timespan, count='200', real_time_required=None, trading_sessions=None, start_time=None, end_time=None)",
   "M1": {
@@ -78,36 +78,33 @@
    ]
   },
   "H1": {
-   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: 004ade97-6ea2-4b9a-bd2d-a9d58"
+   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: 5f5158d9-504d-47e3-99c3-cc9b6"
   },
   "1m": {
-   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: dc7ad494-d7b5-4acd-96b2-bf673"
+   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: f4e07207-2635-4eae-b3af-f4955"
   },
   "5m": {
-   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: fdce3074-3783-44b7-9d4e-62a1f"
+   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: feddc88e-3395-4934-896e-cd70b"
+  },
+  "hist_ms": {
+   "error": "ServerException: HTTP Status: 417, Code: ILLEGAL_PARAMETER, Msg: start_time cannot be earlier than 180 days ago for minute-level timespan., RequestID: 05a7a4b9-91fb-4bbe-9390-7e"
+  },
+  "hist_sec": {
+   "error": "ServerException: HTTP Status: 417, Code: ILLEGAL_PARAMETER, Msg: start_time cannot be earlier than 180 days ago for minute-level timespan., RequestID: 08143ba6-ef16-470b-a5ed-5a"
+  },
+  "hist_iso": {
+   "error": "ServerException: HTTP Status: 400, Code: 400, Msg: Request body not readable, RequestID: 671b0b6c-c77e-4b79-a39b-045ee36e1d61"
+  },
+  "hist_end_ms_only": {
+   "error": "ServerException: HTTP Status: 417, Code: ILLEGAL_PARAMETER, Msg: end_time cannot be earlier than 180 days ago for minute-level timespan., RequestID: a0eacd18-a847-4693-8b72-66c6"
   }
  },
  "tiingo": {
-  "2022": {
-   "bars": 312,
+  "2022_1min": {
+   "bars": 780,
    "first": "2022-03-01T14:30",
-   "last": "2022-03-04T20:55"
-  },
-  "2024": {
-   "bars": 234,
-   "first": "2024-03-01T14:30",
-   "last": "2024-03-05T20:55"
-  },
-  "recent": {
-   "bars": 312,
-   "first": "2026-11-10T14:30",
-   "last": "2026-11-13T20:55"
+   "last": "2022-03-02T20:59"
   }
  },
- "alphavantage": {
-  "bars": 0,
-  "first": null,
-  "last": null,
-  "note": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantl"
- }
+ "alphavantage": {}
 }
