@@ -1,47 +1,57 @@
 name: us-intraday
-# 米国株の場中（分足）の検証（2026-11-18〜）。まずはどこからどれだけ取れるかの確認
+# 米国株の場中（5分足）の検証（2026-11-18〜）。Tiingo の無料枠（1時間50回）に合わせて毎時少しずつ集め、集まった分で売り方を比べる
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '35 0-21,23 * * *' # 毎時（us.yml が Tiingo を使う 22時UTC台は避ける）
   push:
     branches: [main]
     paths: ['scripts/us/intraday*', '.github/workflows/us-intraday.yml']
 permissions:
   contents: write
 concurrency:
-  group: live
+  group: us-intraday
   cancel-in-progress: false
 jobs:
-  probe:
+  collect:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      WEBULL_APP_KEY: ${{ secrets.WEBULL_APP_KEY }}
-      WEBULL_APP_SECRET: ${{ secrets.WEBULL_APP_SECRET }}
-      WEBULL_OPENAPI_TOKEN_DIR: .wbtoken
       TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
-      ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - run: pip install -q webull-openapi-python-sdk
-      - name: restore token
+      - name: restore cache
         uses: actions/cache/restore@v4
         with:
-          path: wbtoken.enc
-          key: webull-token-${{ github.run_id }}
-          restore-keys: webull-token-
-      - name: decrypt token
+          path: intraday.tar.enc
+          key: us-intraday-${{ github.run_id }}
+          restore-keys: us-intraday-
+      - name: decrypt
         run: |
-          mkdir -p .wbtoken
-          if [ -f wbtoken.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:WEBULL_APP_SECRET -in wbtoken.enc -out .wbtoken/token.txt && echo "token restored"; else echo "no token yet"; fi
-      - name: probe
-        run: bash scripts/quiet.sh python scripts/us/intraday_probe.py
+          if [ -f intraday.tar.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:TIINGO_API_KEY -in intraday.tar.enc | tar xzf - && echo "restored $(ls data-us-intraday | wc -l)"; else mkdir -p data-us-intraday; echo "no cache"; fi
+      - name: events list
+        run: git fetch -q origin reports && git show FETCH_HEAD:reports/us-events.json > us-events.json
+      - name: collect
+        run: bash scripts/quiet.sh python scripts/us/intraday_collect.py
+      - name: eval
+        run: bash scripts/quiet.sh python scripts/us/intraday_eval.py
+      - name: encrypt and save
+        if: always()
+        run: tar czf - data-us-intraday | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:TIINGO_API_KEY -out intraday.tar.enc
+      - name: save cache
+        if: always() && hashFiles('intraday.tar.enc') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: intraday.tar.enc
+          key: us-intraday-${{ github.run_id }}
       - name: publish
         if: always()
         run: |
+          mkdir -p reports-out && cp collect-status.json reports-out/us-intraday-collect.json 2>/dev/null || true
           git fetch origin reports:reports && git worktree add rep reports
-          mkdir -p rep/reports && cp reports-out/us-intraday-probe.json rep/reports/ 2>/dev/null || exit 0
+          mkdir -p rep/reports && cp reports-out/us-intraday*.json rep/reports/ 2>/dev/null || exit 0
           cd rep && git config user.name "kabunavi-bot" && git config user.email "kabunavi-bot@users.noreply.github.com"
-          git add -A && git commit -q -m "us intraday probe $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
+          git add -A && git commit -q -m "us intraday $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
           for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done

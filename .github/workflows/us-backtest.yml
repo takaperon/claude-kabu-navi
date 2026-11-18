@@ -48,7 +48,7 @@ jobs:
         run: |
           git fetch origin reports:reports 2>/dev/null && git worktree add rep reports || git worktree add --orphan -b reports rep
           mkdir -p rep/reports
-          for f in us-backtest pro-us calendar-us; do cp reports-out/$f.json rep/reports/ 2>/dev/null || true; done
+          for f in us-backtest pro-us calendar-us us-events; do cp reports-out/$f.json rep/reports/ 2>/dev/null || true; done
           cd rep
           git config user.name "kabunavi-bot"
           git config user.email "kabunavi-bot@users.noreply.github.com"

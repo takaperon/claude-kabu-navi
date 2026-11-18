@@ -238,4 +238,6 @@ for (const exit of Object.keys(EXITS)) {
   result.trainChosen = { rules, rule: '前半だけで選ぶ：上位(下位)1/5の平均が全体+1%以上かつ中央値も全体以上', chosen: chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut), train: c.train })), byScore, sims };
 }
 writeOut(result);
+// 場中（分足）の検証用：反応日に+5%以上だった銘柄と買う日の一覧（値段は含まない。銘柄・日付・反応の大きさだけ）
+fs.writeFileSync(path.join(OUT, 'us-events.json'), JSON.stringify({ generatedAt: new Date().toISOString(), split: dates[split], events: T.map((t) => ({ t: S[t.i].t, entry: dates[t.entry], re: Math.round(t.re * 1000) / 10, half: t.half })) }));
 console.log(`pro-us ok: events ${result.events.train}/${result.events.test} surprise=${result.events.withSurprise}`);
