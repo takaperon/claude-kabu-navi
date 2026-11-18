@@ -156,6 +156,11 @@ h2 small{font-family:var(--gothic);font-weight:400;font-size:13px;color:var(--mu
 .sheet .kv div{background:var(--paper);border-radius:8px;padding:10px 12px}
 .sheet .kv span{display:block;font-size:12px;color:var(--muted)}
 .sheet .kv b{font-family:var(--mincho);font-weight:800;font-size:22px}
+.tvbox{height:min(52vh,380px);margin:0 -4px 8px;border-radius:8px;overflow:hidden;background:var(--paper)}
+.tvnote{font-size:12px;color:var(--muted)}
+a.chartlink{display:block;text-align:center;padding:12px 16px;margin:0 0 10px;border-radius:10px;background:var(--ink);color:var(--sheet);text-decoration:none;font-weight:700}
+[data-chart]{cursor:pointer}
+[data-chart]:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 .sheet button.close{width:100%;border:1px solid var(--rule);background:transparent;border-radius:10px;padding:10px 16px;cursor:pointer;margin-top:4px}
 
 /* 検証 */
@@ -566,14 +571,14 @@ function renderHome() {
     return `<div class="real">
       <div class="hd"><b>${REAL_TITLE[RK][0]}</b><span class="num ${cls(d)}">${sign(R.returnPct)}%</span></div>
       <p>${REAL_TITLE[RK][1]}いま <b class="num" style="color:var(--ink)">${yen(R.equityYen)}円</b>（${d >= 0 ? '+' : '−'}${yen(Math.abs(d))}円）${R.trades ? `・${R.trades}回売って勝率${R.winRatePct}%` : ''}</p>
-      ${R.holdings.length ? `<ul>${R.holdings.map((h) => `<li><span>${esc(nf(h.name))}<small>${h.shares ? h.shares + '株' : ''}${R.trial && h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`).join('')}</ul>`
+      ${R.holdings.length ? `<ul>${R.holdings.map((h) => `<li ${ch('jp',h.code)}><span>${esc(nf(h.name))}<small>${h.shares ? h.shares + '株' : ''}${R.trial && h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`).join('')}</ul>`
         : `<p style="margin:0">いまは持っていません。${R.nextBuys.length ? `次の朝の候補 ${R.nextBuys.length}銘柄（100株買える範囲で買います）` : ''}</p>`}
       <button class="link" data-rule="${RK}">このルールの説明</button></div>`;
   }).join('') + (() => {
     const I = paper.ipoNight; if (!I) return '';
     const d = I.equityYen - I.capital;
-    const rows = [...I.holdings.map((h) => `<li><span>${esc(nf(h.name))}<small>${h.shares}株・明日の朝に売る</small></span><span class="num flat">保有中</span></li>`),
-      ...I.recentClosed.slice(0, 3).map((c) => `<li><span>${esc(nf(c.name))}<small>${md(c.exitDate)}に売った</small></span><span class="num ${cls(c.retPct)}">${sign(c.retPct)}%</span></li>`)];
+    const rows = [...I.holdings.map((h) => `<li ${ch('jp',h.code)}><span>${esc(nf(h.name))}<small>${h.shares}株・明日の朝に売る</small></span><span class="num flat">保有中</span></li>`),
+      ...I.recentClosed.slice(0, 3).map((c) => `<li ${ch('jp',c.code)}><span>${esc(nf(c.name))}<small>${md(c.exitDate)}に売った</small></span><span class="num ${cls(c.retPct)}">${sign(c.retPct)}%</span></li>`)];
     return `<div class="real" style="border-top-color:var(--c-dt)">
       <div class="hd"><b>IPO一晩持ちなら（30万円）</b><span class="num ${cls(d)}">${sign(I.returnPct)}%</span></div>
       <p>新しく上場した株を、上場初日の引けで買い、次の日の朝の寄りで売ります（100株単位・2銘柄まで）。過去5年の検証で、IPOの短期売買の中で唯一、前半・後半ともプラスでした。${I.trades ? `${I.trades}回売って勝率${I.winRatePct}%` : 'まだ上場がありません'}</p>
@@ -613,7 +618,7 @@ function openRule(k) {
 
 function openUS() {
   const U = usPaper;
-  const rr = (U.recentReactions ?? []).slice(0, 8).map((x) => `<li><span>${esc(x.name)}<small>${esc(x.t)}・${md(x.date)}</small></span><span class="num ${cls(x.rePct)}">${sign(x.rePct)}%</span></li>`).join('');
+  const rr = (U.recentReactions ?? []).slice(0, 8).map((x) => `<li ${ch('us',x.t)}><span>${esc(x.name)}<small>${esc(x.t)}・${md(x.date)}</small></span><span class="num ${cls(x.rePct)}">${sign(x.rePct)}%</span></li>`).join('');
   openSheet('米国株：決算の反応で買う', `<p>アメリカの大企業（S&P500）が決算を発表したあと、最初の取引日に株価が+${usTh()}%以上上がったら、市場が「予想よりずっと良かった」と受け取ったサインと見て、次の取引日の寄り付きで買います。${usHold()}取引日たったら売ります。</p>
     <p>買う機会は月に数回です。${usIdleText()}設定です。ウィブルは米国株を1ドル単位で買えるので、30万円でもこの通りにできます。</p>
     <p style="font-size:14px;color:var(--muted)">この設定は、しきい値（+5〜15%）×持つ日数（5〜40日）×空いているお金の置き方（3通り）の48通りを過去5年で試し、「前半・後半ともS&P500を上回り、途中の最大の減りが30%以内」の中で、悪い方の半分でも一番増えたものを自動で選んでいます。</p>
@@ -656,7 +661,7 @@ function renderUS() {
       <p>${L.status === 'halted' || L.halted ? '<span class="down">停止中</span>' : L.mode === 'live' ? '<span class="up">本番で動いています</span>' : '練習中'}・${esc(L.note || '')}</p></div>`;
   } else if (L && L.enabled) {
     const state = L.status === 'halted' || L.halted ? '<span class="down">停止中</span>' : L.mode === 'live' ? '<span class="up">本番で動いています</span>' : L.mode === 'test' ? '接続テスト中' : '練習中（注文は出していません）';
-    const rows = (L.holdings || []).map((h) => `<li><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日</small></span><span class="num ${cls(h.unrealPct ?? 0)}">${h.unrealPct != null ? sign(h.unrealPct) + '%' : '—'}</span></li>`).join('');
+    const rows = (L.holdings || []).map((h) => `<li ${ch('us',h.t)}><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日</small></span><span class="num ${cls(h.unrealPct ?? 0)}">${h.unrealPct != null ? sign(h.unrealPct) + '%' : '—'}</span></li>`).join('');
     $('us-live').innerHTML = `<div class="real" style="border-top-color:var(--up)">
       <div class="hd"><b>本物の口座</b><span class="num ${cls(L.returnPct ?? 0)}">${L.returnPct != null ? sign(L.returnPct) + '%' : ''}</span></div>
       <p>${state}・${md(L.date)}の実行${(L.orders || []).length ? `で注文${L.orders.length}件${L.mode !== 'live' ? '（出したことにしただけ）' : ''}` : '：注文なし'}${(L.notes || []).length ? '・' + L.notes.map(esc).join('・') : ''}</p>
@@ -666,8 +671,8 @@ function renderUS() {
   const PR = U.pro;
   $('us-pro').innerHTML = PR ? (() => {
     const d = PR.equityYen - PR.capital;
-    const rows = [...PR.holdings.map((h) => `<li><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`),
-      ...PR.nextBuys.map((h) => `<li><span>${esc(h.name || h.t)}<small>${esc(h.t)}・今夜買う予定${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num flat">予定</span></li>`)].join('');
+    const rows = [...PR.holdings.map((h) => `<li ${ch('us',h.t)}><span>${esc(h.name || h.t)}<small>${esc(h.t)}・あと${h.daysLeft}日${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</span></li>`),
+      ...PR.nextBuys.map((h) => `<li ${ch('us',h.t)}><span>${esc(h.name || h.t)}<small>${esc(h.t)}・今夜買う予定${h.reason?.includes('／') ? '・' + esc(h.reason.split('／')[1]) : ''}</small></span><span class="num flat">予定</span></li>`)].join('');
     return `<div class="real" style="border-top-color:var(--c-div)">
       <div class="hd"><b>試験中：プロの判断（30万円）</b><span class="num ${cls(d)}">${sign(PR.returnPct)}%</span></div>
       <p>決算の翌日に+5%以上上がった株のうち、検証で「効く」と分かった特徴（出来高の急増・EPSや売上の大きな伸び・上げ幅の大きさなど）に3つ以上当てはまるものだけを買い、40日持ちます。いま <b class="num" style="color:var(--ink)">${yen(PR.equityYen)}円</b>${PR.trades ? `・${PR.trades}回売って勝率${PR.winRatePct}%` : ''}</p>
@@ -680,7 +685,7 @@ function renderUS() {
     <button data-useg="hold"><span class="l">いま持っている</span><span class="n num">${U.holdings.length}<small>銘柄</small></span><span class="x ${cls(avgU)}">${U.holdings.length ? `平均 ${sign(avgU)}%` : 'なし'}</span></button>
     <button data-useg="sold"><span class="l">売った</span><span class="n num">${U.trades}<small>回</small></span><span class="x flat">${U.trades ? `勝率 ${Math.round(wins / Math.max(1, U.recentClosed.length) * 100)}%` : 'まだなし'}</span></button>`;
   const rr = (U.recentReactions ?? []).slice(0, 12);
-  $('us-react').innerHTML = rr.length ? `<ul class="stocks">${rr.map((x) => `<li><div class="srow"><div>
+  $('us-react').innerHTML = rr.length ? `<ul class="stocks">${rr.map((x) => `<li ${ch('us',x.t)}><div class="srow"><div>
       <div class="nm">${esc(x.name)}<span class="cd">${esc(x.t)}</span></div>
       <div class="when">${md(x.date)}の反応${x.rePct >= usTh() ? '・買いの条件に合格' : ''}</div></div>
       <div class="badge num ${cls(x.rePct)}">${sign(x.rePct)}%</div></div></li>`).join('')}</ul>`
@@ -693,7 +698,7 @@ function renderUSStocks() {
   $('us-seg').innerHTML = [['next', '今夜買う', U.nextBuys.length], ['hold', '持っている', U.holdings.length], ['sold', '売った', sold.length]]
     .map(([k, n, c]) => `<button aria-pressed="${useg === k}" data-useg="${k}">${n}<small>${c}</small></button>`).join('');
   $('us-stocks-title').textContent = { next: '今夜買う銘柄', hold: 'いま持っている銘柄', sold: '売った銘柄' }[useg];
-  const row = (name, t, sub, badge) => `<li><div class="srow"><div><div class="nm">${esc(name)}<span class="cd">${esc(t)}</span></div><div class="when">${sub}</div></div>${badge ?? ''}</div></li>`;
+  const row = (name, t, sub, badge) => `<li ${ch('us',t)}><div class="srow"><div><div class="nm">${esc(name)}<span class="cd">${esc(t)}</span></div><div class="when">${sub}</div></div>${badge ?? ''}</div></li>`;
   if (useg === 'next') {
     $('us-stocks-lead').innerHTML = U.nextBuys.length ? '日本時間の今夜23:30（アメリカの取引開始）に、仮想で買います。' : '';
     $('us-stocks').innerHTML = U.nextBuys.length ? `<ul class="stocks">${U.nextBuys.map((b) => row(b.name, b.t, esc(b.reason))).join('')}</ul>` : '<p class="empty">いまは条件に合う決算がありません。決算シーズン（1・4・7・10月の中旬〜翌月）に増えます。</p>';
@@ -752,7 +757,7 @@ function renderStocks() {
 
   if (seg === 'next') {
     $('stocks-lead').innerHTML = next.length ? `${md(paper.lastDate)}までの発表から選びました。次の朝9時の${term('寄り付き')}で、仮想で買います。白抜きの印のルールは、${term('朝高', '朝高く始まった')}時だけ買います。` : '';
-    $('stocks').innerHTML = next.length ? `<ul class="stocks">${next.map((b) => `<li><div class="srow"><div>
+    $('stocks').innerHTML = next.length ? `<ul class="stocks">${next.map((b) => `<li ${ch('jp',b.code)}><div class="srow"><div>
       <div class="nm">${esc(nf(b.name))}<span class="cd">${code4(b.code)}</span></div>
       <div class="why">${why(b.reason)}${b.late ? '（夜遅くの発表）' : ''}</div></div></div>${chips(b.ks)}</li>`).join('')}</ul>`
       : `<p class="empty">いまは条件に合う発表がありません。夕方の発表しだいで、毎日入れ替わります。</p>`;
@@ -761,7 +766,7 @@ function renderStocks() {
     $('stocks-lead').innerHTML = hold.length ? `買った値段からの${term('含み益')}です。決めた日数がたったら、その日の${term('引け')}で売ります。` : '';
     $('stocks').innerHTML = hold.length ? `<ul class="stocks">${hold.map((h) => {
       const left = Math.max(0, h.hold - h.daysHeld);
-      return `<li><div class="srow"><div>
+      return `<li ${ch('jp',h.code)}><div class="srow"><div>
         <div class="nm">${esc(nf(h.name))}<span class="cd">${code4(h.code)}</span></div>
         <div class="when">${md(h.entryDate)}に買った・${left ? `あと${left}営業日で売る` : '次の引けで売る'}</div></div>
         <div class="badge num ${cls(h.unrealPct)}">${sign(h.unrealPct)}%</div></div>${chips(h.ks)}</li>`;
@@ -774,7 +779,7 @@ function renderStocks() {
     $('stocks').innerHTML = days.map((d) => {
       const g = sold.filter((c) => c.exitDate === d), w = g.filter((c) => c.retPct > 0).length;
       return `<div class="daygrp"><span><b>${md(d)}（${wd(d)}）</b>に売った</span><span><span class="up">${w}勝</span> <span class="down">${g.length - w}敗</span></span></div>
-        <ul class="stocks">${g.map((c) => `<li><div class="srow"><div>
+        <ul class="stocks">${g.map((c) => `<li ${ch('jp',c.code)}><div class="srow"><div>
           <div class="nm">${esc(nf(c.name))}<span class="cd">${code4(c.code)}</span></div>
           <div class="when">${c.entryDate === c.exitDate ? '朝に買って、その日の引けで売った' : `${md(c.entryDate)}に買って${md(c.exitDate)}に売った`}</div></div>
           <div class="badge num ${cls(c.retPct)}">${sign(c.retPct)}%<small>${c.profitYen >= 0 ? '+' : '−'}${yen(Math.abs(c.profitYen))}円</small></div></div>${chips(c.ks)}</li>`).join('')}</ul>`;
@@ -852,6 +857,33 @@ function renderNews() {
     <button class="more" data-go="news">ニュースを全部見る（${items.length}件）</button>`;
 }
 
+// ---------- 値動きのチャート（2026-11-18〜） ----------
+// 米国株：TradingView の埋め込みチャート（遅れのある値段）。日本株：TradingView の埋め込みは東証が対象外なので、Yahoo!ファイナンス・株探のチャートを開く
+// 株ナビ自身は値段のデータを配らない（J-Quants の再配布にならないように）
+const ch = (m, c) => (c ? `data-chart="${m}:${esc(String(c))}" tabindex="0" role="button"` : '');
+function openChart(v, nm) {
+  const [m, raw] = v.split(':');
+  const who = nm ? `${esc(nm)} ` : '';
+  if (m === 'jp') {
+    const c = String(raw).slice(0, 4);
+    openSheet(`${who}<small>${esc(c)}</small>`, `<p>日本株のチャートは、外のサイトで開きます（アプリの中に出せる無料のチャートが東証に対応していないため）。</p>
+      <a class="chartlink" href="https://finance.yahoo.co.jp/quote/${encodeURIComponent(c)}.T/chart" target="_blank" rel="noopener">Yahoo!ファイナンスでチャートを見る</a>
+      <a class="chartlink" href="https://s.kabutan.jp/stocks/${encodeURIComponent(c)}/" target="_blank" rel="noopener">株探で見る</a>`);
+    return;
+  }
+  const t = String(raw).replace('-', '.');
+  openSheet(`${who}<small>${esc(t)}</small>`, `<div class="tvbox" id="tvbox"></div><p class="tvnote">TradingView のチャート（値段は少し遅れます）。期間は下のボタンで切り替え。</p>`);
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  const sc = document.createElement('script');
+  sc.src = 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js';
+  sc.async = true;
+  sc.textContent = JSON.stringify({ symbols: [[t, t + '|1D']], chartOnly: false, width: '100%', height: '100%', locale: 'ja', colorTheme: dark ? 'dark' : 'light', autosize: true,
+    showVolume: true, hideDateRanges: false, scalePosition: 'right', scaleMode: 'Normal', chartType: 'area', dateRanges: ['1d|1', '1m|30', '3m|60', '12m|1D', '60m|1W', 'all|1M'], backgroundColor: dark ? '#16213D' : '#FFFFFF' });
+  const box = document.createElement('div'); box.className = 'tradingview-widget-container'; box.style.height = '100%';
+  const inner = document.createElement('div'); inner.className = 'tradingview-widget-container__widget'; inner.style.height = '100%';
+  box.append(inner, sc); $('tvbox').append(box);
+}
+
 // ---------- 操作 ----------
 function openSheet(title, html) {
   $('sheet-title').innerHTML = title;
@@ -873,6 +905,7 @@ function go(tab) {
 }
 document.addEventListener('click', (e) => {
   const t = e.target.closest('.term'); if (t) { e.stopPropagation(); openSheet(esc(t.dataset.term), `<p>${TERMS[t.dataset.term] ?? ''}</p>`); return; }
+  const cc = e.target.closest('[data-chart]'); if (cc) { const el = cc.querySelector('.nm') ?? cc.querySelector('span'); const nm = el ? [...el.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent).join('').trim() : ''; openChart(cc.dataset.chart, nm); return; }
   const r = e.target.closest('[data-rule]'); if (r) { openRule(r.dataset.rule); return; }
   const us = e.target.closest('[data-us]'); if (us) { openUS(); return; }
   const mk = e.target.closest('[data-mkt]'); if (mk) { setMkt(mk.dataset.mkt); return; }
@@ -882,7 +915,7 @@ document.addEventListener('click', (e) => {
   const g = e.target.closest('[data-go]'); if (g) { go(g.dataset.go); return; }
   if (e.target.id === 'sheet-bg' || e.target.id === 'sheet-close') closeSheet();
 });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); if (e.key === 'Enter' && e.target.dataset?.chart) openChart(e.target.dataset.chart); });
 
 async function main() {
   drawGuilloche();
@@ -914,7 +947,7 @@ function renderMovers(id, M, jp) {
   const el = $(id);
   if (!M || !M.gainers?.length) { el.innerHTML = ''; return; }
   let side = 'up', more = false;
-  const row = (x, k) => `<li><span><span class="rk">${k + 1}</span>${esc(jp ? nf(x.name) : x.name)}<small>${esc(jp ? x.code : x.t)}${x.sector ? '・' + esc(x.sector) : ''}</small>${x.news ? `<span class="tag">${esc(x.news)}</span>` : ''}</span><span class="num ${cls(x.pct)}">${sign(x.pct)}%</span></li>`;
+  const row = (x, k) => `<li ${ch(jp ? 'jp' : 'us', jp ? x.code : x.t)}><span><span class="rk">${k + 1}</span>${esc(jp ? nf(x.name) : x.name)}<small>${esc(jp ? x.code : x.t)}${x.sector ? '・' + esc(x.sector) : ''}</small>${x.news ? `<span class="tag">${esc(x.news)}</span>` : ''}</span><span class="num ${cls(x.pct)}">${sign(x.pct)}%</span></li>`;
   const draw = () => {
     const arr = side === 'up' ? M.gainers : M.losers;
     const shown = more ? arr : arr.slice(0, 10);
