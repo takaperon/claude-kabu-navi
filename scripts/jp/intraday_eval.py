@@ -24,14 +24,16 @@ def summ(a):
     s = sorted(a)
     return {'n': len(a), 'avg': r4(sum(a) / len(a)), 'med': r4(s[len(a) // 2]), 'win': r4(sum(1 for x in a if x > 0) / len(a)), 'p10': r4(s[len(a) // 10]), 'p90': r4(s[len(a) * 9 // 10])}
 
-def run(B, rule):
-    """B: その日の足 [[時刻,o,h,l,c,v],...]。戻り値：損益率（買わなければ None）"""
+def run(B, rule, dt=None):
+    """B: その日の足 [[時刻,o,h,l,c,v],...]。戻り値：損益率（買わなければ None）
+    引けまで持つ時は J-Quants の正式な終値（dt から逆算）を使う。Yahoo!の場中の足には15:30の引けの板寄せが入っていないため"""
     o0 = B[0][1]
+    CL = o0 * (1 + dt) * (1 + SLIP) / (1 - SLIP) if dt is not None else B[-1][4]
     kind = rule['kind']
     if kind == 'confirm':  # 最初の足が上げて終わった時だけ、次の足の始値で買う
         if len(B) < 2 or not (B[0][4] > B[0][1] * (1 + rule['a'])): return None
         entry = B[1][1] * (1 + SLIP)
-        return B[-1][4] * (1 - SLIP) / entry - 1
+        return CL * (1 - SLIP) / entry - 1
     entry = o0 * (1 + SLIP)
     sell = lambda px, bad=False: px * (1 - SLIP) * ((1 - BAD) if bad else 1) / entry - 1
     hi = o0
@@ -51,11 +53,12 @@ def run(B, rule):
             if k == 0 and c < o0 * (1 - rule['a']) and len(B) > 1: return sell(B[1][1], True)
         elif kind == 'morning':  # 前場の終わり（11時台の足の終値）で売る。onlyUp なら買値より上の時だけ
             if t < '12:00' and (last or B[k + 1][0] >= '12:00'):
+                if last: return sell(CL)
                 if not rule.get('onlyUp') or c * (1 - SLIP) > entry: return sell(c)
         elif kind == 'fade':  # 一度 +a% まで上げた後、買値まで戻ったら売る（建値の逃げ）
             if hi >= o0 * (1 + rule['a']) and l <= o0: return sell(min(o, o0), True)
             hi = max(hi, h)
-        if last: return sell(c)
+        if last: return sell(CL)
     return None
 
 RULES = {'base': {'kind': 'base'}}
@@ -85,15 +88,15 @@ def evaluate(iv):
     cut = int(len(rows) * 0.6)
     for k, r in enumerate(rows): r['half'] = 'train' if k < cut else 'test'
     # データの確かめ：場中の足で作った「引けで売る」と、J-Quants の日足の dt との差
-    diffs = [abs(run(r['B'], RULES['base']) - r['x']['dt']) for r in rows if r['x'].get('dt') is not None]
+    diffs = [abs(run(r['B'], RULES['base'], None) - r['x']['dt']) for r in rows if r['x'].get('dt') is not None]
     res = {'n': len(rows), 'periods': {'train': [rows[0]['x']['e'], rows[cut - 1]['x']['e']] if cut else None, 'test': [rows[cut]['x']['e'], rows[-1]['x']['e']] if cut < len(rows) else None},
-           'check': {'n': len(diffs), 'medAbsDiffVsDaily': r4(stt.median(diffs)) if diffs else None, 'over1pct': r4(sum(1 for d in diffs if d > 0.01) / len(diffs)) if diffs else None},
+           'check': {'note': 'Yahoo!の場中の足の最後の値と、J-Quantsの正式な終値で作った損益率の差（引けの板寄せが足に入っていないため）。比べる時は引けまで持つ分は正式な終値を使う', 'n': len(diffs), 'medAbsDiffVsDaily': r4(stt.median(diffs)) if diffs else None, 'over1pct': r4(sum(1 for d in diffs if d > 0.01) / len(diffs)) if diffs else None},
            'rules': {}}
     for key, rule in RULES.items():
         o = {'name': NAME.get(key)}
         for h in ('train', 'test'):
-            got = [run(r['B'], rule) for r in rows if r['half'] == h]
-            base = [run(r['B'], RULES['base']) for r in rows if r['half'] == h]
+            got = [run(r['B'], rule, r['x'].get('dt')) for r in rows if r['half'] == h]
+            base = [run(r['B'], RULES['base'], r['x'].get('dt')) for r in rows if r['half'] == h]
             traded = [g for g in got if g is not None]
             # 1件あたり（買わなかった件は0として）＝ 同じ件数で今のやり方と比べられる
             per = [g if g is not None else 0.0 for g in got]
@@ -102,7 +105,7 @@ def evaluate(iv):
     # 「気配」：最初の足の出来高の多さ・寄り付きの上げで分けた今のやり方の成績（買う前に分かる・最初の1時間で分かる）
     grp = {}
     for r in rows:
-        b = run(r['B'], RULES['base'])
+        b = run(r['B'], RULES['base'], r['x'].get('dt'))
         keys = []
         if r['rv'] is not None: keys.append('最初の1時間の出来高 ' + ('3倍以上' if r['rv'] >= 3 else '1.5〜3倍' if r['rv'] >= 1.5 else '1.5倍未満'))
         g = r['x'].get('gap')
@@ -110,7 +113,7 @@ def evaluate(iv):
         fb = r['B'][0][4] / r['B'][0][1] - 1
         keys.append('最初の1時間 ' + ('+1%以上' if fb >= 0.01 else '-1%以下' if fb <= -0.01 else '±1%以内'))
         # 最初の1時間の後に買った場合とは違い、ここは「寄りで買った人」の成績を最初の1時間の様子で分けたもの。その後（2本目の始値〜引け）の値動きも出す
-        rest = r['B'][-1][4] / r['B'][1][1] - 1 if len(r['B']) > 1 else None
+        rest = (r['B'][0][1] * (1 + r['x']['dt']) * (1 + SLIP) / (1 - SLIP)) / r['B'][1][1] - 1 if len(r['B']) > 1 and r['x'].get('dt') is not None else None
         for k in keys:
             gg = grp.setdefault(k, {'train': [], 'test': [], 'restTrain': [], 'restTest': []})
             gg[r['half']].append(b)

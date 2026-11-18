@@ -1,5 +1,5 @@
 # 日本株の場中の足を yfinance（Yahoo!）で集める（2026-11-18〜）
-# 1回300銘柄まで（Yahoo!に負担をかけない・止められないように）。3年分は5回ほどでそろう
+# 1回300銘柄まで（Yahoo!に負担をかけない・止められないように）。1時間足は実際には約3年（2023-11〜）取れたので、買う日が1080日以内のものを集める
 # 対象：reports/jp-events.json の増配の「買う日」。1時間足は約3年（730日）まで、5分足は直近60日まで遡れる。
 # 保存は data-jp-intraday/{4桁}.json に「買う日から10営業日分」だけ（{'60m': {日付: [[時刻, o,h,l,c,v],...]}, '5m': {...}}）。
 # データ本体は暗号化キャッシュだけ（コミットしない）。ログには件数だけ出す
@@ -43,7 +43,7 @@ stat = {'events': len(ev), 'tickers': len(by), 'fetched': 0, 'errors': 0, 'empty
 n = 0
 for c, ds in sorted(by.items()):
     st = load(c)
-    need60 = [e for e in ds if e not in st['done'].get('60m', []) and e >= (today - dt.timedelta(days=725)).isoformat() and e <= (today - dt.timedelta(days=16)).isoformat()]
+    need60 = [e for e in ds if e not in st['done'].get('60m', []) and e >= (today - dt.timedelta(days=1080)).isoformat() and e <= (today - dt.timedelta(days=16)).isoformat()]
     need5 = [e for e in ds if e not in st['done'].get('5m', []) and e >= (today - dt.timedelta(days=58)).isoformat() and e <= today.isoformat()]
     if not need60 and not need5:
         stat['skipped'] += 1
@@ -80,7 +80,7 @@ for c, ds in sorted(by.items()):
 left = 0
 for c, ds in by.items():
     st = load(c)
-    left += sum(1 for e in ds if e not in st['done'].get('60m', []) and e >= (today - dt.timedelta(days=725)).isoformat() and e <= (today - dt.timedelta(days=16)).isoformat())
+    left += sum(1 for e in ds if e not in st['done'].get('60m', []) and e >= (today - dt.timedelta(days=1080)).isoformat() and e <= (today - dt.timedelta(days=16)).isoformat())
 stat['remaining60m'] = left
 stat['stored'] = len([f for f in os.listdir(DIR) if f.endswith('.json')])
 stat['at'] = dt.datetime.utcnow().isoformat(timespec='seconds') + 'Z'
