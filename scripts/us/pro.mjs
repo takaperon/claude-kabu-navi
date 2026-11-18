@@ -239,5 +239,5 @@ for (const exit of Object.keys(EXITS)) {
 }
 writeOut(result);
 // 場中（分足）の検証用：反応日に+5%以上だった銘柄と買う日の一覧（値段は含まない。銘柄・日付・反応の大きさだけ）
-fs.writeFileSync(path.join(OUT, 'us-events.json'), JSON.stringify({ generatedAt: new Date().toISOString(), split: dates[split], events: T.map((t) => ({ t: S[t.i].t, entry: dates[t.entry], re: Math.round(t.re * 1000) / 10, half: t.half })) }));
+fs.writeFileSync(path.join(OUT, 'us-events.json'), JSON.stringify({ generatedAt: new Date().toISOString(), split: dates[split], events: T.map((t) => ({ t: S[t.i].t, entry: dates[t.entry], re: Math.round(t.re * 1000) / 10, half: t.half, f: Object.fromEntries(['gap', 'gapPart', 'intraday', 'closePos', 'volSurge', 'epsG', 'revG', 'surprise', 'run20', 'hi52', 'ma50', 'atr', 'liq', 'spyTrend', 'spy5'].map((k) => [k, Number.isFinite(t.f[k]) ? Math.round(t.f[k] * 10000) / 10000 : null])) })) }));
 console.log(`pro-us ok: events ${result.events.train}/${result.events.test} surprise=${result.events.withSurprise}`);

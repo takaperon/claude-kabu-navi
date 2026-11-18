@@ -4,8 +4,10 @@
 # 同じ足で利確と損切りの両方に届いたら損切りが先（悪い方に倒す）。
 # 期間：1時間足は約3年。前の60%を学習、後の40%をテスト。公開は集計値だけ（reports-out/jp-intraday.json）
 import json, os, statistics as stt
-import logging
+import logging, sys
 logging.disable(logging.CRITICAL)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from playbook import playbook
 
 DIR = 'data-jp-intraday'
 SLIP, BAD = 0.001, 0.005
@@ -120,77 +122,14 @@ def actions_of(r, iv):
 
 H1_ACTIONS = ['base', 'exit10', 'morning', 'morning_onlyUp'] + [k for k in MULTI if '_sl' not in k]
 
-def playbook(rows, iv):
+def jp_playbook(rows, iv):
     for r in rows:
         r['A'] = actions_of(r, iv)
         x, B = r['x'], r['B']
         r['F'] = {k: x.get(k) for k in OPEN_F}
         r['F']['fh'] = B[0][4] / B[0][1] - 1
         r['F']['rv'] = r['rv']
-    tr = [r for r in rows if r['half'] == 'train']; te = [r for r in rows if r['half'] == 'test']
-    if len(tr) < MINN * 3 or not te: return {'n': len(rows), 'reason': '件数が足りない'}
-    allA = [k for k in rows[0]['A']]
-    def cuts(f):
-        v = sorted(r['F'][f] for r in tr if r['F'].get(f) is not None)
-        return (v[len(v) // 3], v[len(v) * 2 // 3]) if len(v) >= MINN * 3 else None
-    C = {f: cuts(f) for f in list(OPEN_F) + list(H1_F)}
-    def cell(r, f):
-        c, v = C.get(f), r['F'].get(f)
-        if c is None or v is None: return None
-        return 0 if v < c[0] else 1 if v < c[1] else 2
-    def fit(fs, acts):
-        # 状況（fs の3分位の組み合わせ）ごとに、前半で平均が一番よい動き方を選ぶ
-        g = {}
-        for r in tr:
-            key = tuple(cell(r, f) for f in fs)
-            if None in key: continue
-            g.setdefault(key, []).append(r)
-        pick = {}
-        for key, rs in g.items():
-            if len(rs) < MINN: continue
-            best = max(acts, key=lambda a: sum(r['A'][a] for r in rs) / len(rs))
-            pick[key] = best
-        return pick
-    def apply(rs, fs, pick):
-        out = []
-        for r in rs:
-            key = tuple(cell(r, f) for f in fs)
-            out.append(r['A'][pick.get(key, 'base')] if None not in key else r['A']['base'])
-        return out
-    cands = []
-    feats = list(OPEN_F) + list(H1_F)
-    for i, f1 in enumerate(feats):
-        for f2 in [None] + feats[i + 1:]:
-            fs = (f1,) if f2 is None else (f1, f2)
-            if any(C.get(f) is None for f in fs): continue
-            acts = H1_ACTIONS if any(f in H1_F for f in fs) else allA
-            pick = fit(fs, acts)
-            a_tr = apply(tr, fs, pick)
-            cands.append((sum(a_tr) / len(a_tr), fs, pick))
-    cands.sort(key=lambda c: -c[0])
-    base_tr = sum(r['A']['base'] for r in tr) / len(tr); base_te = sum(r['A']['base'] for r in te) / len(te)
-    # 全部同じ動き方で一番よかったもの（前半で選ぶ）＝「機械的」な比べ相手
-    one = max(allA, key=lambda a: sum(r['A'][a] for r in tr))
-    def label(fs, key):
-        names = {**OPEN_F, **H1_F}; lv = ['低い', '中くらい', '高い']
-        return '・'.join(f"{names[f]}が{lv[k]}" for f, k in zip(fs, key))
-    def desc(fs, pick):
-        rows_ = []
-        for key in sorted(pick):
-            rs_tr = [r for r in tr if tuple(cell(r, f) for f in fs) == key]; rs_te = [r for r in te if tuple(cell(r, f) for f in fs) == key]
-            a = pick[key]
-            rows_.append({'state': label(fs, key), 'action': a, 'train': {'n': len(rs_tr), 'avg': r4(sum(r['A'][a] for r in rs_tr) / len(rs_tr)), 'base': r4(sum(r['A']['base'] for r in rs_tr) / len(rs_tr))},
-                          'test': {'n': len(rs_te), 'avg': r4(sum(r['A'][a] for r in rs_te) / len(rs_te)) if rs_te else None, 'base': r4(sum(r['A']['base'] for r in rs_te) / len(rs_te)) if rs_te else None}})
-        return rows_
-    top = []
-    for avg_tr, fs, pick in cands[:5]:
-        a_te = apply(te, fs, pick)
-        top.append({'features': [ {**OPEN_F, **H1_F}[f] for f in fs], 'train': r4(avg_tr), 'test': r4(sum(a_te) / len(a_te)), 'testWin': r4(sum(1 for v in a_te if v > 0) / len(a_te)), 'cells': desc(fs, pick)})
-    cuts_out = {f: [r4(c[0]), r4(c[1])] for f, c in C.items() if c}
-    return {'note': '状況ごとに前半で一番よかった動き方を選び、後半で確かめる。前半の成績が良い順に上位5つ（後半の成績で選び直していない）。数字は1件あたりの平均損益率。skip＝買わない、exit10＝10時に売る',
-            'n': {'train': len(tr), 'test': len(te)}, 'base': {'train': r4(base_tr), 'test': r4(base_te)},
-            'oneRule': {'action': one, 'train': r4(sum(r['A'][one] for r in tr) / len(tr)), 'test': r4(sum(r['A'][one] for r in te) / len(te))},
-            'cuts': cuts_out, 'top': top}
+    return playbook(rows, OPEN_F, H1_F, H1_ACTIONS, minn=MINN)
 
 def evaluate(iv):
     rows = []
@@ -243,7 +182,7 @@ def evaluate(iv):
             w = [g for g in b if g > 0]; l_ = [g for g in b if g <= 0]
             bw[h] = {'avgWin': r4(sum(w) / len(w)) if w else None, 'avgLoss': r4(sum(l_) / len(l_)) if l_ else None}
         res['letRun']['base'] = bw
-        res['playbook'] = playbook(rows, iv)
+        res['playbook'] = jp_playbook(rows, iv)
     # 「気配」：最初の足の出来高の多さ・寄り付きの上げで分けた今のやり方の成績（買う前に分かる・最初の1時間で分かる）
     grp = {}
     for r in rows:
