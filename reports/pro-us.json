@@ -1,6 +1,6 @@
 {
  "ok": true,
- "generatedAt": "2026-11-17T15:57:27.847Z",
+ "generatedAt": "2026-11-18T03:44:11.758Z",
  "periods": {
   "train": [
    "2022-01-13",
@@ -8,12 +8,12 @@
   ],
   "test": [
    "2024-07-12",
-   "2026-11-16"
+   "2026-11-17"
   ]
  },
  "spy": {
   "train": 24.4,
-  "test": 35.6
+  "test": 34.2
  },
  "events": {
   "train": 510,
@@ -2363,7 +2363,7 @@
       "trades": 159
      },
      "test": {
-      "returnPct": 29.6,
+      "returnPct": 28.2,
       "maxDDPct": 25.1,
       "trades": 194
      }
@@ -2375,7 +2375,7 @@
       "trades": 412
      },
      "test": {
-      "returnPct": 42.9,
+      "returnPct": 41.4,
       "maxDDPct": 24,
       "trades": 404
      }
@@ -2387,7 +2387,7 @@
       "trades": 192
      },
      "test": {
-      "returnPct": 24.8,
+      "returnPct": 23.5,
       "maxDDPct": 22.2,
       "trades": 250
      }
@@ -2399,7 +2399,7 @@
       "trades": 101
      },
      "test": {
-      "returnPct": 36,
+      "returnPct": 34.6,
       "maxDDPct": 21.3,
       "trades": 108
      }
@@ -2411,7 +2411,7 @@
       "trades": 192
      },
      "test": {
-      "returnPct": 24.8,
+      "returnPct": 23.5,
       "maxDDPct": 22.2,
       "trades": 250
      }
@@ -2423,7 +2423,7 @@
       "trades": 101
      },
      "test": {
-      "returnPct": 36,
+      "returnPct": 34.6,
       "maxDDPct": 21.3,
       "trades": 108
      }
@@ -4772,7 +4772,7 @@
       "trades": 156
      },
      "test": {
-      "returnPct": 44.2,
+      "returnPct": 42.7,
       "maxDDPct": 24.2,
       "trades": 170
      }
@@ -4784,7 +4784,7 @@
       "trades": 295
      },
      "test": {
-      "returnPct": 30.7,
+      "returnPct": 29.4,
       "maxDDPct": 22.1,
       "trades": 298
      }
@@ -4796,7 +4796,7 @@
       "trades": 172
      },
      "test": {
-      "returnPct": 32.6,
+      "returnPct": 31.3,
       "maxDDPct": 22,
       "trades": 179
      }
@@ -4808,7 +4808,7 @@
       "trades": 88
      },
      "test": {
-      "returnPct": 28.7,
+      "returnPct": 27.4,
       "maxDDPct": 22,
       "trades": 94
      }
@@ -4820,7 +4820,7 @@
       "trades": 173
      },
      "test": {
-      "returnPct": 31.9,
+      "returnPct": 30.6,
       "maxDDPct": 21.2,
       "trades": 170
      }
@@ -4832,7 +4832,7 @@
       "trades": 90
      },
      "test": {
-      "returnPct": 25.3,
+      "returnPct": 24.1,
       "maxDDPct": 20.3,
       "trades": 90
      }
@@ -7181,7 +7181,7 @@
       "trades": 136
      },
      "test": {
-      "returnPct": 77.3,
+      "returnPct": 75.5,
       "maxDDPct": 26.6,
       "trades": 137
      }
@@ -7193,7 +7193,7 @@
       "trades": 205
      },
      "test": {
-      "returnPct": 34,
+      "returnPct": 32.6,
       "maxDDPct": 21.8,
       "trades": 187
      }
@@ -7205,7 +7205,7 @@
       "trades": 127
      },
      "test": {
-      "returnPct": 61.1,
+      "returnPct": 59.5,
       "maxDDPct": 20.1,
       "trades": 127
      }
@@ -7217,7 +7217,7 @@
       "trades": 80
      },
      "test": {
-      "returnPct": 72.9,
+      "returnPct": 71.2,
       "maxDDPct": 21.9,
       "trades": 82
      }
@@ -7229,7 +7229,7 @@
       "trades": 129
      },
      "test": {
-      "returnPct": 70,
+      "returnPct": 68.3,
       "maxDDPct": 20.1,
       "trades": 126
      }
@@ -7241,7 +7241,7 @@
       "trades": 80
      },
      "test": {
-      "returnPct": 76.2,
+      "returnPct": 74.4,
       "maxDDPct": 21.9,
       "trades": 83
      }
@@ -9590,7 +9590,7 @@
       "trades": 104
      },
      "test": {
-      "returnPct": 86.7,
+      "returnPct": 84.8,
       "maxDDPct": 31.8,
       "trades": 98
      }
@@ -9602,7 +9602,7 @@
       "trades": 118
      },
      "test": {
-      "returnPct": 42.2,
+      "returnPct": 40.8,
       "maxDDPct": 29,
       "trades": 108
      }
@@ -9614,7 +9614,7 @@
       "trades": 99
      },
      "test": {
-      "returnPct": 44.9,
+      "returnPct": 43.4,
       "maxDDPct": 21.8,
       "trades": 95
      }
@@ -9626,7 +9626,7 @@
       "trades": 75
      },
      "test": {
-      "returnPct": 41.3,
+      "returnPct": 39.9,
       "maxDDPct": 18.6,
       "trades": 84
      }
@@ -9638,7 +9638,7 @@
       "trades": 101
      },
      "test": {
-      "returnPct": 55.7,
+      "returnPct": 54.1,
       "maxDDPct": 22.8,
       "trades": 94
      }
@@ -9650,7 +9650,7 @@
       "trades": 78
      },
      "test": {
-      "returnPct": 49,
+      "returnPct": 47.5,
       "maxDDPct": 19.3,
       "trades": 84
      }
@@ -11999,7 +11999,7 @@
       "trades": 147
      },
      "test": {
-      "returnPct": 40,
+      "returnPct": 38.6,
       "maxDDPct": 25.4,
       "trades": 169
      }
@@ -12011,7 +12011,7 @@
       "trades": 243
      },
      "test": {
-      "returnPct": 21.8,
+      "returnPct": 20.6,
       "maxDDPct": 22.8,
       "trades": 252
      }
@@ -12023,7 +12023,7 @@
       "trades": 141
      },
      "test": {
-      "returnPct": 34.2,
+      "returnPct": 32.9,
       "maxDDPct": 22.5,
       "trades": 163
      }
@@ -12035,7 +12035,7 @@
       "trades": 87
      },
      "test": {
-      "returnPct": 37.4,
+      "returnPct": 36,
       "maxDDPct": 24.6,
       "trades": 87
      }
@@ -12047,7 +12047,7 @@
       "trades": 140
      },
      "test": {
-      "returnPct": 32,
+      "returnPct": 30.7,
       "maxDDPct": 22.5,
       "trades": 164
      }
@@ -12059,7 +12059,7 @@
       "trades": 87
      },
      "test": {
-      "returnPct": 35.1,
+      "returnPct": 33.8,
       "maxDDPct": 24.8,
       "trades": 88
      }
@@ -14408,7 +14408,7 @@
       "trades": 137
      },
      "test": {
-      "returnPct": 56,
+      "returnPct": 54.4,
       "maxDDPct": 27.9,
       "trades": 145
      }
@@ -14420,7 +14420,7 @@
       "trades": 230
      },
      "test": {
-      "returnPct": 27,
+      "returnPct": 25.7,
       "maxDDPct": 23.7,
       "trades": 211
      }
@@ -14432,7 +14432,7 @@
       "trades": 130
      },
      "test": {
-      "returnPct": 31.8,
+      "returnPct": 30.5,
       "maxDDPct": 24.8,
       "trades": 150
      }
@@ -14444,7 +14444,7 @@
       "trades": 85
      },
      "test": {
-      "returnPct": 47.6,
+      "returnPct": 46.1,
       "maxDDPct": 25.2,
       "trades": 105
      }
@@ -14456,7 +14456,7 @@
       "trades": 134
      },
      "test": {
-      "returnPct": 34.9,
+      "returnPct": 33.6,
       "maxDDPct": 24.8,
       "trades": 148
      }
@@ -14468,7 +14468,7 @@
       "trades": 86
      },
      "test": {
-      "returnPct": 55.4,
+      "returnPct": 53.9,
       "maxDDPct": 25.2,
       "trades": 108
      }
@@ -14854,7 +14854,7 @@
      "trades": 136
     },
     "test": {
-     "returnPct": 77.3,
+     "returnPct": 75.5,
      "maxDDPct": 26.6,
      "trades": 137
     }
@@ -14866,7 +14866,7 @@
      "trades": 104
     },
     "test": {
-     "returnPct": 86.7,
+     "returnPct": 84.8,
      "maxDDPct": 31.8,
      "trades": 98
     }
@@ -14878,7 +14878,7 @@
      "trades": 191
     },
     "test": {
-     "returnPct": 31.7,
+     "returnPct": 30.4,
      "maxDDPct": 21.8,
      "trades": 179
     }
@@ -14890,7 +14890,7 @@
      "trades": 116
     },
     "test": {
-     "returnPct": 60.2,
+     "returnPct": 58.5,
      "maxDDPct": 28.6,
      "trades": 104
     }
@@ -14902,7 +14902,7 @@
      "trades": 175
     },
     "test": {
-     "returnPct": 49.8,
+     "returnPct": 48.3,
      "maxDDPct": 24.4,
      "trades": 165
     }
@@ -14914,7 +14914,7 @@
      "trades": 112
     },
     "test": {
-     "returnPct": 73.5,
+     "returnPct": 71.7,
      "maxDDPct": 28.4,
      "trades": 100
     }
@@ -14926,7 +14926,7 @@
      "trades": 132
     },
     "test": {
-     "returnPct": 76,
+     "returnPct": 74.2,
      "maxDDPct": 28.3,
      "trades": 132
     }
@@ -14938,7 +14938,7 @@
      "trades": 102
     },
     "test": {
-     "returnPct": 97.7,
+     "returnPct": 95.7,
      "maxDDPct": 33,
      "trades": 97
     }
@@ -14950,7 +14950,7 @@
      "trades": 136
     },
     "test": {
-     "returnPct": 69.2,
+     "returnPct": 67.5,
      "maxDDPct": 28,
      "trades": 137
     }
@@ -14962,7 +14962,7 @@
      "trades": 104
     },
     "test": {
-     "returnPct": 84.6,
+     "returnPct": 82.7,
      "maxDDPct": 32.6,
      "trades": 98
     }
@@ -14974,7 +14974,7 @@
      "trades": 153
     },
     "test": {
-     "returnPct": 56.9,
+     "returnPct": 55.3,
      "maxDDPct": 26.9,
      "trades": 142
     }
@@ -14986,7 +14986,7 @@
      "trades": 109
     },
     "test": {
-     "returnPct": 93.4,
+     "returnPct": 91.4,
      "maxDDPct": 27.9,
      "trades": 96
     }
@@ -14998,7 +14998,7 @@
      "trades": 113
     },
     "test": {
-     "returnPct": 70,
+     "returnPct": 68.3,
      "maxDDPct": 29.8,
      "trades": 122
     }
@@ -15010,7 +15010,7 @@
      "trades": 98
     },
     "test": {
-     "returnPct": 99.5,
+     "returnPct": 97.5,
      "maxDDPct": 34.2,
      "trades": 96
     }
@@ -15022,7 +15022,7 @@
      "trades": 76
     },
     "test": {
-     "returnPct": 68.8,
+     "returnPct": 67.1,
      "maxDDPct": 27.1,
      "trades": 80
     }
@@ -15034,7 +15034,7 @@
      "trades": 76
     },
     "test": {
-     "returnPct": 104.3,
+     "returnPct": 102.2,
      "maxDDPct": 29.4,
      "trades": 76
     }
@@ -15046,7 +15046,7 @@
      "trades": 108
     },
     "test": {
-     "returnPct": 81.8,
+     "returnPct": 80,
      "maxDDPct": 30.1,
      "trades": 113
     }
@@ -15058,7 +15058,7 @@
      "trades": 91
     },
     "test": {
-     "returnPct": 137.2,
+     "returnPct": 134.8,
      "maxDDPct": 33.3,
      "trades": 94
     }

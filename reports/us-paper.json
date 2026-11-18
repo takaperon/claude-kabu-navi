@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-17T15:57:28.560Z",
+  "updatedAt": "2026-11-18T03:44:12.782Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": "spy",
-    "chosenAt": "2026-11-17T15:57:27.236Z",
+    "chosenAt": "2026-11-18T03:44:10.873Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-16",
+  "lastDate": "2026-11-17",
   "capital": 300000,
-  "equityYen": 294265,
-  "returnPct": -1.9,
-  "spyReturnPct": -1.9,
+  "equityYen": 291279,
+  "returnPct": -2.9,
+  "spyReturnPct": -2.9,
   "idleInSpyPct": 100,
   "idlePct": 100,
   "taxYen": 0,
@@ -24,6 +24,12 @@
   "holdings": [],
   "nextBuys": [],
   "recentReactions": [
+    {
+      "t": "TSN",
+      "name": "Tyson Foods",
+      "date": "2026-11-17",
+      "rePct": -0.5
+    },
     {
       "t": "VYLR",
       "name": "Vylor",
@@ -53,54 +59,6 @@
       "name": "TransDigm Group",
       "date": "2026-11-11",
       "rePct": 1.6
-    },
-    {
-      "t": "TTWO",
-      "name": "Take-Two Interactive",
-      "date": "2026-11-10",
-      "rePct": 8.3
-    },
-    {
-      "t": "KKR",
-      "name": "KKR & Co.",
-      "date": "2026-11-10",
-      "rePct": 2.8
-    },
-    {
-      "t": "OXY",
-      "name": "Occidental Petroleum",
-      "date": "2026-11-10",
-      "rePct": 2
-    },
-    {
-      "t": "BRK.B",
-      "name": "Berkshire Hathaway",
-      "date": "2026-11-10",
-      "rePct": 1.4
-    },
-    {
-      "t": "FERG",
-      "name": "Ferguson Enterprises",
-      "date": "2026-11-10",
-      "rePct": -0.2
-    },
-    {
-      "t": "NRG",
-      "name": "NRG Energy",
-      "date": "2026-11-10",
-      "rePct": -0.3
-    },
-    {
-      "t": "CEG",
-      "name": "Constellation Energy",
-      "date": "2026-11-10",
-      "rePct": -3
-    },
-    {
-      "t": "SKYD",
-      "name": "Skydance",
-      "date": "2026-11-10",
-      "rePct": -7.6
     }
   ],
   "recentClosed": [],
@@ -112,16 +70,20 @@
     {
       "date": "2026-11-16",
       "value": 294265
+    },
+    {
+      "date": "2026-11-17",
+      "value": 291279
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-17T15:57:28.045Z",
+    "chosenAt": "2026-11-18T03:44:12.020Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 294265,
-    "returnPct": -1.9,
+    "equityYen": 291279,
+    "returnPct": -2.9,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
@@ -136,6 +98,10 @@
       {
         "date": "2026-11-16",
         "value": 294265
+      },
+      {
+        "date": "2026-11-17",
+        "value": 291279
       }
     ]
   }
