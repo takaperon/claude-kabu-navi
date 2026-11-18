@@ -77,6 +77,11 @@
   値段は Nasdaq Basic のスナップショット（close）。preview の estimated_cost は約3%高めに出るので予備だけ。余力不足は preview で止めてエラーにしない
 - SDK：pip の `webull-openapi-python-sdk`（region "jp"、本番 api.webull.co.jp、テスト jp-openapi-alb.uat.webullbroker.com）
 
+## 場中の足（2026-11-18〜）
+- 日本株：yfinance（Yahoo!、無料・口座なし・非公式）。scripts/jp/intraday_*.py ＋ jp-intraday.yml（毎時）。1時間足は約3年、5分足は60日。データは暗号化キャッシュ jp-intraday-（JQUANTS_API_KEY で暗号化）。足に引けの板寄せが入らないので、引けまで持つ分は J-Quants の正式な終値を使う
+- 米国株：Tiingo IEX の5分足（us-intraday.yml、毎時40件）
+- 状況ごとの売買ルール：scripts/playbook.py（日米共通。前半で状況ごとに選び、後半で確かめる）
+
 ## 検証の方針
 - 過去検証に未来の情報を混ぜない（シグナルは当日終値まで、エントリーは翌日始値）
 - 生存者バイアスに注意（今上場している銘柄だけで検証している）
