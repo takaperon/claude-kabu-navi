@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T08:36:08.388Z",
+  "updatedAt": "2026-11-18T18:48:52.977Z",
   "startDate": "2026-11-05",
   "lastDate": "2026-11-18",
   "strategies": {
@@ -120,7 +120,14 @@
           "valueYen": 111854
         }
       ],
-      "nextBuys": [],
+      "nextBuys": [
+        {
+          "code": "36870",
+          "name": "フィックスターズ",
+          "reason": "配当予想を来期+15.8%引き上げ（2026-11-18発表）",
+          "late": false
+        }
+      ],
       "recentClosed": [
         {
           "code": "91010",
@@ -505,7 +512,14 @@
       "winRatePct": 56.8,
       "avgRetPct": 1.06,
       "holdings": [],
-      "nextBuys": [],
+      "nextBuys": [
+        {
+          "code": "36870",
+          "name": "フィックスターズ",
+          "reason": "配当予想を来期+15.8%引き上げ（2026-11-18発表）",
+          "late": false
+        }
+      ],
       "recentClosed": [
         {
           "code": "65740",
@@ -1121,7 +1135,14 @@
           "valueYen": 103728
         }
       ],
-      "nextBuys": [],
+      "nextBuys": [
+        {
+          "code": "36870",
+          "name": "フィックスターズ",
+          "reason": "配当予想を来期+15.8%引き上げ（2026-11-18発表）",
+          "late": false
+        }
+      ],
       "recentClosed": [
         {
           "code": "67770",
@@ -1273,7 +1294,14 @@
       "winRatePct": 50,
       "avgRetPct": -2.87,
       "holdings": [],
-      "nextBuys": [],
+      "nextBuys": [
+        {
+          "code": "36870",
+          "name": "フィックスターズ",
+          "reason": "配当予想を来期+15.8%引き上げ（2026-11-18発表）",
+          "late": false
+        }
+      ],
       "recentClosed": [
         {
           "code": "53810",
@@ -1392,7 +1420,14 @@
           "valueYen": 87213
         }
       ],
-      "nextBuys": [],
+      "nextBuys": [
+        {
+          "code": "36870",
+          "name": "フィックスターズ",
+          "reason": "配当予想を来期+15.8%引き上げ（2026-11-18発表）",
+          "late": false
+        }
+      ],
       "recentClosed": [],
       "equityHistory": [
         {
@@ -1420,7 +1455,7 @@
     "real30_dt_pro": {
       "name": "試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）",
       "trial": true,
-      "proChosenAt": "2026-11-18T08:18:26.120Z",
+      "proChosenAt": "2026-11-18T08:36:22.006Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1434,7 +1469,14 @@
       "winRatePct": null,
       "avgRetPct": null,
       "holdings": [],
-      "nextBuys": [],
+      "nextBuys": [
+        {
+          "code": "36870",
+          "name": "フィックスターズ",
+          "reason": "配当予想を来期+15.8%引き上げ（2026-11-18発表）／点数2：市場の5日の動きが下げた後・市場が25日平均より下（押し目）（利回り1.4%）",
+          "late": false
+        }
+      ],
       "recentClosed": [],
       "equityHistory": [
         {
@@ -1454,7 +1496,7 @@
     "real30_div_pro": {
       "name": "試験中：プロの判断のスイング（点数1以上・5日）",
       "trial": true,
-      "proChosenAt": "2026-11-18T08:18:26.120Z",
+      "proChosenAt": "2026-11-18T08:36:22.006Z",
       "hold": 5,
       "gap": false,
       "kinds": [
@@ -1468,7 +1510,14 @@
       "winRatePct": null,
       "avgRetPct": null,
       "holdings": [],
-      "nextBuys": [],
+      "nextBuys": [
+        {
+          "code": "36870",
+          "name": "フィックスターズ",
+          "reason": "配当予想を来期+15.8%引き上げ（2026-11-18発表）／点数3：直前20日で上がりすぎていない・市場の5日の動きが下げた後・市場が25日平均より下（押し目）（利回り1.4%）",
+          "late": false
+        }
+      ],
       "recentClosed": [],
       "equityHistory": [
         {
