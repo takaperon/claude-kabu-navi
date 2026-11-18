@@ -1,222 +1,222 @@
 {
- "date": "2026-11-17",
- "updatedAt": "2026-11-18T06:49:16.369Z",
+ "date": "2026-11-18",
+ "updatedAt": "2026-11-18T07:20:17.035Z",
  "note": "売買代金（20日平均）1億円以上・100円以上の東証の株",
- "count": 1718,
- "avgPct": -1.5,
- "up": 274,
- "down": 1398,
+ "count": 1717,
+ "avgPct": -0.5,
+ "up": 528,
+ "down": 1124,
  "gainers": [
   {
-   "code": "4888",
-   "name": "ステラファーマ",
-   "sector": "医薬品",
-   "pct": 22.7,
+   "code": "3909",
+   "name": "ショーケース",
+   "sector": "情報･通信業",
+   "pct": 17.2,
+   "news": null
+  },
+  {
+   "code": "338A",
+   "name": "ＺｅｎｍｕＴｅｃｈ",
+   "sector": "情報･通信業",
+   "pct": 15.6,
+   "news": null
+  },
+  {
+   "code": "3624",
+   "name": "アクセルマーク",
+   "sector": "情報･通信業",
+   "pct": 14.9,
+   "news": null
+  },
+  {
+   "code": "3042",
+   "name": "セキュアヴェイル",
+   "sector": "情報･通信業",
+   "pct": 14.6,
+   "news": null
+  },
+  {
+   "code": "4288",
+   "name": "アズジェント",
+   "sector": "情報･通信業",
+   "pct": 13.8,
+   "news": null
+  },
+  {
+   "code": "436A",
+   "name": "サイバーソリューションズ",
+   "sector": "情報･通信業",
+   "pct": 13.2,
+   "news": null
+  },
+  {
+   "code": "4972",
+   "name": "綜研化学",
+   "sector": "化学",
+   "pct": 13,
    "news": null
   },
   {
    "code": "2334",
    "name": "イオレ",
    "sector": "サービス業",
-   "pct": 18.8,
+   "pct": 10.9,
    "news": null
   },
   {
-   "code": "4547",
-   "name": "キッセイ薬品工業",
-   "sector": "医薬品",
-   "pct": 12.5,
+   "code": "153A",
+   "name": "カウリス",
+   "sector": "情報･通信業",
+   "pct": 10.2,
    "news": null
   },
   {
-   "code": "4884",
-   "name": "クリングルファーマ",
-   "sector": "医薬品",
-   "pct": 8.5,
+   "code": "6490",
+   "name": "ＰＩＬＬＡＲ",
+   "sector": "機械",
+   "pct": 9.4,
+   "news": null
+  },
+  {
+   "code": "4498",
+   "name": "サイバートラスト",
+   "sector": "情報･通信業",
+   "pct": 9.3,
    "news": null
   },
   {
    "code": "4418",
    "name": "ＪＤＳＣ",
    "sector": "情報･通信業",
-   "pct": 8,
+   "pct": 9.2,
    "news": null
   },
   {
-   "code": "7630",
-   "name": "壱番屋",
-   "sector": "小売業",
-   "pct": 8,
-   "news": null
-  },
-  {
-   "code": "2585",
-   "name": "ライフドリンク　カンパニー",
-   "sector": "食料品",
-   "pct": 5.3,
-   "news": null
-  },
-  {
-   "code": "6098",
-   "name": "リクルートホールディングス",
+   "code": "9250",
+   "name": "ＧＲＣＳ",
    "sector": "サービス業",
-   "pct": 5,
+   "pct": 8.3,
    "news": null
   },
   {
-   "code": "6145",
-   "name": "ＮＩＴＴＯＫＵ",
+   "code": "5341",
+   "name": "ＡＳＡＨＩ　ＥＩＴＯホールディングス",
+   "sector": "ガラス･土石製品",
+   "pct": 8.2,
+   "news": null
+  },
+  {
+   "code": "5599",
+   "name": "Ｓ＆Ｊ",
+   "sector": "情報･通信業",
+   "pct": 8.1,
+   "news": null
+  },
+  {
+   "code": "6855",
+   "name": "日本電子材料",
+   "sector": "電気機器",
+   "pct": 8,
+   "news": null
+  },
+  {
+   "code": "6315",
+   "name": "ＴＯＷＡ",
    "sector": "機械",
-   "pct": 5,
+   "pct": 7.4,
    "news": null
   },
   {
-   "code": "4403",
-   "name": "日油",
-   "sector": "化学",
-   "pct": 4.2,
+   "code": "4395",
+   "name": "アクリート",
+   "sector": "情報･通信業",
+   "pct": 7.3,
    "news": null
   },
   {
-   "code": "3825",
-   "name": "リミックスポイント",
-   "sector": "小売業",
-   "pct": 3.9,
-   "news": null
-  },
-  {
-   "code": "6027",
-   "name": "弁護士ドットコム",
-   "sector": "サービス業",
-   "pct": 3.7,
-   "news": null
-  },
-  {
-   "code": "4887",
-   "name": "サワイグループホールディングス",
-   "sector": "医薬品",
-   "pct": 3.6,
-   "news": null
-  },
-  {
-   "code": "6862",
-   "name": "ミナトホールディングス",
+   "code": "6871",
+   "name": "日本マイクロニクス",
    "sector": "電気機器",
-   "pct": 3.6,
+   "pct": 7.1,
    "news": null
   },
   {
-   "code": "5101",
-   "name": "横浜ゴム",
-   "sector": "ゴム製品",
-   "pct": 3.4,
-   "news": null
-  },
-  {
-   "code": "6570",
-   "name": "共和コーポレーション",
-   "sector": "サービス業",
-   "pct": 3.4,
-   "news": null
-  },
-  {
-   "code": "7318",
-   "name": "セレンディップ・ホールディングス",
-   "sector": "輸送用機器",
-   "pct": 3.4,
-   "news": null
-  },
-  {
-   "code": "9831",
-   "name": "ヤマダホールディングス",
-   "sector": "小売業",
-   "pct": 3.4,
-   "news": null
-  },
-  {
-   "code": "6523",
-   "name": "ＰＨＣホールディングス",
-   "sector": "電気機器",
-   "pct": 3.2,
-   "news": null
-  },
-  {
-   "code": "8086",
-   "name": "ニプロ",
-   "sector": "精密機器",
-   "pct": 3.2,
+   "code": "5218",
+   "name": "オハラ",
+   "sector": "ガラス･土石製品",
+   "pct": 7,
    "news": null
   }
  ],
  "losers": [
   {
-   "code": "3905",
-   "name": "データセクション",
+   "code": "4165",
+   "name": "プレイド",
    "sector": "情報･通信業",
-   "pct": -25.2,
+   "pct": -18.2,
    "news": null
   },
   {
-   "code": "7047",
-   "name": "ポート",
-   "sector": "サービス業",
-   "pct": -23.1,
+   "code": "5838",
+   "name": "楽天銀行",
+   "sector": "銀行業",
+   "pct": -15.2,
+   "news": null
+  },
+  {
+   "code": "4169",
+   "name": "ＥＮＥＣＨＡＮＧＥ",
+   "sector": "情報･通信業",
+   "pct": -9.8,
    "news": null
   },
   {
    "code": "634A",
    "name": "レイヤード",
    "sector": "情報･通信業",
-   "pct": -21.1,
+   "pct": -9.4,
    "news": null
   },
   {
-   "code": "247A",
-   "name": "Ａｉロボティクス",
-   "sector": "化学",
-   "pct": -17.9,
-   "news": null
-  },
-  {
-   "code": "4165",
-   "name": "プレイド",
-   "sector": "情報･通信業",
-   "pct": -15.4,
-   "news": null
-  },
-  {
-   "code": "479A",
-   "name": "ＰＲＯＮＩ",
-   "sector": "情報･通信業",
-   "pct": -15,
-   "news": null
-  },
-  {
-   "code": "6834",
-   "name": "精工技研",
-   "sector": "電気機器",
-   "pct": -14.7,
-   "news": null
-  },
-  {
-   "code": "6574",
-   "name": "コンヴァノ",
+   "code": "6027",
+   "name": "弁護士ドットコム",
    "sector": "サービス業",
-   "pct": -13.6,
+   "pct": -8.7,
    "news": null
   },
   {
-   "code": "319A",
-   "name": "技術承継機構",
-   "sector": "金属製品",
-   "pct": -12.7,
+   "code": "4884",
+   "name": "クリングルファーマ",
+   "sector": "医薬品",
+   "pct": -8.5,
    "news": null
   },
   {
-   "code": "6721",
-   "name": "ウインテスト",
-   "sector": "電気機器",
-   "pct": -12,
+   "code": "6464",
+   "name": "ツバキ・ナカシマ",
+   "sector": "機械",
+   "pct": -8.3,
+   "news": null
+  },
+  {
+   "code": "618A",
+   "name": "ＫＯＭＰＥＩＴＯ",
+   "sector": "サービス業",
+   "pct": -8.3,
+   "news": null
+  },
+  {
+   "code": "3923",
+   "name": "ラクス",
+   "sector": "情報･通信業",
+   "pct": -7.7,
+   "news": null
+  },
+  {
+   "code": "4483",
+   "name": "ＪＭＤＣ",
+   "sector": "情報･通信業",
+   "pct": -7.5,
    "news": null
   }
  ]
