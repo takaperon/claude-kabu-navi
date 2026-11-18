@@ -33,30 +33,32 @@ try:
         except Exception as e:
             out["webull"][ts] = {"error": type(e).__name__ + ": " + clean(e)}
         time.sleep(0.5)
+    # 過去の日を指定できるか（start_time / end_time の形を試す）
+    from datetime import timezone as _tz
+    t0 = int(datetime(2023, 3, 1, tzinfo=_tz.utc).timestamp()); t1 = int(datetime(2023, 3, 10, tzinfo=_tz.utc).timestamp())
+    for label, kw in [("ms", {"start_time": str(t0 * 1000), "end_time": str(t1 * 1000)}), ("sec", {"start_time": str(t0), "end_time": str(t1)}),
+                      ("iso", {"start_time": "2023-03-01", "end_time": "2023-03-10"}), ("end_ms_only", {"end_time": str(t1 * 1000)})]:
+        try:
+            r = md.get_history_bar("SPY", "US_STOCK", "M5", count="1200", **kw)
+            res = (r.json().get("result") or [{}])[0].get("result") or [] if r.status_code == 200 else []
+            times = sorted(tday(b.get("time")) for b in res)
+            out["webull"]["hist_" + label] = {"status": r.status_code, "bars": len(res), "first": times[0] if times else None, "last": times[-1] if times else None}
+        except Exception as e:
+            out["webull"]["hist_" + label] = {"error": type(e).__name__ + ": " + clean(e)}
+        time.sleep(0.5)
 except Exception as e:
     out["webull"]["error"] = type(e).__name__ + ": " + clean(e)
 
 # ---- Tiingo（IEXの場中データ）----
 key = os.environ.get("TIINGO_API_KEY", "")
-for label, sd, ed in [("2022", "2022-03-01", "2022-03-04"), ("2024", "2024-03-01", "2024-03-05"), ("recent", "2026-11-10", "2026-11-14")]:
+for label, sd, ed in [("2022_1min", "2022-03-01", "2022-03-02")]:
     try:
-        u = f"https://api.tiingo.com/iex/SPY/prices?startDate={sd}&endDate={ed}&resampleFreq=5min&columns=open,high,low,close&token={key}"
+        u = f"https://api.tiingo.com/iex/SPY/prices?startDate={sd}&endDate={ed}&resampleFreq=1min&columns=open,high,low,close&token={key}"
         rows = json.loads(urllib.request.urlopen(urllib.request.Request(u, headers={"Content-Type": "application/json"}), timeout=60).read())
         out["tiingo"][label] = {"bars": len(rows), "first": rows[0]["date"][:16] if rows else None, "last": rows[-1]["date"][:16] if rows else None}
     except Exception as e:
         out["tiingo"][label] = {"error": type(e).__name__ + ": " + clean(e)}
     time.sleep(2)
-
-# ---- Alpha Vantage（月を指定して過去の分足）----
-akey = os.environ.get("ALPHAVANTAGE_API_KEY", "")
-try:
-    u = f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=SPY&interval=5min&month=2023-03&outputsize=full&apikey={akey}"
-    j = json.loads(urllib.request.urlopen(u, timeout=60).read())
-    ser = j.get("Time Series (5min)") or {}
-    ks = sorted(ser.keys())
-    out["alphavantage"] = {"bars": len(ser), "first": ks[0] if ks else None, "last": ks[-1] if ks else None, "note": clean(j.get("Information") or j.get("Note") or j.get("Error Message") or "")}
-except Exception as e:
-    out["alphavantage"] = {"error": type(e).__name__ + ": " + clean(e)}
 
 json.dump(out, open("reports-out/us-intraday-probe.json", "w"), ensure_ascii=False, indent=1)
 print(json.dumps({"probe": "done", "webull_keys": list(out["webull"].keys())}))
