@@ -163,7 +163,7 @@ status.events = { div_up: T.filter((t) => t.kind === 'div_up').length, earn_up: 
 const split = Math.floor(D * 0.6);
 // 日本株の場中（1時間足・5分足）の検証用に、増配の「買う日」の一覧を出す（銘柄・日付・その日の引けで売った損益率・点数だけ。値段は出さない）
 try {
-  const list = T.filter((t) => t.kind === 'div_up' && dates[t.e] >= '2023-11-01').map((t) => ({ c: codes[t.i].slice(0, 4), e: dates[t.e], dt: t.out.dt ? Math.round(t.out.dt.ret * 10000) / 10000 : null, gap: Number.isFinite(t.f.gap) ? Math.round(t.f.gap * 10000) / 10000 : null, yield: Number.isFinite(t.f.yield) ? Math.round(t.f.yield * 10000) / 10000 : null }));
+  const list = T.filter((t) => t.kind === 'div_up' && dates[t.e] >= '2023-11-01').map((t) => ({ c: codes[t.i].slice(0, 4), e: dates[t.e], dt: t.out.dt ? Math.round(t.out.dt.ret * 10000) / 10000 : null, gap: Number.isFinite(t.f.gap) ? Math.round(t.f.gap * 10000) / 10000 : null, yield: Number.isFinite(t.f.yield) ? Math.round(t.f.yield * 10000) / 10000 : null, ...Object.fromEntries(['mgap', 'atr', 'liq', 'size'].map((k) => [k, Number.isFinite(t.f[k]) ? Math.round(t.f[k] * 10000) / 10000 : null])) }));
   fs.writeFileSync(path.join(OUT, 'jp-events.json'), JSON.stringify({ generatedAt: new Date().toISOString(), note: '増配の翌営業日（寄りで買う日）。dt＝その日の引けで売った損益率（J-Quants の日足、滑り込み）', list }));
 } catch (e) { status.eventsWriteError = e.message; }
 

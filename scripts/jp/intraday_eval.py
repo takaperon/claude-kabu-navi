@@ -74,6 +74,124 @@ for a in (0.0, 0.01): RULES[f'confirm{a*100:g}'] = {'kind': 'confirm', 'a': a}
 NAME = {'base': '寄りで買って引けで売る（今のやり方）', 'morning': '前場の終わりで売る', 'morning_onlyUp': '前場の終わりに買値より上なら売る（下なら引けまで）',
         'confirm0': '最初の1時間が上げて終わった時だけ買う（次の足の始値）', 'confirm1': '最初の1時間が+1%以上で終わった時だけ買う'}
 
+MULTI = {}
+for z in (0.03, 0.05, 0.08):
+    for N in (5, 10):
+        for sl in (None, 0.05):
+            MULTI[f'let_z{int(z*100)}_d{N}' + (f'_sl{int(sl*100)}' if sl else '')] = (z, N, sl)
+
+def let_ret(r, z, N, sl, iv):
+    x, B = r['x'], r['B']
+    b0 = run(B, RULES['base'], x.get('dt'))
+    d0 = run(B, {'kind': 'tpsl', 'sl': sl}, x.get('dt')) if sl else b0
+    o0 = B[0][1]; entry = o0 * (1 + SLIP)
+    sell = lambda px, bad=False: px * (1 - SLIP) * ((1 - BAD) if bad else 1) / entry - 1
+    if (sl and min(b[3] for b in B) <= o0 * (1 - sl)) or d0 <= 0:
+        return d0, 1
+    allb = bars(x['c'], iv)
+    nxt = [d for d in sorted(allb) if d > x['e']][:N - 1]
+    hi = max(max(b[2] for b in B), o0 * (1 + (x['dt'] or 0)) * (1 + SLIP) / (1 - SLIP))
+    for j, d in enumerate(nxt):
+        for (t, o, hh, l, c, v) in allb[d]:
+            stop = max(hi * (1 - z), entry / (1 - SLIP))  # 買値は割らない
+            if l <= stop: return sell(min(o, stop), True), j + 2
+            hi = max(hi, hh)
+    return (sell(allb[nxt[-1]][-1][4]) if nxt else d0), len(nxt) + 1
+
+# ---------- 状況ごとの売買ルール（2026-11-18 オーナー「機械的じゃなく、もっと細分化してルールを細かく」） ----------
+# 「その時に分かること」で状況を分け、状況ごとに一番よかった動き方を【前半だけ】で選ぶ。後半で今のやり方（全部同じ動き方）より良いかを確かめる。
+# 決める時点は2つ：
+#   寄り付き（買う前）：寄り付きの上げ下げ・市場全体の寄り・配当利回り・値動きの荒さ・売買代金・引き上げ幅 → 買わない／どの売り方で行くか
+#   10時（最初の1時間が終わった時）：最初の1時間の値動き・出来高の多さ ＋ 寄り付きの情報 → 10時に売る／引けまで／勝っていたら持ち越し
+# 1つの状況の件数が前半で MINN 件未満なら選ばない（今のやり方のまま）。区切りは前半のデータの3分位
+MINN = 40
+OPEN_F = {'gap': '寄り付きの上げ下げ', 'mgap': '市場全体の寄り付き', 'yield': '配当利回り', 'atr': '値動きの荒さ（1日の値幅）', 'liq': '売買代金', 'size': '引き上げ幅'}
+H1_F = {'fh': '最初の1時間の値動き', 'rv': '最初の1時間の出来高（前5日比）'}
+
+def actions_of(r, iv):
+    """1件ごとに、取れる動き方すべての損益率。open＝寄りで決める動き方、h1＝10時に決められる動き方（最初の1時間は何もしないもの）"""
+    x, B = r['x'], r['B']
+    A = {k: run(B, rule, x.get('dt')) for k, rule in RULES.items() if rule['kind'] != 'confirm'}
+    for k, (z, N, sl) in MULTI.items(): A[k] = let_ret(r, z, N, sl, iv)[0]
+    A['skip'] = 0.0
+    o0 = B[0][1]; entry = o0 * (1 + SLIP)
+    A['exit10'] = B[1][1] * (1 - SLIP) * (1 - BAD) / entry - 1 if len(B) > 1 else A['base']  # 10時の足の始値で成行で売る
+    return A
+
+H1_ACTIONS = ['base', 'exit10', 'morning', 'morning_onlyUp'] + [k for k in MULTI if '_sl' not in k]
+
+def playbook(rows, iv):
+    for r in rows:
+        r['A'] = actions_of(r, iv)
+        x, B = r['x'], r['B']
+        r['F'] = {k: x.get(k) for k in OPEN_F}
+        r['F']['fh'] = B[0][4] / B[0][1] - 1
+        r['F']['rv'] = r['rv']
+    tr = [r for r in rows if r['half'] == 'train']; te = [r for r in rows if r['half'] == 'test']
+    if len(tr) < MINN * 3 or not te: return {'n': len(rows), 'reason': '件数が足りない'}
+    allA = [k for k in rows[0]['A']]
+    def cuts(f):
+        v = sorted(r['F'][f] for r in tr if r['F'].get(f) is not None)
+        return (v[len(v) // 3], v[len(v) * 2 // 3]) if len(v) >= MINN * 3 else None
+    C = {f: cuts(f) for f in list(OPEN_F) + list(H1_F)}
+    def cell(r, f):
+        c, v = C.get(f), r['F'].get(f)
+        if c is None or v is None: return None
+        return 0 if v < c[0] else 1 if v < c[1] else 2
+    def fit(fs, acts):
+        # 状況（fs の3分位の組み合わせ）ごとに、前半で平均が一番よい動き方を選ぶ
+        g = {}
+        for r in tr:
+            key = tuple(cell(r, f) for f in fs)
+            if None in key: continue
+            g.setdefault(key, []).append(r)
+        pick = {}
+        for key, rs in g.items():
+            if len(rs) < MINN: continue
+            best = max(acts, key=lambda a: sum(r['A'][a] for r in rs) / len(rs))
+            pick[key] = best
+        return pick
+    def apply(rs, fs, pick):
+        out = []
+        for r in rs:
+            key = tuple(cell(r, f) for f in fs)
+            out.append(r['A'][pick.get(key, 'base')] if None not in key else r['A']['base'])
+        return out
+    cands = []
+    feats = list(OPEN_F) + list(H1_F)
+    for i, f1 in enumerate(feats):
+        for f2 in [None] + feats[i + 1:]:
+            fs = (f1,) if f2 is None else (f1, f2)
+            if any(C.get(f) is None for f in fs): continue
+            acts = H1_ACTIONS if any(f in H1_F for f in fs) else allA
+            pick = fit(fs, acts)
+            a_tr = apply(tr, fs, pick)
+            cands.append((sum(a_tr) / len(a_tr), fs, pick))
+    cands.sort(key=lambda c: -c[0])
+    base_tr = sum(r['A']['base'] for r in tr) / len(tr); base_te = sum(r['A']['base'] for r in te) / len(te)
+    # 全部同じ動き方で一番よかったもの（前半で選ぶ）＝「機械的」な比べ相手
+    one = max(allA, key=lambda a: sum(r['A'][a] for r in tr))
+    def label(fs, key):
+        names = {**OPEN_F, **H1_F}; lv = ['低い', '中くらい', '高い']
+        return '・'.join(f"{names[f]}が{lv[k]}" for f, k in zip(fs, key))
+    def desc(fs, pick):
+        rows_ = []
+        for key in sorted(pick):
+            rs_tr = [r for r in tr if tuple(cell(r, f) for f in fs) == key]; rs_te = [r for r in te if tuple(cell(r, f) for f in fs) == key]
+            a = pick[key]
+            rows_.append({'state': label(fs, key), 'action': a, 'train': {'n': len(rs_tr), 'avg': r4(sum(r['A'][a] for r in rs_tr) / len(rs_tr)), 'base': r4(sum(r['A']['base'] for r in rs_tr) / len(rs_tr))},
+                          'test': {'n': len(rs_te), 'avg': r4(sum(r['A'][a] for r in rs_te) / len(rs_te)) if rs_te else None, 'base': r4(sum(r['A']['base'] for r in rs_te) / len(rs_te)) if rs_te else None}})
+        return rows_
+    top = []
+    for avg_tr, fs, pick in cands[:5]:
+        a_te = apply(te, fs, pick)
+        top.append({'features': [ {**OPEN_F, **H1_F}[f] for f in fs], 'train': r4(avg_tr), 'test': r4(sum(a_te) / len(a_te)), 'testWin': r4(sum(1 for v in a_te if v > 0) / len(a_te)), 'cells': desc(fs, pick)})
+    cuts_out = {f: [r4(c[0]), r4(c[1])] for f, c in C.items() if c}
+    return {'note': '状況ごとに前半で一番よかった動き方を選び、後半で確かめる。前半の成績が良い順に上位5つ（後半の成績で選び直していない）。数字は1件あたりの平均損益率。skip＝買わない、exit10＝10時に売る',
+            'n': {'train': len(tr), 'test': len(te)}, 'base': {'train': r4(base_tr), 'test': r4(base_te)},
+            'oneRule': {'action': one, 'train': r4(sum(r['A'][one] for r in tr) / len(tr)), 'test': r4(sum(r['A'][one] for r in te) / len(te))},
+            'cuts': cuts_out, 'top': top}
+
 def evaluate(iv):
     rows = []
     for x in ev:
@@ -106,40 +224,15 @@ def evaluate(iv):
     # 買う日の引け（正式な終値）でプラスなら持ち越し、以後は「それまでの高値から z% 下がる」か「買値に戻る」で売る（最長 N 日、最後の日は最後の足で売る）。
     # 引けでマイナスなら、その日の引けで売る（損を翌日に持ち越さない）。sl があれば買う日の場中にも損切り
     if iv == '60m':
-        multi = {}
-        for z in (0.03, 0.05, 0.08):
-            for N in (5, 10):
-                for sl in (None, 0.05):
-                    multi[f'let_z{int(z*100)}_d{N}' + (f'_sl{int(sl*100)}' if sl else '')] = (z, N, sl)
         res['letRun'] = {'note': '買う日の引けでプラスなら持ち越して、高値から z% 下げるか買値に戻ったら売る（最長 d 日）。マイナスなら引けで売る。sl＝買う日の場中の損切り', 'rules': {}}
-        for key, (z, N, sl) in multi.items():
+        for key, (z, N, sl) in MULTI.items():
             oo = {}
             for h in ('train', 'test'):
                 got, days, base = [], [], []
                 for r in rows:
                     if r['half'] != h: continue
-                    x, B = r['x'], r['B']
-                    b0 = run(B, RULES['base'], x.get('dt'))
-                    base.append(b0)
-                    d0 = run(B, {'kind': 'tpsl', 'sl': sl}, x.get('dt')) if sl else b0
-                    o0 = B[0][1]; entry = o0 * (1 + SLIP)
-                    sell = lambda px, bad=False: px * (1 - SLIP) * ((1 - BAD) if bad else 1) / entry - 1
-                    if (sl and min(b[3] for b in B) <= o0 * (1 - sl)) or d0 <= 0:
-                        got.append(d0); days.append(1); continue
-                    allb = bars(x['c'], iv)
-                    nxt = [d for d in sorted(allb) if d > x['e']][:N - 1]
-                    hi = max(max(b[2] for b in B), o0 * (1 + (x['dt'] or 0)) * (1 + SLIP) / (1 - SLIP))
-                    ret, held = None, 1
-                    for j, d in enumerate(nxt):
-                        held = j + 2
-                        for (t, o, hh, l, c, v) in allb[d]:
-                            stop = max(hi * (1 - z), entry / (1 - SLIP))  # 買値は割らない
-                            if l <= stop: ret = sell(min(o, stop), True); break
-                            hi = max(hi, hh)
-                        if ret is not None: break
-                    if ret is None:
-                        ret = sell(allb[nxt[-1]][-1][4]) if nxt else d0
-                    got.append(ret); days.append(held)
+                    ret, held = let_ret(r, z, N, sl, iv)
+                    got.append(ret); days.append(held); base.append(run(r['B'], RULES['base'], r['x'].get('dt')))
                 wins = [g for g in got if g > 0]; loss = [g for g in got if g <= 0]
                 oo[h] = {**summ(got), 'vsBase': r4((sum(got) - sum(base)) / len(got)) if got else None, 'avgDays': r4(sum(days) / len(days)) if days else None,
                         'avgWin': r4(sum(wins) / len(wins)) if wins else None, 'avgLoss': r4(sum(loss) / len(loss)) if loss else None}
@@ -150,6 +243,7 @@ def evaluate(iv):
             w = [g for g in b if g > 0]; l_ = [g for g in b if g <= 0]
             bw[h] = {'avgWin': r4(sum(w) / len(w)) if w else None, 'avgLoss': r4(sum(l_) / len(l_)) if l_ else None}
         res['letRun']['base'] = bw
+        res['playbook'] = playbook(rows, iv)
     # 「気配」：最初の足の出来高の多さ・寄り付きの上げで分けた今のやり方の成績（買う前に分かる・最初の1時間で分かる）
     grp = {}
     for r in rows:
