@@ -10,7 +10,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'
 from playbook import playbook
 
 DIR = 'data-jp-intraday'
-SLIP, BAD = 0.001, 0.005
+SLIP = 0.001
+BAD = float(os.environ.get('BAD', '0.005'))  # 成行で逃げる時の追加の不利（感度を見るため変えられる）
+OUTF = os.environ.get('OUTF', 'jp-intraday.json')
 ev = json.load(open('jp-events.json'))['list']
 cache = {}
 def bars(c, iv):
@@ -53,6 +55,8 @@ def run(B, rule, dt=None):
             hi = max(hi, h)
         elif kind == 'firstbar':  # 最初の足が a% 以上下げて終わったら、次の足の始値で逃げる
             if k == 0 and c < o0 * (1 - rule['a']) and len(B) > 1: return sell(B[1][1], True)
+        elif kind == 'exitat':  # 決めた時刻の足の始値で成行で売る（例：10時）
+            if k == rule['k'] and k > 0: return sell(o, True)
         elif kind == 'morning':  # 前場の終わり（11時台の足の終値）で売る。onlyUp なら買値より上の時だけ
             if t < '12:00' and (last or B[k + 1][0] >= '12:00'):
                 if last: return sell(CL)
@@ -70,6 +74,8 @@ for tp in (None, 0.02, 0.03, 0.05, 0.08):
 for z in (0.02, 0.03, 0.05): RULES[f'trail{int(z*100)}'] = {'kind': 'trail', 'z': z}
 for a in (0.0, 0.01, 0.02, 0.03): RULES[f'firstbar_down{a*100:g}'] = {'kind': 'firstbar', 'a': a}
 for a in (0.02, 0.03, 0.05): RULES[f'fade{int(a*100)}'] = {'kind': 'fade', 'a': a}
+RULES['exit10'] = {'kind': 'exitat', 'k': 1}
+RULES['exit11'] = {'kind': 'exitat', 'k': 2}
 RULES['morning'] = {'kind': 'morning'}
 RULES['morning_onlyUp'] = {'kind': 'morning', 'onlyUp': True}
 for a in (0.0, 0.01): RULES[f'confirm{a*100:g}'] = {'kind': 'confirm', 'a': a}
@@ -202,7 +208,7 @@ def evaluate(iv):
     res['groups'] = {k: {'train': summ(v['train']), 'test': summ(v['test']), 'after1h_train': summ(v['restTrain']), 'after1h_test': summ(v['restTest'])} for k, v in sorted(grp.items())}
     return res
 
-out = {'ok': True, 'note': '増配の翌営業日に寄りで買う。売り方の比較（場中の足、Yahoo!のデータ）。vsBase＝今のやり方（引けで売る）との1件あたりの差。perEvent は買わなかった件を0として平均', '60m': evaluate('60m'), '5m': evaluate('5m'), 'note5m': '5分足では「最初の足」は最初の5分'}
+out = {'ok': True, 'bad': BAD, 'note': '増配の翌営業日に寄りで買う。売り方の比較（場中の足、Yahoo!のデータ）。vsBase＝今のやり方（引けで売る）との1件あたりの差。perEvent は買わなかった件を0として平均', '60m': evaluate('60m'), '5m': evaluate('5m'), 'note5m': '5分足では「最初の足」は最初の5分'}
 os.makedirs('reports-out', exist_ok=True)
-json.dump(out, open('reports-out/jp-intraday.json', 'w'), ensure_ascii=False, indent=1)
+json.dump(out, open(os.path.join('reports-out', OUTF), 'w'), ensure_ascii=False, indent=1)
 print(json.dumps({'ok': True, 'n60m': out['60m'].get('n'), 'n5m': out['5m'].get('n')}))

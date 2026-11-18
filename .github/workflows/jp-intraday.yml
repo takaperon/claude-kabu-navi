@@ -45,7 +45,10 @@ jobs:
         run: bash scripts/quiet.sh python scripts/jp/intraday_collect.py
       - name: eval
         if: env.ready == '1'
-        run: bash scripts/quiet.sh python scripts/jp/intraday_eval.py
+        run: |
+          bash scripts/quiet.sh python scripts/jp/intraday_eval.py
+          BAD=0.002 OUTF=jp-intraday-bad02.json bash scripts/quiet.sh python scripts/jp/intraday_eval.py
+          BAD=0 OUTF=jp-intraday-bad0.json bash scripts/quiet.sh python scripts/jp/intraday_eval.py
       - name: encrypt and save
         if: always() && env.ready == '1'
         run: tar czf - data-jp-intraday | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:JQUANTS_API_KEY -out jpintra.tar.enc
