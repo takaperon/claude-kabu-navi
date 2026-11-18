@@ -369,6 +369,41 @@ for (const [kind, exit] of [['div_up', 'dt'], ['div_up', 'h5'], ['div_up', 'hl10
     rules, byScore, sims,
   };
 }
+// ---------- デイトレの途中で売る（2026-11-18 オーナーの指摘「引けでしか売らないの？途中で売り抜けないのが嫌」） ----------
+// 日足の高値・安値で、場中に「利益確定の指値（+X%）」と「損切り（-Y%）」を置いた場合を近似する。
+// 同じ日に両方に届いた日は、どちらが先か分からないので「損切りが先」とする（悪い方に倒す）。損切りは逆指値が無いので、届いた値段からさらに0.5%悪く売れたとする
+// 利益確定の指値は、買ったあとすぐ出しておける（ウィブルの日本株は指値あり）。どれにも届かなければ引けで売る
+{
+  const sub = T.filter((t) => t.kind === 'div_up');
+  const tps = [null, 0.01, 0.02, 0.03, 0.05, 0.08], sls = [null, 0.02, 0.03, 0.05];
+  const rules = {};
+  for (const tp of tps) for (const sl of sls) {
+    const key = `tp${tp ? tp * 100 : '-'}_sl${sl ? sl * 100 : '-'}`;
+    const per = { train: [], test: [] }, hitTp = { train: 0, test: 0 }, hitSl = { train: 0, test: 0 };
+    const bd = new Map();
+    for (const t of sub) {
+      const i = t.i, e = t.e, o = at(O, i, e), h = at(H, i, e), l = at(L, i, e), c = at(C, i, e);
+      if (!(o > 0 && h > 0 && l > 0 && c > 0)) continue;
+      const entry = o * (1 + SLIP);
+      let px = c * (1 - SLIP), how = 'close';
+      if (sl && l <= o * (1 - sl)) { px = o * (1 - sl) * (1 - 0.005); how = 'sl'; }
+      else if (tp && h >= o * (1 + tp)) { px = o * (1 + tp); how = 'tp'; }
+      const r = px / entry - 1;
+      per[t.half].push(r);
+      if (how === 'tp') hitTp[t.half]++; if (how === 'sl') hitSl[t.half]++;
+      if (!bd.has(t.d)) bd.set(t.d, []);
+      bd.get(t.d).push({ i, ret: r, days: 1, score: t.score });
+    }
+    for (const a of bd.values()) a.sort((x, y) => y.score - x.score);
+    rules[key] = {
+      tp, sl,
+      train: { ...summ(per.train), tpRate: r4(hitTp.train / (per.train.length || 1)), slRate: r4(hitSl.train / (per.train.length || 1)) },
+      test: { ...summ(per.test), tpRate: r4(hitTp.test / (per.test.length || 1)), slRate: r4(hitSl.test / (per.test.length || 1)) },
+      lot30x3: { train: sim(bd, 31, split - 1, { capital: 300000, maxN: 3, lot: true }), test: sim(bd, split, D - 1, { capital: 300000, maxN: 3, lot: true }) },
+    };
+  }
+  result.dtIntraday = { note: '増配デイトレ（寄りで買う）。tp=利益確定の指値、sl=損切り。日足の高値・安値で近似、同じ日に両方なら損切りが先、損切りは0.5%余分に不利', rules };
+}
 // 年ごとの成績（増配・その日に売る／マイナスなら持ち越し）：偏りの確認
 result.byYear = {};
 for (const exit of ['dt', 'hl10', 'h5']) {
