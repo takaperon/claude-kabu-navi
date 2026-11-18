@@ -1,0 +1,113 @@
+{
+ "at": "2026-11-18T06:57:24.161209+00:00",
+ "webull": {
+  "signature": "(symbol, category, timespan, count='200', real_time_required=None, trading_sessions=None, start_time=None, end_time=None)",
+  "M1": {
+   "status": 200,
+   "bars": 1200,
+   "first": "2026-11-12T20:30",
+   "last": "2026-11-17T20:59",
+   "keys": [
+    "close",
+    "high",
+    "low",
+    "open",
+    "time",
+    "trading_session",
+    "volume"
+   ]
+  },
+  "M5": {
+   "status": 200,
+   "bars": 1200,
+   "first": "2026-10-27T17:30",
+   "last": "2026-11-17T20:55",
+   "keys": [
+    "close",
+    "high",
+    "low",
+    "open",
+    "time",
+    "trading_session",
+    "volume"
+   ]
+  },
+  "M15": {
+   "status": 200,
+   "bars": 1200,
+   "first": "2026-09-14T19:00",
+   "last": "2026-11-17T20:45",
+   "keys": [
+    "close",
+    "high",
+    "low",
+    "open",
+    "time",
+    "trading_session",
+    "volume"
+   ]
+  },
+  "M30": {
+   "status": 200,
+   "bars": 1200,
+   "first": "2026-07-09T18:00",
+   "last": "2026-11-17T20:30",
+   "keys": [
+    "close",
+    "high",
+    "low",
+    "open",
+    "time",
+    "trading_session",
+    "volume"
+   ]
+  },
+  "M60": {
+   "status": 200,
+   "bars": 868,
+   "first": "2026-05-22T13:30",
+   "last": "2026-11-17T20:00",
+   "keys": [
+    "close",
+    "high",
+    "low",
+    "open",
+    "time",
+    "trading_session",
+    "volume"
+   ]
+  },
+  "H1": {
+   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: 004ade97-6ea2-4b9a-bd2d-a9d58"
+  },
+  "1m": {
+   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: dc7ad494-d7b5-4acd-96b2-bf673"
+  },
+  "5m": {
+   "error": "ServerException: HTTP Status: 417, Code: UNSUPPORTED_TIMESPAN, Msg: Supported Timespan: [M1, M5, M15, M30, M60, M120, M240, D, W, M, Y], RequestID: fdce3074-3783-44b7-9d4e-62a1f"
+  }
+ },
+ "tiingo": {
+  "2022": {
+   "bars": 312,
+   "first": "2022-03-01T14:30",
+   "last": "2022-03-04T20:55"
+  },
+  "2024": {
+   "bars": 234,
+   "first": "2024-03-01T14:30",
+   "last": "2024-03-05T20:55"
+  },
+  "recent": {
+   "bars": 312,
+   "first": "2026-11-10T14:30",
+   "last": "2026-11-13T20:55"
+  }
+ },
+ "alphavantage": {
+  "bars": 0,
+  "first": null,
+  "last": null,
+  "note": "Thank you for using Alpha Vantage! This is a premium endpoint. You may subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantl"
+ }
+}
