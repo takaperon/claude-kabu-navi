@@ -1,7 +1,10 @@
 name: jp-intraday
-# 日本株の分足（yfinance）の確認・収集（2026-11-18〜）。値段は公開しない（本数・集計だけ）
+# 日本株の場中の足（yfinance＝Yahoo!）を集めて、増配デイトレの売り方を比べる（2026-11-18〜）
+# 値段は公開しない（件数・集計だけ）。足のデータは暗号化して Actions キャッシュにだけ置く
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '20 * * * *' # 毎時（3年分がそろうまで少しずつ。そろった後は新しい分だけ）
   push:
     branches: [main]
     paths: ['scripts/jp/intraday*', '.github/workflows/jp-intraday.yml']
@@ -11,22 +14,53 @@ concurrency:
   group: jp-intraday
   cancel-in-progress: false
 jobs:
-  probe:
+  collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+    env:
+      JQUANTS_API_KEY: ${{ secrets.JQUANTS_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install -q yfinance
-      - name: probe
-        run: python scripts/jp/intraday_probe.py
-      - name: publish
-        if: always()
+      - name: events list
         run: |
-          [ -f jp-intraday-probe.json ] || exit 0
+          git fetch -q origin reports
+          git show FETCH_HEAD:reports/jp-events.json > jp-events.json 2>/dev/null || { echo "jp-events.json がまだ無い（update の実行待ち）"; exit 0; }
+          echo "ready=1" >> "$GITHUB_ENV"
+      - name: restore cache
+        if: env.ready == '1'
+        uses: actions/cache/restore@v4
+        with:
+          path: jpintra.tar.enc
+          key: jp-intraday-${{ github.run_id }}
+          restore-keys: jp-intraday-
+      - name: decrypt
+        if: env.ready == '1'
+        run: |
+          if [ -f jpintra.tar.enc ]; then openssl enc -d -aes-256-cbc -pbkdf2 -pass env:JQUANTS_API_KEY -in jpintra.tar.enc | tar xzf - && echo "restored $(ls data-jp-intraday | wc -l)"; else mkdir -p data-jp-intraday; echo "no cache"; fi
+      - name: collect
+        if: env.ready == '1'
+        run: bash scripts/quiet.sh python scripts/jp/intraday_collect.py
+      - name: eval
+        if: env.ready == '1'
+        run: bash scripts/quiet.sh python scripts/jp/intraday_eval.py
+      - name: encrypt and save
+        if: always() && env.ready == '1'
+        run: tar czf - data-jp-intraday | openssl enc -aes-256-cbc -pbkdf2 -salt -pass env:JQUANTS_API_KEY -out jpintra.tar.enc
+      - name: save cache
+        if: always() && env.ready == '1' && hashFiles('jpintra.tar.enc') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: jpintra.tar.enc
+          key: jp-intraday-${{ github.run_id }}
+      - name: publish
+        if: always() && env.ready == '1'
+        run: |
+          mkdir -p reports-out && cp jp-collect-status.json reports-out/jp-intraday-collect.json 2>/dev/null || true
           git fetch origin reports:reports && git worktree add rep reports
-          mkdir -p rep/reports && cp jp-intraday-probe.json rep/reports/
+          mkdir -p rep/reports && cp reports-out/jp-intraday*.json rep/reports/ 2>/dev/null || exit 0
           cd rep && git config user.name "kabunavi-bot" && git config user.email "kabunavi-bot@users.noreply.github.com"
-          git add -A && git commit -q -m "jp intraday probe" || exit 0
+          git add -A && git commit -q -m "jp intraday $(TZ=Asia/Tokyo date +%Y-%m-%d_%H%M)" || exit 0
           for i in 1 2 3; do git push -q origin reports && break; git pull -q --rebase origin reports; sleep 5; done
