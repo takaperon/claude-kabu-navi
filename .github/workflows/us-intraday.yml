@@ -15,7 +15,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 340
     env:
       TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
     steps:
@@ -34,7 +34,15 @@ jobs:
       - name: events list
         run: git fetch -q origin reports && git show FETCH_HEAD:reports/us-events.json > us-events.json
       - name: collect
-        run: bash scripts/quiet.sh python scripts/us/intraday_collect.py
+        # GitHub の定期実行は毎時にならず5〜7時間おきなので（2026-11-19 確認）、1回の実行の中で1時間ずつ待って最大5回集める（Tiingo の1時間50回を守る）。
+        # 22時UTC台は us.yml が Tiingo を使うので待つ。全部そろうか、上限以外の理由で止まったら終わり
+        run: |
+          for round in 1 2 3 4 5; do
+            while [ "$(date -u +%H)" = "22" ]; do sleep 300; done
+            bash scripts/quiet.sh python scripts/us/intraday_collect.py
+            python3 -c "import json,sys; s=json.load(open('collect-status.json')); sys.exit(0 if s.get('stoppedBy')=='max' and not s.get('errors') else 1)" || break
+            [ "$round" = 5 ] || sleep 3660
+          done
       - name: eval
         run: bash scripts/quiet.sh python scripts/us/intraday_eval.py
       - name: encrypt and save
