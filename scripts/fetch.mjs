@@ -76,6 +76,7 @@ try {
   const days = cal.filter((r) => r.HolDiv === '1' || r.HolDiv === '2').map((r) => r.Date);
   status.calendarTradingDays = days.length;
 
+  const newSplits = [];
   // 新しい日から順に取る（途中で止まっても最近のデータが揃うように）
   for (const d of days.slice().reverse()) {
     if (d > ymd(today)) continue;
@@ -97,6 +98,8 @@ try {
       }
       // [Code, AdjO, AdjH, AdjL, AdjC, AdjVo, Va]
       const compact = rows.map((r) => [r.Code, r.AdjO, r.AdjH, r.AdjL, r.AdjC, r.AdjVo, r.Va]);
+      // 株式分割・併合のあった銘柄（調整係数が1でない）。前に取った日の値段は分割前のままなので、後でその銘柄の全期間を取り直す（2026-11-20〜）
+      for (const r of rows) { const f = Number(r.AdjFactor ?? r.AdjustmentFactor ?? 1); if (Number.isFinite(f) && f > 0 && f !== 1) newSplits.push({ code: r.Code, date: d, factor: f }); }
       fs.writeFileSync(file, JSON.stringify(compact));
       fs.writeFileSync(path.join(DATA, 'raw', `${d}.json`), JSON.stringify(rows.map((r) => [r.Code, r.O, r.C])));
       delete unavailable[d];
@@ -112,6 +115,39 @@ try {
       throw e;
     }
   }
+
+  // 分割・併合のあった銘柄は、全期間の調整後の値段を取り直して、保存済みの日のファイルを書き換える
+  const splitFile = path.join(DATA, 'splits.json');
+  const splits = fs.existsSync(splitFile) ? JSON.parse(fs.readFileSync(splitFile, 'utf8')) : [];
+  // 仕組みを入れる前に取った日（直近20営業日）は、一度だけ取り直して調整係数を確かめる
+  if (!fs.existsSync(splitFile)) {
+    for (const d of days.filter((x) => x <= ymd(today)).slice(-20)) {
+      try {
+        const rows = await getAll('/equities/bars/daily', { date: d.replaceAll('-', '') });
+        if (rows[0] && !status.dailyKeys) status.dailyKeys = Object.keys(rows[0]);
+        for (const r of rows) { const f = Number(r.AdjFactor ?? r.AdjustmentFactor ?? 1); if (Number.isFinite(f) && f > 0 && f !== 1) newSplits.push({ code: r.Code, date: d, factor: f }); }
+      } catch (e) { status.splitRecheckErrors = (status.splitRecheckErrors ?? 0) + 1; }
+    }
+  }
+  status.splitsFound = newSplits.length; status.splitsRewritten = 0;
+  for (const sp of newSplits) {
+    if (splits.some((x) => x.code === sp.code && x.date === sp.date)) continue;
+    try {
+      const hist = await getAll('/equities/bars/daily', { code: sp.code });
+      const by = new Map(hist.map((r) => [r.Date, [r.Code, r.AdjO, r.AdjH, r.AdjL, r.AdjC, r.AdjVo, r.Va]]));
+      let n = 0;
+      for (const f of fs.readdirSync(path.join(DATA, 'prices'))) {
+        const day = f.slice(0, 10); if (day >= sp.date || !by.has(day)) continue;
+        const fp = path.join(DATA, 'prices', f); const arr = JSON.parse(fs.readFileSync(fp, 'utf8'));
+        const k = arr.findIndex((x) => x[0] === sp.code); if (k < 0) continue;
+        arr[k] = by.get(day); fs.writeFileSync(fp, JSON.stringify(arr)); n++;
+      }
+      splits.push({ ...sp, rewrittenDays: n, at: new Date().toISOString() });
+      status.splitsRewritten++;
+    } catch (e) { status.splitErrors = (status.splitErrors ?? 0) + 1; status.lastSplitError = String(e.message).slice(0, 120); }
+  }
+  fs.writeFileSync(splitFile, JSON.stringify(splits));
+  status.splitsStored = splits.length;
 
   // 調整前の値段の取り直し（過去分。株価ファイルはあるのに raw が無い日だけ。時間の上限まで）
   status.rawBackfilled = 0;

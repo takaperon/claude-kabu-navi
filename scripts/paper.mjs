@@ -131,6 +131,22 @@ for (const [k, cfg] of Object.entries(STRATS)) {
   }
 }
 
+// 株式分割・併合（2026-11-20〜）：fetch.mjs が分割前の日の値段を分割後の基準に書き直すので、持っている銘柄の買値・株数も同じ基準にそろえる
+// factor は J-Quants の調整係数（1株→5株なら 0.2）。分割の日より前に買ったものだけ、1回だけ直す
+{
+  const spf = path.join(DATA, 'splits.json');
+  const splits = fs.existsSync(spf) ? JSON.parse(fs.readFileSync(spf, 'utf8')) : [];
+  const books = [...Object.values(state.strategies), ...(state.ipoNight ? [state.ipoNight] : [])];
+  for (const sp of splits) for (const b of books) for (const pos of b.positions ?? []) {
+    const key = sp.code + '|' + sp.date;
+    if (pos.code !== sp.code || pos.entryDate >= sp.date || (pos.splitDone ?? []).includes(key)) continue;
+    pos.entryPx *= sp.factor;
+    if (pos.lastPx != null && state.lastDate < sp.date) pos.lastPx *= sp.factor;
+    if (pos.shares) pos.shares = Math.round(pos.shares / sp.factor);
+    (pos.splitDone ??= []).push(key);
+  }
+}
+
 // 税金を入れる前の状態からの移行（2026-11-12）：過去の資産の推移と現金から、その時点までの税金を引く
 if (!state.taxApplied) {
   for (const st of Object.values(state.strategies)) {
