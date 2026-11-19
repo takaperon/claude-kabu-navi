@@ -1,6 +1,6 @@
 {
- "checkedAt": "2026-11-19T10:42:29.022113+00:00",
- "error": "ServerException:TOO_MANY_REQUESTS",
+ "checkedAt": "2026-11-19T10:44:43.060342+00:00",
+ "error": null,
  "signature": {
   "get_dividend_calendar": "(symbol, category='US_STOCK')",
   "get_earnings_calendar": "(symbol, category='US_STOCK')"
@@ -34,5 +34,1095 @@
   "get_institution_search",
   "get_sec_filings",
   "list_fund_dividends"
- ]
+ ],
+ "rowKeys": [
+  "amount",
+  "currency",
+  "declare_date",
+  "div_type",
+  "ex_div_date",
+  "market",
+  "pay_date",
+  "record_date",
+  "symbol"
+ ],
+ "statuses": {
+  "200": 40
+ },
+ "events": [
+  {
+   "c": "5105",
+   "buyDay": "2026-11-17",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-08-07",
+     "chg": 0.354
+    }
+   ],
+   "declares": [
+    "2026-04-09",
+    "2026-08-07"
+   ],
+   "exDates": [
+    "2026-06-29",
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "6890",
+   "buyDay": "2026-11-17",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-09-09",
+     "chg": 1.0
+    }
+   ],
+   "declares": [
+    "2026-06-16",
+    "2026-09-09"
+   ],
+   "exDates": [
+    "2026-06-29",
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "6574",
+   "buyDay": "2026-11-17",
+   "rows": 1,
+   "declareNear": [
+    "2026-11-16"
+   ],
+   "lagDays": [
+    -1
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-11-16"
+   ],
+   "exDates": [
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "3001",
+   "buyDay": "2026-11-17",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [
+    -19
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-10-29"
+   ],
+   "exDates": [
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "7350",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.0
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "3853",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "7327",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-07-23",
+     "chg": 1.0
+    }
+   ],
+   "declares": [
+    null,
+    "2026-07-23"
+   ],
+   "exDates": [
+    "2027-03-30",
+    "2026-09-29"
+   ]
+  },
+  {
+   "c": "546A",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.208
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "8714",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.182
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "1961",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-07-23",
+     "chg": 0.0
+    }
+   ],
+   "declares": [
+    null,
+    "2026-07-23"
+   ],
+   "exDates": [
+    "2027-03-30",
+    "2026-09-29"
+   ]
+  },
+  {
+   "c": "8522",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.091
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "8366",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.0
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "6317",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.7
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "6742",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-07-23",
+     "chg": -0.8
+    }
+   ],
+   "declares": [
+    null,
+    "2026-07-23"
+   ],
+   "exDates": [
+    "2027-03-30",
+    "2026-09-29"
+   ]
+  },
+  {
+   "c": "7182",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    null
+   ],
+   "exDates": [
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "4914",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.154
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "7744",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-08-14",
+     "chg": 0.27
+    }
+   ],
+   "declares": [
+    "2026-04-09",
+    "2026-08-14"
+   ],
+   "exDates": [
+    "2026-06-29",
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "4180",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-08-13"
+   ],
+   "exDates": [
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "7912",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.0
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "8411",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-07-23",
+     "chg": 0.0
+    }
+   ],
+   "declares": [
+    null,
+    "2026-07-23"
+   ],
+   "exDates": [
+    "2027-03-30",
+    "2026-09-29"
+   ]
+  },
+  {
+   "c": "5844",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.5
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "5985",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.0
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "3486",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-08-07"
+   ],
+   "exDates": [
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "9470",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-05-15"
+   ],
+   "exDates": [
+    "2026-09-29"
+   ]
+  },
+  {
+   "c": "4840",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-08-12"
+   ],
+   "exDates": [
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "6258",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "8253",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "6191",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-08-27"
+   ],
+   "exDates": [
+    "2026-09-29"
+   ]
+  },
+  {
+   "c": "3374",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "5975",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.083
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "6407",
+   "buyDay": "2026-11-16",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-13",
+     "chg": 0.026
+    }
+   ],
+   "declares": [
+    "2026-07-29",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "5381",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "2146",
+   "buyDay": "2026-11-16",
+   "rows": 3,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-08-07",
+     "chg": -0.294
+    },
+    {
+     "declare": "2026-11-13",
+     "chg": 0.147
+    }
+   ],
+   "declares": [
+    "2026-05-21",
+    "2026-08-07",
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2026-06-29",
+    "2026-09-29",
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "6231",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [
+    "2026-11-13"
+   ],
+   "lagDays": [
+    -3
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-11-13"
+   ],
+   "exDates": [
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "6877",
+   "buyDay": "2026-11-16",
+   "rows": 1,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-05-08"
+   ],
+   "exDates": [
+    "2026-09-29"
+   ]
+  },
+  {
+   "c": "648A",
+   "buyDay": "2026-11-16",
+   "rows": 0,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [],
+   "chg": [],
+   "declares": [],
+   "exDates": []
+  },
+  {
+   "c": "3968",
+   "buyDay": "2026-11-13",
+   "rows": 2,
+   "declareNear": [],
+   "lagDays": [],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-08-13",
+     "chg": 1.111
+    }
+   ],
+   "declares": [
+    "2026-04-09",
+    "2026-08-13"
+   ],
+   "exDates": [
+    "2026-06-29",
+    "2026-12-29"
+   ]
+  },
+  {
+   "c": "6101",
+   "buyDay": "2026-11-13",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-12"
+   ],
+   "lagDays": [
+    -1
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-12",
+     "chg": 0.0
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-12"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "8345",
+   "buyDay": "2026-11-13",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-12"
+   ],
+   "lagDays": [
+    -1
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [
+    {
+     "declare": "2026-11-12",
+     "chg": 0.03
+    }
+   ],
+   "declares": [
+    "2026-07-23",
+    "2026-11-12"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  },
+  {
+   "c": "5142",
+   "buyDay": "2026-11-13",
+   "rows": 2,
+   "declareNear": [
+    "2026-11-12"
+   ],
+   "lagDays": [
+    -1
+   ],
+   "types": [
+    "CASH_DIVIDEND"
+   ],
+   "chg": [],
+   "declares": [
+    "2026-07-23",
+    "2026-11-12"
+   ],
+   "exDates": [
+    "2026-09-29",
+    "2027-03-30"
+   ]
+  }
+ ],
+ "control": [
+  {
+   "c": "8927",
+   "rows": 2,
+   "declares": [
+    "2026-03-17",
+    "2026-11-02"
+   ]
+  },
+  {
+   "c": "3612",
+   "rows": 1,
+   "declares": [
+    "2026-06-10"
+   ]
+  },
+  {
+   "c": "8125",
+   "rows": 2,
+   "declares": [
+    "2026-06-10",
+    "2026-10-08"
+   ]
+  },
+  {
+   "c": "8074",
+   "rows": 2,
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ]
+  },
+  {
+   "c": "9759",
+   "rows": 1,
+   "declares": [
+    "2026-10-29"
+   ]
+  },
+  {
+   "c": "9474",
+   "rows": 2,
+   "declares": [
+    "2026-07-23",
+    "2026-10-29"
+   ]
+  },
+  {
+   "c": "1982",
+   "rows": 2,
+   "declares": [
+    "2026-07-23",
+    "2026-11-11"
+   ]
+  },
+  {
+   "c": "5482",
+   "rows": 2,
+   "declares": [
+    "2026-07-29",
+    "2026-10-29"
+   ]
+  },
+  {
+   "c": "3611",
+   "rows": 1,
+   "declares": [
+    "2026-11-12"
+   ]
+  },
+  {
+   "c": "2929",
+   "rows": 2,
+   "declares": [
+    "2026-02-16",
+    "2026-11-02"
+   ]
+  },
+  {
+   "c": "7187",
+   "rows": 2,
+   "declares": [
+    "2026-07-23",
+    "2026-11-10"
+   ]
+  },
+  {
+   "c": "8167",
+   "rows": 2,
+   "declares": [
+    "2026-06-10",
+    "2026-10-15"
+   ]
+  },
+  {
+   "c": "9989",
+   "rows": 2,
+   "declares": [
+    "2026-07-23",
+    "2026-11-13"
+   ]
+  },
+  {
+   "c": "9023",
+   "rows": 2,
+   "declares": [
+    "2026-07-23",
+    "2026-10-30"
+   ]
+  },
+  {
+   "c": "5992",
+   "rows": 2,
+   "declares": [
+    "2026-07-23",
+    "2026-10-28"
+   ]
+  }
+ ],
+ "multiSymbol": {
+  "error": "ServerException"
+ },
+ "pace": {
+  "finalSleepSec": 1.0,
+  "retries": 0,
+  "calls": 56,
+  "sec": 86
+ },
+ "summary": {
+  "events": 40,
+  "answered": 40,
+  "matchedWithin7days": 23,
+  "eventsNewestBuyDay": "2026-11-17",
+  "controlAnswered": 15
+ }
 }
