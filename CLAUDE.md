@@ -64,7 +64,8 @@
 - **ウィブルは日本株の単元未満株に未対応（アプリもAPIも。2026-11-12 FAQで確認）＝日本株は100株単位**。米国株は端株OK（1ドル〜、通常時間のみ）。
   日本株APIの注文は成行・指値のみ（逆指値・寄付/引け指定なし）、通常取引時間内のみ。売りは15:25〜15:30（引けの板寄せ）に成行で出して引け値に近づける想定
 - 100株単位の検証：fetch.mjs が data/raw/{date}.json（調整前の始値・終値）も保存。backtest.mjs の lotSim（資金30万〜300万×最大銘柄数1〜10）
-- ウィブルAPIのマーケットデータ（株価）は購読が必要で403。決算予定・配当予定・EPS予想（前後半年）は取れる
+- ウィブルAPIのマーケットデータ（株価）は購読が必要で403。決算予定・配当予定・EPS予想（前後半年）は取れる。
+  ただし配当カレンダーは増配の発表を40件中10件しか見分けられず、J-Quants の開示の代わりにならない（2026-11-19 確認、research/log.md）。日本株の板・歩み値は「JPX Full Quotes Non-display」（月330円、オーナー検討中・未契約）
 - **本番エンジン（2026-11-15〜、オーナーの指示で米国株・少額から）**：scripts/live/trade.py ＋ .github/workflows/live-trade.yml（平日 14:50 UTC＝米国の取引開始後）。
   設定は live/config.json（enabled／mode=dry・test・live／使うお金の上限は公開しない（Secrets の LIVE_MAX_USD。無いと売買しない）／dailyLossStopPct=5／maxErrors=3／resetHalt）。iPhoneのGitHub画面で編集して止められる。
   信号は reports/us-paper.json の nextBuys と settings.hold。売りは保有日数に達した翌取引日の寄り付き後（仮想は引け）。空き資金はSPY（2026-11-17〜）。
