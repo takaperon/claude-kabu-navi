@@ -1,197 +1,197 @@
 {
- "updatedAt": "2026-11-18T04:43:10.929409+00:00",
+ "updatedAt": "2026-11-19T00:06:49.672891+00:00",
  "error": null,
  "universe": 502,
  "batchOk": 25,
  "single": 18,
- "date": "2026-11-17",
+ "date": "2026-11-18",
  "count": 500,
  "note": "S&P500構成銘柄（Wikipediaの一覧）。ウィブルの相場情報（Nasdaq Basic）",
- "avgPct": -1.39,
- "up": 73,
- "down": 423,
+ "avgPct": -0.1,
+ "up": 232,
+ "down": 254,
  "gainers": [
+  {
+   "t": "OKTA",
+   "name": "Okta, Inc.",
+   "sector": "情報技術",
+   "pct": 12.1
+  },
+  {
+   "t": "GNRC",
+   "name": "Generac",
+   "sector": "資本財",
+   "pct": 9.9
+  },
+  {
+   "t": "PANW",
+   "name": "Palo Alto Networks",
+   "sector": "情報技術",
+   "pct": 9.9
+  },
+  {
+   "t": "AKAM",
+   "name": "Akamai Technologies",
+   "sector": "情報技術",
+   "pct": 8.3
+  },
+  {
+   "t": "TJX",
+   "name": "TJX Companies",
+   "sector": "一般消費財",
+   "pct": 8.0
+  },
+  {
+   "t": "CRWD",
+   "name": "CrowdStrike",
+   "sector": "情報技術",
+   "pct": 7.9
+  },
+  {
+   "t": "LULU",
+   "name": "Lululemon Athletica",
+   "sector": "一般消費財",
+   "pct": 6.4
+  },
+  {
+   "t": "TTWO",
+   "name": "Take-Two Interactive",
+   "sector": "通信サービス",
+   "pct": 6.2
+  },
+  {
+   "t": "FTNT",
+   "name": "Fortinet",
+   "sector": "情報技術",
+   "pct": 5.9
+  },
+  {
+   "t": "AMD",
+   "name": "Advanced Micro Devices",
+   "sector": "情報技術",
+   "pct": 5.3
+  },
+  {
+   "t": "FFIV",
+   "name": "F5, Inc.",
+   "sector": "情報技術",
+   "pct": 5.2
+  },
+  {
+   "t": "DIS",
+   "name": "Walt Disney Company (The)",
+   "sector": "通信サービス",
+   "pct": 4.6
+  },
+  {
+   "t": "RCL",
+   "name": "Royal Caribbean Group",
+   "sector": "一般消費財",
+   "pct": 4.3
+  },
+  {
+   "t": "ANET",
+   "name": "Arista Networks",
+   "sector": "情報技術",
+   "pct": 4.0
+  },
+  {
+   "t": "TGT",
+   "name": "Target Corporation",
+   "sector": "生活必需品",
+   "pct": 4.0
+  },
+  {
+   "t": "WSM",
+   "name": "Williams-Sonoma, Inc.",
+   "sector": "一般消費財",
+   "pct": 4.0
+  },
+  {
+   "t": "AMZN",
+   "name": "Amazon",
+   "sector": "一般消費財",
+   "pct": 3.8
+  },
   {
    "t": "FIX",
    "name": "Comfort Systems USA",
    "sector": "資本財",
-   "pct": 3.9
-  },
-  {
-   "t": "COHR",
-   "name": "Coherent Corp.",
-   "sector": "情報技術",
-   "pct": 3.7
-  },
-  {
-   "t": "CIEN",
-   "name": "Ciena",
-   "sector": "情報技術",
-   "pct": 2.8
-  },
-  {
-   "t": "LITE",
-   "name": "Lumentum",
-   "sector": "情報技術",
-   "pct": 2.6
-  },
-  {
-   "t": "AVGO",
-   "name": "Broadcom",
-   "sector": "情報技術",
-   "pct": 2.5
-  },
-  {
-   "t": "CHRW",
-   "name": "C.H. Robinson",
-   "sector": "資本財",
-   "pct": 2.4
+   "pct": 3.8
   },
   {
    "t": "ILMN",
    "name": "Illumina, Inc.",
    "sector": "ヘルスケア",
-   "pct": 2.3
+   "pct": 3.7
   },
   {
-   "t": "MRVL",
-   "name": "Marvell Technology",
+   "t": "AVGO",
+   "name": "Broadcom",
    "sector": "情報技術",
-   "pct": 2.3
-  },
-  {
-   "t": "GLW",
-   "name": "Corning Inc.",
-   "sector": "情報技術",
-   "pct": 2.2
-  },
-  {
-   "t": "PWR",
-   "name": "Quanta Services",
-   "sector": "資本財",
-   "pct": 2.2
-  },
-  {
-   "t": "SYK",
-   "name": "Stryker Corporation",
-   "sector": "ヘルスケア",
-   "pct": 2.2
-  },
-  {
-   "t": "GEV",
-   "name": "GE Vernova",
-   "sector": "資本財",
-   "pct": 2.1
-  },
-  {
-   "t": "RDDT",
-   "name": "Reddit",
-   "sector": "通信サービス",
-   "pct": 1.7
-  },
-  {
-   "t": "ROK",
-   "name": "Rockwell Automation",
-   "sector": "資本財",
-   "pct": 1.7
-  },
-  {
-   "t": "GILD",
-   "name": "Gilead Sciences",
-   "sector": "ヘルスケア",
-   "pct": 1.6
-  },
-  {
-   "t": "IVZ",
-   "name": "Invesco",
-   "sector": "金融",
-   "pct": 1.6
-  },
-  {
-   "t": "RTX",
-   "name": "RTX Corporation",
-   "sector": "資本財",
-   "pct": 1.6
-  },
-  {
-   "t": "NOC",
-   "name": "Northrop Grumman",
-   "sector": "資本財",
-   "pct": 1.4
-  },
-  {
-   "t": "TSCO",
-   "name": "Tractor Supply",
-   "sector": "一般消費財",
-   "pct": 1.4
-  },
-  {
-   "t": "MCHP",
-   "name": "Microchip Technology",
-   "sector": "情報技術",
-   "pct": 1.3
+   "pct": 3.6
   }
  ],
  "losers": [
   {
-   "t": "CRM",
-   "name": "Salesforce",
-   "sector": "情報技術",
-   "pct": -9.5
-  },
-  {
-   "t": "INTU",
-   "name": "Intuit",
-   "sector": "情報技術",
-   "pct": -7.2
-  },
-  {
-   "t": "NOW",
-   "name": "ServiceNow",
-   "sector": "情報技術",
-   "pct": -6.5
-  },
-  {
-   "t": "SBAC",
-   "name": "SBA Communications",
-   "sector": "不動産",
-   "pct": -6.5
-  },
-  {
-   "t": "NKE",
-   "name": "Nike, Inc.",
-   "sector": "一般消費財",
-   "pct": -6.3
-  },
-  {
-   "t": "WDAY",
-   "name": "Workday, Inc.",
-   "sector": "情報技術",
-   "pct": -5.8
-  },
-  {
-   "t": "FSLR",
-   "name": "First Solar",
-   "sector": "情報技術",
-   "pct": -5.8
-  },
-  {
-   "t": "CCI",
-   "name": "Crown Castle",
-   "sector": "不動産",
-   "pct": -5.8
-  },
-  {
-   "t": "FICO",
-   "name": "Fair Isaac",
-   "sector": "情報技術",
-   "pct": -5.7
+   "t": "HUM",
+   "name": "Humana",
+   "sector": "ヘルスケア",
+   "pct": -13.0
   },
   {
    "t": "UNH",
    "name": "UnitedHealth Group",
    "sector": "ヘルスケア",
-   "pct": -5.4
+   "pct": -10.2
+  },
+  {
+   "t": "ELV",
+   "name": "Elevance Health",
+   "sector": "ヘルスケア",
+   "pct": -7.6
+  },
+  {
+   "t": "FCX",
+   "name": "Freeport-McMoRan",
+   "sector": "素材",
+   "pct": -7.0
+  },
+  {
+   "t": "CNC",
+   "name": "Centene Corporation",
+   "sector": "ヘルスケア",
+   "pct": -7.0
+  },
+  {
+   "t": "DVA",
+   "name": "DaVita",
+   "sector": "ヘルスケア",
+   "pct": -6.5
+  },
+  {
+   "t": "NEM",
+   "name": "Newmont",
+   "sector": "素材",
+   "pct": -6.0
+  },
+  {
+   "t": "VLO",
+   "name": "Valero Energy",
+   "sector": "エネルギー",
+   "pct": -5.5
+  },
+  {
+   "t": "MPC",
+   "name": "Marathon Petroleum",
+   "sector": "エネルギー",
+   "pct": -5.2
+  },
+  {
+   "t": "CVS",
+   "name": "CVS Health",
+   "sector": "ヘルスケア",
+   "pct": -5.2
   }
  ]
 }
