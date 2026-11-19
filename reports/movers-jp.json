@@ -1,222 +1,222 @@
 {
- "date": "2026-11-18",
- "updatedAt": "2026-11-18T18:49:17.235Z",
+ "date": "2026-11-19",
+ "updatedAt": "2026-11-19T18:58:29.734Z",
  "note": "売買代金（20日平均）1億円以上・100円以上の東証の株",
- "count": 1717,
- "avgPct": -0.5,
- "up": 528,
- "down": 1124,
+ "count": 1718,
+ "avgPct": -0.4,
+ "up": 630,
+ "down": 1002,
  "gainers": [
-  {
-   "code": "3909",
-   "name": "ショーケース",
-   "sector": "情報･通信業",
-   "pct": 17.2,
-   "news": null
-  },
-  {
-   "code": "338A",
-   "name": "ＺｅｎｍｕＴｅｃｈ",
-   "sector": "情報･通信業",
-   "pct": 15.6,
-   "news": null
-  },
   {
    "code": "3624",
    "name": "アクセルマーク",
    "sector": "情報･通信業",
-   "pct": 14.9,
+   "pct": 39,
+   "news": null
+  },
+  {
+   "code": "130A",
+   "name": "Ｖｅｒｉｔａｓ　Ｉｎ　Ｓｉｌｉｃｏ",
+   "sector": "医薬品",
+   "pct": 28.1,
+   "news": null
+  },
+  {
+   "code": "4575",
+   "name": "キャンバス",
+   "sector": "医薬品",
+   "pct": 14.8,
+   "news": null
+  },
+  {
+   "code": "3909",
+   "name": "ショーケース",
+   "sector": "情報･通信業",
+   "pct": 14.7,
    "news": null
   },
   {
    "code": "3042",
    "name": "セキュアヴェイル",
    "sector": "情報･通信業",
-   "pct": 14.6,
-   "news": null
-  },
-  {
-   "code": "4288",
-   "name": "アズジェント",
-   "sector": "情報･通信業",
-   "pct": 13.8,
-   "news": null
-  },
-  {
-   "code": "436A",
-   "name": "サイバーソリューションズ",
-   "sector": "情報･通信業",
-   "pct": 13.2,
-   "news": null
-  },
-  {
-   "code": "4972",
-   "name": "綜研化学",
-   "sector": "化学",
-   "pct": 13,
-   "news": null
-  },
-  {
-   "code": "2334",
-   "name": "イオレ",
-   "sector": "サービス業",
-   "pct": 10.9,
-   "news": null
-  },
-  {
-   "code": "153A",
-   "name": "カウリス",
-   "sector": "情報･通信業",
-   "pct": 10.2,
-   "news": null
-  },
-  {
-   "code": "6490",
-   "name": "ＰＩＬＬＡＲ",
-   "sector": "機械",
-   "pct": 9.4,
-   "news": null
-  },
-  {
-   "code": "4498",
-   "name": "サイバートラスト",
-   "sector": "情報･通信業",
-   "pct": 9.3,
-   "news": null
-  },
-  {
-   "code": "4418",
-   "name": "ＪＤＳＣ",
-   "sector": "情報･通信業",
-   "pct": 9.2,
-   "news": null
-  },
-  {
-   "code": "9250",
-   "name": "ＧＲＣＳ",
-   "sector": "サービス業",
-   "pct": 8.3,
-   "news": null
-  },
-  {
-   "code": "5341",
-   "name": "ＡＳＡＨＩ　ＥＩＴＯホールディングス",
-   "sector": "ガラス･土石製品",
-   "pct": 8.2,
-   "news": null
-  },
-  {
-   "code": "5599",
-   "name": "Ｓ＆Ｊ",
-   "sector": "情報･通信業",
-   "pct": 8.1,
-   "news": null
-  },
-  {
-   "code": "6855",
-   "name": "日本電子材料",
-   "sector": "電気機器",
-   "pct": 8,
-   "news": null
-  },
-  {
-   "code": "6315",
-   "name": "ＴＯＷＡ",
-   "sector": "機械",
-   "pct": 7.4,
-   "news": null
-  },
-  {
-   "code": "4395",
-   "name": "アクリート",
-   "sector": "情報･通信業",
-   "pct": 7.3,
-   "news": null
-  },
-  {
-   "code": "6871",
-   "name": "日本マイクロニクス",
-   "sector": "電気機器",
-   "pct": 7.1,
-   "news": null
-  },
-  {
-   "code": "5218",
-   "name": "オハラ",
-   "sector": "ガラス･土石製品",
-   "pct": 7,
-   "news": null
-  }
- ],
- "losers": [
-  {
-   "code": "4165",
-   "name": "プレイド",
-   "sector": "情報･通信業",
-   "pct": -18.2,
-   "news": null
-  },
-  {
-   "code": "5838",
-   "name": "楽天銀行",
-   "sector": "銀行業",
-   "pct": -15.2,
-   "news": null
-  },
-  {
-   "code": "4169",
-   "name": "ＥＮＥＣＨＡＮＧＥ",
-   "sector": "情報･通信業",
-   "pct": -9.8,
-   "news": null
-  },
-  {
-   "code": "634A",
-   "name": "レイヤード",
-   "sector": "情報･通信業",
-   "pct": -9.4,
-   "news": null
-  },
-  {
-   "code": "6027",
-   "name": "弁護士ドットコム",
-   "sector": "サービス業",
-   "pct": -8.7,
+   "pct": 12.9,
    "news": null
   },
   {
    "code": "4884",
    "name": "クリングルファーマ",
    "sector": "医薬品",
-   "pct": -8.5,
+   "pct": 9.5,
    "news": null
   },
   {
-   "code": "6464",
-   "name": "ツバキ・ナカシマ",
+   "code": "6315",
+   "name": "ＴＯＷＡ",
    "sector": "機械",
-   "pct": -8.3,
+   "pct": 8.9,
    "news": null
   },
   {
-   "code": "618A",
-   "name": "ＫＯＭＰＥＩＴＯ",
+   "code": "4258",
+   "name": "網屋",
+   "sector": "情報･通信業",
+   "pct": 8.1,
+   "news": null
+  },
+  {
+   "code": "3762",
+   "name": "テクマトリックス",
+   "sector": "情報･通信業",
+   "pct": 7.8,
+   "news": null
+  },
+  {
+   "code": "4169",
+   "name": "ＥＮＥＣＨＡＮＧＥ",
+   "sector": "情報･通信業",
+   "pct": 7.6,
+   "news": null
+  },
+  {
+   "code": "6787",
+   "name": "メイコー",
+   "sector": "電気機器",
+   "pct": 6.8,
+   "news": null
+  },
+  {
+   "code": "6736",
+   "name": "サン電子",
+   "sector": "電気機器",
+   "pct": 6.4,
+   "news": null
+  },
+  {
+   "code": "338A",
+   "name": "ＺｅｎｍｕＴｅｃｈ",
+   "sector": "情報･通信業",
+   "pct": 6.1,
+   "news": null
+  },
+  {
+   "code": "4398",
+   "name": "ブロードバンドセキュリティ",
+   "sector": "情報･通信業",
+   "pct": 5.9,
+   "news": null
+  },
+  {
+   "code": "4680",
+   "name": "ラウンドワン",
    "sector": "サービス業",
-   "pct": -8.3,
+   "pct": 5.8,
    "news": null
   },
   {
-   "code": "3923",
-   "name": "ラクス",
+   "code": "4704",
+   "name": "トレンドマイクロ",
    "sector": "情報･通信業",
-   "pct": -7.7,
+   "pct": 5.7,
    "news": null
   },
   {
-   "code": "4483",
-   "name": "ＪＭＤＣ",
+   "code": "5273",
+   "name": "三谷セキサン",
+   "sector": "ガラス･土石製品",
+   "pct": 5.6,
+   "news": null
+  },
+  {
+   "code": "4493",
+   "name": "サイバーセキュリティクラウド",
    "sector": "情報･通信業",
-   "pct": -7.5,
+   "pct": 5.5,
+   "news": null
+  },
+  {
+   "code": "4980",
+   "name": "デクセリアルズ",
+   "sector": "化学",
+   "pct": 5.5,
+   "news": null
+  },
+  {
+   "code": "5992",
+   "name": "中央発條",
+   "sector": "金属製品",
+   "pct": 5.4,
+   "news": null
+  }
+ ],
+ "losers": [
+  {
+   "code": "6861",
+   "name": "キーエンス",
+   "sector": "電気機器",
+   "pct": -80,
+   "news": null
+  },
+  {
+   "code": "3905",
+   "name": "データセクション",
+   "sector": "情報･通信業",
+   "pct": -18.1,
+   "news": null
+  },
+  {
+   "code": "4165",
+   "name": "プレイド",
+   "sector": "情報･通信業",
+   "pct": -13.4,
+   "news": null
+  },
+  {
+   "code": "2334",
+   "name": "イオレ",
+   "sector": "サービス業",
+   "pct": -12,
+   "news": null
+  },
+  {
+   "code": "6228",
+   "name": "ジェイ・イー・ティ",
+   "sector": "機械",
+   "pct": -11.7,
+   "news": null
+  },
+  {
+   "code": "6946",
+   "name": "日本アビオニクス",
+   "sector": "電気機器",
+   "pct": -9.5,
+   "news": null
+  },
+  {
+   "code": "1515",
+   "name": "日鉄鉱業",
+   "sector": "鉱業",
+   "pct": -9,
+   "news": null
+  },
+  {
+   "code": "7318",
+   "name": "セレンディップ・ホールディングス",
+   "sector": "輸送用機器",
+   "pct": -8.6,
+   "news": null
+  },
+  {
+   "code": "9824",
+   "name": "泉州電業",
+   "sector": "卸売業",
+   "pct": -8.4,
+   "news": null
+  },
+  {
+   "code": "6227",
+   "name": "ＡＩメカテック",
+   "sector": "機械",
+   "pct": -7.6,
    "news": null
   }
  ]
