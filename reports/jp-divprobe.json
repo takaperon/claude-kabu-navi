@@ -1,0 +1,38 @@
+{
+ "checkedAt": "2026-11-19T10:42:29.022113+00:00",
+ "error": "ServerException:TOO_MANY_REQUESTS",
+ "signature": {
+  "get_dividend_calendar": "(symbol, category='US_STOCK')",
+  "get_earnings_calendar": "(symbol, category='US_STOCK')"
+ },
+ "methods": [
+  "client",
+  "get_capital_flow",
+  "get_dividend_calendar",
+  "get_earnings_calendar",
+  "get_economic_calendars",
+  "get_financials_alert",
+  "get_financials_balance_sheet",
+  "get_financials_cashflow",
+  "get_financials_income",
+  "get_financials_indicators",
+  "get_forecast_eps",
+  "get_fund_allocation",
+  "get_fund_brief",
+  "get_fund_dividends",
+  "get_fund_files",
+  "get_fund_holdings",
+  "get_fund_net_value",
+  "get_fund_performance",
+  "get_fund_rating",
+  "get_fund_splits",
+  "get_industry_comparison",
+  "get_insider_holdings",
+  "get_insider_transactions",
+  "get_institution_holding_changes",
+  "get_institution_holdings",
+  "get_institution_search",
+  "get_sec_filings",
+  "list_fund_dividends"
+ ]
+}
