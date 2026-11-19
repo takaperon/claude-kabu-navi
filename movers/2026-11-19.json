@@ -1,0 +1,288 @@
+{
+ "date": "2026-11-19",
+ "note": "2026-11-20 朝の調査。理由は記事で確かめたものだけ、分からないものは「不明」。キーエンス（-80%と出ていた）は株式分割の見かけの下げだったので除いた（fetch.mjs を直して再計算）",
+ "items": [
+  {
+   "market": "jp",
+   "code": "3624",
+   "pct": 39.0,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "130A",
+   "pct": 28.1,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4575",
+   "pct": 14.8,
+   "cat": "新製品/受注",
+   "reason": "欧州医薬品庁から CBP501 の第3相試験開始の承認を受けた",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261120/878486.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "3909",
+   "pct": 14.7,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3042",
+   "pct": 12.9,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4884",
+   "pct": 9.5,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6315",
+   "pct": 8.9,
+   "cat": "テーマ/思惑",
+   "reason": "米国の半導体株指数（SOX）が小幅に上昇",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261120/878486.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4258",
+   "pct": 8.1,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3762",
+   "pct": 7.8,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4169",
+   "pct": 7.6,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3905",
+   "pct": -18.1,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4165",
+   "pct": -13.4,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "2334",
+   "pct": -12.0,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6228",
+   "pct": -11.7,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6946",
+   "pct": -9.5,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "PANW",
+   "pct": 6.4,
+   "cat": "決算",
+   "reason": "第1四半期の売上+39%、見通し引き上げ、Applied Compute を45億ドルで買収",
+   "sources": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "OKTA",
+   "pct": 5.7,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "P",
+   "pct": 4.7,
+   "cat": "決算",
+   "reason": "第3四半期の売上+51%、通期見通し引き上げ",
+   "sources": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "WDC",
+   "pct": 3.0,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CRWD",
+   "pct": 2.7,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "EXPD",
+   "pct": 2.3,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "AXON",
+   "pct": 2.1,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "INTC",
+   "pct": 1.9,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CF",
+   "pct": 1.8,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "PCG",
+   "pct": 1.7,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "WSM",
+   "pct": -15.2,
+   "cat": "決算",
+   "reason": "第3四半期の売上+5.8%、通期見通しは据え置き",
+   "sources": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "TWLO",
+   "pct": -8.8,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "AMD",
+   "pct": -7.7,
+   "cat": "不祥事・事故",
+   "reason": "調査報道の Hunterbrook が、顧客への資金面の約束（リース保証など）が大きすぎる・米国の制裁先の製品に新しいファームウェアが出ていたと報じた",
+   "sources": [
+    "https://www.tradingkey.com/analysis/stocks/us-stocks/262313953-us-stock-nasdaq-falls-anthropic-ipo-debut-amd-short-report-tradingkey"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "FISV",
+   "pct": -6.4,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "UHS",
+   "pct": -6.0,
+   "cat": "不明",
+   "reason": "11/19の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  }
+ ]
+}

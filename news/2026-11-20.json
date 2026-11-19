@@ -1,0 +1,139 @@
+{
+ "date": "2026-11-20",
+ "status": "未検証",
+ "period": "2026-11-19 朝〜2026-11-20 朝",
+ "note": "米国は Anthropic が公開価格83ドル→初値111.5ドル→終値97.17ドルで上場した一方、指数はS&P500 -2%前後と大きく下げた。日本はサイバーセキュリティ関連の物色が続き、創薬ベンチャーに個別材料。",
+ "items": [
+  {
+   "headline": "Anthropic が Nasdaq に上場、公開価格83ドルに対し終値97.17ドル（+17%）",
+   "summary": "9.8億株・約813億ドルの売り出し。初値は111.50ドル（米東部11:48）、高値114.99ドル、安値92.72ドル。受け渡しは11/20の予定。",
+   "sources": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
+   ],
+   "eventDate": "2026-11-19",
+   "type": "IPO",
+   "sectors": [],
+   "stocks": [
+    {
+     "t": "ANT",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "米国株が大幅安、ダウ -1,000ドル超・ナスダック -2.2%",
+   "summary": "ETFで見るとS&P500 -1.96%、ナスダック100 -2.19%、ダウ -2.18%。AMDが調査報道で-7.7%、Alphabet -3.5%・Amazon -3.9%・NVIDIA -3.3%など大型ハイテクが下げた。",
+   "sources": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026",
+    "https://www.tradingkey.com/analysis/stocks/us-stocks/262313953-us-stock-nasdaq-falls-anthropic-ipo-debut-amd-short-report-tradingkey",
+    "https://eurasiabusinessnews.com/2026/11/19/stock-market-today-november-19-2026-dow-sinks-1084-points-nasdaq-drops-2-2-after-anthropic-debut/"
+   ],
+   "eventDate": "2026-11-19",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [
+    {
+     "t": "AMD",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "Palo Alto が決算で+6.4%、サイバーセキュリティ株高が日本にも波及",
+   "summary": "売上+39%・見通し引き上げ。米国のサイバー株高を受け、日本でもトレンドマイクロ・野村総研・大塚商会などが上げた。",
+   "sources": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026",
+    "https://www.zaikei.co.jp/article/20261120/878486.html"
+   ],
+   "eventDate": "2026-11-19",
+   "type": "企業発表",
+   "sectors": [
+    "情報･通信業"
+   ],
+   "stocks": [
+    {
+     "t": "PANW",
+     "dir": "+"
+    },
+    {
+     "code": "4704",
+     "name": "トレンドマイクロ",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "キャンバスが欧州で第3相試験の承認、+14.8%",
+   "summary": "欧州医薬品庁から CBP501 の臨床第3相試験開始の承認を受領。",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261120/878486.html"
+   ],
+   "eventDate": "2026-11-19",
+   "type": "企業発表",
+   "sectors": [
+    "医薬品"
+   ],
+   "stocks": [
+    {
+     "code": "4575",
+     "name": "キャンバス",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "アナリストの目標株価引き上げが相次ぐ",
+   "summary": "ダイキン（モルガン・スタンレーMUFG）、島津製作所（UBS）、J.フロント（野村）、富士フイルム（岩井コスモが格上げ）、ベイカレント（JPモルガン）が上げた。",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261120/878486.html"
+   ],
+   "eventDate": "2026-11-19",
+   "type": "アナリスト",
+   "sectors": [],
+   "stocks": [
+    {
+     "code": "6367",
+     "name": "ダイキン工業",
+     "dir": "+"
+    },
+    {
+     "code": "7701",
+     "name": "島津製作所",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "銅市況の一段安で日鉄鉱業 -9%、米国では Freeport も前日に下げ",
+   "summary": "銅の値下がりが非鉄・鉱業株の重しに。",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261120/878486.html"
+   ],
+   "eventDate": "2026-11-19",
+   "type": "マクロ",
+   "sectors": [
+    "鉱業",
+    "非鉄金属"
+   ],
+   "stocks": [
+    {
+     "code": "1515",
+     "name": "日鉄鉱業",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  }
+ ]
+}

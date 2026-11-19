@@ -37,6 +37,18 @@
    "sources": [
     "https://vistapglobal.com/u-s-stock-market-today-november-18-2026-dow-falls-561-points-nasdaq-rises-ahead-of-anthropic-ipo-ant-eprx-googl-modd-nvda-ser-tgt/"
    ]
+  },
+  {
+   "date": "2026-11-20",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "IPO",
+   "title": "上場の売り出しの受け渡し（クロージング）予定",
+   "announcedOn": "2026-11-19",
+   "sources": [
+    "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
+   ]
   }
  ]
 }
