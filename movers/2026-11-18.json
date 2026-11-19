@@ -1,6 +1,6 @@
 {
  "date": "2026-11-18",
- "note": "2026-11-19 朝の調査。理由は記事で確かめたものだけ、分からないものは「不明」。米国分は 08:40 の順位更新の後に追記",
+ "note": "2026-11-19 朝の調査。理由は記事で確かめたものだけ、分からないものは「不明」。米国分は 11/19 09:1x に追記（順位は live-check を手動で動かして更新）",
  "items": [
   {
    "market": "jp",
@@ -160,6 +160,164 @@
    "reason": "18日の材料を記事で確かめられなかった（SaaS株安の日だが、記事での確認なし）",
    "sources": [],
    "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "OKTA",
+   "pct": 12.1,
+   "cat": "テーマ/思惑",
+   "reason": "サイバーセキュリティ株が一斉高。Palo Alto の決算（引け後）前から上げており、決算そのものが理由ではない。日本でも楽天証券の不正アクセスで同じ業種が買われた日",
+   "sources": [
+    "https://fourweekmba.com/ai-cyber-stocks-jump-up-to-11-5-ahead-of-palo-altos-results/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "GNRC",
+   "pct": 9.9,
+   "cat": "不明",
+   "reason": "11/18の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "PANW",
+   "pct": 9.9,
+   "cat": "テーマ/思惑",
+   "reason": "サイバーセキュリティ株が一斉高。Palo Alto の決算（引け後）前から上げており、決算そのものが理由ではない。日本でも楽天証券の不正アクセスで同じ業種が買われた日。引け後の決算はEPS・売上とも予想超え",
+   "sources": [
+    "https://247wallst.com/cards/cybersecurity-took-the-close-with-sentinelone-up-10-8-and-tjx-session-movers-01m7r80z7xqtwhgx7z3nwjjc03",
+    "https://fourweekmba.com/ai-cyber-stocks-jump-up-to-11-5-ahead-of-palo-altos-results/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "AKAM",
+   "pct": 8.3,
+   "cat": "テーマ/思惑",
+   "reason": "サイバーセキュリティ株が一斉高。Palo Alto の決算（引け後）前から上げており、決算そのものが理由ではない。日本でも楽天証券の不正アクセスで同じ業種が買われた日",
+   "sources": [
+    "https://fourweekmba.com/ai-cyber-stocks-jump-up-to-11-5-ahead-of-palo-altos-results/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "TJX",
+   "pct": 8.0,
+   "cat": "決算",
+   "reason": "既存店売上が予想を上回り、通期見通しを引き上げ",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/",
+    "https://247wallst.com/cards/cybersecurity-took-the-close-with-sentinelone-up-10-8-and-tjx-session-movers-01m7r80z7xqtwhgx7z3nwjjc03"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "CRWD",
+   "pct": 7.9,
+   "cat": "テーマ/思惑",
+   "reason": "サイバーセキュリティ株が一斉高。Palo Alto の決算（引け後）前から上げており、決算そのものが理由ではない。日本でも楽天証券の不正アクセスで同じ業種が買われた日",
+   "sources": [
+    "https://247wallst.com/cards/cybersecurity-took-the-close-with-sentinelone-up-10-8-and-tjx-session-movers-01m7r80z7xqtwhgx7z3nwjjc03"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "LULU",
+   "pct": 6.4,
+   "cat": "不明",
+   "reason": "11/18の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "TTWO",
+   "pct": 6.2,
+   "cat": "不明",
+   "reason": "11/18の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "FTNT",
+   "pct": 5.9,
+   "cat": "テーマ/思惑",
+   "reason": "サイバーセキュリティ株が一斉高。Palo Alto の決算（引け後）前から上げており、決算そのものが理由ではない。日本でも楽天証券の不正アクセスで同じ業種が買われた日",
+   "sources": [
+    "https://fourweekmba.com/ai-cyber-stocks-jump-up-to-11-5-ahead-of-palo-altos-results/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "AMD",
+   "pct": 5.3,
+   "cat": "不明",
+   "reason": "記事に「NVIDIAからAIの資金が移る先」との見方はあるが、理由として確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "HUM",
+   "pct": -13.0,
+   "cat": "不祥事・事故",
+   "reason": "連邦政府がメディケア・アドバンテージの監査を広げ、2018年以降の不適切な支払いを回収する案。保険会社の負担増を懸念",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "UNH",
+   "pct": -10.2,
+   "cat": "不祥事・事故",
+   "reason": "同上（メディケア・アドバンテージの監査拡大案）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "ELV",
+   "pct": -7.6,
+   "cat": "不祥事・事故",
+   "reason": "医療保険株の一斉安（UNH・Humanaと同じ規制案の日）",
+   "sources": [
+    "https://247wallst.com/cards/cybersecurity-took-the-close-with-sentinelone-up-10-8-and-tjx-session-movers-01m7r80z7xqtwhgx7z3nwjjc03",
+    "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "FCX",
+   "pct": -7.0,
+   "cat": "不明",
+   "reason": "金が-3.5%・ドルが19か月ぶり高値の日だが、銅株の下げ理由として確かめた記事はない",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CNC",
+   "pct": -7.0,
+   "cat": "不祥事・事故",
+   "reason": "医療保険株の一斉安（メディケア・アドバンテージの監査拡大案の日）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-s-and-p-500-breaks-key-support-as-fed-minutes-signal-more-rate-hikes-ahead/"
+   ],
+   "confidence": "中"
   }
  ]
 }
