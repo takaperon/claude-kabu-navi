@@ -38,23 +38,33 @@ try:
     today = date.today()
     recent = [x for x in ev if x["e"] >= (today - timedelta(days=80)).isoformat()]
     random.seed(1)
-    pick = sorted(recent, key=lambda x: x["e"], reverse=True)[:60]
+    pick = sorted(recent, key=lambda x: x["e"], reverse=True)[:40]
     evcodes = {x["c"] for x in ev if x["e"] >= (today - timedelta(days=400)).isoformat()}
     allcodes = sorted({x["c"] for x in ev})
     ctrl = [c for c in allcodes if c not in evcodes]
-    random.shuffle(ctrl); ctrl = ctrl[:30]
+    random.shuffle(ctrl); ctrl = ctrl[:15]
 
+    pace = {"sleep": 1.0, "retries": 0, "calls": 0, "t0": time.time()}
+    def call(fn):
+        for k in range(6):
+            try:
+                pace["calls"] += 1
+                r = fn(); time.sleep(pace["sleep"]); return r
+            except Exception as e:
+                if "TOO_MANY" in (type(e).__name__ + str(getattr(e, "error_code", ""))):
+                    pace["retries"] += 1; pace["sleep"] = min(pace["sleep"] * 2, 16); time.sleep(pace["sleep"] * 2); continue
+                raise
+        raise RuntimeError("rate-limited")
     def cal(code):
-        r = fu.get_dividend_calendar(code, "JP_STOCK")
+        r = call(lambda: fu.get_dividend_calendar(code, "JP_STOCK"))
         if r.status_code != 200: return None, r.status_code
         j = r.json()
         rows = j if isinstance(j, list) else (j.get("data") or j.get("list") or j.get("result") or [])
         return rows, 200
 
-    res, keys_seen, statuses = [], set(), {}
+    res, keys_seen, statuses, ctl = [], set(), {}, []
     for x in pick:
         rows, st = cal(x["c"]); statuses[st] = statuses.get(st, 0) + 1
-        time.sleep(0.25)
         item = {"c": x["c"], "buyDay": x["e"], "rows": None}
         if rows is not None:
             for r in rows: keys_seen.update(r.keys())
@@ -76,9 +86,8 @@ try:
             item["declares"] = [z["declare"] for z in rs][-6:]
             item["exDates"] = [z["ex"] for z in rs][-6:]
         res.append(item)
-    ctl = []
     for c in ctrl:
-        rows, st = cal(c); time.sleep(0.25)
+        rows, st = cal(c)
         if rows is None: ctl.append({"c": c, "status": st}); continue
         ds = sorted(dstr(r.get("declare_date")) or "" for r in rows)
         ctl.append({"c": c, "rows": len(rows), "declares": ds[-4:]})
@@ -88,7 +97,7 @@ try:
     out["control"] = ctl
     # 何銘柄まで一度に聞けるか（カンマ区切り）
     try:
-        r = fu.get_dividend_calendar(",".join(x["c"] for x in pick[:5]), "JP_STOCK")
+        r = call(lambda: fu.get_dividend_calendar(",".join(x["c"] for x in pick[:5]), "JP_STOCK"))
         j = r.json() if r.status_code == 200 else None
         rows = j if isinstance(j, list) else ((j or {}).get("data") or [])
         out["multiSymbol"] = {"status": r.status_code, "rows": len(rows) if rows is not None else None, "symbols": sorted({str(z.get("symbol")) for z in rows if isinstance(z, dict)})[:10]}
@@ -97,8 +106,11 @@ try:
     got = [r for r in res if r["rows"] is not None]
     hit = [r for r in got if r["declareNear"]]
     lags = [l for r in got for l in r["lagDays"]]
+    out["pace"] = {"finalSleepSec": pace["sleep"], "retries": pace["retries"], "calls": pace["calls"], "sec": round(time.time() - pace["t0"])}
     out["summary"] = {"events": len(res), "answered": len(got), "matchedWithin7days": len(hit),
                       "eventsNewestBuyDay": pick[0]["e"] if pick else None, "controlAnswered": sum(1 for c in ctl if c.get("rows") is not None)}
 except Exception as e:
+    try: out["events"] = res; out["control"] = ctl if 'ctl' in dir() else None; out["pace"] = pace
+    except Exception: pass
     out["error"] = type(e).__name__ + (":" + str(getattr(e, "error_code", "")) if getattr(e, "error_code", None) else "")
 save()
