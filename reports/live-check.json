@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-20T04:18:27.155630+00:00",
+  "checkedAt": "2026-11-20T22:48:28.997621+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -9,7 +9,7 @@
   "balanceOk": true,
   "positionsOk": true,
   "error": null,
-  "tokenWaitSec": 2,
+  "tokenWaitSec": 1,
   "accountListStatus": 200,
   "dataProbes": {
     "us_daily_AAPL": {
@@ -24,8 +24,8 @@
         "trading_session",
         "volume"
       ],
-      "from": "2022-02-09",
-      "to": "2026-11-19"
+      "from": "2022-02-10",
+      "to": "2026-11-20"
     },
     "us_snapshot_AAPL": {
       "status": 200,
@@ -50,7 +50,7 @@
     },
     "us_daily_RDDT": {
       "status": 200,
-      "rows": 670,
+      "rows": 671,
       "barKeys": [
         "close",
         "high",
@@ -61,7 +61,7 @@
         "volume"
       ],
       "from": "2024-03-21",
-      "to": "2026-11-19"
+      "to": "2026-11-20"
     },
     "us_earnings_AAPL": {
       "status": 200,

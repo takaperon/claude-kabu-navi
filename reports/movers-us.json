@@ -1,197 +1,197 @@
 {
- "updatedAt": "2026-11-20T04:18:34.996058+00:00",
+ "updatedAt": "2026-11-20T22:48:36.239790+00:00",
  "error": null,
  "universe": 502,
  "batchOk": 25,
  "single": 18,
- "date": "2026-11-19",
+ "date": "2026-11-20",
  "count": 500,
  "note": "S&P500構成銘柄（Wikipediaの一覧）。ウィブルの相場情報（Nasdaq Basic）",
- "avgPct": -1.78,
- "up": 34,
- "down": 460,
+ "avgPct": -2.29,
+ "up": 118,
+ "down": 371,
  "gainers": [
   {
-   "t": "PANW",
-   "name": "Palo Alto Networks",
-   "sector": "情報技術",
-   "pct": 6.4
+   "t": "GPN",
+   "name": "Global Payments",
+   "sector": "金融",
+   "pct": 9.9
   },
   {
-   "t": "OKTA",
-   "name": "Okta, Inc.",
-   "sector": "情報技術",
-   "pct": 5.7
-  },
-  {
-   "t": "P",
-   "name": "Everpure",
-   "sector": "情報技術",
-   "pct": 4.7
-  },
-  {
-   "t": "WDC",
-   "name": "Western Digital",
-   "sector": "情報技術",
-   "pct": 3.0
-  },
-  {
-   "t": "CRWD",
-   "name": "CrowdStrike",
-   "sector": "情報技術",
-   "pct": 2.7
-  },
-  {
-   "t": "EXPD",
-   "name": "Expeditors International",
-   "sector": "資本財",
-   "pct": 2.3
-  },
-  {
-   "t": "AXON",
-   "name": "Axon Enterprise",
-   "sector": "資本財",
-   "pct": 2.1
-  },
-  {
-   "t": "INTC",
-   "name": "Intel",
-   "sector": "情報技術",
-   "pct": 1.9
-  },
-  {
-   "t": "CF",
-   "name": "CF Industries",
-   "sector": "素材",
-   "pct": 1.8
-  },
-  {
-   "t": "PCG",
-   "name": "PG&E Corporation",
-   "sector": "公益",
-   "pct": 1.7
-  },
-  {
-   "t": "FANG",
-   "name": "Diamondback Energy",
-   "sector": "エネルギー",
-   "pct": 1.4
-  },
-  {
-   "t": "QCOM",
-   "name": "Qualcomm",
-   "sector": "情報技術",
-   "pct": 1.4
-  },
-  {
-   "t": "MRNA",
-   "name": "Moderna",
-   "sector": "ヘルスケア",
-   "pct": 1.3
-  },
-  {
-   "t": "STX",
-   "name": "Seagate Technology",
-   "sector": "情報技術",
-   "pct": 1.1
-  },
-  {
-   "t": "COHR",
-   "name": "Coherent Corp.",
-   "sector": "情報技術",
-   "pct": 1.0
-  },
-  {
-   "t": "HAL",
-   "name": "Halliburton",
-   "sector": "エネルギー",
-   "pct": 0.9
-  },
-  {
-   "t": "TGT",
-   "name": "Target Corporation",
+   "t": "GIS",
+   "name": "General Mills",
    "sector": "生活必需品",
-   "pct": 0.9
+   "pct": 3.7
   },
   {
-   "t": "PGR",
-   "name": "Progressive Corporation",
-   "sector": "金融",
-   "pct": 0.7
+   "t": "MKC",
+   "name": "McCormick & Company",
+   "sector": "生活必需品",
+   "pct": 3.4
   },
   {
-   "t": "ROL",
-   "name": "Rollins, Inc.",
-   "sector": "資本財",
-   "pct": 0.7
-  },
-  {
-   "t": "FSLR",
-   "name": "First Solar",
-   "sector": "情報技術",
-   "pct": 0.6
-  }
- ],
- "losers": [
-  {
-   "t": "WSM",
-   "name": "Williams-Sonoma, Inc.",
-   "sector": "一般消費財",
-   "pct": -15.2
-  },
-  {
-   "t": "TWLO",
-   "name": "Twilio",
-   "sector": "情報技術",
-   "pct": -8.8
-  },
-  {
-   "t": "AMD",
-   "name": "Advanced Micro Devices",
-   "sector": "情報技術",
-   "pct": -7.7
-  },
-  {
-   "t": "FISV",
-   "name": "Fiserv",
-   "sector": "金融",
-   "pct": -6.4
-  },
-  {
-   "t": "UHS",
-   "name": "Universal Health Services",
+   "t": "HCA",
+   "name": "HCA Healthcare",
    "sector": "ヘルスケア",
-   "pct": -6.0
+   "pct": 3.3
   },
   {
-   "t": "XYZ",
-   "name": "Block, Inc.",
-   "sector": "金融",
-   "pct": -6.0
+   "t": "CSGP",
+   "name": "CoStar Group",
+   "sector": "不動産",
+   "pct": 3.2
   },
   {
-   "t": "DASH",
-   "name": "DoorDash",
-   "sector": "一般消費財",
-   "pct": -5.8
+   "t": "CTSH",
+   "name": "Cognizant",
+   "sector": "情報技術",
+   "pct": 3.1
   },
   {
-   "t": "ZTS",
-   "name": "Zoetis",
+   "t": "DVA",
+   "name": "DaVita",
    "sector": "ヘルスケア",
-   "pct": -5.6
+   "pct": 3.0
   },
   {
    "t": "UNH",
    "name": "UnitedHealth Group",
    "sector": "ヘルスケア",
-   "pct": -5.6
+   "pct": 2.8
   },
   {
-   "t": "DECK",
-   "name": "Deckers Brands",
+   "t": "HUM",
+   "name": "Humana",
+   "sector": "ヘルスケア",
+   "pct": 2.6
+  },
+  {
+   "t": "FICO",
+   "name": "Fair Isaac",
+   "sector": "情報技術",
+   "pct": 2.5
+  },
+  {
+   "t": "UHS",
+   "name": "Universal Health Services",
+   "sector": "ヘルスケア",
+   "pct": 2.5
+  },
+  {
+   "t": "SBAC",
+   "name": "SBA Communications",
+   "sector": "不動産",
+   "pct": 2.2
+  },
+  {
+   "t": "T",
+   "name": "AT&T",
+   "sector": "通信サービス",
+   "pct": 2.1
+  },
+  {
+   "t": "HRL",
+   "name": "Hormel Foods",
+   "sector": "生活必需品",
+   "pct": 2.1
+  },
+  {
+   "t": "DHI",
+   "name": "D. R. Horton",
    "sector": "一般消費財",
-   "pct": -5.6
+   "pct": 2.0
+  },
+  {
+   "t": "TSN",
+   "name": "Tyson Foods",
+   "sector": "生活必需品",
+   "pct": 2.0
+  },
+  {
+   "t": "CL",
+   "name": "Colgate-Palmolive",
+   "sector": "生活必需品",
+   "pct": 1.9
+  },
+  {
+   "t": "KHC",
+   "name": "Kraft Heinz",
+   "sector": "生活必需品",
+   "pct": 1.9
+  },
+  {
+   "t": "TMUS",
+   "name": "T-Mobile US",
+   "sector": "通信サービス",
+   "pct": 1.9
+  },
+  {
+   "t": "PHM",
+   "name": "PulteGroup",
+   "sector": "一般消費財",
+   "pct": 1.8
+  }
+ ],
+ "losers": [
+  {
+   "t": "SNDK",
+   "name": "Sandisk",
+   "sector": "情報技術",
+   "pct": -16.1
+  },
+  {
+   "t": "BE",
+   "name": "Bloom Energy",
+   "sector": "資本財",
+   "pct": -15.3
+  },
+  {
+   "t": "NVDA",
+   "name": "Nvidia",
+   "sector": "情報技術",
+   "pct": -14.0
+  },
+  {
+   "t": "MU",
+   "name": "Micron Technology",
+   "sector": "情報技術",
+   "pct": -13.9
+  },
+  {
+   "t": "LITE",
+   "name": "Lumentum",
+   "sector": "情報技術",
+   "pct": -13.9
+  },
+  {
+   "t": "AMD",
+   "name": "Advanced Micro Devices",
+   "sector": "情報技術",
+   "pct": -13.2
+  },
+  {
+   "t": "COHR",
+   "name": "Coherent Corp.",
+   "sector": "情報技術",
+   "pct": -12.9
+  },
+  {
+   "t": "INTU",
+   "name": "Intuit",
+   "sector": "情報技術",
+   "pct": -12.8
+  },
+  {
+   "t": "P",
+   "name": "Everpure",
+   "sector": "情報技術",
+   "pct": -12.7
+  },
+  {
+   "t": "STX",
+   "name": "Seagate Technology",
+   "sector": "情報技術",
+   "pct": -12.3
   }
  ]
 }
