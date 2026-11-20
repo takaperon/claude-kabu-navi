@@ -3,7 +3,7 @@ name: us-backtest
 on:
   push:
     branches: [main]
-    paths: ['scripts/us/backtest.mjs', 'scripts/us/pro.mjs', 'scripts/us/calendar.mjs', 'scripts/us/regime.mjs', '.github/workflows/us-backtest.yml']
+    paths: ['scripts/us/backtest.mjs', 'scripts/us/pro.mjs', 'scripts/us/calendar.mjs', 'scripts/us/regime.mjs', 'scripts/us/macro.mjs', '.github/workflows/us-backtest.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -43,6 +43,9 @@ jobs:
       - name: regime (相場の状態ごとの成績)
         continue-on-error: true
         run: node scripts/us/regime.mjs --data data-us --out reports-out
+      - name: macro (FOMCをまたぐか逃げるか)
+        continue-on-error: true
+        run: node scripts/us/macro.mjs --data data-us --out reports-out
       - name: calendar (決まった時期の動き)
         continue-on-error: true
         run: node scripts/us/calendar.mjs --data data-us --out reports-out
@@ -51,7 +54,7 @@ jobs:
         run: |
           git fetch origin reports:reports 2>/dev/null && git worktree add rep reports || git worktree add --orphan -b reports rep
           mkdir -p rep/reports
-          for f in us-backtest pro-us calendar-us us-events regime-us; do cp reports-out/$f.json rep/reports/ 2>/dev/null || true; done
+          for f in us-backtest pro-us calendar-us us-events regime-us macro-us; do cp reports-out/$f.json rep/reports/ 2>/dev/null || true; done
           cd rep
           git config user.name "kabunavi-bot"
           git config user.email "kabunavi-bot@users.noreply.github.com"

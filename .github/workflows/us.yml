@@ -48,6 +48,9 @@ jobs:
       - name: regime (相場の状態ごとの成績)
         continue-on-error: true
         run: node scripts/us/regime.mjs --data data-us --out reports-out
+      - name: macro (FOMCをまたぐか逃げるか)
+        continue-on-error: true
+        run: node scripts/us/macro.mjs --data data-us --out reports-out
       - name: paper trading
         run: node scripts/us/paper.mjs --data data-us --out reports-out
       - name: encrypt data
