@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-20T10:46:12.027Z",
+  "updatedAt": "2026-11-20T22:49:06.948Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": "spy",
-    "chosenAt": "2026-11-20T10:46:09.983Z",
+    "chosenAt": "2026-11-20T22:49:04.091Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-19",
+  "lastDate": "2026-11-20",
   "capital": 300000,
-  "equityYen": 284689,
-  "returnPct": -5.1,
-  "spyReturnPct": -5.1,
+  "equityYen": 274326,
+  "returnPct": -8.6,
+  "spyReturnPct": -8.6,
   "idleInSpyPct": 100,
   "idlePct": 100,
   "taxYen": 0,
@@ -24,6 +24,36 @@
   "holdings": [],
   "nextBuys": [],
   "recentReactions": [
+    {
+      "t": "WMT",
+      "name": "Walmart",
+      "date": "2026-11-20",
+      "rePct": 1.5
+    },
+    {
+      "t": "ROST",
+      "name": "Ross Stores",
+      "date": "2026-11-20",
+      "rePct": -2.9
+    },
+    {
+      "t": "WSM",
+      "name": "Williams-Sonoma, Inc.",
+      "date": "2026-11-20",
+      "rePct": -4.5
+    },
+    {
+      "t": "KEYS",
+      "name": "Keysight Technologies",
+      "date": "2026-11-20",
+      "rePct": -7.1
+    },
+    {
+      "t": "INTU",
+      "name": "Intuit",
+      "date": "2026-11-20",
+      "rePct": -12.8
+    },
     {
       "t": "PANW",
       "name": "Palo Alto Networks",
@@ -83,30 +113,6 @@
       "name": "Tyson Foods",
       "date": "2026-11-17",
       "rePct": -0.5
-    },
-    {
-      "t": "VYLR",
-      "name": "Vylor",
-      "date": "2026-11-13",
-      "rePct": 0.7
-    },
-    {
-      "t": "EXPD",
-      "name": "Expeditors International",
-      "date": "2026-11-13",
-      "rePct": -0.4
-    },
-    {
-      "t": "AMAT",
-      "name": "Applied Materials",
-      "date": "2026-11-13",
-      "rePct": -2.7
-    },
-    {
-      "t": "CSCO",
-      "name": "Cisco",
-      "date": "2026-11-13",
-      "rePct": -6.2
     }
   ],
   "recentClosed": [],
@@ -130,27 +136,37 @@
     {
       "date": "2026-11-19",
       "value": 284689
+    },
+    {
+      "date": "2026-11-20",
+      "value": 274326
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-20T10:46:10.601Z",
+    "chosenAt": "2026-11-20T22:49:04.887Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 284689,
-    "returnPct": -5.1,
+    "equityYen": 273072,
+    "returnPct": -9,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
-    "holdings": [],
-    "nextBuys": [
+    "holdings": [
       {
         "t": "PANW",
         "name": "Palo Alto Networks",
-        "reason": "決算の翌日に+6.4%（2026-11-19）／点数4：50日線の近く・値幅が大きい・売買代金が大きい・S&P500が下げた日"
+        "reason": "決算の翌日に+6.4%（2026-11-19）／点数4：50日線の近く・値幅が大きい・売買代金が大きい・S&P500が下げた日",
+        "entryDate": "2026-11-20",
+        "daysHeld": 1,
+        "daysLeft": 39,
+        "unrealPct": -4.6,
+        "costYen": 27433,
+        "valueYen": 26179
       }
     ],
+    "nextBuys": [],
     "recentClosed": [],
     "equityHistory": [
       {
@@ -172,6 +188,10 @@
       {
         "date": "2026-11-19",
         "value": 284689
+      },
+      {
+        "date": "2026-11-20",
+        "value": 273072
       }
     ]
   }
