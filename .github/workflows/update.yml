@@ -70,6 +70,10 @@ jobs:
         continue-on-error: true
         run: node scripts/earnpre.mjs --data data --out reports-out
 
+      - name: theme (テーマ株：出来事・火がついた日の後の動き)
+        continue-on-error: true
+        run: node scripts/theme.mjs --data data --out reports-out
+
       - name: movers (本日の値上がりランキング)
         continue-on-error: true
         run: node scripts/movers.mjs --data data --out reports-out
