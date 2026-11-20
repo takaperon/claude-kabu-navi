@@ -49,6 +49,90 @@
    "sources": [
     "https://www.stocktitan.net/articles/stock-market-today-live-november-19-2026"
    ]
+  },
+  {
+   "date": "2026-12-15",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "ロックアップ",
+   "title": "ロックアップの段階解除（27日目、役員・社員など）。目論見書の日付（11/18と仮定）から数えた目安で確定ではない。決算発表に連動する解除もある",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://fourweekmba.com/how-the-anthropic-ipo-works/"
+   ]
+  },
+  {
+   "date": "2027-01-05",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "ロックアップ",
+   "title": "ロックアップの段階解除（48日目）。目論見書の日付（11/18と仮定）から数えた目安で確定ではない。決算発表に連動する解除もある",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://fourweekmba.com/how-the-anthropic-ipo-works/"
+   ]
+  },
+  {
+   "date": "2027-01-19",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "ロックアップ",
+   "title": "ロックアップの段階解除（62日目）。目論見書の日付（11/18と仮定）から数えた目安で確定ではない。決算発表に連動する解除もある",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://fourweekmba.com/how-the-anthropic-ipo-works/"
+   ]
+  },
+  {
+   "date": "2027-02-02",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "ロックアップ",
+   "title": "ロックアップの段階解除（76日目）。目論見書の日付（11/18と仮定）から数えた目安で確定ではない。決算発表に連動する解除もある",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://fourweekmba.com/how-the-anthropic-ipo-works/"
+   ]
+  },
+  {
+   "date": "2027-05-17",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "ロックアップ",
+   "title": "ロックアップ180日目（大株主の大半。創業者は最大29%まで）。目論見書の日付（11/18と仮定）から数えた目安で確定ではない。決算発表に連動する解除もある",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://fourweekmba.com/how-the-anthropic-ipo-works/"
+   ]
+  },
+  {
+   "date": "2027-06-01",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "ロックアップ",
+   "title": "一部の大株主がヘッジ（つなぎ売り）できるようになる（195日目、合計約7.19億株まで）。目論見書の日付（11/18と仮定）から数えた目安で確定ではない。決算発表に連動する解除もある",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://fourweekmba.com/how-the-anthropic-ipo-works/"
+   ]
+  },
+  {
+   "date": "2027-11-18",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "ロックアップ",
+   "title": "創業者などの残りのロックアップが明ける（365日目まで）。目論見書の日付（11/18と仮定）から数えた目安で確定ではない。決算発表に連動する解除もある",
+   "announcedOn": "2026-11-18",
+   "sources": [
+    "https://fourweekmba.com/how-the-anthropic-ipo-works/"
+   ]
   }
  ]
 }
