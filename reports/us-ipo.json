@@ -1,57 +1,57 @@
 {
-  "generatedAt": "2026-11-16T12:23:36.154682+00:00",
+  "generatedAt": "2026-11-20T06:04:43.209908+00:00",
   "status": {
-    "startedAt": "2026-11-16T11:49:06.180640+00:00",
-    "filings424B4": 1907,
+    "startedAt": "2026-11-20T05:32:53.322285+00:00",
+    "filings424B4": 1911,
     "withTicker": 1456,
-    "nonSpacListed": 1077,
+    "nonSpacListed": 1081,
     "lastBarError": "ServerException",
-    "barFails": 5,
-    "notIpo": 474,
+    "barFails": 8,
+    "notIpo": 475,
     "ipos": 598,
-    "offerPriceParsed": 373
+    "offerPriceParsed": 372
   },
   "period": {
-    "from": "2022-02-04",
-    "split": "2024-12-16",
-    "to": "2026-11-13"
+    "from": "2022-02-10",
+    "split": "2024-12-20",
+    "to": "2026-11-19"
   },
   "note": "今も上場している米国IPOだけ（廃止は含まない）・SPAC除外・ウィブルの日足（Nasdaq Basic）・滑り片道0.1%",
   "runs": {
     "day1_dt": {
       "name": "上場初日：初値で買って引けで売る",
       "train": {
-        "n": 283,
-        "winRate": 0.353,
-        "avgRet": 0.0846,
-        "median": -0.0319,
-        "p10": -0.2799,
+        "n": 284,
+        "winRate": 0.359,
+        "avgRet": 0.0843,
+        "median": -0.0302,
+        "p10": -0.285,
         "p90": 0.244
       },
       "test": {
-        "n": 315,
-        "winRate": 0.387,
-        "avgRet": -0.0117,
-        "median": -0.0241,
-        "p10": -0.2607,
-        "p90": 0.1686
+        "n": 314,
+        "winRate": 0.389,
+        "avgRet": -0.0085,
+        "median": -0.0238,
+        "p10": -0.2515,
+        "p90": 0.1704
       }
     },
     "day1_overnight": {
       "name": "上場初日の引けで買って、2日目の寄りで売る",
       "train": {
-        "n": 283,
-        "winRate": 0.403,
-        "avgRet": 0.006,
-        "median": -0.0103,
+        "n": 284,
+        "winRate": 0.398,
+        "avgRet": 0.0057,
+        "median": -0.0108,
         "p10": -0.1466,
         "p90": 0.0978
       },
       "test": {
-        "n": 315,
-        "winRate": 0.359,
-        "avgRet": 0.0025,
-        "median": -0.0107,
+        "n": 314,
+        "winRate": 0.36,
+        "avgRet": 0.0022,
+        "median": -0.0111,
         "p10": -0.1257,
         "p90": 0.0826
       }
@@ -59,123 +59,123 @@
     "day1_open_day2_open": {
       "name": "初値で買って、2日目の寄りで売る",
       "train": {
-        "n": 283,
-        "winRate": 0.353,
-        "avgRet": 0.0472,
-        "median": -0.0385,
-        "p10": -0.2994,
+        "n": 284,
+        "winRate": 0.359,
+        "avgRet": 0.0469,
+        "median": -0.0376,
+        "p10": -0.2997,
         "p90": 0.2475
       },
       "test": {
-        "n": 315,
-        "winRate": 0.371,
-        "avgRet": -0.007,
-        "median": -0.0232,
-        "p10": -0.2955,
-        "p90": 0.1748
+        "n": 314,
+        "winRate": 0.373,
+        "avgRet": -0.0044,
+        "median": -0.0229,
+        "p10": -0.2848,
+        "p90": 0.1787
       }
     },
     "day1_open_day2_close": {
       "name": "初値で買って、2日目の引けで売る",
       "train": {
-        "n": 283,
-        "winRate": 0.382,
-        "avgRet": -0.0261,
-        "median": -0.0438,
+        "n": 284,
+        "winRate": 0.38,
+        "avgRet": -0.0294,
+        "median": -0.0432,
         "p10": -0.3865,
-        "p90": 0.2251
+        "p90": 0.2181
       },
       "test": {
-        "n": 315,
-        "winRate": 0.397,
-        "avgRet": -0.0323,
-        "median": -0.0258,
+        "n": 314,
+        "winRate": 0.401,
+        "avgRet": -0.0294,
+        "median": -0.0247,
         "p10": -0.3762,
-        "p90": 0.1961
+        "p90": 0.1976
       }
     },
     "day2_dt": {
       "name": "上場2日目にデイトレ",
       "train": {
-        "n": 281,
-        "winRate": 0.452,
-        "avgRet": -0.0306,
+        "n": 283,
+        "winRate": 0.449,
+        "avgRet": -0.0348,
         "median": -0.0065,
         "p10": -0.2481,
-        "p90": 0.1074
+        "p90": 0.1049
       },
       "test": {
-        "n": 317,
-        "winRate": 0.489,
-        "avgRet": -0.0202,
-        "median": -0.0034,
+        "n": 315,
+        "winRate": 0.492,
+        "avgRet": -0.0195,
+        "median": -0.002,
         "p10": -0.1716,
-        "p90": 0.1267
+        "p90": 0.129
       }
     },
     "day3_dt": {
       "name": "上場3日目にデイトレ",
       "train": {
-        "n": 280,
-        "winRate": 0.464,
-        "avgRet": -0.0122,
-        "median": -0.0047,
-        "p10": -0.1515,
-        "p90": 0.093
+        "n": 281,
+        "winRate": 0.47,
+        "avgRet": -0.0111,
+        "median": -0.0046,
+        "p10": -0.1498,
+        "p90": 0.0922
       },
       "test": {
-        "n": 318,
-        "winRate": 0.428,
-        "avgRet": -0.0128,
-        "median": -0.0077,
-        "p10": -0.1276,
+        "n": 317,
+        "winRate": 0.423,
+        "avgRet": -0.0135,
+        "median": -0.0087,
+        "p10": -0.1334,
         "p90": 0.0957
       }
     },
     "day1_up_day2_dt": {
       "name": "初日に初値より上で引けた銘柄を、2日目にデイトレ",
       "train": {
-        "n": 102,
-        "winRate": 0.48,
-        "avgRet": -0.0487,
+        "n": 103,
+        "winRate": 0.476,
+        "avgRet": -0.0486,
         "median": -0.0003,
         "p10": -0.3448,
         "p90": 0.1178
       },
       "test": {
-        "n": 126,
-        "winRate": 0.54,
-        "avgRet": -0.012,
-        "median": 0.0102,
+        "n": 127,
+        "winRate": 0.543,
+        "avgRet": -0.01,
+        "median": 0.0103,
         "p10": -0.1716,
-        "p90": 0.1587
+        "p90": 0.1643
       }
     },
     "day1_down_day2_dt": {
       "name": "初日に初値より下で引けた銘柄を、2日目にデイトレ",
       "train": {
-        "n": 168,
-        "winRate": 0.423,
-        "avgRet": -0.022,
-        "median": -0.0104,
+        "n": 169,
+        "winRate": 0.42,
+        "avgRet": -0.0291,
+        "median": -0.0102,
         "p10": -0.2086,
-        "p90": 0.1074
+        "p90": 0.099
       },
       "test": {
-        "n": 181,
-        "winRate": 0.453,
-        "avgRet": -0.0273,
-        "median": -0.0111,
-        "p10": -0.1738,
-        "p90": 0.1212
+        "n": 178,
+        "winRate": 0.455,
+        "avgRet": -0.0277,
+        "median": -0.0116,
+        "p10": -0.1835,
+        "p90": 0.1214
       }
     },
     "day1_up_overnight": {
       "name": "初日に初値より上で引けた銘柄を、引けで買って翌朝売る",
       "train": {
-        "n": 102,
-        "winRate": 0.363,
-        "avgRet": 0.0118,
+        "n": 104,
+        "winRate": 0.356,
+        "avgRet": 0.0112,
         "median": -0.0208,
         "p10": -0.1991,
         "p90": 0.0817
@@ -183,8 +183,8 @@
       "test": {
         "n": 126,
         "winRate": 0.333,
-        "avgRet": -0.0011,
-        "median": -0.0139,
+        "avgRet": -0.002,
+        "median": -0.0156,
         "p10": -0.1446,
         "p90": 0.0938
       }
@@ -192,18 +192,18 @@
     "day1_down_overnight": {
       "name": "初日に初値より下で引けた銘柄を、引けで買って翌朝売る",
       "train": {
-        "n": 170,
-        "winRate": 0.412,
-        "avgRet": 0.0035,
-        "median": -0.0051,
-        "p10": -0.1301,
+        "n": 169,
+        "winRate": 0.408,
+        "avgRet": 0.0033,
+        "median": -0.0062,
+        "p10": -0.1328,
         "p90": 0.1164
       },
       "test": {
-        "n": 179,
-        "winRate": 0.38,
-        "avgRet": 0.007,
-        "median": -0.0103,
+        "n": 178,
+        "winRate": 0.382,
+        "avgRet": 0.0071,
+        "median": -0.0104,
         "p10": -0.1041,
         "p90": 0.069
       }
@@ -211,75 +211,75 @@
     "day1_open_hold5": {
       "name": "初値で買って5日持つ",
       "train": {
-        "n": 283,
-        "winRate": 0.314,
-        "avgRet": -0.0757,
-        "median": -0.0739,
+        "n": 284,
+        "winRate": 0.313,
+        "avgRet": -0.0786,
+        "median": -0.0759,
         "p10": -0.517,
-        "p90": 0.2263
+        "p90": 0.2128
       },
       "test": {
-        "n": 315,
-        "winRate": 0.381,
-        "avgRet": -0.058,
-        "median": -0.0528,
+        "n": 314,
+        "winRate": 0.385,
+        "avgRet": -0.0551,
+        "median": -0.05,
         "p10": -0.5408,
-        "p90": 0.2309
+        "p90": 0.2356
       }
     },
     "day1_open_hold20": {
       "name": "初値で買って20日持つ",
       "train": {
-        "n": 283,
-        "winRate": 0.322,
-        "avgRet": -0.0674,
-        "median": -0.125,
+        "n": 284,
+        "winRate": 0.324,
+        "avgRet": -0.0671,
+        "median": -0.1234,
         "p10": -0.6589,
         "p90": 0.4067
       },
       "test": {
-        "n": 310,
+        "n": 308,
         "winRate": 0.377,
-        "avgRet": -0.0193,
+        "avgRet": -0.0205,
         "median": -0.0838,
-        "p10": -0.6312,
-        "p90": 0.3028
+        "p10": -0.6367,
+        "p90": 0.3024
       }
     },
     "day2_open_hold20": {
       "name": "2日目の寄りで買って20日持つ",
       "train": {
-        "n": 281,
-        "winRate": 0.406,
-        "avgRet": -0.0536,
-        "median": -0.0671,
+        "n": 283,
+        "winRate": 0.41,
+        "avgRet": -0.0548,
+        "median": -0.0645,
         "p10": -0.6425,
         "p90": 0.3593
       },
       "test": {
-        "n": 312,
-        "winRate": 0.401,
-        "avgRet": -0.0312,
-        "median": -0.0615,
-        "p10": -0.573,
+        "n": 308,
+        "winRate": 0.396,
+        "avgRet": -0.0326,
+        "median": -0.0629,
+        "p10": -0.5811,
         "p90": 0.3521
       }
     },
     "day21_open_hold20": {
       "name": "上場1か月後の寄りで買って20日持つ",
       "train": {
-        "n": 269,
-        "winRate": 0.435,
-        "avgRet": -0.0037,
-        "median": -0.043,
+        "n": 267,
+        "winRate": 0.431,
+        "avgRet": -0.0079,
+        "median": -0.049,
         "p10": -0.3831,
-        "p90": 0.3051
+        "p90": 0.3011
       },
       "test": {
-        "n": 313,
-        "winRate": 0.387,
-        "avgRet": 0.0058,
-        "median": -0.0441,
+        "n": 315,
+        "winRate": 0.39,
+        "avgRet": 0.0062,
+        "median": -0.0416,
         "p10": -0.3565,
         "p90": 0.3316
       }
@@ -287,18 +287,18 @@
     "day1_up_hold20": {
       "name": "初日に初値より上で引けた銘柄を、2日目の寄りで買って20日持つ",
       "train": {
-        "n": 102,
-        "winRate": 0.529,
-        "avgRet": 0.0672,
-        "median": 0.0202,
+        "n": 103,
+        "winRate": 0.534,
+        "avgRet": 0.0675,
+        "median": 0.021,
         "p10": -0.8488,
         "p90": 0.7739
       },
       "test": {
-        "n": 122,
-        "winRate": 0.418,
-        "avgRet": -0.0426,
-        "median": -0.0546,
+        "n": 121,
+        "winRate": 0.413,
+        "avgRet": -0.0438,
+        "median": -0.0587,
         "p10": -0.5811,
         "p90": 0.2772
       }
@@ -310,41 +310,41 @@
       "a:5ドル未満": {
         "train": {
           "day1": {
-            "n": 47,
-            "winRate": 0.34,
-            "avgRet": -0.0644,
-            "median": -0.0755
+            "n": 49,
+            "winRate": 0.367,
+            "avgRet": -0.0654,
+            "median": -0.0495
           },
           "nextOpen": {
-            "n": 47,
-            "winRate": 0.298,
-            "avgRet": -0.0456,
-            "median": -0.078
+            "n": 49,
+            "winRate": 0.327,
+            "avgRet": -0.0476,
+            "median": -0.0653
           },
           "hold20": {
-            "n": 47,
-            "winRate": 0.298,
-            "avgRet": -0.0513,
-            "median": -0.1706
+            "n": 49,
+            "winRate": 0.327,
+            "avgRet": -0.0305,
+            "median": -0.1676
           }
         },
         "test": {
           "day1": {
-            "n": 68,
-            "winRate": 0.368,
-            "avgRet": 0.0239,
-            "median": -0.0381
+            "n": 64,
+            "winRate": 0.359,
+            "avgRet": 0.0298,
+            "median": -0.0404
           },
           "nextOpen": {
-            "n": 68,
-            "winRate": 0.309,
-            "avgRet": 0.0202,
-            "median": -0.0589
+            "n": 64,
+            "winRate": 0.297,
+            "avgRet": 0.0266,
+            "median": -0.0619
           },
           "hold20": {
-            "n": 67,
-            "winRate": 0.388,
-            "avgRet": 0.1391,
+            "n": 63,
+            "winRate": 0.381,
+            "avgRet": 0.1507,
             "median": -0.0495
           }
         }
@@ -352,22 +352,22 @@
       "b:5〜10ドル": {
         "train": {
           "day1": {
-            "n": 33,
-            "winRate": 0.364,
-            "avgRet": -0.0486,
-            "median": -0.0126
+            "n": 32,
+            "winRate": 0.375,
+            "avgRet": -0.0445,
+            "median": -0.0123
           },
           "nextOpen": {
-            "n": 33,
-            "winRate": 0.303,
-            "avgRet": 0.005,
-            "median": -0.0544
+            "n": 32,
+            "winRate": 0.312,
+            "avgRet": 0.0091,
+            "median": -0.049
           },
           "hold20": {
-            "n": 33,
-            "winRate": 0.303,
-            "avgRet": 0.4175,
-            "median": -0.0897
+            "n": 32,
+            "winRate": 0.281,
+            "avgRet": 0.4024,
+            "median": -0.0976
           }
         },
         "test": {
@@ -414,22 +414,22 @@
         },
         "test": {
           "day1": {
-            "n": 93,
-            "winRate": 0.398,
-            "avgRet": -0.021,
-            "median": -0.0088
+            "n": 95,
+            "winRate": 0.411,
+            "avgRet": -0.0129,
+            "median": -0.007
           },
           "nextOpen": {
-            "n": 93,
-            "winRate": 0.452,
-            "avgRet": -0.0035,
-            "median": -0.0088
+            "n": 95,
+            "winRate": 0.463,
+            "avgRet": 0.0019,
+            "median": -0.0055
           },
           "hold20": {
-            "n": 90,
-            "winRate": 0.356,
-            "avgRet": -0.0641,
-            "median": -0.0893
+            "n": 91,
+            "winRate": 0.363,
+            "avgRet": -0.0622,
+            "median": -0.0888
           }
         }
       },
@@ -456,22 +456,22 @@
         },
         "test": {
           "day1": {
-            "n": 127,
-            "winRate": 0.409,
-            "avgRet": -0.0298,
-            "median": -0.0137
+            "n": 128,
+            "winRate": 0.406,
+            "avgRet": -0.0296,
+            "median": -0.0133
           },
           "nextOpen": {
-            "n": 127,
-            "winRate": 0.354,
-            "avgRet": -0.0341,
-            "median": -0.0221
+            "n": 128,
+            "winRate": 0.352,
+            "avgRet": -0.0338,
+            "median": -0.0214
           },
           "hold20": {
-            "n": 126,
-            "winRate": 0.413,
-            "avgRet": -0.0693,
-            "median": -0.0723
+            "n": 127,
+            "winRate": 0.409,
+            "avgRet": -0.0735,
+            "median": -0.0743
           }
         }
       }
@@ -480,36 +480,36 @@
       "a:公開価格より下で初値": {
         "train": {
           "day1": {
-            "n": 39,
-            "winRate": 0.487,
-            "avgRet": 0.0252,
-            "median": -0.002
+            "n": 38,
+            "winRate": 0.5,
+            "avgRet": 0.0306,
+            "median": 0.0009
           },
           "nextOpen": {
-            "n": 39,
-            "winRate": 0.564,
-            "avgRet": 0.0117,
-            "median": 0.0064
+            "n": 38,
+            "winRate": 0.579,
+            "avgRet": 0.0154,
+            "median": 0.0067
           },
           "hold20": {
-            "n": 39,
-            "winRate": 0.538,
-            "avgRet": -0.0036,
-            "median": 0.0085
+            "n": 38,
+            "winRate": 0.526,
+            "avgRet": -0.0274,
+            "median": 0.0045
           }
         },
         "test": {
           "day1": {
-            "n": 50,
-            "winRate": 0.38,
-            "avgRet": -0.0286,
-            "median": -0.0116
+            "n": 51,
+            "winRate": 0.392,
+            "avgRet": -0.0246,
+            "median": -0.0103
           },
           "nextOpen": {
-            "n": 50,
-            "winRate": 0.38,
-            "avgRet": -0.0003,
-            "median": -0.0149
+            "n": 51,
+            "winRate": 0.392,
+            "avgRet": 0.0026,
+            "median": -0.0122
           },
           "hold20": {
             "n": 48,
@@ -522,64 +522,64 @@
       "b:0〜+20%": {
         "train": {
           "day1": {
-            "n": 47,
-            "winRate": 0.277,
-            "avgRet": -0.065,
-            "median": -0.0342
+            "n": 49,
+            "winRate": 0.306,
+            "avgRet": -0.0607,
+            "median": -0.0288
           },
           "nextOpen": {
-            "n": 47,
-            "winRate": 0.319,
-            "avgRet": -0.0722,
-            "median": -0.031
+            "n": 49,
+            "winRate": 0.347,
+            "avgRet": -0.0683,
+            "median": -0.0285
           },
           "hold20": {
-            "n": 47,
-            "winRate": 0.277,
-            "avgRet": -0.0928,
-            "median": -0.0669
+            "n": 49,
+            "winRate": 0.306,
+            "avgRet": -0.0686,
+            "median": -0.061
           }
         },
         "test": {
           "day1": {
-            "n": 88,
-            "winRate": 0.432,
-            "avgRet": 0.0409,
-            "median": -0.0049
+            "n": 86,
+            "winRate": 0.43,
+            "avgRet": 0.0473,
+            "median": -0.0083
           },
           "nextOpen": {
-            "n": 88,
-            "winRate": 0.398,
-            "avgRet": 0.0329,
-            "median": -0.0113
+            "n": 86,
+            "winRate": 0.395,
+            "avgRet": 0.0374,
+            "median": -0.0135
           },
           "hold20": {
-            "n": 87,
-            "winRate": 0.437,
-            "avgRet": -0.0309,
-            "median": -0.0293
+            "n": 84,
+            "winRate": 0.429,
+            "avgRet": -0.0368,
+            "median": -0.0343
           }
         }
       },
       "c:+20〜50%": {
         "train": {
           "day1": {
-            "n": 31,
-            "winRate": 0.29,
-            "avgRet": -0.0811,
-            "median": -0.0912
+            "n": 30,
+            "winRate": 0.3,
+            "avgRet": -0.0724,
+            "median": -0.0841
           },
           "nextOpen": {
-            "n": 31,
-            "winRate": 0.226,
-            "avgRet": -0.0714,
-            "median": -0.0869
+            "n": 30,
+            "winRate": 0.233,
+            "avgRet": -0.0619,
+            "median": -0.0705
           },
           "hold20": {
-            "n": 31,
-            "winRate": 0.323,
-            "avgRet": -0.0943,
-            "median": -0.112
+            "n": 30,
+            "winRate": 0.333,
+            "avgRet": -0.0852,
+            "median": -0.1036
           }
         },
         "test": {
@@ -638,52 +638,52 @@
             "median": -0.0185
           },
           "hold20": {
-            "n": 14,
-            "winRate": 0.429,
-            "avgRet": -0.0578,
-            "median": -0.009
+            "n": 15,
+            "winRate": 0.467,
+            "avgRet": -0.0465,
+            "median": -0.0037
           }
         }
       },
       "e:+100%以上": {
         "train": {
           "day1": {
-            "n": 31,
-            "winRate": 0.419,
-            "avgRet": -0.0028,
-            "median": -0.012
+            "n": 32,
+            "winRate": 0.406,
+            "avgRet": -0.0215,
+            "median": -0.0145
           },
           "nextOpen": {
-            "n": 31,
-            "winRate": 0.419,
-            "avgRet": 0.0799,
-            "median": -0.0385
+            "n": 32,
+            "winRate": 0.406,
+            "avgRet": 0.0589,
+            "median": -0.0465
           },
           "hold20": {
-            "n": 31,
-            "winRate": 0.323,
-            "avgRet": -0.0193,
-            "median": -0.1706
+            "n": 32,
+            "winRate": 0.312,
+            "avgRet": -0.0328,
+            "median": -0.2198
           }
         },
         "test": {
           "day1": {
-            "n": 20,
-            "winRate": 0.4,
-            "avgRet": -0.0008,
-            "median": -0.0656
+            "n": 19,
+            "winRate": 0.421,
+            "avgRet": 0.0185,
+            "median": -0.0381
           },
           "nextOpen": {
-            "n": 20,
-            "winRate": 0.4,
-            "avgRet": 0.0476,
-            "median": -0.0515
+            "n": 19,
+            "winRate": 0.421,
+            "avgRet": 0.0697,
+            "median": -0.0442
           },
           "hold20": {
-            "n": 20,
-            "winRate": 0.3,
-            "avgRet": -0.0838,
-            "median": -0.3073
+            "n": 19,
+            "winRate": 0.316,
+            "avgRet": -0.0582,
+            "median": -0.2202
           }
         }
       }
@@ -734,84 +734,84 @@
       "その他": {
         "train": {
           "day1": {
-            "n": 117,
-            "winRate": 0.333,
-            "avgRet": 0.0609,
-            "median": -0.0367
+            "n": 120,
+            "winRate": 0.342,
+            "avgRet": 0.0571,
+            "median": -0.036
           },
           "nextOpen": {
-            "n": 117,
-            "winRate": 0.325,
-            "avgRet": -0.0041,
-            "median": -0.0594
+            "n": 120,
+            "winRate": 0.333,
+            "avgRet": -0.0068,
+            "median": -0.0567
           },
           "hold20": {
-            "n": 117,
-            "winRate": 0.316,
-            "avgRet": -0.1189,
-            "median": -0.1517
+            "n": 120,
+            "winRate": 0.325,
+            "avgRet": -0.1123,
+            "median": -0.1501
           }
         },
         "test": {
           "day1": {
-            "n": 133,
-            "winRate": 0.391,
-            "avgRet": 0.0036,
-            "median": -0.0181
+            "n": 130,
+            "winRate": 0.385,
+            "avgRet": 0.0058,
+            "median": -0.0211
           },
           "nextOpen": {
-            "n": 133,
-            "winRate": 0.361,
-            "avgRet": -0.0096,
-            "median": -0.0226
+            "n": 130,
+            "winRate": 0.354,
+            "avgRet": -0.0073,
+            "median": -0.0235
           },
           "hold20": {
-            "n": 133,
-            "winRate": 0.391,
-            "avgRet": -0.0194,
-            "median": -0.075
+            "n": 130,
+            "winRate": 0.385,
+            "avgRet": -0.0232,
+            "median": -0.0762
           }
         }
       },
       "医薬・医療": {
         "train": {
           "day1": {
-            "n": 65,
-            "winRate": 0.292,
-            "avgRet": -0.0467,
-            "median": -0.0495
+            "n": 63,
+            "winRate": 0.302,
+            "avgRet": -0.0436,
+            "median": -0.0413
           },
           "nextOpen": {
-            "n": 65,
-            "winRate": 0.338,
-            "avgRet": 0.0061,
-            "median": -0.0519
+            "n": 63,
+            "winRate": 0.349,
+            "avgRet": 0.0105,
+            "median": -0.0436
           },
           "hold20": {
-            "n": 65,
-            "winRate": 0.308,
-            "avgRet": -0.1044,
+            "n": 63,
+            "winRate": 0.302,
+            "avgRet": -0.1143,
             "median": -0.0897
           }
         },
         "test": {
           "day1": {
-            "n": 64,
-            "winRate": 0.453,
-            "avgRet": -0.0182,
+            "n": 66,
+            "winRate": 0.47,
+            "avgRet": -0.0066,
             "median": -0.002
           },
           "nextOpen": {
-            "n": 64,
-            "winRate": 0.484,
-            "avgRet": 0.0026,
-            "median": -0.006
+            "n": 66,
+            "winRate": 0.5,
+            "avgRet": 0.0102,
+            "median": -0.0002
           },
           "hold20": {
-            "n": 60,
-            "winRate": 0.433,
-            "avgRet": -0.0665,
-            "median": -0.0623
+            "n": 61,
+            "winRate": 0.443,
+            "avgRet": -0.0636,
+            "median": -0.0493
           }
         }
       },
@@ -904,22 +904,22 @@
       "2022": {
         "train": {
           "day1": {
-            "n": 53,
-            "winRate": 0.34,
-            "avgRet": 0.0301,
-            "median": -0.0827
+            "n": 52,
+            "winRate": 0.346,
+            "avgRet": 0.0342,
+            "median": -0.0733
           },
           "nextOpen": {
-            "n": 53,
-            "winRate": 0.434,
-            "avgRet": 0.1543,
-            "median": -0.0548
+            "n": 52,
+            "winRate": 0.442,
+            "avgRet": 0.1598,
+            "median": -0.0533
           },
           "hold20": {
-            "n": 53,
-            "winRate": 0.151,
-            "avgRet": -0.0387,
-            "median": -0.3427
+            "n": 52,
+            "winRate": 0.135,
+            "avgRet": -0.0568,
+            "median": -0.3703
           }
         },
         "test": {
@@ -970,42 +970,42 @@
       "2024": {
         "train": {
           "day1": {
-            "n": 139,
-            "winRate": 0.353,
-            "avgRet": -0.0262,
-            "median": -0.0283
+            "n": 141,
+            "winRate": 0.362,
+            "avgRet": -0.0271,
+            "median": -0.0281
           },
           "nextOpen": {
-            "n": 139,
-            "winRate": 0.396,
-            "avgRet": -0.025,
-            "median": -0.0229
+            "n": 141,
+            "winRate": 0.404,
+            "avgRet": -0.026,
+            "median": -0.0219
           },
           "hold20": {
-            "n": 139,
-            "winRate": 0.388,
-            "avgRet": -0.033,
-            "median": -0.0669
+            "n": 141,
+            "winRate": 0.397,
+            "avgRet": -0.026,
+            "median": -0.061
           }
         },
         "test": {
           "day1": {
-            "n": 7,
-            "winRate": 0.286,
-            "avgRet": -0.0868,
-            "median": -0.0305
+            "n": 4,
+            "winRate": 0.0,
+            "avgRet": -0.0813,
+            "median": -0.0322
           },
           "nextOpen": {
-            "n": 7,
-            "winRate": 0.429,
-            "avgRet": -0.0877,
-            "median": -0.0436
+            "n": 4,
+            "winRate": 0.25,
+            "avgRet": -0.0719,
+            "median": -0.0542
           },
           "hold20": {
-            "n": 7,
-            "winRate": 0.429,
-            "avgRet": 0.051,
-            "median": -0.021
+            "n": 4,
+            "winRate": 0.25,
+            "avgRet": -0.0183,
+            "median": -0.0384
           }
         }
       },
@@ -1056,22 +1056,22 @@
         },
         "test": {
           "day1": {
-            "n": 118,
-            "winRate": 0.415,
-            "avgRet": -0.0217,
-            "median": -0.0101
+            "n": 120,
+            "winRate": 0.425,
+            "avgRet": -0.0153,
+            "median": -0.0088
           },
           "nextOpen": {
-            "n": 118,
-            "winRate": 0.398,
-            "avgRet": -0.0281,
-            "median": -0.0139
+            "n": 120,
+            "winRate": 0.408,
+            "avgRet": -0.0234,
+            "median": -0.0128
           },
           "hold20": {
-            "n": 114,
-            "winRate": 0.412,
-            "avgRet": -0.0687,
-            "median": -0.0395
+            "n": 115,
+            "winRate": 0.417,
+            "avgRet": -0.0672,
+            "median": -0.0393
           }
         }
       }
@@ -1080,41 +1080,41 @@
       "S&P500が200日平均より上": {
         "train": {
           "day1": {
-            "n": 227,
-            "winRate": 0.357,
-            "avgRet": 0.1004,
-            "median": -0.0283
+            "n": 229,
+            "winRate": 0.362,
+            "avgRet": 0.0988,
+            "median": -0.0281
           },
           "nextOpen": {
-            "n": 227,
-            "winRate": 0.335,
-            "avgRet": 0.024,
-            "median": -0.0372
+            "n": 229,
+            "winRate": 0.341,
+            "avgRet": 0.023,
+            "median": -0.036
           },
           "hold20": {
-            "n": 227,
-            "winRate": 0.357,
-            "avgRet": -0.0845,
-            "median": -0.1054
+            "n": 229,
+            "winRate": 0.362,
+            "avgRet": -0.0798,
+            "median": -0.0974
           }
         },
         "test": {
           "day1": {
-            "n": 284,
-            "winRate": 0.394,
-            "avgRet": -0.0193,
-            "median": -0.0166
+            "n": 283,
+            "winRate": 0.396,
+            "avgRet": -0.0158,
+            "median": -0.0152
           },
           "nextOpen": {
-            "n": 284,
-            "winRate": 0.387,
-            "avgRet": -0.0055,
-            "median": -0.0214
+            "n": 283,
+            "winRate": 0.389,
+            "avgRet": -0.0026,
+            "median": -0.0207
           },
           "hold20": {
-            "n": 279,
-            "winRate": 0.376,
-            "avgRet": -0.0129,
+            "n": 277,
+            "winRate": 0.375,
+            "avgRet": -0.0141,
             "median": -0.0832
           }
         }
@@ -1166,42 +1166,42 @@
       "a:1000万ドル未満": {
         "train": {
           "day1": {
-            "n": 115,
-            "winRate": 0.209,
-            "avgRet": -0.1135,
-            "median": -0.091
+            "n": 116,
+            "winRate": 0.224,
+            "avgRet": -0.1124,
+            "median": -0.0907
           },
           "nextOpen": {
-            "n": 115,
-            "winRate": 0.226,
-            "avgRet": -0.0969,
-            "median": -0.1176
+            "n": 116,
+            "winRate": 0.241,
+            "avgRet": -0.0966,
+            "median": -0.1151
           },
           "hold20": {
-            "n": 115,
-            "winRate": 0.261,
-            "avgRet": -0.0362,
-            "median": -0.2204
+            "n": 116,
+            "winRate": 0.267,
+            "avgRet": -0.0357,
+            "median": -0.1961
           }
         },
         "test": {
           "day1": {
-            "n": 99,
-            "winRate": 0.253,
-            "avgRet": -0.1146,
-            "median": -0.0678
+            "n": 96,
+            "winRate": 0.24,
+            "avgRet": -0.1153,
+            "median": -0.0682
           },
           "nextOpen": {
-            "n": 99,
-            "winRate": 0.263,
-            "avgRet": -0.0987,
-            "median": -0.0791
+            "n": 96,
+            "winRate": 0.25,
+            "avgRet": -0.0984,
+            "median": -0.0826
           },
           "hold20": {
-            "n": 98,
-            "winRate": 0.296,
-            "avgRet": -0.077,
-            "median": -0.1535
+            "n": 95,
+            "winRate": 0.284,
+            "avgRet": -0.0839,
+            "median": -0.1538
           }
         }
       },
@@ -1228,22 +1228,22 @@
         },
         "test": {
           "day1": {
-            "n": 118,
-            "winRate": 0.407,
-            "avgRet": -0.0058,
-            "median": -0.0129
+            "n": 120,
+            "winRate": 0.417,
+            "avgRet": 0.0003,
+            "median": -0.0121
           },
           "nextOpen": {
-            "n": 118,
-            "winRate": 0.39,
-            "avgRet": -0.01,
-            "median": -0.0166
+            "n": 120,
+            "winRate": 0.4,
+            "avgRet": -0.0057,
+            "median": -0.0139
           },
           "hold20": {
-            "n": 114,
-            "winRate": 0.351,
-            "avgRet": -0.0158,
-            "median": -0.1133
+            "n": 115,
+            "winRate": 0.357,
+            "avgRet": -0.0147,
+            "median": -0.1094
           }
         }
       },
@@ -1294,64 +1294,64 @@
       "a:1000万ドル未満": {
         "train": {
           "day1": {
-            "n": 79,
-            "winRate": 0.253,
-            "avgRet": -0.0425,
-            "median": -0.0886
+            "n": 81,
+            "winRate": 0.272,
+            "avgRet": -0.0436,
+            "median": -0.0778
           },
           "nextOpen": {
-            "n": 79,
-            "winRate": 0.241,
-            "avgRet": -0.0096,
-            "median": -0.1145
+            "n": 81,
+            "winRate": 0.259,
+            "avgRet": -0.0117,
+            "median": -0.1018
           },
           "hold20": {
-            "n": 79,
-            "winRate": 0.19,
-            "avgRet": -0.2375,
-            "median": -0.3057
+            "n": 81,
+            "winRate": 0.21,
+            "avgRet": -0.2203,
+            "median": -0.3005
           }
         },
         "test": {
           "day1": {
-            "n": 49,
-            "winRate": 0.347,
-            "avgRet": -0.0274,
-            "median": -0.0651
+            "n": 46,
+            "winRate": 0.326,
+            "avgRet": -0.023,
+            "median": -0.0661
           },
           "nextOpen": {
-            "n": 49,
-            "winRate": 0.388,
-            "avgRet": -0.0188,
-            "median": -0.0671
+            "n": 46,
+            "winRate": 0.37,
+            "avgRet": -0.013,
+            "median": -0.0682
           },
           "hold20": {
-            "n": 48,
-            "winRate": 0.375,
-            "avgRet": -0.0818,
-            "median": -0.0741
+            "n": 45,
+            "winRate": 0.356,
+            "avgRet": -0.0968,
+            "median": -0.0774
           }
         }
       },
       "b:1000万〜5000万ドル": {
         "train": {
           "day1": {
-            "n": 58,
-            "winRate": 0.431,
-            "avgRet": 0.185,
-            "median": -0.0391
+            "n": 57,
+            "winRate": 0.439,
+            "avgRet": 0.1914,
+            "median": -0.0383
           },
           "nextOpen": {
-            "n": 58,
-            "winRate": 0.397,
-            "avgRet": 0.1554,
-            "median": -0.0616
+            "n": 57,
+            "winRate": 0.404,
+            "avgRet": 0.1604,
+            "median": -0.0607
           },
           "hold20": {
-            "n": 58,
-            "winRate": 0.241,
-            "avgRet": -0.1426,
-            "median": -0.2178
+            "n": 57,
+            "winRate": 0.228,
+            "avgRet": -0.161,
+            "median": -0.264
           }
         },
         "test": {
@@ -1398,16 +1398,16 @@
         },
         "test": {
           "day1": {
-            "n": 47,
-            "winRate": 0.426,
-            "avgRet": 0.0014,
+            "n": 49,
+            "winRate": 0.449,
+            "avgRet": 0.0162,
             "median": -0.002
           },
           "nextOpen": {
-            "n": 47,
-            "winRate": 0.404,
-            "avgRet": 0.0153,
-            "median": -0.0088
+            "n": 49,
+            "winRate": 0.429,
+            "avgRet": 0.0249,
+            "median": -0.0082
           },
           "hold20": {
             "n": 45,
@@ -1452,10 +1452,10 @@
             "median": -0.0086
           },
           "hold20": {
-            "n": 91,
-            "winRate": 0.495,
-            "avgRet": -0.0165,
-            "median": -0.0042
+            "n": 92,
+            "winRate": 0.5,
+            "avgRet": -0.0151,
+            "median": 0.0055
           }
         }
       }
@@ -1464,30 +1464,30 @@
       "a:1000万ドル未満": {
         "train": {
           "closeToNextOpen": {
-            "n": 115,
-            "winRate": 0.461,
-            "avgRet": 0.0202,
-            "median": -0.002
+            "n": 116,
+            "winRate": 0.448,
+            "avgRet": 0.0194,
+            "median": -0.0041
           },
           "closeHold20": {
-            "n": 115,
-            "winRate": 0.322,
-            "avgRet": 0.0258,
-            "median": -0.1129
+            "n": 116,
+            "winRate": 0.328,
+            "avgRet": 0.0256,
+            "median": -0.1123
           }
         },
         "test": {
           "closeToNextOpen": {
-            "n": 99,
-            "winRate": 0.394,
-            "avgRet": 0.0148,
-            "median": -0.0107
+            "n": 96,
+            "winRate": 0.406,
+            "avgRet": 0.0158,
+            "median": -0.01
           },
           "closeHold20": {
-            "n": 98,
-            "winRate": 0.378,
-            "avgRet": -0.0077,
-            "median": -0.0786
+            "n": 95,
+            "winRate": 0.368,
+            "avgRet": -0.0171,
+            "median": -0.0872
           }
         }
       },
@@ -1508,10 +1508,10 @@
         },
         "test": {
           "closeToNextOpen": {
-            "n": 118,
-            "winRate": 0.331,
-            "avgRet": -0.0096,
-            "median": -0.0174
+            "n": 120,
+            "winRate": 0.325,
+            "avgRet": -0.0107,
+            "median": -0.0191
           },
           "closeHold20": {
             "n": 114,
@@ -1555,26 +1555,26 @@
     "dealParsed": 443,
     "caution": "初値の水準（byPrice）と公開価格からの上げ幅（byPop）は、上場後の株式併合で日足の値段が調整されている銘柄があり当てにならない。売買代金と募集額（公開価格×株数）は併合の影響を受けない",
     "bigMovers": {
-      "count": 28,
+      "count": 29,
       "rule": "初日に初値→引けで+50%以上",
       "priceShare": {
-        "a:5ドル未満": 0.179,
-        "b:5〜10ドル": 0.107,
-        "c:10〜20ドル": 0.071,
-        "d:20ドル以上": 0.643
+        "a:5ドル未満": 0.172,
+        "b:5〜10ドル": 0.103,
+        "c:10〜20ドル": 0.103,
+        "d:20ドル以上": 0.621
       },
       "priceShareAll": {
-        "a:5ドル未満": 0.192,
-        "b:5〜10ドル": 0.1,
-        "c:10〜20ドル": 0.271,
-        "d:20ドル以上": 0.436
+        "a:5ドル未満": 0.189,
+        "b:5〜10ドル": 0.099,
+        "c:10〜20ドル": 0.274,
+        "d:20ドル以上": 0.438
       },
       "sectorShare": {
-        "IT・半導体": 0.286,
-        "その他": 0.393,
-        "医薬・医療": 0.071,
-        "小売・消費": 0.143,
-        "金融・不動産": 0.107
+        "IT・半導体": 0.276,
+        "その他": 0.379,
+        "医薬・医療": 0.103,
+        "小売・消費": 0.138,
+        "金融・不動産": 0.103
       },
       "sectorShareAll": {
         "IT・半導体": 0.169,
@@ -1793,6 +1793,14 @@
           "hold20Pct": -9.8
         },
         {
+          "t": "WWB",
+          "first": "2026-11-13",
+          "sector": "医薬・医療",
+          "price": "10〜20ドル",
+          "day1Pct": 55.0,
+          "hold20Pct": null
+        },
+        {
           "t": "MCTA",
           "first": "2025-10-21",
           "sector": "医薬・医療",
@@ -1811,11 +1819,410 @@
       ]
     }
   },
+  "afterIpo": {
+    "note": "初日の終値＝基準。path=上場からn取引日目（124日≒ロックアップの180日）。entryToDay250VsSpy=e日目の寄りで買って250日目の引けまでのS&P500との差。lockupVsSpy=124日目の前後10・20日。今も上場している銘柄だけ（甘め）",
+    "all": {
+      "n": 598,
+      "path": {
+        "5": {
+          "n": 596,
+          "medRet": -0.0295,
+          "upShare": 0.426,
+          "medVsSpy": -0.0277
+        },
+        "10": {
+          "n": 596,
+          "medRet": -0.0348,
+          "upShare": 0.433,
+          "medVsSpy": -0.0397
+        },
+        "20": {
+          "n": 591,
+          "medRet": -0.0681,
+          "upShare": 0.386,
+          "medVsSpy": -0.0771
+        },
+        "40": {
+          "n": 582,
+          "medRet": -0.1315,
+          "upShare": 0.378,
+          "medVsSpy": -0.1557
+        },
+        "60": {
+          "n": 580,
+          "medRet": -0.2244,
+          "upShare": 0.307,
+          "medVsSpy": -0.2601
+        },
+        "90": {
+          "n": 558,
+          "medRet": -0.3211,
+          "upShare": 0.281,
+          "medVsSpy": -0.3864
+        },
+        "124": {
+          "n": 538,
+          "medRet": -0.3965,
+          "upShare": 0.251,
+          "medVsSpy": -0.482
+        },
+        "150": {
+          "n": 510,
+          "medRet": -0.4583,
+          "upShare": 0.255,
+          "medVsSpy": -0.5604
+        },
+        "180": {
+          "n": 497,
+          "medRet": -0.5467,
+          "upShare": 0.231,
+          "medVsSpy": -0.6453
+        },
+        "250": {
+          "n": 466,
+          "medRet": -0.6547,
+          "upShare": 0.232,
+          "medVsSpy": -0.8247
+        }
+      },
+      "lowestDay": {
+        "n": 466,
+        "median": 182.0,
+        "share_le20": 0.082,
+        "share_ge124": 0.678
+      },
+      "entryToDay250VsSpy": {
+        "1": {
+          "n": 466,
+          "med": -0.8075,
+          "avg": -0.1082,
+          "beatSpy": 0.174
+        },
+        "20": {
+          "n": 466,
+          "med": -0.7112,
+          "avg": -0.0162,
+          "beatSpy": 0.189
+        },
+        "40": {
+          "n": 466,
+          "med": -0.611,
+          "avg": 0.1463,
+          "beatSpy": 0.185
+        },
+        "60": {
+          "n": 466,
+          "med": -0.512,
+          "avg": -0.0666,
+          "beatSpy": 0.212
+        },
+        "90": {
+          "n": 466,
+          "med": -0.4163,
+          "avg": -0.0282,
+          "beatSpy": 0.253
+        },
+        "124": {
+          "n": 466,
+          "med": -0.3132,
+          "avg": -0.036,
+          "beatSpy": 0.273
+        },
+        "150": {
+          "n": 466,
+          "med": -0.2285,
+          "avg": 0.1775,
+          "beatSpy": 0.32
+        }
+      },
+      "lockupVsSpy": {
+        "before10": {
+          "n": 514,
+          "med": -0.0232,
+          "avg": -0.0026
+        },
+        "after10": {
+          "n": 514,
+          "med": -0.0362,
+          "avg": -0.017
+        },
+        "after20": {
+          "n": 514,
+          "med": -0.0483,
+          "avg": -0.045
+        }
+      }
+    },
+    "deal200m": {
+      "n": 139,
+      "path": {
+        "5": {
+          "n": 139,
+          "medRet": -0.0104,
+          "upShare": 0.446,
+          "medVsSpy": -0.0104
+        },
+        "10": {
+          "n": 139,
+          "medRet": 0.0005,
+          "upShare": 0.504,
+          "medVsSpy": -0.0088
+        },
+        "20": {
+          "n": 138,
+          "medRet": -0.0195,
+          "upShare": 0.457,
+          "medVsSpy": -0.0328
+        },
+        "40": {
+          "n": 137,
+          "medRet": -0.0226,
+          "upShare": 0.46,
+          "medVsSpy": -0.0614
+        },
+        "60": {
+          "n": 135,
+          "medRet": -0.1015,
+          "upShare": 0.37,
+          "medVsSpy": -0.1443
+        },
+        "90": {
+          "n": 128,
+          "medRet": -0.1214,
+          "upShare": 0.359,
+          "medVsSpy": -0.1959
+        },
+        "124": {
+          "n": 115,
+          "medRet": -0.1117,
+          "upShare": 0.374,
+          "medVsSpy": -0.1973
+        },
+        "150": {
+          "n": 104,
+          "medRet": -0.1378,
+          "upShare": 0.394,
+          "medVsSpy": -0.2177
+        },
+        "180": {
+          "n": 97,
+          "medRet": -0.1259,
+          "upShare": 0.371,
+          "medVsSpy": -0.2453
+        },
+        "250": {
+          "n": 83,
+          "medRet": -0.0873,
+          "upShare": 0.482,
+          "medVsSpy": -0.2246
+        }
+      },
+      "lowestDay": {
+        "n": 83,
+        "median": 112,
+        "share_le20": 0.12,
+        "share_ge124": 0.47
+      },
+      "entryToDay250VsSpy": {
+        "1": {
+          "n": 83,
+          "med": -0.2454,
+          "avg": -0.1209,
+          "beatSpy": 0.289
+        },
+        "20": {
+          "n": 83,
+          "med": -0.2584,
+          "avg": -0.0881,
+          "beatSpy": 0.289
+        },
+        "40": {
+          "n": 83,
+          "med": -0.1873,
+          "avg": -0.0476,
+          "beatSpy": 0.277
+        },
+        "60": {
+          "n": 83,
+          "med": -0.122,
+          "avg": -0.0003,
+          "beatSpy": 0.386
+        },
+        "90": {
+          "n": 83,
+          "med": -0.1191,
+          "avg": 0.0581,
+          "beatSpy": 0.386
+        },
+        "124": {
+          "n": 83,
+          "med": -0.076,
+          "avg": 0.1001,
+          "beatSpy": 0.41
+        },
+        "150": {
+          "n": 83,
+          "med": -0.0275,
+          "avg": 0.0439,
+          "beatSpy": 0.458
+        }
+      },
+      "lockupVsSpy": {
+        "before10": {
+          "n": 105,
+          "med": 0.0166,
+          "avg": 0.0252
+        },
+        "after10": {
+          "n": 105,
+          "med": -0.0021,
+          "avg": -0.0013
+        },
+        "after20": {
+          "n": 105,
+          "med": -0.0011,
+          "avg": 0.0002
+        }
+      }
+    },
+    "deal1b": {
+      "n": 28,
+      "path": {
+        "5": {
+          "n": 28,
+          "medRet": 0.0038,
+          "upShare": 0.536,
+          "medVsSpy": 0.0185
+        },
+        "10": {
+          "n": 28,
+          "medRet": 0.0026,
+          "upShare": 0.5,
+          "medVsSpy": -0.0025
+        },
+        "20": {
+          "n": 28,
+          "medRet": 0.0045,
+          "upShare": 0.5,
+          "medVsSpy": -0.0051
+        },
+        "40": {
+          "n": 28,
+          "medRet": -0.0084,
+          "upShare": 0.5,
+          "medVsSpy": -0.0596
+        },
+        "60": {
+          "n": 28,
+          "medRet": -0.0684,
+          "upShare": 0.429,
+          "medVsSpy": -0.1336
+        },
+        "90": {
+          "n": 25,
+          "medRet": -0.0692,
+          "upShare": 0.44,
+          "medVsSpy": -0.1484
+        },
+        "124": {
+          "n": 21,
+          "medRet": -0.1336,
+          "upShare": 0.286,
+          "medVsSpy": -0.1978
+        },
+        "150": {
+          "n": 18,
+          "medRet": -0.0914,
+          "upShare": 0.389,
+          "medVsSpy": -0.167
+        },
+        "180": {
+          "n": 16,
+          "medRet": -0.1594,
+          "upShare": 0.312,
+          "medVsSpy": -0.2997
+        },
+        "250": {
+          "n": 14,
+          "medRet": -0.0678,
+          "upShare": 0.5,
+          "medVsSpy": -0.2797
+        }
+      },
+      "lowestDay": {
+        "n": 14,
+        "median": 129.5,
+        "share_le20": 0.214,
+        "share_ge124": 0.643
+      },
+      "entryToDay250VsSpy": {
+        "1": {
+          "n": 14,
+          "med": -0.3491,
+          "avg": 0.0451,
+          "beatSpy": 0.286
+        },
+        "20": {
+          "n": 14,
+          "med": -0.2701,
+          "avg": -0.012,
+          "beatSpy": 0.286
+        },
+        "40": {
+          "n": 14,
+          "med": -0.2912,
+          "avg": 0.0364,
+          "beatSpy": 0.286
+        },
+        "60": {
+          "n": 14,
+          "med": -0.1359,
+          "avg": 0.0952,
+          "beatSpy": 0.286
+        },
+        "90": {
+          "n": 14,
+          "med": -0.224,
+          "avg": -0.1016,
+          "beatSpy": 0.286
+        },
+        "124": {
+          "n": 14,
+          "med": -0.0973,
+          "avg": -0.023,
+          "beatSpy": 0.357
+        },
+        "150": {
+          "n": 14,
+          "med": -0.1164,
+          "avg": -0.0078,
+          "beatSpy": 0.286
+        }
+      },
+      "lockupVsSpy": {
+        "before10": {
+          "n": 19,
+          "med": -0.0127,
+          "avg": -0.0179
+        },
+        "after10": {
+          "n": 19,
+          "med": -0.0211,
+          "avg": -0.0294
+        },
+        "after20": {
+          "n": 19,
+          "med": 0.0078,
+          "avg": -0.0225
+        }
+      }
+    }
+  },
   "byYear": {
-    "2022": 53,
+    "2022": 52,
     "2023": 91,
-    "2024": 146,
+    "2024": 145,
     "2025": 190,
-    "2026": 118
+    "2026": 120
   }
 }
