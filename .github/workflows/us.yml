@@ -45,6 +45,9 @@ jobs:
       - name: pro (プロの判断の検証。仮想売買の試験中が使う特徴の選び方を data-us に保存)
         continue-on-error: true
         run: node scripts/us/pro.mjs --data data-us --out reports-out
+      - name: regime (相場の状態ごとの成績)
+        continue-on-error: true
+        run: node scripts/us/regime.mjs --data data-us --out reports-out
       - name: paper trading
         run: node scripts/us/paper.mjs --data data-us --out reports-out
       - name: encrypt data
