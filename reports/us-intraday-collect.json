@@ -1,1 +1,1 @@
-{"have": 572, "fetched": 10, "empty": 0, "errors": 1, "lastError": "HTTPError: HTTP Error 429: Too Many Requests", "stoppedBy": "limit", "total": 1033}
+{"have": 772, "fetched": 40, "empty": 0, "errors": 0, "lastError": null, "stoppedBy": "max", "total": 1033}
