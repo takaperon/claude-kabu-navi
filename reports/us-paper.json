@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-19T03:30:01.096Z",
+  "updatedAt": "2026-11-20T04:18:36.088Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": "spy",
-    "chosenAt": "2026-11-19T03:29:59.781Z",
+    "chosenAt": "2026-11-20T04:18:35.065Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-18",
+  "lastDate": "2026-11-19",
   "capital": 300000,
-  "equityYen": 290388,
-  "returnPct": -3.2,
-  "spyReturnPct": -3.2,
+  "equityYen": 284689,
+  "returnPct": -5.1,
+  "spyReturnPct": -5.1,
   "idleInSpyPct": 100,
   "idlePct": 100,
   "taxYen": 0,
@@ -24,6 +24,42 @@
   "holdings": [],
   "nextBuys": [],
   "recentReactions": [
+    {
+      "t": "PANW",
+      "name": "Palo Alto Networks",
+      "date": "2026-11-19",
+      "rePct": 6.4
+    },
+    {
+      "t": "P",
+      "name": "Everpure",
+      "date": "2026-11-19",
+      "rePct": 4.7
+    },
+    {
+      "t": "EXPD",
+      "name": "Expeditors International",
+      "date": "2026-11-19",
+      "rePct": 2.3
+    },
+    {
+      "t": "TGT",
+      "name": "Target Corporation",
+      "date": "2026-11-19",
+      "rePct": 0.9
+    },
+    {
+      "t": "TJX",
+      "name": "TJX Companies",
+      "date": "2026-11-19",
+      "rePct": -0.6
+    },
+    {
+      "t": "LOW",
+      "name": "Lowe's",
+      "date": "2026-11-19",
+      "rePct": -1.6
+    },
     {
       "t": "DIS",
       "name": "Walt Disney Company (The)",
@@ -90,21 +126,31 @@
     {
       "date": "2026-11-18",
       "value": 290388
+    },
+    {
+      "date": "2026-11-19",
+      "value": 284689
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-19T03:30:00.582Z",
+    "chosenAt": "2026-11-20T04:18:35.673Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 290388,
-    "returnPct": -3.2,
+    "equityYen": 284689,
+    "returnPct": -5.1,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
     "holdings": [],
-    "nextBuys": [],
+    "nextBuys": [
+      {
+        "t": "PANW",
+        "name": "Palo Alto Networks",
+        "reason": "決算の翌日に+6.4%（2026-11-19）／点数4：50日線の近く・値幅が大きい・売買代金が大きい・S&P500が下げた日"
+      }
+    ],
     "recentClosed": [],
     "equityHistory": [
       {
@@ -122,6 +168,10 @@
       {
         "date": "2026-11-18",
         "value": 290388
+      },
+      {
+        "date": "2026-11-19",
+        "value": 284689
       }
     ]
   }
