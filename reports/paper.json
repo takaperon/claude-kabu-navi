@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-19T22:51:08.237Z",
+  "updatedAt": "2026-11-20T10:40:19.754Z",
   "startDate": "2026-11-05",
-  "lastDate": "2026-11-19",
+  "lastDate": "2026-11-20",
   "strategies": {
     "swing_div": {
       "name": "配当予想の引き上げ（5日保有）",
@@ -246,6 +246,10 @@
         {
           "date": "2026-11-19",
           "value": 1049393
+        },
+        {
+          "date": "2026-11-20",
+          "value": 1049393
         }
       ]
     },
@@ -257,57 +261,61 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 1004470,
-      "taxYen": 1571,
+      "equityYen": 994209,
+      "taxYen": 0,
       "capital": 1000000,
-      "returnPct": 0.4,
-      "trades": 14,
-      "winRatePct": 57.1,
-      "avgRetPct": 0.59,
+      "returnPct": -0.6,
+      "trades": 17,
+      "winRatePct": 47.1,
+      "avgRetPct": -0.51,
       "holdings": [
+        {
+          "code": "40880",
+          "name": "エア・ウォーター",
+          "reason": "営業利益予想を+41.2%上方修正（2026-11-16発表）",
+          "entryDate": "2026-11-17",
+          "daysHeld": 4,
+          "unrealPct": 3.8,
+          "costYen": 103611,
+          "valueYen": 107512
+        }
+      ],
+      "nextBuys": [
+        {
+          "code": "60990",
+          "name": "エラン",
+          "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
+          "late": false
+        }
+      ],
+      "recentClosed": [
         {
           "code": "69080",
           "name": "イリソ電子工業",
           "reason": "営業利益予想を+25.7%上方修正（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": 0.1,
-          "costYen": 103016,
-          "valueYen": 103076
+          "exitDate": "2026-11-20",
+          "retPct": -3.1,
+          "profitYen": -3241
         },
         {
           "code": "19690",
           "name": "高砂熱学工業",
           "reason": "営業利益予想を+20%上方修正（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -3.3,
-          "costYen": 103016,
-          "valueYen": 99570
+          "exitDate": "2026-11-20",
+          "retPct": -8.1,
+          "profitYen": -8320
         },
         {
           "code": "72390",
           "name": "タチエス",
           "reason": "営業利益予想を+17.5%上方修正（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -3.9,
-          "costYen": 103016,
-          "valueYen": 99023
+          "exitDate": "2026-11-20",
+          "retPct": -5.7,
+          "profitYen": -5866
         },
-        {
-          "code": "40880",
-          "name": "エア・ウォーター",
-          "reason": "営業利益予想を+41.2%上方修正（2026-11-16発表）",
-          "entryDate": "2026-11-17",
-          "daysHeld": 3,
-          "unrealPct": 5.5,
-          "costYen": 103611,
-          "valueYen": 109298
-        }
-      ],
-      "nextBuys": [],
-      "recentClosed": [
         {
           "code": "51420",
           "name": "アキレス",
@@ -479,6 +487,10 @@
         {
           "date": "2026-11-19",
           "value": 1004470
+        },
+        {
+          "date": "2026-11-20",
+          "value": 994209
         }
       ]
     },
@@ -815,6 +827,10 @@
         {
           "date": "2026-11-19",
           "value": 1062857
+        },
+        {
+          "date": "2026-11-20",
+          "value": 1062857
         }
       ]
     },
@@ -826,47 +842,52 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 1022289,
-      "taxYen": 5105,
+      "equityYen": 1014794,
+      "taxYen": 2792,
       "capital": 1000000,
-      "returnPct": 2.2,
-      "trades": 10,
-      "winRatePct": 70,
-      "avgRetPct": 2.52,
+      "returnPct": 1.5,
+      "trades": 12,
+      "winRatePct": 58.3,
+      "avgRetPct": 1.17,
       "holdings": [
+        {
+          "code": "40880",
+          "name": "エア・ウォーター",
+          "reason": "営業利益予想を+41.2%上方修正（2026-11-16発表）",
+          "entryDate": "2026-11-17",
+          "daysHeld": 4,
+          "unrealPct": 3.8,
+          "costYen": 102047,
+          "valueYen": 105888
+        }
+      ],
+      "nextBuys": [
+        {
+          "code": "60990",
+          "name": "エラン",
+          "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
+          "late": false
+        }
+      ],
+      "recentClosed": [
         {
           "code": "69080",
           "name": "イリソ電子工業",
           "reason": "営業利益予想を+25.7%上方修正（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": 0.1,
-          "costYen": 101452,
-          "valueYen": 101510
+          "exitDate": "2026-11-20",
+          "retPct": -3.1,
+          "profitYen": -3192
         },
         {
           "code": "19690",
           "name": "高砂熱学工業",
           "reason": "営業利益予想を+20%上方修正（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -3.3,
-          "costYen": 101452,
-          "valueYen": 98057
+          "exitDate": "2026-11-20",
+          "retPct": -8.1,
+          "profitYen": -8194
         },
-        {
-          "code": "40880",
-          "name": "エア・ウォーター",
-          "reason": "営業利益予想を+41.2%上方修正（2026-11-16発表）",
-          "entryDate": "2026-11-17",
-          "daysHeld": 3,
-          "unrealPct": 5.5,
-          "costYen": 102047,
-          "valueYen": 107647
-        }
-      ],
-      "nextBuys": [],
-      "recentClosed": [
         {
           "code": "49110",
           "name": "資生堂",
@@ -1002,6 +1023,10 @@
         {
           "date": "2026-11-19",
           "value": 1022289
+        },
+        {
+          "date": "2026-11-20",
+          "value": 1014794
         }
       ]
     },
@@ -1013,97 +1038,88 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 992329,
-      "taxYen": 15327,
+      "equityYen": 967836,
+      "taxYen": 0,
       "capital": 1000000,
-      "returnPct": -0.8,
-      "trades": 12,
-      "winRatePct": 75,
-      "avgRetPct": 6.31,
-      "holdings": [
+      "returnPct": -3.2,
+      "trades": 20,
+      "winRatePct": 45,
+      "avgRetPct": -1.24,
+      "holdings": [],
+      "nextBuys": [],
+      "recentClosed": [
         {
           "code": "648A0",
           "name": "ルクレ",
           "reason": "配当予想を来期+200%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -18.8,
-          "costYen": 107155,
-          "valueYen": 86963
+          "exitDate": "2026-11-20",
+          "retPct": -21.6,
+          "profitYen": -23189
         },
         {
           "code": "53810",
           "name": "マイポックス",
           "reason": "配当予想を+50%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -6.7,
-          "costYen": 107155,
-          "valueYen": 100023
+          "exitDate": "2026-11-20",
+          "retPct": -12.7,
+          "profitYen": -13582
         },
         {
           "code": "64070",
           "name": "ＣＫＤ",
           "reason": "配当予想を+37.5%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -7.9,
-          "costYen": 107155,
-          "valueYen": 98691
+          "exitDate": "2026-11-20",
+          "retPct": -14.8,
+          "profitYen": -15871
         },
         {
           "code": "84110",
           "name": "みずほフィナンシャルグループ",
           "reason": "配当予想を+33.3%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -8.7,
-          "costYen": 107155,
-          "valueYen": 97870
+          "exitDate": "2026-11-20",
+          "retPct": -12.8,
+          "profitYen": -13694
         },
         {
           "code": "62580",
           "name": "平田機工",
           "reason": "配当予想を+26.7%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -13.9,
-          "costYen": 107155,
-          "valueYen": 92237
+          "exitDate": "2026-11-20",
+          "retPct": -21.4,
+          "profitYen": -22880
         },
         {
           "code": "63170",
           "name": "北川鉄工所",
           "reason": "配当予想を+22.7%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": 0.5,
-          "costYen": 107155,
-          "valueYen": 107712
+          "exitDate": "2026-11-20",
+          "retPct": -4.1,
+          "profitYen": -4394
         },
         {
           "code": "58440",
           "name": "京都フィナンシャルグループ",
           "reason": "配当予想を+19%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -5.5,
-          "costYen": 107155,
-          "valueYen": 101313
+          "exitDate": "2026-11-20",
+          "retPct": -9.9,
+          "profitYen": -10572
         },
         {
           "code": "21460",
           "name": "ＵＴグループ",
           "reason": "配当予想を+16%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "unrealPct": -2.3,
-          "costYen": 107155,
-          "valueYen": 104646
-        }
-      ],
-      "nextBuys": [],
-      "recentClosed": [
+          "exitDate": "2026-11-20",
+          "retPct": -3.2,
+          "profitYen": -3427
+        },
         {
           "code": "39680",
           "name": "セグエグループ",
@@ -1257,6 +1273,10 @@
         {
           "date": "2026-11-19",
           "value": 992329
+        },
+        {
+          "date": "2026-11-20",
+          "value": 967836
         }
       ]
     },
@@ -1357,6 +1377,10 @@
         {
           "date": "2026-11-19",
           "value": 286111
+        },
+        {
+          "date": "2026-11-20",
+          "value": 286111
         }
       ]
     },
@@ -1368,28 +1392,25 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 288356,
+      "equityYen": 282862,
       "taxYen": 0,
       "capital": 300000,
-      "returnPct": -3.9,
-      "trades": 1,
+      "returnPct": -5.7,
+      "trades": 2,
       "winRatePct": 0,
-      "avgRetPct": -6.4,
-      "holdings": [
+      "avgRetPct": -9.55,
+      "holdings": [],
+      "nextBuys": [],
+      "recentClosed": [
         {
           "code": "53810",
           "name": "マイポックス",
           "reason": "配当予想を+50%引き上げ（2026-11-13発表）",
           "entryDate": "2026-11-16",
-          "daysHeld": 4,
-          "shares": 100,
-          "unrealPct": -6.7,
-          "costYen": 91291,
-          "valueYen": 85215
-        }
-      ],
-      "nextBuys": [],
-      "recentClosed": [
+          "exitDate": "2026-11-20",
+          "retPct": -12.7,
+          "profitYen": -11571
+        },
         {
           "code": "39680",
           "name": "セグエグループ",
@@ -1424,13 +1445,17 @@
         {
           "date": "2026-11-19",
           "value": 288356
+        },
+        {
+          "date": "2026-11-20",
+          "value": 282862
         }
       ]
     },
     "real30_dt_pro": {
       "name": "試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）",
       "trial": true,
-      "proChosenAt": "2026-11-19T18:58:16.681Z",
+      "proChosenAt": "2026-11-19T22:51:19.586Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1462,13 +1487,17 @@
         {
           "date": "2026-11-19",
           "value": 300000
+        },
+        {
+          "date": "2026-11-20",
+          "value": 300000
         }
       ]
     },
     "real30_div_pro": {
       "name": "試験中：プロの判断のスイング（点数1以上・5日）",
       "trial": true,
-      "proChosenAt": "2026-11-19T18:58:16.681Z",
+      "proChosenAt": "2026-11-19T22:51:19.586Z",
       "hold": 5,
       "gap": false,
       "kinds": [
@@ -1500,6 +1529,10 @@
         {
           "date": "2026-11-19",
           "value": 300000
+        },
+        {
+          "date": "2026-11-20",
+          "value": 300000
         }
       ]
     }
@@ -1512,7 +1545,15 @@
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
-    "holdings": [],
+    "holdings": [
+      {
+        "code": "657A0",
+        "name": "ＨｉＪｏＪｏ　Ｐａｒｔｎｅｒｓ",
+        "reason": "2026-11-20に新規上場（初日の引けで購入）",
+        "entryDate": "2026-11-20",
+        "shares": 300
+      }
+    ],
     "recentClosed": [],
     "equityHistory": [
       {
@@ -1534,13 +1575,17 @@
       {
         "date": "2026-11-19",
         "value": 300000
+      },
+      {
+        "date": "2026-11-20",
+        "value": 300000
       }
     ]
   },
   "market": {
-    "date": "2026-11-19",
-    "dayPct": -0.3,
-    "fiveDayPct": -3.4,
-    "vsTrendPct": -3.8
+    "date": "2026-11-20",
+    "dayPct": -3.6,
+    "fiveDayPct": -7,
+    "vsTrendPct": -6.9
   }
 }
