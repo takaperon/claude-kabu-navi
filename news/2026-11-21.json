@@ -1,0 +1,93 @@
+{
+ "date": "2026-11-21",
+ "status": "未検証",
+ "period": "2026-11-20 朝〜2026-11-21 朝",
+ "note": "米国株が大幅安。AI関連の売りが広がり、S&P500・ダウは最高値から10%以上下げた「調整局面」入り。NVIDIA -14%（フアンCEOの辞任報道）、Anthropic も公開2日目で下落。日本もソフトバンクG -14.5%、半導体株が軒並み安。",
+ "items": [
+  {
+   "headline": "米国株が大幅安、S&P500・ダウが調整局面入り（ナスダックは2026年の上げを帳消し）",
+   "summary": "AI投資の採算への疑い、NVIDIA のフアンCEOの辞任、利上げ観測（フィラデルフィア連銀総裁が再利上げに言及）、12月の政府閉鎖の可能性、イラン攻撃の報道などが重なった。S&P500採用銘柄の約4分の3が下落、AIインフラ・暗号資産関連が-15〜-20%、医療・通信に資金が移った。",
+   "sources": [
+    "https://cbsnews.com/news/dow-tumbles-wall-street-ai-fears",
+    "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html",
+    "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
+   ],
+   "eventDate": "2026-11-20",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [
+    {
+     "t": "NVDA",
+     "dir": "-"
+    },
+    {
+     "t": "MU",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数週間",
+   "confidence": "中"
+  },
+  {
+   "headline": "NVIDIA -14%、フアンCEOの辞任報道と輸出規制の強化計画",
+   "summary": "中国のスパイと疑われる人物との関係が報じられた後の辞任。議会が中国向け販売を追及し、商務省はAI半導体の輸出規制を強める計画。",
+   "sources": [
+    "https://cbsnews.com/news/dow-tumbles-wall-street-ai-fears"
+   ],
+   "eventDate": "2026-11-20",
+   "type": "企業発表",
+   "sectors": [
+    "電気機器"
+   ],
+   "stocks": [
+    {
+     "t": "NVDA",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数週間",
+   "confidence": "中"
+  },
+  {
+   "headline": "ソフトバンクG -14.5%、日本の半導体株も大幅安",
+   "summary": "レーザーテック・アドバンテスト・KOKUSAI・東京応化などが軒並み安。米AMD安やSOX指数の大幅下落が重し。",
+   "sources": [
+    "https://www.webull.com/news/15241499175625728",
+    "https://www.zaikei.co.jp/article/20261121/878671.html"
+   ],
+   "eventDate": "2026-11-20",
+   "type": "テーマ",
+   "sectors": [
+    "情報･通信業",
+    "電気機器"
+   ],
+   "stocks": [
+    {
+     "code": "9984",
+     "name": "ソフトバンクグループ",
+     "dir": "-"
+    },
+    {
+     "code": "6857",
+     "name": "アドバンテスト",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "中"
+  },
+  {
+   "headline": "来週は米国のPCE物価指数、12月のFOMCは利上げの確率98%",
+   "summary": "CME FedWatch では12月の利上げの確率が98.4%。",
+   "sources": [
+    "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html"
+   ],
+   "eventDate": "2026-11-20",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [],
+   "horizon": "数週間",
+   "confidence": "中"
+  }
+ ]
+}

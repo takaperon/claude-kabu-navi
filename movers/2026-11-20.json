@@ -1,0 +1,306 @@
+{
+ "date": "2026-11-20",
+ "note": "2026-11-21 朝の調査。理由は記事で確かめたものだけ、分からないものは「不明」。米国の個別の理由は記事が少なく、AI関連の一斉安として書いたものは確かさ低",
+ "items": [
+  {
+   "market": "jp",
+   "code": "4586",
+   "pct": 39.0,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3624",
+   "pct": 33.1,
+   "cat": "不明",
+   "reason": "19日まで連騰が続いた（20日の材料は記事で確かめられなかった）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261121/878671.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "5240",
+   "pct": 14.7,
+   "cat": "不明",
+   "reason": "25日移動平均線を回復（値動きの説明だけで材料は不明）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261121/878671.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "5133",
+   "pct": 9.8,
+   "cat": "自社株買い",
+   "reason": "自己株式取得の発表で需給の改善を期待",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261121/878671.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "446A",
+   "pct": 6.9,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6058",
+   "pct": 4.7,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6706",
+   "pct": 4.7,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6630",
+   "pct": 4.6,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6440",
+   "pct": 3.1,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "9204",
+   "pct": 2.9,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "130A",
+   "pct": -18.6,
+   "cat": "需給（指数採用など）",
+   "reason": "19日のストップ高の反動安",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261121/878671.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4461",
+   "pct": -16.9,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6227",
+   "pct": -15.7,
+   "cat": "テーマ/思惑",
+   "reason": "半導体株安に引きずられた",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261121/878671.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4888",
+   "pct": -14.8,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "9984",
+   "pct": -14.5,
+   "cat": "テーマ/思惑",
+   "reason": "世界的なAI関連株の売り（NVIDIA・Anthropic など）",
+   "sources": [
+    "https://www.webull.com/news/15241499175625728",
+    "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "GPN",
+   "pct": 9.9,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "GIS",
+   "pct": 3.7,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "MKC",
+   "pct": 3.4,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "HCA",
+   "pct": 3.3,
+   "cat": "テーマ/思惑",
+   "reason": "AI・暗号資産関連から医療・通信へ資金が移った",
+   "sources": [
+    "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CSGP",
+   "pct": 3.2,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CTSH",
+   "pct": 3.1,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "DVA",
+   "pct": 3.0,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "UNH",
+   "pct": 2.8,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連から医療株へ資金が移った（前々日の規制案の急落からの戻りも）",
+   "sources": [
+    "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "HUM",
+   "pct": 2.6,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "FICO",
+   "pct": 2.5,
+   "cat": "不明",
+   "reason": "11/20の材料を記事で確かめられなかった",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "SNDK",
+   "pct": -16.1,
+   "cat": "テーマ/思惑",
+   "reason": "AIインフラ関連の売り",
+   "sources": [
+    "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4",
+    "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "BE",
+   "pct": -15.3,
+   "cat": "テーマ/思惑",
+   "reason": "AIインフラ（データセンター電源）関連の売り",
+   "sources": [
+    "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "NVDA",
+   "pct": -14.0,
+   "cat": "不祥事・事故",
+   "reason": "フアンCEOの辞任（報道）と、中国向け販売への議会の追及・AI半導体の輸出規制強化の計画",
+   "sources": [
+    "https://cbsnews.com/news/dow-tumbles-wall-street-ai-fears",
+    "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "MU",
+   "pct": -13.9,
+   "cat": "テーマ/思惑",
+   "reason": "AI・半導体株の売り",
+   "sources": [
+    "https://finance.yahoo.com/markets/stocks/articles/wall-st-futures-slip-anthropic-104746137.html",
+    "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "LITE",
+   "pct": -13.9,
+   "cat": "テーマ/思惑",
+   "reason": "AIインフラ関連の売り",
+   "sources": [
+    "https://247wallst.com/cards/the-nasdaq-s-5-57-drop-was-nearly-triple-the-dow-s-decline-gspc-market-bell-01m7xcbks3vbjsn2anrzaqypc4"
+   ],
+   "confidence": "低"
+  }
+ ]
+}
