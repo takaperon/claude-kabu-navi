@@ -110,7 +110,10 @@ for (const e of ev) {
 }
 const fin = (X) => Object.fromEntries(Object.entries(X).map(([f, g]) => [f, { name: BK[f]?.name ?? '全体', buckets: Object.fromEntries(Object.entries(g).map(([k, m]) => [k, Object.fromEntries(Object.entries(m).map(([mm, w]) => [mm, { train: summ(w.train), test: summ(w.test) }]))])) }]));
 const now = state(D - 1);
+// 銘柄の値段は毎日全部は更新されない（Tiingo の回数制限）ので、広がりは100銘柄以上そろっている一番新しい日の値
+{ let k = D - 1; while (k > 0 && cnt[k] < 100) k--; now.breadth = cnt[k] >= 100 ? above[k] / cnt[k] : NaN; now.breadthAsOf = dates[k]; }
 const today = Object.fromEntries(Object.entries(BK).map(([f, b]) => [f, { name: b.name, value: r4(now[f]), bucket: Number.isFinite(now[f]) ? b.cut(now[f]) : null }]));
+today.breadth.asOf = now.breadthAsOf;
 write({ ok: true, generatedAt: new Date().toISOString(), asOf: dates[D - 1], periods: { train: [dates[200], dates[split - 1]], test: [dates[split], dates[D - 1]] }, fred: status,
   note: 'その日の引けで分かる相場の状態ごとに、A) S&P500を次の日の寄りで買って20・60取引日持った成績、B) 今のルール（決算+10%以上・20日）の1件ごとの成績とS&P500との差。20日・60日は日がかぶるので件数ほど確かではない',
   today, spy: fin(A), rule: fin(B), ruleEvents: usedB });
