@@ -12,7 +12,7 @@
     "trades": 298,
     "ok": true,
     "score": 25.5,
-    "chosenAt": "2026-11-20T04:18:35.065Z",
+    "chosenAt": "2026-11-20T06:34:01.192Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "candidates": [
@@ -418,7 +418,7 @@
     "dayPct": 31.2,
     "nightPct": 55.5
   },
-  "generatedAt": "2026-11-20T04:18:35.090Z",
+  "generatedAt": "2026-11-20T06:34:01.214Z",
   "universe": 496,
   "days": 1478,
   "periods": {
