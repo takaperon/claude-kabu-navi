@@ -85,5 +85,19 @@ for (const [tk, th] of Object.entries(THEMES)) {
     fires: { note: 'テーマの銘柄の半分以上が+3%以上・テーマ平均が全銘柄平均より+3%以上上げた日（火がついた日）の次の日の寄りで買った成績（全銘柄平均との差）。10営業日以内の続きは数えない', split: dates[split],
       summary: Object.fromEntries(HS.map((h) => [h, { train: summ(fires.vsMkt[h].train), test: summ(fires.vsMkt[h].test) }])), recent: fires.list.slice(-12) } };
 }
+// C) 毎朝のニュース調査で拾った「テーマのきっかけ」（reports の events/theme-triggers.json）を、仮想で追いかける（試験中・本物のお金は使わない）
+// {items:[{news, entry, theme, title, sources}]}。entry の寄りでテーマの銘柄を同じ金額ずつ買った扱いで、今日までと5・20営業日目の成績（全銘柄平均との差）
+try {
+  const tf = args.triggers; const tr = tf && fs.existsSync(tf) ? JSON.parse(fs.readFileSync(tf, 'utf8')).items ?? [] : [];
+  out.triggers = tr.map((t) => {
+    const th = THEMES[t.theme]; const e = di.get(t.entry); if (!th || e == null) return { ...t, status: e == null ? '買う日がまだ来ていない' : '不明なテーマ' };
+    const idx = th.codes.map((c) => ci.get(c + '0') ?? ci.get(c)).filter((i) => i != null);
+    const bk = (x) => { const rs = []; for (const i of idx) { const o = at(O, i, e), c = at(C, i, x); if (o > 0 && c > 0) rs.push((c * (1 - SLIP)) / (o * (1 + SLIP)) - 1); } return rs.length >= 3 ? rs.reduce((a, b) => a + b, 0) / rs.length : NaN; };
+    const r = { news: t.news, entry: t.entry, theme: t.theme, title: t.title, held: D - e };
+    r.now = r4(bk(D - 1)); r.nowVsMkt = r4(bk(D - 1) - mkOpenTo(e, D - 1));
+    for (const h of [5, 20]) if (e + h - 1 < D) { r['h' + h + 'vsMkt'] = r4(bk(e + h - 1) - mkOpenTo(e, e + h - 1)); }
+    return r;
+  });
+} catch (err) { out.triggersError = String(err.message).slice(0, 100); }
 fs.writeFileSync(path.join(OUT, 'theme-jp.json'), JSON.stringify(out, null, 1));
 console.log(`theme-jp ok: ${Object.entries(out.themes).map(([k, v]) => `${k}=${v.stocksFound}`).join(' ')}`);

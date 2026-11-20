@@ -49,7 +49,7 @@ jobs:
 
       - name: news evaluation
         run: |
-          git fetch -q --depth=1 origin reports && mkdir -p news-in && git archive FETCH_HEAD news | tar xf - -C news-in || echo "no news"
+          git fetch -q --depth=1 origin reports && mkdir -p news-in && git archive FETCH_HEAD news | tar xf - -C news-in || echo "no news"; git archive FETCH_HEAD events | tar xf - -C news-in 2>/dev/null || echo "no events"
           git archive FETCH_HEAD movers 2>/dev/null | tar xf - -C news-in 2>/dev/null || echo "no movers"
           node scripts/news-eval.mjs --data data --news news-in/news --out reports-out
           node scripts/movers-eval.mjs --data data --movers news-in/movers --out reports-out || echo "movers-eval failed"
@@ -72,7 +72,7 @@ jobs:
 
       - name: theme (テーマ株：出来事・火がついた日の後の動き)
         continue-on-error: true
-        run: node scripts/theme.mjs --data data --out reports-out
+        run: node scripts/theme.mjs --data data --out reports-out --triggers news-in/events/theme-triggers.json
 
       - name: movers (本日の値上がりランキング)
         continue-on-error: true
