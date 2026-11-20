@@ -273,6 +273,44 @@ factors = {
                             "hold20Pct": None if x["h20"] is None else round(x["h20"] * 100, 1)} for x in sorted(big, key=lambda x: -x["d1"])[:30]]},
 }
 
+# ---------- 6) 上場後の長めの値動き（2026-11-20 オーナー「ANTをどこかで仕込みたい」） ----------
+# 初日の引けを1として、上場からn取引日目の終値（S&P500との差も）。ロックアップ（180日＝約124取引日）の前後も見る
+# 大型（募集額2億ドル以上・10億ドル以上）と全体で分ける。今も上場している銘柄だけなので、甘めに出る（生存者バイアス）
+def after_ipo(sel):
+    days = [5, 10, 20, 40, 60, 90, 124, 150, 180, 250]
+    path, entries, lows, lock = {}, {}, [], {"before10": [], "after10": [], "after20": []}
+    for x in sel:
+        b = x["b"]; c0 = b[0][2]; s0 = spy_c.get(b[0][0])
+        if not (c0 and c0 > 0): continue
+        for n in days:
+            if n < len(b):
+                r = b[n][2] / c0 - 1; sn = spy_c.get(b[n][0])
+                rel = r - (sn / s0 - 1) if (s0 and sn) else None
+                path.setdefault(n, {"ret": [], "rel": []}); path[n]["ret"].append(r)
+                if rel is not None: path[n]["rel"].append(rel)
+        if len(b) > 250:
+            k = min(range(1, 251), key=lambda i: b[i][2]); lows.append(k)
+            for e in (1, 20, 40, 60, 90, 124, 150):  # e日目の寄りで買って250日目の引けまで（S&P500との差）
+                se, sx = spy_c.get(b[e - 1][0]), spy_c.get(b[250][0])
+                r = oc(b[e][1], b[250][2]); rel = r - (sx / se - 1) if (se and sx) else None
+                if rel is not None: entries.setdefault(e, []).append(rel)
+        if len(b) > 145:
+            def rel(i, j):
+                si, sj = spy_c.get(b[i][0]), spy_c.get(b[j][0])
+                return (b[j][2] / b[i][2] - 1) - (sj / si - 1) if (si and sj and b[i][2] > 0) else None
+            for k2, (i, j) in {"before10": (114, 124), "after10": (124, 134), "after20": (124, 144)}.items():
+                v = rel(i, j)
+                if v is not None: lock[k2].append(v)
+    med = lambda a: round(statistics.median(a), 4) if a else None
+    up = lambda a: round(sum(1 for v in a if v > 0) / len(a), 3) if a else None
+    return {"n": len(sel),
+            "path": {n: {"n": len(v["ret"]), "medRet": med(v["ret"]), "upShare": up(v["ret"]), "medVsSpy": med(v["rel"])} for n, v in sorted(path.items())},
+            "lowestDay": {"n": len(lows), "median": med(lows), "share_le20": up([1 if v <= 20 else -1 for v in lows]), "share_ge124": up([1 if v >= 124 else -1 for v in lows])},
+            "entryToDay250VsSpy": {e: {"n": len(v), "med": med(v), "avg": round(sum(v) / len(v), 4), "beatSpy": up(v)} for e, v in sorted(entries.items())},
+            "lockupVsSpy": {k: {"n": len(v), "med": med(v), "avg": round(sum(v) / len(v), 4) if v else None} for k, v in lock.items()}}
+afterIpo = {"note": "初日の終値＝基準。path=上場からn取引日目（124日≒ロックアップの180日）。entryToDay250VsSpy=e日目の寄りで買って250日目の引けまでのS&P500との差。lockupVsSpy=124日目の前後10・20日。今も上場している銘柄だけ（甘め）",
+            "all": after_ipo(ipos), "deal200m": after_ipo([x for x in ipos if (x["deal"] or 0) >= 2e8]), "deal1b": after_ipo([x for x in ipos if (x["deal"] or 0) >= 1e9])}
+
 # 比較：同じ日にS&P500を寄り→引け／引け→翌朝 で持った平均（滑りなし）
 out = {
     "generatedAt": datetime.now(timezone.utc).isoformat(), "status": status,
@@ -280,6 +318,7 @@ out = {
     "note": "今も上場している米国IPOだけ（廃止は含まない）・SPAC除外・ウィブルの日足（Nasdaq Basic）・滑り片道0.1%",
     "runs": runs,
     "factors": factors,
+    "afterIpo": afterIpo,
     "byYear": {y: sum(1 for x in ipos if x["first"].startswith(y)) for y in sorted({x["first"][:4] for x in ipos})},
 }
 json.dump(out, open("reports-out/us-ipo.json", "w"), ensure_ascii=False, indent=2)
