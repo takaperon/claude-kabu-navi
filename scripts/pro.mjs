@@ -159,6 +159,60 @@ for (const ev of evs) {
   T.push({ kind: ev.kind, i, d, e, half: d < Math.floor(D * 0.6) ? 'train' : 'test', year: dates[e].slice(0, 4), score: ev.score, f, out });
 }
 for (const t of T) t.f.crowd = Math.log2(countByDay[t.kind + '|' + t.d] ?? 1);
+
+// ---------- 増配の「理由」で分ける（2026-11-21 オーナー「増配デイトレでも、理由があれば精度が上がるでしょ」） ----------
+// 決算の数字から分かる理由だけ（記念配当・自社株買いとの同時発表は J-Quants の数字に無いので分けられない）。公開は集計値だけ（reports-out/divreason-jp.json）
+try {
+  const byCode = new Map();
+  for (const r of rows) { if (!byCode.has(r.c)) byCode.set(r.c, []); byCode.get(r.c).push(r); }
+  for (const a of byCode.values()) a.sort((x, y) => (x.dd + (x.dt ?? '')).localeCompare(y.dd + (y.dt ?? '')));
+  const isRes = (r) => /FinancialStatements/.test(r.ty ?? '');
+  const evByKey = new Map(evs.filter((e) => e.kind === 'div_up').map((e) => [e.c + '|' + e.dd, e]));
+  // 業種（33業種）の20日の勢い
+  const sec = new Map(master.map((m) => [m.Code, m.S33Nm ?? m.Sector33CodeName ?? m.S33 ?? null]));
+  const secIdx = new Map(); codes.forEach((c, i) => { const s0 = sec.get(c); if (!s0) return; if (!secIdx.has(s0)) secIdx.set(s0, []); secIdx.get(s0).push(i); });
+  const secRet = (s0, d) => { const ix = secIdx.get(s0); if (!ix || d < 20) return NaN; let s1 = 0, n = 0; for (const i of ix) { const a = at(C, i, d - 20), b = at(C, i, d); if (a > 0 && b > 0) { const r = b / a - 1; if (Math.abs(r) < 1) { s1 += r; n++; } } } return n >= 5 ? s1 / n - (MK[d] / MK[d - 20] - 1) : NaN; };
+  const reasonsOf = (t) => {
+    const code = codes[t.i]; const list = byCode.get(code) ?? []; const dd = dates[t.d];
+    // 発表の日（シグナルの日以前で一番新しい div_up の開示）
+    const same = list.filter((r) => r.dd <= dd && r.dd >= dates[Math.max(0, t.d - 3)]);
+    const res = same.find(isRes); const R = {};
+    R.timing = res ? '決算と同時' : '配当予想だけの修正（期中）';
+    if (res) {
+      const prevY = list.filter((r) => isRes(r) && r.pt === res.pt && r.dd < res.dd && r.dd >= dates[Math.max(0, t.d - 300)] && r.dd <= dates[Math.max(0, t.d - 200)]).at(-1);
+      const g = prevY && prevY.op > 0 && res.op != null ? res.op / prevY.op - 1 : NaN;
+      R.profit = !Number.isFinite(g) ? null : g >= 0.1 ? '実際の利益が前年より+10%以上' : g >= -0.05 ? '実際の利益は前年並み' : '実際の利益が前年より減った';
+      const fg = res.pt === 'FY' ? (res.op > 0 && res.nfop != null ? res.nfop / res.op - 1 : NaN) : NaN;
+      if (Number.isFinite(fg)) R.outlook = fg >= 0.05 ? '来期は増益の予想' : fg > -0.05 ? '来期は横ばいの予想' : '来期は減益の予想';
+      if ((Number.isFinite(g) && g < -0.05) || (Number.isFinite(fg) && fg <= -0.05)) R.policy = '減益なのに増配（株主還元の方針）';
+      else if (Number.isFinite(g) || Number.isFinite(fg)) R.policy = '利益が伴う増配';
+    }
+    R.earn = t.f.withOther ? '上方修正と同時' : '上方修正なし';
+    // 去年も増配していたか（本決算の年間配当の実績を2期比べる）
+    const fy = list.filter((r) => isRes(r) && r.pt === 'FY' && r.div > 0 && r.dd < dd);
+    if (fy.length >= 2) { const a = fy.at(-1).div, b = fy.at(-2).div; R.streak = a > b * 1.001 ? '去年も増配' : a < b * 0.999 ? '去年は減配' : '去年は据え置き'; }
+    const sr = secRet(sec.get(code), t.d);
+    if (Number.isFinite(sr)) R.sector = sr >= 0.03 ? '業種が強い（20日で市場+3%以上）' : sr <= -0.03 ? '業種が弱い（20日で市場-3%以下）' : '業種はふつう';
+    return R;
+  };
+  const DR = {}; const COMBO = {}; let n = 0;
+  const addR = (o, k, h, t) => { const g = (o[k] ??= {}); for (const ex of ['dt', 'h5', 'hl10']) { const v = t.out[ex]?.ret; if (v == null) continue; ((g[ex] ??= { train: [], test: [] })[h]).push(v); } };
+  for (const t of T) {
+    if (t.kind !== 'div_up') continue; n++;
+    const R = reasonsOf(t); t.reasons = R;
+    addR(DR, '全体', t.half, t);
+    for (const [kk, v] of Object.entries(R)) if (v) addR((DR[kk] ??= {}), v, t.half, t) ;
+    // 組み合わせ：利益の伴い方 × 上方修正 × 業種
+    if (R.policy) addR(COMBO, R.policy + '・' + R.earn, t.half, t);
+    if (R.profit && R.sector) addR(COMBO, R.profit + '・' + R.sector, t.half, t);
+  }
+  const sumX = (w) => { if (!w) return null; const f2 = (a) => { if (!a.length) return { n: 0 }; const z = a.slice().sort((x, y) => x - y); return { n: a.length, avg: Math.round(a.reduce((x, y) => x + y, 0) / a.length * 10000) / 10000, med: Math.round(z[a.length >> 1] * 10000) / 10000, win: Math.round(a.filter((x) => x > 0).length / a.length * 1000) / 1000 }; }; return { train: f2(w.train), test: f2(w.test) }; };
+  const fin = (o) => Object.fromEntries(Object.entries(o).map(([k, g]) => [k, g.dt || g.h5 ? Object.fromEntries(Object.entries(g).map(([ex, w]) => [ex, sumX(w)])) : fin(g)]));
+  fs.writeFileSync(path.join(OUT, 'divreason-jp.json'), JSON.stringify({ generatedAt: new Date().toISOString(), events: n, split: dates[Math.floor(D * 0.6)],
+    note: '増配の理由（決算の数字から分かるもの）ごとの成績。dt＝寄りで買ってその日の引け、h5＝5日目の引け、hl10＝マイナスなら最長10日持ち越し。記念配当・自社株買いとの同時発表は数字に無いので分けていない',
+    byReason: fin(DR), combos: fin(COMBO) }, null, 1));
+  status.divReasonEvents = n;
+} catch (e) { status.divReasonError = String(e.message).slice(0, 120); }
 status.events = { div_up: T.filter((t) => t.kind === 'div_up').length, earn_up: T.filter((t) => t.kind === 'earn_up').length };
 const split = Math.floor(D * 0.6);
 // 日本株の場中（1時間足・5分足）の検証用に、増配の「買う日」の一覧を出す（銘柄・日付・その日の引けで売った損益率・点数だけ。値段は出さない）
