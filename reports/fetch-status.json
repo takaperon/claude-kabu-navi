@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-20T18:34:10.107Z",
+  "startedAt": "2026-11-21T05:28:28.964Z",
   "keyPresent": true,
   "fetchedDays": 0,
   "rowsFetched": 0,
@@ -14,13 +14,13 @@
   "rawBackfilled": 0,
   "rawStored": 1226,
   "finsFetchedDays": 5,
-  "finsRows": 107,
+  "finsRows": 33,
   "earnDateFetched": 5,
-  "earnDateStored": 1829,
+  "earnDateStored": 1830,
   "requestCount": 12,
-  "finishedAt": "2026-11-20T18:34:22.740Z",
+  "finishedAt": "2026-11-21T05:28:41.833Z",
   "storedDays": 1231,
   "storedFrom": "2021-11-08",
   "storedTo": "2026-11-20",
-  "finsStoredDays": 1841
+  "finsStoredDays": 1842
 }

@@ -281,11 +281,11 @@
       }
     }
   },
-  "generatedAt": "2026-11-20T18:38:20.010Z",
+  "generatedAt": "2026-11-21T05:32:22.294Z",
   "days": 1231,
   "universe": 3704,
   "fins": {
-    "days": 1841,
+    "days": 1842,
     "rows": 96773,
     "events": {
       "earn_up": 5983,
