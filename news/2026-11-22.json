@@ -1,0 +1,44 @@
+{
+ "date": "2026-11-22",
+ "status": "未検証",
+ "period": "2026-11-21 朝〜2026-11-22 朝（週末）",
+ "note": "週間でS&P500 -8.6%・ナスダック -10.0%・ダウ -8.0%。VIX は金曜の引けで35.89（2025年4月以来の高さ）。今週は米国が感謝祭で短い週（26日休場・27日短縮）、東京は23日（月）が休場。",
+ "items": [
+  {
+   "headline": "米国株は2020年以来の悪い1週間、VIX 35.89",
+   "summary": "S&P500 -8.6%（調整局面）、ナスダック -10.0%（年初来の上げを帳消し）、半導体株は2001年以来の悪い週。NVIDIA は SEC が会計を調べているとの報道も重なり金曜 -14%。Anthropic は金曜に約88.91ドル（公開価格83ドル）。恐怖と強欲の指数は10。",
+   "sources": [
+    "https://cardanocapital.substack.com/p/s-and-p-500-enters-correction-as"
+   ],
+   "eventDate": "2026-11-20",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [
+    {
+     "t": "NVDA",
+     "dir": "-"
+    },
+    {
+     "t": "ANT",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数週間",
+   "confidence": "中"
+  },
+  {
+   "headline": "今週の注目：10月のPCE物価指数、7〜9月期GDP（改定値）、Dell・HPなどの決算",
+   "summary": "PCE のコアは前年比3.2%の予想。強い数字なら12月の大幅利上げの思惑が強まる。12/9 の FOMC は0.25%の利上げの確率が90〜98%。売られすぎからの短期の反発に注目する声の一方、底は2027年初めとの見方（BofA）もある。",
+   "sources": [
+    "https://cardanocapital.substack.com/p/s-and-p-500-enters-correction-as",
+    "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-23-2026"
+   ],
+   "eventDate": "2026-11-22",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [],
+   "horizon": "数週間",
+   "confidence": "中"
+  }
+ ]
+}

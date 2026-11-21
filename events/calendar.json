@@ -51,6 +51,53 @@
    ]
   },
   {
+   "date": "2026-11-23",
+   "market": "jp",
+   "code": null,
+   "name": "東京証券取引所",
+   "type": "休場",
+   "title": "勤労感謝の日で休場",
+   "announcedOn": "2026-11-22",
+   "sources": []
+  },
+  {
+   "date": "2026-11-24",
+   "market": "us",
+   "t": "DELL",
+   "name": "Dell Technologies",
+   "type": "決算",
+   "title": "決算（引け後）。AIサーバーの需要・受注残に注目",
+   "announcedOn": "2026-11-22",
+   "sources": [
+    "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-23-2026"
+   ]
+  },
+  {
+   "date": "2026-11-24",
+   "market": "us",
+   "t": "ADI",
+   "name": "Analog Devices",
+   "type": "決算",
+   "title": "決算（寄り前）",
+   "announcedOn": "2026-11-22",
+   "sources": [
+    "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-23-2026"
+   ]
+  },
+  {
+   "date": "2026-11-26",
+   "market": "us",
+   "t": null,
+   "name": "米国市場",
+   "type": "休場",
+   "title": "感謝祭で休場（27日は短縮取引で米東部13時まで）",
+   "announcedOn": "2026-11-22",
+   "sources": [
+    "https://www.stocktitan.net/articles/earnings-calendar-week-of-november-23-2026",
+    "https://cardanocapital.substack.com/p/s-and-p-500-enters-correction-as"
+   ]
+  },
+  {
    "date": "2026-12-15",
    "market": "us",
    "t": "ANT",
