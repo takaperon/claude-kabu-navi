@@ -70,6 +70,10 @@ jobs:
         continue-on-error: true
         run: node scripts/earnpre.mjs --data data --out reports-out
 
+      - name: macro-jp (日銀の会合・FOMCの次の日)
+        continue-on-error: true
+        run: node scripts/macro-jp.mjs --data data --out reports-out
+
       - name: theme (テーマ株：出来事・火がついた日の後の動き)
         continue-on-error: true
         run: node scripts/theme.mjs --data data --out reports-out --triggers news-in/events/theme-triggers.json
