@@ -76,6 +76,7 @@
   特別注文（config の special：1回だけ指値で買い翌日の寄りで売る）の仕組みあり（ANT用に作ったがオーナー判断で取りやめ）
 - 2026-11-17 空いているお金をSPYに置く（config の idleSpy、オーナーOK）。買う株が出たらSPYを必要分だけ売る。SPYの数量は口座の保有（available_quantity・cost_price）で確かめる。
   値段は Nasdaq Basic のスナップショット（close）。preview の estimated_cost は約3%高めに出るので予備だけ。余力不足は preview で止めてエラーにしない
+- **2026-11-22 オーナーの判断で本番エンジンを停止**（live/config.json enabled=false・idleSpy=false。「実験だったので引き出す」）。保有のSPYはオーナーがアプリで売って引き出す。再開はオーナーの指示があってから（年末の資金準備の時に相談）。live-check（トークン維持・値上がりランキング）は続ける
 - SDK：pip の `webull-openapi-python-sdk`（region "jp"、本番 api.webull.co.jp、テスト jp-openapi-alb.uat.webullbroker.com）
 
 ## 場中の足（2026-11-18〜）
