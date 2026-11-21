@@ -42,6 +42,33 @@ export function proFeatures(ev, k, q, rawO, mkt, ctx) {
   };
 }
 
+// 増配の「理由」（2026-11-21〜、オーナー「増配デイトレでも理由があれば精度が上がるでしょ」）。決算の数字から分かるものだけ。1＝良い側
+//   list   : その会社の決算の行（dd の順）。dd/dt/ty/pt/op/nfop/div
+//   sig    : シグナル日（この日までに出た開示だけ使う）、lo3：シグナル日の3営業日前、y0〜y1：1年前の同じ決算を探す範囲（シグナル日の約300〜200営業日前）
+//   sectorRel : 業種の20日の動き − 市場全体の20日の動き（NaN 可）、withOther：上方修正と同時か
+export function divReasonFeatures(list, sig, lo3, y0, y1, sectorRel, withOther) {
+  const isRes = (r) => /FinancialStatements/.test(r.ty ?? '');
+  const res = list.filter((r) => r.dd <= sig && r.dd >= lo3).find(isRes);
+  let g = NaN, fg = NaN;
+  if (res) {
+    const prevY = list.filter((r) => isRes(r) && r.pt === res.pt && r.dd >= y0 && r.dd <= y1).at(-1);
+    if (prevY && prevY.op > 0 && res.op != null) g = res.op / prevY.op - 1;
+    if (res.pt === 'FY' && res.op > 0 && res.nfop != null) fg = res.nfop / res.op - 1;
+  }
+  const badPolicy = (Number.isFinite(g) && g < -0.05) || (Number.isFinite(fg) && fg <= -0.05);
+  const fy = list.filter((r) => isRes(r) && r.pt === 'FY' && r.div > 0 && r.dd < sig);
+  const streak = fy.length >= 2 && fy.at(-1).div > fy.at(-2).div * 1.001;
+  const profit = !badPolicy && (Number.isFinite(g) || Number.isFinite(fg));
+  return {
+    rProfit: profit ? 1 : 0,                                   // 利益が伴う増配
+    rStreak: streak ? 1 : 0,                                   // 去年も増配
+    rNotBadPolicy: badPolicy ? 0 : 1,                          // 減益なのに増配、ではない
+    rNotOutlookDown: Number.isFinite(fg) && fg <= -0.05 ? 0 : 1, // 来期減益の予想、ではない
+    rSectorOk: Number.isFinite(sectorRel) && sectorRel <= -0.03 ? 0 : 1, // 業種が弱っていない
+    rBest: profit && streak && withOther ? 1 : 0,              // 利益が伴う・去年も増配・上方修正と同時
+  };
+}
+
 // 検証が前半だけで選んだ「効く特徴」（rules）で点数をつける
 //   rules = { chosen: [{ key, side: 'is1'|'high'|'low', cut }], useIntra: bool }
 export function proScore(f, rules) {

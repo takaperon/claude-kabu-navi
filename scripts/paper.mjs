@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { detectEvents } from './lib/events.mjs';
-import { proFeatures, proScore } from './lib/pro-features.mjs';
+import { proFeatures, proScore, divReasonFeatures } from './lib/pro-features.mjs';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), [])
@@ -88,6 +88,9 @@ for (const f of fs.readdirSync(path.join(DATA, 'fins')).sort()) {
   for (const r of JSON.parse(fs.readFileSync(path.join(DATA, 'fins', f), 'utf8'))) finsRows.push(r);
 }
 const events = detectEvents(finsRows);
+const finsByCode = new Map();
+for (const r of finsRows) { if (!finsByCode.has(r.c)) finsByCode.set(r.c, []); finsByCode.get(r.c).push(r); }
+for (const a of finsByCode.values()) a.sort((x, y) => (x.dd + (x.dt ?? '')).localeCompare(y.dd + (y.dt ?? '')));
 
 // シグナル日 = 開示日以前で最後の営業日（引け後の開示も含めて翌営業日の始値で買う）
 const idxOf = new Map(dates.map((d, k) => [d, k]));
@@ -292,7 +295,19 @@ function proOf(e, k) {
     crowdMap.set(e.kind + '|' + k, set.size);
   }
   const q = (j) => { const p = j >= 0 ? pricesOn(dates[j]).get(e.c) : null; return p ? { o: p.o, h: p.h, l: p.l, c: p.c, va: p.va } : null; };
-  return proFeatures(e, k, q, (j) => rawOn(dates[j]).get(e.c) ?? NaN, mktByK.get(k), { sameKinds: sameKindsMap.get(e.c + '|' + e.dd) ?? new Set(), crowd: crowdMap.get(e.kind + '|' + k), isTradingDay: dates[k] === e.dd });
+  const f = proFeatures(e, k, q, (j) => rawOn(dates[j]).get(e.c) ?? NaN, mktByK.get(k), { sameKinds: sameKindsMap.get(e.c + '|' + e.dd) ?? new Set(), crowd: crowdMap.get(e.kind + '|' + k), isTradingDay: dates[k] === e.dd });
+  // 増配の理由（2026-11-21〜、検証 pro.mjs と同じ定義）
+  if (e.kind === 'div_up') Object.assign(f, divReasonFeatures(finsByCode.get(e.c) ?? [], dates[k], dates[Math.max(0, k - 3)], dates[Math.max(0, k - 300)], dates[Math.max(0, k - 200)], sectorRel(e.c, k), f.withOther));
+  return f;
+}
+// 業種（33業種）の20日の動き − 市場全体の20日の動き
+const secOf = (c) => { const m = info.get(c); return m ? (m.S33Nm ?? m.Sector33CodeName ?? m.S33 ?? null) : null; };
+function sectorRel(code, k) {
+  const s0 = secOf(code); if (!s0 || k < 20) return NaN;
+  const a = pricesOn(dates[k]), b = pricesOn(dates[k - 20]); let sum = 0, n = 0;
+  for (const [c, p] of a) { if (secOf(c) !== s0) continue; const pb = b.get(c)?.c; if (!(pb > 0 && p.c > 0)) continue; const r = p.c / pb - 1; if (Math.abs(r) < 1) { sum += r; n++; } }
+  const m = mktByK.get(k) ?? mktFor(k);
+  return n >= 5 ? sum / n - (m.idx(k) / m.idx(k - 20) - 1) : NaN;
 }
 for (const e of events) {
   const key = evKey(e);

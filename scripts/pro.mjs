@@ -10,7 +10,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { detectEvents } from './lib/events.mjs';
-import { proFeatures, proScore } from './lib/pro-features.mjs';
+import { proFeatures, proScore, divReasonFeatures } from './lib/pro-features.mjs';
 
 const args = Object.fromEntries(
   process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1]]] : a), [])
@@ -200,6 +200,7 @@ try {
   for (const t of T) {
     if (t.kind !== 'div_up') continue; n++;
     const R = reasonsOf(t); t.reasons = R;
+    Object.assign(t.f, divReasonFeatures(byCode.get(codes[t.i]) ?? [], dates[t.d], dates[Math.max(0, t.d - 3)], dates[Math.max(0, t.d - 300)], dates[Math.max(0, t.d - 200)], secRet(sec.get(codes[t.i]), t.d), t.f.withOther));
     addR(DR, '全体', t.half, t);
     for (const [kk, v] of Object.entries(R)) if (v) addR((DR[kk] ??= {}), v, t.half, t) ;
     // 組み合わせ：利益の伴い方 × 上方修正 × 業種
@@ -231,9 +232,10 @@ function summ(a) {
   const s = a.slice().sort((x, y) => x - y);
   return { n: a.length, avg: r4(a.reduce((x, y) => x + y, 0) / a.length), med: r4(s[a.length >> 1]), win: r4(a.filter((x) => x > 0).length / a.length), p10: r4(s[Math.floor(a.length * 0.1)]), p90: r4(s[Math.floor(a.length * 0.9)]) };
 }
-const NUMF = ['size', 'withOther', 'withDown', 'nextYear', 'yield', 'react0', 'run5', 'run20', 'ma25', 'vol20', 'atr', 'liq', 'crowd', 'mkt1', 'mkt5', 'mktTrend', 'us1', 'gap', 'mgap'];
+const NUMF = ['rProfit', 'rStreak', 'rNotBadPolicy', 'rNotOutlookDown', 'rSectorOk', 'rBest', 'size', 'withOther', 'withDown', 'nextYear', 'yield', 'react0', 'run5', 'run20', 'ma25', 'vol20', 'atr', 'liq', 'crowd', 'mkt1', 'mkt5', 'mktTrend', 'us1', 'gap', 'mgap'];
 const OPENF = new Set(['gap', 'mgap']); // 寄り付きの瞬間に分かる特徴
 const FNAME = {
+  rProfit: '利益が伴う増配', rStreak: '去年も増配', rNotBadPolicy: '減益なのに増配、ではない', rNotOutlookDown: '来期減益の予想、ではない', rSectorOk: '業種が弱っていない', rBest: '利益が伴う・去年も増配・上方修正と同時',
   size: '引き上げ幅', withOther: '増配と上方修正が同時', withDown: '同時に下方修正', nextYear: '本決算での来期予想', yield: '配当利回り（引き上げ後）',
   react0: '発表日の値動き', run5: '発表前5日の上昇', run20: '発表前20日の上昇', ma25: '25日線との差', vol20: '値動きの荒さ（日々の上下）', atr: '1日の値幅の平均',
   liq: '売買代金', crowd: '同じ日の同じ材料の件数', mkt1: '前日の市場全体', mkt5: '市場全体の5日の動き', mktTrend: '市場全体と25日平均の差', us1: '前夜の米国株（SPY）',
