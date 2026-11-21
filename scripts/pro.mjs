@@ -234,6 +234,7 @@ function summ(a) {
 }
 const NUMF = ['rProfit', 'rStreak', 'rNotBadPolicy', 'rNotOutlookDown', 'rSectorOk', 'rBest', 'size', 'withOther', 'withDown', 'nextYear', 'yield', 'react0', 'run5', 'run20', 'ma25', 'vol20', 'atr', 'liq', 'crowd', 'mkt1', 'mkt5', 'mktTrend', 'us1', 'gap', 'mgap'];
 const OPENF = new Set(['gap', 'mgap']); // 寄り付きの瞬間に分かる特徴
+const REASONF = new Set(['rProfit', 'rStreak', 'rNotBadPolicy', 'rNotOutlookDown', 'rSectorOk', 'rBest']); // 増配の理由（点数には混ぜず、除外・上乗せとして別に比べる）
 const FNAME = {
   rProfit: '利益が伴う増配', rStreak: '去年も増配', rNotBadPolicy: '減益なのに増配、ではない', rNotOutlookDown: '来期減益の予想、ではない', rSectorOk: '業種が弱っていない', rBest: '利益が伴う・去年も増配・上方修正と同時',
   size: '引き上げ幅', withOther: '増配と上方修正が同時', withDown: '同時に下方修正', nextYear: '本決算での来期予想', yield: '配当利回り（引き上げ後）',
@@ -399,7 +400,7 @@ for (const [kind, exit] of [['div_up', 'dt'], ['div_up', 'h5'], ['div_up', 'hl10
   const all = summ(tr.map((t) => t.out[exit].ret));
   const margin = exit === 'dt' ? 0.002 : 0.005;
   const chosen = [];
-  for (const f of NUMF.filter((c) => !OPENF.has(c))) {
+  for (const f of NUMF.filter((c) => !OPENF.has(c) && !REASONF.has(c))) {
     const v = tr.map((t) => t.f[f]).filter(Number.isFinite).sort((a, b) => a - b);
     if (v.length < tr.length * 0.3) continue;
     const uniq = new Set(v);
@@ -427,6 +428,27 @@ for (const [kind, exit] of [['div_up', 'dt'], ['div_up', 'h5'], ['div_up', 'hl10
       lot30x2: { train: sim(bd, 31, split - 1, { capital: 300000, maxN: 2, lot: true }), test: sim(bd, split, D - 1, { capital: 300000, maxN: 2, lot: true }) },
       lot30x3: { train: sim(bd, 31, split - 1, { capital: 300000, maxN: 3, lot: true }), test: sim(bd, split, D - 1, { capital: 300000, maxN: 3, lot: true }) },
     };
+  }
+  // 増配の理由を「除外」「上乗せ」として足した時（点数は今までのまま）。前半・後半とも今の点数だけより良い形だけ採用を考える
+  if (kind === 'div_up') {
+    const rs = {};
+    for (const k of [1, 2]) {
+      const base = (t) => score(t) >= k;
+      const variants = {
+        ['score' + k]: base,
+        ['score' + k + '_除く減益増配']: (t) => base(t) && t.f.rNotBadPolicy === 1,
+        ['score' + k + '_除く業種弱']: (t) => base(t) && t.f.rSectorOk === 1,
+        ['score' + k + '_除く両方']: (t) => base(t) && t.f.rNotBadPolicy === 1 && t.f.rSectorOk === 1,
+        ['score' + k + '_理由を上乗せ']: (t) => score(t) + (t.f.rBest === 1 ? 1 : 0) + (t.f.rStreak === 1 ? 1 : 0) - (t.f.rNotBadPolicy === 0 ? 1 : 0) >= k,
+      };
+      for (const [nm, ok] of Object.entries(variants)) {
+        const bd = byDayOf(sub, exit, (t) => (ok(t) ? score(t) * 10 + t.score : null));
+        rs[nm] = { lot30x2: { train: sim(bd, 31, split - 1, { capital: 300000, maxN: 2, lot: true }), test: sim(bd, split, D - 1, { capital: 300000, maxN: 2, lot: true }) },
+                   lot30x3: { train: sim(bd, 31, split - 1, { capital: 300000, maxN: 3, lot: true }), test: sim(bd, split, D - 1, { capital: 300000, maxN: 3, lot: true }) },
+                   perTrade: { train: summ(sub.filter((t) => t.half === 'train' && t.out[exit] && ok(t)).map((t) => t.out[exit].ret)), test: summ(sub.filter((t) => t.half === 'test' && t.out[exit] && ok(t)).map((t) => t.out[exit].ret)) } };
+      }
+    }
+    result.reasonSims = result.reasonSims ?? {}; result.reasonSims[kind + '|' + exit] = rs;
   }
   result.scored[kind + '|' + exit] = {
     chosen: [...chosen.map((c) => ({ f: FNAME[c.f], side: c.side === 'is1' ? 'あると良い' : c.side === 'high' ? '高いほど良い' : '低いほど良い', cut: r4(c.cut) })), ...(useIntra ? [{ f: '場中の発表', side: 'あると良い' }] : [])],
