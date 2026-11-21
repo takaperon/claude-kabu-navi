@@ -352,14 +352,15 @@ const STRATS = {
   swing_earn_gap: { name: '上方修正＋朝高い時だけ', fam: 'earn', gap: true,  desc: '上方修正の会社のうち、次の朝に前の日より高く始まった時だけ買います。5日後に売ります。', test: 'ev_earn_up_trend_gap|hold5' },
   real30_div_gap: { name: '本番想定（30万円）',  fam: 'div',  gap: true,  desc: 'ウィブルで本当にやる時と同じ条件です。資金30万円、日本株は100株単位でしか買えないので、増配＋朝高い時だけのルールで、同時に持つのは2銘柄まで。株価が高くて100株買えない銘柄は見送ります。', test: null },
   real30_dt:      { name: '本番想定デイトレ（30万円）', fam: 'dt', gap: false, desc: 'ウィブルで本当にやる時と同じ条件のデイトレです。資金30万円・100株単位で、増配の銘柄を朝に最大3銘柄買い、その日の引けで売ります。', test: null },
+  real30_dt_pro_sec: { name: '試験中：プロの判断デイトレ＋業種チェック（30万円）', fam: 'dt', gap: false, desc: '2026年11月21日から試験中。上の「プロの判断デイトレ」と同じ選び方に、「その会社の業種が20日で市場より3%以上弱い時は見送る」を足したものです。過去の検証では、業種ごと売られている時の増配は伸びにくく、見送ると後半の1回あたりの成績が上がりました（前半はほぼ同じ）。', test: null },
   real30_dt_pro:  { name: '試験中：プロの判断デイトレ（30万円）', fam: 'dt', gap: false, desc: '2026年11月17日から試験中。過去5年の検証で「効く」と分かった特徴（増配後の配当利回り・上方修正も同時・相場が下げた後・場中の発表など）に2つ以上当てはまる増配株だけを、朝に買います。引けでプラスなら売り、マイナスなら最長10日待って、買値に戻った日に売ります。資金30万円・100株単位・3銘柄まで。', test: null },
   real30_div_pro: { name: '試験中：プロの判断スイング（30万円）', fam: 'div', gap: false, desc: '2026年11月17日から試験中。増配株のうち、検証で効くと分かった特徴に1つ以上当てはまるものだけを買い、5日後に売ります。どれにも当てはまらない増配株は、過去の後半で平均マイナスでした。資金30万円・100株単位・3銘柄まで。', test: null },
   dt_div:         { name: '増配デイトレ',        fam: 'dt',   gap: false, desc: '増配の会社を次の朝の寄り付きで買い、その日の引け（15時半）に売ります。夜をまたいで持ちません。', test: 'dt' },
 };
 const ORDER = ['swing_div', 'swing_div_gap', 'swing_earn', 'swing_earn_gap', 'dt_div'];
 const REAL = 'real30_div_gap';
-const REALS = ['real30_div_gap', 'real30_dt', 'real30_dt_pro', 'real30_div_pro'];
-const REAL_TITLE = { real30_div_gap: ['本番と同じ条件なら', '30万円・100株単位・2銘柄まで（増配＋朝高）。'], real30_dt: ['本番と同じ条件のデイトレなら', '30万円・100株単位・3銘柄まで（増配デイトレ）。'], real30_dt_pro: ['試験中：プロの判断デイトレ', '点数2以上だけ・マイナスなら最長10日持ち越し（30万円・3銘柄）。'], real30_div_pro: ['試験中：プロの判断スイング', '点数1以上だけ・5日（30万円・3銘柄）。'] };
+const REALS = ['real30_div_gap', 'real30_dt', 'real30_dt_pro', 'real30_dt_pro_sec', 'real30_div_pro'];
+const REAL_TITLE = { real30_div_gap: ['本番と同じ条件なら', '30万円・100株単位・2銘柄まで（増配＋朝高）。'], real30_dt: ['本番と同じ条件のデイトレなら', '30万円・100株単位・3銘柄まで（増配デイトレ）。'], real30_dt_pro: ['試験中：プロの判断デイトレ', '点数2以上だけ・マイナスなら最長10日持ち越し（30万円・3銘柄）。'], real30_div_pro: ['試験中：プロの判断スイング', '点数1以上だけ・5日（30万円・3銘柄）。'], real30_dt_pro_sec: ['試験中：デイトレ＋業種チェック', '業種が弱っている時は見送る（30万円・3銘柄）。'] };
 const ALL = () => [...ORDER, ...REALS.filter((k) => paper.strategies[k])];
 const capOf = (k) => paper.strategies[k]?.capital ?? START;
 const RC = { div: 'var(--c-div)', earn: 'var(--c-earn)', dt: 'var(--c-dt)' };

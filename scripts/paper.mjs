@@ -43,6 +43,7 @@ const STRATS = {
   real30_div_gap: { name: '本番想定：30万円・100株単位・2銘柄（増配＋朝高）', kinds: ['div_up'], hold: 5, gap: true, base: 'swing_div_gap', capital: 300_000, maxN: 2, lot: 100 },
   // 試験中（2026-11-17〜、オーナーの指示「もっと専門性を持って」）：プロの判断の検証（scripts/pro.mjs）で前半だけで選んだ「効く特徴」の点数で選ぶ
   real30_dt_pro: { name: '試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）', kinds: ['div_up'], hold: 1, holdLosers: 10, capital: 300_000, maxN: 3, lot: 100, pro: { key: 'div_up|hl10', min: 2 }, trial: true },
+  real30_dt_pro_sec: { name: '試験中：プロの判断のデイトレ＋業種が弱っている時は見送る（2026-11-21〜）', kinds: ['div_up'], hold: 1, holdLosers: 10, capital: 300_000, maxN: 3, lot: 100, pro: { key: 'div_up|hl10', min: 2, skipWeakSector: true }, trial: true },
   real30_div_pro: { name: '試験中：プロの判断のスイング（点数1以上・5日）', kinds: ['div_up'], hold: 5, capital: 300_000, maxN: 3, lot: 100, pro: { key: 'div_up|h5', min: 1 }, trial: true },
 };
 const choiceF = path.join(DATA, 'paper', 'pro-choice.json');
@@ -332,9 +333,11 @@ for (const e of events) {
       const f = proOf(e, k);
       const sc = proScore(f, rules);
       if (sc < cfg.pro.min) continue;
+      if (cfg.pro.skipWeakSector && f.rSectorOk === 0) continue; // 業種が20日で市場より-3%以下なら見送る（divreason-jp・pro-jp の reasonSims）
       const hit = rules.chosen.filter((c) => proScore(f, { chosen: [c] }) > 0).map(proLabel);
       if (rules.useIntra && f.timing === 'intraday') hit.push('場中の発表');
       reason += `／点数${sc}：${hit.join('・')}${Number.isFinite(f.yield) ? `（利回り${pct(f.yield)}%）` : ''}`;
+      if (e.kind === 'div_up') { const why = [f.rProfit ? '利益が伴う' : null, f.rStreak ? '去年も増配' : null, f.rNotBadPolicy === 0 ? '減益なのに増配' : null, f.rSectorOk === 0 ? '業種が弱い' : null].filter(Boolean); if (why.length) reason += `／理由：${why.join('・')}`; }
       score = sc * 10 + e.score;
     }
     st.pending.push({ code: e.c, kind: e.kind, score, reason, signalDate: dates[k], late });
