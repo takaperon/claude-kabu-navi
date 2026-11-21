@@ -171,7 +171,7 @@ try {
   // 業種（33業種）の20日の勢い
   const sec = new Map(master.map((m) => [m.Code, m.S33Nm ?? m.Sector33CodeName ?? m.S33 ?? null]));
   const secIdx = new Map(); codes.forEach((c, i) => { const s0 = sec.get(c); if (!s0) return; if (!secIdx.has(s0)) secIdx.set(s0, []); secIdx.get(s0).push(i); });
-  const secRet = (s0, d) => { const ix = secIdx.get(s0); if (!ix || d < 20) return NaN; let s1 = 0, n = 0; for (const i of ix) { const a = at(C, i, d - 20), b = at(C, i, d); if (a > 0 && b > 0) { const r = b / a - 1; if (Math.abs(r) < 1) { s1 += r; n++; } } } return n >= 5 ? s1 / n - (MK[d] / MK[d - 20] - 1) : NaN; };
+  const secRet = (s0, d) => { const ix = secIdx.get(s0); if (!ix || d < 20) return NaN; let s1 = 0, n = 0; for (const i of ix) { const a = at(C, i, d - 20), b = at(C, i, d); if (a > 0 && b > 0) { const r = b / a - 1; if (Math.abs(r) < 1) { s1 += r; n++; } } } return n >= 5 ? s1 / n - (MKTI[d] / MKTI[d - 20] - 1) : NaN; };
   const reasonsOf = (t) => {
     const code = codes[t.i]; const list = byCode.get(code) ?? []; const dd = dates[t.d];
     // 発表の日（シグナルの日以前で一番新しい div_up の開示）
@@ -205,6 +205,9 @@ try {
     // 組み合わせ：利益の伴い方 × 上方修正 × 業種
     if (R.policy) addR(COMBO, R.policy + '・' + R.earn, t.half, t);
     if (R.profit && R.sector) addR(COMBO, R.profit + '・' + R.sector, t.half, t);
+    if (R.policy && R.streak) addR(COMBO, R.policy + '・' + R.streak, t.half, t);
+    addR(COMBO, R.policy === '減益なのに増配（株主還元の方針）' ? '除外：減益なのに増配' : '減益なのに増配を除いた全部', t.half, t);
+    if (R.policy === '利益が伴う増配' && R.streak === '去年も増配' && R.earn === '上方修正と同時') addR(COMBO, '利益が伴う・去年も増配・上方修正と同時', t.half, t);
   }
   const sumX = (w) => { if (!w) return null; const f2 = (a) => { if (!a.length) return { n: 0 }; const z = a.slice().sort((x, y) => x - y); return { n: a.length, avg: Math.round(a.reduce((x, y) => x + y, 0) / a.length * 10000) / 10000, med: Math.round(z[a.length >> 1] * 10000) / 10000, win: Math.round(a.filter((x) => x > 0).length / a.length * 1000) / 1000 }; }; return { train: f2(w.train), test: f2(w.test) }; };
   const fin = (o) => Object.fromEntries(Object.entries(o).map(([k, g]) => [k, g.dt || g.h5 ? Object.fromEntries(Object.entries(g).map(([ex, w]) => [ex, sumX(w)])) : fin(g)]));
