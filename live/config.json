@@ -1,8 +1,8 @@
 {
-  "enabled": true,
+  "enabled": false,
   "mode": "live",
   "dailyLossStopPct": 5,
   "maxErrors": 3,
   "resetHalt": false,
-  "idleSpy": true
+  "idleSpy": false
 }
