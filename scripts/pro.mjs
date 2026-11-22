@@ -85,6 +85,15 @@ try {
   for (let k = 1; k < rows.length; k++) US.set(rows[k][0], +rows[k][4] / +rows[k - 1][4] - 1);
   status.spyDays = US.size;
 } catch (e) { status.spyError = e.name; }
+// Stooq が取れない時（2026-11 は Actions から取れていない）は FRED の S&P500（指数の終値、キー不要）で代わりにする（2026-11-22〜）
+if (US.size < 100) {
+  try {
+    const res = await fetch('https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500', { headers: { 'User-Agent': 'kabunavi-research' }, signal: AbortSignal.timeout(30000) });
+    const rows = (await res.text()).trim().split('\n').slice(1).map((l) => l.split(',')).filter((r) => /^\d{4}-\d{2}-\d{2}$/.test(r[0]) && +r[1] > 0);
+    for (let k = 1; k < rows.length; k++) US.set(rows[k][0], +rows[k][1] / +rows[k - 1][1] - 1);
+    status.spyDays = US.size; status.spySource = 'FRED SP500';
+  } catch (e) { status.spyError2 = e.name; }
+}
 const usDates = [...US.keys()].sort();
 function usBefore(jpDate) { // 日本の取引日 jpDate の朝までに終わっている米国の取引日（jpDate より前の最後の日）
   let lo = 0, hi = usDates.length;

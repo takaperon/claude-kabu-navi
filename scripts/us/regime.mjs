@@ -33,6 +33,15 @@ const FR = {};
 for (const id of ['DFF', 'DGS10', 'VIXCLS']) { FR[id] = await fred(id); status[id] = FR[id] ? FR[id].size : 0; }
 // その日までに出ている一番新しい値（未来の値を使わない）
 const asof = (m) => { const a = new Float64Array(D).fill(NaN); if (!m) return a; let last = NaN; const ks = [...m.keys()].sort(); let j = 0; for (let k = 0; k < D; k++) { while (j < ks.length && ks[j] <= dates[k]) { last = m.get(ks[j]); j++; } a[k] = last; } return a; };
+// VIX は CBOE の公開CSV（その日の引けまで入る）を先に使い、取れなければ FRED（1日遅れることがある、2026-11-20 は 28.44 のまま・実際は 35.89）
+try {
+  const r = await fetch('https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv', { headers: { 'User-Agent': 'kabunavi-research' }, signal: AbortSignal.timeout(30000) });
+  if (r.ok) {
+    const m = new Map();
+    for (const line of (await r.text()).trim().split('\n').slice(1)) { const [d, , , , c] = line.split(','); const mm = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(d ?? ''); if (mm && +c > 0) m.set(`${mm[3]}-${mm[1]}-${mm[2]}`, +c); }
+    if (m.size > 100) { for (const [d, v] of FR.VIXCLS ?? []) if (!m.has(d)) m.set(d, v); FR.VIXCLS = m; status.vixSource = 'CBOE'; status.vixLast = [...m.keys()].sort().at(-1); }
+  }
+} catch (e) { status.vixCboeError = e.name; }
 const FF = asof(FR.DFF), Y10 = asof(FR.DGS10), VIX = asof(FR.VIXCLS);
 
 // ---- 銘柄（広がり：50日平均より上にある銘柄の割合） ----
