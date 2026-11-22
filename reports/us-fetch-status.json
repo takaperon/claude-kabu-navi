@@ -1,20 +1,20 @@
 {
-  "startedAt": "2026-11-21T03:13:54.392Z",
+  "startedAt": "2026-11-22T02:14:32.632Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
     "requests": 255,
-    "updated": 226,
+    "updated": 229,
     "failed": 3,
     "limitHits": 5,
     "lastError": "429 {\"detail\":\"Error: You have run over your hourly request allocation. Please upgrade at https://api.tiingo.com/pricing to have your limits increased.\"}",
     "priority": 16,
-    "needed": 499
+    "needed": 289
   },
   "sec": {
-    "requests": 503,
+    "requests": 502,
     "submissions": 502,
-    "facts": 1,
+    "facts": 0,
     "failed": 0,
     "lastError": null,
     "probe": [
@@ -23,8 +23,7 @@
         "status": 200,
         "body": "ok"
       }
-    ],
-    "newEarnings": 1
+    ]
   },
   "av": {
     "keyPresent": true,
@@ -36,7 +35,7 @@
     "needed": 0
   },
   "stoppedBy": "tiingo-limit",
-  "finishedAt": "2026-11-21T07:24:14.823Z",
+  "finishedAt": "2026-11-22T06:24:55.193Z",
   "pricesStored": 500,
   "secStored": 502
 }
