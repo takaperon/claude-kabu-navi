@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-23T02:47:47.581Z",
+  "updatedAt": "2026-11-23T22:50:22.053Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": "spy",
-    "chosenAt": "2026-11-23T02:47:44.404Z",
+    "chosenAt": "2026-11-23T22:50:18.834Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-20",
+  "lastDate": "2026-11-23",
   "capital": 300000,
-  "equityYen": 274326,
-  "returnPct": -8.6,
-  "spyReturnPct": -8.6,
+  "equityYen": 287242,
+  "returnPct": -4.3,
+  "spyReturnPct": -4.3,
   "idleInSpyPct": 100,
   "idlePct": 100,
   "taxYen": 0,
@@ -140,16 +140,20 @@
     {
       "date": "2026-11-20",
       "value": 274326
+    },
+    {
+      "date": "2026-11-23",
+      "value": 287242
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-23T02:47:45.231Z",
+    "chosenAt": "2026-11-23T22:50:19.826Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 273072,
-    "returnPct": -9,
+    "equityYen": 285468,
+    "returnPct": -4.8,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
@@ -159,11 +163,11 @@
         "name": "Palo Alto Networks",
         "reason": "決算の翌日に+6.4%（2026-11-19）／点数4：50日線の近く・値幅が大きい・売買代金が大きい・S&P500が下げた日",
         "entryDate": "2026-11-20",
-        "daysHeld": 1,
-        "daysLeft": 39,
-        "unrealPct": -4.6,
+        "daysHeld": 2,
+        "daysLeft": 38,
+        "unrealPct": -1.8,
         "costYen": 27433,
-        "valueYen": 26179
+        "valueYen": 26950
       }
     ],
     "nextBuys": [],
@@ -192,6 +196,10 @@
       {
         "date": "2026-11-20",
         "value": 273072
+      },
+      {
+        "date": "2026-11-23",
+        "value": 285468
       }
     ]
   }
