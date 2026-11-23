@@ -1,197 +1,197 @@
 {
- "updatedAt": "2026-11-23T04:00:33.799210+00:00",
+ "updatedAt": "2026-11-23T22:48:42.452758+00:00",
  "error": null,
  "universe": 502,
  "batchOk": 25,
  "single": 18,
- "date": "2026-11-20",
+ "date": "2026-11-23",
  "count": 500,
  "note": "S&P500構成銘柄（Wikipediaの一覧）。ウィブルの相場情報（Nasdaq Basic）",
- "avgPct": -2.29,
- "up": 118,
- "down": 371,
+ "avgPct": 3.02,
+ "up": 416,
+ "down": 78,
  "gainers": [
-  {
-   "t": "GPN",
-   "name": "Global Payments",
-   "sector": "金融",
-   "pct": 9.9
-  },
-  {
-   "t": "GIS",
-   "name": "General Mills",
-   "sector": "生活必需品",
-   "pct": 3.7
-  },
-  {
-   "t": "MKC",
-   "name": "McCormick & Company",
-   "sector": "生活必需品",
-   "pct": 3.4
-  },
-  {
-   "t": "HCA",
-   "name": "HCA Healthcare",
-   "sector": "ヘルスケア",
-   "pct": 3.3
-  },
-  {
-   "t": "CSGP",
-   "name": "CoStar Group",
-   "sector": "不動産",
-   "pct": 3.2
-  },
-  {
-   "t": "CTSH",
-   "name": "Cognizant",
-   "sector": "情報技術",
-   "pct": 3.1
-  },
-  {
-   "t": "DVA",
-   "name": "DaVita",
-   "sector": "ヘルスケア",
-   "pct": 3.0
-  },
-  {
-   "t": "UNH",
-   "name": "UnitedHealth Group",
-   "sector": "ヘルスケア",
-   "pct": 2.8
-  },
-  {
-   "t": "HUM",
-   "name": "Humana",
-   "sector": "ヘルスケア",
-   "pct": 2.6
-  },
-  {
-   "t": "FICO",
-   "name": "Fair Isaac",
-   "sector": "情報技術",
-   "pct": 2.5
-  },
-  {
-   "t": "UHS",
-   "name": "Universal Health Services",
-   "sector": "ヘルスケア",
-   "pct": 2.5
-  },
-  {
-   "t": "SBAC",
-   "name": "SBA Communications",
-   "sector": "不動産",
-   "pct": 2.2
-  },
-  {
-   "t": "T",
-   "name": "AT&T",
-   "sector": "通信サービス",
-   "pct": 2.1
-  },
-  {
-   "t": "HRL",
-   "name": "Hormel Foods",
-   "sector": "生活必需品",
-   "pct": 2.1
-  },
-  {
-   "t": "DHI",
-   "name": "D. R. Horton",
-   "sector": "一般消費財",
-   "pct": 2.0
-  },
-  {
-   "t": "TSN",
-   "name": "Tyson Foods",
-   "sector": "生活必需品",
-   "pct": 2.0
-  },
-  {
-   "t": "CL",
-   "name": "Colgate-Palmolive",
-   "sector": "生活必需品",
-   "pct": 1.9
-  },
-  {
-   "t": "KHC",
-   "name": "Kraft Heinz",
-   "sector": "生活必需品",
-   "pct": 1.9
-  },
-  {
-   "t": "TMUS",
-   "name": "T-Mobile US",
-   "sector": "通信サービス",
-   "pct": 1.9
-  },
-  {
-   "t": "PHM",
-   "name": "PulteGroup",
-   "sector": "一般消費財",
-   "pct": 1.8
-  }
- ],
- "losers": [
-  {
-   "t": "SNDK",
-   "name": "Sandisk",
-   "sector": "情報技術",
-   "pct": -16.1
-  },
-  {
-   "t": "BE",
-   "name": "Bloom Energy",
-   "sector": "資本財",
-   "pct": -15.3
-  },
   {
    "t": "NVDA",
    "name": "Nvidia",
    "sector": "情報技術",
-   "pct": -14.0
+   "pct": 31.5
+  },
+  {
+   "t": "DELL",
+   "name": "Dell Technologies",
+   "sector": "情報技術",
+   "pct": 20.5
   },
   {
    "t": "MU",
    "name": "Micron Technology",
    "sector": "情報技術",
-   "pct": -13.9
+   "pct": 19.0
+  },
+  {
+   "t": "MRVL",
+   "name": "Marvell Technology",
+   "sector": "情報技術",
+   "pct": 18.4
   },
   {
    "t": "LITE",
    "name": "Lumentum",
    "sector": "情報技術",
-   "pct": -13.9
+   "pct": 18.2
   },
   {
-   "t": "AMD",
-   "name": "Advanced Micro Devices",
+   "t": "BE",
+   "name": "Bloom Energy",
+   "sector": "資本財",
+   "pct": 18.1
+  },
+  {
+   "t": "HPE",
+   "name": "Hewlett Packard Enterprise",
    "sector": "情報技術",
-   "pct": -13.2
+   "pct": 17.4
+  },
+  {
+   "t": "MPWR",
+   "name": "Monolithic Power Systems",
+   "sector": "情報技術",
+   "pct": 16.8
+  },
+  {
+   "t": "INTC",
+   "name": "Intel",
+   "sector": "情報技術",
+   "pct": 16.3
   },
   {
    "t": "COHR",
    "name": "Coherent Corp.",
    "sector": "情報技術",
-   "pct": -12.9
+   "pct": 15.3
   },
   {
-   "t": "INTU",
-   "name": "Intuit",
+   "t": "KLAC",
+   "name": "KLA Corporation",
    "sector": "情報技術",
-   "pct": -12.8
+   "pct": 15.0
   },
   {
-   "t": "P",
-   "name": "Everpure",
+   "t": "GLW",
+   "name": "Corning Inc.",
    "sector": "情報技術",
-   "pct": -12.7
+   "pct": 14.8
+  },
+  {
+   "t": "AMAT",
+   "name": "Applied Materials",
+   "sector": "情報技術",
+   "pct": 14.6
+  },
+  {
+   "t": "LRCX",
+   "name": "Lam Research",
+   "sector": "情報技術",
+   "pct": 14.5
+  },
+  {
+   "t": "TER",
+   "name": "Teradyne",
+   "sector": "情報技術",
+   "pct": 14.1
   },
   {
    "t": "STX",
    "name": "Seagate Technology",
    "sector": "情報技術",
-   "pct": -12.3
+   "pct": 13.8
+  },
+  {
+   "t": "WDC",
+   "name": "Western Digital",
+   "sector": "情報技術",
+   "pct": 13.8
+  },
+  {
+   "t": "SMCI",
+   "name": "Supermicro",
+   "sector": "情報技術",
+   "pct": 13.3
+  },
+  {
+   "t": "CIEN",
+   "name": "Ciena",
+   "sector": "情報技術",
+   "pct": 13.0
+  },
+  {
+   "t": "ORCL",
+   "name": "Oracle Corporation",
+   "sector": "情報技術",
+   "pct": 12.3
+  }
+ ],
+ "losers": [
+  {
+   "t": "CRWD",
+   "name": "CrowdStrike",
+   "sector": "情報技術",
+   "pct": -8.9
+  },
+  {
+   "t": "IP",
+   "name": "International Paper",
+   "sector": "素材",
+   "pct": -4.5
+  },
+  {
+   "t": "ELV",
+   "name": "Elevance Health",
+   "sector": "ヘルスケア",
+   "pct": -3.8
+  },
+  {
+   "t": "TPL",
+   "name": "Texas Pacific Land Corporation",
+   "sector": "エネルギー",
+   "pct": -3.5
+  },
+  {
+   "t": "TSN",
+   "name": "Tyson Foods",
+   "sector": "生活必需品",
+   "pct": -3.3
+  },
+  {
+   "t": "MNST",
+   "name": "Monster Beverage",
+   "sector": "生活必需品",
+   "pct": -2.9
+  },
+  {
+   "t": "STZ",
+   "name": "Constellation Brands",
+   "sector": "生活必需品",
+   "pct": -2.9
+  },
+  {
+   "t": "COP",
+   "name": "ConocoPhillips",
+   "sector": "エネルギー",
+   "pct": -2.9
+  },
+  {
+   "t": "AMT",
+   "name": "American Tower",
+   "sector": "不動産",
+   "pct": -2.7
+  },
+  {
+   "t": "MPC",
+   "name": "Marathon Petroleum",
+   "sector": "エネルギー",
+   "pct": -2.6
   }
  ]
 }
