@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T04:44:10.614Z",
+  "updatedAt": "2026-11-23T22:00:40.394Z",
   "startDate": "2026-11-05",
   "lastDate": "2026-11-20",
   "strategies": {
@@ -1455,7 +1455,7 @@
     "real30_dt_pro": {
       "name": "試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）",
       "trial": true,
-      "proChosenAt": "2026-11-22T04:39:14.318Z",
+      "proChosenAt": "2026-11-23T04:44:22.381Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1497,7 +1497,7 @@
     "real30_dt_pro_sec": {
       "name": "試験中：プロの判断のデイトレ＋業種が弱っている時は見送る（2026-11-21〜）",
       "trial": true,
-      "proChosenAt": "2026-11-22T04:39:14.318Z",
+      "proChosenAt": "2026-11-23T04:44:22.381Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1523,7 +1523,7 @@
     "real30_div_pro": {
       "name": "試験中：プロの判断のスイング（点数1以上・5日）",
       "trial": true,
-      "proChosenAt": "2026-11-22T04:39:14.318Z",
+      "proChosenAt": "2026-11-23T04:44:22.381Z",
       "hold": 5,
       "gap": false,
       "kinds": [

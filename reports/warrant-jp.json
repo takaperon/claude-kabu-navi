@@ -1,6 +1,6 @@
 {
  "ok": true,
- "generatedAt": "2026-11-23T04:47:52.655Z",
+ "generatedAt": "2026-11-23T22:01:16.568Z",
  "periods": {
   "train": [
    "2021-11-09",
@@ -15,7 +15,7 @@
  "status": {
   "source": "webapi.yanoshin.jp",
   "months": 61,
-  "fetched": 122,
+  "fetched": 4,
   "errors": 0,
   "firstError": null,
   "items": 298,
