@@ -1,0 +1,172 @@
+{
+ "date": "2026-11-23",
+ "items": [
+  {
+   "market": "us",
+   "t": "NVDA",
+   "pct": 31.5,
+   "cat": "テーマ/思惑",
+   "reason": "11/12に辞任したジェンセン・フアン氏が11/23付でCEOに復帰（取締役会が全会一致、米政府とも協議）。辞任で売られた分の買い戻し",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/",
+    "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/",
+    "https://www.dexerto.com/gaming/nvidia-reinstates-jensen-huang-as-ceo-amid-ongoing-foreign-intelligence-investigation-3430657/"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "DELL",
+   "pct": 20.5,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株の一斉の買い戻しの銘柄の1つとして記事に名前（11/24引け後に決算）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "MU",
+   "pct": 19.0,
+   "cat": "新製品/受注",
+   "reason": "複数年のメモリー供給契約の報道",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "MRVL",
+   "pct": 18.4,
+   "cat": "不明",
+   "reason": "AI・半導体株が一斉に戻した日（ナスダック+6.5%）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "HPE",
+   "pct": 17.4,
+   "cat": "不明",
+   "reason": "AI・半導体株が一斉に戻した日（ナスダック+6.5%）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "MPWR",
+   "pct": 16.8,
+   "cat": "不明",
+   "reason": "AI・半導体株が一斉に戻した日（ナスダック+6.5%）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "INTC",
+   "pct": 16.3,
+   "cat": "不明",
+   "reason": "AI・半導体株が一斉に戻した日（ナスダック+6.5%）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "COHR",
+   "pct": 15.3,
+   "cat": "不明",
+   "reason": "AI・半導体株が一斉に戻した日（ナスダック+6.5%）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "LITE",
+   "pct": 18.2,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株の一斉の買い戻しの銘柄の1つとして記事に名前",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "BE",
+   "pct": 18.1,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株の一斉の買い戻しの銘柄の1つとして記事に名前",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "CRWD",
+   "pct": -8.9,
+   "cat": "提携/買収/TOB",
+   "reason": "Zscalerを約440億ドルの株式交換で買収すると発表（買う側が下げ、Zscalerは+17.7%）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "IP",
+   "pct": -4.5,
+   "cat": "不明",
+   "reason": "AI株に資金が戻った日に下げた。個別の理由は記事で確認できず",
+   "sources": [
+    "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "ELV",
+   "pct": -3.8,
+   "cat": "不明",
+   "reason": "AI株に資金が戻った日に下げた。個別の理由は記事で確認できず",
+   "sources": [
+    "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "TPL",
+   "pct": -3.5,
+   "cat": "不明",
+   "reason": "AI株に資金が戻った日に下げた。個別の理由は記事で確認できず",
+   "sources": [
+    "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "TSN",
+   "pct": -3.3,
+   "cat": "不明",
+   "reason": "AI株に資金が戻った日に下げた。個別の理由は記事で確認できず",
+   "sources": [
+    "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/"
+   ],
+   "confidence": "低"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-24",
+ "status": "未検証",
+ "period": "2026-11-23 朝〜2026-11-24 朝",
+ "note": "米国株は大幅反発：S&P500 +4.7%（約7,238、7日続落が止まり2025年4月以来の上げ幅）、ナスダック +6.5%、ダウ +3.0%。エヌビディア +31.5%（フアン氏のCEO復帰）。CMEの日経225先物は58,195円（大証終値比+1,775円、3時台）。",
+ "judgment": "米国：VIXは11/20の35.89（強い不安）の後の大きな戻り。過去は強い不安の後のSPY 20日が前半+3.5%/後半+9.8%で、今回はその形の初日。ただ今週はPCE（11/25）、12/9にFOMC（利上げ中、会合の2日はSPY平均-0.4%）。仮想売買はいつもどおり、本番は停止中。日本：11/20の大幅安（-3,007円）から先物は戻して始まる見込み。保有のエア・ウォーター（仮想）は予定どおり、HiJoJoは今日の寄りで売り。",
+ "items": [
+  {
+   "headline": "米国株が大幅反発、エヌビディア+31%（フアン氏がCEOに復帰）",
+   "summary": "S&P500 +4.7%、ナスダック +6.5%。AI・半導体株がまとめて戻した（マイクロン+19%、デル+20%）。",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/",
+    "https://247wallst.com/investing/2026/11/23/stock-market-today-dow-sp-500-and-nasdaq-surge-as-nvidia-leads-a-major-ai-rebound/"
+   ],
+   "eventDate": "2026-11-23",
+   "type": "マクロ",
+   "sectors": [
+    "半導体",
+    "AI"
+   ],
+   "stocks": [
+    {
+     "t": "NVDA",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "クラウドストライクがZscalerを約440億ドルで買収",
+   "summary": "株式交換。完了は2027年後半の見込み。買う側は-8.9%、Zscalerは+17.7%。",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/23/stock-market-today-nov-23-markets-rebound-from-correction-on-ai-relief-rally/"
+   ],
+   "eventDate": "2026-11-23",
+   "type": "企業",
+   "sectors": [
+    "セキュリティ"
+   ],
+   "stocks": [
+    {
+     "t": "CRWD",
+     "dir": "-"
+    },
+    {
+     "t": "ZS",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "CMEの日経平均先物は58,195円（+1,775円）",
+   "summary": "米国の反発を受けて、11/20の大幅安から戻して始まる見込み。",
+   "sources": [
+    "https://fx.minkabu.jp/news/385212"
+   ],
+   "eventDate": "2026-11-24",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [],
+   "horizon": "当日",
+   "confidence": "中"
+  }
+ ]
+}
