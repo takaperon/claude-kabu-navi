@@ -74,6 +74,11 @@ jobs:
         continue-on-error: true
         run: node scripts/macro-jp.mjs --data data --out reports-out
 
+      - name: warrant (新株予約権の行使完了の後の値動き)
+        continue-on-error: true
+        timeout-minutes: 20
+        run: node scripts/warrant.mjs --data data --out reports-out
+
       - name: theme (テーマ株：出来事・火がついた日の後の動き)
         continue-on-error: true
         run: node scripts/theme.mjs --data data --out reports-out --triggers news-in/events/theme-triggers.json
