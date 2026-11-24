@@ -1,0 +1,328 @@
+{
+ "date": "2026-11-24",
+ "items": [
+  {
+   "market": "jp",
+   "code": "2345",
+   "pct": 30.6,
+   "cat": "テーマ/思惑",
+   "reason": "割安感を狙った投機的な買いとみられる（材料の記載なし）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878996.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3905",
+   "pct": 15.9,
+   "cat": "需給（指数採用など）",
+   "reason": "オアシス・マネジメントの保有比率の上昇",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4062",
+   "pct": 15.0,
+   "cat": "テーマ/思惑",
+   "reason": "フアン氏のエヌビディアCEO復帰と米AI株の急反発",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "6727",
+   "pct": 15.0,
+   "cat": "提携/買収/TOB",
+   "reason": "MBO（TOB）発表を受けてTOB価格に近づいた",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "6981",
+   "pct": 14.9,
+   "cat": "テーマ/思惑",
+   "reason": "米AI関連株の反発、MLCC関連に資金",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "3110",
+   "pct": 14.3,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株の一角として反発",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "6525",
+   "pct": 14.3,
+   "cat": "テーマ/思惑",
+   "reason": "サムスン電子など半導体株の大幅高",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "3624",
+   "pct": 14.1,
+   "cat": "不明",
+   "reason": "11/18〜20の3連騰の後、さらに上昇。記事に理由の記載なし",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6324",
+   "pct": 13.3,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株高を受けた押し目買い",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4461",
+   "pct": 13.1,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株として先週末の急落から反発",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878994.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4165",
+   "pct": -16.6,
+   "cat": "不明",
+   "reason": "前週末からの売りが続いた（材料の記載なし）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878996.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "130A",
+   "pct": -15.8,
+   "cat": "不明",
+   "reason": "25日移動平均線を割り込み利益確定売り（材料の記載なし）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261125/878996.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4575",
+   "pct": -13.9,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "2334",
+   "pct": -11.7,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3042",
+   "pct": -9.6,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "DLTR",
+   "pct": 11.2,
+   "cat": "決算",
+   "reason": "決算が予想を上回り、見通しを引き上げ",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "CSGP",
+   "pct": 8.1,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "MRNA",
+   "pct": 7.2,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CHTR",
+   "pct": 6.2,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "NKE",
+   "pct": 5.9,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "IP",
+   "pct": 5.7,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "AMGN",
+   "pct": 5.5,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "NVR",
+   "pct": 5.5,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "INCY",
+   "pct": 5.3,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "TTWO",
+   "pct": 5.3,
+   "cat": "不明",
+   "reason": "半導体株から資金が移った日（ダウは上昇）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "ADI",
+   "pct": -17.4,
+   "cat": "不明",
+   "reason": "11/24寄り前に決算発表。下げた理由は記事で確認できず",
+   "sources": [
+    "https://www.analog.com/en/newsroom/press-releases/2026/10-22-2026-adi-report-4q-fy2026-financial-results.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "HPE",
+   "pct": -16.3,
+   "cat": "決算",
+   "reason": "部品（メモリーなど）不足が2028年まで続く恐れ、クラウド・AI部門の来期の利益率見通しを18.4%→約14%に引き下げ",
+   "sources": [
+    "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/",
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "DELL",
+   "pct": -11.8,
+   "cat": "テーマ/思惑",
+   "reason": "HPEの見通しでAIサーバー株が一斉安（引け後の決算は売上+103%・通期見通し+100億ドルで時間外+3%）",
+   "sources": [
+    "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "TXN",
+   "pct": -11.2,
+   "cat": "不明",
+   "reason": "半導体株の一斉安の日。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "SNDK",
+   "pct": -11.1,
+   "cat": "不明",
+   "reason": "メモリー株が10%超の下げ（マイクロン・SKハイニックスも）。個別の理由は記事で確認できず",
+   "sources": [
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "confidence": "低"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "date": "2026-11-25",
+ "status": "未検証",
+ "period": "2026-11-24 朝〜2026-11-25 朝",
+ "note": "日経平均は11/24に2,207円高の58,644円（AI・半導体株の買い戻し）。米国は11/24に反落：ナスダック約-2%、S&P約-0.8%、ダウは上昇。エヌビディア約-7%、HPE-16%（来期の利益率の見通しを引き下げ）でAIサーバー・半導体株が一斉安。VIXは26.62（CBOE、強い不安の30は下回った）。デルは引け後の決算で通期見通しを100億ドル上げ、時間外+3%。Anthropicは寄り前に一時IPO価格（83ドル）を割った。",
+ "judgment": "米国：VIXが30を下回り、強い不安の場面は1日で終わった。今は25〜30。今日11/25はPCE、明日は感謝祭で休場。仮想売買はいつもどおり。日本：昨日は大きく戻したが、米国の半導体安で今日は半導体株が売られやすい。11/16の半導体の一斉安の後は過去20日で+3〜4%（前半・後半）の形。",
+ "items": [
+  {
+   "headline": "HPEの見通しでAIサーバー・半導体株が一斉安",
+   "summary": "HPEは部品不足が2028年まで続く恐れと、来期のクラウド・AI部門の利益率の低下見通しを出し-16%。デル-12%、エヌビディア約-7%、AMD約-9%、メモリー株は10%超の下げ。",
+   "sources": [
+    "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/",
+    "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html"
+   ],
+   "eventDate": "2026-11-24",
+   "type": "企業",
+   "sectors": [
+    "半導体",
+    "AI"
+   ],
+   "stocks": [
+    {
+     "t": "HPE",
+     "dir": "-"
+    },
+    {
+     "t": "NVDA",
+     "dir": "-"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "デル、通期売上の見通しを100億ドル引き上げ",
+   "summary": "売上549億ドル（+103%）、AIの受注残1,323億ドル、自社株買い250億ドル追加。時間外で+3%。",
+   "sources": [
+    "https://www.fool.com/investing/2026/11/24/dell-just-reported-earnings-and-raised-its-forecast-by-usd10-billion-is-the-stock-a-buy-after-tuesday-s-selloff/"
+   ],
+   "eventDate": "2026-11-24",
+   "type": "企業",
+   "sectors": [
+    "AI"
+   ],
+   "stocks": [
+    {
+     "t": "DELL",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "日経平均は2,207円高の58,644円",
+   "summary": "エヌビディアのCEO復帰と米AI株の反発で、アドバンテスト・東京エレクトロン・イビデンなどが大幅高。",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261124/878944.html"
+   ],
+   "eventDate": "2026-11-24",
+   "type": "マクロ",
+   "sectors": [
+    "半導体"
+   ],
+   "stocks": [],
+   "horizon": "当日",
+   "confidence": "高"
+  }
+ ]
+}
