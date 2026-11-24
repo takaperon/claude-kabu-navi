@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-21T03:25:49.232Z",
+  "generatedAt": "2026-11-24T06:17:01.200Z",
   "rules": {
     "spread": {
       "usdjpy": 0.008,
@@ -17,7 +17,7 @@
   },
   "pairs": {
     "usdjpy": {
-      "rows": 6736,
+      "rows": 6741,
       "closeOnly": true,
       "swapCoverage": 100,
       "train": [
@@ -26,11 +26,11 @@
       ],
       "test": [
         "2018-01-02",
-        "2026-11-13"
+        "2026-11-20"
       ]
     },
     "eurjpy": {
-      "rows": 6736,
+      "rows": 6741,
       "closeOnly": true,
       "swapCoverage": 100,
       "train": [
@@ -39,11 +39,11 @@
       ],
       "test": [
         "2018-01-02",
-        "2026-11-13"
+        "2026-11-20"
       ]
     },
     "gbpjpy": {
-      "rows": 6736,
+      "rows": 6741,
       "closeOnly": true,
       "swapCoverage": 100,
       "train": [
@@ -52,11 +52,11 @@
       ],
       "test": [
         "2018-01-02",
-        "2026-11-13"
+        "2026-11-20"
       ]
     },
     "audjpy": {
-      "rows": 6736,
+      "rows": 6741,
       "closeOnly": true,
       "swapCoverage": 100,
       "train": [
@@ -65,7 +65,7 @@
       ],
       "test": [
         "2018-01-02",
-        "2026-11-13"
+        "2026-11-20"
       ]
     }
   },
@@ -145,7 +145,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 4.6,
+            "avgCagrPct": 4.5,
             "avgMaxDDPct": 19.4,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -153,64 +153,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1656508,
-                "totalPct": 65.7,
-                "cagrPct": 5.9,
+                "finalYen": 1646665,
+                "totalPct": 64.7,
+                "cagrPct": 5.8,
                 "maxDDPct": 13.6,
                 "minEquityPct": 93.7,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 230924,
+                "swapYen": 231511,
                 "costYen": 71,
                 "winRate": 100,
-                "avgTradePct": 42.56
+                "avgTradePct": 41.52
               },
               "eurjpy": {
-                "finalYen": 1362784,
-                "totalPct": 36.3,
-                "cagrPct": 3.6,
+                "finalYen": 1347202,
+                "totalPct": 34.7,
+                "cagrPct": 3.4,
                 "maxDDPct": 18.4,
                 "minEquityPct": 82.9,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 57423,
+                "swapYen": 57615,
                 "costYen": 89,
                 "winRate": 100,
-                "avgTradePct": 30.54
+                "avgTradePct": 28.96
               },
               "gbpjpy": {
-                "finalYen": 1566938,
-                "totalPct": 56.7,
-                "cagrPct": 5.2,
+                "finalYen": 1546156,
+                "totalPct": 54.6,
+                "cagrPct": 5,
                 "maxDDPct": 18.2,
                 "minEquityPct": 83.7,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 181712,
+                "swapYen": 182307,
                 "costYen": 164,
                 "winRate": 100,
-                "avgTradePct": 38.53
+                "avgTradePct": 36.39
               },
               "audjpy": {
-                "finalYen": 1396502,
-                "totalPct": 39.7,
-                "cagrPct": 3.8,
+                "finalYen": 1363543,
+                "totalPct": 36.4,
+                "cagrPct": 3.6,
                 "maxDDPct": 27.5,
                 "minEquityPct": 73.6,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 162162,
+                "swapYen": 162834,
                 "costYen": 171,
                 "winRate": 100,
-                "avgTradePct": 23.44
+                "avgTradePct": 20.08
               }
             }
           }
@@ -287,7 +287,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 8,
+            "avgCagrPct": 7.7,
             "avgMaxDDPct": 36.9,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -295,64 +295,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 2313016,
-                "totalPct": 131.3,
-                "cagrPct": 9.9,
+                "finalYen": 2293330,
+                "totalPct": 129.3,
+                "cagrPct": 9.8,
                 "maxDDPct": 21.4,
                 "minEquityPct": 87.3,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 461848,
+                "swapYen": 463022,
                 "costYen": 143,
                 "winRate": 100,
-                "avgTradePct": 42.56
+                "avgTradePct": 41.52
               },
               "eurjpy": {
-                "finalYen": 1725569,
-                "totalPct": 72.6,
-                "cagrPct": 6.3,
+                "finalYen": 1694403,
+                "totalPct": 69.4,
+                "cagrPct": 6.1,
                 "maxDDPct": 36.2,
                 "minEquityPct": 65.8,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 114845,
+                "swapYen": 115229,
                 "costYen": 178,
                 "winRate": 100,
-                "avgTradePct": 30.54
+                "avgTradePct": 28.96
               },
               "gbpjpy": {
-                "finalYen": 2133875,
-                "totalPct": 113.4,
-                "cagrPct": 8.9,
+                "finalYen": 2092312,
+                "totalPct": 109.2,
+                "cagrPct": 8.7,
                 "maxDDPct": 35.6,
                 "minEquityPct": 67.3,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 363424,
+                "swapYen": 364615,
                 "costYen": 328,
                 "winRate": 100,
-                "avgTradePct": 38.53
+                "avgTradePct": 36.39
               },
               "audjpy": {
-                "finalYen": 1793004,
-                "totalPct": 79.3,
-                "cagrPct": 6.8,
+                "finalYen": 1727085,
+                "totalPct": 72.7,
+                "cagrPct": 6.3,
                 "maxDDPct": 54.2,
                 "minEquityPct": 47.1,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 324323,
+                "swapYen": 325668,
                 "costYen": 342,
                 "winRate": 100,
-                "avgTradePct": 23.44
+                "avgTradePct": 20.08
               }
             }
           }
@@ -429,7 +429,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 8.5,
+            "avgCagrPct": 8.1,
             "avgMaxDDPct": 75.8,
             "pairsRuined": 0,
             "pairsWipedOut": 1,
@@ -437,64 +437,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 4282540,
-                "totalPct": 328.3,
-                "cagrPct": 17.8,
+                "finalYen": 4233325,
+                "totalPct": 323.3,
+                "cagrPct": 17.6,
                 "maxDDPct": 36.7,
                 "minEquityPct": 68.3,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 1154620,
+                "swapYen": 1157554,
                 "costYen": 357,
                 "winRate": 100,
-                "avgTradePct": 42.56
+                "avgTradePct": 41.52
               },
               "eurjpy": {
-                "finalYen": 2813922,
-                "totalPct": 181.4,
-                "cagrPct": 12.4,
+                "finalYen": 2736008,
+                "totalPct": 173.6,
+                "cagrPct": 12,
                 "maxDDPct": 86.6,
                 "minEquityPct": 14.5,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 287113,
+                "swapYen": 288074,
                 "costYen": 444,
                 "winRate": 100,
-                "avgTradePct": 30.54
+                "avgTradePct": 28.96
               },
               "gbpjpy": {
-                "finalYen": 3834688,
-                "totalPct": 283.5,
-                "cagrPct": 16.4,
+                "finalYen": 3730780,
+                "totalPct": 273.1,
+                "cagrPct": 16,
                 "maxDDPct": 83.6,
                 "minEquityPct": 18.3,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 908559,
+                "swapYen": 911537,
                 "costYen": 820,
                 "winRate": 100,
-                "avgTradePct": 38.53
+                "avgTradePct": 36.39
               },
               "audjpy": {
-                "finalYen": 301657,
-                "totalPct": -69.8,
-                "cagrPct": -12.6,
+                "finalYen": 288543,
+                "totalPct": -71.1,
+                "cagrPct": -13.1,
                 "maxDDPct": 96.4,
                 "minEquityPct": 3.9,
                 "trades": 2,
                 "losscuts": 1,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 140747,
+                "swapYen": 141014,
                 "costYen": 923,
                 "winRate": 50,
-                "avgTradePct": 19.21
+                "avgTradePct": 17.04
               }
             }
           }
@@ -571,7 +571,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -13.2,
+            "avgCagrPct": -13.5,
             "avgMaxDDPct": 90.7,
             "pairsRuined": 0,
             "pairsWipedOut": 3,
@@ -579,64 +579,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 7565079,
-                "totalPct": 656.5,
-                "cagrPct": 25.6,
+                "finalYen": 7466650,
+                "totalPct": 646.7,
+                "cagrPct": 25.4,
                 "maxDDPct": 66.5,
                 "minEquityPct": 36.5,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 2309240,
+                "swapYen": 2315108,
                 "costYen": 713,
                 "winRate": 100,
-                "avgTradePct": 42.56
+                "avgTradePct": 41.52
               },
               "eurjpy": {
-                "finalYen": 126769,
-                "totalPct": -87.3,
-                "cagrPct": -20.8,
+                "finalYen": 123561,
+                "totalPct": -87.6,
+                "cagrPct": -21,
                 "maxDDPct": 98.5,
                 "minEquityPct": 1.8,
                 "trades": 3,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -76016,
+                "swapYen": -75976,
                 "costYen": 998,
                 "winRate": 33.3,
-                "avgTradePct": 12.73
+                "avgTradePct": 12.12
               },
               "gbpjpy": {
-                "finalYen": 308537,
-                "totalPct": -69.1,
-                "cagrPct": -12.4,
+                "finalYen": 300570,
+                "totalPct": -69.9,
+                "cagrPct": -12.7,
                 "maxDDPct": 97.7,
                 "minEquityPct": 2.9,
                 "trades": 3,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 82682,
+                "swapYen": 82910,
                 "costYen": 2025,
                 "winRate": 33.3,
-                "avgTradePct": 15.83
+                "avgTradePct": 14.99
               },
               "audjpy": {
-                "finalYen": 4673,
-                "totalPct": -99.5,
-                "cagrPct": -45.4,
+                "finalYen": 4460,
+                "totalPct": -99.6,
+                "cagrPct": -45.6,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 4,
                 "losscuts": 3,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 79594,
+                "swapYen": 79598,
                 "costYen": 2070,
                 "winRate": 25,
-                "avgTradePct": 10
+                "avgTradePct": 8.85
               }
             }
           }
@@ -713,7 +713,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -30.9,
+            "avgCagrPct": -31,
             "avgMaxDDPct": 97.7,
             "pairsRuined": 0,
             "pairsWipedOut": 3,
@@ -721,64 +721,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 3151570,
-                "totalPct": 215.2,
-                "cagrPct": 13.8,
+                "finalYen": 3110066,
+                "totalPct": 211,
+                "cagrPct": 13.6,
                 "maxDDPct": 90.6,
                 "minEquityPct": 11.6,
                 "trades": 3,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 987334,
+                "swapYen": 989809,
                 "costYen": 2703,
                 "winRate": 33.3,
-                "avgTradePct": 15.29
+                "avgTradePct": 14.92
               },
               "eurjpy": {
-                "finalYen": 5687,
+                "finalYen": 5531,
                 "totalPct": -99.4,
-                "cagrPct": -44.2,
+                "cagrPct": -44.3,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 9,
                 "losscuts": 8,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -43880,
+                "swapYen": -43878,
                 "costYen": 3613,
                 "winRate": 11.1,
-                "avgTradePct": 4.05
+                "avgTradePct": 3.84
               },
               "gbpjpy": {
-                "finalYen": 24070,
-                "totalPct": -97.6,
-                "cagrPct": -34.3,
+                "finalYen": 23404,
+                "totalPct": -97.7,
+                "cagrPct": -34.5,
                 "maxDDPct": 100,
                 "minEquityPct": 0.1,
                 "trades": 7,
                 "losscuts": 6,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 7912,
+                "swapYen": 7931,
                 "costYen": 6956,
                 "winRate": 14.3,
-                "avgTradePct": 6.79
+                "avgTradePct": 6.43
               },
               "audjpy": {
-                "finalYen": 378,
+                "finalYen": 360,
                 "totalPct": -100,
-                "cagrPct": -58.9,
+                "cagrPct": -59,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 9,
                 "losscuts": 8,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 71428,
+                "swapYen": 71429,
                 "costYen": 7870,
                 "winRate": 11.1,
-                "avgTradePct": 4.96
+                "avgTradePct": 4.45
               }
             }
           }
@@ -860,7 +860,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -1,
+            "avgCagrPct": -0.9,
             "avgMaxDDPct": 26.9,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -868,64 +868,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 822647,
-                "totalPct": -17.7,
-                "cagrPct": -2.2,
+                "finalYen": 816968,
+                "totalPct": -18.3,
+                "cagrPct": -2.3,
                 "maxDDPct": 27,
                 "minEquityPct": 76.4,
                 "trades": 77,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 4918,
+                "swapYen": 5257,
                 "costYen": 4406,
-                "winRate": 23.4,
-                "avgTradePct": -0.21
+                "winRate": 22.1,
+                "avgTradePct": -0.22
               },
               "eurjpy": {
-                "finalYen": 1010119,
-                "totalPct": 1,
-                "cagrPct": 0.1,
+                "finalYen": 1021491,
+                "totalPct": 2.1,
+                "cagrPct": 0.2,
                 "maxDDPct": 18.4,
                 "minEquityPct": 84.9,
                 "trades": 80,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 10452,
+                "swapYen": 10125,
                 "costYen": 6581,
                 "winRate": 26.3,
-                "avgTradePct": 0.04
+                "avgTradePct": 0.05
               },
               "gbpjpy": {
-                "finalYen": 720345,
-                "totalPct": -28,
-                "cagrPct": -3.6,
+                "finalYen": 730995,
+                "totalPct": -26.9,
+                "cagrPct": -3.5,
                 "maxDDPct": 37.8,
                 "minEquityPct": 63.6,
                 "trades": 88,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 33080,
+                "swapYen": 32633,
                 "costYen": 11201,
                 "winRate": 26.1,
-                "avgTradePct": -0.39
+                "avgTradePct": -0.38
               },
               "audjpy": {
-                "finalYen": 1148823,
-                "totalPct": 14.9,
-                "cagrPct": 1.6,
+                "finalYen": 1178257,
+                "totalPct": 17.8,
+                "cagrPct": 1.9,
                 "maxDDPct": 24.5,
                 "minEquityPct": 85.7,
                 "trades": 78,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -11295,
+                "swapYen": -12110,
                 "costYen": 13180,
                 "winRate": 37.2,
-                "avgTradePct": 0.24
+                "avgTradePct": 0.27
               }
             }
           }
@@ -1002,7 +1002,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -2.7,
+            "avgCagrPct": -2.4,
             "avgMaxDDPct": 46.3,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -1010,64 +1010,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 634217,
-                "totalPct": -36.6,
-                "cagrPct": -5,
+                "finalYen": 625480,
+                "totalPct": -37.5,
+                "cagrPct": -5.1,
                 "maxDDPct": 46.8,
                 "minEquityPct": 58.1,
                 "trades": 77,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -1433,
+                "swapYen": -912,
                 "costYen": 7715,
-                "winRate": 23.4,
-                "avgTradePct": -0.21
+                "winRate": 22.1,
+                "avgTradePct": -0.22
               },
               "eurjpy": {
-                "finalYen": 965212,
-                "totalPct": -3.5,
-                "cagrPct": -0.4,
+                "finalYen": 986540,
+                "totalPct": -1.3,
+                "cagrPct": -0.2,
                 "maxDDPct": 33.8,
                 "minEquityPct": 70.9,
                 "trades": 80,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 9804,
+                "swapYen": 9191,
                 "costYen": 12233,
                 "winRate": 26.3,
-                "avgTradePct": 0.04
+                "avgTradePct": 0.05
               },
               "gbpjpy": {
-                "finalYen": 487320,
-                "totalPct": -51.3,
-                "cagrPct": -7.8,
+                "finalYen": 501724,
+                "totalPct": -49.8,
+                "cagrPct": -7.5,
                 "maxDDPct": 62,
                 "minEquityPct": 39.7,
                 "trades": 88,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 31373,
+                "swapYen": 30770,
                 "costYen": 18039,
                 "winRate": 26.1,
-                "avgTradePct": -0.39
+                "avgTradePct": -0.38
               },
               "audjpy": {
-                "finalYen": 1243770,
-                "totalPct": 24.4,
-                "cagrPct": 2.5,
+                "finalYen": 1306616,
+                "totalPct": 30.7,
+                "cagrPct": 3.1,
                 "maxDDPct": 42.6,
                 "minEquityPct": 72.4,
                 "trades": 78,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -31887,
+                "swapYen": -33627,
                 "costYen": 25627,
                 "winRate": 37.2,
-                "avgTradePct": 0.24
+                "avgTradePct": 0.27
               }
             }
           }
@@ -1144,7 +1144,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -10.1,
+            "avgCagrPct": -9.5,
             "avgMaxDDPct": 79.3,
             "pairsRuined": 0,
             "pairsWipedOut": 1,
@@ -1152,64 +1152,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 220724,
-                "totalPct": -77.9,
-                "cagrPct": -15.7,
+                "finalYen": 213172,
+                "totalPct": -78.7,
+                "cagrPct": -16,
                 "maxDDPct": 83.7,
                 "minEquityPct": 20,
                 "trades": 77,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -50160,
+                "swapYen": -49710,
                 "costYen": 12563,
-                "winRate": 23.4,
-                "avgTradePct": -0.21
+                "winRate": 22.1,
+                "avgTradePct": -0.22
               },
               "eurjpy": {
-                "finalYen": 654276,
-                "totalPct": -34.6,
-                "cagrPct": -4.7,
+                "finalYen": 688504,
+                "totalPct": -31.1,
+                "cagrPct": -4.1,
                 "maxDDPct": 65.9,
                 "minEquityPct": 37.7,
                 "trades": 80,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -26416,
+                "swapYen": -27400,
                 "costYen": 22946,
                 "winRate": 26.3,
-                "avgTradePct": 0.04
+                "avgTradePct": 0.05
               },
               "gbpjpy": {
-                "finalYen": 110926,
-                "totalPct": -88.9,
-                "cagrPct": -22,
+                "finalYen": 119111,
+                "totalPct": -88.1,
+                "cagrPct": -21.3,
                 "maxDDPct": 93.3,
                 "minEquityPct": 7.5,
                 "trades": 88,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -18284,
+                "swapYen": -18627,
                 "costYen": 25417,
                 "winRate": 26.1,
-                "avgTradePct": -0.39
+                "avgTradePct": -0.38
               },
               "audjpy": {
-                "finalYen": 1200869,
-                "totalPct": 20.1,
-                "cagrPct": 2.1,
+                "finalYen": 1346481,
+                "totalPct": 34.6,
+                "cagrPct": 3.4,
                 "maxDDPct": 74.4,
                 "minEquityPct": 40.1,
                 "trades": 78,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -133222,
+                "swapYen": -137254,
                 "costYen": 54971,
                 "winRate": 37.2,
-                "avgTradePct": 0.24
+                "avgTradePct": 0.27
               }
             }
           }
@@ -1286,7 +1286,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -26.5,
+            "avgCagrPct": -25.6,
             "avgMaxDDPct": 96,
             "pairsRuined": 0,
             "pairsWipedOut": 3,
@@ -1294,64 +1294,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 19466,
-                "totalPct": -98.1,
-                "cagrPct": -35.9,
+                "finalYen": 18148,
+                "totalPct": -98.2,
+                "cagrPct": -36.3,
                 "maxDDPct": 98.8,
                 "minEquityPct": 1.7,
                 "trades": 77,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -106429,
+                "swapYen": -106350,
                 "costYen": 13980,
-                "winRate": 23.4,
-                "avgTradePct": -0.21
+                "winRate": 22.1,
+                "avgTradePct": -0.22
               },
               "eurjpy": {
-                "finalYen": 185250,
-                "totalPct": -81.5,
-                "cagrPct": -17.3,
+                "finalYen": 203060,
+                "totalPct": -79.7,
+                "cagrPct": -16.4,
                 "maxDDPct": 91.8,
                 "minEquityPct": 9.4,
                 "trades": 80,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -80198,
+                "swapYen": -80710,
                 "costYen": 25156,
                 "winRate": 26.3,
-                "avgTradePct": 0.04
+                "avgTradePct": 0.05
               },
               "gbpjpy": {
-                "finalYen": 3726,
+                "finalYen": 4274,
                 "totalPct": -99.6,
-                "cagrPct": -46.8,
+                "cagrPct": -45.9,
                 "maxDDPct": 99.8,
                 "minEquityPct": 0.2,
                 "trades": 88,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -44526,
+                "swapYen": -44549,
                 "costYen": 25789,
                 "winRate": 26.1,
-                "avgTradePct": -0.39
+                "avgTradePct": -0.38
               },
               "audjpy": {
-                "finalYen": 574321,
-                "totalPct": -42.6,
-                "cagrPct": -6.1,
+                "finalYen": 704873,
+                "totalPct": -29.5,
+                "cagrPct": -3.9,
                 "maxDDPct": 93.7,
                 "minEquityPct": 11.3,
                 "trades": 78,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -306281,
+                "swapYen": -309896,
                 "costYen": 75714,
                 "winRate": 37.2,
-                "avgTradePct": 0.24
+                "avgTradePct": 0.27
               }
             }
           }
@@ -1428,7 +1428,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -74.1,
+            "avgCagrPct": -73.4,
             "avgMaxDDPct": 100,
             "pairsRuined": 0,
             "pairsWipedOut": 4,
@@ -1438,7 +1438,7 @@
               "usdjpy": {
                 "finalYen": 0,
                 "totalPct": -100,
-                "cagrPct": -84.5,
+                "cagrPct": -84.7,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 78,
@@ -1447,28 +1447,28 @@
                 "debtYen": 0,
                 "swapYen": -147298,
                 "costYen": 15553,
-                "winRate": 23.1,
-                "avgTradePct": -0.24
+                "winRate": 21.8,
+                "avgTradePct": -0.25
               },
               "eurjpy": {
-                "finalYen": 123,
+                "finalYen": 147,
                 "totalPct": -100,
-                "cagrPct": -63.8,
+                "cagrPct": -63,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 81,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -53527,
+                "swapYen": -53528,
                 "costYen": 12214,
                 "winRate": 25.9,
-                "avgTradePct": 0.03
+                "avgTradePct": 0.04
               },
               "gbpjpy": {
                 "finalYen": 0,
                 "totalPct": -100,
-                "cagrPct": -89.4,
+                "cagrPct": -89,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 92,
@@ -1478,22 +1478,22 @@
                 "swapYen": -19891,
                 "costYen": 20355,
                 "winRate": 25,
-                "avgTradePct": -0.37
+                "avgTradePct": -0.36
               },
               "audjpy": {
-                "finalYen": 393,
-                "totalPct": -100,
-                "cagrPct": -58.7,
+                "finalYen": 581,
+                "totalPct": -99.9,
+                "cagrPct": -56.8,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 80,
                 "losscuts": 6,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -359056,
+                "swapYen": -359061,
                 "costYen": 70724,
                 "winRate": 36.3,
-                "avgTradePct": 0.22
+                "avgTradePct": 0.26
               }
             }
           }
@@ -1583,19 +1583,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1212848,
-                "totalPct": 21.3,
-                "cagrPct": 2.2,
+                "finalYen": 1204476,
+                "totalPct": 20.4,
+                "cagrPct": 2.1,
                 "maxDDPct": 14.4,
                 "minEquityPct": 87.4,
                 "trades": 39,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 127486,
+                "swapYen": 127985,
                 "costYen": 2582,
-                "winRate": 25.6,
-                "avgTradePct": 0.29
+                "winRate": 23.1,
+                "avgTradePct": 0.27
               },
               "eurjpy": {
                 "finalYen": 1194193,
@@ -1725,19 +1725,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1390923,
-                "totalPct": 39.1,
-                "cagrPct": 3.8,
+                "finalYen": 1371761,
+                "totalPct": 37.2,
+                "cagrPct": 3.6,
                 "maxDDPct": 26.8,
                 "minEquityPct": 76.2,
                 "trades": 39,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 266284,
+                "swapYen": 267426,
                 "costYen": 5260,
-                "winRate": 25.6,
-                "avgTradePct": 0.29
+                "winRate": 23.1,
+                "avgTradePct": 0.27
               },
               "eurjpy": {
                 "finalYen": 1359840,
@@ -1859,7 +1859,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 5.9,
+            "avgCagrPct": 5.7,
             "avgMaxDDPct": 54.8,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -1867,19 +1867,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1689197,
-                "totalPct": 68.9,
-                "cagrPct": 6.1,
+                "finalYen": 1631399,
+                "totalPct": 63.1,
+                "cagrPct": 5.7,
                 "maxDDPct": 54.4,
                 "minEquityPct": 49.8,
                 "trades": 39,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 661211,
+                "swapYen": 664657,
                 "costYen": 12965,
-                "winRate": 25.6,
-                "avgTradePct": 0.29
+                "winRate": 23.1,
+                "avgTradePct": 0.27
               },
               "eurjpy": {
                 "finalYen": 1632679,
@@ -1914,7 +1914,7 @@
               "audjpy": {
                 "finalYen": 2534502,
                 "totalPct": 153.5,
-                "cagrPct": 11.1,
+                "cagrPct": 11,
                 "maxDDPct": 49.8,
                 "minEquityPct": 60.3,
                 "trades": 39,
@@ -2001,7 +2001,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 4,
+            "avgCagrPct": 3.8,
             "avgMaxDDPct": 79.1,
             "pairsRuined": 0,
             "pairsWipedOut": 1,
@@ -2009,19 +2009,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1507278,
-                "totalPct": 50.7,
-                "cagrPct": 4.7,
+                "finalYen": 1405238,
+                "totalPct": 40.5,
+                "cagrPct": 3.9,
                 "maxDDPct": 79.8,
                 "minEquityPct": 23.5,
                 "trades": 39,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 992570,
+                "swapYen": 998653,
                 "costYen": 21355,
-                "winRate": 25.6,
-                "avgTradePct": 0.29
+                "winRate": 23.1,
+                "avgTradePct": 0.27
               },
               "eurjpy": {
                 "finalYen": 1388134,
@@ -2143,7 +2143,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -23.8,
+            "avgCagrPct": -24.2,
             "avgMaxDDPct": 99.2,
             "pairsRuined": 0,
             "pairsWipedOut": 4,
@@ -2151,19 +2151,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 133786,
-                "totalPct": -86.6,
-                "cagrPct": -20.3,
+                "finalYen": 111850,
+                "totalPct": -88.8,
+                "cagrPct": -21.9,
                 "maxDDPct": 98.7,
                 "minEquityPct": 1.6,
                 "trades": 39,
                 "losscuts": 1,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 428426,
+                "swapYen": 429733,
                 "costYen": 18412,
-                "winRate": 25.6,
-                "avgTradePct": 0.27
+                "winRate": 23.1,
+                "avgTradePct": 0.26
               },
               "eurjpy": {
                 "finalYen": 115569,
@@ -2290,7 +2290,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 0.8,
+            "avgCagrPct": 1,
             "avgMaxDDPct": 23.3,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -2298,64 +2298,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 866202,
-                "totalPct": -13.4,
-                "cagrPct": -1.6,
+                "finalYen": 872198,
+                "totalPct": -12.8,
+                "cagrPct": -1.5,
                 "maxDDPct": 31.4,
                 "minEquityPct": 80.6,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 9776,
+                "swapYen": 9238,
                 "costYen": 810,
                 "winRate": 28.6,
-                "avgTradePct": -0.85
+                "avgTradePct": -0.8
               },
               "eurjpy": {
-                "finalYen": 1185898,
-                "totalPct": 18.6,
-                "cagrPct": 1.9,
+                "finalYen": 1199476,
+                "totalPct": 19.9,
+                "cagrPct": 2.1,
                 "maxDDPct": 17.7,
                 "minEquityPct": 89.9,
                 "trades": 12,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 23543,
+                "swapYen": 23153,
                 "costYen": 1087,
                 "winRate": 41.7,
-                "avgTradePct": 1.48
+                "avgTradePct": 1.58
               },
               "gbpjpy": {
-                "finalYen": 1087797,
-                "totalPct": 8.8,
-                "cagrPct": 1,
+                "finalYen": 1104353,
+                "totalPct": 10.4,
+                "cagrPct": 1.1,
                 "maxDDPct": 24.8,
                 "minEquityPct": 76.9,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 49134,
+                "swapYen": 48441,
                 "costYen": 2057,
-                "winRate": 28.6,
-                "avgTradePct": 0.52
+                "winRate": 35.7,
+                "avgTradePct": 0.64
               },
               "audjpy": {
-                "finalYen": 1181010,
-                "totalPct": 18.1,
-                "cagrPct": 1.9,
+                "finalYen": 1211136,
+                "totalPct": 21.1,
+                "cagrPct": 2.2,
                 "maxDDPct": 19.2,
                 "minEquityPct": 84.7,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -12383,
+                "swapYen": -13217,
                 "costYen": 2434,
                 "winRate": 50,
-                "avgTradePct": 1.54
+                "avgTradePct": 1.73
               }
             }
           }
@@ -2432,7 +2432,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 0.8,
+            "avgCagrPct": 1.1,
             "avgMaxDDPct": 41.2,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -2440,64 +2440,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 693209,
-                "totalPct": -30.7,
-                "cagrPct": -4.1,
+                "finalYen": 702977,
+                "totalPct": -29.7,
+                "cagrPct": -3.9,
                 "maxDDPct": 52.4,
                 "minEquityPct": 60.3,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 4138,
+                "swapYen": 3261,
                 "costYen": 1436,
                 "winRate": 28.6,
-                "avgTradePct": -0.85
+                "avgTradePct": -0.8
               },
               "eurjpy": {
-                "finalYen": 1320769,
-                "totalPct": 32.1,
-                "cagrPct": 3.2,
+                "finalYen": 1350679,
+                "totalPct": 35.1,
+                "cagrPct": 3.4,
                 "maxDDPct": 32.6,
                 "minEquityPct": 79.4,
                 "trades": 12,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 33606,
+                "swapYen": 32746,
                 "costYen": 2193,
                 "winRate": 41.7,
-                "avgTradePct": 1.48
+                "avgTradePct": 1.58
               },
               "gbpjpy": {
-                "finalYen": 1092314,
-                "totalPct": 9.2,
-                "cagrPct": 1,
+                "finalYen": 1126096,
+                "totalPct": 12.6,
+                "cagrPct": 1.3,
                 "maxDDPct": 44.4,
                 "minEquityPct": 58.2,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 77007,
+                "swapYen": 75592,
                 "costYen": 3813,
-                "winRate": 28.6,
-                "avgTradePct": 0.52
+                "winRate": 35.7,
+                "avgTradePct": 0.64
               },
               "audjpy": {
-                "finalYen": 1300906,
-                "totalPct": 30.1,
-                "cagrPct": 3,
+                "finalYen": 1366122,
+                "totalPct": 36.6,
+                "cagrPct": 3.6,
                 "maxDDPct": 35.4,
                 "minEquityPct": 70,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -30694,
+                "swapYen": -32499,
                 "costYen": 4681,
                 "winRate": 50,
-                "avgTradePct": 1.54
+                "avgTradePct": 1.73
               }
             }
           }
@@ -2574,7 +2574,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -3.5,
+            "avgCagrPct": -2.7,
             "avgMaxDDPct": 76.3,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -2582,64 +2582,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 204932,
-                "totalPct": -79.5,
-                "cagrPct": -16.4,
+                "finalYen": 212560,
+                "totalPct": -78.7,
+                "cagrPct": -16,
                 "maxDDPct": 87.8,
                 "minEquityPct": 14.8,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -82074,
+                "swapYen": -82759,
                 "costYen": 2285,
                 "winRate": 28.6,
-                "avgTradePct": -0.85
+                "avgTradePct": -0.8
               },
               "eurjpy": {
-                "finalYen": 1361824,
-                "totalPct": 36.2,
-                "cagrPct": 3.5,
+                "finalYen": 1436455,
+                "totalPct": 43.6,
+                "cagrPct": 4.2,
                 "maxDDPct": 64.9,
                 "minEquityPct": 49.2,
                 "trades": 12,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -2819,
+                "swapYen": -4965,
                 "costYen": 5169,
                 "winRate": 41.7,
-                "avgTradePct": 1.48
+                "avgTradePct": 1.58
               },
               "gbpjpy": {
-                "finalYen": 765137,
-                "totalPct": -23.5,
-                "cagrPct": -3,
+                "finalYen": 827278,
+                "totalPct": -17.3,
+                "cagrPct": -2.1,
                 "maxDDPct": 81.7,
                 "minEquityPct": 20.4,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 53031,
+                "swapYen": 50428,
                 "costYen": 6719,
-                "winRate": 28.6,
-                "avgTradePct": 0.52
+                "winRate": 35.7,
+                "avgTradePct": 0.64
               },
               "audjpy": {
-                "finalYen": 1170780,
-                "totalPct": 17.1,
-                "cagrPct": 1.8,
+                "finalYen": 1310236,
+                "totalPct": 31,
+                "cagrPct": 3.1,
                 "maxDDPct": 70.7,
                 "minEquityPct": 32.6,
                 "trades": 14,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -123698,
+                "swapYen": -127559,
                 "costYen": 9036,
                 "winRate": 50,
-                "avgTradePct": 1.54
+                "avgTradePct": 1.73
               }
             }
           }
@@ -2716,7 +2716,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -29.3,
+            "avgCagrPct": -28.2,
             "avgMaxDDPct": 97.6,
             "pairsRuined": 0,
             "pairsWipedOut": 3,
@@ -2724,64 +2724,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 9524,
+                "finalYen": 10306,
                 "totalPct": -99,
-                "cagrPct": -40.9,
+                "cagrPct": -40.3,
                 "maxDDPct": 99.5,
                 "minEquityPct": 0.5,
                 "trades": 16,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -133641,
+                "swapYen": -133711,
                 "costYen": 2491,
                 "winRate": 25,
-                "avgTradePct": -0.74
+                "avgTradePct": -0.7
               },
               "eurjpy": {
-                "finalYen": 596324,
-                "totalPct": -40.4,
-                "cagrPct": -5.7,
+                "finalYen": 658372,
+                "totalPct": -34.2,
+                "cagrPct": -4.6,
                 "maxDDPct": 91.4,
                 "minEquityPct": 14.3,
                 "trades": 12,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -130208,
+                "swapYen": -131992,
                 "costYen": 7659,
                 "winRate": 41.7,
-                "avgTradePct": 1.48
+                "avgTradePct": 1.58
               },
               "gbpjpy": {
-                "finalYen": 26999,
-                "totalPct": -97.3,
-                "cagrPct": -33.5,
+                "finalYen": 31787,
+                "totalPct": -96.8,
+                "cagrPct": -32.2,
                 "maxDDPct": 99.5,
                 "minEquityPct": 0.6,
                 "trades": 15,
                 "losscuts": 1,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -73065,
+                "swapYen": -73265,
                 "costYen": 4792,
-                "winRate": 33.3,
-                "avgTradePct": 0.55
+                "winRate": 40,
+                "avgTradePct": 0.65
               },
               "audjpy": {
-                "finalYen": 16238,
-                "totalPct": -98.4,
-                "cagrPct": -37.2,
+                "finalYen": 19811,
+                "totalPct": -98,
+                "cagrPct": -35.7,
                 "maxDDPct": 99.8,
                 "minEquityPct": 0.2,
                 "trades": 17,
                 "losscuts": 3,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -140456,
+                "swapYen": -140555,
                 "costYen": 5134,
                 "winRate": 52.9,
-                "avgTradePct": 1.18
+                "avgTradePct": 1.33
               }
             }
           }
@@ -2858,7 +2858,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -67,
+            "avgCagrPct": -65.9,
             "avgMaxDDPct": 100,
             "pairsRuined": 0,
             "pairsWipedOut": 4,
@@ -2866,9 +2866,9 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 2,
+                "finalYen": 3,
                 "totalPct": -100,
-                "cagrPct": -77,
+                "cagrPct": -76.2,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 33,
@@ -2878,27 +2878,27 @@
                 "swapYen": -39759,
                 "costYen": 3644,
                 "winRate": 30.3,
-                "avgTradePct": -0.19
+                "avgTradePct": -0.17
               },
               "eurjpy": {
-                "finalYen": 2985,
-                "totalPct": -99.7,
-                "cagrPct": -48.1,
+                "finalYen": 3659,
+                "totalPct": -99.6,
+                "cagrPct": -46.8,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 24,
                 "losscuts": 12,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -90235,
+                "swapYen": -90255,
                 "costYen": 8231,
                 "winRate": 37.5,
-                "avgTradePct": 0.7
+                "avgTradePct": 0.75
               },
               "gbpjpy": {
-                "finalYen": 2,
+                "finalYen": 3,
                 "totalPct": -100,
-                "cagrPct": -77,
+                "cagrPct": -76.2,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 32,
@@ -2908,22 +2908,22 @@
                 "swapYen": -27163,
                 "costYen": 8465,
                 "winRate": 28.1,
-                "avgTradePct": 0.26
+                "avgTradePct": 0.31
               },
               "audjpy": {
-                "finalYen": 74,
+                "finalYen": 107,
                 "totalPct": -100,
-                "cagrPct": -65.8,
+                "cagrPct": -64.3,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 33,
                 "losscuts": 19,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -80129,
+                "swapYen": -80130,
                 "costYen": 12387,
                 "winRate": 33.3,
-                "avgTradePct": 0.66
+                "avgTradePct": 0.74
               }
             }
           }
@@ -3005,7 +3005,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -0.7,
+            "avgCagrPct": -0.6,
             "avgMaxDDPct": 19.7,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -3028,19 +3028,19 @@
                 "avgTradePct": 0.24
               },
               "eurjpy": {
-                "finalYen": 852714,
-                "totalPct": -14.7,
-                "cagrPct": -1.8,
+                "finalYen": 862326,
+                "totalPct": -13.8,
+                "cagrPct": -1.7,
                 "maxDDPct": 22.8,
                 "minEquityPct": 78.5,
                 "trades": 43,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -780,
+                "swapYen": -1056,
                 "costYen": 3239,
                 "winRate": 32.6,
-                "avgTradePct": -0.34
+                "avgTradePct": -0.31
               },
               "gbpjpy": {
                 "finalYen": 796583,
@@ -3058,19 +3058,19 @@
                 "avgTradePct": -0.53
               },
               "audjpy": {
-                "finalYen": 1031519,
-                "totalPct": 3.2,
-                "cagrPct": 0.4,
+                "finalYen": 1058456,
+                "totalPct": 5.8,
+                "cagrPct": 0.6,
                 "maxDDPct": 15.2,
                 "minEquityPct": 85.3,
                 "trades": 40,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 1354,
+                "swapYen": 608,
                 "costYen": 6658,
                 "winRate": 40,
-                "avgTradePct": 0.16
+                "avgTradePct": 0.22
               }
             }
           }
@@ -3147,7 +3147,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -1.8,
+            "avgCagrPct": -1.6,
             "avgMaxDDPct": 35.8,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -3170,19 +3170,19 @@
                 "avgTradePct": 0.24
               },
               "eurjpy": {
-                "finalYen": 710831,
-                "totalPct": -28.9,
-                "cagrPct": -3.8,
+                "finalYen": 726579,
+                "totalPct": -27.3,
+                "cagrPct": -3.5,
                 "maxDDPct": 40.8,
                 "minEquityPct": 61.1,
                 "trades": 43,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -4617,
+                "swapYen": -5070,
                 "costYen": 5733,
                 "winRate": 32.6,
-                "avgTradePct": -0.34
+                "avgTradePct": -0.31
               },
               "gbpjpy": {
                 "finalYen": 605840,
@@ -3200,19 +3200,19 @@
                 "avgTradePct": -0.53
               },
               "audjpy": {
-                "finalYen": 1006930,
-                "totalPct": 0.7,
-                "cagrPct": 0.1,
+                "finalYen": 1059155,
+                "totalPct": 5.9,
+                "cagrPct": 0.6,
                 "maxDDPct": 28.2,
                 "minEquityPct": 72.5,
                 "trades": 40,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 2188,
+                "swapYen": 742,
                 "costYen": 12895,
                 "winRate": 40,
-                "avgTradePct": 0.16
+                "avgTradePct": 0.22
               }
             }
           }
@@ -3289,7 +3289,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -7,
+            "avgCagrPct": -6.5,
             "avgMaxDDPct": 67.9,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -3312,19 +3312,19 @@
                 "avgTradePct": 0.24
               },
               "eurjpy": {
-                "finalYen": 361785,
-                "totalPct": -63.8,
-                "cagrPct": -10.8,
+                "finalYen": 380833,
+                "totalPct": -61.9,
+                "cagrPct": -10.3,
                 "maxDDPct": 74.6,
                 "minEquityPct": 27.4,
                 "trades": 43,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -23603,
+                "swapYen": -24151,
                 "costYen": 9842,
                 "winRate": 32.6,
-                "avgTradePct": -0.34
+                "avgTradePct": -0.31
               },
               "gbpjpy": {
                 "finalYen": 203712,
@@ -3342,19 +3342,19 @@
                 "avgTradePct": -0.53
               },
               "audjpy": {
-                "finalYen": 697017,
-                "totalPct": -30.3,
-                "cagrPct": -4,
+                "finalYen": 785549,
+                "totalPct": -21.4,
+                "cagrPct": -2.7,
                 "maxDDPct": 57.6,
                 "minEquityPct": 43.3,
                 "trades": 40,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -7258,
+                "swapYen": -9709,
                 "costYen": 26414,
                 "winRate": 40,
-                "avgTradePct": 0.16
+                "avgTradePct": 0.22
               }
             }
           }
@@ -3431,7 +3431,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -20.8,
+            "avgCagrPct": -20.1,
             "avgMaxDDPct": 91,
             "pairsRuined": 0,
             "pairsWipedOut": 2,
@@ -3454,19 +3454,19 @@
                 "avgTradePct": 0.24
               },
               "eurjpy": {
-                "finalYen": 76529,
-                "totalPct": -92.3,
-                "cagrPct": -25.2,
+                "finalYen": 83975,
+                "totalPct": -91.6,
+                "cagrPct": -24.3,
                 "maxDDPct": 96.1,
                 "minEquityPct": 4.5,
                 "trades": 43,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -48529,
+                "swapYen": -48743,
                 "costYen": 10857,
                 "winRate": 32.6,
-                "avgTradePct": -0.34
+                "avgTradePct": -0.31
               },
               "gbpjpy": {
                 "finalYen": 11755,
@@ -3484,19 +3484,19 @@
                 "avgTradePct": -0.53
               },
               "audjpy": {
-                "finalYen": 144061,
-                "totalPct": -85.6,
-                "cagrPct": -19.6,
+                "finalYen": 179451,
+                "totalPct": -82.1,
+                "cagrPct": -17.6,
                 "maxDDPct": 87.5,
                 "minEquityPct": 13.1,
                 "trades": 40,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -50675,
+                "swapYen": -51655,
                 "costYen": 27718,
                 "winRate": 40,
-                "avgTradePct": 0.16
+                "avgTradePct": 0.22
               }
             }
           }
@@ -3573,7 +3573,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -64.3,
+            "avgCagrPct": -63.7,
             "avgMaxDDPct": 99.8,
             "pairsRuined": 0,
             "pairsWipedOut": 4,
@@ -3583,7 +3583,7 @@
               "usdjpy": {
                 "finalYen": 58058,
                 "totalPct": -94.2,
-                "cagrPct": -27.5,
+                "cagrPct": -27.4,
                 "maxDDPct": 99.1,
                 "minEquityPct": 3.1,
                 "trades": 43,
@@ -3598,7 +3598,7 @@
               "eurjpy": {
                 "finalYen": 4,
                 "totalPct": -100,
-                "cagrPct": -75.6,
+                "cagrPct": -75.2,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 52,
@@ -3608,12 +3608,12 @@
                 "swapYen": -41771,
                 "costYen": 8497,
                 "winRate": 32.7,
-                "avgTradePct": -0.29
+                "avgTradePct": -0.27
               },
               "gbpjpy": {
                 "finalYen": 0,
                 "totalPct": -100,
-                "cagrPct": -86.5,
+                "cagrPct": -86.4,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 55,
@@ -3626,19 +3626,19 @@
                 "avgTradePct": -0.38
               },
               "audjpy": {
-                "finalYen": 45,
+                "finalYen": 70,
                 "totalPct": -100,
-                "cagrPct": -67.7,
+                "cagrPct": -65.9,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 53,
                 "losscuts": 16,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -6425,
+                "swapYen": -6426,
                 "costYen": 9803,
                 "winRate": 35.8,
-                "avgTradePct": 0.16
+                "avgTradePct": 0.21
               }
             }
           }
@@ -3720,7 +3720,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -1.1,
+            "avgCagrPct": -1,
             "avgMaxDDPct": 29.6,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -3728,64 +3728,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1077420,
-                "totalPct": 7.7,
+                "finalYen": 1076164,
+                "totalPct": 7.6,
                 "cagrPct": 0.8,
                 "maxDDPct": 20.3,
                 "minEquityPct": 82.2,
-                "trades": 94,
+                "trades": 96,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 14474,
-                "costYen": 5839,
-                "winRate": 38.3,
+                "swapYen": 14605,
+                "costYen": 5947,
+                "winRate": 38.5,
                 "avgTradePct": 0.1
               },
               "eurjpy": {
-                "finalYen": 1050818,
-                "totalPct": 5.1,
-                "cagrPct": 0.6,
+                "finalYen": 1062047,
+                "totalPct": 6.2,
+                "cagrPct": 0.7,
                 "maxDDPct": 24.6,
                 "minEquityPct": 79.2,
                 "trades": 146,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -1396,
+                "swapYen": -1719,
                 "costYen": 11489,
                 "winRate": 41.1,
-                "avgTradePct": 0.06
+                "avgTradePct": 0.07
               },
               "gbpjpy": {
-                "finalYen": 696613,
-                "totalPct": -30.3,
-                "cagrPct": -4,
+                "finalYen": 706912,
+                "totalPct": -29.3,
+                "cagrPct": -3.8,
                 "maxDDPct": 37.7,
                 "minEquityPct": 63.7,
                 "trades": 154,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 17578,
+                "swapYen": 17147,
                 "costYen": 19069,
                 "winRate": 35.7,
-                "avgTradePct": -0.23
+                "avgTradePct": -0.22
               },
               "audjpy": {
-                "finalYen": 848736,
-                "totalPct": -15.1,
-                "cagrPct": -1.8,
+                "finalYen": 870180,
+                "totalPct": -13,
+                "cagrPct": -1.6,
                 "maxDDPct": 35.7,
                 "minEquityPct": 65.9,
                 "trades": 153,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -21297,
+                "swapYen": -21891,
                 "costYen": 20864,
                 "winRate": 36.6,
-                "avgTradePct": -0.06
+                "avgTradePct": -0.04
               }
             }
           }
@@ -3862,7 +3862,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -2.9,
+            "avgCagrPct": -2.6,
             "avgMaxDDPct": 50.8,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -3870,64 +3870,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1095559,
-                "totalPct": 9.6,
+                "finalYen": 1092980,
+                "totalPct": 9.3,
                 "cagrPct": 1,
                 "maxDDPct": 36.5,
                 "minEquityPct": 67.3,
-                "trades": 94,
+                "trades": 96,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 25212,
-                "costYen": 11120,
-                "winRate": 38.3,
+                "swapYen": 25480,
+                "costYen": 11339,
+                "winRate": 38.5,
                 "avgTradePct": 0.1
               },
               "eurjpy": {
-                "finalYen": 1043184,
-                "totalPct": 4.3,
-                "cagrPct": 0.5,
+                "finalYen": 1064551,
+                "totalPct": 6.5,
+                "cagrPct": 0.7,
                 "maxDDPct": 44,
                 "minEquityPct": 61.4,
                 "trades": 146,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -7222,
+                "swapYen": -7836,
                 "costYen": 21062,
                 "winRate": 41.1,
-                "avgTradePct": 0.06
+                "avgTradePct": 0.07
               },
               "gbpjpy": {
-                "finalYen": 456636,
-                "totalPct": -54.3,
-                "cagrPct": -8.5,
+                "finalYen": 470132,
+                "totalPct": -53,
+                "cagrPct": -8.1,
                 "maxDDPct": 62.2,
                 "minEquityPct": 39.6,
                 "trades": 154,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 14415,
+                "swapYen": 13850,
                 "costYen": 30521,
                 "winRate": 35.7,
-                "avgTradePct": -0.23
+                "avgTradePct": -0.22
               },
               "audjpy": {
-                "finalYen": 664558,
-                "totalPct": -33.5,
-                "cagrPct": -4.5,
+                "finalYen": 697389,
+                "totalPct": -30.3,
+                "cagrPct": -4,
                 "maxDDPct": 60.4,
                 "minEquityPct": 41.4,
                 "trades": 153,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -41570,
+                "swapYen": -42479,
                 "costYen": 33563,
                 "winRate": 36.6,
-                "avgTradePct": -0.06
+                "avgTradePct": -0.04
               }
             }
           }
@@ -4004,7 +4004,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -11,
+            "avgCagrPct": -10.5,
             "avgMaxDDPct": 83.4,
             "pairsRuined": 0,
             "pairsWipedOut": 2,
@@ -4012,64 +4012,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 866879,
-                "totalPct": -13.3,
-                "cagrPct": -1.6,
+                "finalYen": 861628,
+                "totalPct": -13.8,
+                "cagrPct": -1.7,
                 "maxDDPct": 68.3,
                 "minEquityPct": 35.8,
-                "trades": 94,
+                "trades": 96,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 21348,
-                "costYen": 22056,
-                "winRate": 38.3,
+                "swapYen": 21888,
+                "costYen": 22487,
+                "winRate": 38.5,
                 "avgTradePct": 0.1
               },
               "eurjpy": {
-                "finalYen": 766047,
-                "totalPct": -23.4,
-                "cagrPct": -3,
+                "finalYen": 800922,
+                "totalPct": -19.9,
+                "cagrPct": -2.5,
                 "maxDDPct": 79.1,
                 "minEquityPct": 25.2,
                 "trades": 146,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -42519,
+                "swapYen": -43522,
                 "costYen": 37786,
                 "winRate": 41.1,
-                "avgTradePct": 0.06
+                "avgTradePct": 0.07
               },
               "gbpjpy": {
-                "finalYen": 91427,
-                "totalPct": -90.9,
-                "cagrPct": -23.7,
+                "finalYen": 98174,
+                "totalPct": -90.2,
+                "cagrPct": -23,
                 "maxDDPct": 93.7,
                 "minEquityPct": 7,
                 "trades": 154,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -28606,
+                "swapYen": -28888,
                 "costYen": 40160,
                 "winRate": 35.7,
-                "avgTradePct": -0.23
+                "avgTradePct": -0.22
               },
               "audjpy": {
-                "finalYen": 215183,
-                "totalPct": -78.5,
-                "cagrPct": -15.9,
+                "finalYen": 240090,
+                "totalPct": -76,
+                "cagrPct": -14.8,
                 "maxDDPct": 92.7,
                 "minEquityPct": 7.9,
                 "trades": 153,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -75705,
+                "swapYen": -76395,
                 "costYen": 44548,
                 "winRate": 36.6,
-                "avgTradePct": -0.06
+                "avgTradePct": -0.04
               }
             }
           }
@@ -4146,7 +4146,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -30.3,
+            "avgCagrPct": -29.6,
             "avgMaxDDPct": 96.9,
             "pairsRuined": 0,
             "pairsWipedOut": 3,
@@ -4154,64 +4154,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 257852,
-                "totalPct": -74.2,
-                "cagrPct": -14.2,
+                "finalYen": 254581,
+                "totalPct": -74.5,
+                "cagrPct": -14.3,
                 "maxDDPct": 90.6,
                 "minEquityPct": 11.3,
-                "trades": 94,
+                "trades": 96,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -59683,
-                "costYen": 23638,
-                "winRate": 38.3,
+                "swapYen": -59354,
+                "costYen": 23890,
+                "winRate": 38.5,
                 "avgTradePct": 0.1
               },
               "eurjpy": {
-                "finalYen": 201279,
-                "totalPct": -79.9,
-                "cagrPct": -16.5,
+                "finalYen": 216747,
+                "totalPct": -78.3,
+                "cagrPct": -15.8,
                 "maxDDPct": 97.2,
                 "minEquityPct": 3.6,
                 "trades": 146,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -99105,
+                "swapYen": -99550,
                 "costYen": 40371,
                 "winRate": 41.1,
-                "avgTradePct": 0.06
+                "avgTradePct": 0.07
               },
               "gbpjpy": {
-                "finalYen": 1931,
+                "finalYen": 2215,
                 "totalPct": -99.8,
-                "cagrPct": -50.6,
+                "cagrPct": -49.8,
                 "maxDDPct": 99.9,
                 "minEquityPct": 0.1,
                 "trades": 154,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -55111,
+                "swapYen": -55123,
                 "costYen": 35810,
                 "winRate": 35.7,
-                "avgTradePct": -0.23
+                "avgTradePct": -0.22
               },
               "audjpy": {
-                "finalYen": 10778,
-                "totalPct": -98.9,
-                "cagrPct": -40,
+                "finalYen": 13036,
+                "totalPct": -98.7,
+                "cagrPct": -38.7,
                 "maxDDPct": 99.8,
                 "minEquityPct": 0.2,
                 "trades": 153,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -75349,
+                "swapYen": -75412,
                 "costYen": 44462,
                 "winRate": 36.6,
-                "avgTradePct": -0.06
+                "avgTradePct": -0.04
               }
             }
           }
@@ -4288,7 +4288,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -81.9,
+            "avgCagrPct": -81.7,
             "avgMaxDDPct": 100,
             "pairsRuined": 0,
             "pairsWipedOut": 4,
@@ -4296,24 +4296,24 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 137,
+                "finalYen": 132,
                 "totalPct": -100,
                 "cagrPct": -63.4,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
-                "trades": 102,
+                "trades": 104,
                 "losscuts": 11,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -77624,
+                "swapYen": -77623,
                 "costYen": 17353,
-                "winRate": 37.3,
+                "winRate": 37.5,
                 "avgTradePct": 0.09
               },
               "eurjpy": {
-                "finalYen": 1,
+                "finalYen": 2,
                 "totalPct": -100,
-                "cagrPct": -78.2,
+                "cagrPct": -77.9,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 149,
@@ -4323,12 +4323,12 @@
                 "swapYen": -100751,
                 "costYen": 29178,
                 "winRate": 40.9,
-                "avgTradePct": 0.03
+                "avgTradePct": 0.04
               },
               "gbpjpy": {
                 "finalYen": 0,
                 "totalPct": -100,
-                "cagrPct": -96.8,
+                "cagrPct": -96.6,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 166,
@@ -4338,12 +4338,12 @@
                 "swapYen": -39243,
                 "costYen": 31778,
                 "winRate": 34.9,
-                "avgTradePct": -0.24
+                "avgTradePct": -0.23
               },
               "audjpy": {
                 "finalYen": 0,
                 "totalPct": -100,
-                "cagrPct": -89.4,
+                "cagrPct": -88.9,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 164,
@@ -4353,7 +4353,7 @@
                 "swapYen": -58703,
                 "costYen": 50520,
                 "winRate": 38.4,
-                "avgTradePct": -0.03
+                "avgTradePct": -0.02
               }
             }
           }
@@ -4435,7 +4435,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 1.1,
+            "avgCagrPct": 1,
             "avgMaxDDPct": 22,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -4443,8 +4443,8 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1146036,
-                "totalPct": 14.6,
+                "finalYen": 1138252,
+                "totalPct": 13.8,
                 "cagrPct": 1.5,
                 "maxDDPct": 23.6,
                 "minEquityPct": 81.1,
@@ -4452,55 +4452,55 @@
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 79843,
+                "swapYen": 80307,
                 "costYen": 5851,
                 "winRate": 43.3,
-                "avgTradePct": 0.12
+                "avgTradePct": 0.11
               },
               "eurjpy": {
-                "finalYen": 1115791,
-                "totalPct": 11.6,
-                "cagrPct": 1.2,
+                "finalYen": 1128899,
+                "totalPct": 12.9,
+                "cagrPct": 1.4,
                 "maxDDPct": 18,
                 "minEquityPct": 89.9,
                 "trades": 36,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 39027,
+                "swapYen": 38650,
                 "costYen": 3116,
-                "winRate": 36.1,
-                "avgTradePct": 0.3
+                "winRate": 38.9,
+                "avgTradePct": 0.34
               },
               "gbpjpy": {
-                "finalYen": 1224241,
-                "totalPct": 22.4,
-                "cagrPct": 2.3,
+                "finalYen": 1206446,
+                "totalPct": 20.6,
+                "cagrPct": 2.1,
                 "maxDDPct": 19.9,
                 "minEquityPct": 89.7,
                 "trades": 61,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 112363,
+                "swapYen": 112872,
                 "costYen": 9837,
                 "winRate": 39.3,
-                "avgTradePct": 0.23
+                "avgTradePct": 0.2
               },
               "audjpy": {
-                "finalYen": 936384,
-                "totalPct": -6.4,
-                "cagrPct": -0.7,
+                "finalYen": 912070,
+                "totalPct": -8.8,
+                "cagrPct": -1,
                 "maxDDPct": 26.6,
                 "minEquityPct": 84.8,
                 "trades": 67,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 18644,
+                "swapYen": 19140,
                 "costYen": 10649,
                 "winRate": 35.8,
-                "avgTradePct": -0.09
+                "avgTradePct": -0.14
               }
             }
           }
@@ -4577,7 +4577,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 1.5,
+            "avgCagrPct": 1.3,
             "avgMaxDDPct": 38.3,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -4585,64 +4585,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1213983,
-                "totalPct": 21.4,
-                "cagrPct": 2.2,
+                "finalYen": 1198230,
+                "totalPct": 19.8,
+                "cagrPct": 2.1,
                 "maxDDPct": 41.9,
                 "minEquityPct": 65.2,
                 "trades": 90,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 151396,
+                "swapYen": 152335,
                 "costYen": 11374,
                 "winRate": 43.3,
-                "avgTradePct": 0.12
+                "avgTradePct": 0.11
               },
               "eurjpy": {
-                "finalYen": 1167225,
-                "totalPct": 16.7,
-                "cagrPct": 1.8,
+                "finalYen": 1194652,
+                "totalPct": 19.5,
+                "cagrPct": 2,
                 "maxDDPct": 30.9,
                 "minEquityPct": 80.4,
                 "trades": 36,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 72655,
+                "swapYen": 71867,
                 "costYen": 6555,
-                "winRate": 36.1,
-                "avgTradePct": 0.3
+                "winRate": 38.9,
+                "avgTradePct": 0.34
               },
               "gbpjpy": {
-                "finalYen": 1400086,
-                "totalPct": 40,
-                "cagrPct": 3.9,
+                "finalYen": 1363079,
+                "totalPct": 36.3,
+                "cagrPct": 3.5,
                 "maxDDPct": 34.6,
                 "minEquityPct": 79.7,
                 "trades": 61,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 229970,
+                "swapYen": 231031,
                 "costYen": 19319,
                 "winRate": 39.3,
-                "avgTradePct": 0.23
+                "avgTradePct": 0.2
               },
               "audjpy": {
-                "finalYen": 843788,
-                "totalPct": -15.6,
-                "cagrPct": -1.9,
+                "finalYen": 803624,
+                "totalPct": -19.6,
+                "cagrPct": -2.4,
                 "maxDDPct": 45.8,
                 "minEquityPct": 69.8,
                 "trades": 67,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 28609,
+                "swapYen": 29428,
                 "costYen": 19918,
                 "winRate": 35.8,
-                "avgTradePct": -0.09
+                "avgTradePct": -0.14
               }
             }
           }
@@ -4719,7 +4719,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -0.4,
+            "avgCagrPct": -0.8,
             "avgMaxDDPct": 69.6,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -4727,64 +4727,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1062546,
-                "totalPct": 6.3,
-                "cagrPct": 0.7,
+                "finalYen": 1032153,
+                "totalPct": 3.2,
+                "cagrPct": 0.4,
                 "maxDDPct": 75.2,
                 "minEquityPct": 32.4,
                 "trades": 90,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 255530,
+                "swapYen": 257342,
                 "costYen": 23911,
                 "winRate": 43.3,
-                "avgTradePct": 0.12
+                "avgTradePct": 0.11
               },
               "eurjpy": {
-                "finalYen": 999506,
-                "totalPct": 0,
-                "cagrPct": 0,
+                "finalYen": 1058242,
+                "totalPct": 5.8,
+                "cagrPct": 0.6,
                 "maxDDPct": 61.2,
                 "minEquityPct": 56.2,
                 "trades": 36,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 128528,
+                "swapYen": 126840,
                 "costYen": 16689,
-                "winRate": 36.1,
-                "avgTradePct": 0.3
+                "winRate": 38.9,
+                "avgTradePct": 0.34
               },
               "gbpjpy": {
-                "finalYen": 1544054,
-                "totalPct": 54.4,
-                "cagrPct": 5,
+                "finalYen": 1463861,
+                "totalPct": 46.4,
+                "cagrPct": 4.4,
                 "maxDDPct": 63.6,
                 "minEquityPct": 52.9,
                 "trades": 61,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 530623,
+                "swapYen": 532921,
                 "costYen": 43107,
                 "winRate": 39.3,
-                "avgTradePct": 0.23
+                "avgTradePct": 0.2
               },
               "audjpy": {
-                "finalYen": 500321,
-                "totalPct": -50,
-                "cagrPct": -7.5,
+                "finalYen": 452698,
+                "totalPct": -54.7,
+                "cagrPct": -8.5,
                 "maxDDPct": 78.3,
                 "minEquityPct": 32.8,
                 "trades": 67,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 8735,
+                "swapYen": 9706,
                 "costYen": 37724,
                 "winRate": 35.8,
-                "avgTradePct": -0.09
+                "avgTradePct": -0.14
               }
             }
           }
@@ -4861,7 +4861,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -12.1,
+            "avgCagrPct": -12.5,
             "avgMaxDDPct": 92.8,
             "pairsRuined": 0,
             "pairsWipedOut": 2,
@@ -4869,64 +4869,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 433496,
-                "totalPct": -56.7,
-                "cagrPct": -9,
+                "finalYen": 412781,
+                "totalPct": -58.7,
+                "cagrPct": -9.5,
                 "maxDDPct": 94.8,
                 "minEquityPct": 8.4,
                 "trades": 90,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 102794,
+                "swapYen": 104029,
                 "costYen": 29642,
                 "winRate": 43.3,
-                "avgTradePct": 0.12
+                "avgTradePct": 0.11
               },
               "eurjpy": {
-                "finalYen": 235724,
-                "totalPct": -76.4,
-                "cagrPct": -15,
+                "finalYen": 263444,
+                "totalPct": -73.7,
+                "cagrPct": -13.9,
                 "maxDDPct": 92.7,
                 "minEquityPct": 17.7,
                 "trades": 36,
                 "losscuts": 1,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 78667,
+                "swapYen": 77870,
                 "costYen": 23831,
-                "winRate": 36.1,
-                "avgTradePct": 0.29
+                "winRate": 38.9,
+                "avgTradePct": 0.33
               },
               "gbpjpy": {
-                "finalYen": 843582,
-                "totalPct": -15.6,
-                "cagrPct": -1.9,
+                "finalYen": 778995,
+                "totalPct": -22.1,
+                "cagrPct": -2.8,
                 "maxDDPct": 87.4,
                 "minEquityPct": 21.9,
                 "trades": 61,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 631307,
+                "swapYen": 633158,
                 "costYen": 58591,
                 "winRate": 39.3,
-                "avgTradePct": 0.23
+                "avgTradePct": 0.2
               },
               "audjpy": {
-                "finalYen": 105635,
-                "totalPct": -89.4,
-                "cagrPct": -22.4,
+                "finalYen": 90555,
+                "totalPct": -90.9,
+                "cagrPct": -23.7,
                 "maxDDPct": 96.2,
                 "minEquityPct": 5.1,
                 "trades": 67,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -89271,
+                "swapYen": -88964,
                 "costYen": 41093,
                 "winRate": 35.8,
-                "avgTradePct": -0.09
+                "avgTradePct": -0.14
               }
             }
           }
@@ -5011,54 +5011,54 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 151,
+                "finalYen": 139,
                 "totalPct": -100,
-                "cagrPct": -62.9,
+                "cagrPct": -63.2,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 94,
                 "losscuts": 6,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -308285,
+                "swapYen": -308284,
                 "costYen": 22005,
                 "winRate": 41.5,
                 "avgTradePct": 0.11
               },
               "eurjpy": {
-                "finalYen": 1790,
+                "finalYen": 2317,
                 "totalPct": -99.8,
-                "cagrPct": -51,
+                "cagrPct": -49.5,
                 "maxDDPct": 99.9,
                 "minEquityPct": 0.1,
                 "trades": 45,
                 "losscuts": 10,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -21260,
+                "swapYen": -21275,
                 "costYen": 7439,
-                "winRate": 31.1,
-                "avgTradePct": 0.21
+                "winRate": 33.3,
+                "avgTradePct": 0.23
               },
               "gbpjpy": {
-                "finalYen": 3009,
+                "finalYen": 2687,
                 "totalPct": -99.7,
-                "cagrPct": -48.1,
+                "cagrPct": -48.6,
                 "maxDDPct": 100,
                 "minEquityPct": 0.1,
                 "trades": 68,
                 "losscuts": 8,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 9610,
+                "swapYen": 9619,
                 "costYen": 19076,
                 "winRate": 38.2,
-                "avgTradePct": 0.19
+                "avgTradePct": 0.17
               },
               "audjpy": {
-                "finalYen": 13,
+                "finalYen": 10,
                 "totalPct": -100,
-                "cagrPct": -72,
+                "cagrPct": -72.6,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 76,
@@ -5068,7 +5068,7 @@
                 "swapYen": -66983,
                 "costYen": 31302,
                 "winRate": 36.8,
-                "avgTradePct": -0.08
+                "avgTradePct": -0.12
               }
             }
           }
@@ -5150,7 +5150,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 3,
+            "avgCagrPct": 2.8,
             "avgMaxDDPct": 13.9,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -5158,64 +5158,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1340423,
-                "totalPct": 34,
-                "cagrPct": 3.4,
+                "finalYen": 1332336,
+                "totalPct": 33.2,
+                "cagrPct": 3.3,
                 "maxDDPct": 13.8,
                 "minEquityPct": 93.7,
                 "trades": 2,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 201512,
+                "swapYen": 201994,
                 "costYen": 130,
                 "winRate": 50,
-                "avgTradePct": 7.04
+                "avgTradePct": 6.61
               },
               "eurjpy": {
-                "finalYen": 1311105,
-                "totalPct": 31.1,
-                "cagrPct": 3.1,
+                "finalYen": 1296539,
+                "totalPct": 29.7,
+                "cagrPct": 3,
                 "maxDDPct": 10,
                 "minEquityPct": 95.7,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 90884,
+                "swapYen": 91064,
                 "costYen": 83,
                 "winRate": 100,
-                "avgTradePct": 22.03
+                "avgTradePct": 20.55
               },
               "gbpjpy": {
-                "finalYen": 1451787,
-                "totalPct": 45.2,
-                "cagrPct": 4.3,
+                "finalYen": 1432564,
+                "totalPct": 43.3,
+                "cagrPct": 4.1,
                 "maxDDPct": 10.5,
                 "minEquityPct": 94,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 170437,
+                "swapYen": 170988,
                 "costYen": 152,
                 "winRate": 100,
-                "avgTradePct": 28.14
+                "avgTradePct": 26.17
               },
               "audjpy": {
-                "finalYen": 1103103,
-                "totalPct": 10.3,
-                "cagrPct": 1.1,
+                "finalYen": 1076874,
+                "totalPct": 7.7,
+                "cagrPct": 0.8,
                 "maxDDPct": 21.2,
                 "minEquityPct": 79.9,
                 "trades": 2,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 136415,
+                "swapYen": 136950,
                 "costYen": 307,
                 "winRate": 50,
-                "avgTradePct": -0.17
+                "avgTradePct": -1.78
               }
             }
           }
@@ -5292,7 +5292,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 5.1,
+            "avgCagrPct": 4.8,
             "avgMaxDDPct": 24.7,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -5300,64 +5300,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1673593,
-                "totalPct": 67.4,
-                "cagrPct": 6,
+                "finalYen": 1657586,
+                "totalPct": 65.8,
+                "cagrPct": 5.9,
                 "maxDDPct": 25.1,
                 "minEquityPct": 87.3,
                 "trades": 2,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 399525,
+                "swapYen": 400479,
                 "costYen": 259,
                 "winRate": 50,
-                "avgTradePct": 7.04
+                "avgTradePct": 6.61
               },
               "eurjpy": {
-                "finalYen": 1622210,
-                "totalPct": 62.2,
-                "cagrPct": 5.6,
+                "finalYen": 1593077,
+                "totalPct": 59.3,
+                "cagrPct": 5.4,
                 "maxDDPct": 16.5,
                 "minEquityPct": 91.4,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 181768,
+                "swapYen": 182128,
                 "costYen": 166,
                 "winRate": 100,
-                "avgTradePct": 22.03
+                "avgTradePct": 20.55
               },
               "gbpjpy": {
-                "finalYen": 1903574,
-                "totalPct": 90.4,
-                "cagrPct": 7.5,
+                "finalYen": 1865128,
+                "totalPct": 86.5,
+                "cagrPct": 7.3,
                 "maxDDPct": 16.8,
                 "minEquityPct": 88.1,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 340874,
+                "swapYen": 341976,
                 "costYen": 303,
                 "winRate": 100,
-                "avgTradePct": 28.14
+                "avgTradePct": 26.17
               },
               "audjpy": {
-                "finalYen": 1098575,
-                "totalPct": 9.9,
-                "cagrPct": 1.1,
+                "finalYen": 1056592,
+                "totalPct": 5.7,
+                "cagrPct": 0.6,
                 "maxDDPct": 40.5,
                 "minEquityPct": 61.2,
                 "trades": 2,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 224580,
+                "swapYen": 225436,
                 "costYen": 559,
                 "winRate": 50,
-                "avgTradePct": -0.17
+                "avgTradePct": -1.78
               }
             }
           }
@@ -5434,7 +5434,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 7,
+            "avgCagrPct": 6.6,
             "avgMaxDDPct": 50.2,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -5442,64 +5442,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 2629588,
-                "totalPct": 163,
-                "cagrPct": 11.5,
+                "finalYen": 2590826,
+                "totalPct": 159.1,
+                "cagrPct": 11.3,
                 "maxDDPct": 49,
                 "minEquityPct": 68.3,
                 "trades": 2,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 972573,
+                "swapYen": 974884,
                 "costYen": 637,
                 "winRate": 50,
-                "avgTradePct": 7.04
+                "avgTradePct": 6.61
               },
               "eurjpy": {
-                "finalYen": 2555525,
-                "totalPct": 155.6,
-                "cagrPct": 11.2,
+                "finalYen": 2482693,
+                "totalPct": 148.3,
+                "cagrPct": 10.8,
                 "maxDDPct": 27.2,
                 "minEquityPct": 78.6,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 454420,
+                "swapYen": 455319,
                 "costYen": 415,
                 "winRate": 100,
-                "avgTradePct": 22.03
+                "avgTradePct": 20.55
               },
               "gbpjpy": {
-                "finalYen": 3258936,
-                "totalPct": 225.9,
-                "cagrPct": 14.3,
+                "finalYen": 3162821,
+                "totalPct": 216.3,
+                "cagrPct": 13.8,
                 "maxDDPct": 35.9,
                 "minEquityPct": 70.2,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 852186,
+                "swapYen": 854940,
                 "costYen": 758,
                 "winRate": 100,
-                "avgTradePct": 28.14
+                "avgTradePct": 26.17
               },
               "audjpy": {
-                "finalYen": 439211,
-                "totalPct": -56.1,
-                "cagrPct": -8.9,
+                "finalYen": 412805,
+                "totalPct": -58.7,
+                "cagrPct": -9.5,
                 "maxDDPct": 88.5,
                 "minEquityPct": 12.4,
                 "trades": 2,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 199572,
+                "swapYen": 200111,
                 "costYen": 991,
                 "winRate": 50,
-                "avgTradePct": -0.17
+                "avgTradePct": -1.78
               }
             }
           }
@@ -5576,7 +5576,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 7.3,
+            "avgCagrPct": 6.8,
             "avgMaxDDPct": 71.6,
             "pairsRuined": 0,
             "pairsWipedOut": 1,
@@ -5584,64 +5584,64 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 4077862,
-                "totalPct": 307.8,
-                "cagrPct": 17.2,
+                "finalYen": 4004519,
+                "totalPct": 300.5,
+                "cagrPct": 16.9,
                 "maxDDPct": 71.8,
                 "minEquityPct": 36.5,
                 "trades": 2,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 1857682,
+                "swapYen": 1862054,
                 "costYen": 1245,
                 "winRate": 50,
-                "avgTradePct": 7.04
+                "avgTradePct": 6.61
               },
               "eurjpy": {
-                "finalYen": 4111050,
-                "totalPct": 311.1,
-                "cagrPct": 17.3,
+                "finalYen": 3965387,
+                "totalPct": 296.5,
+                "cagrPct": 16.8,
                 "maxDDPct": 50.6,
                 "minEquityPct": 57.2,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 908841,
+                "swapYen": 910638,
                 "costYen": 830,
                 "winRate": 100,
-                "avgTradePct": 22.03
+                "avgTradePct": 20.55
               },
               "gbpjpy": {
-                "finalYen": 5517872,
-                "totalPct": 451.8,
-                "cagrPct": 21.3,
+                "finalYen": 5325641,
+                "totalPct": 432.6,
+                "cagrPct": 20.7,
                 "maxDDPct": 64.8,
                 "minEquityPct": 40.4,
                 "trades": 1,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 1704372,
+                "swapYen": 1709881,
                 "costYen": 1516,
                 "winRate": 100,
-                "avgTradePct": 28.14
+                "avgTradePct": 26.17
               },
               "audjpy": {
-                "finalYen": 65026,
-                "totalPct": -93.5,
-                "cagrPct": -26.5,
+                "finalYen": 60193,
+                "totalPct": -94,
+                "cagrPct": -27.1,
                 "maxDDPct": 99.2,
                 "minEquityPct": 0.9,
                 "trades": 4,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 100733,
+                "swapYen": 100831,
                 "costYen": 2094,
                 "winRate": 25,
-                "avgTradePct": -0.29
+                "avgTradePct": -1.09
               }
             }
           }
@@ -5718,7 +5718,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -24.7,
+            "avgCagrPct": -24.9,
             "avgMaxDDPct": 96.4,
             "pairsRuined": 1,
             "pairsWipedOut": 4,
@@ -5726,49 +5726,49 @@
             "maxDebtYen": 44,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1485512,
-                "totalPct": 48.6,
-                "cagrPct": 4.6,
+                "finalYen": 1456111,
+                "totalPct": 45.6,
+                "cagrPct": 4.3,
                 "maxDDPct": 94.4,
                 "minEquityPct": 6.9,
                 "trades": 5,
                 "losscuts": 3,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 771112,
+                "swapYen": 772864,
                 "costYen": 3419,
                 "winRate": 40,
-                "avgTradePct": 2.95
+                "avgTradePct": 2.77
               },
               "eurjpy": {
-                "finalYen": 1291506,
-                "totalPct": 29.2,
-                "cagrPct": 2.9,
+                "finalYen": 1241788,
+                "totalPct": 24.2,
+                "cagrPct": 2.5,
                 "maxDDPct": 94,
                 "minEquityPct": 8.4,
                 "trades": 2,
                 "losscuts": 1,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 339828,
+                "swapYen": 340441,
                 "costYen": 2358,
                 "winRate": 50,
-                "avgTradePct": 11.09
+                "avgTradePct": 10.33
               },
               "gbpjpy": {
-                "finalYen": 568720,
-                "totalPct": -43.1,
-                "cagrPct": -6.2,
+                "finalYen": 548807,
+                "totalPct": -45.1,
+                "cagrPct": -6.5,
                 "maxDDPct": 97.1,
                 "minEquityPct": 3.9,
                 "trades": 3,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 218431,
+                "swapYen": 219002,
                 "costYen": 5605,
                 "winRate": 33.3,
-                "avgTradePct": 10.17
+                "avgTradePct": 9.47
               },
               "audjpy": {
                 "finalYen": -44,
@@ -5865,7 +5865,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 1.7,
+            "avgCagrPct": 1.6,
             "avgMaxDDPct": 12.2,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -5873,24 +5873,24 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1015853,
-                "totalPct": 1.6,
-                "cagrPct": 0.2,
+                "finalYen": 1008840,
+                "totalPct": 0.9,
+                "cagrPct": 0.1,
                 "maxDDPct": 13.3,
                 "minEquityPct": 89.7,
                 "trades": 35,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 112150,
+                "swapYen": 112568,
                 "costYen": 2123,
-                "winRate": 25.7,
-                "avgTradePct": -0.27
+                "winRate": 22.9,
+                "avgTradePct": -0.29
               },
               "eurjpy": {
                 "finalYen": 1186816,
                 "totalPct": 18.7,
-                "cagrPct": 2,
+                "cagrPct": 1.9,
                 "maxDDPct": 11.1,
                 "minEquityPct": 93.2,
                 "trades": 19,
@@ -6015,19 +6015,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 1019402,
-                "totalPct": 1.9,
-                "cagrPct": 0.2,
+                "finalYen": 1005358,
+                "totalPct": 0.5,
+                "cagrPct": 0.1,
                 "maxDDPct": 24,
                 "minEquityPct": 80.4,
                 "trades": 35,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 210720,
+                "swapYen": 211557,
                 "costYen": 4107,
-                "winRate": 25.7,
-                "avgTradePct": -0.27
+                "winRate": 22.9,
+                "avgTradePct": -0.29
               },
               "eurjpy": {
                 "finalYen": 1354906,
@@ -6047,7 +6047,7 @@
               "gbpjpy": {
                 "finalYen": 1351192,
                 "totalPct": 35.1,
-                "cagrPct": 3.5,
+                "cagrPct": 3.4,
                 "maxDDPct": 22.5,
                 "minEquityPct": 83.6,
                 "trades": 17,
@@ -6149,7 +6149,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 5.1,
+            "avgCagrPct": 5,
             "avgMaxDDPct": 39.7,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -6157,19 +6157,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 966280,
-                "totalPct": -3.4,
-                "cagrPct": -0.4,
+                "finalYen": 933217,
+                "totalPct": -6.7,
+                "cagrPct": -0.8,
                 "maxDDPct": 47.6,
                 "minEquityPct": 57.3,
                 "trades": 35,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 429842,
+                "swapYen": 431813,
                 "costYen": 9170,
-                "winRate": 25.7,
-                "avgTradePct": -0.27
+                "winRate": 22.9,
+                "avgTradePct": -0.29
               },
               "eurjpy": {
                 "finalYen": 1717399,
@@ -6291,7 +6291,7 @@
             }
           },
           "test": {
-            "avgCagrPct": 5.1,
+            "avgCagrPct": 4.9,
             "avgMaxDDPct": 63.6,
             "pairsRuined": 0,
             "pairsWipedOut": 0,
@@ -6299,19 +6299,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 741842,
-                "totalPct": -25.8,
-                "cagrPct": -3.3,
+                "finalYen": 691621,
+                "totalPct": -30.8,
+                "cagrPct": -4.1,
                 "maxDDPct": 72.6,
                 "minEquityPct": 31.7,
                 "trades": 35,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 584952,
+                "swapYen": 587946,
                 "costYen": 14649,
-                "winRate": 25.7,
-                "avgTradePct": -0.27
+                "winRate": 22.9,
+                "avgTradePct": -0.29
               },
               "eurjpy": {
                 "finalYen": 1826353,
@@ -6433,7 +6433,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -12.4,
+            "avgCagrPct": -12.7,
             "avgMaxDDPct": 94.5,
             "pairsRuined": 0,
             "pairsWipedOut": 3,
@@ -6441,19 +6441,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 65926,
-                "totalPct": -93.4,
-                "cagrPct": -26.4,
+                "finalYen": 55116,
+                "totalPct": -94.5,
+                "cagrPct": -27.8,
                 "maxDDPct": 97.7,
                 "minEquityPct": 2.8,
                 "trades": 36,
                 "losscuts": 2,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 317095,
+                "swapYen": 317740,
                 "costYen": 16376,
-                "winRate": 27.8,
-                "avgTradePct": -0.29
+                "winRate": 25,
+                "avgTradePct": -0.31
               },
               "eurjpy": {
                 "finalYen": 228618,
@@ -6588,19 +6588,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 952639,
-                "totalPct": -4.7,
-                "cagrPct": -0.5,
+                "finalYen": 949772,
+                "totalPct": -5,
+                "cagrPct": -0.6,
                 "maxDDPct": 18.2,
                 "minEquityPct": 87.3,
-                "trades": 240,
+                "trades": 241,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -11836,
-                "costYen": 14614,
-                "winRate": 59.6,
-                "avgTradePct": 0
+                "swapYen": -11723,
+                "costYen": 14662,
+                "winRate": 59.3,
+                "avgTradePct": -0.01
               },
               "eurjpy": {
                 "finalYen": 958474,
@@ -6730,19 +6730,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 879424,
-                "totalPct": -12.1,
-                "cagrPct": -1.4,
+                "finalYen": 874131,
+                "totalPct": -12.6,
+                "cagrPct": -1.5,
                 "maxDDPct": 34,
                 "minEquityPct": 75.7,
-                "trades": 240,
+                "trades": 241,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -19398,
-                "costYen": 27772,
-                "winRate": 59.6,
-                "avgTradePct": 0
+                "swapYen": -19190,
+                "costYen": 27861,
+                "winRate": 59.3,
+                "avgTradePct": -0.01
               },
               "eurjpy": {
                 "finalYen": 892082,
@@ -6872,19 +6872,19 @@
             "maxDebtYen": 0,
             "byPair": {
               "usdjpy": {
-                "finalYen": 560556,
-                "totalPct": -43.9,
-                "cagrPct": -6.3,
+                "finalYen": 552123,
+                "totalPct": -44.8,
+                "cagrPct": -6.5,
                 "maxDDPct": 68.5,
                 "minEquityPct": 39.5,
-                "trades": 240,
+                "trades": 241,
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": -16435,
-                "costYen": 56498,
-                "winRate": 59.6,
-                "avgTradePct": 0
+                "swapYen": -16104,
+                "costYen": 56639,
+                "winRate": 59.3,
+                "avgTradePct": -0.01
               },
               "eurjpy": {
                 "finalYen": 592530,
@@ -6904,7 +6904,7 @@
               "gbpjpy": {
                 "finalYen": 170919,
                 "totalPct": -82.9,
-                "cagrPct": -18.1,
+                "cagrPct": -18,
                 "maxDDPct": 87.7,
                 "minEquityPct": 14.5,
                 "trades": 238,
@@ -7006,7 +7006,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -38.6,
+            "avgCagrPct": -38.7,
             "avgMaxDDPct": 96.6,
             "pairsRuined": 1,
             "pairsWipedOut": 3,
@@ -7014,18 +7014,18 @@
             "maxDebtYen": 768,
             "byPair": {
               "usdjpy": {
-                "finalYen": 48817,
-                "totalPct": -95.1,
-                "cagrPct": -28.9,
+                "finalYen": 47348,
+                "totalPct": -95.3,
+                "cagrPct": -29.1,
                 "maxDDPct": 97.9,
                 "minEquityPct": 2.5,
-                "trades": 241,
+                "trades": 242,
                 "losscuts": 1,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 44978,
-                "costYen": 67670,
-                "winRate": 59.8,
+                "swapYen": 45035,
+                "costYen": 67694,
+                "winRate": 59.5,
                 "avgTradePct": -0.01
               },
               "eurjpy": {
@@ -7148,7 +7148,7 @@
             }
           },
           "test": {
-            "avgCagrPct": -95.1,
+            "avgCagrPct": -95,
             "avgMaxDDPct": 100,
             "pairsRuined": 3,
             "pairsWipedOut": 4,
@@ -7173,7 +7173,7 @@
               "eurjpy": {
                 "finalYen": 1,
                 "totalPct": -100,
-                "cagrPct": -80.3,
+                "cagrPct": -80.2,
                 "maxDDPct": 100,
                 "minEquityPct": 0,
                 "trades": 250,
@@ -7226,71 +7226,71 @@
     "byLev": {
       "1": {
         "train": {
-          "avgCagrPct": -0.9,
+          "avgCagrPct": -1,
           "p10": -2.4,
-          "p90": 0.7,
+          "p90": 0.8,
           "runsWithRuin": 0
         },
         "test": {
-          "avgCagrPct": -0.8,
+          "avgCagrPct": -0.7,
           "p10": -2.4,
-          "p90": 0.8,
+          "p90": 1.1,
           "runsWithRuin": 0
         }
       },
       "2": {
         "train": {
-          "avgCagrPct": -2.8,
-          "p10": -5.8,
-          "p90": 0.4,
+          "avgCagrPct": -2.6,
+          "p10": -5.6,
+          "p90": 0.3,
           "runsWithRuin": 0
         },
         "test": {
           "avgCagrPct": -1.6,
-          "p10": -4.3,
-          "p90": 1.2,
+          "p10": -4.4,
+          "p90": 1.3,
           "runsWithRuin": 0
         }
       },
       "5": {
         "train": {
-          "avgCagrPct": -30.1,
-          "p10": -54.9,
-          "p90": -9.6,
-          "runsWithRuin": 125
+          "avgCagrPct": -29.7,
+          "p10": -52.9,
+          "p90": -9.2,
+          "runsWithRuin": 126
         },
         "test": {
-          "avgCagrPct": -8.3,
+          "avgCagrPct": -8.6,
           "p10": -16,
-          "p90": 0.1,
+          "p90": -1.2,
           "runsWithRuin": 0
         }
       },
       "10": {
         "train": {
-          "avgCagrPct": -61.3,
-          "p10": -75.7,
-          "p90": -44.5,
-          "runsWithRuin": 165
+          "avgCagrPct": -61.7,
+          "p10": -75.5,
+          "p90": -45.6,
+          "runsWithRuin": 173
         },
         "test": {
-          "avgCagrPct": -30.2,
-          "p10": -45.1,
-          "p90": -13.9,
-          "runsWithRuin": 22
+          "avgCagrPct": -30.8,
+          "p10": -43.8,
+          "p90": -16.7,
+          "runsWithRuin": 24
         }
       },
       "25": {
         "train": {
-          "avgCagrPct": -99,
+          "avgCagrPct": -98.8,
           "p10": -100,
-          "p90": -96.7,
+          "p90": -95.9,
           "runsWithRuin": 200
         },
         "test": {
-          "avgCagrPct": -88.7,
-          "p10": -95.4,
-          "p90": -80.5,
+          "avgCagrPct": -89,
+          "p10": -95.8,
+          "p90": -79.6,
           "runsWithRuin": 196
         }
       }
