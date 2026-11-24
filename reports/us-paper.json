@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-24T06:04:43.468Z",
+  "updatedAt": "2026-11-24T22:50:36.993Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": "spy",
-    "chosenAt": "2026-11-24T06:04:38.280Z",
+    "chosenAt": "2026-11-24T22:50:33.751Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-23",
+  "lastDate": "2026-11-24",
   "capital": 300000,
-  "equityYen": 287242,
-  "returnPct": -4.3,
-  "spyReturnPct": -4.3,
+  "equityYen": 285846,
+  "returnPct": -4.7,
+  "spyReturnPct": -4.7,
   "idleInSpyPct": 100,
   "idlePct": 100,
   "taxYen": 0,
@@ -24,6 +24,30 @@
   "holdings": [],
   "nextBuys": [],
   "recentReactions": [
+    {
+      "t": "A",
+      "name": "Agilent Technologies",
+      "date": "2026-11-24",
+      "rePct": 4.2
+    },
+    {
+      "t": "CRWD",
+      "name": "CrowdStrike",
+      "date": "2026-11-24",
+      "rePct": 0.9
+    },
+    {
+      "t": "J",
+      "name": "Jacobs Solutions",
+      "date": "2026-11-24",
+      "rePct": -3.5
+    },
+    {
+      "t": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "date": "2026-11-24",
+      "rePct": -16.3
+    },
     {
       "t": "WMT",
       "name": "Walmart",
@@ -107,12 +131,6 @@
       "name": "Nvidia",
       "date": "2026-11-18",
       "rePct": -2.9
-    },
-    {
-      "t": "TSN",
-      "name": "Tyson Foods",
-      "date": "2026-11-17",
-      "rePct": -0.5
     }
   ],
   "recentClosed": [],
@@ -144,16 +162,20 @@
     {
       "date": "2026-11-23",
       "value": 287242
+    },
+    {
+      "date": "2026-11-24",
+      "value": 285846
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-24T06:04:38.969Z",
+    "chosenAt": "2026-11-24T22:50:34.744Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 285468,
-    "returnPct": -4.8,
+    "equityYen": 284178,
+    "returnPct": -5.3,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
@@ -163,11 +185,11 @@
         "name": "Palo Alto Networks",
         "reason": "決算の翌日に+6.4%（2026-11-19）／点数4：50日線の近く・値幅が大きい・売買代金が大きい・S&P500が下げた日",
         "entryDate": "2026-11-20",
-        "daysHeld": 2,
-        "daysLeft": 38,
-        "unrealPct": -1.8,
+        "daysHeld": 3,
+        "daysLeft": 37,
+        "unrealPct": -1.9,
         "costYen": 27433,
-        "valueYen": 26950
+        "valueYen": 26916
       }
     ],
     "nextBuys": [],
@@ -200,6 +222,10 @@
       {
         "date": "2026-11-23",
         "value": 285468
+      },
+      {
+        "date": "2026-11-24",
+        "value": 284178
       }
     ]
   }
