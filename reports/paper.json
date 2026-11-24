@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-23T22:00:40.394Z",
+  "updatedAt": "2026-11-24T20:37:49.340Z",
   "startDate": "2026-11-05",
-  "lastDate": "2026-11-20",
+  "lastDate": "2026-11-24",
   "strategies": {
     "swing_div": {
       "name": "配当予想の引き上げ（5日保有）",
@@ -250,6 +250,10 @@
         {
           "date": "2026-11-20",
           "value": 1049393
+        },
+        {
+          "date": "2026-11-24",
+          "value": 1049393
         }
       ]
     },
@@ -261,34 +265,36 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 994209,
+      "equityYen": 995462,
       "taxYen": 0,
       "capital": 1000000,
-      "returnPct": -0.6,
-      "trades": 17,
-      "winRatePct": 47.1,
-      "avgRetPct": -0.51,
+      "returnPct": -0.5,
+      "trades": 18,
+      "winRatePct": 50,
+      "avgRetPct": -0.03,
       "holdings": [
+        {
+          "code": "60990",
+          "name": "エラン",
+          "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
+          "entryDate": "2026-11-24",
+          "daysHeld": 1,
+          "unrealPct": -3.4,
+          "costYen": 99031,
+          "valueYen": 95641
+        }
+      ],
+      "nextBuys": [],
+      "recentClosed": [
         {
           "code": "40880",
           "name": "エア・ウォーター",
           "reason": "営業利益予想を+41.2%上方修正（2026-11-16発表）",
           "entryDate": "2026-11-17",
-          "daysHeld": 4,
-          "unrealPct": 3.8,
-          "costYen": 103611,
-          "valueYen": 107512
-        }
-      ],
-      "nextBuys": [
-        {
-          "code": "60990",
-          "name": "エラン",
-          "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
-          "late": false
-        }
-      ],
-      "recentClosed": [
+          "exitDate": "2026-11-24",
+          "retPct": 8.2,
+          "profitYen": 8544
+        },
         {
           "code": "69080",
           "name": "イリソ電子工業",
@@ -491,6 +497,10 @@
         {
           "date": "2026-11-20",
           "value": 994209
+        },
+        {
+          "date": "2026-11-24",
+          "value": 995462
         }
       ]
     },
@@ -831,6 +841,10 @@
         {
           "date": "2026-11-20",
           "value": 1062857
+        },
+        {
+          "date": "2026-11-24",
+          "value": 1062857
         }
       ]
     },
@@ -842,34 +856,36 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 1014794,
-      "taxYen": 2792,
+      "equityYen": 1014197,
+      "taxYen": 4501,
       "capital": 1000000,
-      "returnPct": 1.5,
-      "trades": 12,
-      "winRatePct": 58.3,
-      "avgRetPct": 1.17,
+      "returnPct": 1.4,
+      "trades": 13,
+      "winRatePct": 61.5,
+      "avgRetPct": 1.71,
       "holdings": [
+        {
+          "code": "60990",
+          "name": "エラン",
+          "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
+          "entryDate": "2026-11-24",
+          "daysHeld": 1,
+          "unrealPct": -3.4,
+          "costYen": 101095,
+          "valueYen": 97635
+        }
+      ],
+      "nextBuys": [],
+      "recentClosed": [
         {
           "code": "40880",
           "name": "エア・ウォーター",
           "reason": "営業利益予想を+41.2%上方修正（2026-11-16発表）",
           "entryDate": "2026-11-17",
-          "daysHeld": 4,
-          "unrealPct": 3.8,
-          "costYen": 102047,
-          "valueYen": 105888
-        }
-      ],
-      "nextBuys": [
-        {
-          "code": "60990",
-          "name": "エラン",
-          "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
-          "late": false
-        }
-      ],
-      "recentClosed": [
+          "exitDate": "2026-11-24",
+          "retPct": 8.2,
+          "profitYen": 8415
+        },
         {
           "code": "69080",
           "name": "イリソ電子工業",
@@ -1027,6 +1043,10 @@
         {
           "date": "2026-11-20",
           "value": 1014794
+        },
+        {
+          "date": "2026-11-24",
+          "value": 1014197
         }
       ]
     },
@@ -1277,6 +1297,10 @@
         {
           "date": "2026-11-20",
           "value": 967836
+        },
+        {
+          "date": "2026-11-24",
+          "value": 967836
         }
       ]
     },
@@ -1381,6 +1405,10 @@
         {
           "date": "2026-11-20",
           "value": 286111
+        },
+        {
+          "date": "2026-11-24",
+          "value": 286111
         }
       ]
     },
@@ -1449,13 +1477,17 @@
         {
           "date": "2026-11-20",
           "value": 282862
+        },
+        {
+          "date": "2026-11-24",
+          "value": 282862
         }
       ]
     },
     "real30_dt_pro": {
       "name": "試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）",
       "trial": true,
-      "proChosenAt": "2026-11-23T04:44:22.381Z",
+      "proChosenAt": "2026-11-23T22:00:52.579Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1491,13 +1523,17 @@
         {
           "date": "2026-11-20",
           "value": 300000
+        },
+        {
+          "date": "2026-11-24",
+          "value": 300000
         }
       ]
     },
     "real30_dt_pro_sec": {
       "name": "試験中：プロの判断のデイトレ＋業種が弱っている時は見送る（2026-11-21〜）",
       "trial": true,
-      "proChosenAt": "2026-11-23T04:44:22.381Z",
+      "proChosenAt": "2026-11-23T22:00:52.579Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1517,13 +1553,17 @@
         {
           "date": "2026-11-20",
           "value": 300000
+        },
+        {
+          "date": "2026-11-24",
+          "value": 300000
         }
       ]
     },
     "real30_div_pro": {
       "name": "試験中：プロの判断のスイング（点数1以上・5日）",
       "trial": true,
-      "proChosenAt": "2026-11-23T04:44:22.381Z",
+      "proChosenAt": "2026-11-23T22:00:52.579Z",
       "hold": 5,
       "gap": false,
       "kinds": [
@@ -1559,6 +1599,10 @@
         {
           "date": "2026-11-20",
           "value": 300000
+        },
+        {
+          "date": "2026-11-24",
+          "value": 300000
         }
       ]
     }
@@ -1566,21 +1610,24 @@
   "ipoNight": {
     "name": "IPO一晩持ち：上場初日の引けで買い、次の日の寄りで売る（30万円・100株単位・2銘柄まで）",
     "capital": 300000,
-    "equityYen": 300000,
-    "returnPct": 0,
-    "taxYen": 0,
-    "trades": 0,
-    "winRatePct": null,
-    "holdings": [
+    "equityYen": 309806,
+    "returnPct": 3.3,
+    "taxYen": 2500,
+    "trades": 1,
+    "winRatePct": 100,
+    "holdings": [],
+    "recentClosed": [
       {
         "code": "657A0",
         "name": "ＨｉＪｏＪｏ　Ｐａｒｔｎｅｒｓ",
         "reason": "2026-11-20に新規上場（初日の引けで購入）",
         "entryDate": "2026-11-20",
+        "exitDate": "2026-11-24",
+        "retPct": 8.7,
+        "profitYen": 12306,
         "shares": 300
       }
     ],
-    "recentClosed": [],
     "equityHistory": [
       {
         "date": "2026-11-13",
@@ -1605,13 +1652,17 @@
       {
         "date": "2026-11-20",
         "value": 300000
+      },
+      {
+        "date": "2026-11-24",
+        "value": 309806
       }
     ]
   },
   "market": {
-    "date": "2026-11-20",
-    "dayPct": -3.6,
-    "fiveDayPct": -7,
-    "vsTrendPct": -6.9
+    "date": "2026-11-24",
+    "dayPct": 1.5,
+    "fiveDayPct": -4.5,
+    "vsTrendPct": -5.1
   }
 }

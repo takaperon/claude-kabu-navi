@@ -1,222 +1,222 @@
 {
- "date": "2026-11-20",
- "updatedAt": "2026-11-23T22:01:19.040Z",
+ "date": "2026-11-24",
+ "updatedAt": "2026-11-24T20:38:29.499Z",
  "note": "売買代金（20日平均）1億円以上・100円以上の東証の株",
- "count": 1713,
- "avgPct": -3.6,
- "up": 78,
- "down": 1610,
+ "count": 1721,
+ "avgPct": 1.5,
+ "up": 1105,
+ "down": 559,
  "gainers": [
   {
-   "code": "4586",
-   "name": "メドレックス",
-   "sector": "医薬品",
-   "pct": 39,
+   "code": "2345",
+   "name": "ＨＯＤＬ１",
+   "sector": "情報･通信業",
+   "pct": 30.6,
+   "news": null
+  },
+  {
+   "code": "3905",
+   "name": "データセクション",
+   "sector": "情報･通信業",
+   "pct": 15.9,
+   "news": null
+  },
+  {
+   "code": "4062",
+   "name": "イビデン",
+   "sector": "電気機器",
+   "pct": 15,
+   "news": null
+  },
+  {
+   "code": "6727",
+   "name": "ワコム",
+   "sector": "電気機器",
+   "pct": 15,
+   "news": null
+  },
+  {
+   "code": "6981",
+   "name": "村田製作所",
+   "sector": "電気機器",
+   "pct": 14.9,
+   "news": null
+  },
+  {
+   "code": "3110",
+   "name": "日東紡績",
+   "sector": "ガラス･土石製品",
+   "pct": 14.3,
+   "news": null
+  },
+  {
+   "code": "6525",
+   "name": "ＫＯＫＵＳＡＩ　ＥＬＥＣＴＲＩＣ",
+   "sector": "電気機器",
+   "pct": 14.3,
    "news": null
   },
   {
    "code": "3624",
    "name": "アクセルマーク",
    "sector": "情報･通信業",
-   "pct": 33.1,
+   "pct": 14.1,
    "news": null
   },
   {
-   "code": "5240",
-   "name": "ｍｏｎｏＡＩ　ｔｅｃｈｎｏｌｏｇｙ",
-   "sector": "情報･通信業",
-   "pct": 14.7,
-   "news": null
-  },
-  {
-   "code": "5133",
-   "name": "テリロジーホールディングス",
-   "sector": "情報･通信業",
-   "pct": 9.8,
-   "news": null
-  },
-  {
-   "code": "446A",
-   "name": "ノースサンド",
-   "sector": "サービス業",
-   "pct": 6.9,
-   "news": null
-  },
-  {
-   "code": "6058",
-   "name": "ベクトル",
-   "sector": "サービス業",
-   "pct": 4.7,
-   "news": null
-  },
-  {
-   "code": "6706",
-   "name": "電気興業",
-   "sector": "電気機器",
-   "pct": 4.7,
-   "news": null
-  },
-  {
-   "code": "6630",
-   "name": "ヤーマン",
-   "sector": "電気機器",
-   "pct": 4.6,
-   "news": null
-  },
-  {
-   "code": "6440",
-   "name": "ＪＵＫＩ",
+   "code": "6324",
+   "name": "ハーモニック・ドライブ・システムズ",
    "sector": "機械",
-   "pct": 3.1,
-   "news": null
-  },
-  {
-   "code": "9204",
-   "name": "スカイマーク",
-   "sector": "空運業",
-   "pct": 2.9,
-   "news": null
-  },
-  {
-   "code": "2492",
-   "name": "インフォマート",
-   "sector": "サービス業",
-   "pct": 2.2,
-   "news": null
-  },
-  {
-   "code": "4575",
-   "name": "キャンバス",
-   "sector": "医薬品",
-   "pct": 2.2,
-   "news": null
-  },
-  {
-   "code": "8630",
-   "name": "ＳＯＭＰＯホールディングス",
-   "sector": "保険業",
-   "pct": 2,
-   "news": null
-  },
-  {
-   "code": "8766",
-   "name": "東京海上ホールディングス",
-   "sector": "保険業",
-   "pct": 2,
-   "news": null
-  },
-  {
-   "code": "9887",
-   "name": "松屋フーズホールディングス",
-   "sector": "小売業",
-   "pct": 2,
-   "news": null
-  },
-  {
-   "code": "4578",
-   "name": "大塚ホールディングス",
-   "sector": "医薬品",
-   "pct": 1.9,
-   "news": null
-  },
-  {
-   "code": "2212",
-   "name": "山崎製パン",
-   "sector": "食料品",
-   "pct": 1.8,
-   "news": null
-  },
-  {
-   "code": "6238",
-   "name": "フリュー",
-   "sector": "機械",
-   "pct": 1.8,
-   "news": null
-  },
-  {
-   "code": "4579",
-   "name": "ラクオリア創薬",
-   "sector": "医薬品",
-   "pct": 1.6,
-   "news": null
-  },
-  {
-   "code": "8056",
-   "name": "ＢＩＰＲＯＧＹ",
-   "sector": "情報･通信業",
-   "pct": 1.5,
-   "news": null
-  }
- ],
- "losers": [
-  {
-   "code": "130A",
-   "name": "Ｖｅｒｉｔａｓ　Ｉｎ　Ｓｉｌｉｃｏ",
-   "sector": "医薬品",
-   "pct": -18.6,
+   "pct": 13.3,
    "news": null
   },
   {
    "code": "4461",
    "name": "第一工業製薬",
    "sector": "化学",
-   "pct": -16.9,
+   "pct": 13.1,
+   "news": null
+  },
+  {
+   "code": "6480",
+   "name": "日本トムソン",
+   "sector": "機械",
+   "pct": 13.1,
+   "news": null
+  },
+  {
+   "code": "6787",
+   "name": "メイコー",
+   "sector": "電気機器",
+   "pct": 13.1,
+   "news": null
+  },
+  {
+   "code": "6387",
+   "name": "サムコ",
+   "sector": "機械",
+   "pct": 12.9,
+   "news": null
+  },
+  {
+   "code": "6254",
+   "name": "野村マイクロ・サイエンス",
+   "sector": "機械",
+   "pct": 12.7,
+   "news": null
+  },
+  {
+   "code": "6857",
+   "name": "アドバンテスト",
+   "sector": "電気機器",
+   "pct": 12.5,
    "news": null
   },
   {
    "code": "6227",
    "name": "ＡＩメカテック",
    "sector": "機械",
-   "pct": -15.7,
+   "pct": 12.4,
    "news": null
   },
   {
-   "code": "4888",
-   "name": "ステラファーマ",
+   "code": "268A",
+   "name": "リガク・ホールディングス",
+   "sector": "精密機器",
+   "pct": 12.2,
+   "news": null
+  },
+  {
+   "code": "6323",
+   "name": "ローツェ",
+   "sector": "機械",
+   "pct": 12.1,
+   "news": null
+  },
+  {
+   "code": "6668",
+   "name": "アドテック　プラズマ　テクノロジー",
+   "sector": "電気機器",
+   "pct": 12.1,
+   "news": null
+  },
+  {
+   "code": "6941",
+   "name": "山一電機",
+   "sector": "電気機器",
+   "pct": 12,
+   "news": null
+  }
+ ],
+ "losers": [
+  {
+   "code": "4165",
+   "name": "プレイド",
+   "sector": "情報･通信業",
+   "pct": -16.6,
+   "news": null
+  },
+  {
+   "code": "130A",
+   "name": "Ｖｅｒｉｔａｓ　Ｉｎ　Ｓｉｌｉｃｏ",
    "sector": "医薬品",
-   "pct": -14.8,
+   "pct": -15.8,
    "news": null
   },
   {
-   "code": "9984",
-   "name": "ソフトバンクグループ",
-   "sector": "情報･通信業",
-   "pct": -14.5,
-   "news": null
-  },
-  {
-   "code": "5572",
-   "name": "Ｒｉｄｇｅ−ｉ",
-   "sector": "情報･通信業",
+   "code": "4575",
+   "name": "キャンバス",
+   "sector": "医薬品",
    "pct": -13.9,
    "news": null
   },
   {
-   "code": "6266",
-   "name": "タツモ",
-   "sector": "機械",
-   "pct": -13.6,
-   "news": null
-  },
-  {
-   "code": "3909",
-   "name": "ショーケース",
-   "sector": "情報･通信業",
-   "pct": -13.6,
-   "news": null
-  },
-  {
-   "code": "625A",
-   "name": "Ｓｋｙｆａｌｌ",
+   "code": "2334",
+   "name": "イオレ",
    "sector": "サービス業",
-   "pct": -13.5,
+   "pct": -11.7,
    "news": null
   },
   {
-   "code": "5706",
-   "name": "三井金属",
-   "sector": "非鉄金属",
-   "pct": -13.3,
+   "code": "3042",
+   "name": "セキュアヴェイル",
+   "sector": "情報･通信業",
+   "pct": -9.6,
+   "news": null
+  },
+  {
+   "code": "4933",
+   "name": "Ｉ−ｎｅ",
+   "sector": "化学",
+   "pct": -9.2,
+   "news": null
+  },
+  {
+   "code": "5240",
+   "name": "ｍｏｎｏＡＩ　ｔｅｃｈｎｏｌｏｇｙ",
+   "sector": "情報･通信業",
+   "pct": -9,
+   "news": null
+  },
+  {
+   "code": "618A",
+   "name": "ＫＯＭＰＥＩＴＯ",
+   "sector": "サービス業",
+   "pct": -8.8,
+   "news": null
+  },
+  {
+   "code": "2782",
+   "name": "セリア",
+   "sector": "小売業",
+   "pct": -8.1,
+   "news": null
+  },
+  {
+   "code": "3858",
+   "name": "ユビキタスＡＩ",
+   "sector": "情報･通信業",
+   "pct": -6.6,
    "news": null
   }
  ]
