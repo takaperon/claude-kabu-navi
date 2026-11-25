@@ -348,6 +348,11 @@ for (const e of events) {
 fs.writeFileSync(statePath, JSON.stringify(state));
 
 // ---------- 公開用（銘柄名・日付・損益率のみ） ----------
+// 売った後の値動き（売った日の終値→最新の終値）。損切り・期限で売った後に戻ったかを見るため
+function afterExit(list) {
+  const last = pricesOn(state.lastDate);
+  return list.map((c) => { if (!c.exitDate || c.exitDate >= state.lastDate || !idxOf.has(c.exitDate)) return c; const a = pricesOn(c.exitDate).get(c.code)?.c, b = last.get(c.code)?.c; return a > 0 && b > 0 ? { ...c, afterExitPct: pct(b / a - 1), afterExitTo: state.lastDate } : c; });
+}
 const out = { updatedAt: new Date().toISOString(), startDate: state.startDate, lastDate: state.lastDate, strategies: {} };
 for (const [k, cfg] of Object.entries(STRATS)) {
   const st = state.strategies[k];
@@ -369,7 +374,7 @@ for (const [k, cfg] of Object.entries(STRATS)) {
     avgRetPct: rets.length ? Math.round((rets.reduce((a, b) => a + b, 0) / rets.length) * 100) / 100 : null,
     holdings: st.positions.map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, entryDate: p.entryDate, daysHeld: p.held, shares: p.shares, unrealPct: pct(((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx - 1), costYen: Math.round(p.size), valueYen: Math.round(p.size * ((p.lastPx ?? p.entryPx) * (1 - SLIP)) / p.entryPx) })),
     nextBuys: st.pending.sort((a, b) => b.score - a.score).slice(0, 10).map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, late: p.late })),
-    recentClosed: st.closed.slice(-30).reverse(),
+    recentClosed: afterExit(st.closed.slice(-30).reverse()),
     equityHistory: st.equity,
   };
 }
@@ -380,7 +385,7 @@ if (state.ipoNight) {
     capital: 300_000, equityYen: eqNow, returnPct: pct(eqNow / 300_000 - 1), taxYen: Object.values(st.tax).reduce((a, b) => a + b, 0),
     trades: st.closed.length, winRatePct: rets.length ? pct(rets.filter((r) => r > 0).length / rets.length) : null,
     holdings: st.positions.map((p) => ({ code: p.code, name: nameOf(p.code), reason: p.reason, entryDate: p.entryDate, shares: p.shares })),
-    recentClosed: st.closed.slice(-30).reverse(), equityHistory: st.equity,
+    recentClosed: afterExit(st.closed.slice(-30).reverse()), equityHistory: st.equity,
   };
 }
 // 毎日のふりかえり用：その日の市場全体（流動性条件を満たす銘柄の平均）と、売った取引を相場と比べた差
