@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-11-24T06:17:01.200Z",
+  "generatedAt": "2026-11-25T04:59:16.055Z",
   "rules": {
     "spread": {
       "usdjpy": 0.008,
@@ -2612,7 +2612,7 @@
                 "avgTradePct": 1.58
               },
               "gbpjpy": {
-                "finalYen": 827278,
+                "finalYen": 827279,
                 "totalPct": -17.3,
                 "cagrPct": -2.1,
                 "maxDDPct": 81.7,
@@ -4624,7 +4624,7 @@
                 "losscuts": 0,
                 "ruined": false,
                 "debtYen": 0,
-                "swapYen": 231031,
+                "swapYen": 231030,
                 "costYen": 19319,
                 "winRate": 39.3,
                 "avgTradePct": 0.2
@@ -5756,7 +5756,7 @@
                 "avgTradePct": 10.33
               },
               "gbpjpy": {
-                "finalYen": 548807,
+                "finalYen": 548806,
                 "totalPct": -45.1,
                 "cagrPct": -6.5,
                 "maxDDPct": 97.1,
