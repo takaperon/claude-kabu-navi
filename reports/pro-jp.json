@@ -1,8 +1,8 @@
 {
  "ok": true,
- "generatedAt": "2026-11-25T11:13:17.702Z",
+ "generatedAt": "2026-11-25T19:53:32.120Z",
  "status": {
-  "startedAt": "2026-11-25T11:13:14.355Z",
+  "startedAt": "2026-11-25T19:53:26.450Z",
   "spyDays": 2511,
   "spySource": "FRED SP500",
   "divReasonEvents": 4879,
@@ -10,7 +10,7 @@
    "div_up": 4879,
    "earn_up": 2728
   },
-  "finishedAt": "2026-11-25T11:13:18.729Z"
+  "finishedAt": "2026-11-25T19:53:34.308Z"
  },
  "periods": {
   "train": [
