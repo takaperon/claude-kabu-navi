@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-11-24T20:37:31.256Z",
+  "startedAt": "2026-11-25T11:12:53.305Z",
   "keyPresent": true,
   "fetchedDays": 1,
   "rowsFetched": 4449,
@@ -12,15 +12,15 @@
   "splitsRewritten": 0,
   "splitsStored": 7,
   "rawBackfilled": 0,
-  "rawStored": 1227,
+  "rawStored": 1228,
   "finsFetchedDays": 5,
-  "finsRows": 15,
+  "finsRows": 11,
   "earnDateFetched": 5,
-  "earnDateStored": 1833,
+  "earnDateStored": 1834,
   "requestCount": 13,
-  "finishedAt": "2026-11-24T20:37:48.405Z",
-  "storedDays": 1232,
+  "finishedAt": "2026-11-25T11:13:10.244Z",
+  "storedDays": 1233,
   "storedFrom": "2021-11-08",
-  "storedTo": "2026-11-24",
-  "finsStoredDays": 1845
+  "storedTo": "2026-11-25",
+  "finsStoredDays": 1846
 }
