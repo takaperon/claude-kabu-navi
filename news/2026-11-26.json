@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-26",
+ "status": "未検証",
+ "period": "2026-11-25 朝〜2026-11-26 朝",
+ "note": "米国11/25：S&P500 -0.25%（7,183）、ナスダック -0.62%、ダウ +0.33%。10月のPCE物価は年率3.8%（予想どおり、FRBの目標の約2倍）で利上げ観測。エヌビディア-3.9%。VIX 27.98（記事、CBOEは26.36）。政権が301条の調査の後、中国・EU・日本など14か国に最大20%の関税案（日本15%、半導体・自動車・鉄鋼・アルミは対象外、1月より前には始まらない見込み）。日本11/25：医薬品株が一斉高、半導体株は大幅安。",
+ "judgment": "米国：VIXは25〜30。PCEが高めで12/9のFOMCの利上げ観測が強い。今日11/26は感謝祭で休場、明日は短縮。仮想売買はいつもどおり。日本：関税案は自動車・半導体を除くので、過去の「米国の関税」の検証（自動車8社、2件）は当てはまらず、確かさは低い。",
+ "items": [
+  {
+   "headline": "米国が日本など14か国に関税案（日本15%）",
+   "summary": "301条の調査の後の案。最大20%（EU・日本・韓国15%、ベトナム20%）。半導体・自動車・鉄鋼・アルミは対象外。1月より前には始まらない見込み。",
+   "sources": [
+    "https://vistapglobal.com/stocks-close-mixed-on-wednesday-november-25-2026-as-hot-pce-inflation-new-tariff-plans-and-an-ai-sell-off-test-wall-street-amd-eprx-googl-modd-nvda-ser-spcx-vix/"
+   ],
+   "eventDate": "2026-11-25",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [],
+   "horizon": "数週間",
+   "confidence": "中"
+  },
+  {
+   "headline": "10月のPCE物価は年率3.8%",
+   "summary": "予想どおりだがFRBの目標の約2倍。利上げ観測が強まり、ナスダックは続落。",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/25/stock-market-today-nov-25-nvidia-slides-3-9-as-the-market-considers-hot-pce-inflation-data-and-new-tariff-proposals/"
+   ],
+   "eventDate": "2026-11-25",
+   "type": "マクロ",
+   "sectors": [],
+   "stocks": [],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "日本は医薬品株が一斉高、半導体株は大幅安",
+   "summary": "小野薬品（アムジェンと和解）・アステラス・大塚などが上昇。アドバンテスト・東京エレクトロン・KOKUSAIは米SOXの急落で大幅安。",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879174.html",
+    "https://www.zaikei.co.jp/article/20261126/879177.html"
+   ],
+   "eventDate": "2026-11-25",
+   "type": "マクロ",
+   "sectors": [
+    "医薬品",
+    "半導体"
+   ],
+   "stocks": [],
+   "horizon": "当日",
+   "confidence": "高"
+  }
+ ]
+}

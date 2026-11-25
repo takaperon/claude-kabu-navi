@@ -1,0 +1,299 @@
+{
+ "date": "2026-11-25",
+ "items": [
+  {
+   "market": "jp",
+   "code": "6727",
+   "pct": 19.6,
+   "cat": "提携/買収/TOB",
+   "reason": "MBO（TOB）価格へ株価が近づく動きが続いた",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879174.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "4586",
+   "pct": 14.1,
+   "cat": "不明",
+   "reason": "11/19・20の連続ストップ高の後、再び上昇。記事に理由の記載なし",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4565",
+   "pct": 11.4,
+   "cat": "テーマ/思惑",
+   "reason": "医薬品株の一斉高に刺激された",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879174.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4528",
+   "pct": 10.7,
+   "cat": "悪材料の出尽くし",
+   "reason": "アムジェンとの特許侵害訴訟で和解",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879174.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "338A",
+   "pct": 8.6,
+   "cat": "新製品/受注",
+   "reason": "専門知識がなくても秘密計算を使える仕組みを開発",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879174.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4527",
+   "pct": 8.0,
+   "cat": "テーマ/思惑",
+   "reason": "目薬などの値上げを発表（医薬品株高の日）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879174.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "3697",
+   "pct": 7.5,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "8237",
+   "pct": 7.0,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "2585",
+   "pct": 6.8,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "618A",
+   "pct": 6.7,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6777",
+   "pct": -18.5,
+   "cat": "不明",
+   "reason": "AI・半導体株安の日。個別の理由は記事で確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6834",
+   "pct": -18.4,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株の下落（11/24の上げの反動）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879177.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "4165",
+   "pct": -17.4,
+   "cat": "不明",
+   "reason": "11/24から続く売り（材料の記載なし）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879177.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6525",
+   "pct": -17.3,
+   "cat": "テーマ/思惑",
+   "reason": "米SOX指数の急落、サムスン電子などの大幅安",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261126/879174.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "6668",
+   "pct": -17.1,
+   "cat": "不明",
+   "reason": "半導体株安の日。個別の理由は記事で確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "HPQ",
+   "pct": 11.5,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず（決算の時期だが未確認）",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CHTR",
+   "pct": 8.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "AXON",
+   "pct": 7.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "CDW",
+   "pct": 7.0,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "ADI",
+   "pct": 6.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "EXE",
+   "pct": 5.8,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "BG",
+   "pct": 4.9,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "IP",
+   "pct": 4.8,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "TXN",
+   "pct": 4.5,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "DE",
+   "pct": 4.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "LRCX",
+   "pct": -5.7,
+   "cat": "不明",
+   "reason": "半導体株安の日。個別の理由は記事で確認できず",
+   "sources": [
+    "https://vistapglobal.com/stocks-close-mixed-on-wednesday-november-25-2026-as-hot-pce-inflation-new-tariff-plans-and-an-ai-sell-off-test-wall-street-amd-eprx-googl-modd-nvda-ser-spcx-vix/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "SNDK",
+   "pct": -5.6,
+   "cat": "不明",
+   "reason": "メモリー株安の続き。個別の理由は記事で確認できず",
+   "sources": [
+    "https://vistapglobal.com/stocks-close-mixed-on-wednesday-november-25-2026-as-hot-pce-inflation-new-tariff-plans-and-an-ai-sell-off-test-wall-street-amd-eprx-googl-modd-nvda-ser-spcx-vix/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "ORCL",
+   "pct": -5.1,
+   "cat": "テーマ/思惑",
+   "reason": "AIインフラ株（CoreWeave・Nebiusなど）が大きく売られた",
+   "sources": [
+    "https://vistapglobal.com/stocks-close-mixed-on-wednesday-november-25-2026-as-hot-pce-inflation-new-tariff-plans-and-an-ai-sell-off-test-wall-street-amd-eprx-googl-modd-nvda-ser-spcx-vix/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "MU",
+   "pct": -4.5,
+   "cat": "テーマ/思惑",
+   "reason": "AI・半導体株の一斉安",
+   "sources": [
+    "https://vistapglobal.com/stocks-close-mixed-on-wednesday-november-25-2026-as-hot-pce-inflation-new-tariff-plans-and-an-ai-sell-off-test-wall-street-amd-eprx-googl-modd-nvda-ser-spcx-vix/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "J",
+   "pct": -4.3,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  }
+ ]
+}
