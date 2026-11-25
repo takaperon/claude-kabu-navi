@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-25T04:54:19.349Z",
+  "updatedAt": "2026-11-25T22:51:01.608Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": "spy",
-    "chosenAt": "2026-11-25T04:54:16.100Z",
+    "chosenAt": "2026-11-25T22:50:57.909Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-24",
+  "lastDate": "2026-11-25",
   "capital": 300000,
-  "equityYen": 285846,
-  "returnPct": -4.7,
-  "spyReturnPct": -4.7,
+  "equityYen": 285019,
+  "returnPct": -5,
+  "spyReturnPct": -5,
   "idleInSpyPct": 100,
   "idlePct": 100,
   "taxYen": 0,
@@ -22,8 +22,68 @@
   "winRatePct": null,
   "avgRetPct": null,
   "holdings": [],
-  "nextBuys": [],
+  "nextBuys": [
+    {
+      "t": "HPQ",
+      "name": "HP Inc.",
+      "reason": "決算の翌日に+11.5%（2026-11-25）"
+    }
+  ],
   "recentReactions": [
+    {
+      "t": "HPQ",
+      "name": "HP Inc.",
+      "date": "2026-11-25",
+      "rePct": 11.5
+    },
+    {
+      "t": "ADI",
+      "name": "Analog Devices",
+      "date": "2026-11-25",
+      "rePct": 6.4
+    },
+    {
+      "t": "BBY",
+      "name": "Best Buy",
+      "date": "2026-11-25",
+      "rePct": 3
+    },
+    {
+      "t": "WDAY",
+      "name": "Workday, Inc.",
+      "date": "2026-11-25",
+      "rePct": 0.7
+    },
+    {
+      "t": "DELL",
+      "name": "Dell Technologies",
+      "date": "2026-11-25",
+      "rePct": 0.6
+    },
+    {
+      "t": "MDT",
+      "name": "Medtronic",
+      "date": "2026-11-25",
+      "rePct": -0.1
+    },
+    {
+      "t": "SJM",
+      "name": "J.M. Smucker Company (The)",
+      "date": "2026-11-25",
+      "rePct": -0.6
+    },
+    {
+      "t": "DLTR",
+      "name": "Dollar Tree",
+      "date": "2026-11-25",
+      "rePct": -1.6
+    },
+    {
+      "t": "ADSK",
+      "name": "Autodesk",
+      "date": "2026-11-25",
+      "rePct": -3.5
+    },
     {
       "t": "A",
       "name": "Agilent Technologies",
@@ -113,24 +173,6 @@
       "name": "Lowe's",
       "date": "2026-11-19",
       "rePct": -1.6
-    },
-    {
-      "t": "DIS",
-      "name": "Walt Disney Company (The)",
-      "date": "2026-11-18",
-      "rePct": 4.6
-    },
-    {
-      "t": "HD",
-      "name": "Home Depot (The)",
-      "date": "2026-11-18",
-      "rePct": -0.4
-    },
-    {
-      "t": "NVDA",
-      "name": "Nvidia",
-      "date": "2026-11-18",
-      "rePct": -2.9
     }
   ],
   "recentClosed": [],
@@ -166,16 +208,20 @@
     {
       "date": "2026-11-24",
       "value": 285846
+    },
+    {
+      "date": "2026-11-25",
+      "value": 285019
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-25T04:54:16.909Z",
+    "chosenAt": "2026-11-25T22:50:58.947Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 284178,
-    "returnPct": -5.3,
+    "equityYen": 283674,
+    "returnPct": -5.4,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
@@ -185,14 +231,20 @@
         "name": "Palo Alto Networks",
         "reason": "決算の翌日に+6.4%（2026-11-19）／点数4：50日線の近く・値幅が大きい・売買代金が大きい・S&P500が下げた日",
         "entryDate": "2026-11-20",
-        "daysHeld": 3,
-        "daysLeft": 37,
-        "unrealPct": -1.9,
+        "daysHeld": 4,
+        "daysLeft": 36,
+        "unrealPct": -1,
         "costYen": 27433,
-        "valueYen": 26916
+        "valueYen": 27157
       }
     ],
-    "nextBuys": [],
+    "nextBuys": [
+      {
+        "t": "ADI",
+        "name": "Analog Devices",
+        "reason": "決算の翌日に+6.4%（2026-11-25）／点数4：EPSが大きく伸びた・50日線の近く・値幅が大きい・売買代金が大きい"
+      }
+    ],
     "recentClosed": [],
     "equityHistory": [
       {
@@ -226,6 +278,10 @@
       {
         "date": "2026-11-24",
         "value": 284178
+      },
+      {
+        "date": "2026-11-25",
+        "value": 283674
       }
     ]
   }
