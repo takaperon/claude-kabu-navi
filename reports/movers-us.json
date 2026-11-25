@@ -1,197 +1,197 @@
 {
- "updatedAt": "2026-11-25T05:40:53.319900+00:00",
+ "updatedAt": "2026-11-25T22:49:15.681891+00:00",
  "error": null,
  "universe": 502,
  "batchOk": 25,
  "single": 18,
- "date": "2026-11-24",
+ "date": "2026-11-25",
  "count": 500,
  "note": "S&P500構成銘柄（Wikipediaの一覧）。ウィブルの相場情報（Nasdaq Basic）",
- "avgPct": 0.3,
- "up": 340,
- "down": 151,
+ "avgPct": 0.82,
+ "up": 366,
+ "down": 121,
  "gainers": [
   {
-   "t": "DLTR",
-   "name": "Dollar Tree",
-   "sector": "生活必需品",
-   "pct": 11.2
-  },
-  {
-   "t": "CSGP",
-   "name": "CoStar Group",
-   "sector": "不動産",
-   "pct": 8.1
-  },
-  {
-   "t": "MRNA",
-   "name": "Moderna",
-   "sector": "ヘルスケア",
-   "pct": 7.2
+   "t": "HPQ",
+   "name": "HP Inc.",
+   "sector": "情報技術",
+   "pct": 11.5
   },
   {
    "t": "CHTR",
    "name": "Charter Communications",
    "sector": "通信サービス",
-   "pct": 6.2
+   "pct": 8.4
   },
   {
-   "t": "NKE",
-   "name": "Nike, Inc.",
-   "sector": "一般消費財",
-   "pct": 5.9
+   "t": "AXON",
+   "name": "Axon Enterprise",
+   "sector": "資本財",
+   "pct": 7.4
+  },
+  {
+   "t": "CDW",
+   "name": "CDW Corporation",
+   "sector": "情報技術",
+   "pct": 7.0
+  },
+  {
+   "t": "ADI",
+   "name": "Analog Devices",
+   "sector": "情報技術",
+   "pct": 6.4
+  },
+  {
+   "t": "EXE",
+   "name": "Expand Energy",
+   "sector": "エネルギー",
+   "pct": 5.8
+  },
+  {
+   "t": "BG",
+   "name": "Bunge Global",
+   "sector": "生活必需品",
+   "pct": 4.9
   },
   {
    "t": "IP",
    "name": "International Paper",
    "sector": "素材",
-   "pct": 5.7
-  },
-  {
-   "t": "AMGN",
-   "name": "Amgen",
-   "sector": "ヘルスケア",
-   "pct": 5.5
-  },
-  {
-   "t": "NVR",
-   "name": "NVR, Inc.",
-   "sector": "一般消費財",
-   "pct": 5.5
-  },
-  {
-   "t": "INCY",
-   "name": "Incyte",
-   "sector": "ヘルスケア",
-   "pct": 5.3
-  },
-  {
-   "t": "TTWO",
-   "name": "Take-Two Interactive",
-   "sector": "通信サービス",
-   "pct": 5.3
-  },
-  {
-   "t": "PODD",
-   "name": "Insulet Corporation",
-   "sector": "ヘルスケア",
-   "pct": 5.1
-  },
-  {
-   "t": "HUM",
-   "name": "Humana",
-   "sector": "ヘルスケア",
-   "pct": 5.0
-  },
-  {
-   "t": "SWKS",
-   "name": "Skyworks Solutions",
-   "sector": "情報技術",
-   "pct": 5.0
-  },
-  {
-   "t": "TSCO",
-   "name": "Tractor Supply",
-   "sector": "一般消費財",
-   "pct": 5.0
-  },
-  {
-   "t": "BIIB",
-   "name": "Biogen",
-   "sector": "ヘルスケア",
    "pct": 4.8
-  },
-  {
-   "t": "REGN",
-   "name": "Regeneron Pharmaceuticals",
-   "sector": "ヘルスケア",
-   "pct": 4.8
-  },
-  {
-   "t": "TGT",
-   "name": "Target Corporation",
-   "sector": "生活必需品",
-   "pct": 4.7
-  },
-  {
-   "t": "VRTX",
-   "name": "Vertex Pharmaceuticals",
-   "sector": "ヘルスケア",
-   "pct": 4.7
-  },
-  {
-   "t": "ACN",
-   "name": "Accenture",
-   "sector": "情報技術",
-   "pct": 4.5
-  },
-  {
-   "t": "BRO",
-   "name": "Brown & Brown",
-   "sector": "金融",
-   "pct": 4.5
-  }
- ],
- "losers": [
-  {
-   "t": "ADI",
-   "name": "Analog Devices",
-   "sector": "情報技術",
-   "pct": -17.4
-  },
-  {
-   "t": "HPE",
-   "name": "Hewlett Packard Enterprise",
-   "sector": "情報技術",
-   "pct": -16.3
-  },
-  {
-   "t": "DELL",
-   "name": "Dell Technologies",
-   "sector": "情報技術",
-   "pct": -11.8
   },
   {
    "t": "TXN",
    "name": "Texas Instruments",
    "sector": "情報技術",
-   "pct": -11.2
+   "pct": 4.5
+  },
+  {
+   "t": "DE",
+   "name": "Deere & Company",
+   "sector": "資本財",
+   "pct": 4.4
+  },
+  {
+   "t": "EQT",
+   "name": "EQT Corporation",
+   "sector": "エネルギー",
+   "pct": 4.4
+  },
+  {
+   "t": "SW",
+   "name": "Smurfit Westrock",
+   "sector": "素材",
+   "pct": 4.3
+  },
+  {
+   "t": "CSGP",
+   "name": "CoStar Group",
+   "sector": "不動産",
+   "pct": 4.2
+  },
+  {
+   "t": "TPL",
+   "name": "Texas Pacific Land Corporation",
+   "sector": "エネルギー",
+   "pct": 4.0
+  },
+  {
+   "t": "UHS",
+   "name": "Universal Health Services",
+   "sector": "ヘルスケア",
+   "pct": 4.0
+  },
+  {
+   "t": "CLX",
+   "name": "Clorox",
+   "sector": "生活必需品",
+   "pct": 3.9
+  },
+  {
+   "t": "CRH",
+   "name": "CRH plc",
+   "sector": "素材",
+   "pct": 3.9
+  },
+  {
+   "t": "DASH",
+   "name": "DoorDash",
+   "sector": "一般消費財",
+   "pct": 3.9
+  },
+  {
+   "t": "CTSH",
+   "name": "Cognizant",
+   "sector": "情報技術",
+   "pct": 3.8
+  },
+  {
+   "t": "KHC",
+   "name": "Kraft Heinz",
+   "sector": "生活必需品",
+   "pct": 3.7
+  }
+ ],
+ "losers": [
+  {
+   "t": "LRCX",
+   "name": "Lam Research",
+   "sector": "情報技術",
+   "pct": -5.7
   },
   {
    "t": "SNDK",
    "name": "Sandisk",
    "sector": "情報技術",
-   "pct": -11.1
+   "pct": -5.6
+  },
+  {
+   "t": "ORCL",
+   "name": "Oracle Corporation",
+   "sector": "情報技術",
+   "pct": -5.1
   },
   {
    "t": "MU",
    "name": "Micron Technology",
    "sector": "情報技術",
-   "pct": -11.0
+   "pct": -4.5
   },
   {
-   "t": "MPWR",
-   "name": "Monolithic Power Systems",
-   "sector": "情報技術",
-   "pct": -10.8
+   "t": "J",
+   "name": "Jacobs Solutions",
+   "sector": "資本財",
+   "pct": -4.3
   },
   {
-   "t": "LITE",
-   "name": "Lumentum",
+   "t": "DDOG",
+   "name": "Datadog",
    "sector": "情報技術",
-   "pct": -10.5
+   "pct": -4.3
   },
   {
-   "t": "FLEX",
-   "name": "Flex Ltd.",
-   "sector": "情報技術",
-   "pct": -10.1
+   "t": "WST",
+   "name": "West Pharmaceutical Services",
+   "sector": "ヘルスケア",
+   "pct": -4.1
   },
   {
-   "t": "CIEN",
-   "name": "Ciena",
+   "t": "PWR",
+   "name": "Quanta Services",
+   "sector": "資本財",
+   "pct": -4.1
+  },
+  {
+   "t": "NVDA",
+   "name": "Nvidia",
    "sector": "情報技術",
-   "pct": -9.6
+   "pct": -3.9
+  },
+  {
+   "t": "CEG",
+   "name": "Constellation Energy",
+   "sector": "エネルギー",
+   "pct": -3.9
   }
  ]
 }
