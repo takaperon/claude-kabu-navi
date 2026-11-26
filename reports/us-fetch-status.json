@@ -1,20 +1,20 @@
 {
-  "startedAt": "2026-11-25T22:49:07.053Z",
+  "startedAt": "2026-11-26T04:10:04.735Z",
   "keyPresent": true,
   "universe": 502,
   "tiingo": {
-    "requests": 29,
-    "updated": 26,
+    "requests": 26,
+    "updated": 22,
     "failed": 3,
     "limitHits": 0,
     "lastError": "{\"detail\": \"You have run over your 500 symbol look up for this month. Please upgrade at https://api.tiingo.com/pricing to have your limits increased.\"}",
-    "priority": 26,
-    "needed": 29
+    "priority": 20,
+    "needed": 26
   },
   "sec": {
-    "requests": 503,
-    "submissions": 502,
-    "facts": 1,
+    "requests": 0,
+    "submissions": 0,
+    "facts": 0,
     "failed": 0,
     "lastError": null,
     "probe": [
@@ -23,8 +23,7 @@
         "status": 200,
         "body": "ok"
       }
-    ],
-    "newEarnings": 1
+    ]
   },
   "av": {
     "keyPresent": true,
@@ -36,7 +35,7 @@
     "needed": 0
   },
   "stoppedBy": "done",
-  "finishedAt": "2026-11-25T22:50:56.399Z",
+  "finishedAt": "2026-11-26T04:10:33.579Z",
   "pricesStored": 500,
   "secStored": 502
 }
