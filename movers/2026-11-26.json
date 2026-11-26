@@ -1,0 +1,152 @@
+{
+ "date": "2026-11-26",
+ "items": [
+  {
+   "market": "jp",
+   "code": "4598",
+   "pct": 21.3,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4586",
+   "pct": 19.5,
+   "cat": "テーマ/思惑",
+   "reason": "決算発表後も思惑的な物色が継続（材料の記載なし）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261127/879337.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4222",
+   "pct": 14.7,
+   "cat": "不明",
+   "reason": "記事は「直近の急伸前の水準まで調整」とあるだけで、上げの理由は確認できず",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261127/879337.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6787",
+   "pct": 14.0,
+   "cat": "テーマ/思惑",
+   "reason": "AI関連株全般の反発",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261127/879336.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "6227",
+   "pct": 12.8,
+   "cat": "新製品/受注",
+   "reason": "海外大手メーカーからの大口受注を発表",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261127/879337.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "285A",
+   "pct": 12.6,
+   "cat": "テーマ/思惑",
+   "reason": "半導体株の反発（記事は子会社からの配当金の受領も挙げる）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261127/879336.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6727",
+   "pct": 11.5,
+   "cat": "提携/買収/TOB",
+   "reason": "TOB価格1,030円への鞘寄せが続いた",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261127/879336.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "558A",
+   "pct": 11.0,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4579",
+   "pct": 9.6,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3810",
+   "pct": 9.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3624",
+   "pct": -26.6,
+   "cat": "不明",
+   "reason": "11/18〜20・24の急騰の後の急落。記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3909",
+   "pct": -12.0,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "2160",
+   "pct": -7.2,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4398",
+   "pct": -4.9,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "277A",
+   "pct": -4.6,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  }
+ ]
+}
