@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25T22:49:09.116290+00:00",
+  "checkedAt": "2026-11-26T05:29:08.567443+00:00",
   "keyPresent": true,
   "tokenReady": true,
   "accounts": 1,
@@ -9,7 +9,7 @@
   "balanceOk": true,
   "positionsOk": true,
   "error": null,
-  "tokenWaitSec": 1,
+  "tokenWaitSec": 0,
   "accountListStatus": 200,
   "dataProbes": {
     "us_daily_AAPL": {
