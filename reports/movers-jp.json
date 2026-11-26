@@ -1,222 +1,222 @@
 {
- "date": "2026-11-25",
- "updatedAt": "2026-11-25T19:54:01.943Z",
+ "date": "2026-11-26",
+ "updatedAt": "2026-11-26T19:34:30.952Z",
  "note": "売買代金（20日平均）1億円以上・100円以上の東証の株",
- "count": 1722,
- "avgPct": -0.6,
- "up": 948,
- "down": 735,
+ "count": 1726,
+ "avgPct": 0.6,
+ "up": 912,
+ "down": 731,
  "gainers": [
   {
-   "code": "6727",
-   "name": "ワコム",
-   "sector": "電気機器",
-   "pct": 19.6,
+   "code": "4598",
+   "name": "Ｄｅｌｔａ−Ｆｌｙ　Ｐｈａｒｍａ",
+   "sector": "医薬品",
+   "pct": 21.3,
    "news": null
   },
   {
    "code": "4586",
    "name": "メドレックス",
    "sector": "医薬品",
-   "pct": 14.1,
+   "pct": 19.5,
    "news": null
   },
   {
-   "code": "4565",
-   "name": "ネクセラファーマ",
-   "sector": "医薬品",
-   "pct": 11.4,
+   "code": "4222",
+   "name": "児玉化学工業",
+   "sector": "化学",
+   "pct": 14.7,
    "news": null
   },
   {
-   "code": "4528",
-   "name": "小野薬品工業",
-   "sector": "医薬品",
-   "pct": 10.7,
-   "news": null
-  },
-  {
-   "code": "338A",
-   "name": "ＺｅｎｍｕＴｅｃｈ",
-   "sector": "情報･通信業",
-   "pct": 8.6,
-   "news": null
-  },
-  {
-   "code": "4527",
-   "name": "ロート製薬",
-   "sector": "医薬品",
-   "pct": 8,
-   "news": null
-  },
-  {
-   "code": "3697",
-   "name": "ＳＨＩＦＴ",
-   "sector": "情報･通信業",
-   "pct": 7.5,
-   "news": null
-  },
-  {
-   "code": "8237",
-   "name": "松屋",
-   "sector": "小売業",
-   "pct": 7,
-   "news": null
-  },
-  {
-   "code": "2585",
-   "name": "ライフドリンク　カンパニー",
-   "sector": "食料品",
-   "pct": 6.8,
-   "news": null
-  },
-  {
-   "code": "618A",
-   "name": "ＫＯＭＰＥＩＴＯ",
-   "sector": "サービス業",
-   "pct": 6.7,
-   "news": null
-  },
-  {
-   "code": "4307",
-   "name": "野村総合研究所",
-   "sector": "情報･通信業",
-   "pct": 6.5,
-   "news": null
-  },
-  {
-   "code": "4503",
-   "name": "アステラス製薬",
-   "sector": "医薬品",
-   "pct": 6.5,
-   "news": null
-  },
-  {
-   "code": "4552",
-   "name": "ＪＣＲファーマ",
-   "sector": "医薬品",
-   "pct": 6.5,
-   "news": null
-  },
-  {
-   "code": "5273",
-   "name": "三谷セキサン",
-   "sector": "ガラス･土石製品",
-   "pct": 6.5,
-   "news": null
-  },
-  {
-   "code": "4578",
-   "name": "大塚ホールディングス",
-   "sector": "医薬品",
-   "pct": 6.4,
-   "news": null
-  },
-  {
-   "code": "2705",
-   "name": "大戸屋ホールディングス",
-   "sector": "小売業",
-   "pct": 6.3,
-   "news": null
-  },
-  {
-   "code": "3659",
-   "name": "ネクソン",
-   "sector": "情報･通信業",
-   "pct": 6.1,
-   "news": null
-  },
-  {
-   "code": "6088",
-   "name": "シグマクシス・ホールディングス",
-   "sector": "サービス業",
-   "pct": 6.1,
-   "news": null
-  },
-  {
-   "code": "2212",
-   "name": "山崎製パン",
-   "sector": "食料品",
-   "pct": 6,
-   "news": null
-  },
-  {
-   "code": "4519",
-   "name": "中外製薬",
-   "sector": "医薬品",
-   "pct": 6,
-   "news": null
-  }
- ],
- "losers": [
-  {
-   "code": "6777",
-   "name": "ｓａｎｔｅｃ　Ｈｏｌｄｉｎｇｓ",
+   "code": "6787",
+   "name": "メイコー",
    "sector": "電気機器",
-   "pct": -18.5,
-   "news": null
-  },
-  {
-   "code": "6834",
-   "name": "精工技研",
-   "sector": "電気機器",
-   "pct": -18.4,
-   "news": null
-  },
-  {
-   "code": "4165",
-   "name": "プレイド",
-   "sector": "情報･通信業",
-   "pct": -17.4,
-   "news": null
-  },
-  {
-   "code": "6525",
-   "name": "ＫＯＫＵＳＡＩ　ＥＬＥＣＴＲＩＣ",
-   "sector": "電気機器",
-   "pct": -17.3,
-   "news": null
-  },
-  {
-   "code": "6668",
-   "name": "アドテック　プラズマ　テクノロジー",
-   "sector": "電気機器",
-   "pct": -17.1,
+   "pct": 14,
    "news": null
   },
   {
    "code": "6227",
    "name": "ＡＩメカテック",
    "sector": "機械",
-   "pct": -16.6,
+   "pct": 12.8,
    "news": null
   },
   {
-   "code": "6946",
-   "name": "日本アビオニクス",
+   "code": "285A",
+   "name": "キオクシアホールディングス",
    "sector": "電気機器",
-   "pct": -16.2,
+   "pct": 12.6,
    "news": null
   },
   {
-   "code": "4062",
-   "name": "イビデン",
+   "code": "6727",
+   "name": "ワコム",
    "sector": "電気機器",
-   "pct": -16,
+   "pct": 11.5,
    "news": null
   },
   {
-   "code": "6862",
-   "name": "ミナトホールディングス",
+   "code": "558A",
+   "name": "ＳＱＵＥＥＺＥ",
+   "sector": "サービス業",
+   "pct": 11,
+   "news": null
+  },
+  {
+   "code": "4579",
+   "name": "ラクオリア創薬",
+   "sector": "医薬品",
+   "pct": 9.6,
+   "news": null
+  },
+  {
+   "code": "3810",
+   "name": "サイバーステップホールディングス",
+   "sector": "情報･通信業",
+   "pct": 9.4,
+   "news": null
+  },
+  {
+   "code": "3131",
+   "name": "シンデン・ハイテックス",
+   "sector": "卸売業",
+   "pct": 9,
+   "news": null
+  },
+  {
+   "code": "6570",
+   "name": "共和コーポレーション",
+   "sector": "サービス業",
+   "pct": 8.9,
+   "news": null
+  },
+  {
+   "code": "4165",
+   "name": "プレイド",
+   "sector": "情報･通信業",
+   "pct": 8.6,
+   "news": null
+  },
+  {
+   "code": "4478",
+   "name": "フリー",
+   "sector": "情報･通信業",
+   "pct": 8.6,
+   "news": null
+  },
+  {
+   "code": "3923",
+   "name": "ラクス",
+   "sector": "情報･通信業",
+   "pct": 8.5,
+   "news": null
+  },
+  {
+   "code": "4022",
+   "name": "ラサ工業",
+   "sector": "化学",
+   "pct": 8.1,
+   "news": null
+  },
+  {
+   "code": "4419",
+   "name": "Ｆｉｎａｔｅｘｔホールディングス",
+   "sector": "情報･通信業",
+   "pct": 8.1,
+   "news": null
+  },
+  {
+   "code": "7826",
+   "name": "フルヤ金属",
+   "sector": "その他製品",
+   "pct": 7.5,
+   "news": null
+  },
+  {
+   "code": "6998",
+   "name": "日本タングステン",
    "sector": "電気機器",
-   "pct": -15.2,
+   "pct": 7.3,
    "news": null
   },
   {
-   "code": "2962",
-   "name": "テクニスコ",
-   "sector": "金属製品",
-   "pct": -15,
+   "code": "8237",
+   "name": "松屋",
+   "sector": "小売業",
+   "pct": 7.3,
+   "news": null
+  }
+ ],
+ "losers": [
+  {
+   "code": "3624",
+   "name": "アクセルマーク",
+   "sector": "情報･通信業",
+   "pct": -26.6,
+   "news": null
+  },
+  {
+   "code": "3909",
+   "name": "ショーケース",
+   "sector": "情報･通信業",
+   "pct": -12,
+   "news": null
+  },
+  {
+   "code": "2160",
+   "name": "ジーエヌアイグループ",
+   "sector": "医薬品",
+   "pct": -7.2,
+   "news": null
+  },
+  {
+   "code": "4398",
+   "name": "ブロードバンドセキュリティ",
+   "sector": "情報･通信業",
+   "pct": -4.9,
+   "news": null
+  },
+  {
+   "code": "277A",
+   "name": "グロービング",
+   "sector": "サービス業",
+   "pct": -4.6,
+   "news": null
+  },
+  {
+   "code": "2791",
+   "name": "大黒天物産",
+   "sector": "小売業",
+   "pct": -4.2,
+   "news": null
+  },
+  {
+   "code": "3399",
+   "name": "丸千代山岡家",
+   "sector": "小売業",
+   "pct": -4.1,
+   "news": null
+  },
+  {
+   "code": "338A",
+   "name": "ＺｅｎｍｕＴｅｃｈ",
+   "sector": "情報･通信業",
+   "pct": -4.1,
+   "news": null
+  },
+  {
+   "code": "1801",
+   "name": "大成建設",
+   "sector": "建設業",
+   "pct": -3.9,
+   "news": null
+  },
+  {
+   "code": "8303",
+   "name": "ＳＢＩ新生銀行",
+   "sector": "銀行業",
+   "pct": -3.7,
    "news": null
   }
  ]
