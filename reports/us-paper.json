@@ -1,35 +1,47 @@
 {
-  "updatedAt": "2026-11-27T04:17:34.841Z",
+  "updatedAt": "2026-11-27T22:49:53.179Z",
   "name": "決算の翌日に+10%以上上がった株を次の朝に買い、20日持つ（空いているお金はS&P500）",
   "settings": {
     "react": 0.1,
     "hold": 20,
     "idle": "spy",
     "idleNow": "spy",
-    "chosenAt": "2026-11-27T04:17:31.735Z",
+    "chosenAt": "2026-11-27T22:49:50.979Z",
     "rule": "前半・後半ともS&P500超え・最大の減り30%以内の中で、年率の低い方の半分が一番大きいもの"
   },
   "startDate": "2026-11-13",
-  "lastDate": "2026-11-25",
+  "lastDate": "2026-11-27",
   "capital": 300000,
-  "equityYen": 285019,
-  "returnPct": -5,
-  "spyReturnPct": -5,
-  "idleInSpyPct": 100,
-  "idlePct": 100,
+  "equityYen": 290607,
+  "returnPct": -3.1,
+  "spyReturnPct": -3.5,
+  "idleInSpyPct": 89.7,
+  "idlePct": 89.7,
   "taxYen": 0,
   "trades": 0,
   "winRatePct": null,
   "avgRetPct": null,
-  "holdings": [],
-  "nextBuys": [
+  "holdings": [
     {
       "t": "HPQ",
       "name": "HP Inc.",
-      "reason": "決算の翌日に+11.5%（2026-11-25）"
+      "reason": "決算の翌日に+11.5%（2026-11-25）",
+      "entryDate": "2026-11-27",
+      "daysHeld": 1,
+      "daysLeft": 19,
+      "unrealPct": 3.3,
+      "costYen": 28964,
+      "valueYen": 29930
     }
   ],
+  "nextBuys": [],
   "recentReactions": [
+    {
+      "t": "DE",
+      "name": "Deere & Company",
+      "date": "2026-11-27",
+      "rePct": 2.1
+    },
     {
       "t": "HPQ",
       "name": "HP Inc.",
@@ -137,42 +149,6 @@
       "name": "Intuit",
       "date": "2026-11-20",
       "rePct": -12.8
-    },
-    {
-      "t": "PANW",
-      "name": "Palo Alto Networks",
-      "date": "2026-11-19",
-      "rePct": 6.4
-    },
-    {
-      "t": "P",
-      "name": "Everpure",
-      "date": "2026-11-19",
-      "rePct": 4.7
-    },
-    {
-      "t": "EXPD",
-      "name": "Expeditors International",
-      "date": "2026-11-19",
-      "rePct": 2.3
-    },
-    {
-      "t": "TGT",
-      "name": "Target Corporation",
-      "date": "2026-11-19",
-      "rePct": 0.9
-    },
-    {
-      "t": "TJX",
-      "name": "TJX Companies",
-      "date": "2026-11-19",
-      "rePct": -0.6
-    },
-    {
-      "t": "LOW",
-      "name": "Lowe's",
-      "date": "2026-11-19",
-      "rePct": -1.6
     }
   ],
   "recentClosed": [],
@@ -212,16 +188,20 @@
     {
       "date": "2026-11-25",
       "value": 285019
+    },
+    {
+      "date": "2026-11-27",
+      "value": 290607
     }
   ],
   "pro": {
     "name": "試験中：プロの判断（決算の翌日に+5%以上＋効く特徴が3つ以上、40日持つ。空いているお金はS&P500）",
     "trial": true,
-    "chosenAt": "2026-11-27T04:17:32.678Z",
+    "chosenAt": "2026-11-27T22:49:51.665Z",
     "startDate": "2026-11-13",
     "capital": 300000,
-    "equityYen": 283674,
-    "returnPct": -5.4,
+    "equityYen": 288027,
+    "returnPct": -4,
     "taxYen": 0,
     "trades": 0,
     "winRatePct": null,
@@ -236,15 +216,20 @@
         "unrealPct": -1,
         "costYen": 27433,
         "valueYen": 27157
-      }
-    ],
-    "nextBuys": [
+      },
       {
         "t": "ADI",
         "name": "Analog Devices",
-        "reason": "決算の翌日に+6.4%（2026-11-25）／点数4：EPSが大きく伸びた・50日線の近く・値幅が大きい・売買代金が大きい"
+        "reason": "決算の翌日に+6.4%（2026-11-25）／点数4：EPSが大きく伸びた・50日線の近く・値幅が大きい・売買代金が大きい",
+        "entryDate": "2026-11-27",
+        "daysHeld": 1,
+        "daysLeft": 39,
+        "unrealPct": 0.7,
+        "costYen": 28811,
+        "valueYen": 29005
       }
     ],
+    "nextBuys": [],
     "recentClosed": [],
     "equityHistory": [
       {
@@ -282,6 +267,10 @@
       {
         "date": "2026-11-25",
         "value": 283674
+      },
+      {
+        "date": "2026-11-27",
+        "value": 288027
       }
     ]
   }
