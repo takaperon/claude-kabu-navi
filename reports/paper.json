@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-27T05:45:52.300Z",
+  "updatedAt": "2026-11-27T19:26:48.743Z",
   "startDate": "2026-11-05",
-  "lastDate": "2026-11-26",
+  "lastDate": "2026-11-27",
   "strategies": {
     "swing_div": {
       "name": "配当予想の引き上げ（5日保有）",
@@ -11,19 +11,30 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 1049393,
+      "equityYen": 1049917,
       "taxYen": 12593,
       "capital": 1000000,
-      "returnPct": 4.9,
+      "returnPct": 5,
       "trades": 20,
       "winRatePct": 45,
       "avgRetPct": 3.56,
-      "holdings": [],
-      "nextBuys": [
+      "holdings": [
         {
           "code": "94180",
           "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
           "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）",
+          "entryDate": "2026-11-27",
+          "daysHeld": 1,
+          "unrealPct": 0.5,
+          "costYen": 104939,
+          "valueYen": 105463
+        }
+      ],
+      "nextBuys": [
+        {
+          "code": "90090",
+          "name": "京成電鉄",
+          "reason": "配当予想を+36.4%引き上げ（2026-11-27発表）",
           "late": false
         }
       ],
@@ -36,8 +47,8 @@
           "exitDate": "2026-11-19",
           "retPct": -6.4,
           "profitYen": -7204,
-          "afterExitPct": -0.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "43770",
@@ -47,8 +58,8 @@
           "exitDate": "2026-11-19",
           "retPct": -7.7,
           "profitYen": -8627,
-          "afterExitPct": 0.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 1.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "78030",
@@ -58,8 +69,8 @@
           "exitDate": "2026-11-19",
           "retPct": -14,
           "profitYen": -15604,
-          "afterExitPct": -2.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "29820",
@@ -69,8 +80,8 @@
           "exitDate": "2026-11-19",
           "retPct": -8.6,
           "profitYen": -9566,
-          "afterExitPct": 1.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 3.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "59910",
@@ -80,8 +91,8 @@
           "exitDate": "2026-11-19",
           "retPct": -11,
           "profitYen": -12300,
-          "afterExitPct": -7.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "40510",
@@ -91,8 +102,8 @@
           "exitDate": "2026-11-19",
           "retPct": -6.1,
           "profitYen": -6827,
-          "afterExitPct": 1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 3.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "51420",
@@ -102,8 +113,8 @@
           "exitDate": "2026-11-19",
           "retPct": -8.6,
           "profitYen": -9645,
-          "afterExitPct": -4.8,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "85110",
@@ -113,8 +124,8 @@
           "exitDate": "2026-11-19",
           "retPct": -4.5,
           "profitYen": -5041,
-          "afterExitPct": -4.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -3.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "68710",
@@ -124,8 +135,8 @@
           "exitDate": "2026-11-19",
           "retPct": -9.9,
           "profitYen": -11059,
-          "afterExitPct": -13.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "74330",
@@ -135,8 +146,8 @@
           "exitDate": "2026-11-19",
           "retPct": -0.1,
           "profitYen": -79,
-          "afterExitPct": -2.6,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "91010",
@@ -146,8 +157,8 @@
           "exitDate": "2026-11-12",
           "retPct": 0,
           "profitYen": -38,
-          "afterExitPct": -2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "77600",
@@ -157,8 +168,8 @@
           "exitDate": "2026-11-12",
           "retPct": 27.6,
           "profitYen": 27585,
-          "afterExitPct": -23.6,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -18.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "31100",
@@ -168,8 +179,8 @@
           "exitDate": "2026-11-12",
           "retPct": 33.9,
           "profitYen": 33911,
-          "afterExitPct": -15.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -10,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "27300",
@@ -179,8 +190,8 @@
           "exitDate": "2026-11-12",
           "retPct": 5,
           "profitYen": 4997,
-          "afterExitPct": 0.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "81500",
@@ -190,8 +201,8 @@
           "exitDate": "2026-11-12",
           "retPct": 9.3,
           "profitYen": 9273,
-          "afterExitPct": -3.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.2,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "69410",
@@ -201,8 +212,8 @@
           "exitDate": "2026-11-12",
           "retPct": 31,
           "profitYen": 31049,
-          "afterExitPct": 2.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 7.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "30340",
@@ -212,8 +223,8 @@
           "exitDate": "2026-11-12",
           "retPct": 0.7,
           "profitYen": 688,
-          "afterExitPct": -0.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "91190",
@@ -223,8 +234,8 @@
           "exitDate": "2026-11-12",
           "retPct": 5.4,
           "profitYen": 5373,
-          "afterExitPct": -1.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "77110",
@@ -234,8 +245,8 @@
           "exitDate": "2026-11-12",
           "retPct": 21.7,
           "profitYen": 21741,
-          "afterExitPct": -17.8,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -9.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "79170",
@@ -245,8 +256,8 @@
           "exitDate": "2026-11-12",
           "retPct": 13.4,
           "profitYen": 13360,
-          "afterExitPct": -5.8,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -3.6,
+          "afterExitTo": "2026-11-27"
         }
       ],
       "equityHistory": [
@@ -309,6 +320,10 @@
         {
           "date": "2026-11-26",
           "value": 1049393
+        },
+        {
+          "date": "2026-11-27",
+          "value": 1049917
         }
       ]
     },
@@ -320,7 +335,7 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 995831,
+      "equityYen": 996322,
       "taxYen": 0,
       "capital": 1000000,
       "returnPct": -0.4,
@@ -333,10 +348,10 @@
           "name": "エラン",
           "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
           "entryDate": "2026-11-24",
-          "daysHeld": 3,
-          "unrealPct": -3.1,
+          "daysHeld": 4,
+          "unrealPct": -2.6,
           "costYen": 99031,
-          "valueYen": 96009
+          "valueYen": 96500
         }
       ],
       "nextBuys": [],
@@ -349,8 +364,8 @@
           "exitDate": "2026-11-24",
           "retPct": 8.2,
           "profitYen": 8544,
-          "afterExitPct": -1.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "69080",
@@ -360,8 +375,8 @@
           "exitDate": "2026-11-20",
           "retPct": -3.1,
           "profitYen": -3241,
-          "afterExitPct": 2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 4.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "19690",
@@ -371,8 +386,8 @@
           "exitDate": "2026-11-20",
           "retPct": -8.1,
           "profitYen": -8320,
-          "afterExitPct": 2.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "72390",
@@ -382,8 +397,8 @@
           "exitDate": "2026-11-20",
           "retPct": -5.7,
           "profitYen": -5866,
-          "afterExitPct": -0.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 1.6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "51420",
@@ -393,8 +408,8 @@
           "exitDate": "2026-11-19",
           "retPct": -8.6,
           "profitYen": -8716,
-          "afterExitPct": -4.8,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "40440",
@@ -404,8 +419,8 @@
           "exitDate": "2026-11-19",
           "retPct": -6.5,
           "profitYen": -6609,
-          "afterExitPct": 0.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 3.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "46310",
@@ -415,8 +430,8 @@
           "exitDate": "2026-11-19",
           "retPct": -8.1,
           "profitYen": -8161,
-          "afterExitPct": -4.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "78030",
@@ -426,8 +441,8 @@
           "exitDate": "2026-11-19",
           "retPct": -14,
           "profitYen": -14100,
-          "afterExitPct": -2.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "18030",
@@ -437,8 +452,8 @@
           "exitDate": "2026-11-16",
           "retPct": 4.4,
           "profitYen": 4430,
-          "afterExitPct": -7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -4.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "22640",
@@ -448,8 +463,8 @@
           "exitDate": "2026-11-16",
           "retPct": 3.6,
           "profitYen": 3586,
-          "afterExitPct": -1.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -4.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "51920",
@@ -459,8 +474,8 @@
           "exitDate": "2026-11-16",
           "retPct": -0.5,
           "profitYen": -548,
-          "afterExitPct": -2.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "54610",
@@ -470,8 +485,8 @@
           "exitDate": "2026-11-13",
           "retPct": 6.9,
           "profitYen": 6895,
-          "afterExitPct": -3.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "46350",
@@ -481,8 +496,8 @@
           "exitDate": "2026-11-13",
           "retPct": 9.9,
           "profitYen": 9918,
-          "afterExitPct": 4.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 8.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "97060",
@@ -492,8 +507,8 @@
           "exitDate": "2026-11-13",
           "retPct": 8.3,
           "profitYen": 8298,
-          "afterExitPct": 6.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 4.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "27300",
@@ -503,8 +518,8 @@
           "exitDate": "2026-11-12",
           "retPct": 5,
           "profitYen": 4997,
-          "afterExitPct": 0.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "42020",
@@ -514,8 +529,8 @@
           "exitDate": "2026-11-12",
           "retPct": 7.6,
           "profitYen": 7606,
-          "afterExitPct": -8.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -7.2,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "72030",
@@ -525,8 +540,8 @@
           "exitDate": "2026-11-12",
           "retPct": -2.8,
           "profitYen": -2823,
-          "afterExitPct": -0.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "90210",
@@ -536,8 +551,8 @@
           "exitDate": "2026-11-12",
           "retPct": 3,
           "profitYen": 2961,
-          "afterExitPct": -1.6,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.8,
+          "afterExitTo": "2026-11-27"
         }
       ],
       "equityHistory": [
@@ -600,6 +615,10 @@
         {
           "date": "2026-11-26",
           "value": 995831
+        },
+        {
+          "date": "2026-11-27",
+          "value": 996322
         }
       ]
     },
@@ -611,23 +630,32 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 1062857,
-      "taxYen": 16024,
+      "equityYen": 1063279,
+      "taxYen": 16132,
       "capital": 1000000,
       "returnPct": 6.3,
-      "trades": 75,
-      "winRatePct": 56,
+      "trades": 76,
+      "winRatePct": 56.6,
       "avgRetPct": 1.04,
       "holdings": [],
       "nextBuys": [
         {
-          "code": "94180",
-          "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
-          "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）",
+          "code": "90090",
+          "name": "京成電鉄",
+          "reason": "配当予想を+36.4%引き上げ（2026-11-27発表）",
           "late": false
         }
       ],
       "recentClosed": [
+        {
+          "code": "94180",
+          "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
+          "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）",
+          "entryDate": "2026-11-27",
+          "exitDate": "2026-11-27",
+          "retPct": 0.5,
+          "profitYen": 530
+        },
         {
           "code": "36870",
           "name": "フィックスターズ",
@@ -636,8 +664,8 @@
           "exitDate": "2026-11-19",
           "retPct": -0.2,
           "profitYen": -212,
-          "afterExitPct": -4.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 1.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "65740",
@@ -647,8 +675,8 @@
           "exitDate": "2026-11-17",
           "retPct": -6.9,
           "profitYen": -7325,
-          "afterExitPct": -18.6,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -20.6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "68900",
@@ -658,8 +686,8 @@
           "exitDate": "2026-11-17",
           "retPct": 3.5,
           "profitYen": 3755,
-          "afterExitPct": -7.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "30010",
@@ -669,8 +697,8 @@
           "exitDate": "2026-11-17",
           "retPct": 6.7,
           "profitYen": 7104,
-          "afterExitPct": -7.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -8.2,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "51050",
@@ -680,8 +708,8 @@
           "exitDate": "2026-11-17",
           "retPct": 1.2,
           "profitYen": 1303,
-          "afterExitPct": -7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -5.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "648A0",
@@ -691,8 +719,8 @@
           "exitDate": "2026-11-16",
           "retPct": -4.3,
           "profitYen": -4642,
-          "afterExitPct": -13,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -11.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "53810",
@@ -702,8 +730,8 @@
           "exitDate": "2026-11-16",
           "retPct": -3.8,
           "profitYen": -4102,
-          "afterExitPct": -12.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "64070",
@@ -713,8 +741,8 @@
           "exitDate": "2026-11-16",
           "retPct": -3.5,
           "profitYen": -3807,
-          "afterExitPct": -9.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "84110",
@@ -724,8 +752,8 @@
           "exitDate": "2026-11-16",
           "retPct": -1.7,
           "profitYen": -1845,
-          "afterExitPct": -10.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -6.6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "19610",
@@ -735,8 +763,8 @@
           "exitDate": "2026-11-16",
           "retPct": -2.4,
           "profitYen": -2551,
-          "afterExitPct": -3.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 2.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "62580",
@@ -746,8 +774,8 @@
           "exitDate": "2026-11-16",
           "retPct": -7.1,
           "profitYen": -7676,
-          "afterExitPct": -11.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -6.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "59750",
@@ -757,8 +785,8 @@
           "exitDate": "2026-11-16",
           "retPct": -4.3,
           "profitYen": -4628,
-          "afterExitPct": -3.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "63170",
@@ -768,8 +796,8 @@
           "exitDate": "2026-11-16",
           "retPct": 5.5,
           "profitYen": 5900,
-          "afterExitPct": -4.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "62310",
@@ -779,8 +807,8 @@
           "exitDate": "2026-11-16",
           "retPct": 4.6,
           "profitYen": 4925,
-          "afterExitPct": -9.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -7.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "58440",
@@ -790,8 +818,8 @@
           "exitDate": "2026-11-16",
           "retPct": -3,
           "profitYen": -3262,
-          "afterExitPct": -7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -5.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "39680",
@@ -801,8 +829,8 @@
           "exitDate": "2026-11-13",
           "retPct": 4.4,
           "profitYen": 4804,
-          "afterExitPct": -11.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -10.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "43770",
@@ -812,8 +840,8 @@
           "exitDate": "2026-11-13",
           "retPct": 0.7,
           "profitYen": 726,
-          "afterExitPct": -7.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -6.8,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "78030",
@@ -823,8 +851,8 @@
           "exitDate": "2026-11-13",
           "retPct": -7,
           "profitYen": -7579,
-          "afterExitPct": -10.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -6.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "29820",
@@ -834,8 +862,8 @@
           "exitDate": "2026-11-13",
           "retPct": 0.3,
           "profitYen": 317,
-          "afterExitPct": -7.6,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -5.6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "59910",
@@ -845,8 +873,8 @@
           "exitDate": "2026-11-13",
           "retPct": -3.8,
           "profitYen": -4149,
-          "afterExitPct": -14.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -10.2,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "40510",
@@ -856,8 +884,8 @@
           "exitDate": "2026-11-13",
           "retPct": -2.5,
           "profitYen": -2748,
-          "afterExitPct": -2.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "51420",
@@ -867,8 +895,8 @@
           "exitDate": "2026-11-13",
           "retPct": 0.3,
           "profitYen": 321,
-          "afterExitPct": -13.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -10.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "85110",
@@ -878,8 +906,8 @@
           "exitDate": "2026-11-13",
           "retPct": -0.5,
           "profitYen": -544,
-          "afterExitPct": -8.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -7.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "68710",
@@ -889,8 +917,8 @@
           "exitDate": "2026-11-13",
           "retPct": -2.9,
           "profitYen": -3131,
-          "afterExitPct": -19.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -9.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "74330",
@@ -900,8 +928,8 @@
           "exitDate": "2026-11-13",
           "retPct": 0.7,
           "profitYen": 765,
-          "afterExitPct": -3.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "69980",
@@ -911,8 +939,8 @@
           "exitDate": "2026-11-12",
           "retPct": -9.1,
           "profitYen": -10071,
-          "afterExitPct": -9.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -3.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "63240",
@@ -922,8 +950,8 @@
           "exitDate": "2026-11-12",
           "retPct": -7.2,
           "profitYen": -7939,
-          "afterExitPct": -23.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -17,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "40270",
@@ -933,8 +961,8 @@
           "exitDate": "2026-11-12",
           "retPct": 6.6,
           "profitYen": 7239,
-          "afterExitPct": -10.8,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -9.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "49580",
@@ -944,19 +972,8 @@
           "exitDate": "2026-11-12",
           "retPct": -3.7,
           "profitYen": -4068,
-          "afterExitPct": 2,
-          "afterExitTo": "2026-11-26"
-        },
-        {
-          "code": "36320",
-          "name": "グリーホールディングス",
-          "reason": "配当予想を+25%引き上げ（2026-11-11発表）",
-          "entryDate": "2026-11-12",
-          "exitDate": "2026-11-12",
-          "retPct": -0.8,
-          "profitYen": -858,
-          "afterExitPct": -3.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 2.8,
+          "afterExitTo": "2026-11-27"
         }
       ],
       "equityHistory": [
@@ -1019,6 +1036,10 @@
         {
           "date": "2026-11-26",
           "value": 1062857
+        },
+        {
+          "date": "2026-11-27",
+          "value": 1063279
         }
       ]
     },
@@ -1030,7 +1051,7 @@
       "kinds": [
         "earn_up"
       ],
-      "equityYen": 1014573,
+      "equityYen": 1015075,
       "taxYen": 4501,
       "capital": 1000000,
       "returnPct": 1.5,
@@ -1043,10 +1064,10 @@
           "name": "エラン",
           "reason": "営業利益予想を+10%上方修正（2026-11-20発表）",
           "entryDate": "2026-11-24",
-          "daysHeld": 3,
-          "unrealPct": -3.1,
+          "daysHeld": 4,
+          "unrealPct": -2.6,
           "costYen": 101095,
-          "valueYen": 98011
+          "valueYen": 98512
         }
       ],
       "nextBuys": [],
@@ -1059,8 +1080,8 @@
           "exitDate": "2026-11-24",
           "retPct": 8.2,
           "profitYen": 8415,
-          "afterExitPct": -1.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "69080",
@@ -1070,8 +1091,8 @@
           "exitDate": "2026-11-20",
           "retPct": -3.1,
           "profitYen": -3192,
-          "afterExitPct": 2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 4.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "19690",
@@ -1081,8 +1102,8 @@
           "exitDate": "2026-11-20",
           "retPct": -8.1,
           "profitYen": -8194,
-          "afterExitPct": 2.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "49110",
@@ -1092,8 +1113,8 @@
           "exitDate": "2026-11-17",
           "retPct": 5.5,
           "profitYen": 5500,
-          "afterExitPct": 0.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "40230",
@@ -1103,8 +1124,8 @@
           "exitDate": "2026-11-17",
           "retPct": -3.3,
           "profitYen": -3297,
-          "afterExitPct": -3.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "78320",
@@ -1114,8 +1135,8 @@
           "exitDate": "2026-11-17",
           "retPct": 4,
           "profitYen": 4015,
-          "afterExitPct": 5.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 3.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "18850",
@@ -1125,8 +1146,8 @@
           "exitDate": "2026-11-17",
           "retPct": -8.5,
           "profitYen": -8524,
-          "afterExitPct": 0,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 4.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "41160",
@@ -1136,8 +1157,8 @@
           "exitDate": "2026-11-17",
           "retPct": 1.8,
           "profitYen": 1751,
-          "afterExitPct": -2.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "18030",
@@ -1147,8 +1168,8 @@
           "exitDate": "2026-11-16",
           "retPct": 4.4,
           "profitYen": 4430,
-          "afterExitPct": -7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -4.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "22640",
@@ -1158,8 +1179,8 @@
           "exitDate": "2026-11-16",
           "retPct": 3.6,
           "profitYen": 3586,
-          "afterExitPct": -1.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -4.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "51920",
@@ -1169,8 +1190,8 @@
           "exitDate": "2026-11-16",
           "retPct": -0.5,
           "profitYen": -548,
-          "afterExitPct": -2.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "46350",
@@ -1180,8 +1201,8 @@
           "exitDate": "2026-11-13",
           "retPct": 9.9,
           "profitYen": 9918,
-          "afterExitPct": 4.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 8.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "97060",
@@ -1191,8 +1212,8 @@
           "exitDate": "2026-11-13",
           "retPct": 8.3,
           "profitYen": 8298,
-          "afterExitPct": 6.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 4.4,
+          "afterExitTo": "2026-11-27"
         }
       ],
       "equityHistory": [
@@ -1255,6 +1276,10 @@
         {
           "date": "2026-11-26",
           "value": 1014573
+        },
+        {
+          "date": "2026-11-27",
+          "value": 1015075
         }
       ]
     },
@@ -1266,19 +1291,30 @@
       "kinds": [
         "div_up"
       ],
-      "equityYen": 967836,
+      "equityYen": 968319,
       "taxYen": 0,
       "capital": 1000000,
       "returnPct": -3.2,
       "trades": 20,
       "winRatePct": 45,
       "avgRetPct": -1.24,
-      "holdings": [],
-      "nextBuys": [
+      "holdings": [
         {
           "code": "94180",
           "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
           "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）",
+          "entryDate": "2026-11-27",
+          "daysHeld": 1,
+          "unrealPct": 0.5,
+          "costYen": 96784,
+          "valueYen": 97266
+        }
+      ],
+      "nextBuys": [
+        {
+          "code": "90090",
+          "name": "京成電鉄",
+          "reason": "配当予想を+36.4%引き上げ（2026-11-27発表）",
           "late": false
         }
       ],
@@ -1291,8 +1327,8 @@
           "exitDate": "2026-11-20",
           "retPct": -21.6,
           "profitYen": -23189,
-          "afterExitPct": 6.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 7.8,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "53810",
@@ -1302,8 +1338,8 @@
           "exitDate": "2026-11-20",
           "retPct": -12.7,
           "profitYen": -13582,
-          "afterExitPct": -3.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 7.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "64070",
@@ -1313,8 +1349,8 @@
           "exitDate": "2026-11-20",
           "retPct": -14.8,
           "profitYen": -15871,
-          "afterExitPct": 2.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 10.6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "84110",
@@ -1324,8 +1360,8 @@
           "exitDate": "2026-11-20",
           "retPct": -12.8,
           "profitYen": -13694,
-          "afterExitPct": 0.8,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 5.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "62580",
@@ -1335,8 +1371,8 @@
           "exitDate": "2026-11-20",
           "retPct": -21.4,
           "profitYen": -22880,
-          "afterExitPct": 4.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 10.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "63170",
@@ -1346,8 +1382,8 @@
           "exitDate": "2026-11-20",
           "retPct": -4.1,
           "profitYen": -4394,
-          "afterExitPct": 4.6,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 8.2,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "58440",
@@ -1357,8 +1393,8 @@
           "exitDate": "2026-11-20",
           "retPct": -9.9,
           "profitYen": -10572,
-          "afterExitPct": 0.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 1.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "21460",
@@ -1368,8 +1404,8 @@
           "exitDate": "2026-11-20",
           "retPct": -3.2,
           "profitYen": -3427,
-          "afterExitPct": 5.8,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 4.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "39680",
@@ -1379,8 +1415,8 @@
           "exitDate": "2026-11-19",
           "retPct": -6.4,
           "profitYen": -6531,
-          "afterExitPct": -0.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.1,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "43770",
@@ -1390,8 +1426,8 @@
           "exitDate": "2026-11-19",
           "retPct": -7.7,
           "profitYen": -7821,
-          "afterExitPct": 0.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 1.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "67770",
@@ -1401,8 +1437,8 @@
           "exitDate": "2026-11-13",
           "retPct": 20.5,
           "profitYen": 20451,
-          "afterExitPct": -23.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -13.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "66580",
@@ -1412,8 +1448,8 @@
           "exitDate": "2026-11-13",
           "retPct": 4.4,
           "profitYen": 4419,
-          "afterExitPct": 1.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 1.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "83930",
@@ -1423,8 +1459,8 @@
           "exitDate": "2026-11-13",
           "retPct": 12,
           "profitYen": 12007,
-          "afterExitPct": -13.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -11.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "63150",
@@ -1434,8 +1470,8 @@
           "exitDate": "2026-11-13",
           "retPct": 10.1,
           "profitYen": 10130,
-          "afterExitPct": -3.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 5.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "46350",
@@ -1445,8 +1481,8 @@
           "exitDate": "2026-11-13",
           "retPct": 9.9,
           "profitYen": 9918,
-          "afterExitPct": 4.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 8.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "15150",
@@ -1456,8 +1492,8 @@
           "exitDate": "2026-11-13",
           "retPct": 5.6,
           "profitYen": 5585,
-          "afterExitPct": -22.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -16.9,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "72720",
@@ -1467,8 +1503,8 @@
           "exitDate": "2026-11-13",
           "retPct": 2.6,
           "profitYen": 2598,
-          "afterExitPct": -0.5,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -0.6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "49700",
@@ -1478,8 +1514,8 @@
           "exitDate": "2026-11-13",
           "retPct": 7.8,
           "profitYen": 7778,
-          "afterExitPct": -19.4,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -12.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "44750",
@@ -1489,8 +1525,8 @@
           "exitDate": "2026-11-12",
           "retPct": 21.9,
           "profitYen": 21933,
-          "afterExitPct": 10.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 18.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "46890",
@@ -1500,8 +1536,8 @@
           "exitDate": "2026-11-12",
           "retPct": -5,
           "profitYen": -5022,
-          "afterExitPct": 0.3,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -1.4,
+          "afterExitTo": "2026-11-27"
         }
       ],
       "equityHistory": [
@@ -1564,6 +1600,10 @@
         {
           "date": "2026-11-26",
           "value": 967836
+        },
+        {
+          "date": "2026-11-27",
+          "value": 968319
         }
       ]
     },
@@ -1585,9 +1625,9 @@
       "holdings": [],
       "nextBuys": [
         {
-          "code": "94180",
-          "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
-          "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）",
+          "code": "90090",
+          "name": "京成電鉄",
+          "reason": "配当予想を+36.4%引き上げ（2026-11-27発表）",
           "late": false
         }
       ],
@@ -1600,8 +1640,8 @@
           "exitDate": "2026-11-16",
           "retPct": -3.8,
           "profitYen": -3479,
-          "afterExitPct": -12.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -2.4,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "21460",
@@ -1611,8 +1651,8 @@
           "exitDate": "2026-11-16",
           "retPct": 0.2,
           "profitYen": 213,
-          "afterExitPct": 2.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 1.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "67420",
@@ -1622,8 +1662,8 @@
           "exitDate": "2026-11-16",
           "retPct": -11.3,
           "profitYen": -11085,
-          "afterExitPct": -9.9,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -6.6,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "39680",
@@ -1633,8 +1673,8 @@
           "exitDate": "2026-11-13",
           "retPct": 4.4,
           "profitYen": 3823,
-          "afterExitPct": -11.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -10.3,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "78030",
@@ -1644,8 +1684,8 @@
           "exitDate": "2026-11-13",
           "retPct": -7,
           "profitYen": -3600,
-          "afterExitPct": -10.2,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -6.7,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "29820",
@@ -1655,8 +1695,8 @@
           "exitDate": "2026-11-13",
           "retPct": 0.3,
           "profitYen": 237,
-          "afterExitPct": -7.6,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": -5.6,
+          "afterExitTo": "2026-11-27"
         }
       ],
       "equityHistory": [
@@ -1699,6 +1739,10 @@
         {
           "date": "2026-11-26",
           "value": 286111
+        },
+        {
+          "date": "2026-11-27",
+          "value": 286111
         }
       ]
     },
@@ -1720,9 +1764,9 @@
       "holdings": [],
       "nextBuys": [
         {
-          "code": "94180",
-          "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
-          "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）",
+          "code": "90090",
+          "name": "京成電鉄",
+          "reason": "配当予想を+36.4%引き上げ（2026-11-27発表）",
           "late": false
         }
       ],
@@ -1735,8 +1779,8 @@
           "exitDate": "2026-11-20",
           "retPct": -12.7,
           "profitYen": -11571,
-          "afterExitPct": -3.1,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 7.5,
+          "afterExitTo": "2026-11-27"
         },
         {
           "code": "39680",
@@ -1746,8 +1790,8 @@
           "exitDate": "2026-11-19",
           "retPct": -6.4,
           "profitYen": -5567,
-          "afterExitPct": -0.7,
-          "afterExitTo": "2026-11-26"
+          "afterExitPct": 0.1,
+          "afterExitTo": "2026-11-27"
         }
       ],
       "equityHistory": [
@@ -1790,13 +1834,17 @@
         {
           "date": "2026-11-26",
           "value": 282862
+        },
+        {
+          "date": "2026-11-27",
+          "value": 282862
         }
       ]
     },
     "real30_dt_pro": {
       "name": "試験中：プロの判断のデイトレ（点数2以上だけ・マイナスで引けたら最長10日持ち越し）",
       "trial": true,
-      "proChosenAt": "2026-11-26T19:34:03.609Z",
+      "proChosenAt": "2026-11-27T05:46:03.679Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1810,14 +1858,7 @@
       "winRatePct": null,
       "avgRetPct": null,
       "holdings": [],
-      "nextBuys": [
-        {
-          "code": "94180",
-          "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
-          "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）／点数2：市場の5日の動きが下げた後・市場が25日平均より下（押し目）（利回り1%）／理由：利益が伴う・去年も増配",
-          "late": false
-        }
-      ],
+      "nextBuys": [],
       "recentClosed": [],
       "equityHistory": [
         {
@@ -1851,13 +1892,17 @@
         {
           "date": "2026-11-26",
           "value": 300000
+        },
+        {
+          "date": "2026-11-27",
+          "value": 300000
         }
       ]
     },
     "real30_dt_pro_sec": {
       "name": "試験中：プロの判断のデイトレ＋業種が弱っている時は見送る（2026-11-21〜）",
       "trial": true,
-      "proChosenAt": "2026-11-26T19:34:03.609Z",
+      "proChosenAt": "2026-11-27T05:46:03.679Z",
       "hold": 1,
       "gap": false,
       "kinds": [
@@ -1871,14 +1916,7 @@
       "winRatePct": null,
       "avgRetPct": null,
       "holdings": [],
-      "nextBuys": [
-        {
-          "code": "94180",
-          "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
-          "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）／点数2：市場の5日の動きが下げた後・市場が25日平均より下（押し目）（利回り1%）／理由：利益が伴う・去年も増配",
-          "late": false
-        }
-      ],
+      "nextBuys": [],
       "recentClosed": [],
       "equityHistory": [
         {
@@ -1896,13 +1934,17 @@
         {
           "date": "2026-11-26",
           "value": 300000
+        },
+        {
+          "date": "2026-11-27",
+          "value": 300000
         }
       ]
     },
     "real30_div_pro": {
       "name": "試験中：プロの判断のスイング（点数1以上・5日）",
       "trial": true,
-      "proChosenAt": "2026-11-26T19:34:03.609Z",
+      "proChosenAt": "2026-11-27T05:46:03.679Z",
       "hold": 5,
       "gap": false,
       "kinds": [
@@ -1918,9 +1960,9 @@
       "holdings": [],
       "nextBuys": [
         {
-          "code": "94180",
-          "name": "Ｕ−ＮＥＸＴ　ＨＯＬＤＩＮＧＳ",
-          "reason": "配当予想を来期+11.8%引き上げ（2026-11-26発表）／点数2：市場の5日の動きが下げた後・市場が25日平均より下（押し目）（利回り1%）／理由：利益が伴う・去年も増配",
+          "code": "90090",
+          "name": "京成電鉄",
+          "reason": "配当予想を+36.4%引き上げ（2026-11-27発表）／点数1：市場が25日平均より下（押し目）（利回り1.9%）",
           "late": false
         }
       ],
@@ -1956,6 +1998,10 @@
         },
         {
           "date": "2026-11-26",
+          "value": 300000
+        },
+        {
+          "date": "2026-11-27",
           "value": 300000
         }
       ]
@@ -1979,7 +2025,9 @@
         "exitDate": "2026-11-26",
         "retPct": -1.5,
         "profitYen": -1841,
-        "shares": 100
+        "shares": 100,
+        "afterExitPct": -6.6,
+        "afterExitTo": "2026-11-27"
       },
       {
         "code": "657A0",
@@ -1990,8 +2038,8 @@
         "retPct": 8.7,
         "profitYen": 12306,
         "shares": 300,
-        "afterExitPct": -19.7,
-        "afterExitTo": "2026-11-26"
+        "afterExitPct": -19.2,
+        "afterExitTo": "2026-11-27"
       }
     ],
     "equityHistory": [
@@ -2030,13 +2078,17 @@
       {
         "date": "2026-11-26",
         "value": 308339
+      },
+      {
+        "date": "2026-11-27",
+        "value": 308339
       }
     ]
   },
   "market": {
-    "date": "2026-11-26",
-    "dayPct": 0.6,
-    "fiveDayPct": -2.5,
-    "vsTrendPct": -4.5
+    "date": "2026-11-27",
+    "dayPct": 1.8,
+    "fiveDayPct": -0.4,
+    "vsTrendPct": -2.4
   }
 }

@@ -1,222 +1,222 @@
 {
- "date": "2026-11-26",
- "updatedAt": "2026-11-27T05:46:27.187Z",
+ "date": "2026-11-27",
+ "updatedAt": "2026-11-27T19:27:28.533Z",
  "note": "売買代金（20日平均）1億円以上・100円以上の東証の株",
- "count": 1726,
- "avgPct": 0.6,
- "up": 912,
- "down": 731,
+ "count": 1717,
+ "avgPct": 1.8,
+ "up": 1138,
+ "down": 523,
  "gainers": [
   {
-   "code": "4598",
-   "name": "Ｄｅｌｔａ−Ｆｌｙ　Ｐｈａｒｍａ",
-   "sector": "医薬品",
-   "pct": 21.3,
-   "news": null
-  },
-  {
-   "code": "4586",
-   "name": "メドレックス",
-   "sector": "医薬品",
-   "pct": 19.5,
-   "news": null
-  },
-  {
-   "code": "4222",
-   "name": "児玉化学工業",
-   "sector": "化学",
-   "pct": 14.7,
-   "news": null
-  },
-  {
-   "code": "6787",
-   "name": "メイコー",
+   "code": "6721",
+   "name": "ウインテスト",
    "sector": "電気機器",
-   "pct": 14,
+   "pct": 23.5,
    "news": null
   },
   {
-   "code": "6227",
-   "name": "ＡＩメカテック",
-   "sector": "機械",
-   "pct": 12.8,
+   "code": "278A",
+   "name": "Ｔｅｒｒａ　Ｄｒｏｎｅ",
+   "sector": "精密機器",
+   "pct": 15.9,
    "news": null
   },
   {
-   "code": "285A",
-   "name": "キオクシアホールディングス",
+   "code": "6627",
+   "name": "テラプローブ",
    "sector": "電気機器",
-   "pct": 12.6,
+   "pct": 15.2,
    "news": null
   },
   {
-   "code": "6727",
-   "name": "ワコム",
+   "code": "6597",
+   "name": "ＨＰＣシステムズ",
    "sector": "電気機器",
-   "pct": 11.5,
+   "pct": 13.9,
    "news": null
   },
   {
-   "code": "558A",
-   "name": "ＳＱＵＥＥＺＥ",
-   "sector": "サービス業",
-   "pct": 11,
-   "news": null
-  },
-  {
-   "code": "4579",
-   "name": "ラクオリア創薬",
-   "sector": "医薬品",
-   "pct": 9.6,
-   "news": null
-  },
-  {
-   "code": "3810",
-   "name": "サイバーステップホールディングス",
-   "sector": "情報･通信業",
-   "pct": 9.4,
-   "news": null
-  },
-  {
-   "code": "3131",
-   "name": "シンデン・ハイテックス",
-   "sector": "卸売業",
-   "pct": 9,
-   "news": null
-  },
-  {
-   "code": "6570",
-   "name": "共和コーポレーション",
-   "sector": "サービス業",
-   "pct": 8.9,
-   "news": null
-  },
-  {
-   "code": "4165",
-   "name": "プレイド",
-   "sector": "情報･通信業",
-   "pct": 8.6,
-   "news": null
-  },
-  {
-   "code": "4478",
-   "name": "フリー",
-   "sector": "情報･通信業",
-   "pct": 8.6,
-   "news": null
-  },
-  {
-   "code": "3923",
-   "name": "ラクス",
-   "sector": "情報･通信業",
-   "pct": 8.5,
-   "news": null
-  },
-  {
-   "code": "4022",
-   "name": "ラサ工業",
-   "sector": "化学",
-   "pct": 8.1,
-   "news": null
-  },
-  {
-   "code": "4419",
-   "name": "Ｆｉｎａｔｅｘｔホールディングス",
-   "sector": "情報･通信業",
-   "pct": 8.1,
+   "code": "6668",
+   "name": "アドテック　プラズマ　テクノロジー",
+   "sector": "電気機器",
+   "pct": 13.6,
    "news": null
   },
   {
    "code": "7826",
    "name": "フルヤ金属",
    "sector": "その他製品",
-   "pct": 7.5,
+   "pct": 13.4,
    "news": null
   },
   {
-   "code": "6998",
-   "name": "日本タングステン",
+   "code": "6834",
+   "name": "精工技研",
    "sector": "電気機器",
-   "pct": 7.3,
+   "pct": 13.3,
    "news": null
   },
   {
-   "code": "8237",
-   "name": "松屋",
-   "sector": "小売業",
-   "pct": 7.3,
+   "code": "186A",
+   "name": "アストロスケールホールディングス",
+   "sector": "サービス業",
+   "pct": 13.2,
+   "news": null
+  },
+  {
+   "code": "6855",
+   "name": "日本電子材料",
+   "sector": "電気機器",
+   "pct": 13.1,
+   "news": null
+  },
+  {
+   "code": "6777",
+   "name": "ｓａｎｔｅｃ　Ｈｏｌｄｉｎｇｓ",
+   "sector": "電気機器",
+   "pct": 12.9,
+   "news": null
+  },
+  {
+   "code": "485A",
+   "name": "パワーエックス",
+   "sector": "電気機器",
+   "pct": 12.7,
+   "news": null
+  },
+  {
+   "code": "6526",
+   "name": "ソシオネクスト",
+   "sector": "電気機器",
+   "pct": 12.6,
+   "news": null
+  },
+  {
+   "code": "7721",
+   "name": "東京計器",
+   "sector": "精密機器",
+   "pct": 12.6,
+   "news": null
+  },
+  {
+   "code": "4047",
+   "name": "関東電化工業",
+   "sector": "化学",
+   "pct": 12.5,
+   "news": null
+  },
+  {
+   "code": "6871",
+   "name": "日本マイクロニクス",
+   "sector": "電気機器",
+   "pct": 12.3,
+   "news": null
+  },
+  {
+   "code": "6508",
+   "name": "明電舎",
+   "sector": "電気機器",
+   "pct": 12.2,
+   "news": null
+  },
+  {
+   "code": "6787",
+   "name": "メイコー",
+   "sector": "電気機器",
+   "pct": 12.2,
+   "news": null
+  },
+  {
+   "code": "6862",
+   "name": "ミナトホールディングス",
+   "sector": "電気機器",
+   "pct": 11.7,
+   "news": null
+  },
+  {
+   "code": "6613",
+   "name": "ＱＤレーザ",
+   "sector": "電気機器",
+   "pct": 11.6,
+   "news": null
+  },
+  {
+   "code": "3652",
+   "name": "ディジタルメディアプロフェッショナル",
+   "sector": "情報･通信業",
+   "pct": 11.5,
    "news": null
   }
  ],
  "losers": [
   {
+   "code": "4586",
+   "name": "メドレックス",
+   "sector": "医薬品",
+   "pct": -23.7,
+   "news": null
+  },
+  {
+   "code": "3911",
+   "name": "Ａｉｍｉｎｇ",
+   "sector": "情報･通信業",
+   "pct": -12.9,
+   "news": null
+  },
+  {
+   "code": "2345",
+   "name": "ＨＯＤＬ１",
+   "sector": "情報･通信業",
+   "pct": -12.9,
+   "news": null
+  },
+  {
    "code": "3624",
    "name": "アクセルマーク",
    "sector": "情報･通信業",
-   "pct": -26.6,
+   "pct": -10.1,
    "news": null
   },
   {
-   "code": "3909",
-   "name": "ショーケース",
+   "code": "3774",
+   "name": "インターネットイニシアティブ",
    "sector": "情報･通信業",
-   "pct": -12,
+   "pct": -7.3,
    "news": null
   },
   {
-   "code": "2160",
-   "name": "ジーエヌアイグループ",
-   "sector": "医薬品",
-   "pct": -7.2,
-   "news": null
-  },
-  {
-   "code": "4398",
-   "name": "ブロードバンドセキュリティ",
+   "code": "4422",
+   "name": "ＶＡＬＵＥＮＥＸ",
    "sector": "情報･通信業",
-   "pct": -4.9,
+   "pct": -6.8,
    "news": null
   },
   {
-   "code": "277A",
-   "name": "グロービング",
+   "code": "2471",
+   "name": "エスプール",
    "sector": "サービス業",
-   "pct": -4.6,
+   "pct": -6.6,
    "news": null
   },
   {
-   "code": "2791",
-   "name": "大黒天物産",
-   "sector": "小売業",
-   "pct": -4.2,
+   "code": "4343",
+   "name": "イオンファンタジー",
+   "sector": "サービス業",
+   "pct": -6.5,
    "news": null
   },
   {
-   "code": "3399",
-   "name": "丸千代山岡家",
-   "sector": "小売業",
-   "pct": -4.1,
-   "news": null
-  },
-  {
-   "code": "338A",
-   "name": "ＺｅｎｍｕＴｅｃｈ",
+   "code": "5240",
+   "name": "ｍｏｎｏＡＩ　ｔｅｃｈｎｏｌｏｇｙ",
    "sector": "情報･通信業",
-   "pct": -4.1,
+   "pct": -4.7,
    "news": null
   },
   {
-   "code": "1801",
-   "name": "大成建設",
-   "sector": "建設業",
-   "pct": -3.9,
-   "news": null
-  },
-  {
-   "code": "8303",
-   "name": "ＳＢＩ新生銀行",
-   "sector": "銀行業",
-   "pct": -3.7,
+   "code": "2590",
+   "name": "ダイドーグループホールディングス",
+   "sector": "食料品",
+   "pct": -4.7,
    "news": null
   }
  ]
