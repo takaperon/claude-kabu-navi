@@ -1,0 +1,303 @@
+{
+ "date": "2026-11-27",
+ "items": [
+  {
+   "market": "jp",
+   "code": "6721",
+   "pct": 23.5,
+   "cat": "不明",
+   "reason": "半導体株高の日。個別の理由は記事で確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "278A",
+   "pct": 15.9,
+   "cat": "新製品/受注",
+   "reason": "国産の地上管制局を自社開発し、防衛装備庁へ納品",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261128/879550.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "6627",
+   "pct": 15.2,
+   "cat": "不明",
+   "reason": "半導体株高の日。個別の理由は記事で確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6597",
+   "pct": 13.9,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6668",
+   "pct": 13.6,
+   "cat": "自社株買い",
+   "reason": "5万株を上限とする自社株買いと買付け委託を発表（27日に全株取得）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261128/879550.html"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "jp",
+   "code": "7826",
+   "pct": 13.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6834",
+   "pct": 13.3,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず（11/25の急落の後）",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "186A",
+   "pct": 13.2,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "6855",
+   "pct": 13.1,
+   "cat": "需給（指数採用など）",
+   "reason": "エフィッシモの保有比率の上昇",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261128/879551.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "6777",
+   "pct": 12.9,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず（11/25の急落の後）",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "4586",
+   "pct": -23.7,
+   "cat": "不明",
+   "reason": "11/19〜26の急騰の後の急落。記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3911",
+   "pct": -12.9,
+   "cat": "悪材料の出尽くし",
+   "reason": "Coverとの協業タイトルの発表の後、材料出尽くし感",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261128/879551.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "jp",
+   "code": "2345",
+   "pct": -12.9,
+   "cat": "不明",
+   "reason": "週末前の短期資金の利益確定売り（材料の記載なし）",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261128/879551.html"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3624",
+   "pct": -10.1,
+   "cat": "不明",
+   "reason": "11/26の急落に続く下げ。記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "jp",
+   "code": "3774",
+   "pct": -7.3,
+   "cat": "テーマ/思惑",
+   "reason": "エヌビディアの東南アジア向け出荷停止の影響への懸念",
+   "sources": [
+    "https://www.zaikei.co.jp/article/20261128/879551.html"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "SNDK",
+   "pct": 16.0,
+   "cat": "テーマ/思惑",
+   "reason": "半導体・メモリー株への買いが戻った（マイクロン+7.6%など）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "COHR",
+   "pct": 14.1,
+   "cat": "テーマ/思惑",
+   "reason": "AI・半導体関連株の買い戻しの日（個別の理由は未確認）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "LITE",
+   "pct": 8.0,
+   "cat": "テーマ/思惑",
+   "reason": "AI・半導体関連株の買い戻しの日（個別の理由は未確認）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "STX",
+   "pct": 7.9,
+   "cat": "テーマ/思惑",
+   "reason": "AI・半導体関連株の買い戻しの日（個別の理由は未確認）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "MRVL",
+   "pct": 7.3,
+   "cat": "テーマ/思惑",
+   "reason": "AI・半導体関連株の買い戻しの日（個別の理由は未確認）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "WDC",
+   "pct": 7.2,
+   "cat": "テーマ/思惑",
+   "reason": "AI・半導体関連株の買い戻しの日（個別の理由は未確認）",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "MU",
+   "pct": 7.6,
+   "cat": "テーマ/思惑",
+   "reason": "半導体株への買いが戻った",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "中"
+  },
+  {
+   "market": "us",
+   "t": "GNRC",
+   "pct": 7.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "P",
+   "pct": 7.1,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "IP",
+   "pct": 6.9,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "VRTX",
+   "pct": -5.2,
+   "cat": "不明",
+   "reason": "（悪材料）FDAが腎臓病の薬の判断を2027年に延期",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "confidence": "高"
+  },
+  {
+   "market": "us",
+   "t": "PODD",
+   "pct": -2.6,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "SJM",
+   "pct": -2.5,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "DLTR",
+   "pct": -2.4,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  },
+  {
+   "market": "us",
+   "t": "GDDY",
+   "pct": -2.0,
+   "cat": "不明",
+   "reason": "記事で理由を確認できず",
+   "sources": [],
+   "confidence": "低"
+  }
+ ]
+}

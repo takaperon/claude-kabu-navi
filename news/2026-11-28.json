@@ -1,0 +1,61 @@
+{
+ "date": "2026-11-28",
+ "status": "未検証",
+ "period": "2026-11-27 朝〜2026-11-28 朝",
+ "note": "日本11/27：日経平均 +1,212円の58,711円（週間+4.0%）、AI・半導体の買い戻し。米国11/27（短縮）：S&P500 +1.6%（7,297、19か月ぶりの大きな週間の上げ）、ナスダック +2.3%。VIX 26.8。来週は米雇用統計（12/4）など。Anthropic は MSCI の大型株に11/30の引けで入り、Nasdaq100 には12/21の寄りから入る見込み（12/11の引け後に発表）。",
+ "judgment": "米国：VIX 25〜30、最高値から-6.5%。強い不安の場面（11/20）から1週間で大きく戻した。12/4に雇用統計、12/9にFOMC（利上げ局面の会合の2日はSPY平均-0.4%、14回）。仮想売買はいつもどおり。日本：半導体の一斉安（11/16・11/25）の後の戻りの途中。",
+ "items": [
+  {
+   "headline": "S&P500、19か月ぶりの大きな週間の上げ",
+   "summary": "11/27は短縮取引で+1.6%。AI・半導体株が戻し、アマゾンはブラックフライデーの売れ行きで+4%。",
+   "sources": [
+    "https://www.fool.com/coverage/stock-market-today/2026/11/27/stock-market-today-nov-27-s-and-p-500-posts-best-week-in-19-months-as-ai-stocks-rebound/"
+   ],
+   "eventDate": "2026-11-27",
+   "type": "マクロ",
+   "sectors": [
+    "AI",
+    "半導体"
+   ],
+   "stocks": [],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "日経平均は週間+4.0%の58,711円",
+   "summary": "11/27は+2.1%。来週：12/1 ISM製造業、12/2 ADP、12/4 米雇用統計。",
+   "sources": [
+    "https://minkabu.jp/news/4674212"
+   ],
+   "eventDate": "2026-11-27",
+   "type": "マクロ",
+   "sectors": [
+    "半導体"
+   ],
+   "stocks": [],
+   "horizon": "数日",
+   "confidence": "高"
+  },
+  {
+   "headline": "Anthropic、MSCIとNasdaq100への組み入れ予定",
+   "summary": "MSCIの大型株には11/30の引けで、Nasdaq100には12/21の寄りから入る見込み（12/11の引け後に発表）。指数に合わせる投資信託の買いが入る。",
+   "sources": [
+    "https://www.newsquawk.com/headlines/msci-to-add-anthropic-to-largecap-segment-of-msci-global-standard-indexes-on-november-30th",
+    "https://stockanalysis.com/news/anthropic-nasdaq-100-funds-december-21/"
+   ],
+   "eventDate": "2026-11-19",
+   "type": "企業",
+   "sectors": [
+    "AI"
+   ],
+   "stocks": [
+    {
+     "t": "ANT",
+     "dir": "+"
+    }
+   ],
+   "horizon": "数週間",
+   "confidence": "中"
+  }
+ ]
+}

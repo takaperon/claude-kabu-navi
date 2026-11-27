@@ -192,6 +192,54 @@
    "sources": [
     "https://vistapglobal.com/stocks-close-mixed-on-wednesday-november-25-2026-as-hot-pce-inflation-new-tariff-plans-and-an-ai-sell-off-test-wall-street-amd-eprx-googl-modd-nvda-ser-spcx-vix/"
    ]
+  },
+  {
+   "date": "2026-11-30",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "指数の入れ替え",
+   "title": "MSCIの大型株（Global Standard）に11/30の引けで組み入れ",
+   "announcedOn": "2026-11-19",
+   "sources": [
+    "https://www.newsquawk.com/headlines/msci-to-add-anthropic-to-largecap-segment-of-msci-global-standard-indexes-on-november-30th"
+   ]
+  },
+  {
+   "date": "2026-12-11",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "指数の入れ替え",
+   "title": "Nasdaq100の入れ替えの発表（引け後）。Anthropic が入る見込み",
+   "announcedOn": "2026-11-17",
+   "sources": [
+    "https://stockanalysis.com/news/anthropic-nasdaq-100-funds-december-21/"
+   ]
+  },
+  {
+   "date": "2026-12-21",
+   "market": "us",
+   "t": "ANT",
+   "name": "Anthropic",
+   "type": "指数の入れ替え",
+   "title": "Nasdaq100に組み入れ（寄りから）の見込み。指数の投資信託は前の取引日の引けで買う",
+   "announcedOn": "2026-11-17",
+   "sources": [
+    "https://stockanalysis.com/news/anthropic-nasdaq-100-funds-december-21/"
+   ]
+  },
+  {
+   "date": "2026-12-04",
+   "market": "us",
+   "t": null,
+   "name": "米国",
+   "type": "経済指標",
+   "title": "11月の雇用統計",
+   "announcedOn": "2026-11-28",
+   "sources": [
+    "https://minkabu.jp/news/4674212"
+   ]
   }
  ]
 }
