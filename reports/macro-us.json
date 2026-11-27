@@ -1,6 +1,6 @@
 {
  "ok": true,
- "generatedAt": "2026-11-26T04:10:37.118Z",
+ "generatedAt": "2026-11-27T04:17:34.278Z",
  "asOf": "2026-11-25",
  "periods": {
   "train": [
@@ -13,7 +13,7 @@
   ]
  },
  "fred": {
-  "DFEDTARU": 6554,
+  "DFEDTARU": 6555,
   "DFF": 26445
  },
  "meetings": [
