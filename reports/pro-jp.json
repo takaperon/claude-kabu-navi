@@ -1,8 +1,8 @@
 {
  "ok": true,
- "generatedAt": "2026-11-26T19:34:01.577Z",
+ "generatedAt": "2026-11-27T05:46:02.097Z",
  "status": {
-  "startedAt": "2026-11-26T19:33:56.214Z",
+  "startedAt": "2026-11-27T05:45:56.528Z",
   "spyDays": 2511,
   "spySource": "FRED SP500",
   "divReasonEvents": 4879,
@@ -10,7 +10,11 @@
    "div_up": 4879,
    "earn_up": 2728
   },
-  "finishedAt": "2026-11-26T19:34:03.610Z"
+  "lowprice": {
+   "found": 7607,
+   "missing": 0
+  },
+  "finishedAt": "2026-11-27T05:46:03.680Z"
  },
  "periods": {
   "train": [

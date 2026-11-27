@@ -1,13 +1,13 @@
 {
-  "startedAt": "2026-11-26T19:33:34.479Z",
+  "startedAt": "2026-11-27T05:45:37.483Z",
   "keyPresent": true,
-  "fetchedDays": 1,
-  "rowsFetched": 4448,
+  "fetchedDays": 0,
+  "rowsFetched": 0,
   "skippedUnavailable": 0,
   "errors": {},
   "stoppedBy": "done",
   "masterRows": 4447,
-  "calendarTradingDays": 1220,
+  "calendarTradingDays": 1221,
   "splitsFound": 0,
   "splitsRewritten": 0,
   "splitsStored": 7,
@@ -16,11 +16,11 @@
   "finsFetchedDays": 5,
   "finsRows": 18,
   "earnDateFetched": 5,
-  "earnDateStored": 1835,
+  "earnDateStored": 1836,
   "requestCount": 13,
-  "finishedAt": "2026-11-26T19:33:50.193Z",
+  "finishedAt": "2026-11-27T05:45:51.480Z",
   "storedDays": 1234,
   "storedFrom": "2021-11-08",
   "storedTo": "2026-11-26",
-  "finsStoredDays": 1847
+  "finsStoredDays": 1848
 }
