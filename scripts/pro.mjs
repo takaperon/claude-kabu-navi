@@ -233,6 +233,22 @@ try {
   const list = T.filter((t) => t.kind === 'div_up' && dates[t.e] >= '2023-11-01').map((t) => ({ c: codes[t.i].slice(0, 4), e: dates[t.e], dt: t.out.dt ? Math.round(t.out.dt.ret * 10000) / 10000 : null, gap: Number.isFinite(t.f.gap) ? Math.round(t.f.gap * 10000) / 10000 : null, yield: Number.isFinite(t.f.yield) ? Math.round(t.f.yield * 10000) / 10000 : null, ...Object.fromEntries(['mgap', 'atr', 'liq', 'size'].map((k) => [k, Number.isFinite(t.f[k]) ? Math.round(t.f[k] * 10000) / 10000 : null])) }));
   fs.writeFileSync(path.join(OUT, 'jp-events.json'), JSON.stringify({ generatedAt: new Date().toISOString(), note: '増配の翌営業日（寄りで買う日）。dt＝その日の引けで売った損益率（J-Quants の日足、滑り込み）', list }));
 } catch (e) { status.eventsWriteError = e.message; }
+// 少ない資金（100株単位）で買える安い株だけだとどうか（2026-11-27、オーナー「日本株で安いやつの検証は？」）。買う日の調整前の始値（data/raw）で分ける。公開は集計値だけ
+try {
+  const rawOpen = new Map();
+  for (const t of T) { const d = dates[t.e]; if (!rawOpen.has(d)) { const f = path.join(DATA, 'raw', `${d}.json`); rawOpen.set(d, fs.existsSync(f) ? new Map(JSON.parse(fs.readFileSync(f, 'utf8')).map(([c, o]) => [c, o])) : null); } }
+  const BK = [['100株で3万円以下（300円以下）', 0, 300], ['300〜1000円', 300, 1000], ['1000円以上', 1000, Infinity]];
+  const G = {}; let found = 0, missing = 0;
+  for (const t of T) {
+    const m = rawOpen.get(dates[t.e]); const o = m?.get(codes[t.i]); if (!(o > 0)) { missing++; continue; } found++;
+    const b = BK.find(([, lo, hi]) => o >= lo && o < hi)[0];
+    for (const ex of ['dt', 'h5', 'hl10']) { const v = t.out[ex]?.ret; if (v == null) continue; (((G[t.kind] ??= {})[b] ??= {})[ex] ??= { train: [], test: [] })[t.half].push(v); }
+  }
+  const fin = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v.train ? { train: summ0(v.train), test: summ0(v.test) } : fin(v)]));
+  function summ0(a) { if (!a.length) return { n: 0 }; const s = a.slice().sort((x, y) => x - y); const avg = a.reduce((x, y) => x + y, 0) / a.length; return { n: a.length, avg: Math.round(avg * 10000) / 10000, med: Math.round(s[a.length >> 1] * 10000) / 10000, win: Math.round((a.filter((x) => x > 0).length / a.length) * 1000) / 1000 }; }
+  fs.writeFileSync(path.join(OUT, 'lowprice-jp.json'), JSON.stringify({ generatedAt: new Date().toISOString(), note: '増配（div_up）・上方修正（earn_up）の買う日の調整前の始値で分けた1回あたりの損益率。dt＝その日の引け、h5＝5日目の引け、hl10＝マイナスなら最長10日持ち越し。滑り込み。売買代金の条件は今のルールと同じ', found, missing, groups: fin(G) }, null, 1));
+  status.lowprice = { found, missing };
+} catch (e) { status.lowpriceError = String(e.message).slice(0, 120); }
 
 // ---------- 集計の道具 ----------
 const r4 = (x) => (x == null || !Number.isFinite(x) ? null : Math.round(x * 10000) / 10000);
